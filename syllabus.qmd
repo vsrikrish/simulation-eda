@@ -5,26 +5,31 @@ format:
     toc-depth: 3
     title: Syllabus
   pdf:
+    documentclass: article
+    geometry:
+      - margin=1in  
     include-in-header:
       text: |
         \renewcommand\toprule[2]\relax
         \renewcommand\bottomrule[2]\relax
     filters:
       - _assets/filters/columns-to-tables.lua
-    title: BEE 4850/5850 (Environmental Data Analysis and Simulation) Syllabus
-
+    title: "{{< var course.number >}} ({{< var course.title >}}) Syllabus"
+    subtitle: "{{< var course.semester >}}"
 ---
 
 ## Course Overview
+
+This is a 3 credit course offered as an elective, which counts towards the Environmental Systems and Data Analytics focus area.
 
 :::: {.columns .course-details}
 
 ::: {.column width="30%"}
 ### Instructor
 
-- {{< fa sharp user title="Name" >}} [[Vivek Srikrishnan](https://viveks.me)]{.ms-1}
-- {{< fa sharp envelope title="Email" >}} [[viveks@cornell.edu](mailto:viveks@cornell.edu)]{.ms-1}
-- {{< fa sharp building title="Office" >}} [318 Riley-Robb]{.ms-2}
+- {{< fa sharp user title="Name" >}} [[{{< var instructor.name_no_title >}}]({{< var instructor.url >>}})]{.ms-1}
+- {{< fa sharp envelope title="Email" >}} [[{{< var instructor.email >}}](mailto:{{< var instructor.email >}})]{.ms-1}
+- {{< fa sharp building title="Office" >}} [{{< var instructor.office >}}]{.ms-2}
 :::
 
 ::: {.column width="30%"}
@@ -38,9 +43,9 @@ format:
 ::: {.column width="30%"}
 ### Meetings
 
-- {{< fa sharp calendar title="Class Days" >}} MWF
-- {{< fa sharp clock title="Class Time" >}} 1:25-2:15
-- {{< fa sharp university title="Class Location" >}} TBD
+- {{< fa sharp calendar title="Class Days" >}} {{< var course.days >}}
+- {{< fa sharp clock title="Class Time" >}} {{< var course.time >}}
+- {{< fa sharp university title="Class Location" >}} {{< var course.location >}}
 
 :::
 
@@ -119,7 +124,7 @@ Students can optimize their performance in the course by:
 
 ### Diversity and Inclusion
 
-Our goal in this class is to foster an inclusive learning environment and make everyone feel comfortable in the classroom, regardless of social identity, background, and specific learning needs. As engineers, our work touches on many critical aspects of society, and questions of inclusion and social justice cannot be separated from considerations of systems analysis, objective selection, risk analysis, and trade-offs. 
+Our goal in this class is to foster an inclusive learning environment and make everyone feel comfortable in the classroom, regardless of social identity, background, and specific learning needs. As engineers, our work touches on many critical aspects of society, and questions of inclusion and social justice cannot be separated from considerations of how data are generated, collected, and analyzed.
 
 In all communications and interactions with each other, members of this class community (students and instructors) are expected to be respectful and inclusive. In this spirit, we ask all participants to:
 
