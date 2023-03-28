@@ -3,12 +3,11 @@ project:
 
 website:
   page-navigation: true
-  title: "BEE 4750 - Fall 2023"
-  description: "Homepage for BEE 4750/5750, Environmental Systems Analysis, at Cornell University, Fall 2023."
-  site-url: "https://viveks.me/environmental-systems-analysis"
+  title: "BEE 4850 - Spring 2024"
+  description: "Homepage for BEE 4850/5850, Simulation Methods for Environmental Data Analysis, at Cornell University, Spring 2024."
+  site-url: "https://viveks.me/simulation-data-analysis"
 
-  repo-url: https://github.com/vsrikrish/environmental-systems-analysis
-  repo-actions: [edit, issue]
+  repo-url: https://github.com/vsrikrish/simulation-data-analysis
 
   open-graph: true
 
@@ -20,13 +19,13 @@ website:
     style: docked
     align: center
     background: "#222222"
-    logo: _assets/cornell_logo_simple_b31b1b.svg
-    title: "BEE 4750: Environmental Systems Analysis"
-    subtitle: "BEE 4750"
+    logo: _assets/logos/cornell_logo_simple_b31b1b.svg
+    title: "BEE 4850: Environmental Systems Analysis"
+    subtitle: "BEE 4850"
     search: true
     tools: 
       - icon: github
-        href: https://github.com/vsrikrish/environmental-systems-analysis
+        href: https://github.com/vsrikrish/simulation-data-analysis
         text: "Github Repository"
       - icon: journal-check
         href: https://canvas.cornell.edu
@@ -45,8 +44,16 @@ website:
             text: Overview
           - href: syllabus.qmd
             text: Syllabus
-
-
+          - href: schedule.qmd
+            text: Class Schedule
+      - section: "Julia Tutorials"
+        contents:
+          - href: tutorials/julia-basics.qmd
+            text: Julia Basics
+          - href: tutorials/julia-plots.qmd
+            text: Making Plots
+          - href: tutorials/turing-mcmc.qmd
+            text: MCMC with Turing
 format:
   html:
     theme: 
@@ -60,7 +67,10 @@ format:
     callout-appearance: simple
     reference-location: margin
     citation-location: margin
+    code-annotations: select
 
+bibliography: references.bib
+csl: _assets/references/american-geophysical-union.csl
 execute:
   freeze: auto
   

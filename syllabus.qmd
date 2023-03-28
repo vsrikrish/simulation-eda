@@ -10,7 +10,7 @@ format:
         \renewcommand\toprule[2]\relax
         \renewcommand\bottomrule[2]\relax
     filters:
-      - columns-to-tables.lua
+      - _assets/filters/columns-to-tables.lua
 ---
 
 ## Course Information
