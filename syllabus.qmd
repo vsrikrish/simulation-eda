@@ -1,9 +1,9 @@
 ---
-title: Syllabus
 jupyter: julia-1.8
 format:
   html:
     toc-depth: 3
+    title: Syllabus
   pdf:
     include-in-header:
       text: |
@@ -11,13 +11,11 @@ format:
         \renewcommand\bottomrule[2]\relax
     filters:
       - _assets/filters/columns-to-tables.lua
+    title: BEE 4850/5850 (Environmental Data Analysis and Simulation) Syllabus
+
 ---
 
-## Course Information
-
-- **Course Number**: BEE 4850/5850
-- **Course Title**: Simulation Methods for Environmental Data Analysis
-- **Credits**: 3
+## Course Overview
 
 :::: {.columns .course-details}
 
@@ -48,15 +46,14 @@ format:
 
 ::::
 
-
 ### Course Description
 
-Analyzing environmental data often involves iterative Exploratory data analysis plays a critical role in statistical and numerical model development and formulation. However, as environmental data increases in complexity, size, and ubiquity, emphasizing the data-generating process can guide analysis of the dataset and modeling choices. This course will provide an overview of a generative approach to data analysis, which uses simulation and assessments of predictive performance to provide insight into the structure of data and its data-generating process. The goal is to provide students with a framework and an initial toolkit of methods that they can use to formulate and update hypotheses about data which can facilitate principled future uses and inferences. In particular, we will:
+Understanding data is an increasingly integral part of working with environmental systems. Data analysis is an integral part of developing statistical and numerical models to understand system dynamics and project future conditions and outcomes. Simulation from models can represent alternative datasets consistent with a set of assumptions about the underlying data-generating process, facilitating model assessment and hypothesis testing. This course will provide an overview of a generative approach to environmental data analysis, which uses simulation and assessments of predictive performance to provide insight into the structure of data and its data-generating process. The goal is to provide students with a framework and an initial toolkit of methods that they can use to formulate and update hypotheses about data and models. In particular, we will:
 
-* formulate statistical analyses as a method for decision-making under uncertainty;
-* interpret graphical and quantitative summaries of counterfactual simulations to test hypotheses and assess the utility of models;
-* analyze and account for the structure of model residuals;
-* apply Monte Carlo and bootstrap methods to simulate pseudodata from calibrated models;
+* learn how to effectively use and critique data visualizations;
+* interpret graphical and quantitative summaries of counterfactual simulations;
+* calibrate statistical and numerical models to reflect data-generating processes;
+* apply statistical methods to simulate pseudodata from calibrated models;
 * assess and select models based on predictive performance; and 
 * emulate computationally-complex simulations with surrogate models. 
 
@@ -67,7 +64,7 @@ At the end of this class, students will:
 1. Analyze environmental datasets using simulations from calibrated models;
 2. Interpret and communicate properties of datasets and models using graphical summaries;
 3. Assess model fit and performance by analyzing residual structures and predictive performance;
-4. Implement statistical and numerical modeling, calibration, and visualization techniques in modern programming languages.
+4. Solve statistical and numerical modeling, calibration, and visualization problems using modern programming languages.
 
 ## Prerequisites & Preparation
 
@@ -75,6 +72,7 @@ The following courses/material would be ideal preparation:
 
 - One course in programming (*e.g.* CS 1110, 1112 or ENGRD/CEE 3200)
 - One course in probability or statistics (ENGRD 2700, CEE 3040, or equivalent) 
+- One course in environmental systems (BEE 4750/5750, or equivalent)
 
 In the absence of one or more these prerequisites, you can seek the permission of instructor.
 
@@ -94,8 +92,7 @@ If your programming or statistics skills are a little rusty, don't worry! We wil
 - Censored, truncated, and missing data;
 - Monte Carlo and bootstrap methods for calibration (including Markov chain Monte Carlo);
 - Predictive model assessment (including cross-validation);
-- Model averaging;
-- Emulation with surrogate models (including Gaussian processes, polynomial chaos expansions, and machine learning methods)
+- Emulation with surrogate models
 
 ## Course Philosophy and Expectations
 
@@ -274,48 +271,48 @@ cdays = dayabbr.(cdates)
 
 # set vector of class topics
 topics = [ 
-  "Introduction",
-  "Overview of exploratory data analysis",
-  "Github Overview and Work on Homework 1",
-  "Data-generating processes and uncertainty",
-  "What can go wrong with EDA",
+  "Class overview",
+  "Intro to Julia and GitHub",
+  "Work on Homework 1",
+  "Exploratory data analysis and data-generating processes",
   "Simulation-based workflows for data analysis",
-  "Probability basics",
+  "Uncertainty and probability basics",
+  "Probability distributions",
   "Probabilistic models",
   "Bayes' Theorem",
-  "Loss functions and Bayesian decision theory",
-  "Statistics as decision-making under uncertainty",
+  "Bayesian decision analysis",
+  "Work on Homework 2",
   "Psychology of memory and vision",
   "Information channels and Gestalt principles",
   "Class discussion of figures",
   "Approaches to visualizing data and uncertainty",
   "Graphical checks for model diagnostics",
+  "Work on Homework 3",
   "Understanding model residuals",
   "Model-data discrepancy",
-  "Missing data",
-  "Censored and truncated data",
+  "Missing and censored data",
   "Modeling complex residual structures", 
-  "Sensitivity analysis",
+  "Work on Homework 4",
   "Introduction to Monte Carlo",
   "Monte Carlo error analysis",
   "Monte Carlo simulation: Examples",
-  "Sampling distributions",
-  "The bootstrap",
-  "Using the bootstrap for uncertainty quantification",
+  "Sampling distributions and the bootstrap",
+  "The bootstrap: Examples",
+  "Work on Homework 5",
   "Overview of Bayesian computation", 
   "Markov chains",
   "Markov chain Monte Carlo",
   "Markov chain Monte Carlo convergence", 
+  "Markov chain Monte Carlo: Examples",
+  "Work on Homework 6",
   "Model assessment via predictive accuracy", 
-  "Cross-validation", 
-  "Distances between distributions",
+  "Cross-validation",
   "Predictive information criteria",
-  "Model averaging and stacking",
-  "Kriging and variograms",
-  "Gaussian processes",
-  "Polynomial chaos expansion",
-  "Machine learning emulators",
-  "Uncertainty and machine learning models"
+  "Model assessment and selection: Examples",
+  "Work on Homework 7",
+  "Tradeoffs between complexity and ensemble size",
+  "Emulation",
+  "Gaussian processes"
 ]
 
 holiday_dates = ["2024-02-26", "2024-04-01", "2024-04-03", "2024-04-05"];
@@ -335,10 +332,10 @@ class_nums = missings(Int, length(cdates))
 class_nums[cschedule.Date .∉ [holidays.Date]] = collect(range(1, length=length(cdates) - nrow(holidays)))
 
 # set headers
-headers_idx = [1, 7, 14, 21, 28, 42, 48]
+headers_idx = [1, 7, 14, 22, 28, 44, 50]
 headers = DataFrame([
   "" "" "Introduction to Exploratory Data Analysis";
-  "" "" "Review of Probability and Statistics";
+  "" "" "Probability and Statistics Background and Review";
   "" "" "Data Visualization and Graphical Checks";
   "" "" "Model Calibration";
   "" "" "Simulation Methods";
@@ -359,9 +356,10 @@ hl_hol = LatexHighlighter((data, i, j) -> data[i, :Date] ∈ holidays[:, :Date],
 hl_header = LatexHighlighter((data, i, j) -> i ∈ headers_idx, ["emph", "textbf", "small"])
 
 pretty_table(cschedule, highlighters=(hl_header, hl_hol, hl_smallfont), 
-  body_hlines = [6, 13, 20, 27, 41, 47],
+  body_hlines = headers_idx[2:end] .- 1,
   nosubheader=true, backend=Val(:latex), tf=tf_latex_modern, formatters=ft_nomissing,
-  row_names=class_nums, row_name_alignment=:c, row_name_column_title = "\\#", wrap_table=true, wrap_table_environment="center", table_type=:longtable)
+  row_names=class_nums, row_name_alignment=:r, row_name_column_title = "\\#", wrap_table=true, wrap_table_environment="center", table_type=:longtable,
+  alignment = [:c, :c, :l])
 
 ```
 :::
