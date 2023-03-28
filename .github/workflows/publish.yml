@@ -1,7 +1,9 @@
 on:
   workflow_dispatch:
   push:
-    branches: main
+    branches: 
+      - main
+      - Spring23
 
 name: Quarto Publish
 
@@ -17,22 +19,30 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          tinytex: true
           version: pre-release
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          
+      - name: Install Jupyter
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install jupyter
 
       - name: Install Julia
         uses: julia-actions/setup-julia@v1
         with:
-          version: 1.8
+          version: 1.8.3
 
-      - name: Install librsvg
-        run: |
-          sudo apt-get update
-          sudo apt-get install librsvg2-bin
-
+      - name: Install IJulia
+        run: julia -e 'using Pkg; Pkg.activate("website"); Pkg.instantiate(); Pkg.build("IJulia")'
+          
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          path: "website"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
