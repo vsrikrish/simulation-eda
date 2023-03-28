@@ -2,7 +2,7 @@
 title: "{{< var course.number >}}: {{< var course.title >}}"
 ---
 
-This is the course website for the {{< var course.semester >}} edition of {{< var course.number >}}, {{< var course.title >}}, taught at {{< var university.name >}} by {{< var instructor.name_no_title >}}.
+This is the course website for the {{< var course.semester >}} edition of {{< var course.number >}}, {{< var course.title >}}, taught at [{{< var university.name >}}]({{< var university.url >}}) by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}).
 
 ## Course Information
 
