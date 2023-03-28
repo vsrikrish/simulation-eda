@@ -1,5 +1,5 @@
 ---
-title: "BEE 4850: Simulation Methods for Environmental Data Analysis"
+title: "BEE 4850/5850: Environmental Data Analysis and Simulation"
 ---
 
 Environmental processes can have complicated dynamics and conflicting objectives. These dynamics can complicate analyses and decision-making which focus on a single component of the system, such as an individual pollution source. In this course, we will adopt a systems approach to environmental quality modeling and management, including applications in air and water pollution control and solid waste management. In particular, we will:
