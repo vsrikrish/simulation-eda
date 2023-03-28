@@ -2,7 +2,7 @@
 title: "About This Website"
 ---
 
-Course materials for [{{< var course.title >}}]({{< var course.url >}}), taught by [{{< var instructor.name >}}]({{< var instructor.url >}}) in {{< var course.semester >}} at [{{< var university.name >}}]({{< var university.url >}}).
+This website contains course materials for the {{< var course.semester >}} edition of [{{< var course.title >}}]({{< var course.url >}}), taught by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}) at [{{< var university.name >}}]({{< var university.url >}}).
 
 ## Acknowledgements
 

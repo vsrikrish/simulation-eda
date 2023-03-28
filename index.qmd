@@ -2,17 +2,14 @@
 title: "{{< var course.number >}}: {{< var course.title >}}"
 ---
 
-Understanding data is an increasingly integral part of working with environmental systems. Data analysis is an integral part of developing statistical and numerical models to understand system dynamics and project future conditions and outcomes. Simulation from models can represent alternative datasets consistent with a set of assumptions about the underlying data-generating process, facilitating model assessment and hypothesis testing. This course will provide an overview of a generative approach to environmental data analysis, which uses simulation and assessments of predictive performance to provide insight into the structure of data and its data-generating process. The goal is to provide students with a framework and an initial toolkit of methods that they can use to formulate and update hypotheses about data and models. In particular, we will:
+This is the course website for the {{< var course.semester >}} edition of {{< var course.number >}}, {{< var course.title >}}, taught at {{< var university.name >}} by {{< var instructor.name_no_title >}}.
 
-* learn how to effectively use and critique data visualizations;
-* interpret graphical and quantitative summaries of counterfactual simulations;
-* calibrate statistical and numerical models to reflect data-generating processes;
-* apply statistical methods to simulate pseudodata from calibrated models;
-* assess and select models based on predictive performance; and 
-* emulate computationally-complex simulations with surrogate models. 
+## Course Information
 
-::: {.callout-note}
-## Julia
+- Details on the class and course policies are provided in the [syllabus](syllabus.html).
+- Topics and weekly materials can be found in the [schedule](schedule.html).
 
-This course will use the [Julia](https://julialang.org) programming language. No prior knowledge of Julia is required.
-:::
+## Software Tools
+
+- This course will use the [Julia](https://julialang.org) programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use [Visual Studio Code](https://code.visualstudio.com/) with the [official Julia extension](https://code.visualstudio.com/docs/languages/julia) for coding.
+- Assignments will be distributed using [GitHub Classroom](https://github.com). You should create a GitHub account, but we will walk through how to use it. 
