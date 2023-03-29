@@ -53,12 +53,12 @@ This is a 3 credit course offered as an elective, which counts towards the Envir
 
 ### Course Description
 
-Understanding data is an increasingly integral part of working with environmental systems. Data analysis is an integral part of developing statistical and numerical models to understand system dynamics and project future conditions and outcomes. Simulation from models can represent alternative datasets consistent with a set of assumptions about the underlying data-generating process, facilitating model assessment and hypothesis testing. This course will provide an overview of a generative approach to environmental data analysis, which uses simulation and assessments of predictive performance to provide insight into the structure of data and its data-generating process. The goal is to provide students with a framework and an initial toolkit of methods that they can use to formulate and update hypotheses about data and models. In particular, we will:
+Understanding data is an increasingly integral part of working with environmental systems. Data analysis is an integral part of developing statistical and numerical models to understand system dynamics and project future conditions and outcomes. Simulation from models can represent alternative datasets consistent with a set of assumptions about the underlying data-generating process, facilitating model assessment and hypothesis testing. This course will provide an overview of a generative approach to environmental data analysis, which uses simulation and assessments of predictive performance to provide insight into the structure of data and its data-generating process. The goal is to provide students with a framework and an initial toolkit of methods that they can use to formulate and update hypotheses about data and models. Students will actively analyze and use real data from a variety of environmental systems, potentially including the climate system, sea levels, air pollution, and the electric power system. In particular, we will:
 
 * learn how to effectively use and critique data visualizations;
-* interpret graphical and quantitative summaries of counterfactual simulations;
+* interpret graphical and quantitative summaries of counterfactual model simulations;
 * calibrate statistical and numerical models to reflect data-generating processes;
-* apply statistical methods to simulate pseudodata from calibrated models;
+* apply statistical methods to simulate from calibrated models;
 * assess and select models based on predictive performance; and 
 * emulate computationally-complex simulations with surrogate models. 
 
@@ -226,9 +226,15 @@ In general, late work will be subjected to a 10% penalty per day, *which can acc
 
 ### Application Exercises: 10%
 
-Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure, or an overview to a new Julia package) to complete. These will involve a small amount of programming or visual assessment of data or a figure. Application exercises will be provided the previous Friday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. Application exercise solutions should be submitted as a PDF on Gradescope. The lowest two of these will be dropped. Application exercises which involve programming will be distributed using GitHub Classroom.
+Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming or visual assessment of data or a figure. Application exercises will be provided the previous Friday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. Application exercise solutions should be submitted as a PDF on Gradescope. The lowest two of these will be dropped. Application exercises which involve programming will be distributed using GitHub Classroom.
 
-### Homework Assignments: 50%
+### Labs: 20%
+
+Approximately 7 class periods will be dedicated to working on labs. These labs are intended to give you hands-on experience with new tools and/or methods, and will focus more on completing tasks and interpreting output than conceptual questions. Students should bring their laptops to class on these days; please prepare in advance by downloading the notebook and setting up the environment by running the first few cells. 
+
+Lab notebook solutions will be due by 9:00pm roughly one week after the in-class session. These should be submitted to Gradescope as a PDF. The lowest lab grade will be dropped.
+
+### Homework Assignments: 40%
 
 Approximately 6 homework assignments will be assigned throughout the semester (roughly one per course module). You will typically have 2 weeks to work on each assignment, though this depends on the module length. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but  plagiarism is a violation of academic integrity.
 
@@ -241,7 +247,7 @@ Some notes on assignment and grading logistics:
   * Your lowest homework grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time. 
   * Regrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways: the TA can take away points as well!
 
-### Final Term Project: 40%
+### Final Term Project: 30%
 
 This course will culminate with a term project. The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
 
@@ -278,43 +284,43 @@ cdays = dayabbr.(cdates)
 topics = [ 
   "Class overview",
   "Intro to Julia and GitHub",
-  "Work on Homework 1",
+  "Lab 1: Julia Basics",
   "Exploratory data analysis and data-generating processes",
   "Simulation-based workflows for data analysis",
   "Uncertainty and probability basics",
   "Probability distributions",
   "Probabilistic models",
+  "Lab 2: Probability Models in Julia",
   "Bayes' Theorem",
   "Bayesian decision analysis",
-  "Work on Homework 2",
   "Psychology of memory and vision",
   "Information channels and Gestalt principles",
   "Class discussion of figures",
+  "Lab 3: Plotting in Julia",
   "Approaches to visualizing data and uncertainty",
   "Graphical checks for model diagnostics",
-  "Work on Homework 3",
   "Understanding model residuals",
   "Model-data discrepancy",
   "Missing and censored data",
+  "Lab 4: Missing Data",
   "Modeling complex residual structures", 
-  "Work on Homework 4",
   "Introduction to Monte Carlo",
   "Monte Carlo error analysis",
   "Monte Carlo simulation: Examples",
   "Sampling distributions and the bootstrap",
+  "Lab 5: Monte Carlo",
   "The bootstrap: Examples",
-  "Work on Homework 5",
   "Overview of Bayesian computation", 
   "Markov chains",
   "Markov chain Monte Carlo",
   "Markov chain Monte Carlo convergence", 
+  "Lab 6: Markov chain Monte Carlo",
   "Markov chain Monte Carlo: Examples",
-  "Work on Homework 6",
   "Model assessment via predictive accuracy", 
   "Cross-validation",
+  "Lab 7: Model Assessment",
   "Predictive information criteria",
   "Model assessment and selection: Examples",
-  "Work on Homework 7",
   "Tradeoffs between complexity and ensemble size",
   "Emulation",
   "Gaussian processes"

@@ -10,11 +10,11 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 
 ### I: Class Introduction
 
-| Lecture | Date        | Topic | Slides | AE | HW | Project |
+| Lecture | Date        | Topic | Slides | AE | Lab | HW | Project |
 :-----:|:------------|:------|:------:|:--:|:---:|:--:|:-------:|
-|  1   | Mon, Jan 22 | Welcome to the Class! | [{{< fa sharp presentation-screen >}}](slides/lec-01-class-intro.html){target="_blank"}  | [{{< fa sharp coffee-pot >}}](ae/ae-01-setup.html) |  [{{< fa sharp pen-field >}}](hw/hw-01-debug.html) | |
-| 2 | Wed, Jan 24 | Julia Basics and GitHub | | | | |
-| 3 | Fri, Jan 26 | Work on Homework 1 | | | | |
+|  1   | Mon, Jan 22 | Welcome to the Class! | [{{< fa sharp presentation-screen >}}](slides/lec01-class-intro.html){target="_blank"}  | [{{< fa sharp coffee-pot >}}](aes/ae01/ae01.html) |  | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.html) | |
+| 2 | Wed, Jan 24 | Julia Basics and GitHub | | | | | |
+| 3 | Fri, Jan 26 | Lab 1: Julia Basics | | | [{{< fa sharp laptop-code >}}](labs/lab01/lab01.html) | | |
 | 4 | Mon, Jan 29 | Exploratory Analysis and Data-Generating Processes | | | | |
 | 5 | Wed, Jan 31 | Simulation-based Data Analysis | | | |
 :::

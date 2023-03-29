@@ -52,8 +52,16 @@ website:
             text: Class Schedule
       - section: assignments.qmd
         contents:
-          - href: assignments/hw1/hw1.qmd
+          - href: assignments/hw01/hw01.qmd
             text: Homework 1
+      - section: project.qmd
+      - section: labs.qmd
+        contents:
+          - href: labs/lab01/lab01.qmd
+            text: Lab 1
+      - section: ae.qmd
+        contents:
+          - href: aes/ae1/ae1.qmd
       - section: "Julia Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
