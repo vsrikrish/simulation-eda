@@ -1,21 +1,21 @@
 [
   {
-    "objectID": "assignments/hw1/hw1.html",
-    "href": "assignments/hw1/hw1.html",
+    "objectID": "assignments/hw01/hw01.html",
+    "href": "assignments/hw01/hw01.html",
     "title": "Homework 1",
     "section": "",
     "text": "Due Date\n\n\n\nFriday, 2/9/24, 9:00pm"
   },
   {
-    "objectID": "assignments/hw1/hw1.html#overview",
-    "href": "assignments/hw1/hw1.html#overview",
+    "objectID": "assignments/hw01/hw01.html#overview",
+    "href": "assignments/hw01/hw01.html#overview",
     "title": "Homework 1",
     "section": "Overview",
-    "text": "Overview\n\nInstructions\n\nProblems 1-4 consist of a series of code snippets for you to interpret and debug. For Problems 1-3, you will be asked to identify relevant error(s) and fix the code. For Problem 4, the code works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 5 asks you to rewrite a “script” into a function, which you will then use to conduct an experiment.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n  Activating project at `~/Teaching/simulation-eda/assignments/hw1`"
+    "text": "Overview\n\nInstructions\n\nProblems 1-4 consist of a series of code snippets for you to interpret and debug. For Problems 1-3, you will be asked to identify relevant error(s) and fix the code. For Problem 4, the code works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 5 asks you to rewrite a “script” into a function, which you will then use to conduct an experiment.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n  Activating project at `~/work/simulation-data-analysis/simulation-data-analysis/assignments/hw01`"
   },
   {
-    "objectID": "assignments/hw1/hw1.html#problems-total-100-points",
-    "href": "assignments/hw1/hw1.html#problems-total-100-points",
+    "objectID": "assignments/hw01/hw01.html#problems-total-100-points",
+    "href": "assignments/hw01/hw01.html#problems-total-100-points",
     "title": "Homework 1",
     "section": "Problems (Total: 100 Points)",
     "text": "Problems (Total: 100 Points)\n\nProblem 1 (20 points)\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\nProblem 1.1 (10 points)\nDescribe the logic error.\n\n\nProblem 1.2 (5 points)\nWrite a fixed version of the function.\n\n\nProblem 1.3 (5 points)\nUse your fixed function to find the minimum value of array_values.\n\n\n\nProblem 2 (20 points)\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\nLoadError: UndefVarError: average_grade not defined\n\n\n\nProblem 2.1 (10 points)\nDescribe the logic and/or syntax error.\n\n\nProblem 2.2 (5 points)\nWrite a fixed version of the code.\n\n\nProblem 2.3 (5 points)\nUse your fixed code to compute the average grade for the class.\n\n\n\nProblem 3 (20 points)\nYour team has collected data on the mileage of different car models. You want to calculate the average mileage per gallon (MPG) for the different cars, but your code produces the same value for all of the vehicles, which makes you suspicious.\n\nfunction calculate_MPG((miles, gallons))\n    return miles / gallons\nend\n\ncar_miles =  [(334, 11), (289, 15), (306, 12), (303, 20), (350, 20), (294, 14)]\n\nmpg = zeros(length(car_miles))\n\nfor i in 1:length(car_miles)\n    miles = car_miles[1][1]\n    gallon = car_miles[1][2]\n    mpg[i] = calculate_MPG((miles, gallon))\nend\n@show mpg;\n\nmpg = [30.363636363636363, 30.363636363636363, 30.363636363636363, 30.363636363636363, 30.363636363636363, 30.363636363636363]\n\n\n\nProblem 3.1 (10 points)\nDescribe the logic error.\n\n\nProblem 3.2 (5 points)\nWrite a fixed version of the code.\n\n\nProblem 3.3 (5 points)\nUse your fixed code to compute the MPGs.\n\n\n\nProblem 4 (20 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\n\nProblem 4.1 (10 points)\nExplain the purpose of mystery_function.\n\n\nProblem 4.2 (10 points)\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand."
@@ -25,7 +25,35 @@
     "href": "schedule.html",
     "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\nI: Class Introduction\n\n\n\n\n\n\n\n\n\n\n\n\n\nLecture\nDate\nTopic\nSlides\nAE\nHW\nProject\n\n\n\n\n\n1\nMon, Jan 22\nWelcome to the Class!\n\n\n\n\n\n\n\n2\nWed, Jan 24\nJulia Basics and GitHub\n\n\n\n\n\n\n\n3\nFri, Jan 26\nWork on Homework 1\n\n\n\n\n\n\n\n4\nMon, Jan 29\nExploratory Analysis and Data-Generating Processes\n\n\n\n\n\n\n\n5\nWed, Jan 31\nSimulation-based Data Analysis"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\nI: Class Introduction\n\n\n\n\n\n\n\n\n\n\n\n\n\nLecture\nDate\nTopic\nSlides\nAE\nLab\nHW\nProject\n\n\n\n\n1\nMon, Jan 22\nWelcome to the Class!\n\n\n\n\n\n\n\n2\nWed, Jan 24\nJulia Basics and GitHub\n\n\n\n\n\n\n\n3\nFri, Jan 26\nLab 1: Julia Basics\n\n\n\n\n\n\n\n4\nMon, Jan 29\nExploratory Analysis and Data-Generating Processes\n\n\n\n\n\n\n\n5\nWed, Jan 31\nSimulation-based Data Analysis"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "The final project gives you an opportunity to use and extend the methods we have learned in class to an environmental data set and/or model of your choosing. More details will be provided over the semester. We will discuss each component in class as well as providing relevant information on this page."
+  },
+  {
+    "objectID": "project.html#overview",
+    "href": "project.html#overview",
+    "title": "Final Project",
+    "section": "",
+    "text": "The final project gives you an opportunity to use and extend the methods we have learned in class to an environmental data set and/or model of your choosing. More details will be provided over the semester. We will discuss each component in class as well as providing relevant information on this page."
+  },
+  {
+    "objectID": "project.html#overall-instructions",
+    "href": "project.html#overall-instructions",
+    "title": "Final Project",
+    "section": "Overall Instructions",
+    "text": "Overall Instructions\n\nStudents in 4850 should work in groups of 2-3, while students in 5850 must work alone."
+  },
+  {
+    "objectID": "project.html#schedule",
+    "href": "project.html#schedule",
+    "title": "Final Project",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nMilestone\nInstructions\nRubric\nDue Date\n\n\n\n\nProposal\n\n\nFri, Feb 23\n\n\nResearch Plan\n\n\nFri, Mar 29\n\n\nPoster\n\n\nWed, May 08"
   },
   {
     "objectID": "about.html",
@@ -228,21 +256,14 @@
     "href": "assignments.html#schedule",
     "title": "Assignments",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nRubric\nDue Date\n\n\n\n\nHW1\n\n\nFeb 09, 2024"
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nRubric\nDue Date\n\n\n\n\nHW1\n\n\nFeb 09, 2024"
   },
   {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "This is a 3 credit course offered as an elective, which counts towards the Environmental Systems and Data Analytics focus area.\n\n\n\n\n\n Vivek Srikrishnan\n viveks@cornell.edu\n 318 Riley-Robb\n\n\n\n\n\n\n TBD\n TBD\n TBD\n\n\n\n\n\n\n MWF\n 1:25-2:15pm\n TBD\n\n\n\n\n\n\nUnderstanding data is an increasingly integral part of working with environmental systems. Data analysis is an integral part of developing statistical and numerical models to understand system dynamics and project future conditions and outcomes. Simulation from models can represent alternative datasets consistent with a set of assumptions about the underlying data-generating process, facilitating model assessment and hypothesis testing. This course will provide an overview of a generative approach to environmental data analysis, which uses simulation and assessments of predictive performance to provide insight into the structure of data and its data-generating process. The goal is to provide students with a framework and an initial toolkit of methods that they can use to formulate and update hypotheses about data and models. In particular, we will:\n\nlearn how to effectively use and critique data visualizations;\ninterpret graphical and quantitative summaries of counterfactual simulations;\ncalibrate statistical and numerical models to reflect data-generating processes;\napply statistical methods to simulate pseudodata from calibrated models;\nassess and select models based on predictive performance; and\nemulate computationally-complex simulations with surrogate models."
-  },
-  {
-    "objectID": "syllabus.html#course-overview",
-    "href": "syllabus.html#course-overview",
-    "title": "Syllabus",
-    "section": "",
-    "text": "This is a 3 credit course offered as an elective, which counts towards the Environmental Systems and Data Analytics focus area.\n\n\n\n\n\n Vivek Srikrishnan\n viveks@cornell.edu\n 318 Riley-Robb\n\n\n\n\n\n\n TBD\n TBD\n TBD\n\n\n\n\n\n\n MWF\n 1:25-2:15pm\n TBD\n\n\n\n\n\n\nUnderstanding data is an increasingly integral part of working with environmental systems. Data analysis is an integral part of developing statistical and numerical models to understand system dynamics and project future conditions and outcomes. Simulation from models can represent alternative datasets consistent with a set of assumptions about the underlying data-generating process, facilitating model assessment and hypothesis testing. This course will provide an overview of a generative approach to environmental data analysis, which uses simulation and assessments of predictive performance to provide insight into the structure of data and its data-generating process. The goal is to provide students with a framework and an initial toolkit of methods that they can use to formulate and update hypotheses about data and models. In particular, we will:\n\nlearn how to effectively use and critique data visualizations;\ninterpret graphical and quantitative summaries of counterfactual simulations;\ncalibrate statistical and numerical models to reflect data-generating processes;\napply statistical methods to simulate pseudodata from calibrated models;\nassess and select models based on predictive performance; and\nemulate computationally-complex simulations with surrogate models."
+    "text": "This is a 3 credit course offered as an elective, which counts towards the Environmental Systems and Data Analytics focus area."
   },
   {
     "objectID": "syllabus.html#learning-objectives",
@@ -291,7 +312,7 @@
     "href": "syllabus.html#assessments",
     "title": "Syllabus",
     "section": "Assessments",
-    "text": "Assessments\n\nApplication Exercises: 10%\nMost weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure, or an overview to a new Julia package) to complete. These will involve a small amount of programming or visual assessment of data or a figure. Application exercises will be provided the previous Friday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. Application exercise solutions should be submitted as a PDF on Gradescope. The lowest two of these will be dropped. Application exercises which involve programming will be distributed using GitHub Classroom.\n\n\nHomework Assignments: 50%\nApproximately 6 homework assignments will be assigned throughout the semester (roughly one per course module). You will typically have 2 weeks to work on each assignment, though this depends on the module length. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity.\nSome notes on assignment and grading logistics:\n\nHomework assignments will be distributed using GitHub Classroom. Students should make sure they update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can’t submit your assignment on time.\nHomeworks are due by 9:00pm Eastern Time on the designed due date. Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions).\nRubrics will be provided for the homeworks as part of the assignments.\nStudents in 5850 will be asked to complete additional homework problems which go more deeply into the\nYour lowest homework grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time.\nRegrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways: the TA can take away points as well!\n\n\n\nFinal Term Project: 40%\nThis course will culminate with a term project. The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, submitting work from another course or work which was completed prior to the course is not permitted.\nThe term project will be completed in small groups (2-3 students) for students enrolled in BEE 4850 and individually for those in BEE 5850. The final deliverable for this project will be a poster summarizing the project and results. Ahead of that, you will submit the following:\n\na proposal for feedback on the scope of your project; and\na mid-semester work plan providing more details on the project design.\n\nRubrics will be provided for the components of the project."
+    "text": "Assessments\n\nApplication Exercises: 10%\nMost weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming or visual assessment of data or a figure. Application exercises will be provided the previous Friday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. Application exercise solutions should be submitted as a PDF on Gradescope. The lowest two of these will be dropped. Application exercises which involve programming will be distributed using GitHub Classroom.\n\n\nLabs: 20%\nApproximately 7 class periods will be dedicated to working on labs. These labs are intended to give you hands-on experience with new tools and/or methods, and will focus more on completing tasks and interpreting output than conceptual questions. Students should bring their laptops to class on these days; please prepare in advance by downloading the notebook and setting up the environment by running the first few cells.\nLab notebook solutions will be due by 9:00pm roughly one week after the in-class session. These should be submitted to Gradescope as a PDF. The lowest lab grade will be dropped.\n\n\nHomework Assignments: 40%\nApproximately 6 homework assignments will be assigned throughout the semester (roughly one per course module). You will typically have 2 weeks to work on each assignment, though this depends on the module length. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity.\nSome notes on assignment and grading logistics:\n\nHomework assignments will be distributed using GitHub Classroom. Students should make sure they update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can’t submit your assignment on time.\nHomeworks are due by 9:00pm Eastern Time on the designed due date. Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions).\nRubrics will be provided for the homeworks as part of the assignments.\nStudents in 5850 will be asked to complete additional homework problems which go more deeply into the\nYour lowest homework grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time.\nRegrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways: the TA can take away points as well!\n\n\n\nFinal Term Project: 30%\nThis course will culminate with a term project. The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, submitting work from another course or work which was completed prior to the course is not permitted.\nThe term project will be completed in small groups (2-3 students) for students enrolled in BEE 4850 and individually for those in BEE 5850. The final deliverable for this project will be a poster summarizing the project and results. Ahead of that, you will submit the following:\n\na proposal for feedback on the scope of your project; and\na mid-semester work plan providing more details on the project design.\n\nRubrics will be provided for the components of the project."
   },
   {
     "objectID": "index.html",
@@ -313,5 +334,26 @@
     "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
     "section": "Software Tools",
     "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it."
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester."
+  },
+  {
+    "objectID": "labs.html#general-information",
+    "href": "labs.html#general-information",
+    "title": "Labs",
+    "section": "General Information",
+    "text": "General Information\n\nYou can download each lab notebook through the link below..\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF."
+  },
+  {
+    "objectID": "labs.html#schedule",
+    "href": "labs.html#schedule",
+    "title": "Labs",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nLab\nInstructions\nRubric\nDue Date\n\n\n\n\nLab 1\n\n\nFeb 02, 2024"
   }
 ]
