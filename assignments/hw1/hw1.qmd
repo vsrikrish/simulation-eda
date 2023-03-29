@@ -3,7 +3,7 @@ title: "Homework 1"
 format:
     html: default
     pdf: default
-    ipynb: default
+    ipynb:
         warning: true
         error: true
 ---
