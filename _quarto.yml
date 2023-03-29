@@ -50,6 +50,10 @@ website:
             text: Syllabus
           - href: schedule.qmd
             text: Class Schedule
+      - section: assignments.qmd
+        contents:
+          - href: hw1.qmd
+            text: Homework 1
       - section: "Julia Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
