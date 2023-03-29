@@ -52,7 +52,7 @@ website:
             text: Class Schedule
       - section: assignments.qmd
         contents:
-          - href: hw1.qmd
+          - href: assignments/hw1/hw1.qmd
             text: Homework 1
       - section: "Julia Tutorials"
         contents:
