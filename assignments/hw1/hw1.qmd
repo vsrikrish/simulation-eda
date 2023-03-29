@@ -1,8 +1,12 @@
 ---
 title: "Homework 1"
 format:
-    html: default
-    pdf: default
+    html:        
+        warning: true
+        error: true
+    pdf:
+        warning: true
+        error: true
     ipynb:
         warning: true
         error: true
