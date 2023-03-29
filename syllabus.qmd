@@ -16,6 +16,11 @@ format:
       - _assets/filters/columns-to-tables.lua
     title: "{{< var course.number >}} ({{< var course.title >}}) Syllabus"
     subtitle: "{{< var course.semester >}}"
+  docx:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+
 ---
 
 ## Course Overview
@@ -27,7 +32,7 @@ This is a 3 credit course offered as an elective, which counts towards the Envir
 ::: {.column width="30%"}
 ### Instructor
 
-- {{< fa sharp user title="Name" >}} [[{{< var instructor.name_no_title >}}]({{< var instructor.url >>}})]{.ms-1}
+- {{< fa sharp user title="Name" >}} [[{{< var instructor.name_no_title >}}]({{< var instructor.url >}})]{.ms-1}
 - {{< fa sharp envelope title="Email" >}} [[{{< var instructor.email >}}](mailto:{{< var instructor.email >}})]{.ms-1}
 - {{< fa sharp building title="Office" >}} [{{< var instructor.office >}}]{.ms-2}
 :::
@@ -259,12 +264,12 @@ The term project will be completed in small groups (2-3 students) for students e
 Rubrics will be provided for the components of the project.
 
 
-::: {.content-visible when-format="pdf"}
+::: {.content-visible unless-format="html"}
 ## Tentative Schedule
 
 ```{julia}
 #| echo: false
-#| output: asis
+#| output: false
 
 using Dates
 using DataFrames
@@ -361,6 +366,16 @@ end
 
 class_nums = coalesce.(class_nums, "")
 
+
+```
+:::
+
+::: {.content-visible when-format="pdf"}
+
+```{julia}
+#| echo: false
+#| output: asis
+
 # highlight holidays
 hl_smallfont = LatexHighlighter((data,i,j)->true, ["small"])
 hl_hol = LatexHighlighter((data, i, j) -> data[i, :Date] ∈ holidays[:, :Date], ["emph", "small"])
@@ -371,6 +386,22 @@ pretty_table(cschedule, highlighters=(hl_header, hl_hol, hl_smallfont),
   nosubheader=true, backend=Val(:latex), tf=tf_latex_modern, formatters=ft_nomissing,
   row_names=class_nums, row_name_alignment=:r, row_name_column_title = "\\#", wrap_table=true, wrap_table_environment="center", table_type=:longtable,
   alignment = [:c, :c, :l])
-
 ```
 :::
+
+::: {.content-visible when-format="docx"}
+
+```{julia}
+#| echo: false
+#| output: asis
+
+using Latexify
+
+bold_headers(x) = x in headers.Topic ? "***$x***" : x  
+cschedule = bold_headers.(cschedule)
+italicize_holidays(x) = x in unique(holidays.Holiday) ? "*$x*" : x
+cschedule = italicize_holidays.(cschedule)
+print(latexify(cschedule; env=:mdtable, latex=:false, adjustment=:l))
+```
+:::
+
