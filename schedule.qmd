@@ -1,14 +1,20 @@
 ---
-title: "BEE 4850: Environmental Data Analysis and Simulation"
-tbl-colwidths: [5, 10, 25, 5, 5, 5, 5, 5]
+title: "Class Schedule"
+tbl-colwidths: [5, 10, 25, 5, 5, 5, 5]
 ---
 
 This page contains a schedule of the topics, content, and assignments for the semester.
 Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.
 
 ::: column-screen-inset-right
-| Week | Date        | Topic | Slides | AE | Lab | HW | Project |
+
+### I: Class Introduction
+
+| Lecture | Date        | Topic | Slides | AE | HW | Project |
 :-----:|:------------|:------|:------:|:--:|:---:|:--:|:-------:|
-| 1    | Mon, Jan 22 | Welcome to the class! | [{{< fa sharp presentation-screen >}}](slides/lec-01-class-intro.html){target="_blank"}  | [{{< fa sharp coffee-pot >}}](ae/ae-01-setup.html) |  | [{{< fa sharp pen-field >}}](hw/hw-01-debug.html) | |
-| | Wed, Jan 24 | Julia Basics and Setup | | | [{{< fa sharp laptop >}}](labs/lab-01-basics.html) | | |
+|  1   | Mon, Jan 22 | Welcome to the Class! | [{{< fa sharp presentation-screen >}}](slides/lec-01-class-intro.html){target="_blank"}  | [{{< fa sharp coffee-pot >}}](ae/ae-01-setup.html) |  [{{< fa sharp pen-field >}}](hw/hw-01-debug.html) | |
+| 2 | Wed, Jan 24 | Julia Basics and GitHub | | | | |
+| 3 | Fri, Jan 26 | Work on Homework 1 | | | | |
+| 4 | Mon, Jan 29 | Exploratory Analysis and Data-Generating Processes | | | | |
+| 5 | Wed, Jan 31 | Simulation-based Data Analysis | | | |
 :::
