@@ -1,10 +1,31 @@
 [
   {
+    "objectID": "assignments/hw1/hw1.html",
+    "href": "assignments/hw1/hw1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Due Date\n\n\n\nFriday, 2/9/24, 9:00pm"
+  },
+  {
+    "objectID": "assignments/hw1/hw1.html#overview",
+    "href": "assignments/hw1/hw1.html#overview",
+    "title": "Homework 1",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\n\nProblems 1-4 consist of a series of code snippets for you to interpret and debug. For Problems 1-3, you will be asked to identify relevant error(s) and fix the code. For Problem 4, the code works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 5 asks you to rewrite a “script” into a function, which you will then use to conduct an experiment.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n  Activating project at `~/work/simulation-data-analysis/simulation-data-analysis/assignments/hw1`"
+  },
+  {
+    "objectID": "assignments/hw1/hw1.html#problems-total-100-points",
+    "href": "assignments/hw1/hw1.html#problems-total-100-points",
+    "title": "Homework 1",
+    "section": "Problems (Total: 100 Points)",
+    "text": "Problems (Total: 100 Points)\n\nProblem 1 (20 points)\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\nProblem 1.1 (10 points)\nDescribe the logic error.\n\n\nProblem 1.2 (5 points)\nWrite a fixed version of the function.\n\n\nProblem 1.3 (5 points)\nUse your fixed function to find the minimum value of array_values.\n\n\n\nProblem 2 (20 points)\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\nLoadError: UndefVarError: average_grade not defined\n\n\n\nProblem 2.1 (10 points)\nDescribe the logic and/or syntax error.\n\n\nProblem 2.2 (5 points)\nWrite a fixed version of the code.\n\n\nProblem 2.3 (5 points)\nUse your fixed code to compute the average grade for the class.\n\n\n\nProblem 3 (20 points)\nYour team has collected data on the mileage of different car models. You want to calculate the average mileage per gallon (MPG) for the different cars, but your code produces the same value for all of the vehicles, which makes you suspicious.\n\nfunction calculate_MPG((miles, gallons))\n    return miles / gallons\nend\n\ncar_miles =  [(334, 11), (289, 15), (306, 12), (303, 20), (350, 20), (294, 14)]\n\nmpg = zeros(length(car_miles))\n\nfor i in 1:length(car_miles)\n    miles = car_miles[1][1]\n    gallon = car_miles[1][2]\n    mpg[i] = calculate_MPG((miles, gallon))\nend\n@show mpg;\n\nmpg = [30.363636363636363, 30.363636363636363, 30.363636363636363, 30.363636363636363, 30.363636363636363, 30.363636363636363]\n\n\n\nProblem 3.1 (10 points)\nDescribe the logic error.\n\n\nProblem 3.2 (5 points)\nWrite a fixed version of the code.\n\n\nProblem 3.3 (5 points)\nUse your fixed code to compute the MPGs.\n\n\n\nProblem 4 (20 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\n\nProblem 4.1 (10 points)\nExplain the purpose of mystery_function.\n\n\nProblem 4.2 (10 points)\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand."
+  },
+  {
     "objectID": "schedule.html",
     "href": "schedule.html",
-    "title": "BEE 4850: Environmental Data Analysis and Simulation",
+    "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nAE\nLab\nHW\nProject\n\n\n\n\n1\nMon, Jan 22\nWelcome to the class!\n\n\n\n\n\n\n\n\nWed, Jan 24\nJulia Basics and Setup"
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\nI: Class Introduction\n\n\n\n\n\n\n\n\n\n\n\n\n\nLecture\nDate\nTopic\nSlides\nAE\nHW\nProject\n\n\n\n\n\n1\nMon, Jan 22\nWelcome to the Class!\n\n\n\n\n\n\n\n2\nWed, Jan 24\nJulia Basics and GitHub\n\n\n\n\n\n\n\n3\nFri, Jan 26\nWork on Homework 1\n\n\n\n\n\n\n\n4\nMon, Jan 29\nExploratory Analysis and Data-Generating Processes\n\n\n\n\n\n\n\n5\nWed, Jan 31\nSimulation-based Data Analysis"
   },
   {
     "objectID": "about.html",
@@ -187,6 +208,27 @@
     "title": "Tutorial: Julia Basics",
     "section": "Package management",
     "text": "Package management\nSometimes you might need functionality that does not exist in base Julia. Julia handles packages using the Pkg package manager. After finding a package which has the functions that you need, you have two options: 1. Use the package management prompt in the Julia REPL (the standard Julia interface; what you get when you type julia in your terminal). Enter this by typing ] at the standard green Julia prompt julia&gt;. This will become a blue pkg&gt;. You can then download and install new packages using add packagename. 2. From the standard prompt, enter using Pkg; Pkg.add(packagename). The packagename package can then be used by adding using packagename to the start of the script."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester."
+  },
+  {
+    "objectID": "assignments.html#general-information",
+    "href": "assignments.html#general-information",
+    "title": "Assignments",
+    "section": "General Information",
+    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF."
+  },
+  {
+    "objectID": "assignments.html#schedule",
+    "href": "assignments.html#schedule",
+    "title": "Assignments",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nRubric\nDue Date\n\n\n\n\nHW1\n\n\nFeb 09, 2024"
   },
   {
     "objectID": "syllabus.html",
