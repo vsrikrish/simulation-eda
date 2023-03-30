@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "assignments/hw01/hw01.html",
-    "href": "assignments/hw01/hw01.html",
-    "title": "Homework 1",
-    "section": "",
-    "text": "Due Date\n\n\n\nFriday, 2/9/24, 9:00pm"
-  },
-  {
-    "objectID": "assignments/hw01/hw01.html#overview",
-    "href": "assignments/hw01/hw01.html#overview",
-    "title": "Homework 1",
-    "section": "Overview",
-    "text": "Overview\n\nInstructions\n\nProblems 1-4 consist of a series of code snippets for you to interpret and debug. For Problems 1-3, you will be asked to identify relevant error(s) and fix the code. For Problem 4, the code works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 5 asks you to rewrite a “script” into a function, which you will then use to conduct an experiment.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n  Activating project at `~/work/simulation-data-analysis/simulation-data-analysis/assignments/hw01`"
-  },
-  {
-    "objectID": "assignments/hw01/hw01.html#problems-total-100-points",
-    "href": "assignments/hw01/hw01.html#problems-total-100-points",
-    "title": "Homework 1",
-    "section": "Problems (Total: 100 Points)",
-    "text": "Problems (Total: 100 Points)\n\nProblem 1 (20 points)\nYou’ve been tasked with writing code to identify the minimum value in an array. You cannot use a predefined function. Your colleague suggested the function below, but it does not return the minimum value.\n\nfunction minimum(array)\n    min_value = 0\n    for i in 1:length(array)\n        if array[i] &lt; min_value\n            min_value = array[i]\n        end\n    end\n    return min_value\nend\n\narray_values = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\n@show minimum(array_values);\n\nminimum(array_values) = 0\n\n\n\nProblem 1.1 (10 points)\nDescribe the logic error.\n\n\nProblem 1.2 (5 points)\nWrite a fixed version of the function.\n\n\nProblem 1.3 (5 points)\nUse your fixed function to find the minimum value of array_values.\n\n\n\nProblem 2 (20 points)\nYour team is trying to compute the average grade for your class, but the following code produces an error.\n\nstudent_grades = [89, 90, 95, 100, 100, 78, 99, 98, 100, 95]\nfunction class_average(grades)\n  average_grade = mean(student_grades)\n  return average_grade\nend\n\n@show average_grade;\n\nLoadError: UndefVarError: average_grade not defined\n\n\n\nProblem 2.1 (10 points)\nDescribe the logic and/or syntax error.\n\n\nProblem 2.2 (5 points)\nWrite a fixed version of the code.\n\n\nProblem 2.3 (5 points)\nUse your fixed code to compute the average grade for the class.\n\n\n\nProblem 3 (20 points)\nYour team has collected data on the mileage of different car models. You want to calculate the average mileage per gallon (MPG) for the different cars, but your code produces the same value for all of the vehicles, which makes you suspicious.\n\nfunction calculate_MPG((miles, gallons))\n    return miles / gallons\nend\n\ncar_miles =  [(334, 11), (289, 15), (306, 12), (303, 20), (350, 20), (294, 14)]\n\nmpg = zeros(length(car_miles))\n\nfor i in 1:length(car_miles)\n    miles = car_miles[1][1]\n    gallon = car_miles[1][2]\n    mpg[i] = calculate_MPG((miles, gallon))\nend\n@show mpg;\n\nmpg = [30.363636363636363, 30.363636363636363, 30.363636363636363, 30.363636363636363, 30.363636363636363, 30.363636363636363]\n\n\n\nProblem 3.1 (10 points)\nDescribe the logic error.\n\n\nProblem 3.2 (5 points)\nWrite a fixed version of the code.\n\n\nProblem 3.3 (5 points)\nUse your fixed code to compute the MPGs.\n\n\n\nProblem 4 (20 points)\nYou’ve been handed some code to analyze. The original coder was not very considerate of other potential users: the function is called mystery_function and there are no comments explaining the purpose of the code. It appears to take in an array and return some numbers, and you’ve been assured that the code works as intended.\n\nfunction mystery_function(values)\n    y = []\n    for v in values\n        if !(v in y)\n            append!(y, v)\n        end\n    end\n    return y\nend\n\nlist_of_values = [1, 2, 3, 4, 3, 4, 2, 1]\n@show mystery_function(list_of_values);\n\nmystery_function(list_of_values) = Any[1, 2, 3, 4]\n\n\n\nProblem 4.1 (10 points)\nExplain the purpose of mystery_function.\n\n\nProblem 4.2 (10 points)\nAdd comments to the code, explaining why and how it works. Refer to “Best Practices for Writing Code Comments”, and remember that bad comments can be just as bad as no comments at all. You do not need to add comments to every line (in fact, this is very bad practice), but you should note the purpose of every “section” of code, and add comments explaining any code sequences that you don’t immediately understand."
-  },
-  {
     "objectID": "schedule.html",
     "href": "schedule.html",
     "title": "Class Schedule",
