@@ -270,7 +270,7 @@
     "href": "syllabus.html#learning-objectives",
     "title": "Syllabus",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\nAt the end of this class, students will:\n\nAnalyze environmental datasets using simulations from calibrated models;\nInterpret and communicate properties of datasets and models using graphical summaries;\nAssess model fit and performance by analyzing residual structures and predictive performance;\nSolve statistical and numerical modeling, calibration, and visualization problems using modern programming languages."
+    "text": "Learning Objectives\nAt the end of this class, students will:\n\nAnalyze environmental datasets using simulations from calibrated models;\nInterpret and communicate properties of datasets and models using graphical summaries;\nAssess model fit and performance by analyzing predictive performance;\nSolve statistical and numerical modeling, calibration, and visualization problems using modern programming languages."
   },
   {
     "objectID": "syllabus.html#prerequisites-preparation",
@@ -284,7 +284,7 @@
     "href": "syllabus.html#typical-topics",
     "title": "Syllabus",
     "section": "Typical Topics",
-    "text": "Typical Topics\n\nIntroduction to exploratory data analysis;\nReview of probability and statistics;\nBayesian decision theory;\nPrinciples of data visualization;\nModel residuals and discrepancies;\nCensored, truncated, and missing data;\nMonte Carlo and bootstrap methods for calibration (including Markov chain Monte Carlo);\nPredictive model assessment (including cross-validation);\nEmulation with surrogate models"
+    "text": "Typical Topics\n\nIntroduction to exploratory data analysis;\nReview of probability and statistics;\nBayesian decision theory;\nPrinciples of data visualization;\nModel residuals and discrepancies;\nCensored, truncated, and missing data;\nStatistical methods for calibration;\nPredictive model assessment;\nEmulation with surrogate models"
   },
   {
     "objectID": "syllabus.html#course-philosophy-and-expectations",
