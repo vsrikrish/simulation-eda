@@ -11,6 +11,7 @@ format:
         warning: true
         error: true
 jupyter: julia-1.8
+format-links: [pdf]
 ---
 
 ::: {.content-visible when-format="ipynb"}
@@ -23,6 +24,18 @@ jupyter: julia-1.8
 ### Due Date
 
 Friday, 2/9/24, 9:00pm
+:::
+
+::: {.content-visible when-format="html"}
+
+:::{.callout-caution}
+
+If you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.
+
+Otherwise, you can [find the Github repository here]({{< var github_org.repo >}}/hw01).
+
+:::
+
 :::
 
 ## Overview

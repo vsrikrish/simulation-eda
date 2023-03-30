@@ -29,3 +29,6 @@ university:
 department:
   name: Department of Biological & Environmental Engineering
   url: "https://bee.cals.cornell.edu"
+
+github_org:
+  repo: "https://github.com/BEE4850"

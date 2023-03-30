@@ -1,16 +1,11 @@
 ---
-title: "Homework 1"
+title: "Lab 1"
 format:
-    html:        
-        warning: true
-        error: true
-    pdf:
-        warning: true
-        error: true
-    ipynb:
-        warning: true
-        error: true
+    html: default   
+    pdf: default
+    ipynb: default
 jupyter: julia-1.8
+format-links: [pdf]
 ---
 
 ::: {.content-visible when-format="ipynb"}
@@ -25,3 +20,12 @@ jupyter: julia-1.8
 Friday, 2/2/24, 9:00pm
 :::
 
+::: {.content-visible when-format="html"}
+
+:::{.callout-caution}
+
+If you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.
+
+Otherwise, you can [find the Github repository here]({{< var github_org.repo >}}/lab01).
+
+:::
