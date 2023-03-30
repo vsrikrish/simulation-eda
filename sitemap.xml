@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://viveks.me/simulation-data-analysis/assignments/hw01/hw01.html</loc>
+    <lastmod>2023-03-30T12:20:23.098Z</lastmod>
+  </url>
+  <url>
     <loc>https://viveks.me/simulation-data-analysis/schedule.html</loc>
-    <lastmod>2023-03-30T12:12:34.766Z</lastmod>
+    <lastmod>2023-03-30T12:20:25.366Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/project.html</loc>
-    <lastmod>2023-03-30T12:12:36.098Z</lastmod>
+    <lastmod>2023-03-30T12:20:25.838Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/about.html</loc>
-    <lastmod>2023-03-30T12:12:36.626Z</lastmod>
+    <lastmod>2023-03-30T12:20:26.306Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/labs/lab01/lab01.html</loc>
-    <lastmod>2023-03-30T12:13:24.074Z</lastmod>
+    <lastmod>2023-03-30T12:21:09.223Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/tutorials/turing-mcmc.html</loc>
-    <lastmod>2023-03-30T12:13:27.274Z</lastmod>
+    <lastmod>2023-03-30T12:21:12.487Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/tutorials/julia-plots.html</loc>
-    <lastmod>2023-03-30T12:13:28.482Z</lastmod>
+    <lastmod>2023-03-30T12:21:13.707Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/tutorials/julia-basics.html</loc>
-    <lastmod>2023-03-30T12:13:30.702Z</lastmod>
+    <lastmod>2023-03-30T12:21:15.935Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/assignments.html</loc>
-    <lastmod>2023-03-30T12:13:31.222Z</lastmod>
+    <lastmod>2023-03-30T12:21:16.467Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/syllabus.html</loc>
-    <lastmod>2023-03-30T12:14:42.690Z</lastmod>
+    <lastmod>2023-03-30T12:22:22.836Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/index.html</loc>
-    <lastmod>2023-03-30T12:14:43.250Z</lastmod>
+    <lastmod>2023-03-30T12:22:23.344Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/labs.html</loc>
-    <lastmod>2023-03-30T12:14:43.766Z</lastmod>
+    <lastmod>2023-03-30T12:22:23.804Z</lastmod>
   </url>
 </urlset>
