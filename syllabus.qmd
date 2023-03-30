@@ -248,7 +248,7 @@ Some notes on assignment and grading logistics:
   * Homework assignments will be distributed using GitHub Classroom. Students should make sure they update their GitHub repositories as they work on the assignments; this helps with answering questions and gives you a backstop in case something goes wrong and you can't submit your assignment on time.
   * Homeworks are due by 9:00pm Eastern Time on the designed due date. Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions). 
   * Rubrics will be provided for the homeworks as part of the assignments.
-  * Students in 5850 will be asked to complete additional homework problems which go more deeply into the 
+  * Students in 5850 will be asked to complete additional homework problems which go more deeply into the underlying concepts or apply more advanced techniques.
   * Your lowest homework grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time. 
   * Regrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways: the TA can take away points as well!
 
