@@ -236,7 +236,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/lab01/lab01.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/lab01/lab01.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
@@ -424,15 +424,15 @@ b \sim \text{Normal(0, 10)} \\
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-annotation="1" data-code-lines="3">Standard deviations must be positive, so we use a normal distribution truncated at zero.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-3" data-code-annotation="1">Standard deviations must be positive, so we use a normal distribution truncated at zero.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-annotation="2" data-code-lines="4,5">We’ll keep these both relative uninformative to reflect a more “realistic” modeling scenario.</span>
+<span data-code-lines="4,5" data-code-cell="annotated-cell-3" data-code-annotation="2">We’ll keep these both relative uninformative to reflect a more “realistic” modeling scenario.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-annotation="3" data-code-lines="8">In this case, we specify the likelihood with a loop. We could also rewrite this as a joint likelihood over all of the data using linear algebra, which might be more efficient for large and/or complex models or datasets, but the loop is more readable in this simple case.</span>
+<span data-code-lines="8" data-code-cell="annotated-cell-3" data-code-annotation="3">In this case, we specify the likelihood with a loop. We could also rewrite this as a joint likelihood over all of the data using linear algebra, which might be more efficient for large and/or complex models or datasets, but the loop is more readable in this simple case.</span>
 </dd>
 </dl>
 </div>
@@ -457,23 +457,23 @@ Hoffman, M. D., &amp; Gelman, A. (2014). The <span>No-U-Turn</span> sampler: Ada
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="1" data-code-lines="2">Initialize the model with the data.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-4" data-code-annotation="1">Initialize the model with the data.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="2" data-code-lines="3">We use multiple chains to help diagnose convergence.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-4" data-code-annotation="2">We use multiple chains to help diagnose convergence.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="3" data-code-lines="4">This sets the number of iterations for each chain.</span>
+<span data-code-lines="4" data-code-cell="annotated-cell-4" data-code-annotation="3">This sets the number of iterations for each chain.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="4" data-code-lines="5">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler. The <code>MCMCThreads()</code> call tells the sampler to use available processor threads for the multiple chains, but it will just sample them in serial if only one thread exists.</span>
+<span data-code-lines="5" data-code-cell="annotated-cell-4" data-code-annotation="4">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler. The <code>MCMCThreads()</code> call tells the sampler to use available processor threads for the multiple chains, but it will just sample them in serial if only one thread exists.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="5" data-code-lines="6">The <code>@show</code> macro makes the display of the output a bit cleaner.</span>
+<span data-code-lines="6" data-code-cell="annotated-cell-4" data-code-annotation="5">The <code>@show</code> macro makes the display of the output a bit cleaner.</span>
 </dd>
 </dl>
 </div>
@@ -553,7 +553,7 @@ Quantiles
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="1" data-code-lines="2">This is where we use the <code>Optim.jl</code> package in this tutorial.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-6" data-code-annotation="1">This is where we use the <code>Optim.jl</code> package in this tutorial.</span>
 </dd>
 </dl>
 </div>
@@ -591,7 +591,7 @@ b  │ 1.77736</code></pre>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="1" data-code-lines="3,4,5">The <code>Array(group())</code> syntax is more general than we need, but is useful if we have multiple variables which were sampled as a group, for example multiple regression coefficients. Otherwise, we can just use <em>e.g.</em> <code>Array(chain, :a)</code>.</span>
+<span data-code-lines="3,4,5" data-code-cell="annotated-cell-7" data-code-annotation="1">The <code>Array(group())</code> syntax is more general than we need, but is useful if we have multiple variables which were sampled as a group, for example multiple regression coefficients. Otherwise, we can just use <em>e.g.</em> <code>Array(chain, :a)</code>.</span>
 </dd>
 </dl>
 </div>
@@ -645,15 +645,15 @@ b  │ 1.77736</code></pre>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-annotation="1" data-code-lines="2">Plot the 95% posterior prediction interval as a shaded blue ribbon.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-10" data-code-annotation="1">Plot the 95% posterior prediction interval as a shaded blue ribbon.</span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-annotation="2" data-code-lines="3">Plot the posterior prediction median as a blue line.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-10" data-code-annotation="2">Plot the posterior prediction median as a blue line.</span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-annotation="3" data-code-lines="4">Plot the data as discrete red points.</span>
+<span data-code-lines="4" data-code-cell="annotated-cell-10" data-code-annotation="3">Plot the data as discrete red points.</span>
 </dd>
 </dl>
 </div>
@@ -731,31 +731,31 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="1" data-code-lines="3">This uses the <code>DataFramesMeta.jl</code> package, which makes it easy to string together commands to load and process data</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-12" data-code-annotation="1">This uses the <code>DataFramesMeta.jl</code> package, which makes it easy to string together commands to load and process data</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="2" data-code-lines="4">Load the file, assuming there is no header.</span>
+<span data-code-lines="4" data-code-cell="annotated-cell-12" data-code-annotation="2">Load the file, assuming there is no header.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="3" data-code-lines="5">Convert to a <code>DataFrame</code>.</span>
+<span data-code-lines="5" data-code-cell="annotated-cell-12" data-code-annotation="3">Convert to a <code>DataFrame</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="4" data-code-lines="6,7,8,9,10">Rename columns for ease of access.</span>
+<span data-code-lines="6,7,8,9,10" data-code-cell="annotated-cell-12" data-code-annotation="4">Rename columns for ease of access.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="5" data-code-lines="12">Reformat the decimal datetime provided in the file into a Julia <code>DateTime</code>.</span>
+<span data-code-lines="12" data-code-cell="annotated-cell-12" data-code-annotation="5">Reformat the decimal datetime provided in the file into a Julia <code>DateTime</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="6" data-code-lines="14">Replace missing data with <code>missing</code>.</span>
+<span data-code-lines="14" data-code-cell="annotated-cell-12" data-code-annotation="6">Replace missing data with <code>missing</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-annotation="7" data-code-lines="15">Select only the <code>:datetime</code> and <code>:gauge</code> columns.</span>
+<span data-code-lines="15" data-code-cell="annotated-cell-12" data-code-annotation="7">Select only the <code>:datetime</code> and <code>:gauge</code> columns.</span>
 </dd>
 </dl>
 </div>
@@ -828,7 +828,7 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-14" data-code-annotation="1" data-code-lines="1">This uses the <code>DataFrame</code> plotting recipe with the <code>@df</code> macro from <code>StatsPlots.jl</code>. This is not needed (you could replace <em>e.g.</em> <code>:datetime</code> with <code>dat.datetime</code>), but it cleans things up slightly.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-14" data-code-annotation="1">This uses the <code>DataFrame</code> plotting recipe with the <code>@df</code> macro from <code>StatsPlots.jl</code>. This is not needed (you could replace <em>e.g.</em> <code>:datetime</code> with <code>dat.datetime</code>), but it cleans things up slightly.</span>
 </dd>
 </dl>
 </div>
@@ -880,15 +880,15 @@ Arns, A., Wahl, T., Haigh, I. D., Jensen, J., &amp; Pattiaratchi, C. (2013). Est
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-16" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-16" data-code-annotation="1" data-code-lines="2">If we don’t drop the values which are missing, they will affect the next call to <code>argmax</code>.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-16" data-code-annotation="1">If we don’t drop the values which are missing, they will affect the next call to <code>argmax</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-16" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-16" data-code-annotation="2" data-code-lines="3,4">This first groups the data based on the year (with <code>groupby</code> and using <code>Dates.year()</code> to get the year of each data point), then pulls the rows which correspond to the maxima for each year (using <code>argmax</code>).</span>
+<span data-code-lines="3,4" data-code-cell="annotated-cell-16" data-code-annotation="2">This first groups the data based on the year (with <code>groupby</code> and using <code>Dates.year()</code> to get the year of each data point), then pulls the rows which correspond to the maxima for each year (using <code>argmax</code>).</span>
 </dd>
 <dt data-target-cell="annotated-cell-16" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-16" data-code-annotation="3" data-code-lines="5">This will delete the last year, in this case 2023, because the dataset only goes until March 2023 and this data point is almost certainly an outlier due to the limited data from that year.</span>
+<span data-code-lines="5" data-code-cell="annotated-cell-16" data-code-annotation="3">This will delete the last year, in this case 2023, because the dataset only goes until March 2023 and this data point is almost certainly an outlier due to the limited data from that year.</span>
 </dd>
 </dl>
 </div>
@@ -922,35 +922,35 @@ Arns, A., Wahl, T., Haigh, I. D., Jensen, J., &amp; Pattiaratchi, C. (2013). Est
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-17" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-17" data-code-annotation="1" data-code-lines="2">Location parameter prior: We know that this is roughly on the 1000 mm order of magnitude, but want to keep this relatively broad.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-17" data-code-annotation="1">Location parameter prior: We know that this is roughly on the 1000 mm order of magnitude, but want to keep this relatively broad.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-17" data-code-annotation="2" data-code-lines="3">Scale parameter prior: This parameter must be positive, so we use a normal truncated at zero.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-17" data-code-annotation="2">Scale parameter prior: This parameter must be positive, so we use a normal truncated at zero.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-17" data-code-annotation="3" data-code-lines="4">Shape parameter prior: These are usually small and are hard to constrain, so we will use a more informative prior.</span>
+<span data-code-lines="4" data-code-cell="annotated-cell-17" data-code-annotation="3">Shape parameter prior: These are usually small and are hard to constrain, so we will use a more informative prior.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-17" data-code-annotation="4" data-code-lines="6">The data is independently GEV-distributed as we’ve removed the long-term trend and are using long blocks.</span>
+<span data-code-lines="6" data-code-cell="annotated-cell-17" data-code-annotation="4">The data is independently GEV-distributed as we’ve removed the long-term trend and are using long blocks.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-17" data-code-annotation="5" data-code-lines="9">Initialize the model.</span>
+<span data-code-lines="9" data-code-cell="annotated-cell-17" data-code-annotation="5">Initialize the model.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-17" data-code-annotation="6" data-code-lines="10">We use multiple chains to help diagnose convergence.</span>
+<span data-code-lines="10" data-code-cell="annotated-cell-17" data-code-annotation="6">We use multiple chains to help diagnose convergence.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-17" data-code-annotation="7" data-code-lines="11">This sets the number of iterations for each chain.</span>
+<span data-code-lines="11" data-code-cell="annotated-cell-17" data-code-annotation="7">This sets the number of iterations for each chain.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-17" data-code-annotation="8" data-code-lines="12">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler.</span>
+<span data-code-lines="12" data-code-cell="annotated-cell-17" data-code-annotation="8">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler.</span>
 </dd>
 </dl>
 </div>
