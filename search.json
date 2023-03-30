@@ -11,7 +11,7 @@
     "href": "assignments/hw01/hw01.html#overview",
     "title": "Homework 1",
     "section": "Overview",
-    "text": "Overview\n\nInstructions\n\nProblems 1-4 consist of a series of code snippets for you to interpret and debug. For Problems 1-3, you will be asked to identify relevant error(s) and fix the code. For Problem 4, the code works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 5 asks you to rewrite a “script” into a function, which you will then use to conduct an experiment.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n  Activating project at `~/Teaching/simulation-data-analysis/assignments/hw01`"
+    "text": "Overview\n\nInstructions\n\nProblems 1-4 consist of a series of code snippets for you to interpret and debug. For Problems 1-3, you will be asked to identify relevant error(s) and fix the code. For Problem 4, the code works as intended; your goal is to identify the code’s purpose by following its logic.\nProblem 5 asks you to rewrite a “script” into a function, which you will then use to conduct an experiment.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n  Activating project at `~/work/simulation-data-analysis/simulation-data-analysis/assignments/hw01`"
   },
   {
     "objectID": "assignments/hw01/hw01.html#problems-total-100-points",
@@ -75,6 +75,13 @@
     "title": "About This Website",
     "section": "Tools and Generation Workflow",
     "text": "Tools and Generation Workflow\nThis website was built with Quarto, which allows me to integrate Julia code and output with the web content, pdfs, and slides in an amazingly clean fashion, while simplifying the process of generation. All materials can be generated through a simple workflow from the [GitHub Repository]."
+  },
+  {
+    "objectID": "labs/lab01/lab01.html",
+    "href": "labs/lab01/lab01.html",
+    "title": "Lab 1",
+    "section": "",
+    "text": "Due Date\n\n\n\nFriday, 2/2/24, 9:00pm\n\n\n::: {.content-visible when-format=“html”}\n\n\n\n\n\n\nIf you are enrolled in the course, make sure that you use the GitHub Classroom link provided in Ed Discussion, or you may not be able to get help if you run into problems.\nOtherwise, you can find the Github repository here."
   },
   {
     "objectID": "tutorials/turing-mcmc.html",
