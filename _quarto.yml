@@ -59,9 +59,6 @@ website:
         contents:
           - href: labs/lab01/lab01.qmd
             text: Lab 1
-      - section: ae.qmd
-        contents:
-          - href: aes/ae1/ae1.qmd
       - section: "Julia Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
