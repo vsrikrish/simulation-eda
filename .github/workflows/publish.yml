@@ -3,7 +3,7 @@ on:
   push:
     branches: 
       - main
-      - Spring23
+      - Spring24
 
 name: Quarto Publish
 
