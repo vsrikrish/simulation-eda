@@ -1,5 +1,7 @@
 project:
   type: website
+  preview:
+    port: 4200
 
 website:
   page-navigation: true
@@ -26,9 +28,9 @@ website:
   sidebar:
     style: docked
     align: center
-    background: "#222222"
+    border: true
     logo: _assets/logos/cornell_logo_simple_b31b1b.svg
-    title: "{{< var course.number >}}: {{< course.title >}}"
+    title: "{{< var course.number >}}"
     search: true
     tools: 
       - icon: github
@@ -72,9 +74,10 @@ website:
             text: MCMC with Turing
 format:
   html:
+    grid:
+      gutter-width: 1em
     theme: 
-      light: [cosmo, sass/theme.scss]
-      dark: [cosmo, sass/theme-dark.scss]
+      [zephyr, sass/theme.scss]
     mainfont: "Atkinson Hyperlegible"
     copy-code: true
     code-overflow: wrap
