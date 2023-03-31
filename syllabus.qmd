@@ -43,7 +43,7 @@ This is a 3 credit course offered as an elective, which counts towards the Envir
 - {{< fa sharp user title="Name" >}} [TBD]{.ms-1}
 - {{< fa sharp envelope title="Email" >}} [TBD]{.ms-1}
 - {{< fa sharp building title="Office" >}} [TBD]{.ms-2}
-:::
+::::
 
 ::: {.column width="30%"}
 ### Meetings
