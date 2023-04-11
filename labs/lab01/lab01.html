@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.302">
+<meta name="generator" content="quarto-1.3.319">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4850 - Spring 2024 - Lab 1: Getting Started with Julia</title>
+<title>BEE 4850 - Spring 2024 - Lab 1: Getting Started With Simulation in Julia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="BEE 4850 - Spring 2024 - Lab 1: Getting Started with Julia">
+<meta property="og:title" content="BEE 4850 - Spring 2024 - Lab 1: Getting Started With Simulation in Julia">
 <meta property="og:site-name" content="BEE 4850 - Spring 2024">
 </head>
 
@@ -277,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 1: Getting Started with Julia</h1>
+<h1 class="title">Lab 1: Getting Started With Simulation in Julia</h1>
 </div>
 
 
@@ -346,238 +346,25 @@ Due Date
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">status</span>() <span class="co"># print the packages available in the environment.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>  Activating project at `~/work/simulation-data-analysis/simulation-data-analysis/labs/lab01`
-   Installed JpegTurbo_jll ──────────────── v2.1.91+0
-   Installed libfdk_aac_jll ─────────────── v2.0.2+0
-   Installed x265_jll ───────────────────── v3.5.0+0
-   Installed Libmount_jll ───────────────── v2.35.0+0
-   Installed GR_jll ─────────────────────── v0.71.8+0
-   Installed LERC_jll ───────────────────── v3.0.0+1
-   Installed Opus_jll ───────────────────── v1.3.2+0
-   Installed LoggingExtras ──────────────── v1.0.0
-   Installed Xorg_xkbcomp_jll ───────────── v1.4.2+4
-   Installed Measures ───────────────────── v0.3.2
-   Installed RelocatableFolders ─────────── v1.0.0
-   Installed Grisu ──────────────────────── v1.0.2
-   Installed Xorg_xcb_util_wm_jll ───────── v0.4.1+1
-   Installed Xorg_xcb_util_image_jll ────── v0.4.0+1
-   Installed PlotUtils ──────────────────── v1.3.4
-   Installed Contour ────────────────────── v0.6.2
-   Installed OpenSSL ────────────────────── v1.3.3
-   Installed Cairo_jll ──────────────────── v1.16.1+1
-   Installed Xorg_libpthread_stubs_jll ──── v0.1.0+3
-   Installed Xorg_xcb_util_jll ──────────── v0.4.0+1
-   Installed HTTP ───────────────────────── v1.7.4
-   Installed Fontconfig_jll ─────────────── v2.13.93+0
-   Installed RecipesPipeline ────────────── v0.6.11
-   Installed Xorg_libXinerama_jll ───────── v1.1.4+4
-   Installed Xorg_libxkbfile_jll ────────── v1.1.0+4
-   Installed Libgpg_error_jll ───────────── v1.42.0+0
-   Installed Xorg_libXau_jll ────────────── v1.0.9+4
-   Installed ColorSchemes ───────────────── v3.20.0
-   Installed FFMPEG ─────────────────────── v0.4.1
-   Installed Qt5Base_jll ────────────────── v5.15.3+2
-   Installed xkbcommon_jll ──────────────── v1.4.1+0
-   Installed Showoff ────────────────────── v1.0.3
-   Installed Xorg_xcb_util_keysyms_jll ──── v0.4.0+1
-   Installed Bzip2_jll ──────────────────── v1.0.8+0
-   Installed SpecialFunctions ───────────── v2.2.0
-   Installed IrrationalConstants ────────── v0.2.2
-   Installed Pipe ───────────────────────── v1.3.0
-   Installed HarfBuzz_jll ───────────────── v2.8.1+1
-   Installed NaNMath ────────────────────── v1.0.2
-   Installed LZO_jll ────────────────────── v2.10.1+0
-   Installed PlotThemes ─────────────────── v3.1.0
-   Installed TranscodingStreams ─────────── v0.9.11
-   Installed FriBidi_jll ────────────────── v1.0.10+0
-   Installed fzf_jll ────────────────────── v0.29.0+0
-   Installed x264_jll ───────────────────── v2021.5.5+0
-   Installed GLFW_jll ───────────────────── v3.3.8+0
-   Installed UnicodeFun ─────────────────── v0.4.1
-   Installed Colors ─────────────────────── v0.12.10
-   Installed FreeType2_jll ──────────────── v2.10.4+0
-   Installed JLFzf ──────────────────────── v0.1.5
-   Installed CodecZlib ──────────────────── v0.7.1
-   Installed StatsAPI ───────────────────── v1.6.0
-   Installed StatsBase ──────────────────── v0.33.21
-   Installed GR ─────────────────────────── v0.71.8
-   Installed Xorg_libxcb_jll ────────────── v1.13.0+3
-   Installed libpng_jll ─────────────────── v1.6.38+0
-   Installed libaom_jll ─────────────────── v3.4.0+0
-   Installed Scratch ────────────────────── v1.2.0
-   Installed Xorg_libXext_jll ───────────── v1.3.4+4
-   Installed ColorTypes ─────────────────── v0.11.4
-   Installed Zstd_jll ───────────────────── v1.5.4+0
-   Installed Expat_jll ──────────────────── v2.4.8+0
-   Installed TensorCore ─────────────────── v0.1.1
-   Installed Libtiff_jll ────────────────── v4.4.0+0
-   Installed Plots ──────────────────────── v1.38.8
-   Installed ColorVectorSpace ───────────── v0.9.10
-   Installed Libffi_jll ─────────────────── v3.2.2+1
-   Installed Xorg_libXrender_jll ────────── v0.9.10+4
-   Installed Ogg_jll ────────────────────── v1.3.5+1
-   Installed Xorg_libXi_jll ─────────────── v1.7.10+4
-   Installed OrderedCollections ─────────── v1.6.0
-   Installed XSLT_jll ───────────────────── v1.1.34+0
-   Installed ChainRulesCore ─────────────── v1.15.7
-   Installed OpenSpecFun_jll ────────────── v0.5.5+0
-   Installed LogExpFunctions ────────────── v0.3.23
-   Installed Xorg_libXcursor_jll ────────── v1.2.0+4
-   Installed Libuuid_jll ────────────────── v2.36.0+0
-   Installed InverseFunctions ───────────── v0.1.8
-   Installed DocStringExtensions ────────── v0.9.3
-   Installed Wayland_protocols_jll ──────── v1.25.0+0
-   Installed Xorg_xcb_util_renderutil_jll ─ v0.3.9+1
-   Installed Graphite2_jll ──────────────── v1.3.14+0
-   Installed libass_jll ─────────────────── v0.15.1+0
-   Installed Pixman_jll ─────────────────── v0.40.1+0
-   Installed XML2_jll ───────────────────── v2.10.3+0
-   Installed Gettext_jll ────────────────── v0.21.0+0
-   Installed Wayland_jll ────────────────── v1.21.0+0
-   Installed OpenSSL_jll ────────────────── v1.1.20+0
-   Installed Xorg_xtrans_jll ────────────── v1.4.0+3
-   Installed Libgcrypt_jll ──────────────── v1.8.7+0
-   Installed Xorg_xkeyboard_config_jll ──── v2.27.0+4
-   Installed FixedPointNumbers ──────────── v0.8.4
-   Installed BitFlags ───────────────────── v0.1.7
-   Installed FFMPEG_jll ─────────────────── v4.4.2+2
-   Installed RecipesBase ────────────────── v1.3.3
-   Installed Xorg_libXrandr_jll ─────────── v1.5.2+4
-   Installed LAME_jll ───────────────────── v3.100.1+0
-   Installed Xorg_libXfixes_jll ─────────── v5.0.3+4
-   Installed Libiconv_jll ───────────────── v1.16.1+2
-   Installed IniFile ────────────────────── v0.5.1
-   Installed URIs ───────────────────────── v1.4.2
-   Installed libvorbis_jll ──────────────── v1.3.7+1
-   Installed Glib_jll ───────────────────── v2.74.0+2
-   Installed Libglvnd_jll ───────────────── v1.6.0+0
-   Installed Xorg_libXdmcp_jll ──────────── v1.1.3+4
-   Installed Xorg_libX11_jll ────────────── v1.6.9+4
-   Installed Unzip ──────────────────────── v0.2.0
-   Installed ChangesOfVariables ─────────── v0.1.6
-   Installed SimpleBufferStream ─────────── v1.1.0
+   Installed StatsAPI ─────────── v1.6.0
+   Installed OrderedCollections ─ v1.6.0
 Precompiling project...
   ✓ StatsAPI
-  ✓ TensorCore
-  ✓ Contour
-  ✓ Pipe
-  ✓ OpenLibm_jll
-  ✓ Measures
-  ✓ InverseFunctions
-  ✓ FixedPointNumbers
-  ✓ Grisu
   ✓ OrderedCollections
-  ✓ IniFile
-  ✓ Unzip
-  ✓ DocStringExtensions
-  ✓ SimpleBufferStream
-  ✓ URIs
-  ✓ IrrationalConstants
-  ✓ PCRE2_jll
-  ✓ UnicodeFun
-  ✓ BitFlags
-  ✓ ChainRulesCore
-  ✓ TranscodingStreams
-  ✓ Scratch
-  ✓ LoggingExtras
-  ✓ OpenSSL_jll
-  ✓ RecipesBase
-  ✓ Libmount_jll
-  ✓ Graphite2_jll
-  ✓ Bzip2_jll
-  ✓ libpng_jll
-  ✓ Xorg_libXau_jll
-  ✓ libfdk_aac_jll
-  ✓ LAME_jll
-  ✓ Pixman_jll
-  ✓ LERC_jll
-  ✓ fzf_jll
-  ✓ JpegTurbo_jll
-  ✓ Ogg_jll
-  ✓ Xorg_libXdmcp_jll
-  ✓ x265_jll
-  ✓ x264_jll
-  ✓ libaom_jll
-  ✓ Zstd_jll
-  ✓ Expat_jll
-  ✓ Opus_jll
-  ✓ LZO_jll
-  ✓ Libiconv_jll
-  ✓ Libffi_jll
-  ✓ Xorg_xtrans_jll
-  ✓ Libgpg_error_jll
-  ✓ Wayland_protocols_jll
-  ✓ OpenSpecFun_jll
-  ✓ Xorg_libpthread_stubs_jll
-  ✓ FriBidi_jll
-  ✓ Libuuid_jll
-  ✓ NaNMath
-  ✓ Showoff
-  ✓ ColorTypes
   ✓ Latexify
-  ✓ ChangesOfVariables
   ✓ DataStructures
-  ✓ CodecZlib
-  ✓ RelocatableFolders
-  ✓ FreeType2_jll
-  ✓ JLFzf
-  ✓ libvorbis_jll
-  ✓ Libtiff_jll
-  ✓ OpenSSL
-  ✓ XML2_jll
-  ✓ Libgcrypt_jll
   ✓ SortingAlgorithms
-  ✓ Fontconfig_jll
-  ✓ LogExpFunctions
-  ✓ Gettext_jll
-  ✓ Wayland_jll
-  ✓ XSLT_jll
-  ✓ Colors
-  ✓ HTTP
   ✓ StatsBase
-  ✓ Glib_jll
-  ✓ Xorg_libxcb_jll
-  ✓ Xorg_libX11_jll
-  ✓ Xorg_xcb_util_jll
-  ✓ Xorg_libXext_jll
-  ✓ Xorg_libXrender_jll
-  ✓ Xorg_libxkbfile_jll
-  ✓ Xorg_libXfixes_jll
-  ✓ Xorg_xcb_util_keysyms_jll
-  ✓ Xorg_xcb_util_image_jll
-  ✓ Xorg_xcb_util_renderutil_jll
-  ✓ Xorg_xcb_util_wm_jll
-  ✓ SpecialFunctions
-  ✓ Libglvnd_jll
-  ✓ Cairo_jll
-  ✓ Xorg_libXinerama_jll
-  ✓ Xorg_libXrandr_jll
-  ✓ Xorg_libXcursor_jll
-  ✓ Xorg_xkbcomp_jll
-  ✓ Xorg_libXi_jll
-  ✓ HarfBuzz_jll
-  ✓ Xorg_xkeyboard_config_jll
-  ✓ GLFW_jll
-  ✓ libass_jll
-  ✓ xkbcommon_jll
-  ✓ FFMPEG_jll
-  ✓ Qt5Base_jll
-  ✓ FFMPEG
-  ✓ GR_jll
-  ✓ ColorVectorSpace
-  ✓ GR
-  ✓ ColorSchemes
-  ✓ PlotUtils
-  ✓ RecipesPipeline
-  ✓ PlotThemes
   ✓ Plots
-  114 dependencies successfully precompiled in 95 seconds. 27 already precompiled.</code></pre>
+  7 dependencies successfully precompiled in 49 seconds. 134 already precompiled.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Status `~/work/simulation-data-analysis/simulation-data-analysis/labs/lab01/Project.toml`
   [7073ff75] IJulia v1.24.0
-  [91a5bcdd] Plots v1.38.8
+⌃ [91a5bcdd] Plots v1.38.8
   [2913bbd2] StatsBase v0.33.21
-  [9a3f8284] Random</code></pre>
+  [9a3f8284] Random
+Info Packages marked with ⌃ have new versions available and may be upgradable.</code></pre>
 </div>
 </div>
 <p>I will start all of your assignments and scripts with at least the first three of these lines (<code>Pkg.status()</code> can be useful when you don’t know what’s available, but won’t be necessary for our purposes going forward).</p>
