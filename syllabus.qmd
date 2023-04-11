@@ -20,6 +20,8 @@ format:
     toc: true
     toc-depth: 2
     number-sections: false
+    title: "{{< var course.number >}} ({{< var course.title >}}) Syllabus"
+    subtitle: "{{< var course.semester >}}"
 
 ---
 
