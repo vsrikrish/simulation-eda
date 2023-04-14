@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.323">
+<meta name="generator" content="quarto-1.3.324">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -421,15 +421,15 @@ b \sim \text{Normal(0, 10)} \\
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="3" data-code-cell="annotated-cell-3">Standard deviations must be positive, so we use a normal distribution truncated at zero.</span>
+<span data-code-lines="3" data-code-annotation="1" data-code-cell="annotated-cell-3">Standard deviations must be positive, so we use a normal distribution truncated at zero.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="4,5" data-code-cell="annotated-cell-3">We’ll keep these both relative uninformative to reflect a more “realistic” modeling scenario.</span>
+<span data-code-lines="4,5" data-code-annotation="2" data-code-cell="annotated-cell-3">We’ll keep these both relative uninformative to reflect a more “realistic” modeling scenario.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="8" data-code-cell="annotated-cell-3">In this case, we specify the likelihood with a loop. We could also rewrite this as a joint likelihood over all of the data using linear algebra, which might be more efficient for large and/or complex models or datasets, but the loop is more readable in this simple case.</span>
+<span data-code-lines="8" data-code-annotation="3" data-code-cell="annotated-cell-3">In this case, we specify the likelihood with a loop. We could also rewrite this as a joint likelihood over all of the data using linear algebra, which might be more efficient for large and/or complex models or datasets, but the loop is more readable in this simple case.</span>
 </dd>
 </dl>
 </div>
@@ -454,38 +454,47 @@ Hoffman, M. D., &amp; Gelman, A. (2014). The <span>No-U-Turn</span> sampler: Ada
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-4">Initialize the model with the data.</span>
+<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-4">Initialize the model with the data.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-4">We use multiple chains to help diagnose convergence.</span>
+<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-4">We use multiple chains to help diagnose convergence.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="4" data-code-cell="annotated-cell-4">This sets the number of iterations for each chain.</span>
+<span data-code-lines="4" data-code-annotation="3" data-code-cell="annotated-cell-4">This sets the number of iterations for each chain.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="5" data-code-cell="annotated-cell-4">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler. The <code>MCMCThreads()</code> call tells the sampler to use available processor threads for the multiple chains, but it will just sample them in serial if only one thread exists.</span>
+<span data-code-lines="5" data-code-annotation="4" data-code-cell="annotated-cell-4">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler. The <code>MCMCThreads()</code> call tells the sampler to use available processor threads for the multiple chains, but it will just sample them in serial if only one thread exists.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="6" data-code-cell="annotated-cell-4">The <code>@show</code> macro makes the display of the output a bit cleaner.</span>
+<span data-code-lines="6" data-code-annotation="5" data-code-cell="annotated-cell-4">The <code>@show</code> macro makes the display of the output a bit cleaner.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>┌ Warning: Only a single thread available: MCMC chains are not sampled in parallel
-└ @ AbstractMCMC ~/.julia/packages/AbstractMCMC/F9Hbk/src/sample.jl:296
-┌ Info: Found initial step size
+└ @ AbstractMCMC ~/.julia/packages/AbstractMCMC/F9Hbk/src/sample.jl:296</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>┌ Info: Found initial step size
 └   ϵ = 0.00625
 ┌ Info: Found initial step size
-└   ϵ = 0.025
-┌ Info: Found initial step size
+└   ϵ = 0.025</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>┌ Info: Found initial step size
 └   ϵ = 0.2
 ┌ Info: Found initial step size
-└   ϵ = 0.003125
-Sampling (1 threads):  50%|██████████████▌              |  ETA: 0:00:00Sampling (1 threads): 100%|█████████████████████████████| Time: 0:00:01</code></pre>
+└   ϵ = 0.003125</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Sampling (1 threads):  50%|██████████████▌              |  ETA: 0:00:00</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Sampling (1 threads): 100%|█████████████████████████████| Time: 0:00:01</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>chain = MCMC chain (5000×15×4 Array{Float64, 3})</code></pre>
@@ -496,21 +505,21 @@ Sampling (1 threads):  50%|██████████████▌        
 Iterations        = 1001:1:6000
 Number of chains  = 4
 Samples per chain = 5000
-Wall duration     = 15.85 seconds
-Compute duration  = 13.46 seconds
+Wall duration     = 19.75 seconds
+Compute duration  = 16.95 seconds
 parameters        = σ, a, b
 internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
 Summary Statistics
- <span class="ansi-bold"> parameters  </span><span class="ansi-bold">    mean  </span><span class="ansi-bold">     std  </span><span class="ansi-bold">    mcse  </span><span class="ansi-bold">   ess_bulk  </span><span class="ansi-bold">   ess_tail  </span><span class="ansi-bold">    rhat ⋯
-</span> <span class="ansi-bright-black-fg">     Symbol  </span><span class="ansi-bright-black-fg"> Float64  </span><span class="ansi-bright-black-fg"> Float64  </span><span class="ansi-bright-black-fg"> Float64  </span><span class="ansi-bright-black-fg">    Float64  </span><span class="ansi-bright-black-fg">    Float64  </span><span class="ansi-bright-black-fg"> Float64 ⋯
-</span>           σ    5.3881    0.9886    0.0097   10835.5758   10595.6871    1.0003 ⋯
+ <span class="ansi-bold"> parameters </span> <span class="ansi-bold">    mean </span> <span class="ansi-bold">     std </span> <span class="ansi-bold">    mcse </span> <span class="ansi-bold">   ess_bulk </span> <span class="ansi-bold">   ess_tail </span> <span class="ansi-bold">    rhat</span> ⋯
+ <span class="ansi-bright-black-fg">     Symbol </span> <span class="ansi-bright-black-fg"> Float64 </span> <span class="ansi-bright-black-fg"> Float64 </span> <span class="ansi-bright-black-fg"> Float64 </span> <span class="ansi-bright-black-fg">    Float64 </span> <span class="ansi-bright-black-fg">    Float64 </span> <span class="ansi-bright-black-fg"> Float64</span> ⋯
+           σ    5.3881    0.9886    0.0097   10835.5758   10595.6871    1.0003 ⋯
            a    7.3483    2.1028    0.0231    8360.9948    8903.0798    1.0002 ⋯
            b    1.7993    0.1865    0.0021    8290.7784    8803.3686    1.0003 ⋯
-<span class="ansi-cyan-fg">                                                                1 column omitted
-</span>Quantiles
- <span class="ansi-bold"> parameters  </span><span class="ansi-bold">    2.5%  </span><span class="ansi-bold">   25.0%  </span><span class="ansi-bold">   50.0%  </span><span class="ansi-bold">   75.0%  </span><span class="ansi-bold">   97.5%
-</span> <span class="ansi-bright-black-fg">     Symbol  </span><span class="ansi-bright-black-fg"> Float64  </span><span class="ansi-bright-black-fg"> Float64  </span><span class="ansi-bright-black-fg"> Float64  </span><span class="ansi-bright-black-fg"> Float64  </span><span class="ansi-bright-black-fg"> Float64
-</span>           σ    3.8905    4.6873    5.2471    5.9322    7.7226
+<span class="ansi-cyan-fg">                                                                1 column omitted</span>
+Quantiles
+ <span class="ansi-bold"> parameters </span> <span class="ansi-bold">    2.5% </span> <span class="ansi-bold">   25.0% </span> <span class="ansi-bold">   50.0% </span> <span class="ansi-bold">   75.0% </span> <span class="ansi-bold">   97.5% </span>
+ <span class="ansi-bright-black-fg">     Symbol </span> <span class="ansi-bright-black-fg"> Float64 </span> <span class="ansi-bright-black-fg"> Float64 </span> <span class="ansi-bright-black-fg"> Float64 </span> <span class="ansi-bright-black-fg"> Float64 </span> <span class="ansi-bright-black-fg"> Float64 </span>
+           σ    3.8905    4.6873    5.2471    5.9322    7.7226
            a    3.1190    5.9784    7.3761    8.7487   11.4444
            b    1.4350    1.6773    1.7968    1.9214    2.1732
 </pre>
@@ -521,7 +530,7 @@ Summary Statistics
 <p>In this case, we can see that we were generally able to recover the “true” data-generating values of <span class="math inline">\(\sigma = 4\)</span> and <span class="math inline">\(b = 2\)</span>, but <span class="math inline">\(a\)</span> is slightly off (the mean is 3, rather than the data-generating value of 5). In fact, there is substantial uncertainty about <span class="math inline">\(a\)</span>, with a 95% credible interval of <span class="math inline">\((3.1, 11.4)\)</span> (compared to <span class="math inline">\((1.4, 2.2)\)</span> for <span class="math inline">\(b\)</span>). This isn’t surprising: given the variance of the noise <span class="math inline">\(\sigma^2\)</span>, there are many different intercepts which could fit within that spread.</p>
 <p>Let’s now plot the chains for visual inspection.</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div id="fig-chains-regression" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -541,7 +550,7 @@ Summary Statistics
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-6">This is where we use the <code>Optim.jl</code> package in this tutorial.</span>
+<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-6">This is where we use the <code>Optim.jl</code> package in this tutorial.</span>
 </dd>
 </dl>
 </div>
@@ -579,7 +588,7 @@ b  │ 1.77736</code></pre>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="3,4,5" data-code-cell="annotated-cell-7">The <code>Array(group())</code> syntax is more general than we need, but is useful if we have multiple variables which were sampled as a group, for example multiple regression coefficients. Otherwise, we can just use <em>e.g.</em> <code>Array(chain, :a)</code>.</span>
+<span data-code-lines="3,4,5" data-code-annotation="1" data-code-cell="annotated-cell-7">The <code>Array(group())</code> syntax is more general than we need, but is useful if we have multiple variables which were sampled as a group, for example multiple regression coefficients. Otherwise, we can just use <em>e.g.</em> <code>Array(chain, :a)</code>.</span>
 </dd>
 </dl>
 </div>
@@ -589,8 +598,8 @@ b  │ 1.77736</code></pre>
 </div>
 <p>Now we can generate a predictive interval and median and compare to the data.</p>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x_pred <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">20</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> <span class="fu">mc_predict_regression</span>(x_pred, chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x_pred <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">20</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> <span class="fu">mc_predict_regression</span>(x_pred, chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>21×20000 Matrix{Float64}:
  -0.440341  14.2143    3.73736    3.98402  …  13.9896   12.1475    5.46884
@@ -618,10 +627,10 @@ b  │ 1.77736</code></pre>
 </div>
 <p>Notice the dimension of <code>y_pred</code>: we have 20,000 columns, because we have 4 chains with 5,000 samples each. If we had wanted to subsample (which might be necessary if we had hundreds of thousands or millions of samples), we could have done that within <code>mc_linear_regression</code> before simulation.</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the boundaries for the 95% prediction interval and the median</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>y_ci_low <span class="op">=</span> <span class="fu">quantile</span>.(<span class="fu">eachrow</span>(y_pred), <span class="fl">0.025</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>y_ci_hi <span class="op">=</span> <span class="fu">quantile</span>.(<span class="fu">eachrow</span>(y_pred), <span class="fl">0.975</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>y_med <span class="op">=</span> <span class="fu">quantile</span>.(<span class="fu">eachrow</span>(y_pred), <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the boundaries for the 95% prediction interval and the median</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>y_ci_low <span class="op">=</span> <span class="fu">quantile</span>.(<span class="fu">eachrow</span>(y_pred), <span class="fl">0.025</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>y_ci_hi <span class="op">=</span> <span class="fu">quantile</span>.(<span class="fu">eachrow</span>(y_pred), <span class="fl">0.975</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>y_med <span class="op">=</span> <span class="fu">quantile</span>.(<span class="fu">eachrow</span>(y_pred), <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, let’s plot the prediction interval and median, and compare to the original data.</p>
 <div class="cell" data-execution_count="12">
@@ -633,15 +642,15 @@ b  │ 1.77736</code></pre>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-10">Plot the 95% posterior prediction interval as a shaded blue ribbon.</span>
+<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-10">Plot the 95% posterior prediction interval as a shaded blue ribbon.</span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-10">Plot the posterior prediction median as a blue line.</span>
+<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-10">Plot the posterior prediction median as a blue line.</span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="4" data-code-cell="annotated-cell-10">Plot the data as discrete red points.</span>
+<span data-code-lines="4" data-code-annotation="3" data-code-cell="annotated-cell-10">Plot the data as discrete red points.</span>
 </dd>
 </dl>
 </div>
@@ -719,31 +728,31 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="3" data-code-cell="annotated-cell-12">This uses the <code>DataFramesMeta.jl</code> package, which makes it easy to string together commands to load and process data</span>
+<span data-code-lines="3" data-code-annotation="1" data-code-cell="annotated-cell-12">This uses the <code>DataFramesMeta.jl</code> package, which makes it easy to string together commands to load and process data</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="4" data-code-cell="annotated-cell-12">Load the file, assuming there is no header.</span>
+<span data-code-lines="4" data-code-annotation="2" data-code-cell="annotated-cell-12">Load the file, assuming there is no header.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="5" data-code-cell="annotated-cell-12">Convert to a <code>DataFrame</code>.</span>
+<span data-code-lines="5" data-code-annotation="3" data-code-cell="annotated-cell-12">Convert to a <code>DataFrame</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="6,7,8,9,10" data-code-cell="annotated-cell-12">Rename columns for ease of access.</span>
+<span data-code-lines="6,7,8,9,10" data-code-annotation="4" data-code-cell="annotated-cell-12">Rename columns for ease of access.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="12" data-code-cell="annotated-cell-12">Reformat the decimal datetime provided in the file into a Julia <code>DateTime</code>.</span>
+<span data-code-lines="12" data-code-annotation="5" data-code-cell="annotated-cell-12">Reformat the decimal datetime provided in the file into a Julia <code>DateTime</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-annotation="6" data-code-lines="14" data-code-cell="annotated-cell-12">Replace missing data with <code>missing</code>.</span>
+<span data-code-lines="14" data-code-annotation="6" data-code-cell="annotated-cell-12">Replace missing data with <code>missing</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-annotation="7" data-code-lines="15" data-code-cell="annotated-cell-12">Select only the <code>:datetime</code> and <code>:gauge</code> columns.</span>
+<span data-code-lines="15" data-code-annotation="7" data-code-cell="annotated-cell-12">Select only the <code>:datetime</code> and <code>:gauge</code> columns.</span>
 </dd>
 </dl>
 </div>
@@ -752,8 +761,8 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 </div>
 </div>
 <div class="cell page-columns page-full" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dat <span class="op">=</span> <span class="fu">load_data</span>(<span class="st">"data/h551a.csv"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">first</span>(dat, <span class="fl">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dat <span class="op">=</span> <span class="fu">load_data</span>(<span class="st">"data/h551a.csv"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">first</span>(dat, <span class="fl">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="16">
 <div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
@@ -816,7 +825,7 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="1" data-code-cell="annotated-cell-14">This uses the <code>DataFrame</code> plotting recipe with the <code>@df</code> macro from <code>StatsPlots.jl</code>. This is not needed (you could replace <em>e.g.</em> <code>:datetime</code> with <code>dat.datetime</code>), but it cleans things up slightly.</span>
+<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-14">This uses the <code>DataFrame</code> plotting recipe with the <code>@df</code> macro from <code>StatsPlots.jl</code>. This is not needed (you could replace <em>e.g.</em> <code>:datetime</code> with <code>dat.datetime</code>), but it cleans things up slightly.</span>
 </dd>
 </dl>
 </div>
@@ -831,16 +840,16 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 </div>
 <p>Next, we need to detrend the data to remove the impacts of sea-level rise. We do this by removing a one-year moving average, centered on the data point, per the recommendation of <span class="citation" data-cites="Arns2013-tl">Arns et al. (<a href="#ref-Arns2013-tl" role="doc-biblioref">2013</a>)</span>.</p>
 <div class="no-row-height column-margin column-container"></div><div class="cell page-columns page-full" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the moving average and subtract it off</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ma_length <span class="op">=</span> <span class="fl">366</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>ma_offset <span class="op">=</span> <span class="fu">Int</span>(<span class="fu">floor</span>(ma_length<span class="op">/</span><span class="fl">2</span>))</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">moving_average</span>(series,n) <span class="op">=</span> [<span class="fu">mean</span>(<span class="pp">@view</span> series[i<span class="op">-</span>n<span class="op">:</span>i<span class="op">+</span>n]) for i <span class="kw">in</span> n<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(series)<span class="op">-</span>n]</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>dat_ma <span class="op">=</span> <span class="fu">DataFrame</span>(datetime<span class="op">=</span>dat.datetime[ma_offset<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span>ma_offset], residual<span class="op">=</span>dat.gauge[ma_offset<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span>ma_offset] <span class="op">.-</span> <span class="fu">moving_average</span>(dat.gauge, ma_offset))</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@df</span> dat_ma <span class="fu">plot</span>(<span class="op">:</span>datetime, <span class="op">:</span>residual, label<span class="op">=</span><span class="st">"Detrended Observations"</span>, bottom_margin<span class="op">=</span><span class="fl">9</span>mm)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">xaxis!</span>(<span class="st">"Date"</span>, xrot<span class="op">=</span><span class="fl">30</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="fu">yaxis!</span>(<span class="st">"Mean Water Level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the moving average and subtract it off</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ma_length <span class="op">=</span> <span class="fl">366</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>ma_offset <span class="op">=</span> <span class="fu">Int</span>(<span class="fu">floor</span>(ma_length<span class="op">/</span><span class="fl">2</span>))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">moving_average</span>(series,n) <span class="op">=</span> [<span class="fu">mean</span>(<span class="pp">@view</span> series[i<span class="op">-</span>n<span class="op">:</span>i<span class="op">+</span>n]) for i <span class="kw">in</span> n<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(series)<span class="op">-</span>n]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>dat_ma <span class="op">=</span> <span class="fu">DataFrame</span>(datetime<span class="op">=</span>dat.datetime[ma_offset<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span>ma_offset], residual<span class="op">=</span>dat.gauge[ma_offset<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span>ma_offset] <span class="op">.-</span> <span class="fu">moving_average</span>(dat.gauge, ma_offset))</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@df</span> dat_ma <span class="fu">plot</span>(<span class="op">:</span>datetime, <span class="op">:</span>residual, label<span class="op">=</span><span class="st">"Detrended Observations"</span>, bottom_margin<span class="op">=</span><span class="fl">9</span>mm)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">xaxis!</span>(<span class="st">"Date"</span>, xrot<span class="op">=</span><span class="fl">30</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">yaxis!</span>(<span class="st">"Mean Water Level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display page-columns page-full" data-execution_count="18">
 <div id="fig-data-detrend" class="quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -868,15 +877,15 @@ Arns, A., Wahl, T., Haigh, I. D., Jensen, J., &amp; Pattiaratchi, C. (2013). Est
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-16" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-16">If we don’t drop the values which are missing, they will affect the next call to <code>argmax</code>.</span>
+<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-16">If we don’t drop the values which are missing, they will affect the next call to <code>argmax</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-16" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="3,4" data-code-cell="annotated-cell-16">This first groups the data based on the year (with <code>groupby</code> and using <code>Dates.year()</code> to get the year of each data point), then pulls the rows which correspond to the maxima for each year (using <code>argmax</code>).</span>
+<span data-code-lines="3,4" data-code-annotation="2" data-code-cell="annotated-cell-16">This first groups the data based on the year (with <code>groupby</code> and using <code>Dates.year()</code> to get the year of each data point), then pulls the rows which correspond to the maxima for each year (using <code>argmax</code>).</span>
 </dd>
 <dt data-target-cell="annotated-cell-16" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="5" data-code-cell="annotated-cell-16">This will delete the last year, in this case 2023, because the dataset only goes until March 2023 and this data point is almost certainly an outlier due to the limited data from that year.</span>
+<span data-code-lines="5" data-code-annotation="3" data-code-cell="annotated-cell-16">This will delete the last year, in this case 2023, because the dataset only goes until March 2023 and this data point is almost certainly an outlier due to the limited data from that year.</span>
 </dd>
 </dl>
 </div>
@@ -910,50 +919,59 @@ Arns, A., Wahl, T., Haigh, I. D., Jensen, J., &amp; Pattiaratchi, C. (2013). Est
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-17" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="2" data-code-cell="annotated-cell-17">Location parameter prior: We know that this is roughly on the 1000 mm order of magnitude, but want to keep this relatively broad.</span>
+<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-17">Location parameter prior: We know that this is roughly on the 1000 mm order of magnitude, but want to keep this relatively broad.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-17">Scale parameter prior: This parameter must be positive, so we use a normal truncated at zero.</span>
+<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-17">Scale parameter prior: This parameter must be positive, so we use a normal truncated at zero.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="4" data-code-cell="annotated-cell-17">Shape parameter prior: These are usually small and are hard to constrain, so we will use a more informative prior.</span>
+<span data-code-lines="4" data-code-annotation="3" data-code-cell="annotated-cell-17">Shape parameter prior: These are usually small and are hard to constrain, so we will use a more informative prior.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="6" data-code-cell="annotated-cell-17">The data is independently GEV-distributed as we’ve removed the long-term trend and are using long blocks.</span>
+<span data-code-lines="6" data-code-annotation="4" data-code-cell="annotated-cell-17">The data is independently GEV-distributed as we’ve removed the long-term trend and are using long blocks.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="9" data-code-cell="annotated-cell-17">Initialize the model.</span>
+<span data-code-lines="9" data-code-annotation="5" data-code-cell="annotated-cell-17">Initialize the model.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-annotation="6" data-code-lines="10" data-code-cell="annotated-cell-17">We use multiple chains to help diagnose convergence.</span>
+<span data-code-lines="10" data-code-annotation="6" data-code-cell="annotated-cell-17">We use multiple chains to help diagnose convergence.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-annotation="7" data-code-lines="11" data-code-cell="annotated-cell-17">This sets the number of iterations for each chain.</span>
+<span data-code-lines="11" data-code-annotation="7" data-code-cell="annotated-cell-17">This sets the number of iterations for each chain.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-annotation="8" data-code-lines="12" data-code-cell="annotated-cell-17">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler.</span>
+<span data-code-lines="12" data-code-annotation="8" data-code-cell="annotated-cell-17">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>┌ Warning: Only a single thread available: MCMC chains are not sampled in parallel
-└ @ AbstractMCMC ~/.julia/packages/AbstractMCMC/F9Hbk/src/sample.jl:296
-┌ Info: Found initial step size
+└ @ AbstractMCMC ~/.julia/packages/AbstractMCMC/F9Hbk/src/sample.jl:296</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>┌ Info: Found initial step size
 └   ϵ = 0.2
 ┌ Info: Found initial step size
-└   ϵ = 0.0125
-┌ Info: Found initial step size
+└   ϵ = 0.0125</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>┌ Info: Found initial step size
 └   ϵ = 0.2
 ┌ Info: Found initial step size
-└   ϵ = 0.2
-Sampling (1 threads):  50%|██████████████▌              |  ETA: 0:00:04Sampling (1 threads): 100%|█████████████████████████████| Time: 0:00:07</code></pre>
+└   ϵ = 0.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Sampling (1 threads):  50%|██████████████▌              |  ETA: 0:00:03</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Sampling (1 threads): 100%|█████████████████████████████| Time: 0:00:07</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>gev_chain = MCMC chain (5000×15×4 Array{Float64, 3})</code></pre>
@@ -964,21 +982,21 @@ Sampling (1 threads):  50%|██████████████▌        
 Iterations        = 1001:1:6000
 Number of chains  = 4
 Samples per chain = 5000
-Wall duration     = 14.73 seconds
-Compute duration  = 14.29 seconds
+Wall duration     = 14.61 seconds
+Compute duration  = 14.08 seconds
 parameters        = μ, σ, ξ
 internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
 Summary Statistics
- <span class="ansi-bold"> parameters  </span><span class="ansi-bold">      mean  </span><span class="ansi-bold">     std  </span><span class="ansi-bold">    mcse  </span><span class="ansi-bold">   ess_bulk  </span><span class="ansi-bold">   ess_tail  </span><span class="ansi-bold">    rh ⋯
-</span> <span class="ansi-bright-black-fg">     Symbol  </span><span class="ansi-bright-black-fg">   Float64  </span><span class="ansi-bright-black-fg"> Float64  </span><span class="ansi-bright-black-fg"> Float64  </span><span class="ansi-bright-black-fg">    Float64  </span><span class="ansi-bright-black-fg">    Float64  </span><span class="ansi-bright-black-fg"> Float ⋯
-</span>           μ   1257.8174    5.6701    0.0513   12216.6653   12642.3312    1.00 ⋯
+ <span class="ansi-bold"> parameters </span> <span class="ansi-bold">      mean </span> <span class="ansi-bold">     std </span> <span class="ansi-bold">    mcse </span> <span class="ansi-bold">   ess_bulk </span> <span class="ansi-bold">   ess_tail </span> <span class="ansi-bold">    rh</span> ⋯
+ <span class="ansi-bright-black-fg">     Symbol </span> <span class="ansi-bright-black-fg">   Float64 </span> <span class="ansi-bright-black-fg"> Float64 </span> <span class="ansi-bright-black-fg"> Float64 </span> <span class="ansi-bright-black-fg">    Float64 </span> <span class="ansi-bright-black-fg">    Float64 </span> <span class="ansi-bright-black-fg"> Float</span> ⋯
+           μ   1257.8174    5.6701    0.0513   12216.6653   12642.3312    1.00 ⋯
            σ     57.1982    4.3214    0.0366   14201.5441   12575.6044    1.00 ⋯
            ξ      0.0292    0.0625    0.0008    5915.1552    7463.8803    1.00 ⋯
-<span class="ansi-cyan-fg">                                                               2 columns omitted
-</span>Quantiles
- <span class="ansi-bold"> parameters  </span><span class="ansi-bold">      2.5%  </span><span class="ansi-bold">     25.0%  </span><span class="ansi-bold">     50.0%  </span><span class="ansi-bold">     75.0%  </span><span class="ansi-bold">     97.5%
-</span> <span class="ansi-bright-black-fg">     Symbol  </span><span class="ansi-bright-black-fg">   Float64  </span><span class="ansi-bright-black-fg">   Float64  </span><span class="ansi-bright-black-fg">   Float64  </span><span class="ansi-bright-black-fg">   Float64  </span><span class="ansi-bright-black-fg">   Float64
-</span>           μ   1246.8628   1253.9821   1257.8132   1261.6027   1269.2078
+<span class="ansi-cyan-fg">                                                               2 columns omitted</span>
+Quantiles
+ <span class="ansi-bold"> parameters </span> <span class="ansi-bold">      2.5% </span> <span class="ansi-bold">     25.0% </span> <span class="ansi-bold">     50.0% </span> <span class="ansi-bold">     75.0% </span> <span class="ansi-bold">     97.5% </span>
+ <span class="ansi-bright-black-fg">     Symbol </span> <span class="ansi-bright-black-fg">   Float64 </span> <span class="ansi-bright-black-fg">   Float64 </span> <span class="ansi-bright-black-fg">   Float64 </span> <span class="ansi-bright-black-fg">   Float64 </span> <span class="ansi-bright-black-fg">   Float64 </span>
+           μ   1246.8628   1253.9821   1257.8132   1261.6027   1269.2078
            σ     49.4284     54.1859     56.9353     59.9665     66.3174
            ξ     -0.0811     -0.0151      0.0250      0.0699      0.1627
 </pre>
@@ -986,7 +1004,7 @@ Summary Statistics
 </div>
 </div>
 <div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gev_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gev_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div id="fig-gev-traceplot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -998,7 +1016,7 @@ Summary Statistics
 </div>
 <p>From <a href="#fig-gev-traceplot">Figure&nbsp;8</a>, it looks like all of the chains have converged to the same distribution; the Gelman-Rubin diagnostic is also close to 1 for all parameters. Next, we can look at a corner plot to see how the parameters are correlated.</p>
 <div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corner</span>(gev_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corner</span>(gev_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <div id="fig-gev-corner" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
