@@ -69,7 +69,7 @@ Simulations from numerical and statistical models are a key tool used to quantif
 
 ## Learning Outcomes
 
-At the end of this class, students will be able to:
+After completing this class, students will be able to:
 
 * create, interpret, and critique data visualizations;
 * calibrate environmental models to observations, possibly including censored and missing data;
