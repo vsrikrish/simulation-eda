@@ -1,8 +1,5 @@
 ---
 title: "Markov Chain Monte Carlo With Turing"
-execute:
-    error: true
-    warning: true
 format:
     html: default
     ipynb: default
@@ -360,7 +357,7 @@ The last step in preparing the data is to find the annual maxima. We can do this
 # calculate the annual maxima
 dat_ma = dropmissing(dat_ma) # <1>
 dat_annmax = combine(dat_ma -> dat_ma[argmax(dat_ma.residual), :],      # <2>
-                groupby(transform(dat_ma, :datetime => x->year.(x)), :datetime_function)) # <2>
+                groupby(DataFrames.transform(dat_ma, :datetime => x->year.(x)), :datetime_function)) # <2>
 delete!(dat_annmax, nrow(dat_annmax)) # <3>
 
 # make a histogram of the maxima to see the distribution
