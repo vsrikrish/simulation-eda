@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.324">
+<meta name="generator" content="quarto-1.4.530">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -101,7 +102,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -110,8 +117,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
@@ -121,12 +130,36 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="BEE 4850 - Spring 2024 - Markov Chain Monte Carlo With Turing">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://viveks.me/simulation-data-analysis/tutorials/turing-mcmc_files/figure-html/fig-scatter-regression-output-1.png">
-<meta property="og:site-name" content="BEE 4850 - Spring 2024">
-<meta property="og:image:height" content="460">
-<meta property="og:image:width" content="645">
+<meta property="og:description" content="Homepage for BEE 4850/5850, Simulation Methods for Environmental Data Analysis, at Cornell University, Spring 2024.">
+<meta property="og:site_name" content="BEE 4850 - Spring 2024">
 </head>
 
 <body class="nav-sidebar docked slimcontent">
@@ -135,13 +168,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/julia-basics.html">Julia Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/turing-mcmc.html">MCMC with Turing</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/julia-basics.html">Julia Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/turing-mcmc.html">MCMC with Turing</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -150,7 +183,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../_assets/logos/cornell_logo_simple_b31b1b.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -271,7 +304,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -298,7 +331,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/julia-basics.html">Julia Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/turing-mcmc.html">MCMC with Turing</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Markov Chain Monte Carlo With Turing</h1>
 </div>
@@ -313,7 +346,9 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
@@ -365,14 +400,18 @@ Positive Control Tests
 y = 5 + 2x + \varepsilon \\
 \varepsilon \sim \text{Normal}(0, 3),
 \end{gather}
-\]</span> where <span class="math inline">\(\varepsilon\)</span> is so-called “white noise”, which adds stochasticity to the data set. The generated dataset is shown in <a href="#fig-scatter-regression">Figure&nbsp;1</a>.</p>
+\]</span> where <span class="math inline">\(\varepsilon\)</span> is so-called “white noise”, which adds stochasticity to the data set. The generated dataset is shown in <a href="#fig-scatter-regression" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div class="cell page-columns page-full" data-execution_count="4">
 
 <div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="5">
 <div id="fig-scatter-regression" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="turing-mcmc_files/figure-html/fig-scatter-regression-output-1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Scatterplot of our generated data.</figcaption><p></p>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scatter-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="turing-mcmc_files/figure-html/fig-scatter-regression-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatter-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Scatterplot of our generated data.
+</figcaption>
 </figure>
 </div>
 </div></div></div>
@@ -421,15 +460,15 @@ b \sim \text{Normal(0, 10)} \\
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="3" data-code-annotation="1" data-code-cell="annotated-cell-3">Standard deviations must be positive, so we use a normal distribution truncated at zero.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">Standard deviations must be positive, so we use a normal distribution truncated at zero.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4,5" data-code-annotation="2" data-code-cell="annotated-cell-3">We’ll keep these both relative uninformative to reflect a more “realistic” modeling scenario.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="4,5" data-code-annotation="2">We’ll keep these both relative uninformative to reflect a more “realistic” modeling scenario.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="8" data-code-annotation="3" data-code-cell="annotated-cell-3">In this case, we specify the likelihood with a loop. We could also rewrite this as a joint likelihood over all of the data using linear algebra, which might be more efficient for large and/or complex models or datasets, but the loop is more readable in this simple case.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="8" data-code-annotation="3">In this case, we specify the likelihood with a loop. We could also rewrite this as a joint likelihood over all of the data using linear algebra, which might be more efficient for large and/or complex models or datasets, but the loop is more readable in this simple case.</span>
 </dd>
 </dl>
 </div>
@@ -440,10 +479,10 @@ b \sim \text{Normal(0, 10)} \\
 </section>
 <section id="fitting-the-model" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="fitting-the-model">Fitting The Model</h4>
-<div class="page-columns page-full"><p>Now we can call the sampler to draw from the posterior. We’ll use the <a href="https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo#No_U-Turn_Sampler">No-U-Turn sampler</a> <span class="citation" data-cites="Hoffman2014-gv">(<a href="#ref-Hoffman2014-gv" role="doc-biblioref">Hoffman &amp; Gelman, 2014</a>)</span>, which is a Hamiltonian Monte Carlo algorithm (a different category of MCMC sampler than the Metropolis-Hastings algorithm discussed in class). We’ll also use 4 chains so we can test that the chains are well-mixed, and each chain will be run for 5,000 iterations<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Hamiltonian Monte Carlo samplers often need to be run for fewer iterations than Metropolis-Hastings samplers, as the exploratory step uses information about the gradient of the statistical model, versus the random walk of Metropolis-Hastings. The disadvantage is that this gradient information must be available, which is not always the case for external simulation models. Simulation models coded in Julia can usually be automatically differentiated by Turing’s tools, however.</p></li></div></div>
+<p>Now we can call the sampler to draw from the posterior. We’ll use the <a href="https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo#No_U-Turn_Sampler">No-U-Turn sampler</a> <span class="citation" data-cites="Hoffman2014-gv">(<a href="#ref-Hoffman2014-gv" role="doc-biblioref">Hoffman &amp; Gelman, 2014</a>)</span>, which is a Hamiltonian Monte Carlo algorithm (a different category of MCMC sampler than the Metropolis-Hastings algorithm discussed in class). We’ll also use 4 chains so we can test that the chains are well-mixed, and each chain will be run for 5,000 iterations<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="ref-Hoffman2014-gv" class="csl-entry" role="listitem">
 Hoffman, M. D., &amp; Gelman, A. (2014). The <span>No-U-Turn</span> sampler: Adaptively setting path lengths in <span>H</span>amiltonian <span>M</span>onte <span>C</span>arlo. <em>J. Mach. Learn. Res.</em>, <em>15</em>(47), 1593–1623.
-</div></div><div class="cell" data-execution_count="6">
+</div><li id="fn1"><p><sup>1</sup>&nbsp;Hamiltonian Monte Carlo samplers often need to be run for fewer iterations than Metropolis-Hastings samplers, as the exploratory step uses information about the gradient of the statistical model, versus the random walk of Metropolis-Hastings. The disadvantage is that this gradient information must be available, which is not always the case for external simulation models. Simulation models coded in Julia can usually be automatically differentiated by Turing’s tools, however.</p></li></div><div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode julia code-annotation-code code-with-copy code-annotated"><code class="sourceCode julia"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set up the sampler</span></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="fu">linear_regression</span>(x, y)</span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2">2</button><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>n_chains <span class="op">=</span> <span class="fl">4</span></span>
@@ -454,23 +493,23 @@ Hoffman, M. D., &amp; Gelman, A. (2014). The <span>No-U-Turn</span> sampler: Ada
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-4">Initialize the model with the data.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="1">Initialize the model with the data.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-4">We use multiple chains to help diagnose convergence.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="2">We use multiple chains to help diagnose convergence.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-annotation="3" data-code-cell="annotated-cell-4">This sets the number of iterations for each chain.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="3">This sets the number of iterations for each chain.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="5" data-code-annotation="4" data-code-cell="annotated-cell-4">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler. The <code>MCMCThreads()</code> call tells the sampler to use available processor threads for the multiple chains, but it will just sample them in serial if only one thread exists.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="5" data-code-annotation="4">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler. The <code>MCMCThreads()</code> call tells the sampler to use available processor threads for the multiple chains, but it will just sample them in serial if only one thread exists.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="6" data-code-annotation="5" data-code-cell="annotated-cell-4">The <code>@show</code> macro makes the display of the output a bit cleaner.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="5">The <code>@show</code> macro makes the display of the output a bit cleaner.</span>
 </dd>
 </dl>
 </div>
@@ -526,21 +565,25 @@ Quantiles
 </div>
 </div>
 </div>
-<div class="page-columns page-full"><p>How can we interpret the output? The first parts of the summary statistics are straightforward: we get the mean, standard deviation, and Monte Carlo standard error (<code>mcse</code>) of each parameter. We also get information about the effective sample size (ESS)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and <span class="math inline">\(\hat{R}\)</span>, which measures the ratio of within-chain variance and across-chain variance as a check for convergence<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The ESS reflects the efficiency of the sampler: this is an estimate of the equivalent number of independent samples; the more correlated the samples, the lower the ESS.</p></li><li id="fn3"><p><sup>3</sup>&nbsp;The closer <span class="math inline">\(\hat{R}\)</span> is to 1, the better.</p></li></div></div>
-<p>In this case, we can see that we were generally able to recover the “true” data-generating values of <span class="math inline">\(\sigma = 4\)</span> and <span class="math inline">\(b = 2\)</span>, but <span class="math inline">\(a\)</span> is slightly off (the mean is 3, rather than the data-generating value of 5). In fact, there is substantial uncertainty about <span class="math inline">\(a\)</span>, with a 95% credible interval of <span class="math inline">\((3.1, 11.4)\)</span> (compared to <span class="math inline">\((1.4, 2.2)\)</span> for <span class="math inline">\(b\)</span>). This isn’t surprising: given the variance of the noise <span class="math inline">\(\sigma^2\)</span>, there are many different intercepts which could fit within that spread.</p>
+<p>How can we interpret the output? The first parts of the summary statistics are straightforward: we get the mean, standard deviation, and Monte Carlo standard error (<code>mcse</code>) of each parameter. We also get information about the effective sample size (ESS)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and <span class="math inline">\(\hat{R}\)</span>, which measures the ratio of within-chain variance and across-chain variance as a check for convergence<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;The ESS reflects the efficiency of the sampler: this is an estimate of the equivalent number of independent samples; the more correlated the samples, the lower the ESS.</p></li><li id="fn3"><p><sup>3</sup>&nbsp;The closer <span class="math inline">\(\hat{R}\)</span> is to 1, the better.</p></li></div><p>In this case, we can see that we were generally able to recover the “true” data-generating values of <span class="math inline">\(\sigma = 4\)</span> and <span class="math inline">\(b = 2\)</span>, but <span class="math inline">\(a\)</span> is slightly off (the mean is 3, rather than the data-generating value of 5). In fact, there is substantial uncertainty about <span class="math inline">\(a\)</span>, with a 95% credible interval of <span class="math inline">\((3.1, 11.4)\)</span> (compared to <span class="math inline">\((1.4, 2.2)\)</span> for <span class="math inline">\(b\)</span>). This isn’t surprising: given the variance of the noise <span class="math inline">\(\sigma^2\)</span>, there are many different intercepts which could fit within that spread.</p>
 <p>Let’s now plot the chains for visual inspection.</p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div id="fig-chains-regression" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="turing-mcmc_files/figure-html/fig-chains-regression-output-1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Output from the MCMC sampler. Each row corresponds to a different parameter: <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(a\)</span>, and <span class="math inline">\(b\)</span>. Each chain is shown in a different color. The left column shows the sampler traceplots, and the right column the resulting posterior distributions.</figcaption><p></p>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chains-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="turing-mcmc_files/figure-html/fig-chains-regression-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chains-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Output from the MCMC sampler. Each row corresponds to a different parameter: <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(a\)</span>, and <span class="math inline">\(b\)</span>. Each chain is shown in a different color. The left column shows the sampler traceplots, and the right column the resulting posterior distributions.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>We can see from <a href="#fig-chains-regression">Figure&nbsp;2</a> that our chains mixed well and seem to have converged to similar distributions! The traceplots have a “hairy caterpiller” appearance, suggesting relatively little autocorrelation. We can also see how much more uncertainty there is with the intercept <span class="math inline">\(a\)</span>, while the slope <span class="math inline">\(b\)</span> is much more constrained.</p>
+<p>We can see from <a href="#fig-chains-regression" class="quarto-xref">Figure&nbsp;2</a> that our chains mixed well and seem to have converged to similar distributions! The traceplots have a “hairy caterpiller” appearance, suggesting relatively little autocorrelation. We can also see how much more uncertainty there is with the intercept <span class="math inline">\(a\)</span>, while the slope <span class="math inline">\(b\)</span> is much more constrained.</p>
 <p>Another interesting comparison we can make is with the maximum-likelihood estimate (MLE), which we can obtain through optimization.</p>
 <div class="cell page-columns page-full" data-execution_count="8">
 <div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode julia code-annotation-code code-with-copy code-annotated"><code class="sourceCode julia"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>mle_model <span class="op">=</span> <span class="fu">linear_regression</span>(x, y)</span>
@@ -550,7 +593,7 @@ Quantiles
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-6">This is where we use the <code>Optim.jl</code> package in this tutorial.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="1">This is where we use the <code>Optim.jl</code> package in this tutorial.</span>
 </dd>
 </dl>
 </div>
@@ -588,7 +631,7 @@ b  │ 1.77736</code></pre>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="3,4,5" data-code-annotation="1" data-code-cell="annotated-cell-7">The <code>Array(group())</code> syntax is more general than we need, but is useful if we have multiple variables which were sampled as a group, for example multiple regression coefficients. Otherwise, we can just use <em>e.g.</em> <code>Array(chain, :a)</code>.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="3,4,5" data-code-annotation="1">The <code>Array(group())</code> syntax is more general than we need, but is useful if we have multiple variables which were sampled as a group, for example multiple regression coefficients. Otherwise, we can just use <em>e.g.</em> <code>Array(chain, :a)</code>.</span>
 </dd>
 </dl>
 </div>
@@ -642,29 +685,33 @@ b  │ 1.77736</code></pre>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-10">Plot the 95% posterior prediction interval as a shaded blue ribbon.</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="2" data-code-annotation="1">Plot the 95% posterior prediction interval as a shaded blue ribbon.</span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-10">Plot the posterior prediction median as a blue line.</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="3" data-code-annotation="2">Plot the posterior prediction median as a blue line.</span>
 </dd>
 <dt data-target-cell="annotated-cell-10" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-annotation="3" data-code-cell="annotated-cell-10">Plot the data as discrete red points.</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="4" data-code-annotation="3">Plot the data as discrete red points.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div id="fig-prediction-regression" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="turing-mcmc_files/figure-html/fig-prediction-regression-output-1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Posterior 95% predictive interval and median for the linear regression model. The data is plotted in red for comparison.</figcaption><p></p>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prediction-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="turing-mcmc_files/figure-html/fig-prediction-regression-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prediction-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Posterior 95% predictive interval and median for the linear regression model. The data is plotted in red for comparison.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>From <a href="#fig-prediction-regression">Figure&nbsp;3</a>, it looks like our model might be slightly under-confident, as with 20 data points, we would expect 5% of them (or 1 data point) to be outside the 95% prediction interval. It’s hard to tell with only 20 data points, though! We could resolve this by tightening our priors, but this depends on how much information we used to specify them in the first place. The goal shouldn’t be to hit a specific level of uncertainty, but if there is a sound reason to tighten the priors, we could do so.</p>
-<p>Now let’s look at the residuals from the posterior median and the data. The partial autocorrelations plotted in <a href="#fig-residuals-regression">Figure&nbsp;4</a> are not fully convincing, as there are large autocorrelation coefficients with long lags, but the dataset is quite small, so it’s hard to draw strong conclusions. We won’t go further down this rabbit hole as we know our data-generating process involved independent noise, but for a real dataset, we might want to try a model specification with autocorrelated errors to compare.</p>
+<p>From <a href="#fig-prediction-regression" class="quarto-xref">Figure&nbsp;3</a>, it looks like our model might be slightly under-confident, as with 20 data points, we would expect 5% of them (or 1 data point) to be outside the 95% prediction interval. It’s hard to tell with only 20 data points, though! We could resolve this by tightening our priors, but this depends on how much information we used to specify them in the first place. The goal shouldn’t be to hit a specific level of uncertainty, but if there is a sound reason to tighten the priors, we could do so.</p>
+<p>Now let’s look at the residuals from the posterior median and the data. The partial autocorrelations plotted in <a href="#fig-residuals-regression" class="quarto-xref">Figure&nbsp;4</a> are not fully convincing, as there are large autocorrelation coefficients with long lags, but the dataset is quite small, so it’s hard to draw strong conclusions. We won’t go further down this rabbit hole as we know our data-generating process involved independent noise, but for a real dataset, we might want to try a model specification with autocorrelated errors to compare.</p>
 <div class="cell page-columns page-full" data-execution_count="13">
 <div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode julia code-annotation-code code-with-copy"><code class="sourceCode julia"><span id="annotated-cell-11-1"><a href="#annotated-cell-11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the median predictions and residuals</span></span>
 <span id="annotated-cell-11-2"><a href="#annotated-cell-11-2" aria-hidden="true" tabindex="-1"></a>y_pred_data <span class="op">=</span> <span class="fu">mc_predict_regression</span>(x, chain)</span>
@@ -677,9 +724,13 @@ b  │ 1.77736</code></pre>
 
 <div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="14">
 <div id="fig-residuals-regression" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="turing-mcmc_files/figure-html/fig-residuals-regression-output-1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Partial autocorrelation function of model residuals, relative to the predictive median.</figcaption><p></p>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-residuals-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="turing-mcmc_files/figure-html/fig-residuals-regression-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-residuals-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Partial autocorrelation function of model residuals, relative to the predictive median.
+</figcaption>
 </figure>
 </div>
 </div></div></div>
@@ -728,31 +779,31 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="3" data-code-annotation="1" data-code-cell="annotated-cell-12">This uses the <code>DataFramesMeta.jl</code> package, which makes it easy to string together commands to load and process data</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="3" data-code-annotation="1">This uses the <code>DataFramesMeta.jl</code> package, which makes it easy to string together commands to load and process data</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-annotation="2" data-code-cell="annotated-cell-12">Load the file, assuming there is no header.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="4" data-code-annotation="2">Load the file, assuming there is no header.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="5" data-code-annotation="3" data-code-cell="annotated-cell-12">Convert to a <code>DataFrame</code>.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="5" data-code-annotation="3">Convert to a <code>DataFrame</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="6,7,8,9,10" data-code-annotation="4" data-code-cell="annotated-cell-12">Rename columns for ease of access.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="6,7,8,9,10" data-code-annotation="4">Rename columns for ease of access.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="12" data-code-annotation="5" data-code-cell="annotated-cell-12">Reformat the decimal datetime provided in the file into a Julia <code>DateTime</code>.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="12" data-code-annotation="5">Reformat the decimal datetime provided in the file into a Julia <code>DateTime</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="14" data-code-annotation="6" data-code-cell="annotated-cell-12">Replace missing data with <code>missing</code>.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="14" data-code-annotation="6">Replace missing data with <code>missing</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-lines="15" data-code-annotation="7" data-code-cell="annotated-cell-12">Select only the <code>:datetime</code> and <code>:gauge</code> columns.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="15" data-code-annotation="7">Select only the <code>:datetime</code> and <code>:gauge</code> columns.</span>
 </dd>
 </dl>
 </div>
@@ -760,17 +811,21 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 <pre><code>load_data (generic function with 1 method)</code></pre>
 </div>
 </div>
-<div class="cell page-columns page-full" data-execution_count="15">
+
+<div class="no-row-height column-margin column-container"><div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dat <span class="op">=</span> <span class="fu">load_data</span>(<span class="st">"data/h551a.csv"</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">first</span>(dat, <span class="fl">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display" data-execution_count="16">
+<div id="tbl-data" class="cell anchored" data-execution_count="15">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Processed hourly tide gauge data from San Francisco, from 8/1/1897-1/31/2023.
+</figcaption>
+<div aria-describedby="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div><div style="float: left;"><span>6×2 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
-<div id="tbl-data" class="anchored">
-<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;1: Processed hourly tide gauge data from San Francisco, from 8/1/1897-1/31/2023.</caption>
+<table class="data-frame cell table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
-<tr class="header header">
+<tr class="header">
 <th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">datetime</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">gauge</th>
@@ -816,8 +871,10 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 </table>
 </div>
 </div>
-</div></div></div>
-<div class="cell" data-execution_count="16">
+</div>
+</figure>
+</div>
+</div></div><div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode julia code-annotation-code code-with-copy code-annotated"><code class="sourceCode julia"><button class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1">1</button><span id="annotated-cell-14-1" class="code-annotation-target"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@df</span> dat <span class="fu">plot</span>(<span class="op">:</span>datetime, <span class="op">:</span>gauge, label<span class="op">=</span><span class="st">"Observations"</span>, bottom_margin<span class="op">=</span><span class="fl">9</span>mm)</span>
 <span id="annotated-cell-14-2"><a href="#annotated-cell-14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xaxis!</span>(<span class="st">"Date"</span>, xrot<span class="op">=</span><span class="fl">30</span>)</span>
 <span id="annotated-cell-14-3"><a href="#annotated-cell-14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">yaxis!</span>(<span class="st">"Mean Water Level"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -825,15 +882,19 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-14">This uses the <code>DataFrame</code> plotting recipe with the <code>@df</code> macro from <code>StatsPlots.jl</code>. This is not needed (you could replace <em>e.g.</em> <code>:datetime</code> with <code>dat.datetime</code>), but it cleans things up slightly.</span>
+<span data-code-cell="annotated-cell-14" data-code-lines="1" data-code-annotation="1">This uses the <code>DataFrame</code> plotting recipe with the <code>@df</code> macro from <code>StatsPlots.jl</code>. This is not needed (you could replace <em>e.g.</em> <code>:datetime</code> with <code>dat.datetime</code>), but it cleans things up slightly.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-<div id="fig-raw-data" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="turing-mcmc_files/figure-html/fig-raw-data-output-1.png" class="img-fluid figure-img" alt="Tide gauge data"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Hourly mean water at the San Francisco tide gauge from 1897-2023.</figcaption><p></p>
+<div id="fig-raw-data" class="quarto-figure quarto-figure-center anchored" alt="Tide gauge data">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-raw-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="turing-mcmc_files/figure-html/fig-raw-data-output-1.png" class="img-fluid figure-img" alt="Tide gauge data">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-raw-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Hourly mean water at the San Francisco tide gauge from 1897-2023.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -851,13 +912,17 @@ Caldwell, P. C., Merrifield, M. A., &amp; Thompson, P. R. (2015). Sea level meas
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">xaxis!</span>(<span class="st">"Date"</span>, xrot<span class="op">=</span><span class="fl">30</span>)</span>
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">yaxis!</span>(<span class="st">"Mean Water Level"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display page-columns page-full" data-execution_count="18">
-<div id="fig-data-detrend" class="quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="turing-mcmc_files/figure-html/fig-data-detrend-output-1.png" class="img-fluid figure-img" alt="Detrended tide gauge data"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: Mean water level from the San Francisco tide gauge, detrended using a 1-year moving average centered on the data point, per the recommendation of <span class="citation" data-cites="Arns2013-tl">Arns et al. (<a href="#ref-Arns2013-tl" role="doc-biblioref">2013</a>)</span>.</figcaption><div class="no-row-height column-margin column-container"><div id="ref-Arns2013-tl" class="csl-entry" role="listitem">
+<div id="fig-data-detrend" class="quarto-figure quarto-figure-center anchored page-columns page-full" alt="Detrended tide gauge data">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-data-detrend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="turing-mcmc_files/figure-html/fig-data-detrend-output-1.png" class="img-fluid figure-img" alt="Detrended tide gauge data">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-detrend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Mean water level from the San Francisco tide gauge, detrended using a 1-year moving average centered on the data point, per the recommendation of <span class="citation" data-cites="Arns2013-tl">Arns et al. (<a href="#ref-Arns2013-tl" role="doc-biblioref">2013</a>)</span>.
+</figcaption>
+<div class="no-row-height column-margin column-container"><div id="ref-Arns2013-tl" class="csl-entry" role="listitem">
 Arns, A., Wahl, T., Haigh, I. D., Jensen, J., &amp; Pattiaratchi, C. (2013). Estimating extreme water level probabilities: A comparison of the direct methods and recommendations for best practise. <em>Coast. Eng.</em>, <em>81</em>, 51–66. <a href="https://doi.org/10.1016/j.coastaleng.2013.07.003">https://doi.org/10.1016/j.coastaleng.2013.07.003</a>
-</div></div><p></p>
-</figure>
+</div></div></figure>
 </div>
 </div>
 </div>
@@ -877,23 +942,27 @@ Arns, A., Wahl, T., Haigh, I. D., Jensen, J., &amp; Pattiaratchi, C. (2013). Est
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-16" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-16">If we don’t drop the values which are missing, they will affect the next call to <code>argmax</code>.</span>
+<span data-code-cell="annotated-cell-16" data-code-lines="2" data-code-annotation="1">If we don’t drop the values which are missing, they will affect the next call to <code>argmax</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-16" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3,4" data-code-annotation="2" data-code-cell="annotated-cell-16">This first groups the data based on the year (with <code>groupby</code> and using <code>Dates.year()</code> to get the year of each data point), then pulls the rows which correspond to the maxima for each year (using <code>argmax</code>).</span>
+<span data-code-cell="annotated-cell-16" data-code-lines="3,4" data-code-annotation="2">This first groups the data based on the year (with <code>groupby</code> and using <code>Dates.year()</code> to get the year of each data point), then pulls the rows which correspond to the maxima for each year (using <code>argmax</code>).</span>
 </dd>
 <dt data-target-cell="annotated-cell-16" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="5" data-code-annotation="3" data-code-cell="annotated-cell-16">This will delete the last year, in this case 2023, because the dataset only goes until March 2023 and this data point is almost certainly an outlier due to the limited data from that year.</span>
+<span data-code-cell="annotated-cell-16" data-code-lines="5" data-code-annotation="3">This will delete the last year, in this case 2023, because the dataset only goes until March 2023 and this data point is almost certainly an outlier due to the limited data from that year.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="19">
-<div id="fig-annmax-histogram" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="turing-mcmc_files/figure-html/fig-annmax-histogram-output-1.png" class="img-fluid figure-img" alt="Annual maxima histogram"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: Histogram of annual block maxima from 1898-2022 from the San Francisco tide gauge dataset.</figcaption><p></p>
+<div id="fig-annmax-histogram" class="quarto-figure quarto-figure-center anchored" alt="Annual maxima histogram">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-annmax-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="turing-mcmc_files/figure-html/fig-annmax-histogram-output-1.png" class="img-fluid figure-img" alt="Annual maxima histogram">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-annmax-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Histogram of annual block maxima from 1898-2022 from the San Francisco tide gauge dataset.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -919,35 +988,35 @@ Arns, A., Wahl, T., Haigh, I. D., Jensen, J., &amp; Pattiaratchi, C. (2013). Est
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-17" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-17">Location parameter prior: We know that this is roughly on the 1000 mm order of magnitude, but want to keep this relatively broad.</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="2" data-code-annotation="1">Location parameter prior: We know that this is roughly on the 1000 mm order of magnitude, but want to keep this relatively broad.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-17">Scale parameter prior: This parameter must be positive, so we use a normal truncated at zero.</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="3" data-code-annotation="2">Scale parameter prior: This parameter must be positive, so we use a normal truncated at zero.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-annotation="3" data-code-cell="annotated-cell-17">Shape parameter prior: These are usually small and are hard to constrain, so we will use a more informative prior.</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="4" data-code-annotation="3">Shape parameter prior: These are usually small and are hard to constrain, so we will use a more informative prior.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="6" data-code-annotation="4" data-code-cell="annotated-cell-17">The data is independently GEV-distributed as we’ve removed the long-term trend and are using long blocks.</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="6" data-code-annotation="4">The data is independently GEV-distributed as we’ve removed the long-term trend and are using long blocks.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="9" data-code-annotation="5" data-code-cell="annotated-cell-17">Initialize the model.</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="9" data-code-annotation="5">Initialize the model.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="10" data-code-annotation="6" data-code-cell="annotated-cell-17">We use multiple chains to help diagnose convergence.</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="10" data-code-annotation="6">We use multiple chains to help diagnose convergence.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-lines="11" data-code-annotation="7" data-code-cell="annotated-cell-17">This sets the number of iterations for each chain.</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="11" data-code-annotation="7">This sets the number of iterations for each chain.</span>
 </dd>
 <dt data-target-cell="annotated-cell-17" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-lines="12" data-code-annotation="8" data-code-cell="annotated-cell-17">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler.</span>
+<span data-code-cell="annotated-cell-17" data-code-lines="12" data-code-annotation="8">Sample from the posterior using NUTS and drop the iterations used to warmup the sampler.</span>
 </dd>
 </dl>
 </div>
@@ -1006,27 +1075,35 @@ Quantiles
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gev_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
-<div id="fig-gev-traceplot" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="turing-mcmc_files/figure-html/fig-gev-traceplot-output-1.png" class="img-fluid figure-img" alt="MCMC sampler output"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;8: Traceplots (left) and marginal distributions (right) from the MCMC sampler for the GEV model.</figcaption><p></p>
+<div id="fig-gev-traceplot" class="quarto-figure quarto-figure-center anchored" alt="MCMC sampler output">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gev-traceplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="turing-mcmc_files/figure-html/fig-gev-traceplot-output-1.png" class="img-fluid figure-img" alt="MCMC sampler output">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gev-traceplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Traceplots (left) and marginal distributions (right) from the MCMC sampler for the GEV model.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>From <a href="#fig-gev-traceplot">Figure&nbsp;8</a>, it looks like all of the chains have converged to the same distribution; the Gelman-Rubin diagnostic is also close to 1 for all parameters. Next, we can look at a corner plot to see how the parameters are correlated.</p>
+<p>From <a href="#fig-gev-traceplot" class="quarto-xref">Figure&nbsp;8</a>, it looks like all of the chains have converged to the same distribution; the Gelman-Rubin diagnostic is also close to 1 for all parameters. Next, we can look at a corner plot to see how the parameters are correlated.</p>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corner</span>(gev_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
-<div id="fig-gev-corner" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="turing-mcmc_files/figure-html/fig-gev-corner-output-1.png" class="img-fluid figure-img" alt="GEV corner plot"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;9: Corner plot for the GEV model.</figcaption><p></p>
+<div id="fig-gev-corner" class="quarto-figure quarto-figure-center anchored" alt="GEV corner plot">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gev-corner-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="turing-mcmc_files/figure-html/fig-gev-corner-output-1.png" class="img-fluid figure-img" alt="GEV corner plot">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gev-corner-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Corner plot for the GEV model.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="#fig-gev-corner">Figure&nbsp;9</a> suggests that the location and scale parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> are positively correlated. This makes some intuitive sense, as increasing the location parameter shifts the bulk of the distribution in a positive direction, and the increasing scale parameter then increases the likelihood of lower values. However, if these parameters are increased, the shape parameter <span class="math inline">\(\xi\)</span> decreases, as the tail of the GEV does not need to be as thick due to the increased proximity of outliers to the bulk.</p>
+<p><a href="#fig-gev-corner" class="quarto-xref">Figure&nbsp;9</a> suggests that the location and scale parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> are positively correlated. This makes some intuitive sense, as increasing the location parameter shifts the bulk of the distribution in a positive direction, and the increasing scale parameter then increases the likelihood of lower values. However, if these parameters are increased, the shape parameter <span class="math inline">\(\xi\)</span> decreases, as the tail of the GEV does not need to be as thick due to the increased proximity of outliers to the bulk.</p>
 
 
 
@@ -1114,10 +1191,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1127,8 +1203,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1141,6 +1226,120 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1184,6 +1383,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1209,8 +1409,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-      // Handle positioning of the toggle
-      window.addEventListener(
+        // Handle positioning of the toggle
+    window.addEventListener(
       "resize",
       throttle(() => {
         elRect = undefined;
@@ -1218,23 +1418,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           selectCodeLines(selectedAnnoteEl);
         }
       }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
               fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
       for (let i=0; i<annoteTargets.length; i++) {
         const annoteTarget = annoteTargets[i];
@@ -1281,7 +1481,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
               options: {
                 flipVariations: false, // true by default
                 allowedAutoPlacements: ['right'],
-                fallbackPlacements: ['right', 'top', 'top-start', 'top-end'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
               },
             },
             {
@@ -1337,7 +1537,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/julia-plots.html" class="pagination-link">
+      <a href="../tutorials/julia-plots.html" class="pagination-link  aria-label=" making="" plots"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Making Plots</span>
       </a>          
   </div>
@@ -1347,13 +1547,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="../about.html">About page</a> page for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></div>   
+    <div class="nav-footer-left">
+<p>Content <i class="fa-solid fa-copyright" aria-label="copyright"></i> 2023 by <a href="https://viveks.me">Vivek Srikrishnan</a>. See the <a href="../about.html">About page</a> page for credit information.<br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0)</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/simulation-data-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></div>
+    <div class="nav-footer-right">
+<p>Made with <a href="https://julialang.org">Julia</a> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://www.github.com/vsrikrish/simulation-data-analysis">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+</div>
   </div>
 </footer>
+
 
 
 
