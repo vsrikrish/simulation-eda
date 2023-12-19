@@ -413,8 +413,8 @@ hl_header = LatexHighlighter((data, i, j) -> i ∈ headers_idx, ["emph", "textbf
 
 pretty_table(cschedule, highlighters=(hl_header, hl_hol, hl_smallfont), 
   body_hlines = headers_idx[2:end] .- 1,
-  nosubheader=true, backend=Val(:latex), tf=tf_latex_modern, formatters=ft_nomissing,
-  row_names=class_nums, row_name_alignment=:r, row_name_column_title = "\\#", wrap_table=true, wrap_table_environment="center", table_type=:longtable,
+  backend=Val(:latex), tf=tf_latex_modern, formatters=ft_nomissing, show_row_number=false, show_subheader=false,
+  row_labels=class_nums, row_label_alignment=:r, row_label_column_title = "\\#", wrap_table=true, wrap_table_environment="center", table_type=:longtable,
   alignment = [:c, :c, :l])
 ```
 :::
