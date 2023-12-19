@@ -107,6 +107,10 @@ If your programming or statistics skills are a little rusty, don't worry! We wil
 - Predictive model assessment;
 - Emulation with surrogate models
 
+## Course Meetings
+
+This course meets MWF from 11:40--12:55 in 160 Riley-Robb Hall. In addition to the course meetings (a total of 42 lectures, 50 minutes each), the final project will be due during the university finals period. In addition to the work during the semester, students can expect to devote, on average, 4 hours of effort during the exam period.
+
 ## Course Philosophy and Expectations
 
 The goal of our course is to help you gain competancy and knowledge in the area of data analysis. This involves a dual responsibility on the part of the instructor and the student. As the instructor, my responsibility is to provide you with a structure and opportunity to learn. To this end, I will commit to:
@@ -232,9 +236,32 @@ In general, late work will be subjected to a 10% penalty per day, *which can acc
 
 ## Assessments
 
+### Grading Scale
+
+The following grading scale will be used to convert the numerical weighted average from the assessments (below) to letter grades
+
+| Grade | Range |
+|:---:|:--------|
+| A | 93--100 |
+| A- | 90--92 |
+| B+ | 87--89 |
+| B | 83--86 |
+| B- | 80--82 |
+| C+ | 77--79 |
+| C | 73--76 |
+| C- | 70--72 |
+| D+ | 67--69 |
+| D | 63--66 |
+| D- | 60--62 |
+| F | < 59 |
+
 ### Application Exercises: 10%
 
 Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming or visual assessment of data or a figure. Application exercises will be provided the previous Friday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. Application exercise solutions should be submitted as a PDF on Gradescope. The lowest two of these will be dropped. Application exercises which involve programming will be distributed using GitHub Classroom.
+
+### Readings: 10%
+
+Readings will be assigned for discussion throughout the semester. Students in BEE 5850 will be expected to write one-page critiques of the papers; while students in BEE 4850 will be expected to contribute to the online discussions.
 
 ### Labs: 20%
 
@@ -242,7 +269,7 @@ Approximately 7 class periods will be dedicated to working on labs. These labs a
 
 Lab notebook solutions will be due by 9:00pm roughly one week after the in-class session. These should be submitted to Gradescope as a PDF. The lowest lab grade will be dropped.
 
-### Homework Assignments: 40%
+### Homework Assignments: 30%
 
 Approximately 6 homework assignments will be assigned throughout the semester (roughly one per course module). You will typically have 2 weeks to work on each assignment, though this depends on the module length. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but  plagiarism is a violation of academic integrity.
 
@@ -259,7 +286,7 @@ Some notes on assignment and grading logistics:
 
 This course will culminate with a term project. The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
 
-The term project will be completed in small groups (2-3 students) for students enrolled in BEE 4850 and individually for those in BEE 5850. The final deliverable for this project will be a poster summarizing the project and results. Ahead of that, you will submit the following:
+The term project will be completed individually. The final deliverable for this project will be a poster summarizing the project and results. Ahead of that, you will submit the following:
 
 - a proposal for feedback on the scope of your project; and
 - a mid-semester work plan providing more details on the project design.
