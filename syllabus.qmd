@@ -85,7 +85,7 @@ The following courses/material would be ideal preparation:
 
 - One course in programming (*e.g.* CS 1110, 1112 or ENGRD/CEE 3200)
 - One course in probability or statistics (ENGRD 2700, CEE 3040, or equivalent) 
-- One course in environmental systems (BEE 4750/5750, or equivalent)
+
 
 In the absence of one or more these prerequisites, you can seek the permission of instructor.
 
@@ -236,6 +236,12 @@ In general, late work will be subjected to a 10% penalty per day, *which can acc
 
 ## Assessments
 
+### Technologies
+
+We will use Canvas as a gradebook, and to distribute PDFs of readings (which also be made available through the website, via the Cornell library). Ed Discussion will be used for course communications. Assignments will be submitted and graded in Gradescope. 
+
+Students can use any programming language they like to solve problems, though we will make notebooks and package environments available for Julia. If students use a language other than Julia, they may limited in the programming assistance they receive (though we're happy to try to help!).
+
 ### Grading Scale
 
 The following grading scale will be used to convert the numerical weighted average from the assessments (below) to letter grades
@@ -257,17 +263,15 @@ The following grading scale will be used to convert the numerical weighted avera
 
 ### Application Exercises: 10%
 
-Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming or visual assessment of data or a figure. Application exercises will be provided the previous Friday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. Application exercise solutions should be submitted as a PDF on Gradescope. The lowest two of these will be dropped. Application exercises which involve programming will be distributed using GitHub Classroom.
+Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming, a minor calculation,  and/or visual assessment of data or a figure. Application exercises will be provided the previous Monday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. These exercises will be given as quizzes on Gradescope and will be auto-graded. The lowest exercise score will be dropped automatically.
 
 ### Readings: 10%
 
 Readings will be assigned for discussion throughout the semester. Students in BEE 5850 will be expected to write one-page critiques of the papers; while students in BEE 4850 will be expected to contribute to the online discussions.
 
-### Labs: 20%
+## Paper Critique and Presentation: 20%
 
-Approximately 7 class periods will be dedicated to working on labs. These labs are intended to give you hands-on experience with new tools and/or methods, and will focus more on completing tasks and interpreting output than conceptual questions. Students should bring their laptops to class on these days; please prepare in advance by downloading the notebook and setting up the environment by running the first few cells. 
-
-Lab notebook solutions will be due by 9:00pm roughly one week after the in-class session. These should be submitted to Gradescope as a PDF. The lowest lab grade will be dropped.
+Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices. Students enrolled in BEE 5850 will also write a referee report, as if they were a peer reviewer. Students will give an in-class presentation of their paper during one class period. Other students will be asked to submit evaluations of the presentations.
 
 ### Homework Assignments: 30%
 
@@ -282,16 +286,17 @@ Some notes on assignment and grading logistics:
   * Your lowest homework grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time. 
   * Regrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways: the TA can take away points as well!
 
-### Final Term Project: 30%
+### Term Project: 30%
 
-This course will culminate with a term project. The goal of this project is to apply and extend the tools and approaches we will learn in class. While we encourage drawing on other classes or interests when developing and working on your project, **submitting work from another course or work which was completed prior to the course is not permitted**.
+Throughout the semester, students will apply the concepts and methods from class to a data set of their choosing. If a student does not have a data set in mind, we will find one which aligns with their interests.
 
-The term project will be completed individually. The final deliverable for this project will be a poster summarizing the project and results. Ahead of that, you will submit the following:
+The term project can be completed individually or in groups of 2. Students will provide updates throughout the semester corresponding to the various tasks discussed in each module and will submit a final report at the end of the semester. The deliverables are:
 
-- a proposal for feedback on the scope of your project; and
-- a mid-semester work plan providing more details on the project design.
-
-Rubrics will be provided for the components of the project.
+  * A proposal describing the research question and hypotheses, the data set, and the numerical or statistical models the student would like to use to test the hypotheses;
+  * A simulation study applying simulation methods to the models;
+  * A calibration exercises applying calibration and uncertainty quantification methods from class;
+  * Assessments of the model performance based on the data;
+  * A final presentation and report.
 
 
 ::: {.content-visible unless-format="html"}
