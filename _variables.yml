@@ -9,18 +9,18 @@ instructor:
   office: "318 Riley-Robb"
   contact_policy: >-
     Use the class's Ed Discussion board for any class-related queries.
-  appointment_url: https://calendly.com/vsrikrish/
+  appointment_url: https://book.vimcal.com/p/viveks/30-minutes
 
 course:
   number: "BEE 4850/5850"
   title: "Environmental Data Analysis and Simulation"
   semester: "Spring 2024"
-  days: "MWF"
-  time: "1:25-2:15pm"
-  location: "TBD"
+  days: "MW"
+  time: "11:40-12:55pm"
+  location: "160 Riley-Robb Hall"
   github: "https://www.github.com/vsrikrish/simulation-data-analysis"
   url: "https://viveks.me/simulation-data-analysis"
-  copyright_year: "2023"
+  copyright_year: "2024"
 
 university:
   name: Cornell University
