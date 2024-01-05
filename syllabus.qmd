@@ -26,7 +26,7 @@ format:
 
 ## Course Overview
 
-This is a 3 credit course offered as an elective, which counts towards the Environmental Systems and Data Analytics focus area in the Environmental Engineering major.
+This is a 3 credit course offered as an elective.
 
 :::: {.columns .course-details}
 
@@ -165,7 +165,7 @@ If you need more immediate accomodations, but do not yet have a letter, please l
 
 Most course communications will occur via [Ed Discussion](https://edstem.org). Public Ed posts are generally preferred to private posts or emails, as other students can benefit from the discussions. If you would like to discuss something privately, please do reach out through email or a private Ed post (which will only be viewable by you and the course staff).
 
-Announcements will be made on the course website and in Ed. Emergency announcements will also be made on Canvas.
+Announcements will be made on the course website and in Ed.
 
 ::: {.callout-important}
 ## Ed Tips
@@ -281,9 +281,19 @@ Students can use any programming language they like to solve problems, though we
 
 We recommend students create a GitHub account and use GitHub to version control and share their code throughout the semester.
 
-### Grading Scale
+### Grading
 
-The following grading scale will be used to convert the numerical weighted average from the assessments (below) to letter grades
+Final grades will be computed based on the following assessment weights:
+
+| Assessment | Weight |
+|:----------|:----|
+| Application Exercises | 10% |
+| Readings | 10% |
+| Literature Critique | 15% |
+| Homework | 30% |
+| Term Project | 35% |
+
+The following grading scale will be used to convert the numerical weighted average to letter grades:
 
 | Grade | Range |
 |:---:|:--------|
@@ -300,19 +310,22 @@ The following grading scale will be used to convert the numerical weighted avera
 | D- | 60--62 |
 | F | < 59 |
 
-### Application Exercises: 10%
+
+
+
+### Application Exercises
 
 Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming, a minor calculation,  and/or visual assessment of data or a figure. Application exercises will be provided the previous Monday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. These exercises will be given as quizzes on Gradescope and will be auto-graded. The lowest exercise score will be dropped automatically.
 
-### Readings: 10%
+### Readings
 
 Readings will be assigned for discussion throughout the semester. One student will be responsible for writing an initial summary and critique of the paper, but all students are expected to contribute to in-class and online discussions.
 
-### Paper Critique and Presentation: 20%
+### Literature Critique
 
 Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices. Students enrolled in BEE 5850 will also write a referee report, as if they were a peer reviewer. Students will give an in-class presentation of their paper during one class period. Other students will be asked to submit evaluations of the presentations.
 
-### Homework Assignments: 30%
+### Homework Assignments
 
 Approximately 6 homework assignments will be assigned throughout the semester (roughly one per course module). You will typically have 2 weeks to work on each assignment, though this depends on the module length. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but  plagiarism is a violation of academic integrity.
 
@@ -324,7 +337,7 @@ Some notes on assignment and grading logistics:
   * Your lowest homework grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time. 
   * Regrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways: the TA can take away points as well!
 
-### Term Project: 30%
+### Term Project
 
 Throughout the semester, students will apply the concepts and methods from class to a data set of their choosing. If a student does not have a data set in mind, we will find one which aligns with their interests.
 
@@ -378,7 +391,7 @@ topics = [
   "The Bootstrap II",
   "Markov Chain Monte Carlo",
   "MCMC II",
-  "Literature Review Presentations",
+  "Literature Presentations",
   "Statistical Model Calibration", 
   "Model-Data Discrepancy",
   "Missing and Censored Data",
@@ -392,7 +405,7 @@ topics = [
 
 holiday_dates = ["2024-02-26", "2024-04-01", "2024-04-03"];
 holidays = DataFrame(Date=Dates.format.(Date.(holiday_dates), "mm-dd"), 
-                    Holiday=["February Break", "Spring Break", "Spring Break", "Spring Break"]);
+                    Holiday=["February Break", "Spring Break", "Spring Break"]);
 
 # add in holidays
 ctopics = Vector{String}(undef, length(cdates)); # initialize array
@@ -407,7 +420,7 @@ class_nums = missings(Int, length(cdates))
 class_nums[cschedule.Date .∉ [holidays.Date]] = collect(range(1, length=length(cdates) - nrow(holidays)))
 
 # set headers
-headers_idx = [1, 6, 12, 16, 24, 28, 32]
+headers_idx = [1, 6, 12, 17, 27, 31, 35]
 headers = DataFrame([
   "" "" "Introduction and Class Overview";
   "" "" "Probability and Statistics Background and Review";
