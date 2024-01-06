@@ -10,37 +10,42 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 
 ### I: Class Introduction
 
-| Lecture | Date        | Topic | Slides | AE | Lab | HW | Project |
-:-----:|:------------|:------|:------:|:--:|:---:|:--:|:-------:|
-|  1   | Mon, Jan 22 | Overview, GitHub Intro | [{{< fa sharp presentation-screen >}}](slides/lec01-class-intro.html){target="_blank"}  | [{{< fa sharp coffee-pot >}}](aes/ae01/ae01.html) |  | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.html) | |
-| 2 | Wed, Jan 24 | Hypothesis Testing and Data Analysis | | | | | |
-| 3 | Mon, Jan 29 | Simulating Data-Generating Processes | | | | |
-| 4 | Wed, Jan 31 | Example Application: Climate Change and Coastal Flooding | | | | |
-| 5 | Mon, Feb 5 | Uncertainty and Probability Review | | | | |
-| 6 | Wed, Feb 7 | Probability Models and Model Residuals | | | | |
-| 7 | Mon, Feb 12 | Probability Models II | | | | |
-| 8 | Wed, Feb 14 | Bayesian Statistics and Decision Analysis | | | | |
-| 9 | Mon, Feb 19 | Hypothesis Testing As Decision-Making | | | | |
-| 10 | Wed, Feb 21 | Data Visualization | | | | |
-|   | Mon, Feb 26 | *No Class: February Break* | | | | |
-| 11 | Wed, Feb 28 | Graphical Checks and Model Diagnostics | | | | |
-| 12 | Mon, Mar 4 | In-Class Figure Discussion | | | | |
-| 13 | Wed, Mar 6 | Uncertainty Propagation and Monte Carlo Simulation | | | | |
-| 14 | Mon, Mar 11 | Monte Carlo Simulation II | | | | |
-| 15 | Wed, Mar 13 | Sampling Distributions and The Bootstrap | | | | |
-| 16 | Mon, Mar 18 | The Bootstrap II | | | | |
-| 17 | Wed, Mar 20 | Markov Chain Monte Carlo | | | | |
-| 18 | Mon, Mar 25 | MCMC II | | | | |
-| 19 | Wed, Mar 27 | Literature Review Presentations | | | | |
-|   | Mon, Apr 1 | *No Class: Spring Break* | | | | |
-|   | Wed, Apr 3 | *No Class: Spring Break* | | | | |
-| 20 | Mon, Apr 8 | Statistical Model Calibration | | | | |
-| 21 | Wed, Apr 10 | Model-Data Discrepancy | | | | |
-| 22 | Mon, Apr 15 | Missing and Censored Data | | | | |
-| 23 | Wed, Apr 17 | Model Assessment and Predictive Accuracy | | | | |
-| 24 | Mon, Apr 22 | Predictive Information Criteria | | | | |
-| 25 | Wed, Apr 24 | Model Assessment and Selection: Examples | | | | |
-| 26 | Mon, Apr 29 | Tradeoffs Between Complexity and Ensemble Size | | | | |
-| 27 | Wed, May 1 | Emulating Expensive Models | | | | |
-| 28 | Mon, May 6 | Project Presentations | | | | |
+| Week | Date        | Topic | Slides | AE | HW | 
+:-----:|:------------|:------|:------:|:--:|:---:|
+| | | ***Hypothesis Testing and Modeling*** | | | |
+|  [1](weeks/week01.qmd)   | Mon, Jan 22 | Overview, GitHub Intro | [{{< fa sharp presentation-screen >}}](slides/lec01-class-intro.html){target="_blank"}  | [{{< fa sharp coffee-pot >}}](aes/ae01/ae01.html) | {{< fa sharp pen-field >}}](assignments/hw01/hw01.html) | 
+|  | Wed, Jan 24 | Hypothesis Testing and Data Simulation | | | |
+| 2 | Mon, Jan 29 | Uncertainty and Probability Review | | | |
+|  | Wed, Jan 31 | Exploratory Data Analysis | | | | 
+| 3 | Mon, Feb 5 | Probability Models and Model Residuals | | | | 
+|  | Wed, Feb 7 | Probability Models II | | | | |
+| 4 | Mon, Feb 12 | Bayesian Statistics and Decision Analysis | | | |
+|  | Wed, Feb 14 | Hypothesis Testing As Decision-Making | | | | 
+| 5 | Mon, Feb 19 | Data Visualization | | | | 
+|  | Wed, Feb 21 | Graphical Checks of Model Residuals | | |  |
+| 6  | Mon, Feb 26 | *No Class: February Break* | | | | 
+|  | Wed, Feb 28 | In-Class Figure Discussion | | | | 
+| | | ***Simulation Methods*** | | | |
+| 7 | Mon, Mar 4 | Uncertainty Propagation and Monte Carlo Simulation | | | | 
+|  | Wed, Mar 6 | Monte Carlo Simulation II | | | | 
+| 8 | Mon, Mar 11 | Sampling Distributions and The Bootstrap | | | | 
+|  | Wed, Mar 13 | The Bootstrap II | | | | 
+| 9 | Mon, Mar 18 | Markov Chain Monte Carlo | | | | 
+|  | Wed, Mar 20 | MCMC II | | | | 
+| | | ***Model Calibration*** | | | |
+| 10 | Mon, Mar 25 | Statistical Model Calibration | | | | 
+|  | Wed, Mar 27 | Literature Review Presentations | | | |
+|   | Mon, Apr 1 | *No Class: Spring Break* | | | |
+|   | Wed, Apr 3 | *No Class: Spring Break* | | |  |
+| 11 | Mon, Apr 8 | Model-Data Discrepancy | | |  |
+|  | Wed, Apr 10 | Missing and Censored Data | | | |
+| | | ***Model Assessment and Selection*** | | | |
+| 12 | Mon, Apr 15 | Model Assessment and Predictive Accuracy | | | | 
+| 13 | Wed, Apr 17 | Cross-Validation and Information Criteria | | | | 
+| 1 | Mon, Apr 22 | Graphical Model Evaluation | | |  |
+|  | Wed, Apr 24 | Model Assessment and Selection: Examples  | | | | 
+| | | ***Emulation*** | | | |
+| 14 | Mon, Apr 29 | Tradeoffs Between Complexity and Ensemble Size | | | | 
+|  | Wed, May 1 | Emulating Expensive Models | | | | 
+| 15 | Mon, May 6 | Project Presentations | | | | 
 :::
