@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.534">
+<meta name="generator" content="quarto-1.4.536">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -349,136 +349,136 @@ Due Date
 <h3 class="anchored" data-anchor-id="loading-packages">Loading Packages</h3>
 <p>The first step in any Julia script or program is to load the environment, which contains any needed packages. To keep things efficient, “base” Julia contains relatively minimal functionality, and additional packages can be installed and loaded to add new functions and tools. In Julia, package management is handled through the <code>Pkg.jl</code> module. Julia stores information about packages in two files: <code>Project.toml</code> and <code>Manifest.toml</code>, which is why these are included in all of your assignment repositories. You won’t need to touch these directly.</p>
 <p>The following lines load <code>Pkg.jl</code> and activate the desired environment.</p>
-<div id="3714e780" class="cell" data-execution_count="1">
+<div id="47c9ae56" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span> <span class="co"># load Pkg.jl</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>) <span class="co"># load the environment based on the *.toml files in the same directory as the current file</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>() <span class="co"># install any needed packages which are missing from the local install</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">status</span>() <span class="co"># print the packages available in the environment.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>  Activating project at `~/work/simulation-data-analysis/simulation-data-analysis/labs/lab01`
-   Installed libfdk_aac_jll ─────────────── v2.0.2+0
+   Installed GR_jll ─────────────────────── v0.72.10+0
+   Installed x265_jll ───────────────────── v3.5.0+0
+   Installed LERC_jll ───────────────────── v3.0.0+1
    Installed Libmount_jll ───────────────── v2.35.0+0
    Installed JpegTurbo_jll ──────────────── v3.0.1+0
-   Installed x265_jll ───────────────────── v3.5.0+0
+   Installed libfdk_aac_jll ─────────────── v2.0.2+0
    Installed Opus_jll ───────────────────── v1.3.2+0
-   Installed GR_jll ─────────────────────── v0.72.10+0
-   Installed LERC_jll ───────────────────── v3.0.0+1
    Installed LoggingExtras ──────────────── v1.0.3
    Installed Xorg_xkbcomp_jll ───────────── v1.4.6+0
-   Installed Measures ───────────────────── v0.3.2
    Installed ConcurrentUtilities ────────── v2.3.0
+   Installed Measures ───────────────────── v0.3.2
    Installed RelocatableFolders ─────────── v1.0.1
    Installed Contour ────────────────────── v0.6.2
    Installed Grisu ──────────────────────── v1.0.2
+   Installed Xorg_xcb_util_image_jll ────── v0.4.0+1
    Installed Xorg_xcb_util_wm_jll ───────── v0.4.1+1
    Installed PlotUtils ──────────────────── v1.4.0
    Installed RecipesPipeline ────────────── v0.6.12
    Installed Xorg_libpthread_stubs_jll ──── v0.1.1+0
    Installed OpenSSL ────────────────────── v1.4.1
    Installed DelimitedFiles ─────────────── v1.9.1
-   Installed Cairo_jll ──────────────────── v1.16.1+1
    Installed Xorg_libSM_jll ─────────────── v1.2.3+0
+   Installed Cairo_jll ──────────────────── v1.16.1+1
    Installed HTTP ───────────────────────── v1.10.1
-   Installed Xorg_xcb_util_jll ──────────── v0.4.0+1
    Installed Libgpg_error_jll ───────────── v1.42.0+0
    Installed Fontconfig_jll ─────────────── v2.13.93+0
+   Installed Xorg_xcb_util_jll ──────────── v0.4.0+1
+   Installed Xorg_libXinerama_jll ───────── v1.1.4+4
    Installed Xorg_libxkbfile_jll ────────── v1.1.2+0
    Installed Xorg_libXau_jll ────────────── v1.0.11+0
-   Installed Xorg_libXinerama_jll ───────── v1.1.4+4
    Installed EpollShim_jll ──────────────── v0.0.20230411+0
    Installed FFMPEG ─────────────────────── v0.4.1
-   Installed xkbcommon_jll ──────────────── v1.4.1+1
    Installed Showoff ────────────────────── v1.0.3
-   Installed Xorg_xcb_util_keysyms_jll ──── v0.4.0+1
    Installed IrrationalConstants ────────── v0.2.2
+   Installed xkbcommon_jll ──────────────── v1.4.1+1
+   Installed Xorg_xcb_util_keysyms_jll ──── v0.4.0+1
    Installed Bzip2_jll ──────────────────── v1.0.8+0
    Installed SimpleBufferStream ─────────── v1.1.0
-   Installed XZ_jll ─────────────────────── v5.4.5+0
    Installed Pipe ───────────────────────── v1.3.0
-   Installed LZO_jll ────────────────────── v2.10.1+0
    Installed HarfBuzz_jll ───────────────── v2.8.1+1
-   Installed PlotThemes ─────────────────── v3.1.0
+   Installed XZ_jll ─────────────────────── v5.4.5+0
    Installed NaNMath ────────────────────── v1.0.2
+   Installed PlotThemes ─────────────────── v3.1.0
+   Installed LZO_jll ────────────────────── v2.10.1+0
    Installed fzf_jll ────────────────────── v0.43.0+0
+   Installed ColorSchemes ───────────────── v3.24.0
+   Installed GLFW_jll ───────────────────── v3.3.9+0
    Installed FriBidi_jll ────────────────── v1.0.10+0
    Installed UnicodeFun ─────────────────── v0.4.1
    Installed TranscodingStreams ─────────── v0.10.2
-   Installed ColorSchemes ───────────────── v3.24.0
-   Installed FreeType2_jll ──────────────── v2.13.1+0
-   Installed GLFW_jll ───────────────────── v3.3.9+0
    Installed x264_jll ───────────────────── v2021.5.5+0
-   Installed Colors ─────────────────────── v0.12.10
-   Installed JLFzf ──────────────────────── v0.1.7
+   Installed FreeType2_jll ──────────────── v2.13.1+0
    Installed StatsAPI ───────────────────── v1.7.0
+   Installed JLFzf ──────────────────────── v0.1.7
    Installed CodecZlib ──────────────────── v0.7.3
-   Installed Xorg_libxcb_jll ────────────── v1.15.0+0
-   Installed StatsBase ──────────────────── v0.34.2
-   Installed GR ─────────────────────────── v0.72.10
-   Installed libpng_jll ─────────────────── v1.6.40+0
-   Installed mtdev_jll ──────────────────── v1.1.6+0
+   Installed Colors ─────────────────────── v0.12.10
    Installed libaom_jll ─────────────────── v3.4.0+0
+   Installed mtdev_jll ──────────────────── v1.1.6+0
+   Installed libpng_jll ─────────────────── v1.6.40+0
+   Installed Xorg_libxcb_jll ────────────── v1.15.0+0
+   Installed GR ─────────────────────────── v0.72.10
+   Installed StatsBase ──────────────────── v0.34.2
    Installed ExceptionUnwrapping ────────── v0.1.10
    Installed gperf_jll ──────────────────── v3.1.1+0
-   Installed ColorTypes ─────────────────── v0.11.4
-   Installed Scratch ────────────────────── v1.2.1
    Installed eudev_jll ──────────────────── v3.2.9+0
+   Installed TensorCore ─────────────────── v0.1.1
+   Installed ColorTypes ─────────────────── v0.11.4
    Installed Xorg_libXext_jll ───────────── v1.3.4+4
+   Installed Scratch ────────────────────── v1.2.1
+   Installed Plots ──────────────────────── v1.39.0
    Installed Zstd_jll ───────────────────── v1.5.5+0
    Installed Xorg_xcb_util_cursor_jll ───── v0.1.4+0
-   Installed TensorCore ─────────────────── v0.1.1
-   Installed Plots ──────────────────────── v1.39.0
+   Installed Libtiff_jll ────────────────── v4.5.1+1
+   Installed Xorg_libXrender_jll ────────── v0.9.10+4
    Installed Expat_jll ──────────────────── v2.5.0+0
    Installed Libffi_jll ─────────────────── v3.2.2+1
-   Installed libevdev_jll ───────────────── v1.11.0+0
-   Installed Xorg_libXrender_jll ────────── v0.9.10+4
-   Installed Libtiff_jll ────────────────── v4.5.1+1
    Installed ColorVectorSpace ───────────── v0.10.0
-   Installed Vulkan_Loader_jll ──────────── v1.3.243+0
+   Installed libevdev_jll ───────────────── v1.11.0+0
+   Installed libinput_jll ───────────────── v1.18.0+0
+   Installed XSLT_jll ───────────────────── v1.1.34+0
    Installed Xorg_libXi_jll ─────────────── v1.7.10+4
    Installed Ogg_jll ────────────────────── v1.3.5+1
-   Installed XSLT_jll ───────────────────── v1.1.34+0
-   Installed libinput_jll ───────────────── v1.18.0+0
+   Installed Vulkan_Loader_jll ──────────── v1.3.243+0
    Installed LogExpFunctions ────────────── v0.3.26
-   Installed Libuuid_jll ────────────────── v2.36.0+0
    Installed Xorg_libXcursor_jll ────────── v1.2.0+4
-   Installed Wayland_protocols_jll ──────── v1.31.0+0
+   Installed Libuuid_jll ────────────────── v2.36.0+0
    Installed Xorg_xcb_util_renderutil_jll ─ v0.3.9+1
-   Installed DocStringExtensions ────────── v0.9.3
    Installed Xorg_libICE_jll ────────────── v1.0.10+1
-   Installed libass_jll ─────────────────── v0.15.1+0
-   Installed Pixman_jll ─────────────────── v0.42.2+0
+   Installed Wayland_protocols_jll ──────── v1.31.0+0
    Installed Graphite2_jll ──────────────── v1.3.14+0
-   Installed Wayland_jll ────────────────── v1.21.0+1
+   Installed DocStringExtensions ────────── v0.9.3
+   Installed Pixman_jll ─────────────────── v0.42.2+0
+   Installed libass_jll ─────────────────── v0.15.1+0
    Installed XML2_jll ───────────────────── v2.12.2+0
    Installed Gettext_jll ────────────────── v0.21.0+0
    Installed Xorg_xtrans_jll ────────────── v1.5.0+0
+   Installed OpenSSL_jll ────────────────── v3.0.12+0
+   Installed Wayland_jll ────────────────── v1.21.0+1
    Installed Libgcrypt_jll ──────────────── v1.8.7+0
    Installed FFMPEG_jll ─────────────────── v4.4.4+1
-   Installed OpenSSL_jll ────────────────── v3.0.12+0
-   Installed BitFlags ───────────────────── v0.1.8
    Installed Xorg_xkeyboard_config_jll ──── v2.39.0+0
+   Installed BitFlags ───────────────────── v0.1.8
+   Installed FixedPointNumbers ──────────── v0.8.4
    Installed Xorg_libXrandr_jll ─────────── v1.5.2+4
    Installed LLVMOpenMP_jll ─────────────── v15.0.7+0
-   Installed FixedPointNumbers ──────────── v0.8.4
+   Installed Xorg_libXfixes_jll ─────────── v5.0.3+4
    Installed RecipesBase ────────────────── v1.3.4
    Installed LAME_jll ───────────────────── v3.100.1+0
-   Installed Xorg_libXfixes_jll ─────────── v5.0.3+4
-   Installed Qt6Base_jll ────────────────── v6.5.3+1
    Installed Libiconv_jll ───────────────── v1.17.0+0
-   Installed URIs ───────────────────────── v1.5.1
+   Installed Qt6Base_jll ────────────────── v6.5.3+1
    Installed libvorbis_jll ──────────────── v1.3.7+1
+   Installed URIs ───────────────────────── v1.5.1
+   Installed Xorg_libXdmcp_jll ──────────── v1.1.4+0
    Installed Glib_jll ───────────────────── v2.76.5+0
    Installed Libglvnd_jll ───────────────── v1.6.0+0
    Installed Xorg_libX11_jll ────────────── v1.8.6+0
-   Installed Xorg_libXdmcp_jll ──────────── v1.1.4+0
    Installed Unzip ──────────────────────── v0.2.0
    Installed UnitfulLatexify ────────────── v1.6.3
    Installed Unitful ────────────────────── v1.19.0
-   Installed Xorg_xcb_util_image_jll ────── v0.4.0+1
 Precompiling project...
-  ✓ TensorCore
-  ✓ StatsAPI
   ✓ Contour
+  ✓ StatsAPI
+  ✓ TensorCore
   ✓ ConcurrentUtilities
   ✓ Pipe
   ✓ Measures
@@ -491,18 +491,18 @@ Precompiling project...
   ✓ URIs
   ✓ IrrationalConstants
   ✓ NaNMath
-  ✓ UnicodeFun
   ✓ TranscodingStreams
   ✓ DelimitedFiles
   ✓ BitFlags
+  ✓ UnicodeFun
   ✓ Scratch
   ✓ LoggingExtras
   ✓ OpenSSL_jll
   ✓ Graphite2_jll
   ✓ Libmount_jll
   ✓ EpollShim_jll
-  ✓ RecipesBase
   ✓ LLVMOpenMP_jll
+  ✓ RecipesBase
   ✓ Bzip2_jll
   ✓ Xorg_libXau_jll
   ✓ libpng_jll
@@ -511,31 +511,31 @@ Precompiling project...
   ✓ FixedPointNumbers
   ✓ LERC_jll
   ✓ fzf_jll
-  ✓ Ogg_jll
   ✓ JpegTurbo_jll
-  ✓ mtdev_jll
   ✓ XZ_jll
+  ✓ mtdev_jll
+  ✓ Ogg_jll
   ✓ gperf_jll
-  ✓ x265_jll
   ✓ Xorg_libXdmcp_jll
+  ✓ x265_jll
   ✓ x264_jll
-  ✓ Zstd_jll
   ✓ libaom_jll
-  ✓ Expat_jll
+  ✓ Zstd_jll
   ✓ LZO_jll
-  ✓ Opus_jll
+  ✓ Expat_jll
   ✓ Xorg_xtrans_jll
+  ✓ Opus_jll
   ✓ libevdev_jll
-  ✓ Libiconv_jll
   ✓ Libffi_jll
+  ✓ Libiconv_jll
   ✓ Libgpg_error_jll
   ✓ Wayland_protocols_jll
   ✓ Xorg_libpthread_stubs_jll
   ✓ FriBidi_jll
   ✓ Libuuid_jll
   ✓ Showoff
-  ✓ TranscodingStreams → TestExt
   ✓ LogExpFunctions
+  ✓ TranscodingStreams → TestExt
   ✓ RelocatableFolders
   ✓ Xorg_libSM_jll
   ✓ Pixman_jll
@@ -544,8 +544,8 @@ Precompiling project...
   ✓ libvorbis_jll
   ✓ eudev_jll
   ✓ Libtiff_jll
-  ✓ OpenSSL
   ✓ XML2_jll
+  ✓ OpenSSL
   ✓ Libgcrypt_jll
   ✓ CodecZlib
   ✓ ColorTypes
@@ -563,24 +563,24 @@ Precompiling project...
   ✓ Xorg_xcb_util_image_jll
   ✓ ColorVectorSpace
   ✓ Xorg_xcb_util_keysyms_jll
-  ✓ Xorg_xcb_util_wm_jll
   ✓ Xorg_xcb_util_renderutil_jll
+  ✓ Xorg_xcb_util_wm_jll
   ✓ Xorg_libXrender_jll
   ✓ Xorg_libXext_jll
   ✓ Xorg_libXfixes_jll
   ✓ Xorg_libxkbfile_jll
-  ✓ Colors
   ✓ Xorg_xcb_util_cursor_jll
-  ✓ Xorg_libXinerama_jll
   ✓ Libglvnd_jll
+  ✓ Xorg_libXinerama_jll
   ✓ Xorg_libXrandr_jll
   ✓ Cairo_jll
+  ✓ Colors
   ✓ Xorg_libXcursor_jll
   ✓ Xorg_libXi_jll
   ✓ Xorg_xkbcomp_jll
   ✓ HarfBuzz_jll
-  ✓ Xorg_xkeyboard_config_jll
   ✓ GLFW_jll
+  ✓ Xorg_xkeyboard_config_jll
   ✓ libass_jll
   ✓ xkbcommon_jll
   ✓ FFMPEG_jll
@@ -588,17 +588,17 @@ Precompiling project...
   ✓ FFMPEG
   ✓ Qt6Base_jll
   ✓ GR_jll
-  ✓ GR
   ✓ ColorSchemes
+  ✓ GR
   ✓ PlotUtils
-  ✓ Unitful
   ✓ PlotThemes
+  ✓ Unitful
   ✓ UnitfulLatexify
   ✓ RecipesPipeline
   ✓ Plots
   ✓ Plots → UnitfulExt
   ✓ Plots → IJuliaExt
-  122 dependencies successfully precompiled in 124 seconds. 34 already precompiled.</code></pre>
+  122 dependencies successfully precompiled in 130 seconds. 34 already precompiled.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Status `~/work/simulation-data-analysis/simulation-data-analysis/labs/lab01/Project.toml`
@@ -610,11 +610,11 @@ Precompiling project...
 </div>
 <p>I will start all of your assignments and scripts with at least the first three of these lines (<code>Pkg.status()</code> can be useful when you don’t know what’s available, but won’t be necessary for our purposes going forward).</p>
 <p>If you want to add additional packages for later use, you can do so with <code>Pkg.add()</code>. I’ve commented out these lines, as they are not needed, but feel free to uncomment and test: trying to <code>add</code> a package which is already in the environment won’t do anything harmful.</p>
-<div id="9621f3be" class="cell" data-execution_count="2">
+<div id="23aa4855" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pkg.add("Plots") # add Plots.jl, the base plotting library, to the environment</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, we load the packages that we will need with the <code>using</code> keyword.</p>
-<div id="b20feeff" class="cell" data-execution_count="3">
+<div id="26879621" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span> <span class="co"># this loads functionality for random number generation</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span> <span class="co"># this includes a bunch of statistical functions, including mean and quantile</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span> <span class="co"># this loads Plots.jl</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -635,8 +635,8 @@ Precompiling project...
 <h3 class="anchored" data-anchor-id="load-data">Load Data</h3>
 <p>The underlying question we would like to address is: what is the influence of drinking beer on the likelihood of being bitten by mosquitoes?</p>
 <p>First, we need to load the data. We will look at ways to work with structured data files later. For now, let’s just enter the data manually. We will do this using <em>vectors</em>, which are data structures which correspond to one-dimensional lists. To define a vector, enclose the values between two square brackets, <code>[</code> and <code>]</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Line breaks don’t matter: Julia is smart enough to recognize that the procedure isn’t complete until it sees the closing bracket.</p>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;There is some nuance about whether you separate values with commas or spaces, which determines if the resulting vector is a row vector or a column vector. This isn’t particularly relevant for this assignment, but can matter later.</p></li></div><p>Let’s load data for the number of bites reported by the participants who drank beer.</p>
-<div id="b0e45196" class="cell" data-execution_count="4">
+<div class="no-row-height column-margin column-container"><p><sup>1</sup>&nbsp;There is some nuance about whether you separate values with commas or spaces, which determines if the resulting vector is a row vector or a column vector. This isn’t particularly relevant for this assignment, but can matter later.</p></div><p>Let’s load data for the number of bites reported by the participants who drank beer.</p>
+<div id="be6238c4" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>beer <span class="op">=</span> [<span class="fl">27</span>, <span class="fl">20</span>, <span class="fl">21</span>, <span class="fl">26</span>, <span class="fl">27</span>, <span class="fl">31</span>, <span class="fl">24</span>, <span class="fl">21</span>, <span class="fl">20</span>, <span class="fl">19</span>, <span class="fl">23</span>, <span class="fl">24</span>, <span class="fl">28</span>, <span class="fl">19</span>, <span class="fl">24</span>, <span class="fl">29</span>, <span class="fl">18</span>, <span class="fl">20</span>, <span class="fl">17</span>, <span class="fl">31</span>, <span class="fl">20</span>, <span class="fl">25</span>, <span class="fl">28</span>, <span class="fl">21</span>, <span class="fl">27</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>25-element Vector{Int64}:
@@ -668,7 +668,7 @@ Precompiling project...
 </div>
 </div>
 <p>We can see what type of variable <code>beer</code> is by using the <code>typeof</code> function:</p>
-<div id="b414e926" class="cell" data-execution_count="5">
+<div id="c5f21044" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(beer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div class="ansi-escaped-output">
@@ -677,12 +677,12 @@ Precompiling project...
 </div>
 </div>
 <p>This tells us that <code>beer</code> is a vector consisting of integers (which means they don’t include any decimals). Next, let’s load the data for the number of times participants who were drinking water were bitten.</p>
-<div id="9a424231" class="cell" data-execution_count="6">
+<div id="6944d2ab" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>water <span class="op">=</span> [<span class="fl">21</span>, <span class="fl">22</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">21</span>, <span class="fl">16</span>, <span class="fl">19</span>, <span class="fl">15</span>, <span class="fl">22</span>, <span class="fl">24</span>, <span class="fl">19</span>, <span class="fl">23</span>, <span class="fl">13</span>, <span class="fl">22</span>, <span class="fl">20</span>, <span class="fl">24</span>, <span class="fl">18</span>, <span class="fl">20</span>];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Notice that, unlike when we created <code>beer</code>, we didn’t get any output from creating <code>water</code>. This is because we ended the statement with a semi-colon <code>;</code>, which suppresses the output that would otherwise be displayed. This can be a convenient way to clean up the output of your code.</p>
 <p>Another handy method for displaying variables is the <code>@show</code> macro. A <em>macro</em> is just a particular type of Julia function which starts with <code>@</code> and is “applied” to some other code:</p>
-<div id="6e4ba906" class="cell" data-execution_count="7">
+<div id="48b2546e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> water;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>water = [21, 22, 15, 12, 21, 16, 19, 15, 22, 24, 19, 23, 13, 22, 20, 24, 18, 20]</code></pre>
@@ -693,7 +693,7 @@ Precompiling project...
 <section id="initial-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="initial-analysis">Initial Analysis</h3>
 <p>How can we determine if there’s a meaningful difference between these two sets of numbers? Naively, we might simply look at the different in means between the two datasets.</p>
-<div id="1d8a52c0" class="cell" data-execution_count="8">
+<div id="cca00084" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>observed_difference <span class="op">=</span> <span class="fu">mean</span>(beer) <span class="op">-</span> <span class="fu">mean</span>(water)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> observed_difference;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -730,7 +730,7 @@ Why Write a Function?
 <p>Writing a function for code that you are going to re-use multiple times makes your program more organized and readable. Plus, if you find a bug, you only have to fix it in one place! Julia’s compiler also can better optimize code which is organized around functions.</p>
 </div>
 </div>
-<div id="64db15d2" class="cell" data-execution_count="9">
+<div id="f5701844" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the function name says that it does: try to use meaningful variable and and function names!</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># y1 and y2 are the input vectors</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">simulate_difference</span>(y1, y2)</span>
@@ -750,7 +750,7 @@ Why Write a Function?
 </div>
 </div>
 <p>Apply your function to <code>beer</code> and <code>water</code>.</p>
-<div id="2c9a7ba7" class="cell" data-execution_count="10">
+<div id="4d96779f" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">simulate_differences</span>(beer, water)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>LoadError: UndefVarError: `simulate_differences` not defined</code></pre>
@@ -761,7 +761,7 @@ Why Write a Function?
 <h3 class="anchored" data-anchor-id="problem-2-plot-simulations-5-points">Problem 2: Plot Simulations (5 points)</h3>
 <p>Generate 10,000 simulations by applying your function to <code>beer</code> and <code>water</code> repeatedly. The most straightforward way to do this is with a <em>comprehension</em>, which will automatically evaluate the function over a vector if inputs and return a vector. The general format for a comprehension is <code>output = [function(var) for var in some_range]</code>.</p>
 <p>For example, to compute the square of all of the integers between 0 and 10:</p>
-<div id="dba998ce" class="cell" data-execution_count="11">
+<div id="c08559ea" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [x<span class="op">^</span><span class="fl">2</span> for x <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>10-element Vector{Int64}:
@@ -779,7 +779,7 @@ Why Write a Function?
 </div>
 <p>To reuse a function repeatedly on the same inputs, you can just use the <code>for var in some_range</code> as a counter, without <code>var</code> changing the inputs to the function.</p>
 <p>You could also</p>
-<div id="d9841be8" class="cell" data-execution_count="12">
+<div id="db109403" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute your differences here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, plot a histogram of the differences in means along with a vertical line showing the observed difference. You can adjust the code below based on what your named your vector of differences above. If you have questions about any of the arguments to <code>histogram()</code> or `vline!(), please experiment, ask, and/or look at the website’s <a href="https://viveks.me/simulation-data-analysis/tutorials/julia-plots.html">Making Plots with Julia tutorial</a>.</p>
@@ -809,7 +809,7 @@ Keyword Arguments
 <p>Julia separates arguments which are required and those which are optional (and therefore require keywords to tell the function that they’re not just the defaults) with a semi-colon, as you can see in the code below.</p>
 </div>
 </div>
-<div id="a953b28a" class="cell" data-execution_count="13">
+<div id="3149fb33" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fu">histogram</span>(simulated_differences; <span class="co"># this is the vector for the histogram</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>xlabel<span class="op">=</span><span class="st">"Differences in Means"</span>, <span class="co"># set the x-axis label</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>ylabel<span class="op">=</span><span class="st">"Proportion of Samples"</span>, <span class="co"># set the y-axis label</span></span>
