@@ -1,5 +1,5 @@
 ---
-title: "Assignments"
+title: "Homework Assignments"
 tbl-colwidths: [20, 5, 5, 10]
 ---
 
@@ -12,11 +12,14 @@ This page contains information about and a schedule of the homework assignments 
     - You have a GitHub repository that you can use to share your code.
 - Submit assignments by 9:00pm Eastern Time on the due date on [Gradescope](https://gradescope.com).
 - Submissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.
-- To convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF.
+
+## Rubric
+
+The standard rubric for homework problems is available [here](rubrics/standard.qmd).
 
 ## Schedule
 
-| Assignment | Instructions | Rubric | Due Date |
+| Assignment | Instructions | Due Date |
 |:----------:|:------------:|:------:|:---------|
-| HW1 | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.html) | [{{< fa sharp file-check >}}](assignments/hw01/rubric.html) | Feb 09, 2024 |
+| HW1 | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.html) | Feb 09, 2024 |
 

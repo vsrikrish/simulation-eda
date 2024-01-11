@@ -55,15 +55,19 @@ website:
             text: Syllabus
           - href: schedule.qmd
             text: Class Schedule
-      - section: assignments.qmd
+          - href: policies/homework.qmd
+            text: Homework Policies
+      - section: homework.qmd
         contents:
+          - href: rubrics/standard.qmd
+            text: Standard Rubric
           - href: assignments/hw01/hw01.qmd
             text: Homework 1
       - section: project.qmd
-      - section: labs.qmd
+      - section: exercises.qmd
         contents:
-          - href: labs/lab01/lab01.qmd
-            text: Lab 1
+          - href: exercises/ae01/ae01.qmd
+            text: Application Exercise 1
       - section: "Julia Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
