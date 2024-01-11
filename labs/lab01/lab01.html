@@ -349,7 +349,7 @@ Due Date
 <h3 class="anchored" data-anchor-id="loading-packages">Loading Packages</h3>
 <p>The first step in any Julia script or program is to load the environment, which contains any needed packages. To keep things efficient, “base” Julia contains relatively minimal functionality, and additional packages can be installed and loaded to add new functions and tools. In Julia, package management is handled through the <code>Pkg.jl</code> module. Julia stores information about packages in two files: <code>Project.toml</code> and <code>Manifest.toml</code>, which is why these are included in all of your assignment repositories. You won’t need to touch these directly.</p>
 <p>The following lines load <code>Pkg.jl</code> and activate the desired environment.</p>
-<div id="4c97a504" class="cell" data-execution_count="1">
+<div id="d4e16baf" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span> <span class="co"># load Pkg.jl</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>) <span class="co"># load the environment based on the *.toml files in the same directory as the current file</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>() <span class="co"># install any needed packages which are missing from the local install</span></span>
@@ -370,11 +370,11 @@ Precompiling project...
 </div>
 <p>I will start all of your assignments and scripts with at least the first three of these lines (<code>Pkg.status()</code> can be useful when you don’t know what’s available, but won’t be necessary for our purposes going forward).</p>
 <p>If you want to add additional packages for later use, you can do so with <code>Pkg.add()</code>. I’ve commented out these lines, as they are not needed, but feel free to uncomment and test: trying to <code>add</code> a package which is already in the environment won’t do anything harmful.</p>
-<div id="6209f39c" class="cell" data-execution_count="2">
+<div id="d548427c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pkg.add("Plots") # add Plots.jl, the base plotting library, to the environment</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, we load the packages that we will need with the <code>using</code> keyword.</p>
-<div id="b364d55a" class="cell" data-execution_count="3">
+<div id="21eaacef" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span> <span class="co"># this loads functionality for random number generation</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsBase</span> <span class="co"># this includes a bunch of statistical functions, including mean and quantile</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span> <span class="co"># this loads Plots.jl</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -396,7 +396,7 @@ Precompiling project...
 <p>The underlying question we would like to address is: what is the influence of drinking beer on the likelihood of being bitten by mosquitoes?</p>
 <p>First, we need to load the data. We will look at ways to work with structured data files later. For now, let’s just enter the data manually. We will do this using <em>vectors</em>, which are data structures which correspond to one-dimensional lists. To define a vector, enclose the values between two square brackets, <code>[</code> and <code>]</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Line breaks don’t matter: Julia is smart enough to recognize that the procedure isn’t complete until it sees the closing bracket.</p>
 <div class="no-row-height column-margin column-container"><p><sup>1</sup>&nbsp;There is some nuance about whether you separate values with commas or spaces, which determines if the resulting vector is a row vector or a column vector. This isn’t particularly relevant for this assignment, but can matter later.</p></div><p>Let’s load data for the number of bites reported by the participants who drank beer.</p>
-<div id="e88d6653" class="cell" data-execution_count="4">
+<div id="38e7b6e9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>beer <span class="op">=</span> [<span class="fl">27</span>, <span class="fl">20</span>, <span class="fl">21</span>, <span class="fl">26</span>, <span class="fl">27</span>, <span class="fl">31</span>, <span class="fl">24</span>, <span class="fl">21</span>, <span class="fl">20</span>, <span class="fl">19</span>, <span class="fl">23</span>, <span class="fl">24</span>, <span class="fl">28</span>, <span class="fl">19</span>, <span class="fl">24</span>, <span class="fl">29</span>, <span class="fl">18</span>, <span class="fl">20</span>, <span class="fl">17</span>, <span class="fl">31</span>, <span class="fl">20</span>, <span class="fl">25</span>, <span class="fl">28</span>, <span class="fl">21</span>, <span class="fl">27</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>25-element Vector{Int64}:
@@ -428,7 +428,7 @@ Precompiling project...
 </div>
 </div>
 <p>We can see what type of variable <code>beer</code> is by using the <code>typeof</code> function:</p>
-<div id="a3496c49" class="cell" data-execution_count="5">
+<div id="4d7824bc" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(beer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div class="ansi-escaped-output">
@@ -437,12 +437,12 @@ Precompiling project...
 </div>
 </div>
 <p>This tells us that <code>beer</code> is a vector consisting of integers (which means they don’t include any decimals). Next, let’s load the data for the number of times participants who were drinking water were bitten.</p>
-<div id="ecce4e5a" class="cell" data-execution_count="6">
+<div id="764cc941" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>water <span class="op">=</span> [<span class="fl">21</span>, <span class="fl">22</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">21</span>, <span class="fl">16</span>, <span class="fl">19</span>, <span class="fl">15</span>, <span class="fl">22</span>, <span class="fl">24</span>, <span class="fl">19</span>, <span class="fl">23</span>, <span class="fl">13</span>, <span class="fl">22</span>, <span class="fl">20</span>, <span class="fl">24</span>, <span class="fl">18</span>, <span class="fl">20</span>];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Notice that, unlike when we created <code>beer</code>, we didn’t get any output from creating <code>water</code>. This is because we ended the statement with a semi-colon <code>;</code>, which suppresses the output that would otherwise be displayed. This can be a convenient way to clean up the output of your code.</p>
 <p>Another handy method for displaying variables is the <code>@show</code> macro. A <em>macro</em> is just a particular type of Julia function which starts with <code>@</code> and is “applied” to some other code:</p>
-<div id="1a2e40ad" class="cell" data-execution_count="7">
+<div id="07617ecf" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> water;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>water = [21, 22, 15, 12, 21, 16, 19, 15, 22, 24, 19, 23, 13, 22, 20, 24, 18, 20]</code></pre>
@@ -453,7 +453,7 @@ Precompiling project...
 <section id="initial-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="initial-analysis">Initial Analysis</h3>
 <p>How can we determine if there’s a meaningful difference between these two sets of numbers? Naively, we might simply look at the different in means between the two datasets.</p>
-<div id="016ad7af" class="cell" data-execution_count="8">
+<div id="08a78c76" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>observed_difference <span class="op">=</span> <span class="fu">mean</span>(beer) <span class="op">-</span> <span class="fu">mean</span>(water)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@show</span> observed_difference;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -490,7 +490,7 @@ Why Write a Function?
 <p>Writing a function for code that you are going to re-use multiple times makes your program more organized and readable. Plus, if you find a bug, you only have to fix it in one place! Julia’s compiler also can better optimize code which is organized around functions.</p>
 </div>
 </div>
-<div id="3a361779" class="cell" data-execution_count="9">
+<div id="33509e47" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the function name says that it does: try to use meaningful variable and and function names!</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># y1 and y2 are the input vectors</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">simulate_difference</span>(y1, y2)</span>
@@ -510,7 +510,7 @@ Why Write a Function?
 </div>
 </div>
 <p>Apply your function to <code>beer</code> and <code>water</code>.</p>
-<div id="b4a96a0d" class="cell" data-execution_count="10">
+<div id="442e49c8" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">simulate_differences</span>(beer, water)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>LoadError: UndefVarError: `simulate_differences` not defined</code></pre>
@@ -521,7 +521,7 @@ Why Write a Function?
 <h3 class="anchored" data-anchor-id="problem-2-plot-simulations-5-points">Problem 2: Plot Simulations (5 points)</h3>
 <p>Generate 10,000 simulations by applying your function to <code>beer</code> and <code>water</code> repeatedly. The most straightforward way to do this is with a <em>comprehension</em>, which will automatically evaluate the function over a vector if inputs and return a vector. The general format for a comprehension is <code>output = [function(var) for var in some_range]</code>.</p>
 <p>For example, to compute the square of all of the integers between 0 and 10:</p>
-<div id="fad30a3e" class="cell" data-execution_count="11">
+<div id="88533730" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [x<span class="op">^</span><span class="fl">2</span> for x <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>10-element Vector{Int64}:
@@ -539,7 +539,7 @@ Why Write a Function?
 </div>
 <p>To reuse a function repeatedly on the same inputs, you can just use the <code>for var in some_range</code> as a counter, without <code>var</code> changing the inputs to the function.</p>
 <p>You could also</p>
-<div id="44b7693f" class="cell" data-execution_count="12">
+<div id="57db941c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute your differences here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, plot a histogram of the differences in means along with a vertical line showing the observed difference. You can adjust the code below based on what your named your vector of differences above. If you have questions about any of the arguments to <code>histogram()</code> or `vline!(), please experiment, ask, and/or look at the website’s <a href="https://viveks.me/simulation-data-analysis/tutorials/julia-plots.html">Making Plots with Julia tutorial</a>.</p>
@@ -569,7 +569,7 @@ Keyword Arguments
 <p>Julia separates arguments which are required and those which are optional (and therefore require keywords to tell the function that they’re not just the defaults) with a semi-colon, as you can see in the code below.</p>
 </div>
 </div>
-<div id="ba620d6a" class="cell" data-execution_count="13">
+<div id="b904d352" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fu">histogram</span>(simulated_differences; <span class="co"># this is the vector for the histogram</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>xlabel<span class="op">=</span><span class="st">"Differences in Means"</span>, <span class="co"># set the x-axis label</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>ylabel<span class="op">=</span><span class="st">"Proportion of Samples"</span>, <span class="co"># set the y-axis label</span></span>
