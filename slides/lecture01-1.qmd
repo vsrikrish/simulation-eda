@@ -1,0 +1,211 @@
+---
+title: "Welcome to BEE 4850/5850!"
+subtitle: "Lecture 01"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "January 22, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+execute:
+    freeze: auto
+---
+
+# Course Overview
+
+## Course Staff
+
+**Instructor**: Vivek Srikrishnan, 318 Riley-Robb, <viveks@cornell.edu>
+
+::: {.callout-important}
+Please include **BEE4850** in your email subject line! This will ensure it doesn't get lost in the shuffle.
+
+Better: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy.
+:::
+
+## Why Does Data Analysis Matter?
+
+- Scientific insight;
+- Decision-making;
+- Understanding uncertainty
+
+## Motivation For The Course
+
+::: {.incremental}
+- What is wrong with the typical "recipes" or tests that we use for data analysis?
+- Alternative: generate data consistent with different hypotheses and assess consistency with observations.
+:::
+
+## Advantages of Model-Based Data Analysis
+
+- 
+
+## What Do You Hope To Get Out Of This Course?
+
+{{< include _poll-prompt.qmd >}}
+
+
+## Workflow/Course Organization
+
+1. Hypothesis Testing and Modeling
+2. Exploratory Data Analysis/Visualization
+3. Simulation Methods
+4. Model Calibration
+5. Model Assessment and Selection
+6. *Emulation*
+
+# Course Policies
+
+## Grades
+
+| Assessment | % of Grade |
+|:-----------|-----------:|
+| Exercises | 10% |
+| Readings | 10% |
+| Literature Critique | 15% |
+| Homework Assignments | 30% |
+| Term Project | 35% |
+
+
+## Overall Guidelines
+
+- Collaboration *highly* encouraged, but **all work must reflect your own understanding**
+- Submit PDFs on Gradescope
+- 50% penalty for late submission (up to 24 hours)
+- Standard rubric available on website
+- **Always cite external references**
+
+## Exercises
+
+- (Mostly) weekly problem sets
+- Focus on conceptual material/small data analysis exercises
+- Will drop one.
+
+## Readings
+
+- Several readings assigned for discussion throughout the semester.
+- One student responsible for leading the discussion (Ed/in class)
+
+## Literature Critique
+
+- Select a peer-reviewed journal article which analyzes data;
+- Short discussion paper analyzing:
+    - Scientific hypotheses;
+    - Modeling and statistical choices
+- In-class presentation before spring break
+- **5850 Students**: Write a referee report
+
+## Homework Assignments
+
+- More in-depth problems
+- Roughly 2 weeks to complete
+- Will not drop any by default
+- Regrade requests must be made within one week
+- **5850 Students**: Some extra problems
+
+## Term Project
+
+- Analyze a data set of interest using model(s) of your choice
+- Can work individually or groups of 2
+- Several deliverables throughout the semester
+- Final in-class presentation and report
+
+
+## Attendance
+
+Not required, but students tend to do better when they're actively engaged in class.
+
+
+## Office Hours
+
+- MW 10-11 AM
+- Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.
+
+## Accomodations
+
+If you have any access barriers in this class, *please* seek out any helpful accomodations.
+
+- Get an SDS letter.
+- If you need an accomodation before you have an official letter, please reach out to me ASAP!
+
+
+## Academic Integrity
+
+Hopefully not a concern...
+
+- Collaboration is great and is encouraged! 
+- Knowing how to find and use helpful resources is a skill we want to develop. 
+- Don't just copy...learn from others and give credit.
+- Submit your own original work.
+
+
+## Academic Integrity
+
+Obviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.
+
+
+## ChatGPT: The Stochastic Parrot
+
+Think about ChatGPT as a drunk who tells stories for drinks.
+
+- It will give you plausible-looking text or code on any topic, but it doesn't know anything beyond what it "overheard."
+- Sometimes you get lucky, more often you get nonsense.
+- Can be useful for certain tasks (*e.g.* understanding code errors).
+
+# Class Tools
+
+## Communications
+
+Use [Ed Discussion](https://us.edstem.org) for questions and discussions about class, homework assignments, etc.
+
+- Try to use public posts so others can benefit from questions and can weigh in.
+- **I will make announcements through Ed**.
+
+When urgency or privacy is required, email is ok.
+
+
+## Course Website
+
+<https://viveks.me/simulation-data-analysis>
+
+- Central hub for information, schedule, and policies
+- Will add link and some information to Canvas (assignment due dates, etc)
+
+## Computing Tools
+
+- Course is programming language-agnostic.
+- Assignments will have notebooks set up for Julia (environments, etc) on GitHub.
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Wednesday**: Hypothesis testing and data analysis
+
+**Next Week**: Review of uncertainty and probability
+
+## Assessments
+
+**Homework 1** available; due *next* Friday.
+
+**Exercise 1** due *this* Friday.
