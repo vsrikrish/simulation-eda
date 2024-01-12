@@ -226,57 +226,36 @@
     "text": "Tools and Generation Workflow\nThis website was built with Quarto, which allows me to integrate Julia code and output with the web content, pdfs, and slides in an amazingly clean fashion, while simplifying the process of generation. All materials can be generated through a simple workflow from the [GitHub Repository]."
   },
   {
-    "objectID": "labs.html",
-    "href": "labs.html",
-    "title": "Labs",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
     "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester."
-  },
-  {
-    "objectID": "labs.html#general-information",
-    "href": "labs.html#general-information",
-    "title": "Labs",
-    "section": "General Information",
-    "text": "General Information\n\nYou can download each lab notebook through the link below..\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF."
-  },
-  {
-    "objectID": "labs.html#schedule",
-    "href": "labs.html#schedule",
-    "title": "Labs",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nLab\nInstructions\nRubric\nDue Date\n\n\n\n\nLab 1\n\n\nFeb 02, 2024"
-  },
-  {
-    "objectID": "assignments/hw01/hw01.html",
-    "href": "assignments/hw01/hw01.html",
-    "title": "Homework 1: Simulation-Based Data Analysis",
-    "section": "",
-    "text": "Due Date\n\n\n\nFriday, 2/2/24, 9:00pm",
+    "text": "This is the course website for the Spring 2024 edition of BEE 4850/5850, Environmental Data Analysis and Simulation, taught at Cornell University by Vivek Srikrishnan.",
     "crumbs": [
-      "Homework",
-      "Homework 1"
+      "Course Information",
+      "Overview"
     ]
   },
   {
-    "objectID": "assignments/hw01/hw01.html#overview",
-    "href": "assignments/hw01/hw01.html#overview",
-    "title": "Homework 1: Simulation-Based Data Analysis",
-    "section": "Overview",
-    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\nProblem 3 asks you to assess the quality of fit of a normal distribution to realizations from a Galton Board simulation.\nProblem 4 (graded only for graduate students) asks you to simulate outcomes from the Price Is Right Showcase game to identify a bidding strategy.\n\n\n\nLearning Outcomes\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Course Information",
+    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.",
     "crumbs": [
-      "Homework",
-      "Homework 1"
+      "Course Information",
+      "Overview"
     ]
   },
   {
-    "objectID": "assignments/hw01/hw01.html#problems-total-20-points",
-    "href": "assignments/hw01/hw01.html#problems-total-20-points",
-    "title": "Homework 1: Simulation-Based Data Analysis",
-    "section": "Problems (Total: 20 Points)",
-    "text": "Problems (Total: 20 Points)\n\nProblem 1 (10 points)\nThe underlying question we would like to address is: what is the influence of drinking beer on the likelihood of being bitten by mosquitoes? There is a mechanistic reason why this might occur: mosquitoes are attracted by changes in body temperature and released CO2, and it might be that drinking beer induces these changes. We’ll analyze this question using (synthetic) data which separates an experimental population into two groups, one which drank beer and the other which drank only water.\nFirst, we’ll load data for the number of bites reported by the participants who drank beer. This is in a comma-delimited file, data/bites.csv (which is grossly overkill for this assignment). Each row contains two columns: the group (beer and water) the person belonged to and the number of times that person was bitten.\nIn Julia, we can do this using CSVFiles.jl, which will read in the .csv file into a DataFrame, which is a typical data structure for tabular data (and equivalent to a Pandas DataFrame in Python or a dataframe in R).\n\n\ndata = DataFrame(load(\"data/bites.csv\")) # load data into DataFrame\n\n# print data variable (semi-colon suppresses echoed output in Julia, which in this case would duplicate the output)\n@show data; \n\n\nHow can we tell if there’s a meaningful difference between the two groups? Naively, we might just look at the differences in group means.\n\n\n\n\n\n\n\nBroadcasting\n\n\n\nThe subsetting operations in the below code use .==, which “broadcasts” the element-wise comparison operator == across every element. The decimal in front of == indicates that this should be used element-wise (every pair of elements compared for equality, returning a vector of true or false values); otherwise Julia would try to just check for vector equality (returning a single true or false value).\nBroadcasting is a very specific feature of Julia, so this syntax would look different in a different programming language.\n\n\n\n# split data into vectors of bites for each group\nbeer = data[data.group .== \"beer\", :bites]\nwater = data[data.group .== \"water\", :bites]\n\nobserved_difference = mean(beer) - mean(water)\n@show observed_difference;\n\nobserved_difference = 4.37777777777778\n\n\n\nThis tells us that, on average, the participants in the experiment who drank beer were bitten approximately 4.4 more times than the participants who drank water! Does that seem like a meaningful difference, or could it be the result of random chance?\nWe will use a simulation approach to address this question, as follows.\n\nSuppose someone is skeptical of the idea that drinking beer could result in a higher attraction to mosquitoes, and therefore more bites. To this skeptic, the two datasets are really just different samples from the same underlying population of people getting bitten by mosquitoes, rather than two different populations with different propensities for being bitten. This is the skeptic’s hypothesis, versus our hypothesis that drinking beer changes body temperature and CO2 release sufficiently to attract mosquitoes.\nIf the skeptic’s hypothesis is true, then we can “shuffle” all of the measurements between the two datasets and re-compute the differences in the means. After repeating this procedure a large number of times, we would obtain a distribution of the differences in means under the assumption that the skeptic’s hypothesis is true.\nComparing our experimentally-observed difference to this distribution, we can then evaluate the consistency of the skeptic’s hypothesis with the experimental results.\n\n\n\n\n\n\n\n\nWhy Do We Call This A Simulation-Based Approach?\n\n\n\nThis is a simulation-based approach because the “shuffling” is a non-parametric way of generating new samples from the underlying distribution (more on this later in the semester).\nThe alternative to this approach is to use a statistical test, such as a t-test, which may have other assumptions which may not be appropriate for this setting, particularly given the seemingly small sample sizes.\n\n\n\nIn this problem:\n\nConduct the above procedure to generate 50,000 simulated datasets under the skeptic’s hypothesis.\nPlot a histogram of the results and add a dashed vertical line to show the experimental difference (if you are using Julia, feel free to look at the Making Plots with Julia tutorial on the class website).\nDraw conclusions about the plausibility of the skeptic’s hypothesis that there is no difference between groups. Feel free to use any quantitative or qualitative assessments of your simulations and the observed difference.\n\n\n\nProblem 2 (10 points)\nYou are trying to detect if how prevalent cheating was on an exam. You are skeptical of the efficacy of just asking the students if they cheated. You are also concerned about privacy — your goal is not to punish individual students, but to see if there are systemic problems that need to be addressed. Someone proposes the following interview procedure, which the class agrees to participate in:\n\nEach student flips a fair coin, with the results hidden from the interviewer. The student answers honestly if the coin comes up heads. Otherwise, if the coin comes up tails, the student flips the coin again, and answers “I did cheat” if heads, and “I did not cheat”, if tails.\n\nWe have a hypothesis that cheating was not prevalent, and the proportion of cheaters was no more than 5% of the class; in other words, we expect 5 “true” cheaters out of a class of 100 students. Our TA is more jaded and thinks that cheating was more rampant, and that 30% of the class cheated. The proposed interview procedure is noisy: the interviewer does not know if an admission means that the student cheated, or the result of a heads. However, it gives us a data-generating process that we can model and analyze for consistency with our hypothesis and that of the TA.\nIn this problem:\n\nDerive and code a simulation model for the above interview procedure given the “true” probability of cheating \\(p\\).\nSimulate your model (for a class of 100 students) 50,000 times under the your hypothesis and the TA’s hypothesis, and plot the two resulting datasets.\nIf you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude? Feel free to use any qualitative or quantiative assessments to justify your conclusions.\nHow useful do you think the interview procedure is to identify systemic teaching? What changes to the design might you make?\n\n\n\nProblem 3 (10 points)\nSuppose that we ask a class of students to walk individually from one end of a field to the other and count the number of steps that they take in order to cover the distance. More than likely, each student will get a somewhat different answer. After each student has paced off the field, we then make a histogram of the number of steps taken by the individual students. For a sufficiently large number of students, this histogram would resemble a normal distribution, due to the Central Limit Theorem.\nA Galton board (named after Sir Francis Galton, a pioneering statistician1, shown below, is a physical device that demonstrates the Central Limit Theorem. A Galton board has rows of pins arranged in a triangular shape, with each row of pins offset horizontally relative to the rows above and below it. As illustrated in Figure 1, the top row has one pin, the second row has two pins, and so forth. If you’ve watched The Price is Right, you’ve seen this as “Plinko”.\n1 And, notably, a leading eugenicist, which is unfortunately a recurring theme with leading early statisticians…)\n\n\n\n\n\n\nFigure 1: Galton Board simulation. The top shows a schematic of how the Galton board works and the bottom shows a histogram of the landing positions after 200 simulations.\n\n\n\n\nIf a ball is dropped into the Galton board, it falls either to the right or the left when it bounces off the top pin. The ball then falls all the way to the bottom of the board, moving slightly to the right or left as it passes through each row of pins. Bins at the bottom of the board capture the ball and record its final position. If this experiment is repeated with many balls, the number of balls in each bin resembles a normal distribution, which is expected due to the Central Limit Theorem.\nYour goal in this exercise is to explore how well a normal distribution fits the outcomes of repeated Galton Board trials as the number increases using quantile-quantile plots. Assessing the appropriateness of a probability model for a data set is a key part of exploratory analysis; we will return to this theme repeatedly. Or, to put it another way, it’s time for you to play Plinko!\nIn this problem:\n\nWrite a function galton_sim which simulates n Galton board trials (assume the board has 8 board rows, as in the image above) and returns a vector with the number of balls which fall into each bin. You can assume (for now) that the board is fair, e.g. that the probability of a left or right bounce is 0.5; you may want to make this probability a function parameter so you can change it later.\nRun your simulation for a sample of 50 balls. Create a histogram of the results, with each bar corresponding to one bin. Make sure you use a random seed for reproducibility, and label your axes!\nEach Galton board trial can be represented as a realization from a binomial distribution. But as we noted above, by the Central Limit Theorem, the distribution of a large enough number of trials should be approximately normal. Use a quantile-quantile (Q-Q) plot to compare a fitted normal distribution with your simulation results. How well does a normal distribution fit the data?\nRepeat your simulation experiment with 250 trials and compare to a normal distribution. Does it describe the empirical distribution better?\nIf the probability of a left bounce is 70%, what does this do to the fit of a normal distribution? What other distribution might you use if not a normal and why?\n\n\n\nProblem 4 (10 points)\nGRADED FOR 5850 STUDENTS ONLY\nYour mastery of the Central Limit Theorem has led you to win your game of Plinko, and it’s time for the Showcases. This is the final round of an episode of The Price is Right, matching the two big winners from the episode. Each contestant is shown a “showcase” of prizes, which are usually some combination of a trip, a motor vehicle, some furniture, and maybe some other stuff. They then each have to make a bid on the retail price of the showcase. The rules are:\n\nan overbid is an automatic loss;\nthe contest who gets closest to the retail price wins their showcase;\nif a contestant gets within \\(\\$250\\) of the retail price and is closer than their opponent, they win both showcases.\n\nThanks to exhaustive statistics kept by game show fans, in Season 51 of The Price is Right showcase values had the following properties:\n\nmedian: $33,0481;\nlowest-value: $20,432\nhighest-value: $72,409\n\nIn this problem:\n\nWrite down a model which encodes the Showcase rules as a function of the showcase value and your bid. You can assume that your wagering is independent of your opponent.\nSelect and fit a distribution to the above statistics (you have some freedom to pick a distribution, but make sure you justify it).\nUsing 1,000 samples from your price distribution in your model, plot the expected winnings for bids from $20,000 through $72,000.\nFind the bid which maximizes your expected winnings. If you were playing The Price Is Right, is this the strategy you would adopt, or are there other considerations you would take into account which were not included in this model?",
+    "objectID": "index.html#software-tools",
+    "href": "index.html#software-tools",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Software Tools",
+    "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it.",
     "crumbs": [
-      "Homework",
-      "Homework 1"
+      "Course Information",
+      "Overview"
     ]
   },
   {
@@ -320,37 +299,261 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "objectID": "assignments/hw01/hw01.html",
+    "href": "assignments/hw01/hw01.html",
+    "title": "Homework 1: Simulation-Based Data Analysis",
     "section": "",
-    "text": "This is the course website for the Spring 2024 edition of BEE 4850/5850, Environmental Data Analysis and Simulation, taught at Cornell University by Vivek Srikrishnan.",
+    "text": "Due Date\n\n\n\nFriday, 2/2/24, 9:00pm",
     "crumbs": [
-      "Course Information",
-      "Overview"
+      "Homework",
+      "Homework 1"
     ]
   },
   {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Course Information",
-    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.",
+    "objectID": "assignments/hw01/hw01.html#overview",
+    "href": "assignments/hw01/hw01.html#overview",
+    "title": "Homework 1: Simulation-Based Data Analysis",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\nProblem 3 asks you to assess the quality of fit of a normal distribution to realizations from a Galton Board simulation.\nProblem 4 (graded only for graduate students) asks you to simulate outcomes from the Price Is Right Showcase game to identify a bidding strategy.\n\n\n\nLearning Outcomes\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
     "crumbs": [
-      "Course Information",
-      "Overview"
+      "Homework",
+      "Homework 1"
     ]
   },
   {
-    "objectID": "index.html#software-tools",
-    "href": "index.html#software-tools",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Software Tools",
-    "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it.",
+    "objectID": "assignments/hw01/hw01.html#problems-total-20-points",
+    "href": "assignments/hw01/hw01.html#problems-total-20-points",
+    "title": "Homework 1: Simulation-Based Data Analysis",
+    "section": "Problems (Total: 20 Points)",
+    "text": "Problems (Total: 20 Points)\n\nProblem 1 (10 points)\nThe underlying question we would like to address is: what is the influence of drinking beer on the likelihood of being bitten by mosquitoes? There is a mechanistic reason why this might occur: mosquitoes are attracted by changes in body temperature and released CO2, and it might be that drinking beer induces these changes. We’ll analyze this question using (synthetic) data which separates an experimental population into two groups, one which drank beer and the other which drank only water.\nFirst, we’ll load data for the number of bites reported by the participants who drank beer. This is in a comma-delimited file, data/bites.csv (which is grossly overkill for this assignment). Each row contains two columns: the group (beer and water) the person belonged to and the number of times that person was bitten.\nIn Julia, we can do this using CSVFiles.jl, which will read in the .csv file into a DataFrame, which is a typical data structure for tabular data (and equivalent to a Pandas DataFrame in Python or a dataframe in R).\n\n\ndata = DataFrame(load(\"data/bites.csv\")) # load data into DataFrame\n\n# print data variable (semi-colon suppresses echoed output in Julia, which in this case would duplicate the output)\n@show data; \n\n\nHow can we tell if there’s a meaningful difference between the two groups? Naively, we might just look at the differences in group means.\n\n\n\n\n\n\n\nBroadcasting\n\n\n\nThe subsetting operations in the below code use .==, which “broadcasts” the element-wise comparison operator == across every element. The decimal in front of == indicates that this should be used element-wise (every pair of elements compared for equality, returning a vector of true or false values); otherwise Julia would try to just check for vector equality (returning a single true or false value).\nBroadcasting is a very specific feature of Julia, so this syntax would look different in a different programming language.\n\n\n\n# split data into vectors of bites for each group\nbeer = data[data.group .== \"beer\", :bites]\nwater = data[data.group .== \"water\", :bites]\n\nobserved_difference = mean(beer) - mean(water)\n@show observed_difference;\n\nobserved_difference = 4.37777777777778\n\n\n\nThis tells us that, on average, the participants in the experiment who drank beer were bitten approximately 4.4 more times than the participants who drank water! Does that seem like a meaningful difference, or could it be the result of random chance?\nWe will use a simulation approach to address this question, as follows.\n\nSuppose someone is skeptical of the idea that drinking beer could result in a higher attraction to mosquitoes, and therefore more bites. To this skeptic, the two datasets are really just different samples from the same underlying population of people getting bitten by mosquitoes, rather than two different populations with different propensities for being bitten. This is the skeptic’s hypothesis, versus our hypothesis that drinking beer changes body temperature and CO2 release sufficiently to attract mosquitoes.\nIf the skeptic’s hypothesis is true, then we can “shuffle” all of the measurements between the two datasets and re-compute the differences in the means. After repeating this procedure a large number of times, we would obtain a distribution of the differences in means under the assumption that the skeptic’s hypothesis is true.\nComparing our experimentally-observed difference to this distribution, we can then evaluate the consistency of the skeptic’s hypothesis with the experimental results.\n\n\n\n\n\n\n\n\nWhy Do We Call This A Simulation-Based Approach?\n\n\n\nThis is a simulation-based approach because the “shuffling” is a non-parametric way of generating new samples from the underlying distribution (more on this later in the semester).\nThe alternative to this approach is to use a statistical test, such as a t-test, which may have other assumptions which may not be appropriate for this setting, particularly given the seemingly small sample sizes.\n\n\n\nIn this problem:\n\nConduct the above procedure to generate 50,000 simulated datasets under the skeptic’s hypothesis.\nPlot a histogram of the results and add a dashed vertical line to show the experimental difference (if you are using Julia, feel free to look at the Making Plots with Julia tutorial on the class website).\nDraw conclusions about the plausibility of the skeptic’s hypothesis that there is no difference between groups. Feel free to use any quantitative or qualitative assessments of your simulations and the observed difference.\n\n\n\nProblem 2 (10 points)\nYou are trying to detect if how prevalent cheating was on an exam. You are skeptical of the efficacy of just asking the students if they cheated. You are also concerned about privacy — your goal is not to punish individual students, but to see if there are systemic problems that need to be addressed. Someone proposes the following interview procedure, which the class agrees to participate in:\n\nEach student flips a fair coin, with the results hidden from the interviewer. The student answers honestly if the coin comes up heads. Otherwise, if the coin comes up tails, the student flips the coin again, and answers “I did cheat” if heads, and “I did not cheat”, if tails.\n\nWe have a hypothesis that cheating was not prevalent, and the proportion of cheaters was no more than 5% of the class; in other words, we expect 5 “true” cheaters out of a class of 100 students. Our TA is more jaded and thinks that cheating was more rampant, and that 30% of the class cheated. The proposed interview procedure is noisy: the interviewer does not know if an admission means that the student cheated, or the result of a heads. However, it gives us a data-generating process that we can model and analyze for consistency with our hypothesis and that of the TA.\nIn this problem:\n\nDerive and code a simulation model for the above interview procedure given the “true” probability of cheating \\(p\\).\nSimulate your model (for a class of 100 students) 50,000 times under the your hypothesis and the TA’s hypothesis, and plot the two resulting datasets.\nIf you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude? Feel free to use any qualitative or quantiative assessments to justify your conclusions.\nHow useful do you think the interview procedure is to identify systemic teaching? What changes to the design might you make?\n\n\n\nProblem 3 (10 points)\nSuppose that we ask a class of students to walk individually from one end of a field to the other and count the number of steps that they take in order to cover the distance. More than likely, each student will get a somewhat different answer. After each student has paced off the field, we then make a histogram of the number of steps taken by the individual students. For a sufficiently large number of students, this histogram would resemble a normal distribution, due to the Central Limit Theorem.\nA Galton board (named after Sir Francis Galton, a pioneering statistician1, shown below, is a physical device that demonstrates the Central Limit Theorem. A Galton board has rows of pins arranged in a triangular shape, with each row of pins offset horizontally relative to the rows above and below it. As illustrated in Figure 1, the top row has one pin, the second row has two pins, and so forth. If you’ve watched The Price is Right, you’ve seen this as “Plinko”.\n1 And, notably, a leading eugenicist, which is unfortunately a recurring theme with leading early statisticians…)\n\n\n\n\n\n\nFigure 1: Galton Board simulation. The top shows a schematic of how the Galton board works and the bottom shows a histogram of the landing positions after 200 simulations.\n\n\n\n\nIf a ball is dropped into the Galton board, it falls either to the right or the left when it bounces off the top pin. The ball then falls all the way to the bottom of the board, moving slightly to the right or left as it passes through each row of pins. Bins at the bottom of the board capture the ball and record its final position. If this experiment is repeated with many balls, the number of balls in each bin resembles a normal distribution, which is expected due to the Central Limit Theorem.\nYour goal in this exercise is to explore how well a normal distribution fits the outcomes of repeated Galton Board trials as the number increases using quantile-quantile plots. Assessing the appropriateness of a probability model for a data set is a key part of exploratory analysis; we will return to this theme repeatedly. Or, to put it another way, it’s time for you to play Plinko!\nIn this problem:\n\nWrite a function galton_sim which simulates n Galton board trials (assume the board has 8 board rows, as in the image above) and returns a vector with the number of balls which fall into each bin. You can assume (for now) that the board is fair, e.g. that the probability of a left or right bounce is 0.5; you may want to make this probability a function parameter so you can change it later.\nRun your simulation for a sample of 50 balls. Create a histogram of the results, with each bar corresponding to one bin. Make sure you use a random seed for reproducibility, and label your axes!\nEach Galton board trial can be represented as a realization from a binomial distribution. But as we noted above, by the Central Limit Theorem, the distribution of a large enough number of trials should be approximately normal. Use a quantile-quantile (Q-Q) plot to compare a fitted normal distribution with your simulation results. How well does a normal distribution fit the data?\nRepeat your simulation experiment with 250 trials and compare to a normal distribution. Does it describe the empirical distribution better?\nIf the probability of a left bounce is 70%, what does this do to the fit of a normal distribution? What other distribution might you use if not a normal and why?\n\n\n\nProblem 4 (10 points)\nGRADED FOR 5850 STUDENTS ONLY\nYour mastery of the Central Limit Theorem has led you to win your game of Plinko, and it’s time for the Showcases. This is the final round of an episode of The Price is Right, matching the two big winners from the episode. Each contestant is shown a “showcase” of prizes, which are usually some combination of a trip, a motor vehicle, some furniture, and maybe some other stuff. They then each have to make a bid on the retail price of the showcase. The rules are:\n\nan overbid is an automatic loss;\nthe contest who gets closest to the retail price wins their showcase;\nif a contestant gets within \\(\\$250\\) of the retail price and is closer than their opponent, they win both showcases.\n\nThanks to exhaustive statistics kept by game show fans, in Season 51 of The Price is Right showcase values had the following properties:\n\nmedian: $33,0481;\nlowest-value: $20,432\nhighest-value: $72,409\n\nIn this problem:\n\nWrite down a model which encodes the Showcase rules as a function of the showcase value and your bid. You can assume that your wagering is independent of your opponent.\nSelect and fit a distribution to the above statistics (you have some freedom to pick a distribution, but make sure you justify it).\nUsing 1,000 samples from your price distribution in your model, plot the expected winnings for bids from $20,000 through $72,000.\nFind the bid which maximizes your expected winnings. If you were playing The Price Is Right, is this the strategy you would adopt, or are there other considerations you would take into account which were not included in this model?",
     "crumbs": [
-      "Course Information",
-      "Overview"
+      "Homework",
+      "Homework 1"
     ]
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester."
+  },
+  {
+    "objectID": "labs.html#general-information",
+    "href": "labs.html#general-information",
+    "title": "Labs",
+    "section": "General Information",
+    "text": "General Information\n\nYou can download each lab notebook through the link below..\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF."
+  },
+  {
+    "objectID": "labs.html#schedule",
+    "href": "labs.html#schedule",
+    "title": "Labs",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nLab\nInstructions\nRubric\nDue Date\n\n\n\n\nLab 1\n\n\nFeb 02, 2024"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#course-staff",
+    "href": "slides/lecture01-1.html#course-staff",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Course Staff",
+    "text": "Course Staff\nInstructor: Vivek Srikrishnan, 318 Riley-Robb, viveks at cornell dot edu\nTA: Gabriela Ackermann Logan, 319 Riley-Robb, ga345 at cornell dot edu\n\n\n\n\n\n\nImportant\n\n\nPlease include BEE4750 in your email subject line! This will ensure it doesn’t get lost in the shuffle.\nBetter: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#course-overview",
+    "href": "slides/lecture01-1.html#course-overview",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Course Overview",
+    "text": "Course Overview\n\n\nTopics\n\nDefine systems\nSimulate system dynamics\nAnalyze and assess risk\nMake decisions with optimization\nExplore trade-offs across objectives\n\n\n\n\nExample Systems\n\nAir pollution\nWastewater management\nElectric power systems\nSolid waste management"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#what-do-you-hope-to-get-out-of-this-course",
+    "href": "slides/lecture01-1.html#what-do-you-hope-to-get-out-of-this-course",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "What Do You Hope To Get Out Of This Course?",
+    "text": "What Do You Hope To Get Out Of This Course?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#course-organization",
+    "href": "slides/lecture01-1.html#course-organization",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Course Organization",
+    "text": "Course Organization\n\nIntroduction to Systems Analysis\nSimulating Systems and Risk\nSystems Management and Optimization\nAnalyzing Assumptions\nDecision-Making Under Uncertainty"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#grades",
+    "href": "slides/lecture01-1.html#grades",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Grades",
+    "text": "Grades\n\n\n\nAssessment\n% of Grade\n\n\n\n\nLab Notebooks\n20%\n\n\nHomework Assignments\n40%\n\n\nFinal Project\n40%"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#overall-guidelines",
+    "href": "slides/lecture01-1.html#overall-guidelines",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Overall Guidelines",
+    "text": "Overall Guidelines\n\nCollaboration highly encouraged, but all work must reflect your own understanding\nSubmit PDFs on Gradescope\n10% penalty per day late\nRubrics will be made available as relevant\nAlways cite external references\nCurve unlikely (not worth asking about…)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#labs-20",
+    "href": "slides/lecture01-1.html#labs-20",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Labs (20%)",
+    "text": "Labs (20%)\n\nIn-class guided activities, but may need some time after class to complete\nFocus on “how” to apply methods and concepts from class\nIf you can’t bring a laptop to these classes, you can work with someone else\nCan work in groups, but must submit your own notebook\nDue by 9:00pm on the due date.\nWill drop one."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#homework-assignments-40",
+    "href": "slides/lecture01-1.html#homework-assignments-40",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Homework Assignments (40%)",
+    "text": "Homework Assignments (40%)\n\nRoughly every other week (5-6 in total?)\nFocus on new or extended applications and conceptual questions\nManaged with GitHub Classroom\nDue by 9:00pm on the due date (usually Friday)\nWill not drop any of these by default; you have lots of time!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#final-project-40",
+    "href": "slides/lecture01-1.html#final-project-40",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Final Project (40%)",
+    "text": "Final Project (40%)\n\nAnalyze a system of interest\nGo beyond class examples/methods\nWork in groups of 2 – 3 for BEE 4750, individually for BEE 5750"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#final-project-deliverables",
+    "href": "slides/lecture01-1.html#final-project-deliverables",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Final Project: Deliverables",
+    "text": "Final Project: Deliverables\n\nProposal: one page overview of system and model plan\nRegulatory Review: 3 page report on relevant regulations\nLiterature Critique (BEE 5750): Analysis of relevant paper.\nPresentation: Short overview of project (last week of classes)\nPresentation Peer Review: Review of 2-3.\nPoster: Overview and results (due end of semester)\nGroup Assessment (BEE 4750): Review of group member contributions."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#attendance",
+    "href": "slides/lecture01-1.html#attendance",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Attendance",
+    "text": "Attendance\nNot required, but students tend to do better when they’re actively engaged in class."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#office-hours",
+    "href": "slides/lecture01-1.html#office-hours",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nTime TBD (will send out poll)\nAlmost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#accomodations",
+    "href": "slides/lecture01-1.html#accomodations",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Accomodations",
+    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity",
+    "href": "slides/lecture01-1.html#academic-integrity",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nHopefully not a concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find and use helpful resources is a skill we want to develop.\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-1",
+    "href": "slides/lecture01-1.html#academic-integrity-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nObviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.\nBut often lines aren’t that simple. Let’s quickly consider some scenarios (h/t to Tony Wong for these)."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-scenario-1",
+    "href": "slides/lecture01-1.html#academic-integrity-scenario-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity: Scenario 1",
+    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. They cites the source of the codes.\n\n\n\n\n\n\nIs this ok?\n\n\n\nProbably Not\n\nWhat portion of the work is Dan’s?\nHow important were the codes?\nDid Dan understand what they copied?"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-scenario-1-1",
+    "href": "slides/lecture01-1.html#academic-integrity-scenario-1-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity: Scenario 1",
+    "text": "Academic Integrity: Scenario 1\nDan searches the internet for relevant code and copy-pastes it into his Jupyter notebook. They cites the source of the codes.\n\n\n\n\n\n\nWhat Should Dan Do?\n\n\n\nDan should paraphrase the codes they found to incorporate them with his own code, and then also cite them."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-scenario-2",
+    "href": "slides/lecture01-1.html#academic-integrity-scenario-2",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity: Scenario 2",
+    "text": "Academic Integrity: Scenario 2\nMatthew and Rhonda work together to figure out how to implement the codes, but each works on their own computer and develops their own solutions.\n\n\n\n\n\n\nIs this ok?\n\n\n\nDefinitely!\n\nIndependent implementations shows understanding."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-scenario-3",
+    "href": "slides/lecture01-1.html#academic-integrity-scenario-3",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity: Scenario 3",
+    "text": "Academic Integrity: Scenario 3\nFelix and Rachel are working together on a problem involving a derivation. Rachel types it up in LaTeX and sends the code to Felix, who pastes it into his Jupyter notebook.\n\n\n\n\n\n\nIs this ok?\n\n\n\nLikely Not\n\nDid Felix contribute enough to the derivation?\nDefinitely not OK if Felix doesn’t give Rachel credit for their contribution."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-scenario-4",
+    "href": "slides/lecture01-1.html#academic-integrity-scenario-4",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity: Scenario 4",
+    "text": "Academic Integrity: Scenario 4\nDarren uses ChatGPT to debug an error in their homework code. They fix the error and credits ChatGPT in his References section.\n\n\n\n\n\n\nIs this ok?\n\n\n\nWell-meaning, but no!\n\nUsing ChatGPT (or other ML tools) can be ok, but…\nNeed to ask permission and thoroughly document the query and the exact response."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#chatgpt-the-stochastic-parrot",
+    "href": "slides/lecture01-1.html#chatgpt-the-stochastic-parrot",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "ChatGPT: The Stochastic Parrot",
+    "text": "ChatGPT: The Stochastic Parrot\nWhy is ChatGPT (and other ML/AI tools) singled out?\n\n\nStochasticity: Response to a given prompt is not necessarily the same, so need to track what you received.\nLack of Transparency: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).\nNot Well-Suited to All Tasks: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#communications",
+    "href": "slides/lecture01-1.html#communications",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Communications",
+    "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed.\n\nWhen urgency or privacy is required, email is ok."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#course-website",
+    "href": "slides/lecture01-1.html#course-website",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://viveks.me/environmental-systems-analysis\n\nCentral hub for information, schedule, and policies\nWill add link and some information to Canvas (assignment due dates, etc)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#computing-tools",
+    "href": "slides/lecture01-1.html#computing-tools",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Computing Tools",
+    "text": "Computing Tools\nSystems analysis requires mathematical modeling, and computing allows that to scale."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#julia",
+    "href": "slides/lecture01-1.html#julia",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Julia",
+    "text": "Julia\nIn this course, we will use the Julia programming language.\nAll assignments, labs, and AEs will be provided as Jupyter Notebooks."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#what-is-your-programming-experience",
+    "href": "slides/lecture01-1.html#what-is-your-programming-experience",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "What Is Your Programming Experience?",
+    "text": "What Is Your Programming Experience?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#jupyter-notebooks",
+    "href": "slides/lecture01-1.html#jupyter-notebooks",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Jupyter Notebooks",
+    "text": "Jupyter Notebooks\nWe will use Jupyter Notebooks for most computing tasks (including assignments).\n\nAllow for interactive evaluation of code and integration with text (including nicely typeset mathematics)\nCan export to PDF (or HTML -&gt; PDF) for submission to Gradescope.\nBe careful before submitting: Evaluate all cells in order"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#github-classroom",
+    "href": "slides/lecture01-1.html#github-classroom",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "GitHub Classroom",
+    "text": "GitHub Classroom\nHomework assignments and labs will be distributed using GitHub Classroom.\n\nEvery student will have a unique “repository.”\nWhen assignment is released, I will share the link for repository creation on Ed Discussion.\nMakes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots)."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#next-classes",
+    "href": "slides/lecture01-1.html#next-classes",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Introduction to Systems Analysis\nFriday: Work on Lab 1.\n\nPreparation:\n\nLab 1 link is available on Ed. Click it to accept the lab before class."
   },
   {
     "objectID": "rubrics/standard.html",
