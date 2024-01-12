@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.541">
+<meta name="generator" content="quarto-1.4.519">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="BEE 4850 - Spring 2024 - Syllabus">
-<meta property="og:description" content="Homepage for BEE 4850/5850, Simulation Methods for Environmental Data Analysis, at Cornell University, Spring 2024.">
+<meta property="og:description" content="Homepage for BEE 4850/5850, Environmental Data Analysis and Simulation, at Cornell University, Spring 2024.">
 <meta property="og:site_name" content="BEE 4850 - Spring 2024">
 </head>
 
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./_assets/logos/cornell_logo_simple_b31b1b.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
@@ -147,17 +147,29 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Class Schedule</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./policies/homework.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework Policies</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignments</span></a>
+            <a href="./homework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework Assignments</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rubrics/standard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Standard Rubric</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./assignments/hw01/hw01.html" class="sidebar-item-text sidebar-link">
@@ -172,8 +184,8 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./labs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Labs</span></a>
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">exercises.qmd</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -181,8 +193,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/lab01/lab01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab 1</span></a>
+  <a href="./exercises/ae01/ae01.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application Exercise 1</span></a>
   </div>
 </li>
       </ul>
@@ -226,10 +238,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-overview" id="toc-course-overview" class="nav-link active" data-scroll-target="#course-overview">Course Overview</a>
-  <ul class="collapse">
-  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course Description</a></li>
-  </ul></li>
+  <li><a href="#course-description" id="toc-course-description" class="nav-link active" data-scroll-target="#course-description">Course Description</a></li>
   <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
   <li><a href="#prerequisites-preparation" id="toc-prerequisites-preparation" class="nav-link" data-scroll-target="#prerequisites-preparation">Prerequisites &amp; Preparation</a></li>
   <li><a href="#typical-topics" id="toc-typical-topics" class="nav-link" data-scroll-target="#typical-topics">Typical Topics</a></li>
@@ -288,8 +297,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="course-overview" class="level2">
-<h2 class="anchored" data-anchor-id="course-overview">Course Overview</h2>
 <p>This is a 3 credit course offered as an elective.</p>
 <div class="columns course-details">
 <div class="column" style="width:50%;">
@@ -329,7 +336,6 @@ ul.task-list li input[type="checkbox"] {
 <li>use simulations from calibrated models to identify key sources of uncertainty and model error;</li>
 <li>assess model fit and adequacy through predictive ability.</li>
 </ul>
-</section>
 </section>
 <section id="learning-outcomes" class="level2">
 <h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
@@ -864,6 +870,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -878,14 +905,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
+        typesetMath(container);
         return container.innerHTML
       } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -894,9 +917,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
