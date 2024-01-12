@@ -6,7 +6,7 @@ project:
 website:
   page-navigation: true
   title: "BEE 4850 - Spring 2024"
-  description: "Homepage for BEE 4850/5850, Simulation Methods for Environmental Data Analysis, at Cornell University, Spring 2024."
+  description: "Homepage for BEE 4850/5850, Environmental Data Analysis and Simulation, at Cornell University, Spring 2024."
   site-url: "https://viveks.me/simulation-data-analysis"
 
   repo-url: https://github.com/vsrikrish/simulation-data-analysis
