@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4850 - Spring 2024 - About This Website</title>
+<title>BEE 4850 - Spring 2024 - Exercises</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./psets/pset01/pset01.qmd" rel="next">
+<link href="./assignments/hw01/hw01.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="BEE 4850 - Spring 2024 - About This Website">
+<meta property="og:title" content="BEE 4850 - Spring 2024 - Exercises">
 <meta property="og:description" content="Homepage for BEE 4850/5850, Environmental Data Analysis and Simulation, at Cornell University, Spring 2024.">
 <meta property="og:site_name" content="BEE 4850 - Spring 2024">
 </head>
@@ -84,9 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      {{&lt; var course.number &gt;}}
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercises.html">Exercises</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -180,13 +180,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./exercises.html" class="sidebar-item-text sidebar-link">
+            <a href="./exercises.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Exercises</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./psets/pset01/pset01.qmd" class="sidebar-item-text sidebar-link">
@@ -238,8 +238,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link active" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  <li><a href="#tools-and-generation-workflow" id="toc-tools-and-generation-workflow" class="nav-link" data-scroll-target="#tools-and-generation-workflow">Tools and Generation Workflow</a></li>
+  <li><a href="#general-information" id="toc-general-information" class="nav-link active" data-scroll-target="#general-information">General Information</a></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric">Rubric</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
   </ul>
 </nav>
     </div>
@@ -248,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About This Website</h1>
+<h1 class="title">Exercises</h1>
 </div>
 
 
@@ -265,15 +266,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This website contains course materials for the Spring 2024 edition of <a href="https://viveks.me/simulation-data-analysis">Environmental Data Analysis and Simulation</a>, taught by <a href="https://viveks.me">Vivek Srikrishnan</a> at <a href="https://www.cornell.edu">Cornell University</a>.</p>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>Much of the material for this course has evolved from discussions and work with <a href="https://engineering.dartmouth.edu/community/faculty/klaus-keller">Klaus Keller</a>, <a href="https://tonyewong.github.io/index.html">Tony Wong</a>, <a href="https://sites.google.com/site/caseyhelgeson/">Casey Helgeson</a>, <a href="https://sites.google.com/view/benslee/">Ben Seiyon Lee</a> and <a href="https://jamesdossgollin.me/">James Doss-Gollin</a>. Many thanks also to <a href="https://statmodeling.stat.columbia.edu/">Andrew Gelman</a> and <a href="https://xianblog.wordpress.com/">Christian Robert</a>, whose work heavily inspired many aspects of this course and which I refer back to regularly. <a href="https://kieranhealy.org/">Kieran Healy</a> also wrote an <a href="https://kieranhealy.org/publications/dataviz/">outstanding book on Data Visualization</a> which I learned a great deal from and still reference.</p>
-<p>The layout for this site was also inspired by and draws from <a href="https://sta210-s22.github.io/website/">STA 210</a> at Duke University and <a href="https://www.andrewheiss.com/teaching/">Andrew Heiss’s</a> course materials at Georgia State.</p>
+<p>This page contains information about and a schedule of the homework assignments for the semester.</p>
+<section id="general-information" class="level2">
+<h2 class="anchored" data-anchor-id="general-information">General Information</h2>
+<ul>
+<li>While the instructions for each assignment are available through the linked pages for quick and public access, <strong>if you are in the class you must use the link provided in <a href="http://us.edstem.org">Ed Discussion</a> to accept the assignment</strong>. This will ensure that:
+<ul>
+<li>You have compatible versions of all relevant packages provided in the environment;</li>
+<li>You have a GitHub repository that you can use to share your code.</li>
+</ul></li>
+<li>Submit assignments by 9:00pm Eastern Time on the due date on <a href="https://gradescope.com">Gradescope</a>.</li>
+<li>Submissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.</li>
+</ul>
 </section>
-<section id="tools-and-generation-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="tools-and-generation-workflow">Tools and Generation Workflow</h2>
-<p>This website was built with <a href="https://quarto.org/">Quarto</a>, which allows me to integrate <a href="https://julialang.org/">Julia</a> code and output with the web content, pdfs, and slides in an amazingly clean fashion, while simplifying the process of generation. All materials can be generated through a simple workflow from the <a href="https://www.github.com/vsrikrish/simulation-data-analysis">[GitHub Repository]</a>.</p>
+<section id="rubric" class="level2">
+<h2 class="anchored" data-anchor-id="rubric">Rubric</h2>
+<p>The standard rubric for homework problems is available <a href="./rubrics/standard.html">here</a>.</p>
+</section>
+<section id="schedule" class="level2">
+<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 5%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Assignment</th>
+<th style="text-align: center;">Instructions</th>
+<th style="text-align: center;">Due Date</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Exercises 1</td>
+<td style="text-align: center;"><a href="exercises/pset01/pset01.html"><i class="fa-sharp fa-pen-field" aria-label="pen-field"></i></a></td>
+<td style="text-align: center;">Jan 26, 2024</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -717,6 +752,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./assignments/hw01/hw01.html" class="pagination-link  aria-label=" homework="" 1"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Homework 1</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./psets/pset01/pset01.qmd" class="pagination-link" aria-label="Application Exercise 1">
+        <span class="nav-page-text">Application Exercise 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

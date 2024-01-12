@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4850 - Spring 2024 - Final Project</title>
+<title>BEE 4850 - Spring 2024 - Term Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./exercises/ae01/ae01.qmd" rel="next">
-<link href="./assignments/hw01/hw01.html" rel="prev">
+<link href="./tutorials/julia-basics.html" rel="next">
+<link href="./psets/pset01/pset01.qmd" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="BEE 4850 - Spring 2024 - Final Project">
+<meta property="og:title" content="BEE 4850 - Spring 2024 - Term Project">
 <meta property="og:description" content="Homepage for BEE 4850/5850, Environmental Data Analysis and Simulation, at Cornell University, Spring 2024.">
 <meta property="og:site_name" content="BEE 4850 - Spring 2024">
 </head>
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project.html">Final Project</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project.html">Term Project</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -158,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./homework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Homework Assignments</span></a>
+ <span class="menu-text">Homework</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -179,25 +179,25 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Final Project</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">exercises.qmd</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <a href="./exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises/ae01/ae01.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./psets/pset01/pset01.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application Exercise 1</span></a>
   </div>
 </li>
       </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Term Project</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -249,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Final Project</h1>
+<h1 class="title">Term Project</h1>
 </div>
 
 
@@ -268,12 +268,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>The final project gives you an opportunity to use and extend the methods we have learned in class to an environmental data set and/or model of your choosing. More details will be provided over the semester. We will discuss each component in class as well as providing relevant information on this page.</p>
+<p>The term project gives you an opportunity to use and extend the methods we have learned in class to an environmental data set and/or model of your choosing. More details will be provided over the semester. We will discuss each component in class as well as providing relevant information on this page.</p>
 </section>
 <section id="overall-instructions" class="level2">
 <h2 class="anchored" data-anchor-id="overall-instructions">Overall Instructions</h2>
 <ul>
-<li>Students in 4850 should work in groups of 2-3, while students in 5850 must work alone.</li>
+<li>Students can work individually or in groups of 2.</li>
 </ul>
 </section>
 <section id="schedule" class="level2">
@@ -282,14 +282,12 @@ ul.task-list li input[type="checkbox"] {
 <colgroup>
 <col style="width: 20%">
 <col style="width: 5%">
-<col style="width: 5%">
 <col style="width: 10%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Milestone</th>
 <th style="text-align: center;">Instructions</th>
-<th style="text-align: center;">Rubric</th>
 <th style="text-align: left;">Due Date</th>
 </tr>
 </thead>
@@ -297,20 +295,22 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: center;">Proposal</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Fri, Feb 23</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Research Plan</td>
+<td style="text-align: center;">Simulation Study</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Fri, Mar 29</td>
+<td style="text-align: left;">Fri, Mar 27</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Poster</td>
+<td style="text-align: center;">Presentations</td>
 <td style="text-align: center;"></td>
+<td style="text-align: left;">Mon, May 06</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Final Report</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Wed, May 08</td>
+<td style="text-align: left;">TBD (During Finals Week)</td>
 </tr>
 </tbody>
 </table>
@@ -759,13 +759,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./assignments/hw01/hw01.html" class="pagination-link  aria-label=" homework="" 1"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Homework 1</span>
+      <a href="./psets/pset01/pset01.qmd" class="pagination-link  aria-label=" application="" exercise="" 1"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Application Exercise 1</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./exercises/ae01/ae01.qmd" class="pagination-link" aria-label="Application Exercise 1">
-        <span class="nav-page-text">Application Exercise 1</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tutorials/julia-basics.html" class="pagination-link" aria-label="Julia Basics">
+        <span class="nav-page-text">Julia Basics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
