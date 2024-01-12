@@ -287,10 +287,10 @@ Final grades will be computed based on the following assessment weights:
 
 | Assessment | Weight |
 |:----------|:----|
-| Application Exercises | 10% |
+| Exercises | 10% |
 | Readings | 10% |
 | Literature Critique | 15% |
-| Homework | 30% |
+| Homework Assignments | 30% |
 | Term Project | 35% |
 
 The following grading scale will be used to convert the numerical weighted average to letter grades:
@@ -313,9 +313,9 @@ The following grading scale will be used to convert the numerical weighted avera
 
 
 
-### Application Exercises
+### Exercises
 
-Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming, a minor calculation,  and/or visual assessment of data or a figure. Application exercises will be provided the previous Monday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. These exercises will be given as quizzes on Gradescope and will be auto-graded. The lowest exercise score will be dropped automatically.
+Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming, a minor calculation,  and/or visual assessment of data or a figure. Exercises will be provided the previous Monday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. These exercises will be given as quizzes on Gradescope and will be auto-graded. The lowest exercise score will be dropped automatically.
 
 ### Readings
 
@@ -345,8 +345,6 @@ The term project can be completed individually or in groups of 2. Students will 
 
   * A proposal describing the research question and hypotheses, the data set, and the numerical or statistical models the student would like to use to test the hypotheses;
   * A simulation study applying simulation methods to the models;
-  * A calibration exercises applying calibration and uncertainty quantification methods from class;
-  * Assessments of the model performance based on the data;
   * A final presentation and report.
 
 
@@ -425,8 +423,8 @@ headers = DataFrame([
   "" "" "Introduction and Class Overview";
   "" "" "Probability and Statistics Background and Review";
   "" "" "Data Visualization and Graphical Checks";
-  "" "" "Model Calibration";
   "" "" "Simulation Methods";
+  "" "" "Model Calibration";
   "" "" "Model Selection";
   "" "" "Emulation and Surrogate Modeling";
 ], ["Date", "Day", "Topic"])

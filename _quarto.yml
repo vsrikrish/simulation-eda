@@ -58,16 +58,17 @@ website:
           - href: policies/homework.qmd
             text: Homework Policies
       - section: homework.qmd
+        text: "Homework"
         contents:
           - href: rubrics/standard.qmd
             text: Standard Rubric
           - href: assignments/hw01/hw01.qmd
             text: Homework 1
-      - section: project.qmd
       - section: exercises.qmd
         contents:
-          - href: exercises/ae01/ae01.qmd
+          - href: psets/pset01/pset01.qmd
             text: Application Exercise 1
+      - section: project.qmd
       - section: "Julia Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd

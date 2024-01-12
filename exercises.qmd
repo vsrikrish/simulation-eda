@@ -1,5 +1,5 @@
 ---
-title: "Homework Assignments"
+title: "Exercises"
 tbl-colwidths: [20, 5, 10]
 ---
 
@@ -21,5 +21,5 @@ The standard rubric for homework problems is available [here](rubrics/standard.q
 
 | Assignment | Instructions | Due Date |
 |:----------:|:------------:|:------:|:---------|
-| HW1 | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.html) | Feb 09, 2024 |
+| Exercises 1 | [{{< fa sharp pen-field >}}](exercises/pset01/pset01.html) | Jan 26, 2024 |
 
