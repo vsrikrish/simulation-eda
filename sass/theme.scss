@@ -40,5 +40,9 @@ $code-bg: #e7e7e7;
 }
 
 tr td {
-  padding: 0.25rem !important;
+  padding: 0.5rem !important;
+}
+
+table .table >*>* {
+  padding: 0.5rem !important;
 }

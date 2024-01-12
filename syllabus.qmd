@@ -319,7 +319,7 @@ Most weeks, students will be given a set of exercises (typically involving analy
 
 ### Readings
 
-Readings will be assigned for discussion throughout the semester. One student will be responsible for writing an initial summary and critique of the paper, but all students are expected to contribute to in-class and online discussions.
+Readings will be assigned for discussion throughout the semester. One student will be responsible for leading the discussion of the paper, but all students are expected to contribute to in-class and online discussions.
 
 ### Literature Critique
 
@@ -332,10 +332,9 @@ Approximately 6 homework assignments will be assigned throughout the semester (r
 Some notes on assignment and grading logistics:
 
   * Homeworks are due by 9:00pm Eastern Time on the designed due date. Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions). 
-  * Rubrics will be provided for the homeworks as part of the assignments.
+  * A standard rubric is available.
   * Students in 5850 will be asked to complete additional homework problems which go more deeply into the underlying concepts or apply more advanced techniques.
-  * Your lowest homework grade will be dropped. We can discuss arrangements if multiple assignments will be missed for university-approved reasons, preferably ahead of time. 
-  * Regrade requests for specific problems must be made within a week of the grading of that assignment. However, note that regrades can cut both ways: the TA can take away points as well!
+  * Regrade requests for specific problems must be made within a week of the grading of that assignment. 
 
 ### Term Project
 
