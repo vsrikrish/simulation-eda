@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.519">
+  <meta name="generator" content="quarto-1.4.388">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2024-01-22">
@@ -30,7 +30,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -360,9 +380,11 @@
 <h2 id="toc-title">Overview</h2>
 <ul>
 <li><a href="#/course-overview" id="/toc-course-overview">Course Overview</a></li>
+<li><a href="#/course-motivation" id="/toc-course-motivation">Course Motivation</a></li>
 <li><a href="#/course-policies" id="/toc-course-policies">Course Policies</a></li>
 <li><a href="#/class-tools" id="/toc-class-tools">Class Tools</a></li>
 <li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
+<li><a href="#/references" id="/toc-references">References</a></li>
 </ul>
 </nav>
 </section>
@@ -371,28 +393,39 @@
 <h1>Course Overview</h1>
 
 </section>
-<section id="course-staff" class="slide level2">
-<h2>Course Staff</h2>
-<p><strong>Instructor</strong>: Vivek Srikrishnan, 318 Riley-Robb, <script type="text/javascript">
+<section id="about-me" class="slide level2">
+<h2>About Me</h2>
+<p><strong>Instructor</strong>: Prof.&nbsp;Vivek Srikrishnan, <script type="text/javascript">
 <!--
 h='&#x63;&#x6f;&#114;&#110;&#x65;&#108;&#108;&#46;&#x65;&#100;&#x75;';a='&#64;';n='&#118;&#x69;&#118;&#x65;&#x6b;&#x73;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail email">'+e+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>viveks at cornell dot edu</noscript></p>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p><strong>Interests</strong>:</p>
+<ul>
+<li>Bridging Earth science, data science, and decision science to improve climate risk management;</li>
+<li>Unintended consequences which result from neglecting uncertainty or system dynamics.</li>
+</ul>
+</section>
+<section id="meet-my-supervisors" class="slide level2">
+<h2>Meet My Supervisors</h2>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/cats.png" style="width:30.0%"></p>
+<figcaption>My Supervisors</figcaption>
+</figure>
 </div>
-<p><strong>Important</strong></p>
 </div>
-<div class="callout-content">
-<p>Please include <strong>BEE4850</strong> in your email subject line! This will ensure it doesn’t get lost in the shuffle.</p>
-<p>Better: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy.</p>
-</div>
-</div>
-</div>
+</section>
+<section id="what-do-you-hope-to-get-out-of-this-course" class="slide level2">
+<h2>What Do You Hope To Get Out Of This Course?</h2>
+<p>Take a moment, write it down, and we’ll share!</p>
+</section></section>
+<section>
+<section id="course-motivation" class="title-slide slide level1 center">
+<h1>Course Motivation</h1>
+
 </section>
 <section id="why-does-data-analysis-matter" class="slide level2">
 <h2>Why Does Data Analysis Matter?</h2>
@@ -402,39 +435,191 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail email">'
 <li>Understanding uncertainty</li>
 </ul>
 </section>
-<section id="data-analysis-through-simulation" class="slide level2">
-<h2>Data Analysis Through Simulation</h2>
+<section id="uniquechallenging-features-of-data" class="slide level2">
+<h2>Unique/Challenging Features Of Data</h2>
+<p>There are many features of environmental (and biological!) data which make data analysis interesting and hard.</p>
 </section>
-<section id="what-do-you-hope-to-get-out-of-this-course" class="slide level2">
-<h2>What Do You Hope To Get Out Of This Course?</h2>
-<div class="columns center">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
+<section id="extreme-events" class="slide level2">
+<h2>Extreme Events</h2>
+<div class="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="figures/dossgollin-keller-2023_extreme.jpeg" id="fig-539a35d47e664c97a50115a146a7f1bd-1">
+</div>
 </figure>
 </div>
-</div><div class="column" style="width:60%;">
-<p><strong>Text</strong>: VSRIKRISH to 22333</p>
-<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
+</div>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Doss-Gollin2023-kl">Doss-Gollin &amp; Keller (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2023</a>)</span></p>
+</div>
+</section>
+<section id="extreme-events-1" class="slide level2">
+<h2>Extreme Events</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center" width="45%">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="https://imgs.xkcd.com/comics/launch_risk.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" style="width:45.0%">
+</div>
+</figure>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="caption">
+<p>Source: <a href="https://xkcd.com/2107/">XKCD 2107</a></p>
+</div>
 </div>
 </div>
 </section>
-<section id="course-organization" class="slide level2">
-<h2>Course Organization</h2>
-<ol type="1">
-<li>Hypothesis Testing and Modeling</li>
-<li>Exploratory Data Analysis/Visualization</li>
-<li>Simulation Methods</li>
-<li>Model Calibration</li>
-<li>Model Assessment and Selection</li>
-<li><em>Emulation</em></li>
-</ol>
+<section id="correlated-uncertainties" class="slide level2">
+<h2>Correlated Uncertainties</h2>
+<div class="center">
+<div class="{.layout-ncol=2}">
+<p><img data-src="figures/errickson-2021_correlations.png" style="width:30.0%"> <img data-src="figures/errickson-2021_projections.png" style="width:60.0%"></p>
+</div>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Errickson2021-kr">Errickson et al. (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2021</a>)</span></p>
+</div>
+</div>
+</section>
+<section id="non-stationarity" class="slide level2">
+<h2>Non-Stationarity</h2>
+<div class="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center" width="90%">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="figures/fagnant-etal-2020_prcip.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" style="width:90.0%">
+</div>
+</figure>
+</div>
+</div>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Fagnant2020-xu">Fagnant et al. (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2020</a>)</span></p>
+</div>
+</section>
+<section id="forcing-structural-uncertainty" class="slide level2">
+<h2>Forcing &amp; Structural Uncertainty</h2>
+<div class="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="figures/dossgollin-keller-2023_slr.jpeg" id="fig-539a35d47e664c97a50115a146a7f1bd-4">
+</div>
+</figure>
+</div>
+</div>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Doss-Gollin2023-kl">Doss-Gollin &amp; Keller (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2023</a>)</span></p>
+</div>
+</section>
+<section id="deep-uncertainty" class="slide level2">
+<h2>Deep Uncertainty</h2>
+<div class="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="figures/srikrishnan-etal-2022_co2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-5">
+</div>
+</figure>
+</div>
+</div>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Srikrishnan2022-yq">Srikrishnan et al. (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2022</a>)</span></p>
+</div>
+</section>
+<section id="some-problems-with-the-standard-data-analysis-toolkit" class="slide level2">
+<h2>Some Problems With The “Standard” Data Analysis Toolkit</h2>
+<div>
+<ul>
+<li class="fragment">Statistical assumptions may not be valid;</li>
+<li class="fragment">“Null” vs “Alternative” hypotheses and tests may be chosen for computational convenience, not scientific relevance.</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<p><strong>Important</strong>: “Big” data doesn’t solve the problem!</p>
+</div>
+</section>
+<section id="misspecification-can-bias-inferences" class="slide level2">
+<h2>Misspecification Can Bias Inferences…</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="quarto-figure quarto-figure-center" width="60%">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="figures/ruckert-etal-2018_inference.png" id="fig-539a35d47e664c97a50115a146a7f1bd-6" style="width:60.0%">
+</div>
+</figure>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Ruckert2017-qg">Ruckert et al. (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2017</a>)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="and-projections" class="slide level2">
+<h2>…And Projections</h2>
+<div class="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="quarto-figure quarto-figure-center" width="50%">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="figures/ruckert-etal-2018_projections.png" id="fig-539a35d47e664c97a50115a146a7f1bd-7" style="width:50.0%">
+</div>
+</figure>
+</div>
+</div>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Ruckert2017-qg">Ruckert et al. (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2017</a>)</span></p>
+</div>
+</section>
+<section id="advantages-of-model-based-data-analysis" class="slide level2">
+<h2>Advantages of Model-Based Data Analysis</h2>
+<p>We can:</p>
+<ul>
+<li>Examine logical implications of model assumptions.</li>
+<li>Assess evidence for multiple hypotheses by generating simulated data.</li>
+<li>Identify opportunities to design future experiments or observations to distinguish between competing hypotheses.</li>
+</ul>
+</section>
+<section id="workflowcourse-organization" class="slide level2">
+<h2>Workflow/Course Organization</h2>
+<div class="center">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center" width="70%">
+<figure class="quarto-float quarto-float-fig">
+<div>
+<img data-src="figures/course_overview.png" id="fig-539a35d47e664c97a50115a146a7f1bd-8" style="width:70.0%">
+</div>
+</figure>
+</div>
+</div>
 </section></section>
 <section>
 <section id="course-policies" class="title-slide slide level1 center">
 <h1>Course Policies</h1>
 
+</section>
+<section id="background-knowledge-computing" class="slide level2">
+<h2>Background Knowledge: Computing</h2>
+<ul>
+<li>Basics (at the level of CS 111x)</li>
+<li>Some extra work/effort may be needed if you haven’t coded in a while.</li>
+<li>May need some additional familiarity with statistical packages (and “light” optimization)</li>
+</ul>
+</section>
+<section id="background-knowledge-probabilitystatistics" class="slide level2">
+<h2>Background Knowledge: Probability/Statistics</h2>
+<ul>
+<li>ENGRD 2700/CEE 3040</li>
+<li>Summary statistics of data</li>
+<li>Probability distributions</li>
+<li>Basic visualizations</li>
+<li>Monte Carlo basics</li>
+</ul>
 </section>
 <section id="grades" class="slide level2">
 <h2>Grades</h2>
@@ -533,7 +718,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail email">'
 <section id="office-hours" class="slide level2">
 <h2>Office Hours</h2>
 <ul>
-<li>MW 10-11 AM</li>
+<li>MW 10-11 AM, 318 Riley-Robb</li>
 <li>Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.</li>
 </ul>
 </section>
@@ -561,13 +746,21 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail email">'
 </section>
 <section id="chatgpt-the-stochastic-parrot" class="slide level2">
 <h2>ChatGPT: The Stochastic Parrot</h2>
-<p>Think about ChatGPT as a drunk</p>
-<div class="fragment fade-in">
-<ul>
-<li><strong>Stochasticity</strong>: Response to a given prompt is not necessarily the same, so need to track what you received.</li>
-<li><strong>Lack of Transparency</strong>: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).</li>
-<li><strong>Not Well-Suited to All Tasks</strong>: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis.</li>
-</ul>
+<p>Think about ChatGPT as a drunk who tells stories for drinks.</p>
+<p>It will give you plausible-looking text or code on any topic, but it doesn’t know anything beyond what it “overheard.”</p>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Caution</strong></p>
+</div>
+<div class="callout-content">
+<p>ChatGPT can be useful for certain tasks (<em>e.g.</em> understanding code errors), but may neglect context for why/when certain information or solutions work.</p>
+<p>Just think about it as an unreliable Google search.</p>
+</div>
+</div>
 </div>
 </section></section>
 <section>
@@ -582,11 +775,28 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail email">'
 <li>Try to use public posts so others can benefit from questions and can weigh in.</li>
 <li><strong>I will make announcements through Ed</strong>.</li>
 </ul>
+</section>
+<section id="email" class="slide level2">
+<h2>Email</h2>
 <p>When urgency or privacy is required, email is ok.</p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>Please include <strong>BEE4850</strong> in your email subject line! This will ensure it doesn’t get lost in the shuffle.</p>
+<p>Better: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="course-website" class="slide level2">
 <h2>Course Website</h2>
-<p><a href="https://viveks.me/environmental-systems-analysis" class="uri">https://viveks.me/environmental-systems-analysis</a></p>
+<p><a href="https://viveks.me/simulation-data-analysis" class="uri">https://viveks.me/simulation-data-analysis</a></p>
 <ul>
 <li>Central hub for information, schedule, and policies</li>
 <li>Will add link and some information to Canvas (assignment due dates, etc)</li>
@@ -594,44 +804,17 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail email">'
 </section>
 <section id="computing-tools" class="slide level2">
 <h2>Computing Tools</h2>
-<p>Systems analysis requires mathematical modeling, and computing allows that to scale.</p>
-</section>
-<section id="julia" class="slide level2">
-<h2>Julia</h2>
-<p>In this course, we will use the <a href="https://julialang.org">Julia programming language</a>.</p>
-<p>All assignments, labs, and AEs will be provided as Jupyter Notebooks.</p>
-</section>
-<section id="what-is-your-programming-experience" class="slide level2">
-<h2>What Is Your Programming Experience?</h2>
-<div class="columns center">
-<div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/vsrikrish-poll.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Poll Everywhere QR Code"></p>
-</figure>
-</div>
-</div><div class="column" style="width:60%;">
-<p><strong>Text</strong>: VSRIKRISH to 22333</p>
-<p><strong>URL</strong>: <a href="https://pollev.com/vsrikrish">https://pollev.com/vsrikrish</a> <br><br> <a href="https://www.polleverywhere.com/multiple_choice_polls/qKeig0hHShZYHAOmvZtZm?preview=true&amp;controls=none" data-preview-link="true">See Results</a></p>
-</div>
-</div>
-</section>
-<section id="jupyter-notebooks" class="slide level2">
-<h2>Jupyter Notebooks</h2>
-<p>We will use Jupyter Notebooks for most computing tasks (including assignments).</p>
 <ul>
-<li>Allow for interactive evaluation of code and integration with text (including nicely typeset mathematics)</li>
-<li>Can export to PDF (or HTML -&gt; PDF) for submission to Gradescope.</li>
-<li><strong>Be careful before submitting</strong>: Evaluate all cells <em>in order</em></li>
+<li>Course is programming language-agnostic.</li>
+<li>Assignments will have notebooks set up for Julia (environments, etc) on GitHub.</li>
 </ul>
 </section>
-<section id="github-classroom" class="slide level2">
-<h2>GitHub Classroom</h2>
-<p>Homework assignments and labs will be distributed using GitHub Classroom.</p>
+<section id="some-tips-for-success" class="slide level2">
+<h2>Some Tips For Success</h2>
 <ul>
-<li>Every student will have a unique “repository.”</li>
-<li>When assignment is released, I will share the link for repository creation on Ed Discussion.</li>
-<li>Makes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots).</li>
+<li>Start the homeworks early; this gives time to sort out conceptual problems and debug.</li>
+<li>Ask questions (in class and online) and try to help each other.</li>
+<li>Give me feedback!</li>
 </ul>
 </section></section>
 <section>
@@ -641,17 +824,41 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail email">'
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<p><strong>Wednesday</strong>: Introduction to Systems Analysis</p>
-<p><strong>Friday</strong>: Work on Lab 1.</p>
-<ul>
-<li>Preparation:
-<ul>
-<li>Lab 1 link is available on Ed. Click it to accept the lab before class.</li>
-</ul></li>
-</ul>
+<p><strong>Wednesday</strong>: Hypothesis testing and data analysis</p>
+<p><strong>Next Week</strong>: Review of uncertainty and probability</p>
+</section>
+<section id="assessments" class="slide level2">
+<h2>Assessments</h2>
+<p><strong>Homework 1</strong> available; due <em>next</em> Friday.</p>
+<p><strong>Exercise 1</strong> due <em>this</em> Friday.</p>
+</section></section>
+<section>
+<section id="references" class="title-slide slide level1 center">
+<h1>References</h1>
+
+</section>
+<section id="references-scroll-for-full-list" class="slide level2 smaller scrollable">
+<h2>References (Scroll for Full List)</h2>
 
 <div class="footer footer-default">
 
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Doss-Gollin2023-kl" class="csl-entry" role="listitem">
+Doss-Gollin, J., &amp; Keller, K. (2023). <span class="nocase">A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management</span>. <em>Earths Future</em>, <em>11</em>, e2022EF003044. <a href="https://doi.org/10.1029/2022ef003044">https://doi.org/10.1029/2022ef003044</a>
+</div>
+<div id="ref-Errickson2021-kr" class="csl-entry" role="listitem">
+Errickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., &amp; Anthoff, D. (2021). <span class="nocase">Equity is more important for the social cost of methane than climate uncertainty</span>. <em>Nature</em>, <em>592</em>, 564–570. <a href="https://doi.org/10.1038/s41586-021-03386-6">https://doi.org/10.1038/s41586-021-03386-6</a>
+</div>
+<div id="ref-Fagnant2020-xu" class="csl-entry" role="listitem">
+Fagnant, C., Gori, A., Sebastian, A., Bedient, P. B., &amp; Ensor, K. B. (2020). <span class="nocase">Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas</span>. <em>Nat. Hazards</em>, <em>104</em>, 1597–1621. <a href="https://doi.org/10.1007/s11069-020-04235-x">https://doi.org/10.1007/s11069-020-04235-x</a>
+</div>
+<div id="ref-Ruckert2017-qg" class="csl-entry" role="listitem">
+Ruckert, K. L., Guan, Y., Bakker, A. M. R., Forest, C. E., &amp; Keller, K. (2017). <span class="nocase">The effects of time-varying observation errors on semi-empirical sea-level projections</span>. <em>Clim. Change</em>, <em>140</em>, 349–360. <a href="https://doi.org/10.1007/s10584-016-1858-z">https://doi.org/10.1007/s10584-016-1858-z</a>
+</div>
+<div id="ref-Srikrishnan2022-yq" class="csl-entry" role="listitem">
+Srikrishnan, V., Guan, Y., Tol, R. S. J., &amp; Keller, K. (2022). <span class="nocase">Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model</span>. <em>Clim. Change</em>, <em>170</em>, 37. <a href="https://doi.org/10.1007/s10584-021-03279-7">https://doi.org/10.1007/s10584-021-03279-7</a>
+</div>
 </div>
 </section></section>
     </div>
@@ -940,24 +1147,6 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail email">'
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/viveks\.me\/simulation-data-analysis");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-              // target, if specified
-              link.setAttribute("target", "_blank");
-              if (link.getAttribute("rel") === null) {
-                link.setAttribute("rel", "noopener");
-              }
-          }
-        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1034,6 +1223,21 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail email">'
           });
         }
       }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/viveks\.me\/simulation-data-analysis");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+              // target, if specified
+              link.setAttribute("target", "_blank");
+          }
+        }
     });
     </script>
     

@@ -33,15 +33,26 @@ execute:
 
 # Course Overview
 
-## Course Staff
+## About Me
 
-**Instructor**: Vivek Srikrishnan, 318 Riley-Robb, <viveks@cornell.edu>
+**Instructor**: Prof. Vivek Srikrishnan, [viveks@cornell.edu](mailto:viveks@cornell.edu)
 
-::: {.callout-important}
-Please include **BEE4850** in your email subject line! This will ensure it doesn't get lost in the shuffle.
+**Interests**:
 
-Better: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy.
+- Bridging Earth science, data science, and decision science to improve climate risk management;
+- Unintended consequences which result from neglecting uncertainty or system dynamics.
+
+## Meet My Supervisors
+
+::: {.center}
+![My Supervisors](figures/cats.png){width=30%}
 :::
+
+## What Do You Hope To Get Out Of This Course?
+
+Take a moment, write it down, and we'll share!
+
+# Course Motivation
 
 ## Why Does Data Analysis Matter?
 
@@ -49,32 +60,139 @@ Better: Use Ed Discussion and reserve email for matters that are particular urge
 - Decision-making;
 - Understanding uncertainty
 
-## Motivation For The Course
+## Unique/Challenging Features Of Data
+
+There are many features of environmental (and biological!) data which make data analysis interesting and hard.
+
+## Extreme Events
+
+::: {.center}
+![](figures/dossgollin-keller-2023_extreme.jpeg)
+:::
+::: {.caption}
+Source: @Doss-Gollin2023-kl
+:::
+
+## Extreme Events
+
+:::: {.columns}
+::: {.column width=60%}
+::: {.center}
+![](https://imgs.xkcd.com/comics/launch_risk.png){width=45%}
+:::
+:::
+::: {.column width=40%}
+::: {.caption}
+Source: [XKCD 2107](https://xkcd.com/2107/)
+:::
+:::
+::::
+
+## Correlated Uncertainties
+
+::: {.center}
+::: {.layout-ncol=2}
+![](figures/errickson-2021_correlations.png){width=30%}
+![](figures/errickson-2021_projections.png){width=60%}
+:::
+::: {.caption}
+Source: @Errickson2021-kr
+:::
+:::
+
+## Non-Stationarity
+
+::: {.center}
+![](figures/fagnant-etal-2020_prcip.png){width=90%}
+:::
+::: {.caption}
+Source: @Fagnant2020-xu
+:::
+
+## Forcing & Structural Uncertainty
+
+::: {.center}
+![](figures/dossgollin-keller-2023_slr.jpeg)
+:::
+::: {.caption}
+Source: @Doss-Gollin2023-kl
+:::
+
+## Deep Uncertainty
+
+::: {.center}
+![](figures/srikrishnan-etal-2022_co2.png)
+:::
+::: {.caption}
+Source: @Srikrishnan2022-yq
+:::
+
+## Some Problems With The "Standard" Data Analysis Toolkit
 
 ::: {.incremental}
-- What is wrong with the typical "recipes" or tests that we use for data analysis?
-- Alternative: generate data consistent with different hypotheses and assess consistency with observations.
+- Statistical assumptions may not be valid;
+- "Null" vs "Alternative" hypotheses and tests may be chosen for computational convenience, not scientific relevance.
 :::
+
+::: {.fragment .fade-in}
+**Important**: "Big" data doesn't solve the problem!
+:::
+
+## Misspecification Can Bias Inferences...
+
+:::: {.columns}
+::: {.column width=60%}
+::: {.center}
+![](figures/ruckert-etal-2018_inference.png){width=60%}
+:::
+:::
+::: {.column width=40%}
+::: {.caption}
+Source: @Ruckert2017-qg
+:::
+:::
+::::
+
+## ...And Projections
+
+::: {.center}
+![](figures/ruckert-etal-2018_projections.png){width=50%}
+:::
+::: {.caption}
+Source: @Ruckert2017-qg
+:::
+
 
 ## Advantages of Model-Based Data Analysis
 
-- 
+We can:
 
-## What Do You Hope To Get Out Of This Course?
-
-{{< include _poll-prompt.qmd >}}
-
+- Examine logical implications of model assumptions.
+- Assess evidence for multiple hypotheses by generating simulated data.
+- Identify opportunities to design future experiments or observations to distinguish between competing hypotheses.
 
 ## Workflow/Course Organization
 
-1. Hypothesis Testing and Modeling
-2. Exploratory Data Analysis/Visualization
-3. Simulation Methods
-4. Model Calibration
-5. Model Assessment and Selection
-6. *Emulation*
+::: {.center}
+![](figures/course_overview.png){width=70%}
+:::
 
 # Course Policies
+
+## Background Knowledge: Computing
+
+- Basics (at the level of CS 111x)
+- Some extra work/effort may be needed if you haven't coded in a while.
+- May need some additional familiarity with statistical packages (and "light" optimization)
+
+## Background Knowledge: Probability/Statistics
+
+- ENGRD 2700/CEE 3040
+- Summary statistics of data
+- Probability distributions
+- Basic visualizations
+- Monte Carlo basics
+
 
 ## Grades
 
@@ -138,7 +256,7 @@ Not required, but students tend to do better when they're actively engaged in cl
 
 ## Office Hours
 
-- MW 10-11 AM
+- MW 10-11 AM, 318 Riley-Robb
 - Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.
 
 ## Accomodations
@@ -168,9 +286,13 @@ Obviously, just copying down answers from Chegg or ChatGPT and passing them off 
 
 Think about ChatGPT as a drunk who tells stories for drinks.
 
-- It will give you plausible-looking text or code on any topic, but it doesn't know anything beyond what it "overheard."
-- Sometimes you get lucky, more often you get nonsense.
-- Can be useful for certain tasks (*e.g.* understanding code errors).
+It will give you plausible-looking text or code on any topic, but it doesn't know anything beyond what it "overheard."
+
+::: {.callout-caution}
+ChatGPT can be useful for certain tasks (*e.g.* understanding code errors), but may neglect context for why/when certain information or solutions work.
+
+Just think about it as an unreliable Google search.
+:::
 
 # Class Tools
 
@@ -181,8 +303,15 @@ Use [Ed Discussion](https://us.edstem.org) for questions and discussions about c
 - Try to use public posts so others can benefit from questions and can weigh in.
 - **I will make announcements through Ed**.
 
+## Email
+
 When urgency or privacy is required, email is ok.
 
+::: {.callout-important}
+Please include **BEE4850** in your email subject line! This will ensure it doesn't get lost in the shuffle.
+
+Better: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy.
+:::
 
 ## Course Website
 
@@ -195,6 +324,12 @@ When urgency or privacy is required, email is ok.
 
 - Course is programming language-agnostic.
 - Assignments will have notebooks set up for Julia (environments, etc) on GitHub.
+
+## Some Tips For Success
+
+- Start the homeworks early; this gives time to sort out conceptual problems and debug.
+- Ask questions (in class and online) and try to help each other.
+- Give me feedback!
 
 # Upcoming Schedule
 
@@ -209,3 +344,7 @@ When urgency or privacy is required, email is ok.
 **Homework 1** available; due *next* Friday.
 
 **Exercise 1** due *this* Friday.
+
+# References
+
+## References (Scroll for Full List)

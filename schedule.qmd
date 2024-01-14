@@ -9,7 +9,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 | Week | Date        | Topic | Slides | AE | HW | 
 :-----:|:---------|:------|:------:|:--:|:---:|
 | | | ***Hypothesis Testing and Modeling*** | | | |
-|  [1](weeks/week01.qmd)   | Mon, Jan 22 | Overview, GitHub Intro | [{{< fa sharp presentation-screen >}}](slides/lec01-class-intro.html){target="_blank"}  | [{{< fa sharp coffee-pot >}}](aes/ae01/ae01.html) | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.html) | 
+|  [1](weeks/week01.qmd)   | Mon, Jan 22 | Overview, GitHub Intro | [{{< fa sharp presentation-screen >}}](slides/lecture01-1.qmd){target="_blank"}  | [{{< fa sharp coffee-pot >}}](aes/ae01/ae01.html) | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.html) | 
 |  | Wed, Jan 24 | Hypothesis Testing and Data Simulation | | | |
 | 2 | Mon, Jan 29 | Uncertainty and Probability Review | | | |
 |  | Wed, Jan 31 | Exploratory Data Analysis | | | | 
