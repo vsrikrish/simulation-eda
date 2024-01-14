@@ -353,25 +353,18 @@
     "text": "Schedule\n\n\n\n\n\n\n\n\n\nLab\nInstructions\nRubric\nDue Date\n\n\n\n\nLab 1\n\n\nFeb 02, 2024"
   },
   {
-    "objectID": "slides/lecture01-1.html#course-staff",
-    "href": "slides/lecture01-1.html#course-staff",
+    "objectID": "slides/lecture01-1.html#about-me",
+    "href": "slides/lecture01-1.html#about-me",
     "title": "Welcome to BEE 4850/5850!",
-    "section": "Course Staff",
-    "text": "Course Staff\nInstructor: Vivek Srikrishnan, 318 Riley-Robb, viveks at cornell dot edu"
+    "section": "About Me",
+    "text": "About Me\nInstructor: Prof. Vivek Srikrishnan, viveks at cornell dot edu\nInterests:\n\nBridging Earth science, data science, and decision science to improve climate risk management;\nUnintended consequences which result from neglecting uncertainty or system dynamics."
   },
   {
-    "objectID": "slides/lecture01-1.html#why-does-data-analysis-matter",
-    "href": "slides/lecture01-1.html#why-does-data-analysis-matter",
+    "objectID": "slides/lecture01-1.html#meet-my-supervisors",
+    "href": "slides/lecture01-1.html#meet-my-supervisors",
     "title": "Welcome to BEE 4850/5850!",
-    "section": "Why Does Data Analysis Matter?",
-    "text": "Why Does Data Analysis Matter?\n\nScientific insight;\nDecision-making;\nUnderstanding uncertainty"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#data-analysis-through-simulation",
-    "href": "slides/lecture01-1.html#data-analysis-through-simulation",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Data Analysis Through Simulation",
-    "text": "Data Analysis Through Simulation"
+    "section": "Meet My Supervisors",
+    "text": "Meet My Supervisors\n\n\n\n\nMy Supervisors"
   },
   {
     "objectID": "slides/lecture01-1.html#what-do-you-hope-to-get-out-of-this-course",
@@ -381,11 +374,109 @@
     "text": "What Do You Hope To Get Out Of This Course?\nTake a moment, write it down, and we’ll share!"
   },
   {
-    "objectID": "slides/lecture01-1.html#course-organization",
-    "href": "slides/lecture01-1.html#course-organization",
+    "objectID": "slides/lecture01-1.html#why-does-data-analysis-matter",
+    "href": "slides/lecture01-1.html#why-does-data-analysis-matter",
     "title": "Welcome to BEE 4850/5850!",
-    "section": "Course Organization",
-    "text": "Course Organization\n\nHypothesis Testing and Modeling\nExploratory Data Analysis/Visualization\nSimulation Methods\nModel Calibration\nModel Assessment and Selection\nEmulation"
+    "section": "Why Does Data Analysis Matter?",
+    "text": "Why Does Data Analysis Matter?\n\nScientific insight;\nDecision-making;\nUnderstanding uncertainty"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#uniquechallenging-features-of-data",
+    "href": "slides/lecture01-1.html#uniquechallenging-features-of-data",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Unique/Challenging Features Of Data",
+    "text": "Unique/Challenging Features Of Data\nThere are many features of environmental (and biological!) data which make data analysis interesting and hard."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#extreme-events",
+    "href": "slides/lecture01-1.html#extreme-events",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Extreme Events",
+    "text": "Extreme Events\n\n\n\n\n\n\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#extreme-events-1",
+    "href": "slides/lecture01-1.html#extreme-events-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Extreme Events",
+    "text": "Extreme Events\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: XKCD 2107"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#correlated-uncertainties",
+    "href": "slides/lecture01-1.html#correlated-uncertainties",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Correlated Uncertainties",
+    "text": "Correlated Uncertainties\n\n\n \n\n\nSource: Errickson et al. (2021)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#non-stationarity",
+    "href": "slides/lecture01-1.html#non-stationarity",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Non-Stationarity",
+    "text": "Non-Stationarity\n\n\n\n\n\n\n\n\n\n\nSource: Fagnant et al. (2020)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#forcing-structural-uncertainty",
+    "href": "slides/lecture01-1.html#forcing-structural-uncertainty",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Forcing & Structural Uncertainty",
+    "text": "Forcing & Structural Uncertainty\n\n\n\n\n\n\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#deep-uncertainty",
+    "href": "slides/lecture01-1.html#deep-uncertainty",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Deep Uncertainty",
+    "text": "Deep Uncertainty\n\n\n\n\n\n\n\n\n\n\nSource: Srikrishnan et al. (2022)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#some-problems-with-the-standard-data-analysis-toolkit",
+    "href": "slides/lecture01-1.html#some-problems-with-the-standard-data-analysis-toolkit",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Some Problems With The “Standard” Data Analysis Toolkit",
+    "text": "Some Problems With The “Standard” Data Analysis Toolkit\n\n\nStatistical assumptions may not be valid;\n“Null” vs “Alternative” hypotheses and tests may be chosen for computational convenience, not scientific relevance.\n\n\n\nImportant: “Big” data doesn’t solve the problem!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#misspecification-can-bias-inferences",
+    "href": "slides/lecture01-1.html#misspecification-can-bias-inferences",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Misspecification Can Bias Inferences…",
+    "text": "Misspecification Can Bias Inferences…\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Ruckert et al. (2017)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#and-projections",
+    "href": "slides/lecture01-1.html#and-projections",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "…And Projections",
+    "text": "…And Projections\n\n\n\n\n\n\n\n\n\n\nSource: Ruckert et al. (2017)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#advantages-of-model-based-data-analysis",
+    "href": "slides/lecture01-1.html#advantages-of-model-based-data-analysis",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Advantages of Model-Based Data Analysis",
+    "text": "Advantages of Model-Based Data Analysis\nWe can:\n\nExamine logical implications of model assumptions.\nAssess evidence for multiple hypotheses by generating simulated data.\nIdentify opportunities to design future experiments or observations to distinguish between competing hypotheses."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#workflowcourse-organization",
+    "href": "slides/lecture01-1.html#workflowcourse-organization",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Workflow/Course Organization",
+    "text": "Workflow/Course Organization"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#background-knowledge-computing",
+    "href": "slides/lecture01-1.html#background-knowledge-computing",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Background Knowledge: Computing",
+    "text": "Background Knowledge: Computing\n\nBasics (at the level of CS 111x)\nSome extra work/effort may be needed if you haven’t coded in a while.\nMay need some additional familiarity with statistical packages (and “light” optimization)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#background-knowledge-probabilitystatistics",
+    "href": "slides/lecture01-1.html#background-knowledge-probabilitystatistics",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Background Knowledge: Probability/Statistics",
+    "text": "Background Knowledge: Probability/Statistics\n\nENGRD 2700/CEE 3040\nSummary statistics of data\nProbability distributions\nBasic visualizations\nMonte Carlo basics"
   },
   {
     "objectID": "slides/lecture01-1.html#grades",
@@ -486,6 +577,13 @@
     "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed."
   },
   {
+    "objectID": "slides/lecture01-1.html#email",
+    "href": "slides/lecture01-1.html#email",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Email",
+    "text": "Email\nWhen urgency or privacy is required, email is ok.\n\n\n\n\n\n\nImportant\n\n\nPlease include BEE4850 in your email subject line! This will ensure it doesn’t get lost in the shuffle.\nBetter: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy."
+  },
+  {
     "objectID": "slides/lecture01-1.html#course-website",
     "href": "slides/lecture01-1.html#course-website",
     "title": "Welcome to BEE 4850/5850!",
@@ -500,32 +598,11 @@
     "text": "Computing Tools\n\nCourse is programming language-agnostic.\nAssignments will have notebooks set up for Julia (environments, etc) on GitHub."
   },
   {
-    "objectID": "slides/lecture01-1.html#julia",
-    "href": "slides/lecture01-1.html#julia",
+    "objectID": "slides/lecture01-1.html#some-tips-for-success",
+    "href": "slides/lecture01-1.html#some-tips-for-success",
     "title": "Welcome to BEE 4850/5850!",
-    "section": "Julia",
-    "text": "Julia\nIn this course, we will use the Julia programming language.\nAll assignments, labs, and AEs will be provided as Jupyter Notebooks."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#what-is-your-programming-experience",
-    "href": "slides/lecture01-1.html#what-is-your-programming-experience",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "What Is Your Programming Experience?",
-    "text": "What Is Your Programming Experience?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#jupyter-notebooks",
-    "href": "slides/lecture01-1.html#jupyter-notebooks",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Jupyter Notebooks",
-    "text": "Jupyter Notebooks\nWe will use Jupyter Notebooks for most computing tasks (including assignments).\n\nAllow for interactive evaluation of code and integration with text (including nicely typeset mathematics)\nCan export to PDF (or HTML -&gt; PDF) for submission to Gradescope.\nBe careful before submitting: Evaluate all cells in order"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#github-classroom",
-    "href": "slides/lecture01-1.html#github-classroom",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "GitHub Classroom",
-    "text": "GitHub Classroom\nHomework assignments and labs will be distributed using GitHub Classroom.\n\nEvery student will have a unique “repository.”\nWhen assignment is released, I will share the link for repository creation on Ed Discussion.\nMakes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots)."
+    "section": "Some Tips For Success",
+    "text": "Some Tips For Success\n\nStart the homeworks early; this gives time to sort out conceptual problems and debug.\nAsk questions (in class and online) and try to help each other.\nGive me feedback!"
   },
   {
     "objectID": "slides/lecture01-1.html#next-classes",
@@ -533,6 +610,20 @@
     "title": "Welcome to BEE 4850/5850!",
     "section": "Next Classes",
     "text": "Next Classes\nWednesday: Hypothesis testing and data analysis\nNext Week: Review of uncertainty and probability"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#assessments",
+    "href": "slides/lecture01-1.html#assessments",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Assessments",
+    "text": "Assessments\nHomework 1 available; due next Friday.\nExercise 1 due this Friday."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#references-scroll-for-full-list",
+    "href": "slides/lecture01-1.html#references-scroll-for-full-list",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "References (Scroll for Full List)",
+    "text": "References (Scroll for Full List)\n\n\n\n\n\n\nDoss-Gollin, J., & Keller, K. (2023). A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management. Earths Future, 11, e2022EF003044. https://doi.org/10.1029/2022ef003044\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nFagnant, C., Gori, A., Sebastian, A., Bedient, P. B., & Ensor, K. B. (2020). Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas. Nat. Hazards, 104, 1597–1621. https://doi.org/10.1007/s11069-020-04235-x\n\n\nRuckert, K. L., Guan, Y., Bakker, A. M. R., Forest, C. E., & Keller, K. (2017). The effects of time-varying observation errors on semi-empirical sea-level projections. Clim. Change, 140, 349–360. https://doi.org/10.1007/s10584-016-1858-z\n\n\nSrikrishnan, V., Guan, Y., Tol, R. S. J., & Keller, K. (2022). Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model. Clim. Change, 170, 37. https://doi.org/10.1007/s10584-021-03279-7"
   },
   {
     "objectID": "rubrics/standard.html",
@@ -804,208 +895,5 @@
     "crumbs": [
       "Term Project"
     ]
-  },
-  {
-    "objectID": "slides/lecture01-1.html#motivation-for-the-course",
-    "href": "slides/lecture01-1.html#motivation-for-the-course",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Motivation For The Course",
-    "text": "Motivation For The Course\n\n\nWhat is wrong with the typical “recipes” or tests that we use for data analysis?\nAlternative: generate data consistent with different hypotheses and assess consistency with observations."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#advantages-of-model-based-data-analysis",
-    "href": "slides/lecture01-1.html#advantages-of-model-based-data-analysis",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Advantages of Model-Based Data Analysis",
-    "text": "Advantages of Model-Based Data Analysis\nWe can:\n\nExamine logical implications of model assumptions.\nAssess evidence for multiple hypotheses by generating simulated data.\nIdentify opportunities to design future experiments or observations to distinguish between competing hypotheses."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#workflowcourse-organization",
-    "href": "slides/lecture01-1.html#workflowcourse-organization",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Workflow/Course Organization",
-    "text": "Workflow/Course Organization"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#assessments",
-    "href": "slides/lecture01-1.html#assessments",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Assessments",
-    "text": "Assessments\nHomework 1 available; due next Friday.\nExercise 1 due this Friday."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#email",
-    "href": "slides/lecture01-1.html#email",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Email",
-    "text": "Email\nWhen urgency or privacy is required, email is ok.\n\n\n\n\n\n\nImportant\n\n\nPlease include BEE4850 in your email subject line! This will ensure it doesn’t get lost in the shuffle.\nBetter: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#about-me",
-    "href": "slides/lecture01-1.html#about-me",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "About Me",
-    "text": "About Me\nInstructor: Prof. Vivek Srikrishnan, viveks at cornell dot edu\nInterests:\n\nBridging Earth science, data science, and decision science to improve climate risk management;\nUnintended consequences which result from neglecting uncertainty or system dynamics."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#section",
-    "href": "slides/lecture01-1.html#section",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "",
-    "text": "My Supervisors"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#uniquechallenging-features-of-data",
-    "href": "slides/lecture01-1.html#uniquechallenging-features-of-data",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Unique/Challenging Features Of Data",
-    "text": "Unique/Challenging Features Of Data\nThere are many features of environmental (and biological!) data which make data analysis interesting and hard."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#background-knowledge",
-    "href": "slides/lecture01-1.html#background-knowledge",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Background Knowledge",
-    "text": "Background Knowledge\n\n\nImportant\n\nSome computing experience (CS 111x)\nStatistics and probability (ENGRD 2700/CEE 3040)\n\n\nHelpful:\n\nSome relevant science/engineering for hypothesis formulation"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#my-supervisors",
-    "href": "slides/lecture01-1.html#my-supervisors",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "My Supervisors",
-    "text": "My Supervisors\n\n\n\n\nMy Supervisors"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#meet-my-supervisors",
-    "href": "slides/lecture01-1.html#meet-my-supervisors",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Meet My Supervisors",
-    "text": "Meet My Supervisors\n\n\n\n\nMy Supervisors"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#structural-uncertainty",
-    "href": "slides/lecture01-1.html#structural-uncertainty",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Structural Uncertainty",
-    "text": "Structural Uncertainty\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#extreme-events",
-    "href": "slides/lecture01-1.html#extreme-events",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Extreme Events",
-    "text": "Extreme Events\n\n\n\n\n\n\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#forcing-structural-uncertainty",
-    "href": "slides/lecture01-1.html#forcing-structural-uncertainty",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Forcing & Structural Uncertainty",
-    "text": "Forcing & Structural Uncertainty\n\n\n\n\n\n\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#some-problems-with-the-standard-data-analysis-toolkit",
-    "href": "slides/lecture01-1.html#some-problems-with-the-standard-data-analysis-toolkit",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Some Problems With The “Standard” Data Analysis Toolkit",
-    "text": "Some Problems With The “Standard” Data Analysis Toolkit\n\n\nStatistical assumptions may not be valid;\n“Null” vs “Alternative” hypotheses and tests may be chosen for computational convenience, not scientific relevance.\n\n\n\nImportant: “Big” data doesn’t solve the problem!"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#extreme-events-1",
-    "href": "slides/lecture01-1.html#extreme-events-1",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Extreme Events",
-    "text": "Extreme Events\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: XKCD 2107"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#correlated-uncertainties",
-    "href": "slides/lecture01-1.html#correlated-uncertainties",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Correlated Uncertainties",
-    "text": "Correlated Uncertainties\n\n\n \n\n\nSource: Errickson et al. (2021)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#non-stationarity",
-    "href": "slides/lecture01-1.html#non-stationarity",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Non-Stationarity",
-    "text": "Non-Stationarity\n\n\n\n\n\n\n\n\n\n\nSource: Fagnant et al. (2020)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#some-tips",
-    "href": "slides/lecture01-1.html#some-tips",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Some Tips",
-    "text": "Some Tips\n\nStart the homeworks early; this gives time to sort out conceptual problems and debug.\nAsk questions (in class and online) and try to help each other.\nGive me feedback!"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#model-misspecification-can-bias-inferences",
-    "href": "slides/lecture01-1.html#model-misspecification-can-bias-inferences",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Model Misspecification Can Bias Inferences…",
-    "text": "Model Misspecification Can Bias Inferences…\n\n\n\n\n\n\n\n\n\n\nSource: Ruckert et al (2018)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#and-projections",
-    "href": "slides/lecture01-1.html#and-projections",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "…And Projections",
-    "text": "…And Projections\n\n\n\n\n\n\n\n\n\n\nSource: Ruckert et al. (2017)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#disadvantages-or-complexities",
-    "href": "slides/lecture01-1.html#disadvantages-or-complexities",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Disadvantages (or Complexities)",
-    "text": "Disadvantages (or Complexities)\n\nComputational expense;\nNeed to make (and justify) choices."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#misspecification-can-bias-inferences",
-    "href": "slides/lecture01-1.html#misspecification-can-bias-inferences",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Misspecification Can Bias Inferences…",
-    "text": "Misspecification Can Bias Inferences…\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Ruckert et al. (2017)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#deep-uncertainty",
-    "href": "slides/lecture01-1.html#deep-uncertainty",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Deep Uncertainty",
-    "text": "Deep Uncertainty\n\n\n\n\n\n\n\n\n\n\nSource: Srikrishnan et al. (2022)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#background-knowledge-computing",
-    "href": "slides/lecture01-1.html#background-knowledge-computing",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Background Knowledge: Computing",
-    "text": "Background Knowledge: Computing\n\nBasics (at the level of CS 111x)\nSome extra work/effort may be needed if you haven’t coded in a while.\nMay need some additional familiarity with statistical packages (and “light” optimization)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#some-tips-for-success",
-    "href": "slides/lecture01-1.html#some-tips-for-success",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Some Tips For Success",
-    "text": "Some Tips For Success\n\nStart the homeworks early; this gives time to sort out conceptual problems and debug.\nAsk questions (in class and online) and try to help each other.\nGive me feedback!"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#references-1",
-    "href": "slides/lecture01-1.html#references-1",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\nDoss-Gollin, J., & Keller, K. (2023). A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management. Earths Future, 11, e2022EF003044. https://doi.org/10.1029/2022ef003044\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nFagnant, C., Gori, A., Sebastian, A., Bedient, P. B., & Ensor, K. B. (2020). Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas. Nat. Hazards (Dordr.), 104, 1597–1621. https://doi.org/10.1007/s11069-020-04235-x\n\n\nRuckert, K. L., Guan, Y., Bakker, A. M. R., Forest, C. E., & Keller, K. (2017). The effects of time-varying observation errors on semi-empirical sea-level projections. Clim. Change, 140, 349–360. https://doi.org/10.1007/s10584-016-1858-z\n\n\nSrikrishnan, V., Guan, Y., Tol, R. S. J., & Keller, K. (2022). Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model. Clim. Change, 170, 37. https://doi.org/10.1007/s10584-021-03279-7"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#references-scroll-for-full-list",
-    "href": "slides/lecture01-1.html#references-scroll-for-full-list",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "References (Scroll for Full List)",
-    "text": "References (Scroll for Full List)\n\n\n\n\n\n\nDoss-Gollin, J., & Keller, K. (2023). A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management. Earths Future, 11, e2022EF003044. https://doi.org/10.1029/2022ef003044\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nFagnant, C., Gori, A., Sebastian, A., Bedient, P. B., & Ensor, K. B. (2020). Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas. Nat. Hazards, 104, 1597–1621. https://doi.org/10.1007/s11069-020-04235-x\n\n\nRuckert, K. L., Guan, Y., Bakker, A. M. R., Forest, C. E., & Keller, K. (2017). The effects of time-varying observation errors on semi-empirical sea-level projections. Clim. Change, 140, 349–360. https://doi.org/10.1007/s10584-016-1858-z\n\n\nSrikrishnan, V., Guan, Y., Tol, R. S. J., & Keller, K. (2022). Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model. Clim. Change, 170, 37. https://doi.org/10.1007/s10584-021-03279-7"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#background-knowledge-probabilitystatistics",
-    "href": "slides/lecture01-1.html#background-knowledge-probabilitystatistics",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Background Knowledge: Probability/Statistics",
-    "text": "Background Knowledge: Probability/Statistics\n\nENGRD 2700/CEE 3040\nSummary statistics of data\nProbability distributions\nBasic visualizations\nMonte Carlo basics"
   }
 ]
