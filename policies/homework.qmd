@@ -5,9 +5,11 @@ anchor-sections: true
 
 This page includes some information on the homework assignments for BEE 4850/5850, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.
 
-This document is long, but please do read the whole thing (particularly [What Homework Is For](#what-homework-is-for)and the [Logistics](#logistics)). Hopefully most of this is obvious, but some of it may not be.
+This document is long, but please do read the whole thing. Hopefully most of this is obvious, but some of it may not be.
 
 ## Homework Logistics
+
+Homework assignments will be assigned on Monday and are generally due two Fridays hence (so you have two "school weeks" to work on the assignment). Solutions should be submitted as PDFs to Gradescope by 9pm on the due date. You do not need to include code unless you want to, but you should always include some description of the logic of the modeling or problem-solving process that your code implements.
 
 ## How To Write Assignments
 
@@ -29,7 +31,7 @@ Here are some tips for how to make the grader (the TA or Prof. Srikrishnan) unde
 - **State your assumptions**. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).
 - **Don't rely on your code**. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end --- it works or it doesn't). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can't do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.
 
-## Be Concise
+### Be Concise
 
 - **Keep solutions short**. Organized answers should not be long. There's a fine balance between conciseness and completeness: find it!
 - **Don't regurgitate**. You can reference concepts, models, etc from class without repeating them. Just make it clear what you're modifying and how you're using those concepts for that particular problem.
