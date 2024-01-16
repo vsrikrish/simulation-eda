@@ -21,5 +21,5 @@ The standard rubric for homework problems is available [here](rubrics/standard.q
 
 | Assignment | Instructions | Due Date |
 |:----------:|:------------:|:------:|:---------|
-| Exercises 1 | [{{< fa sharp pen-field >}}](exercises/pset01/pset01.html) | Jan 26, 2024 |
+| Exercises 1 | [{{< fa sharp pen-field >}}](exercises/ex01/ext01.html) | Jan 26, 2024 |
 
