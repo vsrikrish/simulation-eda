@@ -127,16 +127,12 @@ Source: @Doss-Gollin2023-kl
 Source: @Srikrishnan2022-yq
 :::
 
-## Some Problems With The "Standard" Data Analysis Toolkit
+## Modes of Model-Based Data Analysis
 
-::: {.incremental}
-- Statistical assumptions may not be valid;
-- "Null" vs "Alternative" hypotheses and tests may be chosen for computational convenience, not scientific relevance.
+::: {.center}
+![](figures/data_settings.png)
 :::
 
-::: {.fragment .fade-in}
-**Important**: "Big" data doesn't solve the problem!
-:::
 
 ## Misspecification Can Bias Inferences...
 
@@ -162,6 +158,16 @@ Source: @Ruckert2017-qg
 Source: @Ruckert2017-qg
 :::
 
+## Some Problems With The "Standard" Data Analysis Toolkit
+
+::: {.incremental}
+- Statistical assumptions may not be valid;
+- "Null" vs "Alternative" hypotheses and tests may be chosen for computational convenience, not scientific relevance.
+:::
+
+::: {.fragment .fade-in}
+**Important**: "Big" data doesn't solve the problem!
+:::
 
 ## Advantages of Model-Based Data Analysis
 
