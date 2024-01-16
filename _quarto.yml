@@ -67,7 +67,7 @@ website:
       - section: exercises.qmd
         contents:
           - href: exercises/ex01/ex01.qmd
-            text: Application Exercise 1
+            text: Exercise 1
       - section: project.qmd
       - section: "Julia Tutorials"
         contents:
