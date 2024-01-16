@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nAE\nHW\n\n\n\n\n\n\nHypothesis Testing and Modeling\n\n\n\n\n\n1\nMon, Jan 22\nOverview, GitHub Intro\n\n\n\n\n\n\nWed, Jan 24\nHypothesis Testing and Data Simulation\n\n\n\n\n\n2\nMon, Jan 29\nUncertainty and Probability Review\n\n\n\n\n\n\nWed, Jan 31\nExploratory Data Analysis\n\n\n\n\n\n3\nMon, Feb 5\nProbability Models and Model Residuals\n\n\n\n\n\n\nWed, Feb 7\nProbability Models II\n\n\n\n\n\n4\nMon, Feb 12\nBayesian Statistics and Decision Analysis\n\n\n\n\n\n\nWed, Feb 14\nHypothesis Testing As Decision-Making\n\n\n\n\n\n5\nMon, Feb 19\nData Visualization\n\n\n\n\n\n\nWed, Feb 21\nGraphical Checks of Model Residuals\n\n\n\n\n\n6\nMon, Feb 26\nNo Class: February Break\n\n\n\n\n\n\nWed, Feb 28\nIn-Class Figure Discussion\n\n\n\n\n\n\n\nSimulation Methods\n\n\n\n\n\n7\nMon, Mar 4\nUncertainty Propagation and Monte Carlo Simulation\n\n\n\n\n\n\nWed, Mar 6\nMonte Carlo Simulation II\n\n\n\n\n\n8\nMon, Mar 11\nSampling Distributions and The Bootstrap\n\n\n\n\n\n\nWed, Mar 13\nThe Bootstrap II\n\n\n\n\n\n9\nMon, Mar 18\nMarkov Chain Monte Carlo\n\n\n\n\n\n\nWed, Mar 20\nMCMC II\n\n\n\n\n\n\n\nModel Calibration\n\n\n\n\n\n10\nMon, Mar 25\nStatistical Model Calibration\n\n\n\n\n\n\nWed, Mar 27\nLiterature Review Presentations\n\n\n\n\n\n\nMon, Apr 1\nNo Class: Spring Break\n\n\n\n\n\n\nWed, Apr 3\nNo Class: Spring Break\n\n\n\n\n\n11\nMon, Apr 8\nModel-Data Discrepancy\n\n\n\n\n\n\nWed, Apr 10\nMissing and Censored Data\n\n\n\n\n\n\n\nModel Assessment and Selection\n\n\n\n\n\n12\nMon, Apr 15\nModel Assessment and Predictive Accuracy\n\n\n\n\n\n13\nWed, Apr 17\nCross-Validation and Information Criteria\n\n\n\n\n\n1\nMon, Apr 22\nGraphical Model Evaluation\n\n\n\n\n\n\nWed, Apr 24\nModel Assessment and Selection: Examples\n\n\n\n\n\n\n\nEmulation\n\n\n\n\n\n14\nMon, Apr 29\nTradeoffs Between Complexity and Ensemble Size\n\n\n\n\n\n\nWed, May 1\nEmulating Expensive Models\n\n\n\n\n\n15\nMon, May 6\nProject Presentations",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nExercises\nHomework\n\n\n\n\n\n\nHypothesis Testing and Modeling\n\n\n\n\n\n\n1\nMon, Jan 22\nOverview, GitHub Intro\n\n\n\n\n\n\n\nWed, Jan 24\nHypothesis Testing and Data Simulation\n\n\n\n\n\n\n2\nMon, Jan 29\nUncertainty and Probability Review\n\n\n\n\n\n\n\nWed, Jan 31\nExploratory Data Analysis\n\n\n\n\n\n\n3\nMon, Feb 5\nProbability Models and Model Residuals\n\n\n\n\n\n\n\nWed, Feb 7\nProbability Models II\n\n\n\n\n\n\n4\nMon, Feb 12\nBayesian Statistics and Decision Analysis\n\n\n\n\n\n\n\nWed, Feb 14\nHypothesis Testing As Decision-Making\n\n\n\n\n\n\n5\nMon, Feb 19\nData Visualization\n\n\n\n\n\n\n\nWed, Feb 21\nGraphical Checks of Model Residuals\n\n\n\n\n\n\n6\nMon, Feb 26\nNo Class: February Break\n\n\n\n\n\n\n\nWed, Feb 28\nIn-Class Figure Discussion\n\n\n\n\n\n\n\n\nSimulation Methods\n\n\n\n\n\n\n7\nMon, Mar 4\nUncertainty Propagation and Monte Carlo Simulation\n\n\n\n\n\n\n\nWed, Mar 6\nMonte Carlo Simulation II\n\n\n\n\n\n\n8\nMon, Mar 11\nSampling Distributions and The Bootstrap\n\n\n\n\n\n\n\nWed, Mar 13\nThe Bootstrap II\n\n\n\n\n\n\n9\nMon, Mar 18\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n\nWed, Mar 20\nMCMC II\n\n\n\n\n\n\n\n\nModel Calibration\n\n\n\n\n\n\n10\nMon, Mar 25\nStatistical Model Calibration\n\n\n\n\n\n\n\nWed, Mar 27\nLiterature Review Presentations\n\n\n\n\n\n\n\nMon, Apr 1\nNo Class: Spring Break\n\n\n\n\n\n\n\nWed, Apr 3\nNo Class: Spring Break\n\n\n\n\n\n\n11\nMon, Apr 8\nModel-Data Discrepancy\n\n\n\n\n\n\n\nWed, Apr 10\nMissing and Censored Data\n\n\n\n\n\n\n\n\nModel Assessment and Selection\n\n\n\n\n\n\n12\nMon, Apr 15\nModel Assessment and Predictive Accuracy\n\n\n\n\n\n\n13\nWed, Apr 17\nCross-Validation and Information Criteria\n\n\n\n\n\n\n1\nMon, Apr 22\nGraphical Model Evaluation\n\n\n\n\n\n\n\nWed, Apr 24\nModel Assessment and Selection: Examples\n\n\n\n\n\n\n\n\nEmulation\n\n\n\n\n\n\n14\nMon, Apr 29\nTradeoffs Between Complexity and Ensemble Size\n\n\n\n\n\n\n\nWed, May 1\nEmulating Expensive Models\n\n\n\n\n\n\n15\nMon, May 6\nProject Presentations",
     "crumbs": [
       "Course Information",
       "Class Schedule"
@@ -165,65 +165,354 @@
     ]
   },
   {
-    "objectID": "exercises.html",
-    "href": "exercises.html",
-    "title": "Exercises",
+    "objectID": "exercises/ex01/ex01.html",
+    "href": "exercises/ex01/ex01.html",
+    "title": "Exercise Set 01: Loading, Plotting, and Reasoning About Data",
     "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
+    "text": "Due Date\n\n\n\nFriday, 1/26/24, 9:00pm",
     "crumbs": [
-      "Exercises"
+      "Exercises",
+      "Exercise 1"
     ]
   },
   {
-    "objectID": "exercises.html#general-information",
-    "href": "exercises.html#general-information",
-    "title": "Exercises",
-    "section": "General Information",
-    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
+    "objectID": "exercises/ex01/ex01.html#overview",
+    "href": "exercises/ex01/ex01.html#overview",
+    "title": "Exercise Set 01: Loading, Plotting, and Reasoning About Data",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\nThe goal of this exercise is for you to practice (or learn how to) load data from tabular data files, plot it, and do some basic reasoning about the data and relationships between variables.\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
     "crumbs": [
-      "Exercises"
+      "Exercises",
+      "Exercise 1"
     ]
   },
   {
-    "objectID": "exercises.html#rubric",
-    "href": "exercises.html#rubric",
-    "title": "Exercises",
-    "section": "Rubric",
-    "text": "Rubric\nThe standard rubric for homework problems is available here.",
+    "objectID": "exercises/ex01/ex01.html#problems-total-10-points",
+    "href": "exercises/ex01/ex01.html#problems-total-10-points",
+    "title": "Exercise Set 01: Loading, Plotting, and Reasoning About Data",
+    "section": "Problems (Total: 10 Points)",
+    "text": "Problems (Total: 10 Points)\nThe goal of this exercise is for you to visualize and reason about the relationship between global mean surface temperature and global mean sea levels.",
     "crumbs": [
-      "Exercises"
+      "Exercises",
+      "Exercise 1"
     ]
   },
   {
-    "objectID": "exercises.html#schedule",
-    "href": "exercises.html#schedule",
-    "title": "Exercises",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\n\n\n\n\n\nExercises 1\n\nJan 26, 2024",
+    "objectID": "exercises/ex01/ex01.html#references",
+    "href": "exercises/ex01/ex01.html#references",
+    "title": "Exercise Set 01: Loading, Plotting, and Reasoning About Data",
+    "section": "References",
+    "text": "References",
     "crumbs": [
-      "Exercises"
+      "Exercises",
+      "Exercise 1"
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About This Website",
+    "objectID": "rubrics/standard.html",
+    "href": "rubrics/standard.html",
+    "title": "Standard Rubrics",
     "section": "",
-    "text": "This website contains course materials for the Spring 2024 edition of Environmental Data Analysis and Simulation, taught by Vivek Srikrishnan at Cornell University."
+    "text": "These rubrics are intended as a description for students and a guide to the grader for how to assign partial credit.",
+    "crumbs": [
+      "Homework",
+      "Standard Rubric"
+    ]
   },
   {
-    "objectID": "about.html#acknowledgements",
-    "href": "about.html#acknowledgements",
-    "title": "About This Website",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nMuch of the material for this course has evolved from discussions and work with Klaus Keller, Tony Wong, Casey Helgeson, Ben Seiyon Lee and James Doss-Gollin. Many thanks also to Andrew Gelman and Christian Robert, whose work heavily inspired many aspects of this course and which I refer back to regularly. Kieran Healy also wrote an outstanding book on Data Visualization which I learned a great deal from and still reference.\nThe layout for this site was also inspired by and draws from STA 210 at Duke University and Andrew Heiss’s course materials at Georgia State."
+    "objectID": "rubrics/standard.html#meta-rubric",
+    "href": "rubrics/standard.html#meta-rubric",
+    "title": "Standard Rubrics",
+    "section": "Meta-Rubric",
+    "text": "Meta-Rubric\n\nIndividual problems may vary from these standard rubrics based on the assessed learning outcomes for the problem, but they should provide an overview of what features students ought to be included in a given solution.\nEach bullet point should appear as a separate rubric item in Gradescope. We will use positive grading (points awarded for each component).\nEach standard rubric describes partial credit for a problem with 10 points. Partial credit for (sub)problems worth less than 10 points should be scaled appropriately. Full problems usually combine one of the modeling methods with some interpretation questions, so the rubric will be a combination of the individual components.\nGenerally, rubrics for 10 point “entire problems” can be summarized with the following:\n\n+4 points for an answer with a correct implementation (including model setup).\n+2 points for the correct solution (including details such as labels, units, etc.).\n+4 points for the interpretation. These points may be broken up across subproblems, but the general assignment of points should follow this summary.\n\nNote that the points may not scale with the distribution of work for a given problem. That’s life! It may take more work to derive and implement your model than it does to intrepret your results, but in this class we care a lot about your ability to critically evaluate and interpret modeling results.\nSometimes problems will be broken up into\nThe graders cannot read your mind and will not try to. Submissions that are unclear for any reason, including but not limited to unclear syntax (English or code), uncommented code, lack of reasoning or derivation, too much detail or writing, will not be given credit. The grader has complete discretion here. If something in your solution is ambiguous, the grader has been instructed to interpret it the “wrong” way. Clear responses are a sign of understanding, which is part of what we’re assessing.\nYou will not be doubly penalized for getting the “right” solution to the “wrong” setup (you would have been penalized above), but this requires the grader to be able to easily identify that your implementation is correct given the wrong model. If your implementation is unclear, you are likely to lose points here because we have no way of knowing that your answer is “right” without re-coding your problem.\nYou will not be given credit for your code (this isn’t a programming class); the code is a means to solving the problem, and we’re more interested in how you set up the problem and interpret the solution. This does mean that code that is sloppy but works is perfectly acceptable. However, your code may get you partial credit if the TA can easily find where you made a mistake, so make sure your submitted code is well commented. It’s important to write down the mathematics of what your code is trying to implement, because the TA will only take a cursory look at your code.\nSome rubrics include “deadly sins” which will cause an immediate zero to be given for the problem. Do not do these!\nRegardless of the problem type, the following penalties will be applied per incident:\n\n-1 for missing units.",
+    "crumbs": [
+      "Homework",
+      "Standard Rubric"
+    ]
   },
   {
-    "objectID": "about.html#tools-and-generation-workflow",
-    "href": "about.html#tools-and-generation-workflow",
-    "title": "About This Website",
-    "section": "Tools and Generation Workflow",
-    "text": "Tools and Generation Workflow\nThis website was built with Quarto, which allows me to integrate Julia code and output with the web content, pdfs, and slides in an amazingly clean fashion, while simplifying the process of generation. All materials can be generated through a simple workflow from the [GitHub Repository]."
+    "objectID": "rubrics/standard.html#standard-rubrics",
+    "href": "rubrics/standard.html#standard-rubrics",
+    "title": "Standard Rubrics",
+    "section": "Standard Rubrics",
+    "text": "Standard Rubrics\n\nSimulation Rubric\n10 points =\n\n+4 for the model derivation.\n\nThis includes any relevant reasoning from mass-balance or other principles.\n\n+4 for discretizing the model correctly.\n\n-1 if no justification is provided for the chosen step-size(s).\n\n+2 points for obtaining the correct solution.\n\n-1 if the error is from a minor bug. I recommend providing an explicit sketch of your code’s procedure, so if that is correct any differences are likely to be the result of a minor bug, such as a misentered number (not ideal, but you understand what you’re doing!). Otherwise you are relying on the TA to interpret your code.\n\n\n\n\nMonte Carlo Rubric\n10 points =\n\n+4 for a clear English explanation of the sampling plan\n\nYou must justify each distribution used, including your choice of mean and standard deviation.\n\n+2 for justification of Monte Carlo sample size.\n\nDeadly Sin: No points will be given for a Monte Carlo solution with an arbitrary sample size.\n\n+2 for an estimate of the Monte Carlo standard error.\n+1 for setting a seed for reproducibility.\n+2 for correct estimate.\n\nDeviations from the posted solution are ok if they’re within the Monte Carlo standard error.\n\n\n\n\nFigure Rubrics\n10 points =\n\n+2 for appropriate choice of axes.\n\nDeadly Sin!: No points will be given for the figure if the axes are not labelled.\n\n+4 for the correct data series.\n+2 for a descriptive legend.\n+2 for a succinct description or caption.\n\n-1 for a description which is too wordy but contains the relevant information.\n\n\n\n\nInterpretation Rubrics\n10 points =\n\n+4 for specific reference to the modeling results;\n\n-2 if the results are not specifically referenced and the reader has to refer to the previous problems to understand the interpretation.\n\n+6 for thoughtfulness of the interpretation;\n\n-4 for not specifically referencing relevant model assumptions;\nDeadly Sin: Do not neglect fundamental engineering principles in any of your interpretations. You will be given a zero if you make a recommendation which e.g. violates an engineering code or standard.\nDeadly Sin: Completely generic interpretations will result in zero points.",
+    "crumbs": [
+      "Homework",
+      "Standard Rubric"
+    ]
+  },
+  {
+    "objectID": "slides/lecture01-1.html#about-me",
+    "href": "slides/lecture01-1.html#about-me",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "About Me",
+    "text": "About Me\nInstructor: Prof. Vivek Srikrishnan, viveks at cornell dot edu\nInterests:\n\nBridging Earth science, data science, and decision science to improve climate risk management;\nUnintended consequences which result from neglecting uncertainty or system dynamics."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#meet-my-supervisors",
+    "href": "slides/lecture01-1.html#meet-my-supervisors",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Meet My Supervisors",
+    "text": "Meet My Supervisors\n\n\n\n\nMy Supervisors"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#what-do-you-hope-to-get-out-of-this-course",
+    "href": "slides/lecture01-1.html#what-do-you-hope-to-get-out-of-this-course",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "What Do You Hope To Get Out Of This Course?",
+    "text": "What Do You Hope To Get Out Of This Course?\nTake a moment, write it down, and we’ll share!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#why-does-data-analysis-matter",
+    "href": "slides/lecture01-1.html#why-does-data-analysis-matter",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Why Does Data Analysis Matter?",
+    "text": "Why Does Data Analysis Matter?\n\nScientific insight;\nDecision-making;\nUnderstanding uncertainty"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#uniquechallenging-features-of-data",
+    "href": "slides/lecture01-1.html#uniquechallenging-features-of-data",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Unique/Challenging Features Of Data",
+    "text": "Unique/Challenging Features Of Data\nThere are many features of environmental (and biological!) data which make data analysis interesting and hard."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#extreme-events",
+    "href": "slides/lecture01-1.html#extreme-events",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Extreme Events",
+    "text": "Extreme Events\n\n\n\n\n\n\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#extreme-events-1",
+    "href": "slides/lecture01-1.html#extreme-events-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Extreme Events",
+    "text": "Extreme Events\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: XKCD 2107"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#correlated-uncertainties",
+    "href": "slides/lecture01-1.html#correlated-uncertainties",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Correlated Uncertainties",
+    "text": "Correlated Uncertainties\n\n\n \n\n\nSource: Errickson et al. (2021)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#non-stationarity",
+    "href": "slides/lecture01-1.html#non-stationarity",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Non-Stationarity",
+    "text": "Non-Stationarity\n\n\n\n\n\n\n\n\n\n\nSource: Fagnant et al. (2020)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#forcing-structural-uncertainty",
+    "href": "slides/lecture01-1.html#forcing-structural-uncertainty",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Forcing & Structural Uncertainty",
+    "text": "Forcing & Structural Uncertainty\n\n\n\n\n\n\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#deep-uncertainty",
+    "href": "slides/lecture01-1.html#deep-uncertainty",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Deep Uncertainty",
+    "text": "Deep Uncertainty\n\n\n\n\n\n\n\n\n\n\nSource: Srikrishnan et al. (2022)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#some-problems-with-the-standard-data-analysis-toolkit",
+    "href": "slides/lecture01-1.html#some-problems-with-the-standard-data-analysis-toolkit",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Some Problems With The “Standard” Data Analysis Toolkit",
+    "text": "Some Problems With The “Standard” Data Analysis Toolkit\n\n\nStatistical assumptions may not be valid;\n“Null” vs “Alternative” hypotheses and tests may be chosen for computational convenience, not scientific relevance.\n\n\n\nImportant: “Big” data doesn’t solve the problem!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#misspecification-can-bias-inferences",
+    "href": "slides/lecture01-1.html#misspecification-can-bias-inferences",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Misspecification Can Bias Inferences…",
+    "text": "Misspecification Can Bias Inferences…\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Ruckert et al. (2017)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#and-projections",
+    "href": "slides/lecture01-1.html#and-projections",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "…And Projections",
+    "text": "…And Projections\n\n\n\n\n\n\n\n\n\n\nSource: Ruckert et al. (2017)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#advantages-of-model-based-data-analysis",
+    "href": "slides/lecture01-1.html#advantages-of-model-based-data-analysis",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Advantages of Model-Based Data Analysis",
+    "text": "Advantages of Model-Based Data Analysis\nWe can:\n\nExamine logical implications of model assumptions.\nAssess evidence for multiple hypotheses by generating simulated data.\nIdentify opportunities to design future experiments or observations to distinguish between competing hypotheses."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#workflowcourse-organization",
+    "href": "slides/lecture01-1.html#workflowcourse-organization",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Workflow/Course Organization",
+    "text": "Workflow/Course Organization"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#background-knowledge-computing",
+    "href": "slides/lecture01-1.html#background-knowledge-computing",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Background Knowledge: Computing",
+    "text": "Background Knowledge: Computing\n\nBasics (at the level of CS 111x)\nSome extra work/effort may be needed if you haven’t coded in a while.\nMay need some additional familiarity with statistical packages (and “light” optimization)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#background-knowledge-probabilitystatistics",
+    "href": "slides/lecture01-1.html#background-knowledge-probabilitystatistics",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Background Knowledge: Probability/Statistics",
+    "text": "Background Knowledge: Probability/Statistics\n\nENGRD 2700/CEE 3040\nSummary statistics of data\nProbability distributions\nBasic visualizations\nMonte Carlo basics"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#grades",
+    "href": "slides/lecture01-1.html#grades",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Grades",
+    "text": "Grades\n\n\n\nAssessment\n% of Grade\n\n\n\n\nExercises\n10%\n\n\nReadings\n10%\n\n\nLiterature Critique\n15%\n\n\nHomework Assignments\n30%\n\n\nTerm Project\n35%"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#overall-guidelines",
+    "href": "slides/lecture01-1.html#overall-guidelines",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Overall Guidelines",
+    "text": "Overall Guidelines\n\nCollaboration highly encouraged, but all work must reflect your own understanding\nSubmit PDFs on Gradescope\n50% penalty for late submission (up to 24 hours)\nStandard rubric available on website\nAlways cite external references"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#exercises",
+    "href": "slides/lecture01-1.html#exercises",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Exercises",
+    "text": "Exercises\n\n(Mostly) weekly problem sets\nFocus on conceptual material/small data analysis exercises\nWill drop one."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#readings",
+    "href": "slides/lecture01-1.html#readings",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Readings",
+    "text": "Readings\n\nSeveral readings assigned for discussion throughout the semester.\nOne student responsible for leading the discussion (Ed/in class)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#literature-critique",
+    "href": "slides/lecture01-1.html#literature-critique",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Literature Critique",
+    "text": "Literature Critique\n\nSelect a peer-reviewed journal article which analyzes data;\nShort discussion paper analyzing:\n\nScientific hypotheses;\nModeling and statistical choices\n\nIn-class presentation before spring break\n5850 Students: Write a referee report"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#homework-assignments",
+    "href": "slides/lecture01-1.html#homework-assignments",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Homework Assignments",
+    "text": "Homework Assignments\n\nMore in-depth problems\nRoughly 2 weeks to complete\nWill not drop any by default\nRegrade requests must be made within one week\n5850 Students: Some extra problems"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#term-project",
+    "href": "slides/lecture01-1.html#term-project",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Term Project",
+    "text": "Term Project\n\nAnalyze a data set of interest using model(s) of your choice\nCan work individually or groups of 2\nSeveral deliverables throughout the semester\nFinal in-class presentation and report"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#attendance",
+    "href": "slides/lecture01-1.html#attendance",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Attendance",
+    "text": "Attendance\nNot required, but students tend to do better when they’re actively engaged in class."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#office-hours",
+    "href": "slides/lecture01-1.html#office-hours",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nMW 10-11 AM, 318 Riley-Robb\nAlmost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#accomodations",
+    "href": "slides/lecture01-1.html#accomodations",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Accomodations",
+    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity",
+    "href": "slides/lecture01-1.html#academic-integrity",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nHopefully not a concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find and use helpful resources is a skill we want to develop.\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#academic-integrity-1",
+    "href": "slides/lecture01-1.html#academic-integrity-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nObviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#chatgpt-the-stochastic-parrot",
+    "href": "slides/lecture01-1.html#chatgpt-the-stochastic-parrot",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "ChatGPT: The Stochastic Parrot",
+    "text": "ChatGPT: The Stochastic Parrot\nThink about ChatGPT as a drunk who tells stories for drinks.\nIt will give you plausible-looking text or code on any topic, but it doesn’t know anything beyond what it “overheard.”\n\n\n\n\n\n\nCaution\n\n\nChatGPT can be useful for certain tasks (e.g. understanding code errors), but may neglect context for why/when certain information or solutions work.\nJust think about it as an unreliable Google search."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#communications",
+    "href": "slides/lecture01-1.html#communications",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Communications",
+    "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#email",
+    "href": "slides/lecture01-1.html#email",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Email",
+    "text": "Email\nWhen urgency or privacy is required, email is ok.\n\n\n\n\n\n\nImportant\n\n\nPlease include BEE4850 in your email subject line! This will ensure it doesn’t get lost in the shuffle.\nBetter: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#course-website",
+    "href": "slides/lecture01-1.html#course-website",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://viveks.me/simulation-data-analysis\n\nCentral hub for information, schedule, and policies\nWill add link and some information to Canvas (assignment due dates, etc)"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#computing-tools",
+    "href": "slides/lecture01-1.html#computing-tools",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Computing Tools",
+    "text": "Computing Tools\n\nCourse is programming language-agnostic.\nAssignments will have notebooks set up for Julia (environments, etc) on GitHub."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#some-tips-for-success",
+    "href": "slides/lecture01-1.html#some-tips-for-success",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Some Tips For Success",
+    "text": "Some Tips For Success\n\nStart the homeworks early; this gives time to sort out conceptual problems and debug.\nAsk questions (in class and online) and try to help each other.\nGive me feedback!"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#next-classes",
+    "href": "slides/lecture01-1.html#next-classes",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Hypothesis testing and data analysis\nNext Week: Review of uncertainty and probability"
+  },
+  {
+    "objectID": "slides/lecture01-1.html#assessments",
+    "href": "slides/lecture01-1.html#assessments",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Assessments",
+    "text": "Assessments\nHomework 1 available; due next Friday.\nExercise 1 due this Friday."
+  },
+  {
+    "objectID": "slides/lecture01-1.html#references-scroll-for-full-list",
+    "href": "slides/lecture01-1.html#references-scroll-for-full-list",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "References (Scroll for Full List)",
+    "text": "References (Scroll for Full List)\n\n\n\n\n\n\nDoss-Gollin, J., & Keller, K. (2023). A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management. Earths Future, 11, e2022EF003044. https://doi.org/10.1029/2022ef003044\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nFagnant, C., Gori, A., Sebastian, A., Bedient, P. B., & Ensor, K. B. (2020). Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas. Nat. Hazards, 104, 1597–1621. https://doi.org/10.1007/s11069-020-04235-x\n\n\nRuckert, K. L., Guan, Y., Bakker, A. M. R., Forest, C. E., & Keller, K. (2017). The effects of time-varying observation errors on semi-empirical sea-level projections. Clim. Change, 140, 349–360. https://doi.org/10.1007/s10584-016-1858-z\n\n\nSrikrishnan, V., Guan, Y., Tol, R. S. J., & Keller, K. (2022). Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model. Clim. Change, 170, 37. https://doi.org/10.1007/s10584-021-03279-7"
   },
   {
     "objectID": "index.html",
@@ -314,7 +603,7 @@
     "href": "assignments/hw01/hw01.html#overview",
     "title": "Homework 1: Simulation-Based Data Analysis",
     "section": "Overview",
-    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\nProblem 3 asks you to assess the quality of fit of a normal distribution to realizations from a Galton Board simulation.\nProblem 4 (graded only for graduate students) asks you to simulate outcomes from the Price Is Right Showcase game to identify a bidding strategy.\n\n\n\nLearning Outcomes\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
+    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\nProblem 3 asks you to assess the quality of fit of a normal distribution to realizations from a Galton Board simulation.\nProblem 4 (graded only for graduate students) asks you to simulate outcomes from the Price Is Right Showcase game to identify a bidding strategy.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
     "crumbs": [
       "Homework",
       "Homework 1"
@@ -353,218 +642,108 @@
     "text": "Schedule\n\n\n\n\n\n\n\n\n\nLab\nInstructions\nRubric\nDue Date\n\n\n\n\nLab 1\n\n\nFeb 02, 2024"
   },
   {
-    "objectID": "slides/lecture01-1.html#course-staff",
-    "href": "slides/lecture01-1.html#course-staff",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Course Staff",
-    "text": "Course Staff\nInstructor: Vivek Srikrishnan, 318 Riley-Robb, viveks at cornell dot edu\n\n\n\n\n\n\nImportant\n\n\nPlease include BEE4850 in your email subject line! This will ensure it doesn’t get lost in the shuffle.\nBetter: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#why-does-data-analysis-matter",
-    "href": "slides/lecture01-1.html#why-does-data-analysis-matter",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Why Does Data Analysis Matter?",
-    "text": "Why Does Data Analysis Matter?\n\nScientific insight;\nDecision-making;\nUnderstanding uncertainty"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#data-analysis-through-simulation",
-    "href": "slides/lecture01-1.html#data-analysis-through-simulation",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Data Analysis Through Simulation",
-    "text": "Data Analysis Through Simulation"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#what-do-you-hope-to-get-out-of-this-course",
-    "href": "slides/lecture01-1.html#what-do-you-hope-to-get-out-of-this-course",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "What Do You Hope To Get Out Of This Course?",
-    "text": "What Do You Hope To Get Out Of This Course?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#course-organization",
-    "href": "slides/lecture01-1.html#course-organization",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Course Organization",
-    "text": "Course Organization\n\nHypothesis Testing and Modeling\nExploratory Data Analysis/Visualization\nSimulation Methods\nModel Calibration\nModel Assessment and Selection\nEmulation"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#grades",
-    "href": "slides/lecture01-1.html#grades",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Grades",
-    "text": "Grades\n\n\n\nAssessment\n% of Grade\n\n\n\n\nExercises\n10%\n\n\nReadings\n10%\n\n\nLiterature Critique\n15%\n\n\nHomework Assignments\n30%\n\n\nTerm Project\n35%"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#overall-guidelines",
-    "href": "slides/lecture01-1.html#overall-guidelines",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Overall Guidelines",
-    "text": "Overall Guidelines\n\nCollaboration highly encouraged, but all work must reflect your own understanding\nSubmit PDFs on Gradescope\n50% penalty for late submission (up to 24 hours)\nStandard rubric available on website\nAlways cite external references"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#exercises",
-    "href": "slides/lecture01-1.html#exercises",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Exercises",
-    "text": "Exercises\n\n(Mostly) weekly problem sets\nFocus on conceptual material/small data analysis exercises\nWill drop one."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#readings",
-    "href": "slides/lecture01-1.html#readings",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Readings",
-    "text": "Readings\n\nSeveral readings assigned for discussion throughout the semester.\nOne student responsible for leading the discussion (Ed/in class)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#literature-critique",
-    "href": "slides/lecture01-1.html#literature-critique",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Literature Critique",
-    "text": "Literature Critique\n\nSelect a peer-reviewed journal article which analyzes data;\nShort discussion paper analyzing:\n\nScientific hypotheses;\nModeling and statistical choices\n\nIn-class presentation before spring break\n5850 Students: Write a referee report"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#homework-assignments",
-    "href": "slides/lecture01-1.html#homework-assignments",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Homework Assignments",
-    "text": "Homework Assignments\n\nMore in-depth problems\nRoughly 2 weeks to complete\nWill not drop any by default\nRegrade requests must be made within one week\n5850 Students: Some extra problems"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#term-project",
-    "href": "slides/lecture01-1.html#term-project",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Term Project",
-    "text": "Term Project\n\nAnalyze a data set of interest using model(s) of your choice\nCan work individually or groups of 2\nSeveral deliverables throughout the semester\nFinal in-class presentation and report"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#attendance",
-    "href": "slides/lecture01-1.html#attendance",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Attendance",
-    "text": "Attendance\nNot required, but students tend to do better when they’re actively engaged in class."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#office-hours",
-    "href": "slides/lecture01-1.html#office-hours",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Office Hours",
-    "text": "Office Hours\n\nMW 10-11 AM\nAlmost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#accomodations",
-    "href": "slides/lecture01-1.html#accomodations",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Accomodations",
-    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#academic-integrity",
-    "href": "slides/lecture01-1.html#academic-integrity",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nHopefully not a concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find and use helpful resources is a skill we want to develop.\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#academic-integrity-1",
-    "href": "slides/lecture01-1.html#academic-integrity-1",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nObviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#chatgpt-the-stochastic-parrot",
-    "href": "slides/lecture01-1.html#chatgpt-the-stochastic-parrot",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "ChatGPT: The Stochastic Parrot",
-    "text": "ChatGPT: The Stochastic Parrot\nThink about ChatGPT as a drunk\n\n\nStochasticity: Response to a given prompt is not necessarily the same, so need to track what you received.\nLack of Transparency: Not clear what the training data is, so documentation is essential (ML is not great at extrapolation).\nNot Well-Suited to All Tasks: Can be useful for getting a skeleton, starter code, or debugging. Really (and obviously) bad at interpretation and analysis."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#communications",
-    "href": "slides/lecture01-1.html#communications",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Communications",
-    "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed.\n\nWhen urgency or privacy is required, email is ok."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#course-website",
-    "href": "slides/lecture01-1.html#course-website",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Course Website",
-    "text": "Course Website\nhttps://viveks.me/environmental-systems-analysis\n\nCentral hub for information, schedule, and policies\nWill add link and some information to Canvas (assignment due dates, etc)"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#computing-tools",
-    "href": "slides/lecture01-1.html#computing-tools",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Computing Tools",
-    "text": "Computing Tools\nSystems analysis requires mathematical modeling, and computing allows that to scale."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#julia",
-    "href": "slides/lecture01-1.html#julia",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Julia",
-    "text": "Julia\nIn this course, we will use the Julia programming language.\nAll assignments, labs, and AEs will be provided as Jupyter Notebooks."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#what-is-your-programming-experience",
-    "href": "slides/lecture01-1.html#what-is-your-programming-experience",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "What Is Your Programming Experience?",
-    "text": "What Is Your Programming Experience?\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#jupyter-notebooks",
-    "href": "slides/lecture01-1.html#jupyter-notebooks",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Jupyter Notebooks",
-    "text": "Jupyter Notebooks\nWe will use Jupyter Notebooks for most computing tasks (including assignments).\n\nAllow for interactive evaluation of code and integration with text (including nicely typeset mathematics)\nCan export to PDF (or HTML -&gt; PDF) for submission to Gradescope.\nBe careful before submitting: Evaluate all cells in order"
-  },
-  {
-    "objectID": "slides/lecture01-1.html#github-classroom",
-    "href": "slides/lecture01-1.html#github-classroom",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "GitHub Classroom",
-    "text": "GitHub Classroom\nHomework assignments and labs will be distributed using GitHub Classroom.\n\nEvery student will have a unique “repository.”\nWhen assignment is released, I will share the link for repository creation on Ed Discussion.\nMakes it easy to share code for assistance and debugging (share links to repositories, not out-of-context code and screenshots)."
-  },
-  {
-    "objectID": "slides/lecture01-1.html#next-classes",
-    "href": "slides/lecture01-1.html#next-classes",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Introduction to Systems Analysis\nFriday: Work on Lab 1.\n\nPreparation:\n\nLab 1 link is available on Ed. Click it to accept the lab before class."
-  },
-  {
-    "objectID": "rubrics/standard.html",
-    "href": "rubrics/standard.html",
-    "title": "Standard Rubrics",
+    "objectID": "policies/homework.html",
+    "href": "policies/homework.html",
+    "title": "Homework Policies",
     "section": "",
-    "text": "These rubrics are intended as a description for students and a guide to the grader for how to assign partial credit.",
+    "text": "This page includes some information on the homework assignments for BEE 4850/5850, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.\nThis document is long, but please do read the whole thing (particularly What Homework Is Forand the Logistics). Hopefully most of this is obvious, but some of it may not be.",
     "crumbs": [
-      "Homework",
-      "Standard Rubric"
+      "Course Information",
+      "Homework Policies"
     ]
   },
   {
-    "objectID": "rubrics/standard.html#meta-rubric",
-    "href": "rubrics/standard.html#meta-rubric",
-    "title": "Standard Rubrics",
-    "section": "Meta-Rubric",
-    "text": "Meta-Rubric\n\nIndividual problems may vary from these standard rubrics based on the assessed learning outcomes for the problem, but they should provide an overview of what features students ought to be included in a given solution.\nEach bullet point should appear as a separate rubric item in Gradescope. We will use positive grading (points awarded for each component).\nEach standard rubric describes partial credit for a problem with 10 points. Partial credit for (sub)problems worth less than 10 points should be scaled appropriately. Full problems usually combine one of the modeling methods with some interpretation questions, so the rubric will be a combination of the individual components.\nGenerally, rubrics for 10 point “entire problems” can be summarized with the following:\n\n+4 points for an answer with a correct implementation (including model setup).\n+2 points for the correct solution (including details such as labels, units, etc.).\n+4 points for the interpretation. These points may be broken up across subproblems, but the general assignment of points should follow this summary.\n\nNote that the points may not scale with the distribution of work for a given problem. That’s life! It may take more work to derive and implement your model than it does to intrepret your results, but in this class we care a lot about your ability to critically evaluate and interpret modeling results.\nSometimes problems will be broken up into\nThe graders cannot read your mind and will not try to. Submissions that are unclear for any reason, including but not limited to unclear syntax (English or code), uncommented code, lack of reasoning or derivation, too much detail or writing, will not be given credit. The grader has complete discretion here. If something in your solution is ambiguous, the grader has been instructed to interpret it the “wrong” way. Clear responses are a sign of understanding, which is part of what we’re assessing.\nYou will not be doubly penalized for getting the “right” solution to the “wrong” setup (you would have been penalized above), but this requires the grader to be able to easily identify that your implementation is correct given the wrong model. If your implementation is unclear, you are likely to lose points here because we have no way of knowing that your answer is “right” without re-coding your problem.\nYou will not be given credit for your code (this isn’t a programming class); the code is a means to solving the problem, and we’re more interested in how you set up the problem and interpret the solution. This does mean that code that is sloppy but works is perfectly acceptable. However, your code may get you partial credit if the TA can easily find where you made a mistake, so make sure your submitted code is well commented. It’s important to write down the mathematics of what your code is trying to implement, because the TA will only take a cursory look at your code.\nSome rubrics include “deadly sins” which will cause an immediate zero to be given for the problem. Do not do these!\nRegardless of the problem type, the following penalties will be applied per incident:\n\n-1 for missing units.",
+    "objectID": "policies/homework.html#homework-logistics",
+    "href": "policies/homework.html#homework-logistics",
+    "title": "Homework Policies",
+    "section": "Homework Logistics",
+    "text": "Homework Logistics",
     "crumbs": [
-      "Homework",
-      "Standard Rubric"
+      "Course Information",
+      "Homework Policies"
     ]
   },
   {
-    "objectID": "rubrics/standard.html#standard-rubrics",
-    "href": "rubrics/standard.html#standard-rubrics",
-    "title": "Standard Rubrics",
-    "section": "Standard Rubrics",
-    "text": "Standard Rubrics\n\nSimulation Rubric\n10 points =\n\n+4 for the model derivation.\n\nThis includes any relevant reasoning from mass-balance or other principles.\n\n+4 for discretizing the model correctly.\n\n-1 if no justification is provided for the chosen step-size(s).\n\n+2 points for obtaining the correct solution.\n\n-1 if the error is from a minor bug. I recommend providing an explicit sketch of your code’s procedure, so if that is correct any differences are likely to be the result of a minor bug, such as a misentered number (not ideal, but you understand what you’re doing!). Otherwise you are relying on the TA to interpret your code.\n\n\n\n\nMonte Carlo Rubric\n10 points =\n\n+4 for a clear English explanation of the sampling plan\n\nYou must justify each distribution used, including your choice of mean and standard deviation.\n\n+2 for justification of Monte Carlo sample size.\n\nDeadly Sin: No points will be given for a Monte Carlo solution with an arbitrary sample size.\n\n+2 for an estimate of the Monte Carlo standard error.\n+1 for setting a seed for reproducibility.\n+2 for correct estimate.\n\nDeviations from the posted solution are ok if they’re within the Monte Carlo standard error.\n\n\n\n\nFigure Rubrics\n10 points =\n\n+2 for appropriate choice of axes.\n\nDeadly Sin!: No points will be given for the figure if the axes are not labelled.\n\n+4 for the correct data series.\n+2 for a descriptive legend.\n+2 for a succinct description or caption.\n\n-1 for a description which is too wordy but contains the relevant information.\n\n\n\n\nInterpretation Rubrics\n10 points =\n\n+4 for specific reference to the modeling results;\n\n-2 if the results are not specifically referenced and the reader has to refer to the previous problems to understand the interpretation.\n\n+6 for thoughtfulness of the interpretation;\n\n-4 for not specifically referencing relevant model assumptions;\nDeadly Sin: Do not neglect fundamental engineering principles in any of your interpretations. You will be given a zero if you make a recommendation which e.g. violates an engineering code or standard.\nDeadly Sin: Completely generic interpretations will result in zero points.",
+    "objectID": "policies/homework.html#how-to-write-assignments",
+    "href": "policies/homework.html#how-to-write-assignments",
+    "title": "Homework Policies",
+    "section": "How To Write Assignments",
+    "text": "How To Write Assignments\nHere are some tips for how to make the grader (the TA or Prof. Srikrishnan) understand what you mean in the time they’re looking at your problem: as noted in the rubrics, if your solution isn’t clear enough for us to follow, you will not receive the points even if your answer is technically correct, because part of demonstrating understanding is the ability to organize and communicate.\n\nBe Honest\n\nWrite everything in your own words. It’s perfectly ok to work with others; in fact, we encourage it! But you should write up and implement everything yourself; it’s very easy to convince yourself that you understand something when you’re mimicking someone else’s solution, and often we realize we don’t actually understand something when we try to write it ourselves.\nCite every outside source you use. You are allowed, in fact encouraged, to use any outside source1 Getting an idea from an outside source is not a problem, and will not lower your grade; if you’re critically evaluating the idea and implementing and writing your solution yourself (see above), then you’re demonstrating understanding even if the idea originated with someone else. But you must give appropriate credit to that source. Taking credit for someone else’s ideas and failing to properly cite an outside source, including your classmates, is plagiarism, and will be treated accordingly.\nThe only sources you do not have to cite are official class materials. If you use the lectures, lecture notes, website materials, homework solutions, etc, you do not have to cite these.\nList everyone that you worked with. Give your classmates proper credit for their assistance. If you get an idea from Ed Discussion, credit the poster. If you’re not sure if you should list someone as a collaborator, err on the side of including them. For discussions in class or in office hours, you don’t have to list everyone who participated in the discussion (though you should if you worked one on one with them), but mention that the class discussion or the office hour was useful.\n\n1 Yes, including ChatGPT, though you should ask and describe how you used it.\n\nBe Clear\n\nWrite legibly. This doesn’t refer to handwriting (since you’ll be submitting PDFs of Jupyter notebooks), but the text itself should be clearly written and well organized, so that it’s easy for the grader to follow your reasoning or explanation. Structuring your solution, and not writing in a stream of consciousness, helps you think more clearly. To reiterate: You will be given no points if the grader cannot easily follow your answer, and the graders have complete discretion to determine this.\nWrite clearly. Use proper spelling, grammar, logic, etc. We will try not to penalize people for not having complete mastery of English, but again, we need to be able to follow your reasoning.\nWrite carefully and completely. We can only grade what you write; nobody can read your mind, and we will not try. The solution that you submit must stand on its own. If your answer is ambiguous, the TA has been instructed to interpret it the wrong way. Regrade requests also cannot be used to add more information to a solution.\nDon’t submit your first draft. For most people, first drafts are terrible. They are often poorly organized, unclear, and contain gaps or jumps in reasoning. You will likely need to revise, possibly several times, for your answer to be clear, careful, and complete. This is another reason to start the assignment early — if you start late, you may be stuck with your first draft, and your grade is likely to suffer for it.\nState your assumptions. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).\nDon’t rely on your code. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end — it works or it doesn’t). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can’t do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.",
     "crumbs": [
-      "Homework",
-      "Standard Rubric"
+      "Course Information",
+      "Homework Policies"
+    ]
+  },
+  {
+    "objectID": "policies/homework.html#be-concise",
+    "href": "policies/homework.html#be-concise",
+    "title": "Homework Policies",
+    "section": "Be Concise",
+    "text": "Be Concise\n\nKeep solutions short. Organized answers should not be long. There’s a fine balance between conciseness and completeness: find it!\nDon’t regurgitate. You can reference concepts, models, etc from class without repeating them. Just make it clear what you’re modifying and how you’re using those concepts for that particular problem.\nDon’t bullshit. You will get no points for word salad, even if you accidentally hit on the right answer.",
+    "crumbs": [
+      "Course Information",
+      "Homework Policies"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Website",
+    "section": "",
+    "text": "This website contains course materials for the Spring 2024 edition of Environmental Data Analysis and Simulation, taught by Vivek Srikrishnan at Cornell University."
+  },
+  {
+    "objectID": "about.html#acknowledgements",
+    "href": "about.html#acknowledgements",
+    "title": "About This Website",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nMuch of the material for this course has evolved from discussions and work with Klaus Keller, Tony Wong, Casey Helgeson, Ben Seiyon Lee and James Doss-Gollin. Many thanks also to Andrew Gelman and Christian Robert, whose work heavily inspired many aspects of this course and which I refer back to regularly. Kieran Healy also wrote an outstanding book on Data Visualization which I learned a great deal from and still reference.\nThe layout for this site was also inspired by and draws from STA 210 at Duke University and Andrew Heiss’s course materials at Georgia State."
+  },
+  {
+    "objectID": "about.html#tools-and-generation-workflow",
+    "href": "about.html#tools-and-generation-workflow",
+    "title": "About This Website",
+    "section": "Tools and Generation Workflow",
+    "text": "Tools and Generation Workflow\nThis website was built with Quarto, which allows me to integrate Julia code and output with the web content, pdfs, and slides in an amazingly clean fashion, while simplifying the process of generation. All materials can be generated through a simple workflow from the [GitHub Repository]."
+  },
+  {
+    "objectID": "exercises.html",
+    "href": "exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#general-information",
+    "href": "exercises.html#general-information",
+    "title": "Exercises",
+    "section": "General Information",
+    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#rubric",
+    "href": "exercises.html#rubric",
+    "title": "Exercises",
+    "section": "Rubric",
+    "text": "Rubric\nThe standard rubric for homework problems is available here.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#schedule",
+    "href": "exercises.html#schedule",
+    "title": "Exercises",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\n\n\n\n\n\nExercises 1\n\nJan 26, 2024",
+    "crumbs": [
+      "Exercises"
     ]
   },
   {
