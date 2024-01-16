@@ -297,18 +297,18 @@ The following grading scale will be used to convert the numerical weighted avera
 
 | Grade | Range |
 |:---:|:--------|
-| A | 93--100 |
-| A- | 90--92 |
-| B+ | 87--89 |
-| B | 83--86 |
-| B- | 80--82 |
-| C+ | 77--79 |
-| C | 73--76 |
-| C- | 70--72 |
-| D+ | 67--69 |
-| D | 63--66 |
-| D- | 60--62 |
-| F | < 59 |
+| A | 94--100 |
+| A- | 90--94 |
+| B+ | 87--90 |
+| B | 84--87 |
+| B- | 80--84 |
+| C+ | 77--80 |
+| C | 74--77 |
+| C- | 70--74 |
+| D+ | 67--70 |
+| D | 64--67 |
+| D- | 61--64 |
+| F | < 61 |
 
 
 
@@ -319,7 +319,7 @@ Most weeks, students will be given a set of exercises (typically involving analy
 
 ### Readings
 
-Readings will be assigned for discussion throughout the semester. One student will be responsible for leading the discussion of the paper, but all students are expected to contribute to in-class and online discussions.
+Readings will be assigned for discussion throughout the semester. Students are expected to summarize their takeaways and thoughts on the reading and respond to others' comments on the Ed forum during the week after the reading is assigned (typically Monday -- Monday). Collaborative annotation assignments will be set up in Canvas to facilitate reading ahead of the discussion on the Ed forum. For key readings, a student in BEE 5850 will be assigned to lead a 35 minute in-class discussion on the reading. 
 
 ### Literature Critique
 
