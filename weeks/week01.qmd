@@ -1,0 +1,23 @@
+---
+title: "Week 1"
+---
+
+## Announcements
+
+- Welcome to BEE 4850/5850! Make sure to read [the syllabus](../syllabus.qmd) and 
+- [Homework 1](../assignments/hw1/hw1.qmd) assigned, due 2/2/24.
+
+## Readings
+
+As you're reading along, please use the collaborative annotation in Canvas to make notes and read and respond to others' thoughts and questions. Post a summary of key points, takeaways, and thoughts on Ed Discussion and be prepared to engage in the discussion on-line. We will not dedicate class time to this reading but relevant concepts will come up over the first few weeks of class.
+
+- Rockmore, D. (2024, January 15). How Much of the World Is It Possible to Model? The New Yorker. Retrieved from https://www.newyorker.com/culture/annals-of-inquiry/how-much-of-the-world-is-it-possible-to-model
+
+## Exercises
+
+- [Loading, Plotting, and Reasoning About Data](../exercises/ex01/ex01.qmd)
+
+## Lectures
+
+- [Lecture 01-1: Class Overview](../slides/lecture01-1.qmd)
+- [Lecture 02-1: Hypothesis Testing and Data Analysis](../slides/lecture02-1.qmd)

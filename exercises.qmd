@@ -19,7 +19,7 @@ The standard rubric for homework problems is available [here](rubrics/standard.q
 
 ## Schedule
 
-| Assignment | Instructions | Due Date |
+| Week | Instructions | Due Date |
 |:----------:|:------------:|:------:|:---------|
-| Exercises 1 | [{{< fa sharp pen-field >}}](exercises/ex01/ex01.html) | Jan 26, 2024 |
+| Week 1 | [{{< fa sharp pen-field >}}](exercises/ex01/ex01.qmd) | Jan 26, 2024 |
 
