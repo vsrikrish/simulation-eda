@@ -4,8 +4,8 @@ title: "Week 1"
 
 ## Announcements
 
-- Welcome to BEE 4850/5850! Make sure to read [the syllabus](../syllabus.qmd) and 
-- [Homework 1](../assignments/hw1/hw1.qmd) assigned, due 2/2/24.
+- Welcome to BEE 4850/5850! Make sure to read [the syllabus](../syllabus.qmd) and make sure you're enrolled in Gradescope and Ed Discussion.
+- [Homework 1](../assignments/hw01/hw01.qmd) assigned, due 2/2/24.
 
 ## Readings
 
@@ -20,4 +20,4 @@ As you're reading along, please use the collaborative annotation in Canvas to ma
 ## Lectures
 
 - [Lecture 01-1: Class Overview](../slides/lecture01-1.qmd)
-- [Lecture 02-1: Hypothesis Testing and Data Analysis](../slides/lecture02-1.qmd)
+- [Lecture 02-1: Hypothesis Testing and Data Analysis](../slides/lecture01-2.qmd)
