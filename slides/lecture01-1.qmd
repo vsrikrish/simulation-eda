@@ -75,18 +75,12 @@ Source: @Doss-Gollin2023-kl
 
 ## Extreme Events
 
-:::: {.columns}
-::: {.column width=60%}
 ::: {.center}
-![](https://imgs.xkcd.com/comics/launch_risk.png){width=45%}
+![](https://imgs.xkcd.com/comics/launch_risk.png){width=25%}
 :::
-:::
-::: {.column width=40%}
 ::: {.caption}
 Source: [XKCD 2107](https://xkcd.com/2107/)
 :::
-:::
-::::
 
 ## Correlated Uncertainties
 
@@ -127,7 +121,7 @@ Source: @Doss-Gollin2023-kl
 Source: @Srikrishnan2022-yq
 :::
 
-## Modes of Model-Based Data Analysis
+## Modes of Data Analysis
 
 ::: {.center}
 ![](figures/data_settings.png)
