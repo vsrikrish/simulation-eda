@@ -57,6 +57,10 @@ website:
             text: Class Schedule
           - href: policies/homework.qmd
             text: Homework Policies
+      - section: "Weeks"
+        contents:
+          - href: weeks/week01.qmd
+            text: Week 1
       - section: homework.qmd
         text: "Homework"
         contents:
