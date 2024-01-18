@@ -20,4 +20,4 @@ As you're reading along, please use the collaborative annotation in Canvas to ma
 ## Lectures
 
 - [Lecture 01-1: Class Overview](../slides/lecture01-1.qmd)
-- [Lecture 02-1: Uncertainty and Probability Review](../slides/lecture01-2.qmd)
+- [Lecture 01-2: Uncertainty and Probability Review](../slides/lecture01-2.qmd)
