@@ -6,10 +6,13 @@ This is the course website for the {{< var course.semester >}} edition of {{< va
 
 ## Course Information
 
-- Details on the class and course policies are provided in the [syllabus](syllabus.html).
-- Topics and weekly materials can be found in the [schedule](schedule.html).
+-   Details on the class and course policies are provided in the [syllabus](syllabus.html).
+-   Topics and weekly materials can be found in the [schedule](schedule.html).
 
-## Software Tools
+## Regular Weekly Schedule
 
-- This course will use the [Julia](https://julialang.org) programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use [Visual Studio Code](https://code.visualstudio.com/) with the [official Julia extension](https://code.visualstudio.com/docs/languages/julia) for coding.
-- Assignments will be distributed using [GitHub Classroom](https://github.com). You should create a GitHub account, but we will walk through how to use it. 
+|                  |                                                                              |
+|------:|:-----------------------------------|
+|     **Lectures** | {{< var course.days >}} {{< var course.time >}}, {{< var course.location >}} |
+| **Office Hours** | {{< var course.office_hours >}}, {{< var instructor.office >}}               |
+|  **Assignments** | Due Fridays at 9pm on Gradescope.                                            |

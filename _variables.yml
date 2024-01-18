@@ -6,7 +6,7 @@ instructor:
   email: viveks@cornell.edu
   url: "https://viveks.me"
   github: vsrikrish
-  office: "318 Riley-Robb"
+  office: "318 Riley-Robb Hall"
   contact_policy: >-
     Use the class's Ed Discussion board for any class-related queries.
   appointment_url: https://book.vimcal.com/p/viveks/30-minutes
@@ -21,6 +21,7 @@ course:
   github: "https://www.github.com/vsrikrish/simulation-data-analysis"
   url: "https://viveks.me/simulation-data-analysis"
   copyright_year: "2024"
+  office_hours: "MW 10:00-11:00am"
 
 university:
   name: Cornell University
