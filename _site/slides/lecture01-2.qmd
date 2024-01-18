@@ -1,0 +1,49 @@
+---
+title: "Hypothesis Testing and Data Analysis"
+subtitle: "Lecture 02"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "January 24, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+execute:
+    freeze: auto
+---
+
+# Last Class
+
+## Modes of Data Analysis
+
+::: {.center}
+![](figures/data_settings.png)
+:::
+
+## Workflow/Course Organization
+
+::: {.center}
+![](figures/course_overview.png){width=70%}
+:::
+
+## Questions?
+

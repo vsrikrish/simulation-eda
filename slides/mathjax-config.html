@@ -1,13 +1,14 @@
 <!-- Mathjax 3 config -->
 <script>
 window.MathJax = {
-    {
-      minScale: 0.5
-      loader: {load: ['[tex]/tagformat']},
-      tex: {packages: {'[+]': ['tagformat']}}
-    }
-  };
-  MathJax = {
+    loader: {load: ['[tex]/tagformat']},
+    tex: {packages: {'[+]': ['tagformat']}}
+};
+MathJax = {
+  chtml: {
+    scale: 1,
+    minScale: 0.5
+  },
   options: {
     menuOptions: {
       settings: {
