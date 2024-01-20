@@ -7,6 +7,8 @@ suppress-bibliography: true
 This page contains a schedule of the topics, content, and assignments for the semester.
 Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.
 
+Instructions to save the slides as PDFs can be found [here](https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf). The key is to hit `E` when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.
+
 | Week | Date | Topic | Slides | Reading | Exercises | Homework | 
 :-----:|:---------|:---------|:---------:|:------:|:--:|:---:|
 | | | ***Hypothesis Testing and Modeling*** | | | |
