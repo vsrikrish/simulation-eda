@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nExercises\nHomework\n\n\n\n\n\n\nHypothesis Testing and Modeling\n\n\n\n\n\n\n1\nMon, Jan 22\nOverview, GitHub Intro\n\nRockmore (2024)\n\n\n\n\n\nWed, Jan 24\nHypothesis Testing and Data Simulation\n\n\n\n\n\n\n2\nMon, Jan 29\nUncertainty and Probability Review\n\n\n\n\n\n\n\nWed, Jan 31\nExploratory Data Analysis\n\n\n\n\n\n\n3\nMon, Feb 5\nProbability Models and Model Residuals\n\n\n\n\n\n\n\nWed, Feb 7\nProbability Models II\n\n\n\n\n\n\n4\nMon, Feb 12\nBayesian Statistics and Decision Analysis\n\n\n\n\n\n\n\nWed, Feb 14\nHypothesis Testing As Decision-Making\n\n\n\n\n\n\n5\nMon, Feb 19\nData Visualization\n\n\n\n\n\n\n\nWed, Feb 21\nGraphical Checks of Model Residuals\n\n\n\n\n\n\n6\nMon, Feb 26\nNo Class: February Break\n\n\n\n\n\n\n\nWed, Feb 28\nIn-Class Figure Discussion\n\n\n\n\n\n\n\n\nSimulation Methods\n\n\n\n\n\n\n7\nMon, Mar 4\nUncertainty Propagation and Monte Carlo Simulation\n\n\n\n\n\n\n\nWed, Mar 6\nMonte Carlo Simulation II\n\n\n\n\n\n\n8\nMon, Mar 11\nSampling Distributions and The Bootstrap\n\n\n\n\n\n\n\nWed, Mar 13\nThe Bootstrap II\n\n\n\n\n\n\n9\nMon, Mar 18\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n\nWed, Mar 20\nMCMC II\n\n\n\n\n\n\n\n\nModel Calibration\n\n\n\n\n\n\n10\nMon, Mar 25\nStatistical Model Calibration\n\n\n\n\n\n\n\nWed, Mar 27\nLiterature Review Presentations\n\n\n\n\n\n\n\nMon, Apr 1\nNo Class: Spring Break\n\n\n\n\n\n\n\nWed, Apr 3\nNo Class: Spring Break\n\n\n\n\n\n\n11\nMon, Apr 8\nModel-Data Discrepancy\n\n\n\n\n\n\n\nWed, Apr 10\nMissing and Censored Data\n\n\n\n\n\n\n\n\nModel Assessment and Selection\n\n\n\n\n\n\n12\nMon, Apr 15\nModel Assessment and Predictive Accuracy\n\n\n\n\n\n\n13\nWed, Apr 17\nCross-Validation and Information Criteria\n\n\n\n\n\n\n1\nMon, Apr 22\nGraphical Model Evaluation\n\n\n\n\n\n\n\nWed, Apr 24\nModel Assessment and Selection: Examples\n\n\n\n\n\n\n\n\nEmulation\n\n\n\n\n\n\n14\nMon, Apr 29\nTradeoffs Between Complexity and Ensemble Size\n\n\n\n\n\n\n\nWed, May 1\nEmulating Expensive Models\n\n\n\n\n\n\n15\nMon, May 6\nProject Presentations",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nExercises\nHomework\n\n\n\n\n\n\nHypothesis Testing and Modeling\n\n\n\n\n\n\n1\nMon, Jan 22\nOverview, GitHub Intro\n\nRockmore (2024)\n\n\n\n\n\nWed, Jan 24\nUncertainty and Probability Review\n\n\n\n\n\n\n2\nMon, Jan 29\nHypothesis Testing and Statistical Significance\n\n\n\n\n\n\n\nWed, Jan 31\nExploratory Data Analysis\n\n\n\n\n\n\n3\nMon, Feb 5\nProbability Models and Model Residuals\n\n\n\n\n\n\n\nWed, Feb 7\nProbability Models II\n\n\n\n\n\n\n4\nMon, Feb 12\nBayesian Statistics and Decision Analysis\n\n\n\n\n\n\n\nWed, Feb 14\nHypothesis Testing As Decision-Making\n\n\n\n\n\n\n5\nMon, Feb 19\nData Visualization\n\n\n\n\n\n\n\nWed, Feb 21\nGraphical Checks of Model Residuals\n\n\n\n\n\n\n6\nMon, Feb 26\nNo Class: February Break\n\n\n\n\n\n\n\nWed, Feb 28\nIn-Class Figure Discussion\n\n\n\n\n\n\n\n\nSimulation Methods\n\n\n\n\n\n\n7\nMon, Mar 4\nUncertainty Propagation and Monte Carlo Simulation\n\n\n\n\n\n\n\nWed, Mar 6\nMonte Carlo Simulation II\n\n\n\n\n\n\n8\nMon, Mar 11\nSampling Distributions and The Bootstrap\n\n\n\n\n\n\n\nWed, Mar 13\nThe Bootstrap II\n\n\n\n\n\n\n9\nMon, Mar 18\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n\nWed, Mar 20\nMCMC II\n\n\n\n\n\n\n\n\nModel Calibration\n\n\n\n\n\n\n10\nMon, Mar 25\nStatistical Model Calibration\n\n\n\n\n\n\n\nWed, Mar 27\nLiterature Review Presentations\n\n\n\n\n\n\n\nMon, Apr 1\nNo Class: Spring Break\n\n\n\n\n\n\n\nWed, Apr 3\nNo Class: Spring Break\n\n\n\n\n\n\n11\nMon, Apr 8\nModel-Data Discrepancy\n\n\n\n\n\n\n\nWed, Apr 10\nMissing and Censored Data\n\n\n\n\n\n\n\n\nModel Assessment and Selection\n\n\n\n\n\n\n12\nMon, Apr 15\nModel Assessment and Predictive Accuracy\n\n\n\n\n\n\n13\nWed, Apr 17\nCross-Validation and Information Criteria\n\n\n\n\n\n\n1\nMon, Apr 22\nGraphical Model Evaluation\n\n\n\n\n\n\n\nWed, Apr 24\nModel Assessment and Selection: Examples\n\n\n\n\n\n\n\n\nEmulation\n\n\n\n\n\n\n14\nMon, Apr 29\nTradeoffs Between Complexity and Ensemble Size\n\n\n\n\n\n\n\nWed, May 1\nEmulating Expensive Models\n\n\n\n\n\n\n15\nMon, May 6\nProject Presentations",
     "crumbs": [
       "Course Information",
       "Class Schedule"
@@ -239,6 +239,508 @@
     "crumbs": [
       "Homework",
       "Standard Rubric"
+    ]
+  },
+  {
+    "objectID": "slides/lecture04-1.html#modes-of-data-analysis",
+    "href": "slides/lecture04-1.html#modes-of-data-analysis",
+    "title": "Uncertainty and Probability Review",
+    "section": "Modes of Data Analysis",
+    "text": "Modes of Data Analysis"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#workflowcourse-organization",
+    "href": "slides/lecture04-1.html#workflowcourse-organization",
+    "title": "Uncertainty and Probability Review",
+    "section": "Workflow/Course Organization",
+    "text": "Workflow/Course Organization"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#questions",
+    "href": "slides/lecture04-1.html#questions",
+    "title": "Uncertainty and Probability Review",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#what-is-probability",
+    "href": "slides/lecture04-1.html#what-is-probability",
+    "title": "Uncertainty and Probability Review",
+    "section": "What Is Probability?",
+    "text": "What Is Probability?\n\nHow we communicate/capture uncertainty depends on how we interpret probability:\n\nFrequentist: \\(\\mathbb{P}[A]\\) is the long-run frequency of event A occurring.\nBayesian: \\(\\mathbb{P}[A]\\) is the degree of belief (betting odds) of event A occurring."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#frequentist-probability",
+    "href": "slides/lecture04-1.html#frequentist-probability",
+    "title": "Uncertainty and Probability Review",
+    "section": "Frequentist Probability",
+    "text": "Frequentist Probability\n\nData is random, but there is a “true” parameter set for a given model.\nConcerned with consistency of estimates of those parameters obtained from different samples."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#bayesian-probability",
+    "href": "slides/lecture04-1.html#bayesian-probability",
+    "title": "Uncertainty and Probability Review",
+    "section": "Bayesian Probability",
+    "text": "Bayesian Probability\nTwo different types of random quantities:\n\nObservable quantities, or data (also random for frequentists);\nUnobservable quantities, or parameters (not random for frequentists!)."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#bayesian-probability-1",
+    "href": "slides/lecture04-1.html#bayesian-probability-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "Bayesian Probability",
+    "text": "Bayesian Probability\nCan discuss the probability of\n\nmodel parameters \\(\\mathbf{\\theta}\\)\nunobserved data \\(\\tilde{\\mathbf{y}}\\)\n\nconditional on the observations \\(\\mathbf{y}\\), which we can denote: \\[p(\\mathbf{\\theta} | \\mathbf{y}) \\text{ or } p(\\tilde{\\mathbf{y}} | \\mathbf{y})\\]"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#bayes-rule",
+    "href": "slides/lecture04-1.html#bayes-rule",
+    "title": "Uncertainty and Probability Review",
+    "section": "Bayes’ Rule",
+    "text": "Bayes’ Rule\nOriginal version (Bayes, 1763):\n\\[P(A | B) = \\frac{P(B | A) \\times P(A)}{P(B)} \\quad \\text{if} \\quad P(B) \\neq 0.\\]"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#bayes-rule-1",
+    "href": "slides/lecture04-1.html#bayes-rule-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "Bayes’ Rule:",
+    "text": "Bayes’ Rule:\nLater generalized (Laplace, 1774):\n\\[\\underbrace{{p(\\theta | y)}}_{\\text{posterior}} = \\frac{\\overbrace{p(y | \\theta)}^{\\text{likelihood}}}{\\underbrace{p(y)}_\\text{normalization}} \\overbrace{p(\\theta)}^\\text{prior}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#confidence-intervals",
+    "href": "slides/lecture04-1.html#confidence-intervals",
+    "title": "Uncertainty and Probability Review",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nFrequentist estimates have confidence intervals:\n\nIf you repeat the experiment and re-do the analysis, how often are your estimates “wrong” due to outlying data?\nThe procedure for generating an \\(\\alpha\\)% confidence interval will contain the “true” data-generating parameters for \\(\\alpha\\)% of experiments.\nThis says nothing about whether a given interval contains the “true” value!"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#credible-intervals",
+    "href": "slides/lecture04-1.html#credible-intervals",
+    "title": "Uncertainty and Probability Review",
+    "section": "Credible Intervals",
+    "text": "Credible Intervals\nBayesian estimates have credible intervals:\n\nEvery parameter has a distribution associated with it ()"
+  },
+  {
+    "objectID": "slides/lecture04-1.html#projection-intervals",
+    "href": "slides/lecture04-1.html#projection-intervals",
+    "title": "Uncertainty and Probability Review",
+    "section": "Projection Intervals",
+    "text": "Projection Intervals\nSimulations have projection intervals summarizing the sampling distribution of the simulated data."
+  },
+  {
+    "objectID": "slides/lecture04-1.html#references-1",
+    "href": "slides/lecture04-1.html#references-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nBayes, T. (1763). An Essay towards Solving a Problem in the Doctrine of Chance. Philosophical Transactions of the Royal Society of London, 53, 370–418.\n\n\nLaplace, P. S. (1774). Mémoire sur la Probabilité des Causes par les évènemens. In Mémoires de Mathematique et de Physique, Presentés à l’Académie Royale des Sciences, Par Divers Savans & Lus Dans ses Assemblées (pp. 621–656)."
+  },
+  {
+    "objectID": "slides/lecture01-2.html#modes-of-data-analysis",
+    "href": "slides/lecture01-2.html#modes-of-data-analysis",
+    "title": "Uncertainty and Probability Review",
+    "section": "Modes of Data Analysis",
+    "text": "Modes of Data Analysis"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#workflowcourse-organization",
+    "href": "slides/lecture01-2.html#workflowcourse-organization",
+    "title": "Uncertainty and Probability Review",
+    "section": "Workflow/Course Organization",
+    "text": "Workflow/Course Organization"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#questions",
+    "href": "slides/lecture01-2.html#questions",
+    "title": "Uncertainty and Probability Review",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#what-is-uncertainty",
+    "href": "slides/lecture01-2.html#what-is-uncertainty",
+    "title": "Uncertainty and Probability Review",
+    "section": "What Is Uncertainty?",
+    "text": "What Is Uncertainty?\n\n\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#what-is-uncertainty-1",
+    "href": "slides/lecture01-2.html#what-is-uncertainty-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "What Is Uncertainty?",
+    "text": "What Is Uncertainty?\n\n\n\n…A departure from the (unachievable) ideal of complete determinism…\n\n\n— Walker et al. (2003)"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#types-of-uncertainty",
+    "href": "slides/lecture01-2.html#types-of-uncertainty",
+    "title": "Uncertainty and Probability Review",
+    "section": "Types of Uncertainty",
+    "text": "Types of Uncertainty\n\nAleatoric uncertainty: Uncertainties due to randomness/stochasticity;\nEpistemic uncertainty: Uncertainties due to lack of knowledge."
+  },
+  {
+    "objectID": "slides/lecture01-2.html#data-relevant-uncertainty-taxonomy",
+    "href": "slides/lecture01-2.html#data-relevant-uncertainty-taxonomy",
+    "title": "Uncertainty and Probability Review",
+    "section": "Data-Relevant Uncertainty Taxonomy",
+    "text": "Data-Relevant Uncertainty Taxonomy\n\n\n\n\n\n\n\n\nUncertainty\nAssociated Uncertainties\nExamples\n\n\n\n\nStructural\nIncluded physical processes, mathematical form\nModel inadequacy, (epistemic) residual uncertainty\n\n\nParametric\nParameter uncertainty\nChoice of parameters, strength of coupling between models\n\n\nSampling\nNatural variability, (aleatoric) residual uncertainty\nInternal variability, uncertain boundary conditions"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#probability-distributions-1",
+    "href": "slides/lecture01-2.html#probability-distributions-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "Probability Distributions",
+    "text": "Probability Distributions\nProbability distributions are often used to quantify uncertainty.\n\\[x \\to \\mathbb{P}_{\\color{green}\\nu}[x] = p_{\\color{green}\\nu}\\left(x | {\\color{purple}\\theta}\\right)\\]\n\n\\({\\color{green}\\nu}\\): probability distribution (often implicit);\n\\({\\color{purple}\\theta}\\): distribution parameters"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#sampling-notation",
+    "href": "slides/lecture01-2.html#sampling-notation",
+    "title": "Uncertainty and Probability Review",
+    "section": "Sampling Notation",
+    "text": "Sampling Notation\nTo write \\(x\\) is sampled from \\(p(x|\\theta)\\): \\[x \\sim f(\\theta)\\]\nFor example, for a normal distribution: \\[x \\sim \\mathcal{N}(\\mu, \\sigma)\\]"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#probability-density-function",
+    "href": "slides/lecture01-2.html#probability-density-function",
+    "title": "Uncertainty and Probability Review",
+    "section": "Probability Density Function",
+    "text": "Probability Density Function\nA continuous distribution \\(\\mathcal{D}\\) has a probability density function (PDF) \\(f_\\mathcal{D}(x) = p(x | \\theta)\\).\nThe probability of \\(x\\) occurring in an interval \\((a, b)\\) is \\[\\mathbb{P}[a \\leq x \\leq b] = \\int_a^b f_\\mathcal{D}(x)dx.\\]\n\n\n\n\n\n\nImportant\n\n\nThe probability that \\(x\\) has a specific value \\(x^*\\), \\(\\mathbb{P}(x = x^*)\\), is zero!"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#cumulative-density-functions",
+    "href": "slides/lecture01-2.html#cumulative-density-functions",
+    "title": "Uncertainty and Probability Review",
+    "section": "Cumulative Density Functions",
+    "text": "Cumulative Density Functions\nIf \\(\\mathcal{D}\\) is a distribution with PDF \\(f_\\mathcal{D}(x)\\), the cumulative density function (CDF) of \\(\\mathcal{D}\\) \\(F_\\mathcal{D}(x)\\):\n\\[F_\\mathcal{D}(x) = \\int_{-\\infty}^x f_\\mathcal{D}(u)du.\\]\nIf \\(f_\\mathcal{D}\\) is continuous at \\(x\\): \\[f_\\mathcal{D}(x) = \\frac{d}{dx}F_\\mathcal{D}(x).\\]"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#probability-mass-functions",
+    "href": "slides/lecture01-2.html#probability-mass-functions",
+    "title": "Uncertainty and Probability Review",
+    "section": "Probability Mass Functions",
+    "text": "Probability Mass Functions\nDiscrete distributions have probability mass functions (PMFs) which are defined at point values, e.g. \\(p(x = x^*) \\neq 0\\)."
+  },
+  {
+    "objectID": "slides/lecture01-2.html#example-normal-distribution",
+    "href": "slides/lecture01-2.html#example-normal-distribution",
+    "title": "Uncertainty and Probability Review",
+    "section": "Example: Normal Distribution",
+    "text": "Example: Normal Distribution\n\\[f_\\mathcal{D}(x) = p(x | \\mu, \\sigma) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{1}{2}\\left(\\frac{x - \\mu}{\\sigma}^2\\right)\\right)\\]"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#why-are-normal-distributions-so-commonly-used",
+    "href": "slides/lecture01-2.html#why-are-normal-distributions-so-commonly-used",
+    "title": "Uncertainty and Probability Review",
+    "section": "Why Are Normal Distributions So Commonly Used?",
+    "text": "Why Are Normal Distributions So Commonly Used?\n\nSymmetry/Unimodality\nLinearity\nCentral Limit Theorem"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#linearity",
+    "href": "slides/lecture01-2.html#linearity",
+    "title": "Uncertainty and Probability Review",
+    "section": "Linearity",
+    "text": "Linearity\n\nIf \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\): \\[\\bbox[yellow, 10px, border:5px solid red] {aX + b \\sim \\mathcal{N}\\left(a\\mu + b, |a|\\sigma\\right)}\\]\nIf \\(X_1 \\sim \\mathcal{N}(\\mu_1, \\sigma_1)\\), \\(X_2 \\sim \\mathcal{N}(\\mu_2, \\sigma_2)\\): \\[\\bbox[yellow, 5px, border:5px solid red] {X_1 + X_2 \\sim \\mathcal{N}\\left(\\mu_1 + \\mu_2, \\sqrt{\\sigma_1^2 + \\sigma_2^2}\\right)}\\]"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#central-limit-theorem-sampling-distributions",
+    "href": "slides/lecture01-2.html#central-limit-theorem-sampling-distributions",
+    "title": "Uncertainty and Probability Review",
+    "section": "Central Limit Theorem: Sampling Distributions",
+    "text": "Central Limit Theorem: Sampling Distributions\nThe sum or mean of a random sample is itself a random variable:\n\\[\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i \\sim \\mathcal{D}_n\\]\n\n\\(\\mathcal{D}_n\\): The sampling distribution of the mean (or sum, or other estimate of interest)."
+  },
+  {
+    "objectID": "slides/lecture01-2.html#central-limit-theorem",
+    "href": "slides/lecture01-2.html#central-limit-theorem",
+    "title": "Uncertainty and Probability Review",
+    "section": "Central Limit Theorem",
+    "text": "Central Limit Theorem\nIf\n\n\\(\\mathbb{E}[X_i] = \\mu\\)\nand \\(\\text{Var}(X_i) = \\sigma^2 &lt; \\infty\\),\n\n\\[\\begin{align*}\n&\\bbox[yellow, 10px, border:5px solid red]\n{\\lim_{n \\to \\infty} \\sqrt{n}(\\bar{X}_n - \\mu ) = \\mathcal{N}(0, \\sigma^2)} \\\\\n\\Rightarrow &\\bbox[yellow, 10px, border:5px solid red] {\\bar{X}_n \\overset{\\text{approx}}{\\sim} \\mathcal{N}(\\mu, \\sigma^2/n)}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#central-limit-theorem-more-intuitive",
+    "href": "slides/lecture01-2.html#central-limit-theorem-more-intuitive",
+    "title": "Uncertainty and Probability Review",
+    "section": "Central Limit Theorem (More Intuitive)",
+    "text": "Central Limit Theorem (More Intuitive)\nFor a large enough set of samples, the sampling distribution of a sum or mean of random variables is approximately a normal distribution, even if the random variables themselves are not."
+  },
+  {
+    "objectID": "slides/lecture01-2.html#why-are-normal-distributions-so-commonly-used-1",
+    "href": "slides/lecture01-2.html#why-are-normal-distributions-so-commonly-used-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "Why Are Normal Distributions So Commonly Used?",
+    "text": "Why Are Normal Distributions So Commonly Used?\n\nCentral Limit Theorem: For a large enough dataset, can assume statistical quantities have an approximately normal distribution.\nLinearity/Other Mathematical Properties: Easy to work with/do calculations\n\n\nCan we think about when this might break down?"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#other-useful-distributions",
+    "href": "slides/lecture01-2.html#other-useful-distributions",
+    "title": "Uncertainty and Probability Review",
+    "section": "Other Useful Distributions",
+    "text": "Other Useful Distributions\n\nUniform: \\(\\text{Unif}(a, b)\\) (equal probability);\nPoisson: \\(\\text{Poisson}(\\lambda)\\) (count data);\nBernoulli: \\(\\text{Bernoulli}(p)\\) (coin flips);\nBinomial: \\(\\text{Binomial}(n, p)\\) (number of successes);\nCauchy: \\(\\text{Cauchy}(\\gamma)\\) (fat tails);\nGeneralized Extreme Value: \\(\\text{GEV}(\\mu, \\sigma, \\xi)\\) (maxima/minima)"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#what-is-probability",
+    "href": "slides/lecture01-2.html#what-is-probability",
+    "title": "Uncertainty and Probability Review",
+    "section": "What Is Probability?",
+    "text": "What Is Probability?\n\nHow we communicate/capture uncertainty depends on how we interpret probability:\n\nFrequentist: \\(\\mathbb{P}[A]\\) is the long-run frequency of event A occurring.\nBayesian: \\(\\mathbb{P}[A]\\) is the degree of belief (betting odds) of event A occurring."
+  },
+  {
+    "objectID": "slides/lecture01-2.html#frequentist-probability",
+    "href": "slides/lecture01-2.html#frequentist-probability",
+    "title": "Uncertainty and Probability Review",
+    "section": "Frequentist Probability",
+    "text": "Frequentist Probability\n\n\nFrequentist:\n\nData are random, but there is a “true” parameter set for a given model.\nHow consistent are estimates for different data?\n\n\n\nBayesian:\n\nData and parameters are random;\nProbability of parameters and unobserved data as consistency with observations."
+  },
+  {
+    "objectID": "slides/lecture01-2.html#confidence-intervals",
+    "href": "slides/lecture01-2.html#confidence-intervals",
+    "title": "Uncertainty and Probability Review",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\n\n\nFrequentist estimates have confidence intervals, which will contain the “true” parameter value for \\(\\alpha\\)% of data samples.\nNo guarantee that an individual CI contains the true value (with any “probability”)!\n\n\n\n\n\n\n\n\n\n\n\nSource: https://www.wikihow.com/Throw-a-Horseshoe"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#confidence-intervals-example-95",
+    "href": "slides/lecture01-2.html#confidence-intervals-example-95",
+    "title": "Uncertainty and Probability Review",
+    "section": "Confidence Intervals: Example (95%)",
+    "text": "Confidence Intervals: Example (95%)\n\nCode\n# set up distribution\nmean_true = 0.4\nn_cis = 100 # number of CIs to compute\ndist = Normal(mean_true, 2)\n\n# use sample size of 100\nsamples = rand(dist, (100, n_cis))\n# mapslices broadcasts over a matrix dimension, could also use a loop\nsample_means = mapslices(mean, samples; dims=1)\nsample_sd = mapslices(std, samples; dims=1) \nmc_sd = 1.96 * sample_sd / sqrt(100)\nmc_ci = zeros(n_cis, 2) # preallocate\nfor i = 1:n_cis\n    mc_ci[i, 1] = sample_means[i] - mc_sd[i]\n    mc_ci[i, 2] = sample_means[i] + mc_sd[i]\nend\n# compute percentage of CIs which contain the true value\nci_frac1 = 100 * (sum((mc_ci[:, 1] .&lt; mean_true) .&& (mc_ci[:, 2] .&gt; mean_true))) ./ n_cis\n\n# plot CIs\np1 = plot([mc_ci[1, :]], [1, 1], linewidth=3, color=:blue, label=\"95% Confidence Interval\", title=\"100 Samples with Size 100\", yticks=:false, tickfontsize=14, titlefontsize=20, legend=:false, guidefontsize=16)\nfor i = 2:n_cis\n    plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:blue, label=:false)\nend\nvline!(p1, [mean_true], color=:red, linewidth=2, linestyle=:dash, label=\"True Value\") # plot true value as a vertical line\nxaxis!(p1, \"Estimate\")\nplot!(p1, size=(500, 400)) # resize to fit slide\n\n# use sample size of 1000\nsamples = rand(dist, (1000, n_cis))\n# mapslices broadcasts over a matrix dimension, could also use a loop\nsample_means = mapslices(mean, samples; dims=1)\nsample_sd = mapslices(std, samples; dims=1) \nmc_sd = 1.96 * sample_sd / sqrt(1000)\nmc_ci = zeros(n_cis, 2) # preallocate\nfor i = 1:n_cis\n    mc_ci[i, 1] = sample_means[i] - mc_sd[i]\n    mc_ci[i, 2] = sample_means[i] + mc_sd[i]\nend\n# compute percentage of CIs which contain the true value\nci_frac2 = 100 * (sum((mc_ci[:, 1] .&lt; mean_true) .&& (mc_ci[:, 2] .&gt; mean_true))) ./ n_cis\n\n# plot CIs\np2 = plot([mc_ci[1, :]], [1, 1], linewidth=3, color=:blue, label=\"95% Confidence Interval\", title=\"100 Samples with Size 1,000\", yticks=:false, tickfontsize=14, titlefontsize=20, legend=:false, guidefontsize=16)\nfor i = 2:n_cis\n    plot!(p2, [mc_ci[i, :]], [i, i], linewidth=2, color=:blue, label=:false)\nend\nvline!(p2, [mean_true], color=:red, linewidth=2, linestyle=:dash, label=\"True Value\") # plot true value as a vertical line\nxaxis!(p2, \"Estimate\")\nplot!(p2, size=(500, 400)) # resize to fit slide\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Sample Size 100\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Sample Size 1,000\n\n\n\n\n\n\n\nFigure 1: Display of 95% confidence intervals\n\n\n\n90% of the CIs contain the true value (left) vs. 94% (right)"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#key-points",
+    "href": "slides/lecture01-2.html#key-points",
+    "title": "Uncertainty and Probability Review",
+    "section": "Key Points",
+    "text": "Key Points\n\nDifferent model-relevant uncertainties (will matter later!)\nReviewed probability distribution basics\n\nMany different distributions, suitable for different purposes\nProbability density functions vs. cumulative density functions"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#key-points-1",
+    "href": "slides/lecture01-2.html#key-points-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "Key Points",
+    "text": "Key Points\n\nFrequentist vs. Bayesian probability (matters a bit later)\n\nFrequentist: parameters as fixed (trying to recover with enough experiments)\nBayesian: parameters as random (probability reflects degree of consistency with observations)\nIn both cases data are random!"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#key-points-2",
+    "href": "slides/lecture01-2.html#key-points-2",
+    "title": "Uncertainty and Probability Review",
+    "section": "Key Points",
+    "text": "Key Points\n\nConfidence Intervals:\n\n\\(\\alpha\\)% of \\(\\alpha\\)-CIs generated from different samples will contain the “true” parameter value\nDo not say anything about probability of including true value!"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#references",
+    "href": "slides/lecture01-2.html#references",
+    "title": "Uncertainty and Probability Review",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nWalker, W. E., Harremoës, P., Rotmans, J., Sluijs, J. P. van der, Asselt, M. B. A. van, Janssen, P., & Krayer von Krauss, M. P. (2003). Defining uncertainty: A conceptual basis for uncertainty management in model-based decision support. Integrated Assessment, 4, 5–17. https://doi.org/10.1076/iaij.4.1.5.16466"
+  },
+  {
+    "objectID": "policies/homework.html",
+    "href": "policies/homework.html",
+    "title": "Homework Policies",
+    "section": "",
+    "text": "This page includes some information on the homework assignments for BEE 4850/5850, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.\nThis document is long, but please do read the whole thing. Hopefully most of this is obvious, but some of it may not be.",
+    "crumbs": [
+      "Course Information",
+      "Homework Policies"
+    ]
+  },
+  {
+    "objectID": "policies/homework.html#homework-logistics",
+    "href": "policies/homework.html#homework-logistics",
+    "title": "Homework Policies",
+    "section": "Homework Logistics",
+    "text": "Homework Logistics\nHomework assignments will be assigned on Monday and are generally due two Fridays hence (so you have two “school weeks” to work on the assignment). Solutions should be submitted as PDFs to Gradescope by 9pm on the due date. You do not need to include code unless you want to, but you should always include some description of the logic of the modeling or problem-solving process that your code implements.",
+    "crumbs": [
+      "Course Information",
+      "Homework Policies"
+    ]
+  },
+  {
+    "objectID": "policies/homework.html#how-to-write-assignments",
+    "href": "policies/homework.html#how-to-write-assignments",
+    "title": "Homework Policies",
+    "section": "How To Write Assignments",
+    "text": "How To Write Assignments\nHere are some tips for how to make the grader (the TA or Prof. Srikrishnan) understand what you mean in the time they’re looking at your problem: as noted in the rubrics, if your solution isn’t clear enough for us to follow, you will not receive the points even if your answer is technically correct, because part of demonstrating understanding is the ability to organize and communicate.\n\nBe Honest\n\nWrite everything in your own words. It’s perfectly ok to work with others; in fact, we encourage it! But you should write up and implement everything yourself; it’s very easy to convince yourself that you understand something when you’re mimicking someone else’s solution, and often we realize we don’t actually understand something when we try to write it ourselves.\nCite every outside source you use. You are allowed, in fact encouraged, to use any outside source1 Getting an idea from an outside source is not a problem, and will not lower your grade; if you’re critically evaluating the idea and implementing and writing your solution yourself (see above), then you’re demonstrating understanding even if the idea originated with someone else. But you must give appropriate credit to that source. Taking credit for someone else’s ideas and failing to properly cite an outside source, including your classmates, is plagiarism, and will be treated accordingly.\nThe only sources you do not have to cite are official class materials. If you use the lectures, lecture notes, website materials, homework solutions, etc, you do not have to cite these.\nList everyone that you worked with. Give your classmates proper credit for their assistance. If you get an idea from Ed Discussion, credit the poster. If you’re not sure if you should list someone as a collaborator, err on the side of including them. For discussions in class or in office hours, you don’t have to list everyone who participated in the discussion (though you should if you worked one on one with them), but mention that the class discussion or the office hour was useful.\n\n1 Yes, including ChatGPT, though you should ask and describe how you used it.\n\nBe Clear\n\nWrite legibly. This doesn’t refer to handwriting (since you’ll be submitting PDFs of Jupyter notebooks), but the text itself should be clearly written and well organized, so that it’s easy for the grader to follow your reasoning or explanation. Structuring your solution, and not writing in a stream of consciousness, helps you think more clearly. To reiterate: You will be given no points if the grader cannot easily follow your answer, and the graders have complete discretion to determine this.\nWrite clearly. Use proper spelling, grammar, logic, etc. We will try not to penalize people for not having complete mastery of English, but again, we need to be able to follow your reasoning.\nWrite carefully and completely. We can only grade what you write; nobody can read your mind, and we will not try. The solution that you submit must stand on its own. If your answer is ambiguous, the TA has been instructed to interpret it the wrong way. Regrade requests also cannot be used to add more information to a solution.\nDon’t submit your first draft. For most people, first drafts are terrible. They are often poorly organized, unclear, and contain gaps or jumps in reasoning. You will likely need to revise, possibly several times, for your answer to be clear, careful, and complete. This is another reason to start the assignment early — if you start late, you may be stuck with your first draft, and your grade is likely to suffer for it.\nState your assumptions. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).\nDon’t rely on your code. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end — it works or it doesn’t). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can’t do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.\n\n\n\nBe Concise\n\nKeep solutions short. Organized answers should not be long. There’s a fine balance between conciseness and completeness: find it!\nDon’t regurgitate. You can reference concepts, models, etc from class without repeating them. Just make it clear what you’re modifying and how you’re using those concepts for that particular problem.\nDon’t bullshit. You will get no points for word salad, even if you accidentally hit on the right answer.",
+    "crumbs": [
+      "Course Information",
+      "Homework Policies"
+    ]
+  },
+  {
+    "objectID": "labs.html",
+    "href": "labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester."
+  },
+  {
+    "objectID": "labs.html#general-information",
+    "href": "labs.html#general-information",
+    "title": "Labs",
+    "section": "General Information",
+    "text": "General Information\n\nYou can download each lab notebook through the link below..\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF."
+  },
+  {
+    "objectID": "labs.html#schedule",
+    "href": "labs.html#schedule",
+    "title": "Labs",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nLab\nInstructions\nRubric\nDue Date\n\n\n\n\nLab 1\n\n\nFeb 02, 2024"
+  },
+  {
+    "objectID": "assignments/hw01/hw01.html",
+    "href": "assignments/hw01/hw01.html",
+    "title": "Homework 1: Simulation-Based Data Analysis",
+    "section": "",
+    "text": "Due Date\n\n\n\nFriday, 2/2/24, 9:00pm",
+    "crumbs": [
+      "Homework",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "assignments/hw01/hw01.html#overview",
+    "href": "assignments/hw01/hw01.html#overview",
+    "title": "Homework 1: Simulation-Based Data Analysis",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\nProblem 3 asks you to assess the quality of fit of a normal distribution to realizations from a Galton Board simulation.\nProblem 4 (graded only for graduate students) asks you to simulate outcomes from the Price Is Right Showcase game to identify a bidding strategy.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
+    "crumbs": [
+      "Homework",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "assignments/hw01/hw01.html#problems",
+    "href": "assignments/hw01/hw01.html#problems",
+    "title": "Homework 1: Simulation-Based Data Analysis",
+    "section": "Problems",
+    "text": "Problems\nEach problem in this assignment is worth 10 points.\n\nProblem 1\nThe underlying question we would like to address is: what is the influence of drinking beer on the likelihood of being bitten by mosquitoes? There is a mechanistic reason why this might occur: mosquitoes are attracted by changes in body temperature and released CO2, and it might be that drinking beer induces these changes. We’ll analyze this question using (synthetic) data which separates an experimental population into two groups, one which drank beer and the other which drank only water.\nFirst, we’ll load data for the number of bites reported by the participants who drank beer. This is in a comma-delimited file, data/bites.csv (which is grossly overkill for this assignment). Each row contains two columns: the group (beer and water) the person belonged to and the number of times that person was bitten.\nIn Julia, we can do this using CSVFiles.jl, which will read in the .csv file into a DataFrame, which is a typical data structure for tabular data (and equivalent to a Pandas DataFrame in Python or a dataframe in R).\n\n\ndata = DataFrame(load(\"data/bites.csv\")) # load data into DataFrame\n\n# print data variable (semi-colon suppresses echoed output in Julia, which in this case would duplicate the output)\n@show data; \n\n\nHow can we tell if there’s a meaningful difference between the two groups? Naively, we might just look at the differences in group means.\n\n\n\n\n\n\n\nBroadcasting\n\n\n\nThe subsetting operations in the below code use .==, which “broadcasts” the element-wise comparison operator == across every element. The decimal in front of == indicates that this should be used element-wise (every pair of elements compared for equality, returning a vector of true or false values); otherwise Julia would try to just check for vector equality (returning a single true or false value).\nBroadcasting is a very specific feature of Julia, so this syntax would look different in a different programming language.\n\n\n\n# split data into vectors of bites for each group\nbeer = data[data.group .== \"beer\", :bites]\nwater = data[data.group .== \"water\", :bites]\n\nobserved_difference = mean(beer) - mean(water)\n@show observed_difference;\n\nobserved_difference = 4.37777777777778\n\n\n\nThis tells us that, on average, the participants in the experiment who drank beer were bitten approximately 4.4 more times than the participants who drank water! Does that seem like a meaningful difference, or could it be the result of random chance?\nWe will use a simulation approach to address this question, as follows.\n\nSuppose someone is skeptical of the idea that drinking beer could result in a higher attraction to mosquitoes, and therefore more bites. To this skeptic, the two datasets are really just different samples from the same underlying population of people getting bitten by mosquitoes, rather than two different populations with different propensities for being bitten. This is the skeptic’s hypothesis, versus our hypothesis that drinking beer changes body temperature and CO2 release sufficiently to attract mosquitoes.\nIf the skeptic’s hypothesis is true, then we can “shuffle” all of the measurements between the two datasets and re-compute the differences in the means. After repeating this procedure a large number of times, we would obtain a distribution of the differences in means under the assumption that the skeptic’s hypothesis is true.\nComparing our experimentally-observed difference to this distribution, we can then evaluate the consistency of the skeptic’s hypothesis with the experimental results.\n\n\n\n\n\n\n\n\nWhy Do We Call This A Simulation-Based Approach?\n\n\n\nThis is a simulation-based approach because the “shuffling” is a non-parametric way of generating new samples from the underlying distribution (more on this later in the semester).\nThe alternative to this approach is to use a statistical test, such as a t-test, which may have other assumptions which may not be appropriate for this setting, particularly given the seemingly small sample sizes.\n\n\n\nIn this problem:\n\nConduct the above procedure to generate 50,000 simulated datasets under the skeptic’s hypothesis.\nPlot a histogram of the results and add a dashed vertical line to show the experimental difference (if you are using Julia, feel free to look at the Making Plots with Julia tutorial on the class website).\nDraw conclusions about the plausibility of the skeptic’s hypothesis that there is no difference between groups. Feel free to use any quantitative or qualitative assessments of your simulations and the observed difference.\n\n\n\nProblem 2\nYou are trying to detect if how prevalent cheating was on an exam. You are skeptical of the efficacy of just asking the students if they cheated. You are also concerned about privacy — your goal is not to punish individual students, but to see if there are systemic problems that need to be addressed. Someone proposes the following interview procedure, which the class agrees to participate in:\n\nEach student flips a fair coin, with the results hidden from the interviewer. The student answers honestly if the coin comes up heads. Otherwise, if the coin comes up tails, the student flips the coin again, and answers “I did cheat” if heads, and “I did not cheat”, if tails.\n\nWe have a hypothesis that cheating was not prevalent, and the proportion of cheaters was no more than 5% of the class; in other words, we expect 5 “true” cheaters out of a class of 100 students. Our TA is more jaded and thinks that cheating was more rampant, and that 30% of the class cheated. The proposed interview procedure is noisy: the interviewer does not know if an admission means that the student cheated, or the result of a heads. However, it gives us a data-generating process that we can model and analyze for consistency with our hypothesis and that of the TA.\nIn this problem:\n\nDerive and code a simulation model for the above interview procedure given the “true” probability of cheating \\(p\\).\nSimulate your model (for a class of 100 students) 50,000 times under the your hypothesis and the TA’s hypothesis, and plot the two resulting datasets.\nIf you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude? Feel free to use any qualitative or quantiative assessments to justify your conclusions.\nHow useful do you think the interview procedure is to identify systemic teaching? What changes to the design might you make?\n\n\n\nProblem 3 (10 points)\nSuppose that we ask a class of students to walk individually from one end of a field to the other and count the number of steps that they take in order to cover the distance. More than likely, each student will get a somewhat different answer. After each student has paced off the field, we then make a histogram of the number of steps taken by the individual students. For a sufficiently large number of students, this histogram would resemble a normal distribution, due to the Central Limit Theorem.\nA Galton board (named after Sir Francis Galton, a pioneering statistician1, shown below, is a physical device that demonstrates the Central Limit Theorem. A Galton board has rows of pins arranged in a triangular shape, with each row of pins offset horizontally relative to the rows above and below it. As illustrated in Figure 1, the top row has one pin, the second row has two pins, and so forth. If you’ve watched The Price is Right, you’ve seen this as “Plinko”.\n1 And, notably, a leading eugenicist, which is unfortunately a recurring theme with leading early statisticians…)\n\n\n\n\n\n\nFigure 1: Galton Board simulation. The top shows a schematic of how the Galton board works and the bottom shows a histogram of the landing positions after 200 simulations.\n\n\n\n\nIf a ball is dropped into the Galton board, it falls either to the right or the left when it bounces off the top pin. The ball then falls all the way to the bottom of the board, moving slightly to the right or left as it passes through each row of pins. Bins at the bottom of the board capture the ball and record its final position. If this experiment is repeated with many balls, the number of balls in each bin resembles a normal distribution, which is expected due to the Central Limit Theorem.\nYour goal in this exercise is to explore how well a normal distribution fits the outcomes of repeated Galton Board trials as the number increases using quantile-quantile plots. Assessing the appropriateness of a probability model for a data set is a key part of exploratory analysis; we will return to this theme repeatedly. Or, to put it another way, it’s time for you to play Plinko!\nIn this problem:\n\nWrite a function galton_sim which simulates n Galton board trials (assume the board has 8 board rows, as in the image above) and returns a vector with the number of balls which fall into each bin. You can assume (for now) that the board is fair, e.g. that the probability of a left or right bounce is 0.5; you may want to make this probability a function parameter so you can change it later.\nRun your simulation for a sample of 50 balls. Create a histogram of the results, with each bar corresponding to one bin. Make sure you use a random seed for reproducibility, and label your axes!\nEach Galton board trial can be represented as a realization from a binomial distribution. But as we noted above, by the Central Limit Theorem, the distribution of a large enough number of trials should be approximately normal. Use a quantile-quantile (Q-Q) plot to compare a fitted normal distribution with your simulation results. How well does a normal distribution fit the data?\nRepeat your simulation experiment with 250 trials and compare to a normal distribution. Does it describe the empirical distribution better?\nIf the probability of a left bounce is 70%, what does this do to the fit of a normal distribution? What other distribution might you use if not a normal and why?\n\n\n\nProblem 4\nGRADED FOR 5850 STUDENTS ONLY\nYour mastery of the Central Limit Theorem has led you to win your game of Plinko, and it’s time for the Showcases. This is the final round of an episode of The Price is Right, matching the two big winners from the episode. Each contestant is shown a “showcase” of prizes, which are usually some combination of a trip, a motor vehicle, some furniture, and maybe some other stuff. They then each have to make a bid on the retail price of the showcase. The rules are:\n\nan overbid is an automatic loss;\nthe contest who gets closest to the retail price wins their showcase;\nif a contestant gets within \\(\\$250\\) of the retail price and is closer than their opponent, they win both showcases.\n\nThanks to exhaustive statistics kept by game show fans, in Season 51 of The Price is Right showcase values had the following properties:\n\nmedian: $33,0481;\nlowest-value: $20,432\nhighest-value: $72,409\n\nIn this problem:\n\nWrite down a model which encodes the Showcase rules as a function of the showcase value and your bid. You can assume that your wagering is independent of your opponent.\nSelect and fit a distribution to the above statistics (you have some freedom to pick a distribution, but make sure you justify it).\nUsing 1,000 samples from your price distribution in your model, plot the expected winnings for bids from $20,000 through $72,000.\nFind the bid which maximizes your expected winnings. If you were playing The Price Is Right, is this the strategy you would adopt, or are there other considerations you would take into account which were not included in this model?",
+    "crumbs": [
+      "Homework",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html",
+    "href": "weeks/week01.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion.\nHomework 1 assigned, due 2/2/24.",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html#announcements",
+    "href": "weeks/week01.html#announcements",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion.\nHomework 1 assigned, due 2/2/24.",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html#readings",
+    "href": "weeks/week01.html#readings",
+    "title": "Week 1",
+    "section": "Readings",
+    "text": "Readings\nAs you’re reading along, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. Post a summary of key points, takeaways, and thoughts on Ed Discussion and be prepared to engage in the discussion on-line. We will not dedicate class time to this reading but relevant concepts will come up over the first few weeks of class.\n\nRockmore, D. (2024, January 15). How Much of the World Is It Possible to Model? The New Yorker. Retrieved from https://www.newyorker.com/culture/annals-of-inquiry/how-much-of-the-world-is-it-possible-to-model",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html#exercises",
+    "href": "weeks/week01.html#exercises",
+    "title": "Week 1",
+    "section": "Exercises",
+    "text": "Exercises\n\nLoading, Plotting, and Reasoning About Data",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html#lectures",
+    "href": "weeks/week01.html#lectures",
+    "title": "Week 1",
+    "section": "Lectures",
+    "text": "Lectures\n\nLecture 01-1: Class Overview\nLecture 01-2: Uncertainty and Probability Review",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "homework.html",
+    "href": "homework.html",
+    "title": "Homework Assignments",
+    "section": "",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
+    "crumbs": [
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "homework.html#general-information",
+    "href": "homework.html#general-information",
+    "title": "Homework Assignments",
+    "section": "General Information",
+    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
+    "crumbs": [
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "homework.html#rubric",
+    "href": "homework.html#rubric",
+    "title": "Homework Assignments",
+    "section": "Rubric",
+    "text": "Rubric\nThe standard rubric for homework problems is available here.",
+    "crumbs": [
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "homework.html#schedule",
+    "href": "homework.html#schedule",
+    "title": "Homework Assignments",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\n\n\n\n\n\nHW1\n\nFeb 09, 2024",
+    "crumbs": [
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "",
+    "text": "This is the course website for the Spring 2024 edition of BEE 4850/5850, Environmental Data Analysis and Simulation, taught at Cornell University by Vivek Srikrishnan.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Course Information",
+    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#regular-weekly-schedule",
+    "href": "index.html#regular-weekly-schedule",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Regular Weekly Schedule",
+    "text": "Regular Weekly Schedule\n\n\n\n\n\n\n\nLectures\nMW 11:40-12:55pm, 160 Riley-Robb Hall\n\n\nOffice Hours\nMW 10:00-11:00am, 318 Riley-Robb Hall\n\n\nAssignments\nDue Fridays at 9pm on Gradescope.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
     ]
   },
   {
@@ -522,199 +1024,123 @@
     "text": "References (Scroll for Full List)\n\n\n\n\n\n\nDoss-Gollin, J., & Keller, K. (2023). A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management. Earths Future, 11, e2022EF003044. https://doi.org/10.1029/2022ef003044\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nFagnant, C., Gori, A., Sebastian, A., Bedient, P. B., & Ensor, K. B. (2020). Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas. Nat. Hazards, 104, 1597–1621. https://doi.org/10.1007/s11069-020-04235-x\n\n\nRuckert, K. L., Guan, Y., Bakker, A. M. R., Forest, C. E., & Keller, K. (2017). The effects of time-varying observation errors on semi-empirical sea-level projections. Clim. Change, 140, 349–360. https://doi.org/10.1007/s10584-016-1858-z\n\n\nSrikrishnan, V., Guan, Y., Tol, R. S. J., & Keller, K. (2022). Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model. Clim. Change, 170, 37. https://doi.org/10.1007/s10584-021-03279-7"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "",
-    "text": "This is the course website for the Spring 2024 edition of BEE 4850/5850, Environmental Data Analysis and Simulation, taught at Cornell University by Vivek Srikrishnan.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
+    "objectID": "slides/lecture02-1.html#modes-of-data-analysis",
+    "href": "slides/lecture02-1.html#modes-of-data-analysis",
+    "title": "Uncertainty and Probability Review",
+    "section": "Modes of Data Analysis",
+    "text": "Modes of Data Analysis"
   },
   {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Course Information",
-    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
+    "objectID": "slides/lecture02-1.html#workflowcourse-organization",
+    "href": "slides/lecture02-1.html#workflowcourse-organization",
+    "title": "Uncertainty and Probability Review",
+    "section": "Workflow/Course Organization",
+    "text": "Workflow/Course Organization"
   },
   {
-    "objectID": "index.html#software-tools",
-    "href": "index.html#software-tools",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Software Tools",
-    "text": "Software Tools\n\nThis course will use the Julia programming language. Julia is a modern, free, open source language which is designed for scientific computing. No prior knowledge of Julia is required. My recommendation is to use Visual Studio Code with the official Julia extension for coding.\nAssignments will be distributed using GitHub Classroom. You should create a GitHub account, but we will walk through how to use it.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
+    "objectID": "slides/lecture02-1.html#questions",
+    "href": "slides/lecture02-1.html#questions",
+    "title": "Uncertainty and Probability Review",
+    "section": "Questions?",
+    "text": "Questions?\n\n\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "homework.html",
-    "href": "homework.html",
-    "title": "Homework Assignments",
-    "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
-    "crumbs": [
-      "Homework"
-    ]
+    "objectID": "slides/lecture02-1.html#what-is-uncertainty",
+    "href": "slides/lecture02-1.html#what-is-uncertainty",
+    "title": "Uncertainty and Probability Review",
+    "section": "What Is Uncertainty?",
+    "text": "What Is Uncertainty?\n\n\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "homework.html#general-information",
-    "href": "homework.html#general-information",
-    "title": "Homework Assignments",
-    "section": "General Information",
-    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
-    "crumbs": [
-      "Homework"
-    ]
+    "objectID": "slides/lecture02-1.html#what-is-uncertainty-1",
+    "href": "slides/lecture02-1.html#what-is-uncertainty-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "What Is Uncertainty?",
+    "text": "What Is Uncertainty?\n\n\n\n…A departure from the (unachievable) ideal of complete determinism…\n\n\n— Walker et al. (2003)"
   },
   {
-    "objectID": "homework.html#rubric",
-    "href": "homework.html#rubric",
-    "title": "Homework Assignments",
-    "section": "Rubric",
-    "text": "Rubric\nThe standard rubric for homework problems is available here.",
-    "crumbs": [
-      "Homework"
-    ]
+    "objectID": "slides/lecture02-1.html#types-of-uncertainty",
+    "href": "slides/lecture02-1.html#types-of-uncertainty",
+    "title": "Uncertainty and Probability Review",
+    "section": "Types of Uncertainty",
+    "text": "Types of Uncertainty\n\nAleatoric uncertainty: Uncertainties due to randomness/stochasticity;\nEpistemic uncertainty: Uncertainties due to lack of knowledge."
   },
   {
-    "objectID": "homework.html#schedule",
-    "href": "homework.html#schedule",
-    "title": "Homework Assignments",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\n\n\n\n\n\nHW1\n\nFeb 09, 2024",
-    "crumbs": [
-      "Homework"
-    ]
+    "objectID": "slides/lecture02-1.html#data-relevant-uncertainty-taxonomy",
+    "href": "slides/lecture02-1.html#data-relevant-uncertainty-taxonomy",
+    "title": "Uncertainty and Probability Review",
+    "section": "Data-Relevant Uncertainty Taxonomy",
+    "text": "Data-Relevant Uncertainty Taxonomy\n\n\n\n\n\n\n\n\nUncertainty\nAssociated Uncertainties\nExamples\n\n\n\n\nStructural\nIncluded physical processes, mathematical form\nModel inadequacy, (epistemic) residual uncertainty\n\n\nParametric\nParameter uncertainty\nChoice of parameters, strength of coupling between models\n\n\nSampling\nNatural variability, (aleatoric) residual uncertainty\nInternal variability, uncertain boundary conditions"
   },
   {
-    "objectID": "weeks/week01.html",
-    "href": "weeks/week01.html",
-    "title": "Week 1",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion.\nHomework 1 assigned, due 2/2/24."
+    "objectID": "slides/lecture02-1.html#probability-distributions-1",
+    "href": "slides/lecture02-1.html#probability-distributions-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "Probability Distributions",
+    "text": "Probability Distributions\nProbability distributions are often used to quantify uncertainty.\n\\[x \\to \\mathbb{P}_{\\color{green}\\nu}[x] = p_{\\color{green}\\nu}\\left(x | {\\color{purple}\\theta}\\right)\\]\n\n\\({\\color{green}\\nu}\\): probability distribution (often implicit);\n\\({\\color{purple}\\theta}\\): distribution parameters"
   },
   {
-    "objectID": "weeks/week01.html#announcements",
-    "href": "weeks/week01.html#announcements",
-    "title": "Week 1",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion.\nHomework 1 assigned, due 2/2/24."
+    "objectID": "slides/lecture02-1.html#sampling-notation",
+    "href": "slides/lecture02-1.html#sampling-notation",
+    "title": "Uncertainty and Probability Review",
+    "section": "Sampling Notation",
+    "text": "Sampling Notation\nTo write \\(x\\) is sampled from \\(p(x|\\theta)\\): \\[x \\sim f(\\theta)\\]\nFor example, for a normal distribution: \\[x \\sim \\mathcal{N}(\\mu, \\sigma)\\]"
   },
   {
-    "objectID": "weeks/week01.html#readings",
-    "href": "weeks/week01.html#readings",
-    "title": "Week 1",
-    "section": "Readings",
-    "text": "Readings\nAs you’re reading along, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. Post a summary of key points, takeaways, and thoughts on Ed Discussion and be prepared to engage in the discussion on-line. We will not dedicate class time to this reading but relevant concepts will come up over the first few weeks of class.\n\nRockmore, D. (2024, January 15). How Much of the World Is It Possible to Model? The New Yorker. Retrieved from https://www.newyorker.com/culture/annals-of-inquiry/how-much-of-the-world-is-it-possible-to-model"
+    "objectID": "slides/lecture02-1.html#example-normal-distribution",
+    "href": "slides/lecture02-1.html#example-normal-distribution",
+    "title": "Uncertainty and Probability Review",
+    "section": "Example: Normal Distribution",
+    "text": "Example: Normal Distribution\n\\[p(x | \\mu, \\sigma) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{1}{2}\\left(\\frac{x - \\mu}{\\sigma}^2\\right)\\right)\\]"
   },
   {
-    "objectID": "weeks/week01.html#exercises",
-    "href": "weeks/week01.html#exercises",
-    "title": "Week 1",
-    "section": "Exercises",
-    "text": "Exercises\n\nLoading, Plotting, and Reasoning About Data"
+    "objectID": "slides/lecture02-1.html#why-are-normal-distributions-so-commonly-used",
+    "href": "slides/lecture02-1.html#why-are-normal-distributions-so-commonly-used",
+    "title": "Uncertainty and Probability Review",
+    "section": "Why Are Normal Distributions So Commonly Used?",
+    "text": "Why Are Normal Distributions So Commonly Used?\n\nSymmetry/Unimodality\nLinearity\nCentral Limit Theorem"
   },
   {
-    "objectID": "weeks/week01.html#lectures",
-    "href": "weeks/week01.html#lectures",
-    "title": "Week 1",
-    "section": "Lectures",
-    "text": "Lectures\n\nLecture 01-1: Class Overview\nLecture 02-1: Hypothesis Testing and Data Analysis"
+    "objectID": "slides/lecture02-1.html#linearity",
+    "href": "slides/lecture02-1.html#linearity",
+    "title": "Uncertainty and Probability Review",
+    "section": "Linearity",
+    "text": "Linearity\n\nIf \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\): \\[\\bbox[yellow, 10px, border:5px solid red] {aX + b \\sim \\mathcal{N}\\left(a\\mu + b, |a|\\sigma\\right)}\\]\nIf \\(X_1 \\sim \\mathcal{N}(\\mu_1, \\sigma_1)\\), \\(X_2 \\sim \\mathcal{N}(\\mu_2, \\sigma_2)\\): \\[\\bbox[yellow, 5px, border:5px solid red] {X_1 + X_2 \\sim \\mathcal{N}\\left(\\mu_1 + \\mu_2, \\sqrt{\\sigma_1^2 + \\sigma_2^2}\\right)}\\]"
   },
   {
-    "objectID": "assignments/hw01/hw01.html",
-    "href": "assignments/hw01/hw01.html",
-    "title": "Homework 1: Simulation-Based Data Analysis",
-    "section": "",
-    "text": "Due Date\n\n\n\nFriday, 2/2/24, 9:00pm",
-    "crumbs": [
-      "Homework",
-      "Homework 1"
-    ]
+    "objectID": "slides/lecture02-1.html#central-limit-theorem-sampling-distributions",
+    "href": "slides/lecture02-1.html#central-limit-theorem-sampling-distributions",
+    "title": "Uncertainty and Probability Review",
+    "section": "Central Limit Theorem: Sampling Distributions",
+    "text": "Central Limit Theorem: Sampling Distributions\nThe sum or mean of a random sample is itself a random variable:\n\\[\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i \\sim \\mathcal{D}_n\\]\n\n\\(\\mathcal{D}_n\\): The sampling distribution of the mean (or sum, or other estimate of interest)."
   },
   {
-    "objectID": "assignments/hw01/hw01.html#overview",
-    "href": "assignments/hw01/hw01.html#overview",
-    "title": "Homework 1: Simulation-Based Data Analysis",
-    "section": "Overview",
-    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\nProblem 3 asks you to assess the quality of fit of a normal distribution to realizations from a Galton Board simulation.\nProblem 4 (graded only for graduate students) asks you to simulate outcomes from the Price Is Right Showcase game to identify a bidding strategy.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
-    "crumbs": [
-      "Homework",
-      "Homework 1"
-    ]
+    "objectID": "slides/lecture02-1.html#central-limit-theorem",
+    "href": "slides/lecture02-1.html#central-limit-theorem",
+    "title": "Uncertainty and Probability Review",
+    "section": "Central Limit Theorem",
+    "text": "Central Limit Theorem\nIf\n\n\\(\\mathbb{E}[X_i] = \\mu\\)\nand \\(\\text{Var}(X_i) = \\sigma^2 &lt; \\infty\\),\n\n\\[\\begin{align*}\n&\\bbox[yellow, 10px, border:5px solid red]\n{\\lim_{n \\to \\infty} \\sqrt{n}(\\bar{X}_n - \\mu ) = \\mathcal{N}(0, \\sigma^2)} \\\\\n\\Rightarrow &\\bbox[yellow, 10px, border:5px solid red] {\\bar{X}_n \\overset{\\text{approx}}{\\sim} \\mathcal{N}(\\mu, \\sigma^2/n)}\n\\end{align*}\\]"
   },
   {
-    "objectID": "assignments/hw01/hw01.html#problems-total-20-points",
-    "href": "assignments/hw01/hw01.html#problems-total-20-points",
-    "title": "Homework 1: Simulation-Based Data Analysis",
-    "section": "Problems (Total: 20 Points)",
-    "text": "Problems (Total: 20 Points)\n\nProblem 1 (10 points)\nThe underlying question we would like to address is: what is the influence of drinking beer on the likelihood of being bitten by mosquitoes? There is a mechanistic reason why this might occur: mosquitoes are attracted by changes in body temperature and released CO2, and it might be that drinking beer induces these changes. We’ll analyze this question using (synthetic) data which separates an experimental population into two groups, one which drank beer and the other which drank only water.\nFirst, we’ll load data for the number of bites reported by the participants who drank beer. This is in a comma-delimited file, data/bites.csv (which is grossly overkill for this assignment). Each row contains two columns: the group (beer and water) the person belonged to and the number of times that person was bitten.\nIn Julia, we can do this using CSVFiles.jl, which will read in the .csv file into a DataFrame, which is a typical data structure for tabular data (and equivalent to a Pandas DataFrame in Python or a dataframe in R).\n\n\ndata = DataFrame(load(\"data/bites.csv\")) # load data into DataFrame\n\n# print data variable (semi-colon suppresses echoed output in Julia, which in this case would duplicate the output)\n@show data; \n\n\nHow can we tell if there’s a meaningful difference between the two groups? Naively, we might just look at the differences in group means.\n\n\n\n\n\n\n\nBroadcasting\n\n\n\nThe subsetting operations in the below code use .==, which “broadcasts” the element-wise comparison operator == across every element. The decimal in front of == indicates that this should be used element-wise (every pair of elements compared for equality, returning a vector of true or false values); otherwise Julia would try to just check for vector equality (returning a single true or false value).\nBroadcasting is a very specific feature of Julia, so this syntax would look different in a different programming language.\n\n\n\n# split data into vectors of bites for each group\nbeer = data[data.group .== \"beer\", :bites]\nwater = data[data.group .== \"water\", :bites]\n\nobserved_difference = mean(beer) - mean(water)\n@show observed_difference;\n\nobserved_difference = 4.37777777777778\n\n\n\nThis tells us that, on average, the participants in the experiment who drank beer were bitten approximately 4.4 more times than the participants who drank water! Does that seem like a meaningful difference, or could it be the result of random chance?\nWe will use a simulation approach to address this question, as follows.\n\nSuppose someone is skeptical of the idea that drinking beer could result in a higher attraction to mosquitoes, and therefore more bites. To this skeptic, the two datasets are really just different samples from the same underlying population of people getting bitten by mosquitoes, rather than two different populations with different propensities for being bitten. This is the skeptic’s hypothesis, versus our hypothesis that drinking beer changes body temperature and CO2 release sufficiently to attract mosquitoes.\nIf the skeptic’s hypothesis is true, then we can “shuffle” all of the measurements between the two datasets and re-compute the differences in the means. After repeating this procedure a large number of times, we would obtain a distribution of the differences in means under the assumption that the skeptic’s hypothesis is true.\nComparing our experimentally-observed difference to this distribution, we can then evaluate the consistency of the skeptic’s hypothesis with the experimental results.\n\n\n\n\n\n\n\n\nWhy Do We Call This A Simulation-Based Approach?\n\n\n\nThis is a simulation-based approach because the “shuffling” is a non-parametric way of generating new samples from the underlying distribution (more on this later in the semester).\nThe alternative to this approach is to use a statistical test, such as a t-test, which may have other assumptions which may not be appropriate for this setting, particularly given the seemingly small sample sizes.\n\n\n\nIn this problem:\n\nConduct the above procedure to generate 50,000 simulated datasets under the skeptic’s hypothesis.\nPlot a histogram of the results and add a dashed vertical line to show the experimental difference (if you are using Julia, feel free to look at the Making Plots with Julia tutorial on the class website).\nDraw conclusions about the plausibility of the skeptic’s hypothesis that there is no difference between groups. Feel free to use any quantitative or qualitative assessments of your simulations and the observed difference.\n\n\n\nProblem 2 (10 points)\nYou are trying to detect if how prevalent cheating was on an exam. You are skeptical of the efficacy of just asking the students if they cheated. You are also concerned about privacy — your goal is not to punish individual students, but to see if there are systemic problems that need to be addressed. Someone proposes the following interview procedure, which the class agrees to participate in:\n\nEach student flips a fair coin, with the results hidden from the interviewer. The student answers honestly if the coin comes up heads. Otherwise, if the coin comes up tails, the student flips the coin again, and answers “I did cheat” if heads, and “I did not cheat”, if tails.\n\nWe have a hypothesis that cheating was not prevalent, and the proportion of cheaters was no more than 5% of the class; in other words, we expect 5 “true” cheaters out of a class of 100 students. Our TA is more jaded and thinks that cheating was more rampant, and that 30% of the class cheated. The proposed interview procedure is noisy: the interviewer does not know if an admission means that the student cheated, or the result of a heads. However, it gives us a data-generating process that we can model and analyze for consistency with our hypothesis and that of the TA.\nIn this problem:\n\nDerive and code a simulation model for the above interview procedure given the “true” probability of cheating \\(p\\).\nSimulate your model (for a class of 100 students) 50,000 times under the your hypothesis and the TA’s hypothesis, and plot the two resulting datasets.\nIf you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude? Feel free to use any qualitative or quantiative assessments to justify your conclusions.\nHow useful do you think the interview procedure is to identify systemic teaching? What changes to the design might you make?\n\n\n\nProblem 3 (10 points)\nSuppose that we ask a class of students to walk individually from one end of a field to the other and count the number of steps that they take in order to cover the distance. More than likely, each student will get a somewhat different answer. After each student has paced off the field, we then make a histogram of the number of steps taken by the individual students. For a sufficiently large number of students, this histogram would resemble a normal distribution, due to the Central Limit Theorem.\nA Galton board (named after Sir Francis Galton, a pioneering statistician1, shown below, is a physical device that demonstrates the Central Limit Theorem. A Galton board has rows of pins arranged in a triangular shape, with each row of pins offset horizontally relative to the rows above and below it. As illustrated in Figure 1, the top row has one pin, the second row has two pins, and so forth. If you’ve watched The Price is Right, you’ve seen this as “Plinko”.\n1 And, notably, a leading eugenicist, which is unfortunately a recurring theme with leading early statisticians…)\n\n\n\n\n\n\nFigure 1: Galton Board simulation. The top shows a schematic of how the Galton board works and the bottom shows a histogram of the landing positions after 200 simulations.\n\n\n\n\nIf a ball is dropped into the Galton board, it falls either to the right or the left when it bounces off the top pin. The ball then falls all the way to the bottom of the board, moving slightly to the right or left as it passes through each row of pins. Bins at the bottom of the board capture the ball and record its final position. If this experiment is repeated with many balls, the number of balls in each bin resembles a normal distribution, which is expected due to the Central Limit Theorem.\nYour goal in this exercise is to explore how well a normal distribution fits the outcomes of repeated Galton Board trials as the number increases using quantile-quantile plots. Assessing the appropriateness of a probability model for a data set is a key part of exploratory analysis; we will return to this theme repeatedly. Or, to put it another way, it’s time for you to play Plinko!\nIn this problem:\n\nWrite a function galton_sim which simulates n Galton board trials (assume the board has 8 board rows, as in the image above) and returns a vector with the number of balls which fall into each bin. You can assume (for now) that the board is fair, e.g. that the probability of a left or right bounce is 0.5; you may want to make this probability a function parameter so you can change it later.\nRun your simulation for a sample of 50 balls. Create a histogram of the results, with each bar corresponding to one bin. Make sure you use a random seed for reproducibility, and label your axes!\nEach Galton board trial can be represented as a realization from a binomial distribution. But as we noted above, by the Central Limit Theorem, the distribution of a large enough number of trials should be approximately normal. Use a quantile-quantile (Q-Q) plot to compare a fitted normal distribution with your simulation results. How well does a normal distribution fit the data?\nRepeat your simulation experiment with 250 trials and compare to a normal distribution. Does it describe the empirical distribution better?\nIf the probability of a left bounce is 70%, what does this do to the fit of a normal distribution? What other distribution might you use if not a normal and why?\n\n\n\nProblem 4 (10 points)\nGRADED FOR 5850 STUDENTS ONLY\nYour mastery of the Central Limit Theorem has led you to win your game of Plinko, and it’s time for the Showcases. This is the final round of an episode of The Price is Right, matching the two big winners from the episode. Each contestant is shown a “showcase” of prizes, which are usually some combination of a trip, a motor vehicle, some furniture, and maybe some other stuff. They then each have to make a bid on the retail price of the showcase. The rules are:\n\nan overbid is an automatic loss;\nthe contest who gets closest to the retail price wins their showcase;\nif a contestant gets within \\(\\$250\\) of the retail price and is closer than their opponent, they win both showcases.\n\nThanks to exhaustive statistics kept by game show fans, in Season 51 of The Price is Right showcase values had the following properties:\n\nmedian: $33,0481;\nlowest-value: $20,432\nhighest-value: $72,409\n\nIn this problem:\n\nWrite down a model which encodes the Showcase rules as a function of the showcase value and your bid. You can assume that your wagering is independent of your opponent.\nSelect and fit a distribution to the above statistics (you have some freedom to pick a distribution, but make sure you justify it).\nUsing 1,000 samples from your price distribution in your model, plot the expected winnings for bids from $20,000 through $72,000.\nFind the bid which maximizes your expected winnings. If you were playing The Price Is Right, is this the strategy you would adopt, or are there other considerations you would take into account which were not included in this model?",
-    "crumbs": [
-      "Homework",
-      "Homework 1"
-    ]
+    "objectID": "slides/lecture02-1.html#central-limit-theorem-more-intuitive",
+    "href": "slides/lecture02-1.html#central-limit-theorem-more-intuitive",
+    "title": "Uncertainty and Probability Review",
+    "section": "Central Limit Theorem (More Intuitive)",
+    "text": "Central Limit Theorem (More Intuitive)\nFor a large enough set of samples, the sampling distribution of a sum or mean of random variables is approximately a normal distribution, even if the random variables themselves are not."
   },
   {
-    "objectID": "labs.html",
-    "href": "labs.html",
-    "title": "Labs",
-    "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester."
+    "objectID": "slides/lecture02-1.html#why-are-normal-distributions-so-commonly-used-1",
+    "href": "slides/lecture02-1.html#why-are-normal-distributions-so-commonly-used-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "Why Are Normal Distributions So Commonly Used?",
+    "text": "Why Are Normal Distributions So Commonly Used?\n\nCentral Limit Theorem: For a large enough dataset, can assume statistical quantities have an approximately normal distribution.\nLinearity/Other Mathematical Properties: Easy to work with/do calculations\n\n\nCan we think about when this might break down?"
   },
   {
-    "objectID": "labs.html#general-information",
-    "href": "labs.html#general-information",
-    "title": "Labs",
-    "section": "General Information",
-    "text": "General Information\n\nYou can download each lab notebook through the link below..\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.\nTo convert the assignment notebook to PDF, you can use VS Code to render the notebook to HTML, and then use your browser to print to PDF. If you have set up LaTeX with VS Code, you can convert directly to a PDF."
-  },
-  {
-    "objectID": "labs.html#schedule",
-    "href": "labs.html#schedule",
-    "title": "Labs",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nLab\nInstructions\nRubric\nDue Date\n\n\n\n\nLab 1\n\n\nFeb 02, 2024"
-  },
-  {
-    "objectID": "policies/homework.html",
-    "href": "policies/homework.html",
-    "title": "Homework Policies",
-    "section": "",
-    "text": "This page includes some information on the homework assignments for BEE 4850/5850, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.\nThis document is long, but please do read the whole thing. Hopefully most of this is obvious, but some of it may not be.",
-    "crumbs": [
-      "Course Information",
-      "Homework Policies"
-    ]
-  },
-  {
-    "objectID": "policies/homework.html#homework-logistics",
-    "href": "policies/homework.html#homework-logistics",
-    "title": "Homework Policies",
-    "section": "Homework Logistics",
-    "text": "Homework Logistics\nHomework assignments will be assigned on Monday and are generally due two Fridays hence (so you have two “school weeks” to work on the assignment). Solutions should be submitted as PDFs to Gradescope by 9pm on the due date. You do not need to include code unless you want to, but you should always include some description of the logic of the modeling or problem-solving process that your code implements.",
-    "crumbs": [
-      "Course Information",
-      "Homework Policies"
-    ]
-  },
-  {
-    "objectID": "policies/homework.html#how-to-write-assignments",
-    "href": "policies/homework.html#how-to-write-assignments",
-    "title": "Homework Policies",
-    "section": "How To Write Assignments",
-    "text": "How To Write Assignments\nHere are some tips for how to make the grader (the TA or Prof. Srikrishnan) understand what you mean in the time they’re looking at your problem: as noted in the rubrics, if your solution isn’t clear enough for us to follow, you will not receive the points even if your answer is technically correct, because part of demonstrating understanding is the ability to organize and communicate.\n\nBe Honest\n\nWrite everything in your own words. It’s perfectly ok to work with others; in fact, we encourage it! But you should write up and implement everything yourself; it’s very easy to convince yourself that you understand something when you’re mimicking someone else’s solution, and often we realize we don’t actually understand something when we try to write it ourselves.\nCite every outside source you use. You are allowed, in fact encouraged, to use any outside source1 Getting an idea from an outside source is not a problem, and will not lower your grade; if you’re critically evaluating the idea and implementing and writing your solution yourself (see above), then you’re demonstrating understanding even if the idea originated with someone else. But you must give appropriate credit to that source. Taking credit for someone else’s ideas and failing to properly cite an outside source, including your classmates, is plagiarism, and will be treated accordingly.\nThe only sources you do not have to cite are official class materials. If you use the lectures, lecture notes, website materials, homework solutions, etc, you do not have to cite these.\nList everyone that you worked with. Give your classmates proper credit for their assistance. If you get an idea from Ed Discussion, credit the poster. If you’re not sure if you should list someone as a collaborator, err on the side of including them. For discussions in class or in office hours, you don’t have to list everyone who participated in the discussion (though you should if you worked one on one with them), but mention that the class discussion or the office hour was useful.\n\n1 Yes, including ChatGPT, though you should ask and describe how you used it.\n\nBe Clear\n\nWrite legibly. This doesn’t refer to handwriting (since you’ll be submitting PDFs of Jupyter notebooks), but the text itself should be clearly written and well organized, so that it’s easy for the grader to follow your reasoning or explanation. Structuring your solution, and not writing in a stream of consciousness, helps you think more clearly. To reiterate: You will be given no points if the grader cannot easily follow your answer, and the graders have complete discretion to determine this.\nWrite clearly. Use proper spelling, grammar, logic, etc. We will try not to penalize people for not having complete mastery of English, but again, we need to be able to follow your reasoning.\nWrite carefully and completely. We can only grade what you write; nobody can read your mind, and we will not try. The solution that you submit must stand on its own. If your answer is ambiguous, the TA has been instructed to interpret it the wrong way. Regrade requests also cannot be used to add more information to a solution.\nDon’t submit your first draft. For most people, first drafts are terrible. They are often poorly organized, unclear, and contain gaps or jumps in reasoning. You will likely need to revise, possibly several times, for your answer to be clear, careful, and complete. This is another reason to start the assignment early — if you start late, you may be stuck with your first draft, and your grade is likely to suffer for it.\nState your assumptions. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).\nDon’t rely on your code. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end — it works or it doesn’t). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can’t do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.\n\n\n\nBe Concise\n\nKeep solutions short. Organized answers should not be long. There’s a fine balance between conciseness and completeness: find it!\nDon’t regurgitate. You can reference concepts, models, etc from class without repeating them. Just make it clear what you’re modifying and how you’re using those concepts for that particular problem.\nDon’t bullshit. You will get no points for word salad, even if you accidentally hit on the right answer.",
-    "crumbs": [
-      "Course Information",
-      "Homework Policies"
-    ]
+    "objectID": "slides/lecture02-1.html#references-1",
+    "href": "slides/lecture02-1.html#references-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nWalker, W. E., Harremoës, P., Rotmans, J., Sluijs, J. P. van der, Asselt, M. B. A. van, Janssen, P., & Krayer von Krauss, M. P. (2003). Defining uncertainty: A conceptual basis for uncertainty management in model-based decision support. Integrated Assessment, 4, 5–17. https://doi.org/10.1076/iaij.4.1.5.16466"
   },
   {
     "objectID": "about.html",

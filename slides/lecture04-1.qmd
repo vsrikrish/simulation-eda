@@ -1,0 +1,142 @@
+---
+title: "Uncertainty and Probability Review"
+subtitle: "Lecture 02"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "January 24, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+execute:
+    freeze: auto
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using Distributions
+using Plots
+using StatsPlots
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+```
+
+# Last Class
+
+## Modes of Data Analysis
+
+::: {.center}
+![](figures/data_settings.png)
+:::
+
+## Workflow/Course Organization
+
+::: {.center}
+![](figures/course_overview.png){width=70%}
+:::
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
+
+# Uncertainty and Probability
+
+## What Is Probability?
+
+::: {.fragment .fade-in}
+How we communicate/capture uncertainty depends on how we interpret probability:
+
+1. **Frequentist**: $\mathbb{P}[A]$ is the long-run *frequency* of event A occurring.
+2. **Bayesian**: $\mathbb{P}[A]$ is the degree of belief (betting odds) of event A occurring.
+
+:::
+
+## Frequentist Probability
+
+- Data is random, but there is a "true" parameter set for a given model.
+- Concerned with consistency of estimates of those parameters obtained from different samples.
+
+## Bayesian Probability
+
+Two different types of random quantities:
+
+1. Observable quantities, or data (also random for frequentists);
+2. Unobservable quantities, or parameters (not random for frequentists!).
+
+## Bayesian Probability
+
+Can discuss the *probability* of
+
+- model parameters $\mathbf{\theta}$
+- unobserved data $\tilde{\mathbf{y}}$ 
+
+conditional on the observations $\mathbf{y}$, which we can denote:
+$$p(\mathbf{\theta} | \mathbf{y}) \text{ or } p(\tilde{\mathbf{y}} | \mathbf{y})$$
+
+## Bayes' Rule
+
+Original version [@Bayes1763-at]:
+
+$$P(A | B) = \frac{P(B | A) \times P(A)}{P(B)} \quad \text{if} \quad P(B) \neq 0.$$
+
+## Bayes' Rule:
+
+Later generalized [@Laplace1774-nf]:
+
+$$\underbrace{{p(\theta | y)}}_{\text{posterior}} = \frac{\overbrace{p(y | \theta)}^{\text{likelihood}}}{\underbrace{p(y)}_\text{normalization}} \overbrace{p(\theta)}^\text{prior}$$
+
+## Confidence Intervals
+
+Frequentist estimates have **confidence intervals**: 
+
+- If you repeat the experiment and re-do the analysis, how often are your estimates "wrong" due to outlying data?
+- The procedure for generating an $\alpha$% confidence interval will contain the "true" data-generating parameters for $\alpha$% of experiments.
+- **This says nothing about whether a given interval contains the "true" value!**
+
+## Credible Intervals
+
+Bayesian estimates have **credible intervals**:
+
+- Every parameter has a distribution associated with it ()
+
+## Projection Intervals
+
+Simulations have **projection intervals** summarizing the sampling distribution of the simulated data.
+
+
+# References
+
+## References

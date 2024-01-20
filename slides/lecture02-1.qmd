@@ -1,0 +1,196 @@
+---
+title: "Uncertainty and Probability Review"
+subtitle: "Lecture 02"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "January 24, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+execute:
+    freeze: auto
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using Distributions
+using Plots
+using StatsPlots
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+```
+
+# Last Class
+
+## Modes of Data Analysis
+
+::: {.center}
+![](figures/data_settings.png)
+:::
+
+## Workflow/Course Organization
+
+::: {.center}
+![](figures/course_overview.png){width=70%}
+:::
+
+## Questions?
+
+{{< include _poll-prompt.qmd >}}
+
+# Uncertainty
+
+## What Is Uncertainty?
+
+{{< include _poll-prompt.qmd >}}
+
+## What Is Uncertainty?
+
+::: {.fragment .fade-in}
+::: {.quote}
+> ...A  departure  from  the  (unachievable)  ideal  of  complete  determinism...
+
+::: {.cite}
+--- @Walker2003-zi
+:::
+:::
+:::
+
+## Types of Uncertainty
+
+- ***Aleatoric uncertainty***: Uncertainties due to randomness/stochasticity;
+- ***Epistemic uncertainty***: Uncertainties due to lack of knowledge.
+
+## Data-Relevant Uncertainty Taxonomy
+
+| Uncertainty | Associated Uncertainties | Examples |
+|:----|:---------|:--------|
+| Structural | Included physical processes, mathematical form | Model inadequacy, (epistemic) residual uncertainty | 
+| Parametric | Parameter uncertainty | Choice of parameters, strength of coupling between models | 
+| Sampling | Natural variability, (aleatoric) residual uncertainty | Internal variability, uncertain boundary conditions | 
+
+
+# Probability Distributions
+
+## Probability Distributions
+
+***Probability distributions*** are often used to quantify uncertainty.
+
+$$x \to \mathbb{P}_{\color{green}\nu}[x] = p_{\color{green}\nu}\left(x | {\color{purple}\theta}\right)$$
+
+- ${\color{green}\nu}$: probability distribution (often implicit);
+- ${\color{purple}\theta}$: distribution parameters
+
+## Sampling Notation
+
+To write $x$ is sampled from $p(x|\theta)$:
+$$x \sim f(\theta)$$
+
+For example, for a normal distribution:
+$$x \sim \mathcal{N}(\mu, \sigma)$$
+
+## Example: Normal Distribution
+
+$$p(x | \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}^2\right)\right)$$
+
+::: {.center}
+```{julia}
+#| label: fig-normal
+#| fig-align: center
+
+plot(Normal(0, sqrt(3)), linewidth=3, color=:blue, label=L"$\mu=0$, $\sigma=\sqrt{3}$", guidefontsize=20, legendfontsize=20, tickfontsize=14)
+plot!(Normal(2, 1), linewidth=3, color=:orange, label=L"$\mu=2$, $\sigma=1$")
+plot!(Normal(0, 1), linewidth=3, color=:red, label=L"$\mu=0$, $\sigma=1$")
+plot!(size=(1200, 400), left_margin=10mm, bottom_margin=10mm)
+xlabel!(L"$x$")
+ylabel!("Probability Density")
+xlims!((-5, 5))
+```
+:::
+
+
+## Why Are Normal Distributions So Commonly Used?
+
+1. Symmetry/Unimodality
+2. Linearity
+3. Central Limit Theorem
+
+## Linearity
+
+- If $X \sim \mathcal{N}(\mu, \sigma)$: $$\bbox[yellow, 10px, border:5px solid red] {aX + b \sim \mathcal{N}\left(a\mu + b, |a|\sigma\right)}$$
+- If $X_1 \sim \mathcal{N}(\mu_1, \sigma_1)$, $X_2 \sim \mathcal{N}(\mu_2, \sigma_2)$: $$\bbox[yellow, 5px, border:5px solid red] {X_1 + X_2 \sim \mathcal{N}\left(\mu_1 + \mu_2, \sqrt{\sigma_1^2 + \sigma_2^2}\right)}$$
+
+## Central Limit Theorem: Sampling Distributions
+
+**The sum or mean of a random sample is itself a random variable**:
+
+$$\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i \sim \mathcal{D}_n$$
+
+::: {.fragment .fade-in}
+$\mathcal{D}_n$: The ***sampling distribution*** of the mean (or sum, or other estimate of interest).
+:::
+
+## Central Limit Theorem 
+
+If 
+
+- $\mathbb{E}[X_i] = \mu$ 
+- and $\text{Var}(X_i) = \sigma^2 < \infty$, 
+
+$$\begin{align*}
+&\bbox[yellow, 10px, border:5px solid red]
+{\lim_{n \to \infty} \sqrt{n}(\bar{X}_n - \mu ) = \mathcal{N}(0, \sigma^2)} \\
+\Rightarrow &\bbox[yellow, 10px, border:5px solid red] {\bar{X}_n \overset{\text{approx}}{\sim} \mathcal{N}(\mu, \sigma^2/n)}
+\end{align*}$$
+
+## Central Limit Theorem (More Intuitive)
+
+For **a large enough set of samples**, the sampling distribution of a sum or mean of random variables is approximately a normal distribution, even if the random variables themselves are not.
+
+## Why Are Normal Distributions So Commonly Used?
+
+- Central Limit Theorem: For a large enough dataset, can assume statistical quantities have an approximately normal distribution.
+- Linearity/Other Mathematical Properties: Easy to work with/do calculations
+
+::: {.fragment .fade-in}
+***Can we think about when this might break down?***
+:::
+
+
+# References
+
+## References
