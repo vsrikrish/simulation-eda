@@ -345,9 +345,9 @@ ci_frac2 = 100 * sum(ci_true) ./ n_cis
 p2 = plot([mc_ci[1, :]], [1, 1], linewidth=3, color=:blue, label="95% Confidence Interval", title="Sample Size 1,000", yticks=:false, tickfontsize=14, titlefontsize=20, legend=:false, guidefontsize=16)
 for i = 2:n_cis
     if ci_true[i]
-        plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:blue, label=:false)
+        plot!(p2, [mc_ci[i, :]], [i, i], linewidth=2, color=:blue, label=:false)
     else
-        plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:red, label=:false)
+        plot!(p2, [mc_ci[i, :]], [i, i], linewidth=2, color=:red, label=:false)
     end
 end
 vline!(p2, [mean_true], color=:black, linewidth=2, linestyle=:dash, label="True Value") # plot true value as a vertical line
