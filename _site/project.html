@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BEE 4850 - Spring 2024 - BEE 4850/5850: Environmental Data Analysis and Simulation</title>
+<title>BEE 4850 - Spring 2024 - Term Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./syllabus.html" rel="next">
+<link href="./tutorials/julia-basics.html" rel="next">
+<link href="./exercises/ex01/ex01.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="BEE 4850 - Spring 2024 - BEE 4850/5850: Environmental Data Analysis and Simulation">
+<meta property="og:title" content="BEE 4850 - Spring 2024 - Term Project">
 <meta property="og:description" content="Homepage for BEE 4850/5850, Environmental Data Analysis and Simulation, at Cornell University, Spring 2024.">
 <meta property="og:site_name" content="BEE 4850 - Spring 2024">
 </head>
@@ -84,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Course Information</a></li><li class="breadcrumb-item"><a href="./index.html">Overview</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project.html">Term Project</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -120,16 +121,16 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Course Information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -253,17 +254,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-information" id="toc-course-information" class="nav-link active" data-scroll-target="#course-information">Course Information</a></li>
-  <li><a href="#regular-weekly-schedule" id="toc-regular-weekly-schedule" class="nav-link" data-scroll-target="#regular-weekly-schedule">Regular Weekly Schedule</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#overall-instructions" id="toc-overall-instructions" class="nav-link" data-scroll-target="#overall-instructions">Overall Instructions</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Course Information</a></li><li class="breadcrumb-item"><a href="./index.html">Overview</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">BEE 4850/5850: Environmental Data Analysis and Simulation</h1>
+<h1 class="title">Term Project</h1>
 </div>
 
 
@@ -280,33 +282,51 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is the course website for the Spring 2024 edition of BEE 4850/5850, Environmental Data Analysis and Simulation, taught at <a href="https://www.cornell.edu">Cornell University</a> by <a href="https://viveks.me">Vivek Srikrishnan</a>.</p>
-<section id="course-information" class="level2">
-<h2 class="anchored" data-anchor-id="course-information">Course Information</h2>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The term project gives you an opportunity to use and extend the methods we have learned in class to an environmental data set and/or model of your choosing. More details will be provided over the semester. We will discuss each component in class as well as providing relevant information on this page.</p>
+</section>
+<section id="overall-instructions" class="level2">
+<h2 class="anchored" data-anchor-id="overall-instructions">Overall Instructions</h2>
 <ul>
-<li>Details on the class and course policies are provided in the <a href="syllabus.html">syllabus</a>.</li>
-<li>Topics and weekly materials can be found in the <a href="schedule.html">schedule</a>.</li>
+<li>Students can work individually or in groups of 2.</li>
 </ul>
 </section>
-<section id="regular-weekly-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="regular-weekly-schedule">Regular Weekly Schedule</h2>
+<section id="schedule" class="level2">
+<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
 <table class="table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 83%">
+<col style="width: 20%">
+<col style="width: 5%">
+<col style="width: 10%">
 </colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Milestone</th>
+<th style="text-align: center;">Instructions</th>
+<th style="text-align: left;">Due Date</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;"><strong>Lectures</strong></td>
-<td style="text-align: left;">MW 11:40-12:55pm, 160 Riley-Robb Hall</td>
+<td style="text-align: center;">Proposal</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><strong>Office Hours</strong></td>
-<td style="text-align: left;">MW 10:00-11:00am, 318 Riley-Robb Hall</td>
+<td style="text-align: center;">Simulation Study</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Fri, Mar 27</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><strong>Assignments</strong></td>
-<td style="text-align: left;">Due Fridays at 9pm on Gradescope.</td>
+<td style="text-align: center;">Presentations</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Mon, May 06</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Final Report</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">TBD (During Finals Week)</td>
 </tr>
 </tbody>
 </table>
@@ -748,10 +768,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./exercises/ex01/ex01.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercise 1</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./syllabus.html" class="pagination-link">
-        <span class="nav-page-text">Syllabus</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tutorials/julia-basics.html" class="pagination-link">
+        <span class="nav-page-text">Julia Basics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
