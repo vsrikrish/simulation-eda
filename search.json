@@ -494,8 +494,36 @@
     "text": "Confidence Intervals\n\n\nFrequentist estimates have confidence intervals, which will contain the “true” parameter value for \\(\\alpha\\)% of data samples.\nNo guarantee that an individual CI contains the true value (with any “probability”)!\n\n\n\n\n\n\n\n\n\n\n\nSource: https://www.wikihow.com/Throw-a-Horseshoe"
   },
   {
-    "objectID": "slides/lecture01-2.html#references-1",
-    "href": "slides/lecture01-2.html#references-1",
+    "objectID": "slides/lecture01-2.html#confidence-intervals-example-95",
+    "href": "slides/lecture01-2.html#confidence-intervals-example-95",
+    "title": "Uncertainty and Probability Review",
+    "section": "Confidence Intervals: Example (95%)",
+    "text": "Confidence Intervals: Example (95%)\n\nCode\n# set up distribution\nmean_true = 0.4\nn_cis = 100 # number of CIs to compute\ndist = Normal(mean_true, 2)\n\n# use sample size of 100\nsamples = rand(dist, (100, n_cis))\n# mapslices broadcasts over a matrix dimension, could also use a loop\nsample_means = mapslices(mean, samples; dims=1)\nsample_sd = mapslices(std, samples; dims=1) \nmc_sd = 1.96 * sample_sd / sqrt(100)\nmc_ci = zeros(n_cis, 2) # preallocate\nfor i = 1:n_cis\n    mc_ci[i, 1] = sample_means[i] - mc_sd[i]\n    mc_ci[i, 2] = sample_means[i] + mc_sd[i]\nend\n# compute percentage of CIs which contain the true value\nci_frac1 = 100 * (sum((mc_ci[:, 1] .&lt; mean_true) .&& (mc_ci[:, 2] .&gt; mean_true))) ./ n_cis\n\n# plot CIs\np1 = plot([mc_ci[1, :]], [1, 1], linewidth=3, color=:blue, label=\"95% Confidence Interval\", title=\"100 Samples with Size 100\", yticks=:false, tickfontsize=14, titlefontsize=20, legend=:false, guidefontsize=16)\nfor i = 2:n_cis\n    plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:blue, label=:false)\nend\nvline!(p1, [mean_true], color=:red, linewidth=2, linestyle=:dash, label=\"True Value\") # plot true value as a vertical line\nxaxis!(p1, \"Estimate\")\nplot!(p1, size=(500, 400)) # resize to fit slide\n\n# use sample size of 1000\nsamples = rand(dist, (1000, n_cis))\n# mapslices broadcasts over a matrix dimension, could also use a loop\nsample_means = mapslices(mean, samples; dims=1)\nsample_sd = mapslices(std, samples; dims=1) \nmc_sd = 1.96 * sample_sd / sqrt(1000)\nmc_ci = zeros(n_cis, 2) # preallocate\nfor i = 1:n_cis\n    mc_ci[i, 1] = sample_means[i] - mc_sd[i]\n    mc_ci[i, 2] = sample_means[i] + mc_sd[i]\nend\n# compute percentage of CIs which contain the true value\nci_frac2 = 100 * (sum((mc_ci[:, 1] .&lt; mean_true) .&& (mc_ci[:, 2] .&gt; mean_true))) ./ n_cis\n\n# plot CIs\np2 = plot([mc_ci[1, :]], [1, 1], linewidth=3, color=:blue, label=\"95% Confidence Interval\", title=\"100 Samples with Size 1,000\", yticks=:false, tickfontsize=14, titlefontsize=20, legend=:false, guidefontsize=16)\nfor i = 2:n_cis\n    plot!(p2, [mc_ci[i, :]], [i, i], linewidth=2, color=:blue, label=:false)\nend\nvline!(p2, [mean_true], color=:red, linewidth=2, linestyle=:dash, label=\"True Value\") # plot true value as a vertical line\nxaxis!(p2, \"Estimate\")\nplot!(p2, size=(500, 400)) # resize to fit slide\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Sample Size 100\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Sample Size 1,000\n\n\n\n\n\n\n\nFigure 1: Display of 95% confidence intervals\n\n\n\n90% of the CIs contain the true value (left) vs. 94% (right)"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#key-points",
+    "href": "slides/lecture01-2.html#key-points",
+    "title": "Uncertainty and Probability Review",
+    "section": "Key Points",
+    "text": "Key Points\n\nDifferent model-relevant uncertainties (will matter later!)\nReviewed probability distribution basics\n\nMany different distributions, suitable for different purposes\nProbability density functions vs. cumulative density functions"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#key-points-1",
+    "href": "slides/lecture01-2.html#key-points-1",
+    "title": "Uncertainty and Probability Review",
+    "section": "Key Points",
+    "text": "Key Points\n\nFrequentist vs. Bayesian probability (matters a bit later)\n\nFrequentist: parameters as fixed (trying to recover with enough experiments)\nBayesian: parameters as random (probability reflects degree of consistency with observations)\nIn both cases data are random!"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#key-points-2",
+    "href": "slides/lecture01-2.html#key-points-2",
+    "title": "Uncertainty and Probability Review",
+    "section": "Key Points",
+    "text": "Key Points\n\nConfidence Intervals:\n\n\\(\\alpha\\)% of \\(\\alpha\\)-CIs generated from different samples will contain the “true” parameter value\nDo not say anything about probability of including true value!"
+  },
+  {
+    "objectID": "slides/lecture01-2.html#references",
+    "href": "slides/lecture01-2.html#references",
     "title": "Uncertainty and Probability Review",
     "section": "References",
     "text": "References\n\n\n\n\n\n\nWalker, W. E., Harremoës, P., Rotmans, J., Sluijs, J. P. van der, Asselt, M. B. A. van, Janssen, P., & Krayer von Krauss, M. P. (2003). Defining uncertainty: A conceptual basis for uncertainty management in model-based decision support. Integrated Assessment, 4, 5–17. https://doi.org/10.1076/iaij.4.1.5.16466"
