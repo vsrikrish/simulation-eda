@@ -11,7 +11,7 @@ Note that this schedule will be updated as necessary the semester progresses, wi
 :-----:|:---------|:---------|:---------:|:------:|:--:|:---:|
 | | | ***Hypothesis Testing and Modeling*** | | | |
 |  [1](weeks/week01.qmd)   | Mon, Jan 22 | Overview, GitHub Intro | [{{< fa sharp presentation-screen >}}](slides/lecture01-1.qmd){target="_blank"}  | @Rockmore2024-ms | [{{< fa sharp coffee-pot >}}](exercises/ex01/ex01.qmd) | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.qmd) | 
-|  | Wed, Jan 24 | Uncertainty and Probability Review | [{{< fa sharp presentation-screen >}}](slides/lecture02-1.qmd) | | |
+|  | Wed, Jan 24 | Uncertainty and Probability Review | [{{< fa sharp presentation-screen >}}](slides/lecture01-2.qmd) | | |
 | 2 | Mon, Jan 29 | Hypothesis Testing and Statistical Significance | | | |
 |  | Wed, Jan 31 | Exploratory Data Analysis | | | | 
 | 3 | Mon, Feb 5 | Probability Models and Model Residuals | | | | 
