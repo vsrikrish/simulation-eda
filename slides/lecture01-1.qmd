@@ -60,6 +60,15 @@ Take a moment, write it down, and we'll share!
 - Decision-making;
 - Understanding uncertainty
 
+## The Ideal
+
+::: {.center}
+![]{https://imgs.xkcd.com/comics/statistics.png}
+:::
+::: {.caption}
+Source: [XKCD 2400](https://xkcd.com/2400/)
+:::
+
 ## Unique/Challenging Features Of Data
 
 There are many features of environmental (and biological!) data which make data analysis interesting and hard.
