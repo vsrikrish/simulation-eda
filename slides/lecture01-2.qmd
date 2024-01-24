@@ -76,10 +76,6 @@ Random.seed!(1)
 
 ## What Is Uncertainty?
 
-{{< include _poll-prompt.qmd >}}
-
-## What Is Uncertainty?
-
 ::: {.fragment .fade-in}
 ::: {.quote}
 > ...A  departure  from  the  (unachievable)  ideal  of  complete  determinism...
@@ -360,6 +356,79 @@ display(p2)
 
 `{julia} Int64(round(ci_frac1))`% of the CIs contain the true value (left) vs. `{julia} Int64(round(ci_frac2))`% (right)
 
+## Correlations
+
+**Correlation** refers to whether two variables increase or decrease simultaneously.
+
+Typically measured with Pearson's coefficient:
+
+$$r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y} \in (-1, 1)$$
+
+## Correlation Examples
+
+```{julia}
+#| label: fig-correlation
+#| code-fold: true
+#| code-overflow: wrap
+#| echo: true
+#| layout-ncol: 3
+#| fig-cap: "Independent vs. Correlated Normal Variables"
+#| fig-subcap: 
+#|  - "Independent Variables"
+#|  - "Correlated Variables ($r=0.7$)"
+#|  - "Anti-Correlated Variables ($r=-0.7$)"
+
+# sample 1000 independent variables from a given normal distribution
+sample_independent = rand(Normal(0, 1), (2, 1000))
+p1 = scatter(sample_independent[1, :], sample_independent[2, :], label=:false, title="Independent Variables", tickfontsize=14, titlefontsize=18, guidefontsize=18)
+xlabel!(p1, L"$x_1$")
+ylabel!(p1, L"$x_2$")
+plot!(p1, size=(400, 500))
+
+# sample 1000 correlated variables, with r=0.7
+sample_correlated = rand(MvNormal([0; 0], [1 0.7; 0.7 1]), 1000)
+p2 = scatter(sample_correlated[1, :], sample_correlated[2, :], label=:false, title=L"Correlated ($r=0.7$)", tickfontsize=14, titlefontsize=18, guidefontsize=18)
+xlabel!(p2, L"$x_1$")
+ylabel!(p2, L"$x_2$")
+plot!(p2, size=(400, 500))
+
+# sample 1000 anti-correlated variables, with r=-0.7
+sample_anticorrelated = rand(MvNormal([0; 0], [1 -0.7; -0.7 1]), 1000)
+p3 = scatter(sample_anticorrelated[1, :], sample_anticorrelated[2, :], label=:false, title=L"Anticorrelated ($r=-0.7$)", tickfontsize=14, titlefontsize=18, guidefontsize=18)
+xlabel!(p3, L"$x_1$")
+ylabel!(p3, L"$x_2$")
+plot!(p3, size=(400, 500))
+
+display(p1)
+display(p2)
+display(p3)
+```
+
+## Correlation and Climate Models
+
+::: {.center}
+::: {.layout-ncol=2}
+![](figures/errickson-2021_correlations.png){width=30%}
+![](figures/errickson-2021_projections.png){width=60%}
+:::
+::: {.caption}
+Source: @Errickson2021-kr
+:::
+:::
+
+
+## Autocorrelation
+
+Time series can also be auto-correlated, called an **autoregressive model**:
+
+$$y_t = \sum_{i=1}^{t-1} \rho_i y_{t-i} + \varepsilon_t$$
+
+::: {.fragment .fade-in}
+***Example***: A time series is autocorrelated with lag 1 (called an AR(1) model) if $y_t = \rho y_{t-1} + \varepsilon_t$.  
+
+:::
+
+
 # Recap
 
 ## Key Points
@@ -381,5 +450,10 @@ display(p2)
   - $\alpha$% of $\alpha$-CIs generated from different samples will contain the "true" parameter value
   - ***Do not*** say anything about probability of including true value!
 
+## Key Points
+
+- Independence vs. Correlations
+  - Do two variables increase/decrease together/in opposition or are they unrelated?
+  - Can be very important scientifically!
 
 ## References
