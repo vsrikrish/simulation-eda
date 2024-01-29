@@ -1,0 +1,24 @@
+---
+title: "Week 2"
+---
+
+## Announcements
+
+- [Homework 1](../assignments/hw01/hw01.qmd) and [Exercise 1](../exercises/ex01/ex01.qmd) due 2/2/24.
+
+## Readings
+
+As you're reading along, please use the collaborative annotation in Canvas to make notes and read and respond to others' thoughts and questions. Post a summary of key points, takeaways, and thoughts on Ed Discussion and be prepared to engage in the discussion on-line. We will dedicate class time to this reading on Wednesday, so make sure you've read it, though you'll have more time to finalize your thoughts for the online.
+
+**Note**: The link here will require additional access through the Cornell library; use [the class schedule](../schedule.qmd) for a direct link or access through Canvas.
+
+- Stein, M. L. (2020). Some statistical issues in climate science. Statistical Science: A Review Journal of the Institute of Mathematical Statistics, 35(1), 31–41. https://doi.org/10.1214/19-sts730
+
+## Exercises
+
+- [Loading, Plotting, and Reasoning About Data](../exercises/ex01/ex01.qmd)
+
+## Lectures
+
+- [Lecture 02-1: Probability Models and Model Residuals](../slides/lecture02-1.qmd)
+- Lecture 02-2: Uncertainty and Probability Review
