@@ -1195,7 +1195,7 @@
     "href": "slides/lecture02-1.html#equilibrium-climate-sensitivity-ecs",
     "title": "Probability Models and Model Residuals",
     "section": "Equilibrium Climate Sensitivity (ECS)",
-    "text": "Equilibrium Climate Sensitivity (ECS)\nUnder steady-state conditions (constant \\(F\\) and \\(dT/dt = 0\\)), \\[T = \\frac{F}{\\lambda}.\\]\nWhen we double atmospheric CO2, we refer to the equilibrium temperature \\(S\\) as the equilibrium climate sensitivity:\n\\[\nS = \\underbrace{F_{2\\times \\text{CO}_2}}_{\\approx 4 \\text{W/m}^2}/\\lambda\\]"
+    "text": "Equilibrium Climate Sensitivity (ECS)\nUnder steady-state conditions (constant \\(F\\) and \\(dT/dt = 0\\)), \\[T = \\frac{F}{\\lambda}.\\]\nWhen we double atmospheric CO2, we refer to the equilibrium temperature \\(S\\) as the equilibrium climate sensitivity:\n\\[S = \\underbrace{F_{2\\times \\text{CO}_2}}_{\\approx 4 \\text{W/m}^2}/\\lambda\\]"
   },
   {
     "objectID": "slides/lecture02-1.html#degree-of-freedom-free-parameters",
@@ -1230,7 +1230,14 @@
     "href": "slides/lecture02-1.html#fitting-the-ebm-by-minimizing-rmse",
     "title": "Probability Models and Model Residuals",
     "section": "Fitting the EBM By Minimizing RMSE",
-    "text": "Fitting the EBM By Minimizing RMSE\n\n\nCode\n# define RMSE function\nrmse(y, x) = sqrt(mean((y .- x).^2))\n\n# define wrapper function to map parameters to model evaluations\nebm_wrap(params) = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx], p = params)\n# minimize RMSE within some range for each parameter\n# important to make everything a Float instead of an Int \nlower = [1.0, 50.0, 0.0]\nupper = [4.0, 150.0, 2.0]\np0 = [2.0, 100.0, 1.0]\nresult = Optim.optimize(params -&gt; rmse(ebm_wrap(params), temp_obs), lower, upper, p0)\nθ = result.minimizer\nθ\n\n\n3-element Vector{Float64}:\n  1.943747735126569\n 86.39106697164416\n  0.7893331703704984"
+    "text": "Fitting the EBM By Minimizing RMSE\n\n# define RMSE function\nrmse(y, x) = sqrt(mean((y .- x).^2))\n\n# define wrapper function to map parameters to model evaluations\nebm_wrap(params) = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx], p = params)\n# minimize RMSE within some range for each parameter\n# important to make everything a Float instead of an Int \nlower = [1.0, 50.0, 0.0]\nupper = [4.0, 150.0, 2.0]\np0 = [2.0, 100.0, 1.0]\nresult = Optim.optimize(params -&gt; rmse(ebm_wrap(params), temp_obs), lower, upper, p0)\nθ = result.minimizer\nθ"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#fitting-the-ebm-by-minimizing-rmse-output",
+    "href": "slides/lecture02-1.html#fitting-the-ebm-by-minimizing-rmse-output",
+    "title": "Probability Models and Model Residuals",
+    "section": "Fitting the EBM By Minimizing RMSE",
+    "text": "Fitting the EBM By Minimizing RMSE\n\n3-element Vector{Float64}:\n  1.943747735126569\n 86.39106697164416\n  0.7893331703704984"
   },
   {
     "objectID": "slides/lecture02-1.html#fitted-results",
@@ -1258,7 +1265,7 @@
     "href": "slides/lecture02-1.html#probability-model-fitting",
     "title": "Probability Models and Model Residuals",
     "section": "Probability Model Fitting",
-    "text": "Probability Model Fitting\nFitting a probability model ⇔ Maximizing Likelihood\nWe often work with log-likelihoods.\n\nThere is a lot to maximum likelihood estimation which we will only touch on."
+    "text": "Probability Model Fitting\nFitting a probability model ⇔ Maximizing Likelihood\n\n\nWe often work with log-likelihoods since \\[\\operatorname{argmax} \\left[\\log f(x)\\right] = \\operatorname{argmax} f(x)\\]\nand sums and small numbers are more stable.\n\n\n\nCode\nx = 0:0.1:3\nf(x) = abs.(3 - (x-2)^2)\nplot(x, f.(x), color=:blue, label=L\"$f(x)$\", linewidth=3, legend=:bottomright, tickfontsize=16, legendfontsize=16, guidefontsize=18)\nplot!(x, log.(f.(x)), color=:red, label=L\"$\\log f(x))$\", linewidth=3)\nplot!(size=(500, 400))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Comparing logarithm of a function with the function."
   },
   {
     "objectID": "slides/lecture02-1.html#model-residuals",
@@ -1268,32 +1275,39 @@
     "text": "Model Residuals\nModel Residuals are the “error” between the model simulations and the data.\n\\[\\underbrace{\\mathbf{r}}_{\\text{residuals}} = F(\\mathbf{x}; \\theta) - \\underbrace{\\mathbf{y}}_{\\text{data}}\\]\n\nThe connection between statistical modeling and simulation modeling is developing a probability model for the residuals."
   },
   {
-    "objectID": "slides/lecture02-1.html#probabilistic-interpretation-of-rmse-minimization",
-    "href": "slides/lecture02-1.html#probabilistic-interpretation-of-rmse-minimization",
+    "objectID": "slides/lecture02-1.html#statistical-interpretation-of-rmse-minimization",
+    "href": "slides/lecture02-1.html#statistical-interpretation-of-rmse-minimization",
     "title": "Probability Models and Model Residuals",
-    "section": "Probabilistic Interpretation of RMSE Minimization",
-    "text": "Probabilistic Interpretation of RMSE Minimization\nClaim: Minimizing the (R)MSE is the same as maximizing likelihood assuming normally-distributed residuals (with known variance).\n\\[\n\\begin{gather*}\n\\mathbf{y} = F(\\mathbf{x}; \\theta) - \\mathbf{r} \\\\\nr_i \\sim \\mathcal{N}(0, \\sigma)\n\\end{gather*}\n\\]"
+    "section": "Statistical Interpretation of RMSE Minimization",
+    "text": "Statistical Interpretation of RMSE Minimization\nClaim: Minimizing the (R)MSE is the same as maximizing likelihood assuming independent and identically-normally-distributed residuals (with known variance).\n\\[\n\\begin{gather*}\n\\mathbf{y} = F(\\mathbf{x}) - \\mathbf{r} \\\\\nr_i \\overset{\\text{i.i.d.}}{\\sim} \\mathcal{N}(0, \\sigma)\n\\end{gather*}\n\\]"
   },
   {
     "objectID": "slides/lecture02-1.html#likelihood-of-normal-residuals",
     "href": "slides/lecture02-1.html#likelihood-of-normal-residuals",
     "title": "Probability Models and Model Residuals",
     "section": "Likelihood of Normal Residuals",
-    "text": "Likelihood of Normal Residuals\n\\[\\mathcal{L}(\\theta, \\mathbf{y}; F) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}} \\exp(-\\frac{y_i - F(x_i; \\theta)^2}{2\\sigma^2})\\]"
+    "text": "Likelihood of Normal Residuals\nData Probability Model:\n\\[y_i \\sim \\mathcal{N}(F(x_i), \\sigma)\\]\n\n\\[\\mathcal{L}(\\theta | \\mathbf{y}; F) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}} \\exp(-\\frac{y_i - F(x_i)^2}{2\\sigma^2})\\]\n\n\n\\[\\log \\mathcal{L}(\\theta | \\mathbf{y}; F) = \\sum_{i=1}^n \\left[\\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2}(y_i - F(x_i))^2 \\right]\\]"
   },
   {
-    "objectID": "slides/lecture02-1.html#take-the-log-likelihood",
-    "href": "slides/lecture02-1.html#take-the-log-likelihood",
+    "objectID": "slides/lecture02-1.html#simplifying-log-likelihood",
+    "href": "slides/lecture02-1.html#simplifying-log-likelihood",
     "title": "Probability Models and Model Residuals",
-    "section": "Take the Log-Likelihood",
-    "text": "Take the Log-Likelihood\n\\[\n\\begin{align}\n\\log \\mathcal{L}(\\theta, \\mathbf{y}; F) &= \\sum_{i=1}^n \\left[\\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2}(y_i - F(x_i; \\theta))  ^2 \\right] \\\\\n&= n \\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2} \\sum_{i=1}^n (y_i - F(x_i; \\theta))^2\n\\end{align}\n\\]"
+    "section": "",
+    "text": "\\[\n\\begin{align}\n\\log \\mathcal{L}(\\theta | \\mathbf{y}, F) &= \\sum_{i=1}^n \\left[\\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2}(y_i - F(x_i))  ^2 \\right] \\\\\n&= n \\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2} \\sum_{i=1}^n (y_i - F(x_i))^2\n\\end{align}\n\\]"
   },
   {
-    "objectID": "slides/lecture02-1.html#simplifying-by-ignoring-constants",
-    "href": "slides/lecture02-1.html#simplifying-by-ignoring-constants",
+    "objectID": "slides/lecture02-1.html#simplifying-constants-ignore",
+    "href": "slides/lecture02-1.html#simplifying-constants-ignore",
     "title": "Probability Models and Model Residuals",
-    "section": "Simplifying by Ignoring Constants",
-    "text": "Simplifying by Ignoring Constants\nIgnoring constants (including \\(\\sigma\\)):\n\\[-\\sum_{i=1}^n (y_i - F(x_i; \\theta))^2.\\]\n\nMaximizing this is equivalent to minimizing the negative:\n\\[\n\\sum_{i=1}^n (y_i - F(x_i; \\theta))^2 = \\text{MSE}\n\\]"
+    "section": "",
+    "text": "Ignoring constants (including \\(\\sigma\\)):\n\\[\\log \\mathcal{L}(\\theta | \\mathbf{y}, F) \\propto -\\sum_{i=1}^n (y_i - F(x_i))^2.\\]\n\nMaximizing \\(f(x)\\) is equivalent to minimizing \\(-f(x)\\):\n\\[\n- \\log \\mathcal{L}(\\theta | \\mathbf{y}, F) \\propto \\sum_{i=1}^n (y_i - F(x_i))^2 = \\text{MSE}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#key-points-1",
+    "href": "slides/lecture02-1.html#key-points-1",
+    "title": "Probability Models and Model Residuals",
+    "section": "Key Points",
+    "text": "Key Points\n\nGoal of model-based data analysis: Gain insights into data or underlying system through model simulations.\nRequires developing probability model for data or residuals.\nFitting a model as maximum likelihood estimation.\nCan develop more complex models (autocorrelated residuals, non-normal errors) but these may not result in “standard” error metrics."
   },
   {
     "objectID": "slides/lecture02-1.html#next-classes",
