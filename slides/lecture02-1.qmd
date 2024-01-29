@@ -1,10 +1,10 @@
 ---
-title: "Uncertainty and Probability Review"
-subtitle: "Lecture 02"
+title: "Probability Models and Model Residuals"
+subtitle: "Lecture 03"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
 institution: "Cornell University"
-date: "January 24, 2024"
+date: "January 29, 2024"
 format:
     revealjs:
         slide-number: c/t
@@ -50,11 +50,14 @@ using Plots
 using StatsPlots
 using LaTeXStrings
 using Measures
+using CSV
+using DataFrames
+using Optim
 
 Random.seed!(1)
 ```
 
-# Last Class
+# Last Class(es)
 
 ## Modes of Data Analysis
 
@@ -62,135 +65,346 @@ Random.seed!(1)
 ![](figures/data_settings.png)
 :::
 
-## Workflow/Course Organization
+## Probability Review
 
-::: {.center}
-![](figures/course_overview.png){width=70%}
-:::
+- Distributions
+- Central Limit Theorem
+- Confidence Intervals
 
 ## Questions?
 
 {{< include _poll-prompt.qmd >}}
 
-# Uncertainty
+# Modeling Example: Radiative Forcing and Warming
 
-## What Is Uncertainty?
+## Historical Temperature Anomalies
 
-{{< include _poll-prompt.qmd >}}
-
-## What Is Uncertainty?
-
-::: {.fragment .fade-in}
-::: {.quote}
-> ...A  departure  from  the  (unachievable)  ideal  of  complete  determinism...
-
-::: {.cite}
---- @Walker2003-zi
-:::
-:::
-:::
-
-## Types of Uncertainty
-
-- ***Aleatoric uncertainty***: Uncertainties due to randomness/stochasticity;
-- ***Epistemic uncertainty***: Uncertainties due to lack of knowledge.
-
-## Data-Relevant Uncertainty Taxonomy
-
-| Uncertainty | Associated Uncertainties | Examples |
-|:----|:---------|:--------|
-| Structural | Included physical processes, mathematical form | Model inadequacy, (epistemic) residual uncertainty | 
-| Parametric | Parameter uncertainty | Choice of parameters, strength of coupling between models | 
-| Sampling | Natural variability, (aleatoric) residual uncertainty | Internal variability, uncertain boundary conditions | 
-
-
-# Probability Distributions
-
-## Probability Distributions
-
-***Probability distributions*** are often used to quantify uncertainty.
-
-$$x \to \mathbb{P}_{\color{green}\nu}[x] = p_{\color{green}\nu}\left(x | {\color{purple}\theta}\right)$$
-
-- ${\color{green}\nu}$: probability distribution (often implicit);
-- ${\color{purple}\theta}$: distribution parameters
-
-## Sampling Notation
-
-To write $x$ is sampled from $p(x|\theta)$:
-$$x \sim f(\theta)$$
-
-For example, for a normal distribution:
-$$x \sim \mathcal{N}(\mu, \sigma)$$
-
-## Example: Normal Distribution
-
-$$p(x | \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}^2\right)\right)$$
-
-::: {.center}
 ```{julia}
-#| label: fig-normal
+#| echo: true
+#| code-fold: true
+#| label: fig-temps
 #| fig-align: center
+#| fig-cap: Global temperature anomalies
 
-plot(Normal(0, sqrt(3)), linewidth=3, color=:blue, label=L"$\mu=0$, $\sigma=\sqrt{3}$", guidefontsize=20, legendfontsize=20, tickfontsize=14)
-plot!(Normal(2, 1), linewidth=3, color=:orange, label=L"$\mu=2$, $\sigma=1$")
-plot!(Normal(0, 1), linewidth=3, color=:red, label=L"$\mu=0$, $\sigma=1$")
-plot!(size=(1200, 400), left_margin=10mm, bottom_margin=10mm)
-xlabel!(L"$x$")
-ylabel!("Probability Density")
-xlims!((-5, 5))
+
+temps = CSV.read("data/climate/HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv", DataFrame, delim=",")
+
+time_obs = temps[:, 1]
+temp_obs = temps[:, 2]
+temp_lo = temps[:, 3]
+temp_hi = temps[:, 4]
+
+temp_lo = temp_lo .- mean(temp_obs[1:20])
+temp_hi = temp_hi .- mean(temp_obs[1:20])
+temp_obs = temp_obs .- mean(temp_obs[1:20]) # compute anomalies relative to first 20 years of data
+
+plot(time_obs, temp_obs, ribbon=(temp_obs-temp_lo,temp_hi-temp_obs), color="blue", linewidth=2, fillalpha=0.2, legend=false, xlabel="Year", ylabel="Temperature anomaly (°C)", labelfontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)
+plot!(size=(950, 450))
 ```
+::: {.caption}
+Data Source: [HadCRUT 5.0.1.0](https://hadobs.metoffice.gov.uk/hadcrut5/data/HadCRUT.5.0.1.0/download.html)
 :::
 
+## Planetary Energy Balance
 
-## Why Are Normal Distributions So Commonly Used?
+![Representation of Planetary Energy Balance](https://www.e-education.psu.edu/meteo469/sites/www.e-education.psu.edu.meteo469/files/lesson04/ebm_0_dim.gif)
 
-1. Symmetry/Unimodality
-2. Linearity
-3. Central Limit Theorem
+::: {.caption}
+Source: Reprinted from A Climate Modeling Primer, A. Henderson-Sellers and K. McGuffie, Wiley, pg. 58, (1987) via <https://www.e-education.psu.edu/meteo469/node/137>.
+:::
 
-## Linearity
+## Radiative Forcing
 
-- If $X \sim \mathcal{N}(\mu, \sigma)$: $$\bbox[yellow, 10px, border:5px solid red] {aX + b \sim \mathcal{N}\left(a\mu + b, |a|\sigma\right)}$$
-- If $X_1 \sim \mathcal{N}(\mu_1, \sigma_1)$, $X_2 \sim \mathcal{N}(\mu_2, \sigma_2)$: $$\bbox[yellow, 5px, border:5px solid red] {X_1 + X_2 \sim \mathcal{N}\left(\mu_1 + \mu_2, \sqrt{\sigma_1^2 + \sigma_2^2}\right)}$$
+Climate changes result from changes to the energy balance of the planet (or **radiative forcings**), due to *e.g.*:
 
-## Central Limit Theorem: Sampling Distributions
+- greenhouse gas emissions (which trap radiation, warming the planet);
+- aerosol emissions from air pollution or volcanic eruptions (which block incoming radiation, cooling the planet);
+- changes to the solar cycle (which can increase or decrease the incoming solar radiation).
 
-**The sum or mean of a random sample is itself a random variable**:
+## Historical Radiative Forcing
 
-$$\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i \sim \mathcal{D}_n$$
+```{julia}
+#| label: fig-rf
+#| fig-align: center
+#| fig-cap: Historical and projected radiative forcings.
+#| code-fold: true
+#| echo: true
+
+# Dataset from https://zenodo.org/record/3973015
+# The CSV is read into a DataFrame object, and we specify that it is comma delimited
+forcings_all_85 = CSV.read("data/climate/ERF_ssp585_1750-2500.csv", DataFrame, delim=",")
+
+# Separate out the individual components
+forcing_co2_85 = forcings_all_85[!,"co2"]
+# Get total aerosol forcings
+forcing_aerosol_rad_85 = forcings_all_85[!,"aerosol-radiation_interactions"]
+forcing_aerosol_cloud_85 = forcings_all_85[!,"aerosol-cloud_interactions"]
+forcing_aerosol_85 = forcing_aerosol_rad_85 + forcing_aerosol_cloud_85
+forcing_total_85 = forcings_all_85[!,"total"]
+forcing_non_aerosol_85 = forcing_total_85 - forcing_aerosol_85
+forcing_other_85 = forcing_total_85 - (forcing_co2_85 + forcing_aerosol_85)
+
+t = time_forcing = Int64.(forcings_all_85[!,"year"]) # Ensure that years are interpreted as integers
+
+plot(xlabel="Year", ylabel="Radiative Forcing (W/m²)", tickfontsize=16, guidefontsize=18, legendfontsize=16, leftmargin=10mm, bottommargin=5mm, right_margin=5mm)
+plot!(time_forcing, forcing_total_85, label="Total", color=:black, linewidth=3)
+plot!(time_forcing, forcing_co2_85, label="CO₂", color=:orange, linewidth=2)
+plot!(time_forcing, forcing_aerosol_85, label="Aerosol", color=:blue, linewidth=2)
+plot!(time_forcing, forcing_other_85, label="Other", color=:purple, linewidth=2)
+plot!(size=(800, 450))
+xlims!((1750, 2020))
+ylims!(-4.5, 5)
+
+```
+::: {.caption}
+Data Source: <https://zenodo.org/records/3973015>
+:::
+
+## What Are Some Sources of Relevant Uncertainty in Understanding Past and Future Climate Changes and Impacts?
 
 ::: {.fragment .fade-in}
-$\mathcal{D}_n$: The ***sampling distribution*** of the mean (or sum, or other estimate of interest).
+One key question: what is the sensitivity of warming to continued CO~2~ emissions?
 :::
 
-## Central Limit Theorem 
+## The Energy Balance Model (EBM)
 
-If 
+\begin{align*}
+\overbrace{\frac{dH}{dt}}^{\text{change in heat}} &= \overbrace{F}^{\text{RF}} - \overbrace{\lambda T}^{\substack{\text{change in} \\ \text{temperature}}} \\
+\underbrace{C}_{\substack{\text{ocean heat} \\ \text{capacity}}} \frac{dT}{dt} &= F - \lambda T \\
+cd \frac{dT}{dt} &= F - \lambda T,
+\end{align*}
 
-- $\mathbb{E}[X_i] = \mu$ 
-- and $\text{Var}(X_i) = \sigma^2 < \infty$, 
+## The EBM (cont'd)
 
-$$\begin{align*}
-&\bbox[yellow, 10px, border:5px solid red]
-{\lim_{n \to \infty} \sqrt{n}(\bar{X}_n - \mu ) = \mathcal{N}(0, \sigma^2)} \\
-\Rightarrow &\bbox[yellow, 10px, border:5px solid red] {\bar{X}_n \overset{\text{approx}}{\sim} \mathcal{N}(\mu, \sigma^2/n)}
-\end{align*}$$
+- $c = 4.184\times 10^6 \\ \text{J/K/m}^2$ is the specific heat of water per area.
+- Total RF: $$F = F_\text{non-aerosol} + \alpha F_\text{aerosol}.$$
+- The **climate feedback factor**  $\lambda$ controls how much the Earth warms in response to radiative forcing.
 
-## Central Limit Theorem (More Intuitive)
+## EBM Solution
 
-For **a large enough set of samples**, the sampling distribution of a sum or mean of random variables is approximately a normal distribution, even if the random variables themselves are not.
+Use Euler discretization:
 
-## Why Are Normal Distributions So Commonly Used?
+\begin{gather*}
+C \frac{dT}{dt} = F - \lambda T \\\\
+\Rightarrow C \frac{T_{i+1}-T_i}{\Delta t} = F_i - \lambda T_i \\\\
+\Rightarrow \bbox[yellow, 10px, border:5px solid red]{T_{i+1} = T_i + \frac{F_i - \lambda T_i}{C} \Delta t}
+\end{gather*}
 
-- Central Limit Theorem: For a large enough dataset, can assume statistical quantities have an approximately normal distribution.
-- Linearity/Other Mathematical Properties: Easy to work with/do calculations
+## Equilibrium Climate Sensitivity (ECS)
+
+Under steady-state conditions (constant $F$ and $dT/dt = 0$), $$T = \frac{F}{\lambda}.$$
+
+When we double atmospheric CO~2~, we refer to the equilibrium temperature $S$ as the **equilibrium climate sensitivity**:
+
+$$
+S = \underbrace{F_{2\times \text{CO}_2}}_{\approx 4 \text{W/m}^2}/\lambda$$
+
+# Model Fitting
+
+## Degree of Freedom / Free Parameters
+
+There are a few uncertain parameters:
+
+- $\lambda$ or $S$
+- $d$ (ocean mixing depth)
+- $\alpha$ (aerosol scaling factor)
+
+## Model Fitting By Minimizing Loss
+
+***Idea***: Find **best estimates** $\theta^*$ of model parameters $\theta$ by minimizing the mismatch between data and simulations (denote by $\mathbf{y} = F(\theta)$).
+
+***Key choice***: "loss function" $L(\mathbf{y}, \mathbf{x})$, then:
+$$\theta^*  = \underset{\theta}{\operatorname{argmin}} L(F(\theta), \mathbf{x}).$$
 
 ::: {.fragment .fade-in}
-***Can we think about when this might break down?***
+**Can you think of some common loss functions? What do they imply about how to penalize model error?**
 :::
 
+## Programming Implementation
 
-# References
+```{julia}
+#| output: false
+#| echo: true
+#| code-overflow: wrap
 
-## References
+# use default values of S=3.2°C, d=100m, α=1.3
+function ebm(rf_nonaerosol, rf_aerosol; p=(3.2, 100, 1.3))
+    # set up model parameters
+    S, d, α = p # this unpacks the parameter tuple into variables
+    F2xCO₂ = 4.0 # radiative forcing [W/m²] for a doubling of CO₂
+    λ = F2xCO₂ / S
+
+    c = 4.184e6 # heat capacity/area [J/K/m²]
+    C = c*d # heat capacity of mixed layer (per area)
+    F = rf_nonaerosol + α*rf_aerosol # radiative forcing
+    Δt = 31558152. # annual timestep [s]
+
+    T = zero(F)
+    for i in 1:length(F)-1
+        T[i+1] = T[i] + (F[i] - λ*T[i])/C * Δt
+    end
+    
+    # return after normalizing to reference period
+    return T .- mean(T[1:20])
+end
+```
+
+## Model Evaluation (Default Parameters)
+
+```{julia}
+#| label: fig-model-default
+#| fig-align: center
+#| fig-cap: Comparison of model simualtion with default parameters and data.
+#| echo: true
+#| code-fold: true
+
+# generate simulations
+sim_years = 1850:2020 # model years to simulate
+idx = indexin(sim_years, t) # find indices in t vector of simulation years
+# since we specified default values for p, those are used for the parameters
+temp_default = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx]) 
+
+temp_obs = temp_obs[indexin(sim_years, time_obs)] # filter to simulated years for plotting
+temp_obs = temp_obs .- mean(temp_obs[1:20]) # re-normalize to be consistent with the model
+# plot simulated output and data
+plot(sim_years, temp_default, xlabel="Year", ylabel="Temperature Anomaly (°C)", color=:blue, label="Simulation", linewidth=3, tickfontsize=16, guidefontsize=18, legendfontsize=16, leftmargin=10mm, bottommargin=5mm, right_margin=5mm)
+scatter!(sim_years, temp_obs, color=:black, linewidth=2, fillalpha=0.2, label="Data")
+```
+
+## Fitting the EBM By Minimizing RMSE
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+
+# define RMSE function
+rmse(y, x) = sqrt(mean((y .- x).^2))
+
+# define wrapper function to map parameters to model evaluations
+ebm_wrap(params) = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx], p = params)
+# minimize RMSE within some range for each parameter
+# important to make everything a Float instead of an Int 
+lower = [1.0, 50.0, 0.0]
+upper = [4.0, 150.0, 2.0]
+p0 = [2.0, 100.0, 1.0]
+result = Optim.optimize(params -> rmse(ebm_wrap(params), temp_obs), lower, upper, p0)
+θ = result.minimizer
+θ
+```
+
+## Fitted Results
+
+```{julia}
+#| label: fig-model-optimized
+#| fig-align: center
+#| fig-cap: Comparison of model simulation with fitted parameters, default parameters, and data.
+#| echo: true
+#| code-fold: true
+
+temp_fitted = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx]; p = θ) 
+
+# plot simulated output and data
+plot(sim_years, temp_default, xlabel="Year", ylabel="Temperature Anomaly (°C)", color=:blue, label="Default Simulation", linewidth=3, tickfontsize=16, guidefontsize=18, legendfontsize=16, leftmargin=10mm, bottommargin=5mm, right_margin=5mm)
+plot!(sim_years, temp_fitted, color=:red, label="Fitted Simulation", linewidth=3)
+scatter!(sim_years, temp_obs, color=:black, linewidth=2, fillalpha=0.2, label="Data")
+```
+
+## What the EBM Neglects
+
+What are some things the EBM neglects or simplifies?
+
+::: {.fragment .fade-in}
+
+::: {.callout-important}
+Since models can be so stylized, optimal model parameters which **ought** to correspond to physical values may not match their true values.
+:::
+:::
+
+# Statistical Interpretation of Model Fitting
+
+## Likelihood of Parameters
+
+**Probability of data given probability model**: $p(\mathbf{x} | \theta)$
+
+**Likelihood of parameters given probability model and data**: $\mathcal{L}(\theta | \mathbf{x}) = p(\mathbf{x} | \theta)$
+
+**Example (normal distribution)**:
+
+$$\mathcal{L}(\mu, \sigma | \mathbf{x}) = p(\mathbf{x} | \mu, \sigma) = \prod_{i=1}^n \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x_i - \mu}{\sigma}^2\right)\right)$$
+
+## Probability Model Fitting
+
+Fitting a probability model &hArr; Maximizing Likelihood
+
+We often work with **log-likelihoods**.
+
+::: {.fragment .fade-in}
+**There is a lot to maximum likelihood estimation which we will only touch on.**
+:::
+
+## Model Residuals
+
+**Model Residuals** are the "error" between the model simulations and the data.
+
+$$\underbrace{\mathbf{r}}_{\text{residuals}} = F(\mathbf{x}; \theta) - \underbrace{\mathbf{y}}_{\text{data}}$$
+
+::: {.fragment .fade-in}
+The connection between statistical modeling and simulation modeling is developing a probability model for the residuals.
+:::
+
+## Probabilistic Interpretation of RMSE Minimization
+
+**Claim**: Minimizing the (R)MSE is the same as maximizing likelihood assuming normally-distributed residuals (with known variance).
+
+$$
+\begin{gather*}
+\mathbf{y} = F(\mathbf{x}; \theta) - \mathbf{r} \\
+r_i \sim \mathcal{N}(0, \sigma)
+\end{gather*}
+$$
+
+## Likelihood of Normal Residuals
+
+$$\mathcal{L}(\theta, \mathbf{y}; F) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi}} \exp(-\frac{y_i - F(x_i; \theta)^2}{2\sigma^2})$$
+
+## Take the Log-Likelihood
+
+$$
+\begin{align}
+\log \mathcal{L}(\theta, \mathbf{y}; F) &= \sum_{i=1}^n \left[\log \frac{1}{\sqrt{2\pi}} - \frac{1}{2\sigma^2}(y_i - F(x_i; \theta))  ^2 \right] \\
+&= n \log \frac{1}{\sqrt{2\pi}} - \frac{1}{2\sigma^2} \sum_{i=1}^n (y_i - F(x_i; \theta))^2
+\end{align}
+$$
+
+## Simplifying by Ignoring Constants
+
+Ignoring constants (including $\sigma$):
+
+$$-\sum_{i=1}^n (y_i - F(x_i; \theta))^2.$$
+
+::: {.fragment .fade-in}
+Maximizing this is equivalent to minimizing the negative:
+
+$$
+\sum_{i=1}^n (y_i - F(x_i; \theta))^2 = \text{MSE}
+$$
+:::
+
+# Key Points
+
+- **Goal of model-based data analysis**: Gain insights into data or underlying system through model simulations.
+- Requires developing probability model for data or residuals.
+- Can develop more complex models (autocorrelated residuals, non-normal errors) but these may not result in "standard" error metrics.
+
+# Upcoming Schedule
+
+## Next Class(es)
+
+**Wednesday**: Bayesian statistics and probability models
+
+**Next Week**: Exploratory data analysis
+
+## Assessments
+
+**Friday**: HW1 and Exercise 1 due by 9pm.

@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nExercises\nHomework\n\n\n\n\n\n\nHypothesis Testing and Modeling\n\n\n\n\n\n\n1\nMon, Jan 22\nOverview, GitHub Intro\n\nRockmore (2024)\n\n\n\n\n\nWed, Jan 24\nUncertainty and Probability Review\n\n\n\n\n\n\n2\nMon, Jan 29\nHypothesis Testing and Statistical Significance\n\n\n\n\n\n\n\nWed, Jan 31\nExploratory Data Analysis\n\n\n\n\n\n\n3\nMon, Feb 5\nProbability Models and Model Residuals\n\n\n\n\n\n\n\nWed, Feb 7\nProbability Models II\n\n\n\n\n\n\n4\nMon, Feb 12\nBayesian Statistics and Decision Analysis\n\n\n\n\n\n\n\nWed, Feb 14\nHypothesis Testing As Decision-Making\n\n\n\n\n\n\n5\nMon, Feb 19\nData Visualization\n\n\n\n\n\n\n\nWed, Feb 21\nGraphical Checks of Model Residuals\n\n\n\n\n\n\n6\nMon, Feb 26\nNo Class: February Break\n\n\n\n\n\n\n\nWed, Feb 28\nIn-Class Figure Discussion\n\n\n\n\n\n\n\n\nSimulation Methods\n\n\n\n\n\n\n7\nMon, Mar 4\nUncertainty Propagation and Monte Carlo Simulation\n\n\n\n\n\n\n\nWed, Mar 6\nMonte Carlo Simulation II\n\n\n\n\n\n\n8\nMon, Mar 11\nSampling Distributions and The Bootstrap\n\n\n\n\n\n\n\nWed, Mar 13\nThe Bootstrap II\n\n\n\n\n\n\n9\nMon, Mar 18\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n\nWed, Mar 20\nMCMC II\n\n\n\n\n\n\n\n\nModel Calibration\n\n\n\n\n\n\n10\nMon, Mar 25\nStatistical Model Calibration\n\n\n\n\n\n\n\nWed, Mar 27\nLiterature Review Presentations\n\n\n\n\n\n\n\nMon, Apr 1\nNo Class: Spring Break\n\n\n\n\n\n\n\nWed, Apr 3\nNo Class: Spring Break\n\n\n\n\n\n\n11\nMon, Apr 8\nModel-Data Discrepancy\n\n\n\n\n\n\n\nWed, Apr 10\nMissing and Censored Data\n\n\n\n\n\n\n\n\nModel Assessment and Selection\n\n\n\n\n\n\n12\nMon, Apr 15\nModel Assessment and Predictive Accuracy\n\n\n\n\n\n\n13\nWed, Apr 17\nCross-Validation and Information Criteria\n\n\n\n\n\n\n1\nMon, Apr 22\nGraphical Model Evaluation\n\n\n\n\n\n\n\nWed, Apr 24\nModel Assessment and Selection: Examples\n\n\n\n\n\n\n\n\nEmulation\n\n\n\n\n\n\n14\nMon, Apr 29\nTradeoffs Between Complexity and Ensemble Size\n\n\n\n\n\n\n\nWed, May 1\nEmulating Expensive Models\n\n\n\n\n\n\n15\nMon, May 6\nProject Presentations",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nExercises\nHomework\n\n\n\n\n\n\nHypothesis Testing and Modeling\n\n\n\n\n\n\n1\nMon, Jan 22\nOverview, GitHub Intro\n\nRockmore et al (2024)\n\n\n\n\n\nWed, Jan 24\nUncertainty and Probability Review\n\n\n\n\n\n\n2\nMon, Jan 29\nProbability Models and Model Residuals\n\nStein (2020)\n\n\n\n\n\nWed, Jan 31\nProbability Models II\n\n\n\n\n\n\n3\nMon, Feb 5\nExploratory Data Analysis I\n\n\n\n\n\n\n\nWed, Feb 7\nExploratory Data Analysis II\n\n\n\n\n\n\n4\nMon, Feb 12\nClustering and Mixture Models\n\n\n\n\n\n\n\nWed, Feb 14\nExtreme Value Modeling\n\n\n\n\n\n\n5\nMon, Feb 19\nData Visualization\n\n\n\n\n\n\n\nWed, Feb 21\nGraphical Checks of Model Residuals\n\n\n\n\n\n\n6\nMon, Feb 26\nNo Class: February Break\n\n\n\n\n\n\n\nWed, Feb 28\nIn-Class Figure Discussion\n\n\n\n\n\n\n\n\nSimulation Methods\n\n\n\n\n\n\n7\nMon, Mar 4\nUncertainty Propagation and Monte Carlo Simulation\n\n\n\n\n\n\n\nWed, Mar 6\nMonte Carlo Simulation II\n\n\n\n\n\n\n8\nMon, Mar 11\nSampling Distributions and The Bootstrap\n\n\n\n\n\n\n\nWed, Mar 13\nThe Bootstrap II\n\n\n\n\n\n\n9\nMon, Mar 18\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n\nWed, Mar 20\nMCMC II\n\n\n\n\n\n\n\n\nModel Calibration\n\n\n\n\n\n\n10\nMon, Mar 25\nStatistical Model Calibration\n\n\n\n\n\n\n\nWed, Mar 27\nLiterature Review Presentations\n\n\n\n\n\n\n\nMon, Apr 1\nNo Class: Spring Break\n\n\n\n\n\n\n\nWed, Apr 3\nNo Class: Spring Break\n\n\n\n\n\n\n11\nMon, Apr 8\nModel-Data Discrepancy\n\n\n\n\n\n\n\nWed, Apr 10\nMissing and Censored Data\n\n\n\n\n\n\n\n\nModel Assessment and Selection\n\n\n\n\n\n\n12\nMon, Apr 15\nModel Assessment and Predictive Accuracy\n\n\n\n\n\n\n13\nWed, Apr 17\nCross-Validation and Information Criteria\n\n\n\n\n\n\n1\nMon, Apr 22\nGraphical Model Evaluation\n\n\n\n\n\n\n\nWed, Apr 24\nModel Assessment and Selection: Examples\n\n\n\n\n\n\n\n\nEmulation\n\n\n\n\n\n\n14\nMon, Apr 29\nTradeoffs Between Complexity and Ensemble Size\n\n\n\n\n\n\n\nWed, May 1\nEmulating Expensive Models\n\n\n\n\n\n\n15\nMon, May 6\nProject Presentations",
     "crumbs": [
       "Course Information",
       "Class Schedule"
@@ -1061,121 +1061,198 @@
   {
     "objectID": "slides/lecture02-1.html#modes-of-data-analysis",
     "href": "slides/lecture02-1.html#modes-of-data-analysis",
-    "title": "Uncertainty and Probability Review",
+    "title": "Probability Models and Model Residuals",
     "section": "Modes of Data Analysis",
     "text": "Modes of Data Analysis"
   },
   {
-    "objectID": "slides/lecture02-1.html#workflowcourse-organization",
-    "href": "slides/lecture02-1.html#workflowcourse-organization",
-    "title": "Uncertainty and Probability Review",
-    "section": "Workflow/Course Organization",
-    "text": "Workflow/Course Organization"
+    "objectID": "slides/lecture02-1.html#probability-review",
+    "href": "slides/lecture02-1.html#probability-review",
+    "title": "Probability Models and Model Residuals",
+    "section": "Probability Review",
+    "text": "Probability Review\n\nDistributions\nCentral Limit Theorem\nConfidence Intervals"
   },
   {
     "objectID": "slides/lecture02-1.html#questions",
     "href": "slides/lecture02-1.html#questions",
-    "title": "Uncertainty and Probability Review",
+    "title": "Probability Models and Model Residuals",
     "section": "Questions?",
     "text": "Questions?\n\n\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
   },
   {
-    "objectID": "slides/lecture02-1.html#what-is-uncertainty",
-    "href": "slides/lecture02-1.html#what-is-uncertainty",
-    "title": "Uncertainty and Probability Review",
-    "section": "What Is Uncertainty?",
-    "text": "What Is Uncertainty?\n\n\n\n\n\n\n\n\n\n\nText: VSRIKRISH to 22333\nURL: https://pollev.com/vsrikrish  See Results"
+    "objectID": "slides/lecture02-1.html#historical-temperature-anomalies",
+    "href": "slides/lecture02-1.html#historical-temperature-anomalies",
+    "title": "Probability Models and Model Residuals",
+    "section": "Historical Temperature Anomalies",
+    "text": "Historical Temperature Anomalies\n\n\nCode\ntemps = CSV.read(\"data/climate/HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv\", DataFrame, delim=\",\")\n\ntime_obs = temps[:, 1]\ntemp_obs = temps[:, 2]\ntemp_lo = temps[:, 3]\ntemp_hi = temps[:, 4]\n\ntemp_lo = temp_lo .- mean(temp_obs[1:20])\ntemp_hi = temp_hi .- mean(temp_obs[1:20])\ntemp_obs = temp_obs .- mean(temp_obs[1:20]) # compute anomalies relative to first 20 years of data\n\nplot(time_obs, temp_obs, ribbon=(temp_obs-temp_lo,temp_hi-temp_obs), color=\"blue\", linewidth=2, fillalpha=0.2, legend=false, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", labelfontsize=18, tickfontsize=16, bottom_margin=10mm, left_margin=10mm)\nplot!(size=(950, 450))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Global temperature anomalies\n\n\n\n\n\nData Source: HadCRUT 5.0.1.0"
   },
   {
-    "objectID": "slides/lecture02-1.html#what-is-uncertainty-1",
-    "href": "slides/lecture02-1.html#what-is-uncertainty-1",
-    "title": "Uncertainty and Probability Review",
-    "section": "What Is Uncertainty?",
-    "text": "What Is Uncertainty?\n\n\n\n…A departure from the (unachievable) ideal of complete determinism…\n\n\n— Walker et al. (2003)"
+    "objectID": "slides/lecture02-1.html#planetary-energy-balance",
+    "href": "slides/lecture02-1.html#planetary-energy-balance",
+    "title": "Probability Models and Model Residuals",
+    "section": "Planetary Energy Balance",
+    "text": "Planetary Energy Balance\n\nRepresentation of Planetary Energy Balance\nSource: Reprinted from A Climate Modeling Primer, A. Henderson-Sellers and K. McGuffie, Wiley, pg. 58, (1987) via https://www.e-education.psu.edu/meteo469/node/137."
   },
   {
-    "objectID": "slides/lecture02-1.html#types-of-uncertainty",
-    "href": "slides/lecture02-1.html#types-of-uncertainty",
-    "title": "Uncertainty and Probability Review",
-    "section": "Types of Uncertainty",
-    "text": "Types of Uncertainty\n\nAleatoric uncertainty: Uncertainties due to randomness/stochasticity;\nEpistemic uncertainty: Uncertainties due to lack of knowledge."
+    "objectID": "slides/lecture02-1.html#radiative-forcing",
+    "href": "slides/lecture02-1.html#radiative-forcing",
+    "title": "Probability Models and Model Residuals",
+    "section": "Radiative Forcing",
+    "text": "Radiative Forcing\nClimate changes result from changes to the energy balance of the planet (or radiative forcings), due to e.g.:\n\ngreenhouse gas emissions (which trap radiation, warming the planet);\naerosol emissions from air pollution or volcanic eruptions (which block incoming radiation, cooling the planet);\nchanges to the solar cycle (which can increase or decrease the incoming solar radiation)."
   },
   {
-    "objectID": "slides/lecture02-1.html#data-relevant-uncertainty-taxonomy",
-    "href": "slides/lecture02-1.html#data-relevant-uncertainty-taxonomy",
-    "title": "Uncertainty and Probability Review",
-    "section": "Data-Relevant Uncertainty Taxonomy",
-    "text": "Data-Relevant Uncertainty Taxonomy\n\n\n\n\n\n\n\n\nUncertainty\nAssociated Uncertainties\nExamples\n\n\n\n\nStructural\nIncluded physical processes, mathematical form\nModel inadequacy, (epistemic) residual uncertainty\n\n\nParametric\nParameter uncertainty\nChoice of parameters, strength of coupling between models\n\n\nSampling\nNatural variability, (aleatoric) residual uncertainty\nInternal variability, uncertain boundary conditions"
+    "objectID": "slides/lecture02-1.html#historical-radiative-forcing",
+    "href": "slides/lecture02-1.html#historical-radiative-forcing",
+    "title": "Probability Models and Model Residuals",
+    "section": "Historical Radiative Forcing",
+    "text": "Historical Radiative Forcing\n\n\nCode\n# Dataset from https://zenodo.org/record/3973015\n# The CSV is read into a DataFrame object, and we specify that it is comma delimited\nforcings_all_85 = CSV.read(\"data/climate/ERF_ssp585_1750-2500.csv\", DataFrame, delim=\",\")\n\n# Separate out the individual components\nforcing_co2_85 = forcings_all_85[!,\"co2\"]\n# Get total aerosol forcings\nforcing_aerosol_rad_85 = forcings_all_85[!,\"aerosol-radiation_interactions\"]\nforcing_aerosol_cloud_85 = forcings_all_85[!,\"aerosol-cloud_interactions\"]\nforcing_aerosol_85 = forcing_aerosol_rad_85 + forcing_aerosol_cloud_85\nforcing_total_85 = forcings_all_85[!,\"total\"]\nforcing_non_aerosol_85 = forcing_total_85 - forcing_aerosol_85\nforcing_other_85 = forcing_total_85 - (forcing_co2_85 + forcing_aerosol_85)\n\nt = time_forcing = Int64.(forcings_all_85[!,\"year\"]) # Ensure that years are interpreted as integers\n\nplot(xlabel=\"Year\", ylabel=\"Radiative Forcing (W/m²)\", tickfontsize=16, guidefontsize=18, legendfontsize=16, leftmargin=10mm, bottommargin=5mm, right_margin=5mm)\nplot!(time_forcing, forcing_total_85, label=\"Total\", color=:black, linewidth=3)\nplot!(time_forcing, forcing_co2_85, label=\"CO₂\", color=:orange, linewidth=2)\nplot!(time_forcing, forcing_aerosol_85, label=\"Aerosol\", color=:blue, linewidth=2)\nplot!(time_forcing, forcing_other_85, label=\"Other\", color=:purple, linewidth=2)\nplot!(size=(800, 450))\nxlims!((1750, 2020))\nylims!(-4.5, 5)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Historical and projected radiative forcings.\n\n\n\n\n\nData Source: https://zenodo.org/records/3973015"
   },
   {
-    "objectID": "slides/lecture02-1.html#probability-distributions-1",
-    "href": "slides/lecture02-1.html#probability-distributions-1",
-    "title": "Uncertainty and Probability Review",
-    "section": "Probability Distributions",
-    "text": "Probability Distributions\nProbability distributions are often used to quantify uncertainty.\n\\[x \\to \\mathbb{P}_{\\color{green}\\nu}[x] = p_{\\color{green}\\nu}\\left(x | {\\color{purple}\\theta}\\right)\\]\n\n\\({\\color{green}\\nu}\\): probability distribution (often implicit);\n\\({\\color{purple}\\theta}\\): distribution parameters"
+    "objectID": "slides/lecture02-1.html#what-are-some-sources-of-relevant-uncertainty-in-understanding-past-and-future-climate-changes-and-impacts",
+    "href": "slides/lecture02-1.html#what-are-some-sources-of-relevant-uncertainty-in-understanding-past-and-future-climate-changes-and-impacts",
+    "title": "Probability Models and Model Residuals",
+    "section": "What Are Some Sources of Relevant Uncertainty in Understanding Past and Future Climate Changes and Impacts?",
+    "text": "What Are Some Sources of Relevant Uncertainty in Understanding Past and Future Climate Changes and Impacts?\n\nOne key question: what is the sensitivity of warming to continued CO2 emissions?"
   },
   {
-    "objectID": "slides/lecture02-1.html#sampling-notation",
-    "href": "slides/lecture02-1.html#sampling-notation",
-    "title": "Uncertainty and Probability Review",
-    "section": "Sampling Notation",
-    "text": "Sampling Notation\nTo write \\(x\\) is sampled from \\(p(x|\\theta)\\): \\[x \\sim f(\\theta)\\]\nFor example, for a normal distribution: \\[x \\sim \\mathcal{N}(\\mu, \\sigma)\\]"
+    "objectID": "slides/lecture02-1.html#the-energy-balance-model-ebm",
+    "href": "slides/lecture02-1.html#the-energy-balance-model-ebm",
+    "title": "Probability Models and Model Residuals",
+    "section": "The Energy Balance Model (EBM)",
+    "text": "The Energy Balance Model (EBM)\n\\[\\begin{align*}\n\\overbrace{\\frac{dH}{dt}}^{\\text{change in heat}} &= \\overbrace{F}^{\\text{RF}} - \\overbrace{\\lambda T}^{\\substack{\\text{change in} \\\\ \\text{temperature}}} \\\\\n\\underbrace{C}_{\\substack{\\text{ocean heat} \\\\ \\text{capacity}}} \\frac{dT}{dt} &= F - \\lambda T \\\\\ncd \\frac{dT}{dt} &= F - \\lambda T,\n\\end{align*}\\]"
   },
   {
-    "objectID": "slides/lecture02-1.html#example-normal-distribution",
-    "href": "slides/lecture02-1.html#example-normal-distribution",
-    "title": "Uncertainty and Probability Review",
-    "section": "Example: Normal Distribution",
-    "text": "Example: Normal Distribution\n\\[p(x | \\mu, \\sigma) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{1}{2}\\left(\\frac{x - \\mu}{\\sigma}^2\\right)\\right)\\]"
+    "objectID": "slides/lecture02-1.html#the-ebm-contd",
+    "href": "slides/lecture02-1.html#the-ebm-contd",
+    "title": "Probability Models and Model Residuals",
+    "section": "The EBM (cont’d)",
+    "text": "The EBM (cont’d)\n\n\\(c = 4.184\\times 10^6 \\\\ \\text{J/K/m}^2\\) is the specific heat of water per area.\nTotal RF: \\[F = F_\\text{non-aerosol} + \\alpha F_\\text{aerosol}.\\]\nThe climate feedback factor \\(\\lambda\\) controls how much the Earth warms in response to radiative forcing."
   },
   {
-    "objectID": "slides/lecture02-1.html#why-are-normal-distributions-so-commonly-used",
-    "href": "slides/lecture02-1.html#why-are-normal-distributions-so-commonly-used",
-    "title": "Uncertainty and Probability Review",
-    "section": "Why Are Normal Distributions So Commonly Used?",
-    "text": "Why Are Normal Distributions So Commonly Used?\n\nSymmetry/Unimodality\nLinearity\nCentral Limit Theorem"
+    "objectID": "slides/lecture02-1.html#ebm-solution",
+    "href": "slides/lecture02-1.html#ebm-solution",
+    "title": "Probability Models and Model Residuals",
+    "section": "EBM Solution",
+    "text": "EBM Solution\nUse Euler discretization:\n\\[\\begin{gather*}\nC \\frac{dT}{dt} = F - \\lambda T \\\\\\\\\n\\Rightarrow C \\frac{T_{i+1}-T_i}{\\Delta t} = F_i - \\lambda T_i \\\\\\\\\n\\Rightarrow \\bbox[yellow, 10px, border:5px solid red]{T_{i+1} = T_i + \\frac{F_i - \\lambda T_i}{C} \\Delta t}\n\\end{gather*}\\]"
   },
   {
-    "objectID": "slides/lecture02-1.html#linearity",
-    "href": "slides/lecture02-1.html#linearity",
-    "title": "Uncertainty and Probability Review",
-    "section": "Linearity",
-    "text": "Linearity\n\nIf \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\): \\[\\bbox[yellow, 10px, border:5px solid red] {aX + b \\sim \\mathcal{N}\\left(a\\mu + b, |a|\\sigma\\right)}\\]\nIf \\(X_1 \\sim \\mathcal{N}(\\mu_1, \\sigma_1)\\), \\(X_2 \\sim \\mathcal{N}(\\mu_2, \\sigma_2)\\): \\[\\bbox[yellow, 5px, border:5px solid red] {X_1 + X_2 \\sim \\mathcal{N}\\left(\\mu_1 + \\mu_2, \\sqrt{\\sigma_1^2 + \\sigma_2^2}\\right)}\\]"
+    "objectID": "slides/lecture02-1.html#equilibrium-climate-sensitivity-ecs",
+    "href": "slides/lecture02-1.html#equilibrium-climate-sensitivity-ecs",
+    "title": "Probability Models and Model Residuals",
+    "section": "Equilibrium Climate Sensitivity (ECS)",
+    "text": "Equilibrium Climate Sensitivity (ECS)\nUnder steady-state conditions (constant \\(F\\) and \\(dT/dt = 0\\)), \\[T = \\frac{F}{\\lambda}.\\]\nWhen we double atmospheric CO2, we refer to the equilibrium temperature \\(S\\) as the equilibrium climate sensitivity:\n\\[\nS = \\underbrace{F_{2\\times \\text{CO}_2}}_{\\approx 4 \\text{W/m}^2}/\\lambda\\]"
   },
   {
-    "objectID": "slides/lecture02-1.html#central-limit-theorem-sampling-distributions",
-    "href": "slides/lecture02-1.html#central-limit-theorem-sampling-distributions",
-    "title": "Uncertainty and Probability Review",
-    "section": "Central Limit Theorem: Sampling Distributions",
-    "text": "Central Limit Theorem: Sampling Distributions\nThe sum or mean of a random sample is itself a random variable:\n\\[\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i \\sim \\mathcal{D}_n\\]\n\n\\(\\mathcal{D}_n\\): The sampling distribution of the mean (or sum, or other estimate of interest)."
+    "objectID": "slides/lecture02-1.html#degree-of-freedom-free-parameters",
+    "href": "slides/lecture02-1.html#degree-of-freedom-free-parameters",
+    "title": "Probability Models and Model Residuals",
+    "section": "Degree of Freedom / Free Parameters",
+    "text": "Degree of Freedom / Free Parameters\nThere are a few uncertain parameters:\n\n\\(\\lambda\\) or \\(S\\)\n\\(d\\) (ocean mixing depth)\n\\(\\alpha\\) (aerosol scaling factor)"
   },
   {
-    "objectID": "slides/lecture02-1.html#central-limit-theorem",
-    "href": "slides/lecture02-1.html#central-limit-theorem",
-    "title": "Uncertainty and Probability Review",
-    "section": "Central Limit Theorem",
-    "text": "Central Limit Theorem\nIf\n\n\\(\\mathbb{E}[X_i] = \\mu\\)\nand \\(\\text{Var}(X_i) = \\sigma^2 &lt; \\infty\\),\n\n\\[\\begin{align*}\n&\\bbox[yellow, 10px, border:5px solid red]\n{\\lim_{n \\to \\infty} \\sqrt{n}(\\bar{X}_n - \\mu ) = \\mathcal{N}(0, \\sigma^2)} \\\\\n\\Rightarrow &\\bbox[yellow, 10px, border:5px solid red] {\\bar{X}_n \\overset{\\text{approx}}{\\sim} \\mathcal{N}(\\mu, \\sigma^2/n)}\n\\end{align*}\\]"
+    "objectID": "slides/lecture02-1.html#model-fitting-by-minimizing-loss",
+    "href": "slides/lecture02-1.html#model-fitting-by-minimizing-loss",
+    "title": "Probability Models and Model Residuals",
+    "section": "Model Fitting By Minimizing Loss",
+    "text": "Model Fitting By Minimizing Loss\nIdea: Find best estimates \\(\\theta^*\\) of model parameters \\(\\theta\\) by minimizing the mismatch between data and simulations (denote by \\(\\mathbf{y} = F(\\theta)\\)).\nKey choice: “loss function” \\(L(\\mathbf{y}, \\mathbf{x})\\), then: \\[\\theta^*  = \\underset{\\theta}{\\operatorname{argmin}} L(F(\\theta), \\mathbf{x}).\\]\n\nCan you think of some common loss functions? What do they imply about how to penalize model error?"
   },
   {
-    "objectID": "slides/lecture02-1.html#central-limit-theorem-more-intuitive",
-    "href": "slides/lecture02-1.html#central-limit-theorem-more-intuitive",
-    "title": "Uncertainty and Probability Review",
-    "section": "Central Limit Theorem (More Intuitive)",
-    "text": "Central Limit Theorem (More Intuitive)\nFor a large enough set of samples, the sampling distribution of a sum or mean of random variables is approximately a normal distribution, even if the random variables themselves are not."
+    "objectID": "slides/lecture02-1.html#programming-implementation",
+    "href": "slides/lecture02-1.html#programming-implementation",
+    "title": "Probability Models and Model Residuals",
+    "section": "Programming Implementation",
+    "text": "Programming Implementation\n\n# use default values of S=3.2°C, d=100m, α=1.3\nfunction ebm(rf_nonaerosol, rf_aerosol; p=(3.2, 100, 1.3))\n    # set up model parameters\n    S, d, α = p # this unpacks the parameter tuple into variables\n    F2xCO₂ = 4.0 # radiative forcing [W/m²] for a doubling of CO₂\n    λ = F2xCO₂ / S\n\n    c = 4.184e6 # heat capacity/area [J/K/m²]\n    C = c*d # heat capacity of mixed layer (per area)\n    F = rf_nonaerosol + α*rf_aerosol # radiative forcing\n    Δt = 31558152. # annual timestep [s]\n\n    T = zero(F)\n    for i in 1:length(F)-1\n        T[i+1] = T[i] + (F[i] - λ*T[i])/C * Δt\n    end\n    \n    # return after normalizing to reference period\n    return T .- mean(T[1:20])\nend"
   },
   {
-    "objectID": "slides/lecture02-1.html#why-are-normal-distributions-so-commonly-used-1",
-    "href": "slides/lecture02-1.html#why-are-normal-distributions-so-commonly-used-1",
-    "title": "Uncertainty and Probability Review",
-    "section": "Why Are Normal Distributions So Commonly Used?",
-    "text": "Why Are Normal Distributions So Commonly Used?\n\nCentral Limit Theorem: For a large enough dataset, can assume statistical quantities have an approximately normal distribution.\nLinearity/Other Mathematical Properties: Easy to work with/do calculations\n\n\nCan we think about when this might break down?"
+    "objectID": "slides/lecture02-1.html#model-evaluation-default-parameters",
+    "href": "slides/lecture02-1.html#model-evaluation-default-parameters",
+    "title": "Probability Models and Model Residuals",
+    "section": "Model Evaluation (Default Parameters)",
+    "text": "Model Evaluation (Default Parameters)\n\n\nCode\n# generate simulations\nsim_years = 1850:2020 # model years to simulate\nidx = indexin(sim_years, t) # find indices in t vector of simulation years\n# since we specified default values for p, those are used for the parameters\ntemp_default = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx]) \n\ntemp_obs = temp_obs[indexin(sim_years, time_obs)] # filter to simulated years for plotting\ntemp_obs = temp_obs .- mean(temp_obs[1:20]) # re-normalize to be consistent with the model\n# plot simulated output and data\nplot(sim_years, temp_default, xlabel=\"Year\", ylabel=\"Temperature Anomaly (°C)\", color=:blue, label=\"Simulation\", linewidth=3, tickfontsize=16, guidefontsize=18, legendfontsize=16, leftmargin=10mm, bottommargin=5mm, right_margin=5mm)\nscatter!(sim_years, temp_obs, color=:black, linewidth=2, fillalpha=0.2, label=\"Data\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Comparison of model simualtion with default parameters and data."
   },
   {
-    "objectID": "slides/lecture02-1.html#references-1",
-    "href": "slides/lecture02-1.html#references-1",
-    "title": "Uncertainty and Probability Review",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\nWalker, W. E., Harremoës, P., Rotmans, J., Sluijs, J. P. van der, Asselt, M. B. A. van, Janssen, P., & Krayer von Krauss, M. P. (2003). Defining uncertainty: A conceptual basis for uncertainty management in model-based decision support. Integrated Assessment, 4, 5–17. https://doi.org/10.1076/iaij.4.1.5.16466"
+    "objectID": "slides/lecture02-1.html#fitting-the-ebm-by-minimizing-rmse",
+    "href": "slides/lecture02-1.html#fitting-the-ebm-by-minimizing-rmse",
+    "title": "Probability Models and Model Residuals",
+    "section": "Fitting the EBM By Minimizing RMSE",
+    "text": "Fitting the EBM By Minimizing RMSE\n\n\nCode\n# define RMSE function\nrmse(y, x) = sqrt(mean((y .- x).^2))\n\n# define wrapper function to map parameters to model evaluations\nebm_wrap(params) = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx], p = params)\n# minimize RMSE within some range for each parameter\n# important to make everything a Float instead of an Int \nlower = [1.0, 50.0, 0.0]\nupper = [4.0, 150.0, 2.0]\np0 = [2.0, 100.0, 1.0]\nresult = Optim.optimize(params -&gt; rmse(ebm_wrap(params), temp_obs), lower, upper, p0)\nθ = result.minimizer\nθ\n\n\n3-element Vector{Float64}:\n  1.943747735126569\n 86.39106697164416\n  0.7893331703704984"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#fitted-results",
+    "href": "slides/lecture02-1.html#fitted-results",
+    "title": "Probability Models and Model Residuals",
+    "section": "Fitted Results",
+    "text": "Fitted Results\n\n\nCode\ntemp_fitted = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx]; p = θ) \n\n# plot simulated output and data\nplot(sim_years, temp_default, xlabel=\"Year\", ylabel=\"Temperature Anomaly (°C)\", color=:blue, label=\"Default Simulation\", linewidth=3, tickfontsize=16, guidefontsize=18, legendfontsize=16, leftmargin=10mm, bottommargin=5mm, right_margin=5mm)\nplot!(sim_years, temp_fitted, color=:red, label=\"Fitted Simulation\", linewidth=3)\nscatter!(sim_years, temp_obs, color=:black, linewidth=2, fillalpha=0.2, label=\"Data\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Comparison of model simulation with fitted parameters, default parameters, and data."
+  },
+  {
+    "objectID": "slides/lecture02-1.html#what-the-ebm-neglects",
+    "href": "slides/lecture02-1.html#what-the-ebm-neglects",
+    "title": "Probability Models and Model Residuals",
+    "section": "What the EBM Neglects",
+    "text": "What the EBM Neglects\nWhat are some things the EBM neglects or simplifies?\n\n\n\n\n\n\n\nImportant\n\n\nSince models can be so stylized, optimal model parameters which ought to correspond to physical values may not match their true values."
+  },
+  {
+    "objectID": "slides/lecture02-1.html#likelihood-of-parameters",
+    "href": "slides/lecture02-1.html#likelihood-of-parameters",
+    "title": "Probability Models and Model Residuals",
+    "section": "Likelihood of Parameters",
+    "text": "Likelihood of Parameters\nProbability of data given probability model: \\(p(\\mathbf{x} | \\theta)\\)\nLikelihood of parameters given probability model and data: \\(\\mathcal{L}(\\theta | \\mathbf{x}) = p(\\mathbf{x} | \\theta)\\)\nExample (normal distribution):\n\\[\\mathcal{L}(\\mu, \\sigma | \\mathbf{x}) = p(\\mathbf{x} | \\mu, \\sigma) = \\prod_{i=1}^n \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\left(-\\frac{1}{2}\\left(\\frac{x_i - \\mu}{\\sigma}^2\\right)\\right)\\]"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#probability-model-fitting",
+    "href": "slides/lecture02-1.html#probability-model-fitting",
+    "title": "Probability Models and Model Residuals",
+    "section": "Probability Model Fitting",
+    "text": "Probability Model Fitting\nFitting a probability model ⇔ Maximizing Likelihood\nWe often work with log-likelihoods.\n\nThere is a lot to maximum likelihood estimation which we will only touch on."
+  },
+  {
+    "objectID": "slides/lecture02-1.html#model-residuals",
+    "href": "slides/lecture02-1.html#model-residuals",
+    "title": "Probability Models and Model Residuals",
+    "section": "Model Residuals",
+    "text": "Model Residuals\nModel Residuals are the “error” between the model simulations and the data.\n\\[\\underbrace{\\mathbf{r}}_{\\text{residuals}} = F(\\mathbf{x}; \\theta) - \\underbrace{\\mathbf{y}}_{\\text{data}}\\]\n\nThe connection between statistical modeling and simulation modeling is developing a probability model for the residuals."
+  },
+  {
+    "objectID": "slides/lecture02-1.html#probabilistic-interpretation-of-rmse-minimization",
+    "href": "slides/lecture02-1.html#probabilistic-interpretation-of-rmse-minimization",
+    "title": "Probability Models and Model Residuals",
+    "section": "Probabilistic Interpretation of RMSE Minimization",
+    "text": "Probabilistic Interpretation of RMSE Minimization\nClaim: Minimizing the (R)MSE is the same as maximizing likelihood assuming normally-distributed residuals (with known variance).\n\\[\n\\begin{gather*}\n\\mathbf{y} = F(\\mathbf{x}; \\theta) - \\mathbf{r} \\\\\nr_i \\sim \\mathcal{N}(0, \\sigma)\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#likelihood-of-normal-residuals",
+    "href": "slides/lecture02-1.html#likelihood-of-normal-residuals",
+    "title": "Probability Models and Model Residuals",
+    "section": "Likelihood of Normal Residuals",
+    "text": "Likelihood of Normal Residuals\n\\[\\mathcal{L}(\\theta, \\mathbf{y}; F) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}} \\exp(-\\frac{y_i - F(x_i; \\theta)^2}{2\\sigma^2})\\]"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#take-the-log-likelihood",
+    "href": "slides/lecture02-1.html#take-the-log-likelihood",
+    "title": "Probability Models and Model Residuals",
+    "section": "Take the Log-Likelihood",
+    "text": "Take the Log-Likelihood\n\\[\n\\begin{align}\n\\log \\mathcal{L}(\\theta, \\mathbf{y}; F) &= \\sum_{i=1}^n \\left[\\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2}(y_i - F(x_i; \\theta))  ^2 \\right] \\\\\n&= n \\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2} \\sum_{i=1}^n (y_i - F(x_i; \\theta))^2\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#simplifying-by-ignoring-constants",
+    "href": "slides/lecture02-1.html#simplifying-by-ignoring-constants",
+    "title": "Probability Models and Model Residuals",
+    "section": "Simplifying by Ignoring Constants",
+    "text": "Simplifying by Ignoring Constants\nIgnoring constants (including \\(\\sigma\\)):\n\\[-\\sum_{i=1}^n (y_i - F(x_i; \\theta))^2.\\]\n\nMaximizing this is equivalent to minimizing the negative:\n\\[\n\\sum_{i=1}^n (y_i - F(x_i; \\theta))^2 = \\text{MSE}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#next-classes",
+    "href": "slides/lecture02-1.html#next-classes",
+    "title": "Probability Models and Model Residuals",
+    "section": "Next Class(es)",
+    "text": "Next Class(es)\nWednesday: Bayesian statistics and probability models\nNext Week: Exploratory data analysis"
+  },
+  {
+    "objectID": "slides/lecture02-1.html#assessments",
+    "href": "slides/lecture02-1.html#assessments",
+    "title": "Probability Models and Model Residuals",
+    "section": "Assessments",
+    "text": "Assessments\nFriday: HW1 and Exercise 1 due by 9pm."
   },
   {
     "objectID": "about.html",
