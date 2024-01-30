@@ -122,7 +122,21 @@ forcing_total_85 = forcings_all_85[!,"total"]
 forcing_non_aerosol_85 = forcing_total_85 - forcing_aerosol_85
 forcing_other_85 = forcing_total_85 - (forcing_co2_85 + forcing_aerosol_85)
 
+forcings_all_26 = CSV.read("data/climate/ERF_ssp126_1750-2500.csv", DataFrame, delim=",")
+
+# Separate out the individual components
+forcing_co2_26 = forcings_all_26[!,"co2"]
+# Get total aerosol forcings
+forcing_aerosol_rad_26 = forcings_all_26[!,"aerosol-radiation_interactions"]
+forcing_aerosol_cloud_26 = forcings_all_26[!,"aerosol-cloud_interactions"]
+forcing_aerosol_26 = forcing_aerosol_rad_26 + forcing_aerosol_cloud_26
+forcing_total_26 = forcings_all_26[!,"total"]
+forcing_non_aerosol_26 = forcing_total_26 - forcing_aerosol_26
+forcing_other_26 = forcing_total_26 - (forcing_co2_26 + forcing_aerosol_26)
+
 t = time_forcing = Int64.(forcings_all_85[!,"year"]) # Ensure that years are interpreted as integers
+sim_years = 1850:2100 # model years for projections
+sim_idx = indexin(sim_years, t)
 
 temps = CSV.read("data/climate/HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv", DataFrame, delim=",")
 
@@ -132,14 +146,15 @@ temp_lo = temps[:, 3]
 temp_hi = temps[:, 4]
 
 # generate simulations
-sim_years = 1850:2020 # model years to simulate
-idx = indexin(sim_years, t) # find indices in t vector of simulation years
+hind_years = 1850:2020 # model years to simulate for fitting
+sim_years = 1850:2100 # model years for projections
+idx = indexin(hind_years, t) # find indices in t vector of simulation years
 # since we specified default values for p, those are used for the parameters
 temp_default = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx]) 
 
-temp_obs = temp_obs[indexin(sim_years, time_obs)] # filter to simulated years for plotting
-temp_lo = temp_lo[indexin(sim_years, time_obs)] # filter to simulated years for plotting
-temp_hi = temp_hi[indexin(sim_years, time_obs)] # filter to simulated years for plotting
+temp_obs = temp_obs[indexin(hind_years, time_obs)] # filter to simulated years for plotting
+temp_lo = temp_lo[indexin(hind_years, time_obs)] # filter to simulated years for plotting
+temp_hi = temp_hi[indexin(hind_years, time_obs)] # filter to simulated years for plotting
 temp_obs = temp_obs .- mean(temp_obs[1:20]) # re-normalize to be consistent with the model
 temp_lo = temp_lo .- mean(temp_obs[1:20]) # re-normalize to be consistent with the model
 temp_hi = temp_hi .- mean(temp_obs[1:20]) # re-normalize to be consistent with the model
@@ -156,6 +171,7 @@ $$\mathbf{y_i} \sim \mathcal{N}(\Lambda(\mathbf{F_i}), \sigma).$$
 $$
 \log \mathcal{L}(\theta | \mathbf{y}, F) = \sum_{i=1}^n \left[\log \frac{1}{\sqrt{2\pi}} - \frac{1}{2\sigma^2}(y_i - F(x_i))  ^2 \right] 
 $$
+
 
 If we ignore all of the constants, this is proportional to the negative mean-squared error.
 
@@ -208,9 +224,12 @@ model_sim = residuals .+ model_out' # need to transpose the model output vector 
 #| fig-align: center
 #| fig-cap: Best fit for the EBM with normal residuals.
 
-plot(sim_years, model_out, color=:red, linewidth=3, label="Model Simulation", guidefontsize=18, tickfontsize=16, legendfontsize=16, xlabel="Year", ylabel="Temperature anomaly (°C)", bottom_margin=5mm, left_margin=5mm)
-scatter!(sim_years, temp_obs, color=:black, label="Data")
+plot(hind_years, model_out, color=:red, linewidth=3, label="Model Simulation", guidefontsize=18, tickfontsize=16, legendfontsize=16, xlabel="Year", ylabel="Temperature anomaly (°C)", bottom_margin=5mm, left_margin=5mm)
+ylims!(-0.5, 1.2)
+scatter!(hind_years, temp_obs, color=:black, label="Data")
 ```
+
+
 
 ## Adding In Uncertain Residuals...
 
@@ -222,10 +241,11 @@ scatter!(sim_years, temp_obs, color=:black, label="Data")
 #| fig-align: center
 #| fig-cap: Comparison of best fit with uncertain realization for the EBM with normal residuals.
 
-plot(sim_years, model_out, color=:red, linewidth=3, label="Model Simulation", xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
-plot!(sim_years, model_sim[1, :], color=:grey, linewidth=1, label="Model Simulation With Noise", alpha=0.5)
-plot!(sim_years, model_sim[2:10, :]', color=:grey, linewidth=1, label=false, alpha=0.5)
-scatter!(sim_years, temp_obs, color=:black, label="Data")
+plot(hind_years, model_out, color=:red, linewidth=3, label="Model Simulation", xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+plot!(hind_years, model_sim[1, :], color=:grey, linewidth=1, label="Model Simulation With Noise", alpha=0.5)
+plot!(hind_years, model_sim[2:10, :]', color=:grey, linewidth=1, label=false, alpha=0.5)
+scatter!(hind_years, temp_obs, color=:black, label="Data")
+ylims!(-0.5, 1.2)
 ```
 
 ## Visualizing the Uncertainty Spread
@@ -240,8 +260,49 @@ scatter!(sim_years, temp_obs, color=:black, label="Data")
 
 q_90 = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim,; dims=1) # compute 90% prediction interval
 
-plot(sim_years, model_out, color=:red, linewidth=3, label="Model Simulation", ribbon=(model_out .- q_90[1, :], q_90[2, :] .- model_out), fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
-scatter!(sim_years, temp_obs, color=:black, label="Data")
+plot(hind_years, model_out, color=:red, linewidth=3, label="Model Simulation", ribbon=(model_out .- q_90[1, :], q_90[2, :] .- model_out), fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+scatter!(hind_years, temp_obs, color=:black, label="Data")
+ylims!(-0.5, 1.2)
+```
+
+## Projections Without Residual Uncertainty
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-proj-bestfit
+#| fig-align: center
+#| fig-cap: Best fit for different SSPs
+
+model_sim_85 = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ[1:end-1])
+model_sim_26 = ebm(forcing_non_aerosol_26[sim_idx], forcing_aerosol_26[sim_idx], p=θ[1:end-1])
+
+
+plot(sim_years, model_sim_26, color=:blue, linewidth=3, label="RCP 2.6 Projection", fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+plot!(sim_years, model_sim_85, color=:red, linewidth=3, label="RCP 8.5 Projection", fillalpha=0.3)
+scatter!(hind_years, temp_obs, color=:black, label="Data")
+ylims!(-0.5, 5)
+```
+
+## Projections With Residual Uncertainty
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-proj-uncertain
+#| fig-align: center
+#| fig-cap: Best fit for different SSPs
+
+resids = rand(Normal(0, θ[end]), (n_samples, length(sim_years)))
+q90_26 = mapslices(col -> quantile(col, [0.05, 0.95]), resids .+ model_sim_26'; dims=1) # compute 90% prediction interval
+q90_85 = mapslices(col -> quantile(col, [0.05, 0.95]), resids .+ model_sim_85'; dims=1) # compute 90% prediction interval
+
+plot(sim_years, model_sim_26, color=:blue, linewidth=3, label="RCP 2.6 Projection", fillalpha=0.3, ribbon=(model_sim_26 .- q90_26[1, :], q90_26[2, :] .- model_sim_26), xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+plot!(sim_years, model_sim_85, color=:red, linewidth=3, ribbon=(model_sim_85 .- q90_85[1, :], q90_85[2, :] .- model_sim_85), label="RCP 8.5 Projection", fillalpha=0.3)
+scatter!(hind_years, temp_obs, color=:black, label="Data")
+ylims!(-0.5, 5)
 ```
 
 # More General Probability Models
@@ -355,12 +416,12 @@ result = Optim.optimize(params -> -ar_log_likelihood(params[1:end-2], params[end
 #| fig-cap: Comparison of best fit with uncertain realization for the EBM with normal residuals.
 
 # iid simulations
-residuals_iid = rand(Normal(0, θ[end]), (n_samples, length(sim_years)))
+residuals_iid = rand(Normal(0, θ[end]), (n_samples, length(hind_years)))
 model_iid = ebm_wrap(θ[1:end-1])
 model_sim_iid = residuals_iid .+ model_iid'
 
 # ar1 simulations
-residuals_ar1 = zeros(n_samples, length(sim_years))
+residuals_ar1 = zeros(n_samples, length(hind_years))
 residuals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)
 for i = 2:size(residuals_ar1)[2]
     residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))
@@ -371,28 +432,62 @@ model_sim_ar1 = residuals_ar1 .+ model_ar1'
 q90_iid = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval
 q90_ar1 = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval
 
-plot(sim_years, model_iid, color=:red, linewidth=3, label="IID Model Simulation", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
-plot!(sim_years, model_ar1, color=:blue, linewidth=3, label="AR(1) Model Simulation", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_out), fillalpha=0.3)
-scatter!(sim_years, temp_obs, color=:black, label="Data")
+plot(hind_years, model_iid, color=:red, linewidth=3, label="IID Model Simulation", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+plot!(hind_years, model_ar1, color=:blue, linewidth=3, label="AR(1) Model Simulation", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_out), fillalpha=0.3)
+scatter!(hind_years, temp_obs, color=:black, label="Data")
 ```
 
+## Impacts on Projections (RCP 8.5)
 
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-temp-comparison-85
+#| fig-align: center
+#| fig-cap: Comparisons of different residual structures for RCP 8.5 projections.
+
+# iid simulations
+residuals_iid = rand(Normal(0, θ[end]), (n_samples, length(sim_years)))
+model_iid = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ[1:end-1])
+model_sim_iid = residuals_iid .+ model_iid'
+
+# ar1 simulations
+residuals_ar1 = zeros(n_samples, length(sim_years))
+residuals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)
+for i = 2:size(residuals_ar1)[2]
+    residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))
+end
+model_ar1 = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ_ar1[1:end-2])
+model_sim_ar1 = residuals_ar1 .+ model_ar1'
+
+q90_iid = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval
+q90_ar1 = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval
+
+plot(sim_years, model_iid, color=:red, linewidth=3, label="IID Model Simulation", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm, right_margin=8mm)
+plot!(sim_years, model_ar1, color=:blue, linewidth=3, label="AR(1) Model Simulation", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_ar1), fillalpha=0.3)
+xlims!(2000, 2100)
+ylims!(0, 5)
+```
+
+## Ok, But What About Parameter Uncertainty?
+
+The frameworks we've been using so far: **no parametric uncertainty** and **minimal prior information**.
+
+This can sometimes lead to odd outcomes, *e.g.* low climate sensitivities.
+
+In a few weeks, we will look at approaches to incorporate parametric uncertainty and prior information.
 
 # Key Points
 
 ## Key Points
 
-- **Goal of model-based data analysis**: Gain insights into data or underlying system through model simulations.
-- Requires developing probability model for data or remodel_out = ebm_wrap(θ[1:end-1])
-- Fitting a model as maximum likelihood estimation.
-- Can develop more complex models (autocorrelated residuals, non-normal errors) but these may not result in "standard" error metrics.
-
+- Probability models for data let us generate alternate datasets/realizations.
+- Different probability models may have more or less impact on simulated outcomes but may result in different parameter values.
 
 # Upcoming Schedule
 
 ## Next Class(es)
-
-**Wednesday**: Bayesian statistics and probability models
 
 **Next Week**: Exploratory data analysis
 
