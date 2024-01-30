@@ -456,7 +456,7 @@
     "href": "slides/lecture02-1.html#fitting-the-ebm-by-minimizing-rmse-output",
     "title": "Probability Models and Model Residuals",
     "section": "Fitting the EBM By Minimizing RMSE",
-    "text": "Fitting the EBM By Minimizing RMSE\n\n3-element Vector{Float64}:\n  1.943747735126569\n 86.39106697164416\n  0.7893331703704984"
+    "text": "Fitting the EBM By Minimizing RMSE\n\n3-element Vector{Float64}:\n  1.9437477350724541\n 86.39106695508048\n  0.789333170364518"
   },
   {
     "objectID": "slides/lecture02-1.html#fitted-results",
@@ -1461,14 +1461,14 @@
     "href": "slides/lecture02-2.html#comparison-of-model-simulation",
     "title": "Bayesian Statistics and Probability Models",
     "section": "Comparison of Model Simulation",
-    "text": "Comparison of Model Simulation\n\n\nCode\n# iid simulations\nresiduals_iid = rand(Normal(0, θ[end]), (n_samples, length(hind_years)))\nmodel_iid = ebm_wrap(θ[1:end-1])\nmodel_sim_iid = residuals_iid .+ model_iid'\n\n# ar1 simulations\nresiduals_ar1 = zeros(n_samples, length(hind_years))\nresiduals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)\nfor i = 2:size(residuals_ar1)[2]\n    residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))\nend\nmodel_ar1 = ebm_wrap(θ_ar1[1:end-2])\nmodel_sim_ar1 = residuals_ar1 .+ model_ar1'\n\nq90_iid = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval\nq90_ar1 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval\n\nplot(hind_years, model_iid, color=:red, linewidth=3, label=\"IID Model Simulation\", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nplot!(hind_years, model_ar1, color=:blue, linewidth=3, label=\"AR(1) Model Simulation\", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_out), fillalpha=0.3)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Comparison of best fit with uncertain realization for the EBM with normal residuals."
+    "text": "Comparison of Model Simulation\n\n\nCode\n# iid simulations\nresiduals_iid = rand(Normal(0, θ[end]), (n_samples, length(hind_years)))\nmodel_iid = ebm_wrap(θ[1:end-1])\nmodel_sim_iid = residuals_iid .+ model_iid'\n\n# ar1 simulations\nresiduals_ar1 = zeros(n_samples, length(hind_years))\nresiduals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)\nfor i = 2:size(residuals_ar1)[2]\n    residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))\nend\nmodel_ar1 = ebm_wrap(θ_ar1[1:end-2])\nmodel_sim_ar1 = residuals_ar1 .+ model_ar1'\n\nq90_iid = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval\nq90_ar1 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval\n\nplot(hind_years, model_iid, color=:red, linewidth=3, label=\"IID Model Simulation\", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nplot!(hind_years, model_ar1, color=:blue, linewidth=3, label=\"AR(1) Model Simulation\", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_out), fillalpha=0.3)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 9: Comparison of best fit with uncertain realization for the EBM with normal residuals."
   },
   {
     "objectID": "slides/lecture02-2.html#impacts-on-projections-rcp-8.5",
     "href": "slides/lecture02-2.html#impacts-on-projections-rcp-8.5",
     "title": "Bayesian Statistics and Probability Models",
     "section": "Impacts on Projections (RCP 8.5)",
-    "text": "Impacts on Projections (RCP 8.5)\n\n\nCode\n# iid simulations\nresiduals_iid = rand(Normal(0, θ[end]), (n_samples, length(sim_years)))\nmodel_iid = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ[1:end-1])\nmodel_sim_iid = residuals_iid .+ model_iid'\n\n# ar1 simulations\nresiduals_ar1 = zeros(n_samples, length(sim_years))\nresiduals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)\nfor i = 2:size(residuals_ar1)[2]\n    residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))\nend\nmodel_ar1 = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ_ar1[1:end-2])\nmodel_sim_ar1 = residuals_ar1 .+ model_ar1'\n\nq90_iid = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval\nq90_ar1 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval\n\nplot(sim_years, model_iid, color=:red, linewidth=3, label=\"IID Model Simulation\", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm, right_margin=8mm)\nplot!(sim_years, model_ar1, color=:blue, linewidth=3, label=\"AR(1) Model Simulation\", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_ar1), fillalpha=0.3)\nxlims!(2000, 2100)\nylims!(0, 5)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Comparisons of different residual structures for RCP 8.5 projections."
+    "text": "Impacts on Projections (RCP 8.5)\n\n\nCode\n# iid simulations\nresiduals_iid = rand(Normal(0, θ[end]), (n_samples, length(sim_years)))\nmodel_iid = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ[1:end-1])\nmodel_sim_iid = residuals_iid .+ model_iid'\n\n# ar1 simulations\nresiduals_ar1 = zeros(n_samples, length(sim_years))\nresiduals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)\nfor i = 2:size(residuals_ar1)[2]\n    residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))\nend\nmodel_ar1 = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ_ar1[1:end-2])\nmodel_sim_ar1 = residuals_ar1 .+ model_ar1'\n\nq90_iid = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval\nq90_ar1 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval\n\nplot(sim_years, model_iid, color=:red, linewidth=3, label=\"IID Model Simulation\", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm, right_margin=8mm)\nplot!(sim_years, model_ar1, color=:blue, linewidth=3, label=\"AR(1) Model Simulation\", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_ar1), fillalpha=0.3)\nxlims!(2000, 2100)\nylims!(0, 5)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 10: Comparisons of different residual structures for RCP 8.5 projections."
   },
   {
     "objectID": "slides/lecture02-2.html#ok-but-what-about-parameter-uncertainty",
@@ -1796,5 +1796,201 @@
     "crumbs": [
       "Term Project"
     ]
+  },
+  {
+    "objectID": "slides/lecture02-2.html#diagnostics-normality",
+    "href": "slides/lecture02-2.html#diagnostics-normality",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Diagnostics: Normality",
+    "text": "Diagnostics: Normality\n\nCode\nresiduals = model_out .- temp_obs # calculate residuals\np1 = histogram(residuals, tickfontsize=16, guidefontsize=18, legend=false, xlabel=\"Residual (°C)\", ylabel=\"Count\") # plot histogram to check distributional assumption\np2 = qqplot(Normal, residuals, tickfontsize=16, guidefontsize=18, xlabel=\"Normal Theoretical Quantile\", ylabel=\"Sample Residual Quantile\")\n\nplot!(p1, size=(500, 500))\nplot!(p2, size=(500, 500))\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Distribution\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Q-Q Plot\n\n\n\n\n\n\n\nFigure 6: Checking residual assumptions of normality"
+  },
+  {
+    "objectID": "slides/lecture02-2.html#diagnostics-independence",
+    "href": "slides/lecture02-2.html#diagnostics-independence",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Diagnostics: Independence",
+    "text": "Diagnostics: Independence\n\nCode\np1 = plot(pacf(residuals, 1:5), marker=:circle, line=:stem, linewidth=3, markersize=8, tickfontsize=16, guidefontsize=18, legend=false, ylabel=\"Partial Autocorrelation\", xlabel=\"Time Lag\")\np2 = scatter(residuals[1:end-1], residuals[2:end], legend=false, xlabel=L\"Residual $t_i$ (°C)\", ylabel=L\"Residual $t_{i+1}$ (°C)\", guidefontsize=18, tickfontsize=16)  \ndat = DataFrame(X=residuals[1:end-1], Y=residuals[2:end])\nfit = lm(@formula(Y~X), dat)\npred = predict(fit,dat)\nplot!(p2, dat.X, pred, linewidth=2)\n\nplot!(p1, size=(500, 500))\nplot!(p2, size=(500, 500))\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Partial autocorrelation\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Scatterplot of lag-1 residuals\n\n\n\n\n\n\n\nFigure 7: Checking residual assumptions for independence and autocorrelation"
+  },
+  {
+    "objectID": "slides/lecture02-2.html#diagnostics-constant-variance",
+    "href": "slides/lecture02-2.html#diagnostics-constant-variance",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Diagnostics: Constant Variance",
+    "text": "Diagnostics: Constant Variance\n\nCode\np1 = scatter(residuals,  tickfontsize=16, guidefontsize=18, legend=false, ylabel=\"Residual (°C)\", xlabel=\"Time\")\ndat = DataFrame(Y=residuals, X=1:length(residuals))\nfit = lm(@formula(Y~X), dat)\npred = predict(fit,dat)\nplot!(p1, dat.X, pred, linewidth=2)\np2 = scatter(model_out, residuals, legend=false, xlabel=\"Modeled Temperature (°C)\", ylabel=\"Residual (°C)\", guidefontsize=18, tickfontsize=16)  \ndat = DataFrame(Y=residuals, X=model_out)\nfit = lm(@formula(Y~X), dat)\npred = predict(fit,dat)\nplot!(p2, dat.X, pred, linewidth=2)\n\nplot!(p1, size=(500, 500))\nplot!(p2, size=(500, 500))\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Time dependence\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Temperature depednence\n\n\n\n\n\n\n\nFigure 8: Checking residual assumptions for constant variance"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#probability-models",
+    "href": "slides/lecture05-1.html#probability-models",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Probability Models",
+    "text": "Probability Models\nGoal: Write down a probability model for the data-generating process for \\(\\mathbf{y}\\).\nThis could be:\n\nDirect statistical model, \\[\\mathbf{y} \\sim \\mathcal{D}(\\theta).\\]\nModel for the residuals of a numerical model, \\[\\mathbf{r} = \\mathbf{y} - F(\\mathbf{x}) \\sim \\mathcal{D}(\\theta).\\]"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#model-fitting-as-maximum-likelihood-estimation",
+    "href": "slides/lecture05-1.html#model-fitting-as-maximum-likelihood-estimation",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Model Fitting as Maximum Likelihood Estimation",
+    "text": "Model Fitting as Maximum Likelihood Estimation\nWe can interpret fitting a model (reducing error according to some loss or error metric) as maximizing the probability of observing our data from this data generating process."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#the-energy-balance-model-revisited",
+    "href": "slides/lecture05-1.html#the-energy-balance-model-revisited",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "The Energy Balance Model Revisited",
+    "text": "The Energy Balance Model Revisited\nLast class, we introduced the Energy Balance Model (EBM):\n\\[T_{i+1} = T_i + \\frac{F_i - \\lambda T_i}{cd} \\Delta t\\]\nLet’s write this as \\(\\mathbf{T} = \\Lambda(\\mathbf{F})\\)."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#ebm-probability-model",
+    "href": "slides/lecture05-1.html#ebm-probability-model",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "EBM Probability Model",
+    "text": "EBM Probability Model\nAssume independent and identically distributed (i.i.d.) normal residuals:\n\\[\\mathbf{y_i} \\sim \\mathcal{N}(\\Lambda(\\mathbf{F_i}), \\sigma).\\]"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#i.i.d.-log-likelihood",
+    "href": "slides/lecture05-1.html#i.i.d.-log-likelihood",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "i.i.d. Log-Likelihood",
+    "text": "i.i.d. Log-Likelihood\n\\[\n\\log \\mathcal{L}(\\theta | \\mathbf{y}, F) = \\sum_{i=1}^n \\left[\\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2}(y_i - F(x_i))  ^2 \\right]\n\\]\nIf we ignore all of the constants, this is proportional to the negative mean-squared error."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#maximum-likelihood-estimate",
+    "href": "slides/lecture05-1.html#maximum-likelihood-estimate",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Maximum Likelihood Estimate",
+    "text": "Maximum Likelihood Estimate\n\n# p are the model parameters, σ the standard deviation of the normal errors, y is the data, m the model function\nfunction log_likelihood(p, σ, y, m)\n    y_pred = m(p)\n    ll = sum(logpdf.(Normal.(y_pred, σ), y))\nend\n\nebm_wrap(params) = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx], p = params)\n\n# maximize log-likelihood within some range\n# important to make everything a Float instead of an Int \nlower = [1.0, 50.0, 0.0, 0.0]\nupper = [4.0, 150.0, 2.0, 10.0]\np0 = [2.0, 100.0, 1.0, 1.0]\nresult = Optim.optimize(params -&gt; -log_likelihood(params[1:end-1], params[end], temp_obs, ebm_wrap), lower, upper, p0)\nθ = result.minimizer"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#maximum-likelihood-estimate-output",
+    "href": "slides/lecture05-1.html#maximum-likelihood-estimate-output",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Maximum Likelihood Estimate",
+    "text": "Maximum Likelihood Estimate\n\n4-element Vector{Float64}:\n  1.943746862749113\n 86.39077197089858\n  0.789333067313891\n  0.12104289634011653"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#generating-simulations",
+    "href": "slides/lecture05-1.html#generating-simulations",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Generating Simulations",
+    "text": "Generating Simulations\n\n# set number of sampled simulations\nn_samples = 1000\nresiduals = rand(Normal(0, θ[end]), (n_samples, length(temp_obs)))\nmodel_out = ebm_wrap(θ[1:end-1])\n# this uses broadcasting to \"sweep\" the model simulation across the sampled residual matrix\nmodel_sim = residuals .+ model_out' # need to transpose the model output vector due to how Julia treats vector dimensions"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#best-fit",
+    "href": "slides/lecture05-1.html#best-fit",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "“Best Fit”",
+    "text": "“Best Fit”\n\n\nCode\nplot(hind_years, model_out, color=:red, linewidth=3, label=\"Model Simulation\", guidefontsize=18, tickfontsize=16, legendfontsize=16, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", bottom_margin=5mm, left_margin=5mm)\nylims!(-0.5, 1.2)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Best fit for the EBM with normal residuals."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#adding-in-uncertain-residuals",
+    "href": "slides/lecture05-1.html#adding-in-uncertain-residuals",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Adding In Uncertain Residuals…",
+    "text": "Adding In Uncertain Residuals…\n\n\nCode\nplot(hind_years, model_out, color=:red, linewidth=3, label=\"Model Simulation\", xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nplot!(hind_years, model_sim[1, :], color=:grey, linewidth=1, label=\"Model Simulation With Noise\", alpha=0.5)\nplot!(hind_years, model_sim[2:10, :]', color=:grey, linewidth=1, label=false, alpha=0.5)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\nylims!(-0.5, 1.2)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Comparison of best fit with uncertain realization for the EBM with normal residuals."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#visualizing-the-uncertainty-spread",
+    "href": "slides/lecture05-1.html#visualizing-the-uncertainty-spread",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Visualizing the Uncertainty Spread",
+    "text": "Visualizing the Uncertainty Spread\n\n\nCode\nq_90 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim,; dims=1) # compute 90% prediction interval\n\nplot(hind_years, model_out, color=:red, linewidth=3, label=\"Model Simulation\", ribbon=(model_out .- q_90[1, :], q_90[2, :] .- model_out), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\nylims!(-0.5, 1.2)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Comparison of best fit with uncertain realization for the EBM with normal residuals."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#projections-without-residual-uncertainty",
+    "href": "slides/lecture05-1.html#projections-without-residual-uncertainty",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Projections Without Residual Uncertainty",
+    "text": "Projections Without Residual Uncertainty\n\n\nCode\nmodel_sim_85 = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ[1:end-1])\nmodel_sim_26 = ebm(forcing_non_aerosol_26[sim_idx], forcing_aerosol_26[sim_idx], p=θ[1:end-1])\n\n\nplot(sim_years, model_sim_26, color=:blue, linewidth=3, label=\"RCP 2.6 Projection\", fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nplot!(sim_years, model_sim_85, color=:red, linewidth=3, label=\"RCP 8.5 Projection\", fillalpha=0.3)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\nylims!(-0.5, 5)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Best fit for different SSPs"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#projections-with-residual-uncertainty",
+    "href": "slides/lecture05-1.html#projections-with-residual-uncertainty",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Projections With Residual Uncertainty",
+    "text": "Projections With Residual Uncertainty\n\n\nCode\nresids = rand(Normal(0, θ[end]), (n_samples, length(sim_years)))\nq90_26 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), resids .+ model_sim_26'; dims=1) # compute 90% prediction interval\nq90_85 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), resids .+ model_sim_85'; dims=1) # compute 90% prediction interval\n\nplot(sim_years, model_sim_26, color=:blue, linewidth=3, label=\"RCP 2.6 Projection\", fillalpha=0.3, ribbon=(model_sim_26 .- q90_26[1, :], q90_26[2, :] .- model_sim_26), xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nplot!(sim_years, model_sim_85, color=:red, linewidth=3, ribbon=(model_sim_85 .- q90_85[1, :], q90_85[2, :] .- model_sim_85), label=\"RCP 8.5 Projection\", fillalpha=0.3)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\nylims!(-0.5, 5)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Best fit for different SSPs"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#checking-the-model-residuals",
+    "href": "slides/lecture05-1.html#checking-the-model-residuals",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Checking The Model Residuals",
+    "text": "Checking The Model Residuals\nOne mantra in this class: check your residuals!\nWe assumed our models were independently and identically distributed according to a normal distribution.\nHow can we check these assumptions?"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#some-diagnostic-plots",
+    "href": "slides/lecture05-1.html#some-diagnostic-plots",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Some Diagnostic Plots",
+    "text": "Some Diagnostic Plots\n\nCode\nresiduals = model_out .- temp_obs # calculate residuals\np1 = histogram(residuals, tickfontsize=16, guidefontsize=18, legend=false, xlabel=\"Residual (°C)\", ylabel=\"Count\") # plot histogram to check distributional assumption\np2 = plot(pacf(residuals, 1:5), marker=:circle, line=:stem, linewidth=3, markersize=8, tickfontsize=16, guidefontsize=18, legend=false, ylabel=\"Partial Autocorrelation\", xlabel=\"Time Lag\")\n\nplot!(p1, size=(500, 500))\nplot!(p2, size=(500, 500))\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Distribution\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Autocorrelation\n\n\n\n\n\n\n\nFigure 6: Checking residual assumptions"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#a-model-for-residual-autocorrelation",
+    "href": "slides/lecture05-1.html#a-model-for-residual-autocorrelation",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "A Model for Residual Autocorrelation",
+    "text": "A Model for Residual Autocorrelation\nAn autoregressive with lag 1 model (AR(1)):\n\\[\n\\begin{gather*}\nr_{i+1} = \\rho r_i + \\varepsilon_i \\\\\n\\varepsilon_i \\sim \\mathcal{N}(0, \\sigma)\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#rearranging-for-likelihood",
+    "href": "slides/lecture05-1.html#rearranging-for-likelihood",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Rearranging for Likelihood",
+    "text": "Rearranging for Likelihood\n\\[\\begin{gather*}\nr_{i+1} \\sim \\mathcal{N}(\\rho r_i, \\sigma) \\\\\nr_1 \\sim \\mathcal{N}\\left(0, \\frac{\\sigma}{\\sqrt{1-\\rho^2}}\\right)\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#fitting-ar1-model",
+    "href": "slides/lecture05-1.html#fitting-ar1-model",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Fitting AR(1) Model",
+    "text": "Fitting AR(1) Model\n\n# p are the model parameters, σ the standard deviation of the AR(1) errors, ρ is the autocorrelation coefficient, y is the data, m the model function\nfunction ar_log_likelihood(p, σ, ρ, y, m)\n    y_pred = m(p)\n    ll = 0 # initialize log-likelihood counter\n    residuals = y_pred .- y\n    ll += logpdf(Normal(0, σ/sqrt(1-ρ^2)), residuals[1])\n    for i = 1:length(residuals)-1\n        residuals_whitened = residuals[i+1] - ρ * residuals[i]\n        ll += logpdf(Normal(0, σ), residuals_whitened)\n    end\n    return ll\nend\n\nebm_wrap(params) = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx], p = params)\n\n# maximize log-likelihood within some range\n# important to make everything a Float instead of an Int \nlower = [1.0, 50.0, 0.0, 0.0, -1.0]\nupper = [4.0, 150.0, 2.0, 10.0, 1.0]\np0 = [2.0, 100.0, 1.0, 1.0, 0.0]\nresult = Optim.optimize(params -&gt; -ar_log_likelihood(params[1:end-2], params[end-1], params[end], temp_obs, ebm_wrap), lower, upper, p0)\nθ_ar1 = result.minimizer"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#comparison-of-iid-and-ar1-fits",
+    "href": "slides/lecture05-1.html#comparison-of-iid-and-ar1-fits",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Comparison of IID and AR(1) Fits",
+    "text": "Comparison of IID and AR(1) Fits\n\n\nNormal IID:\n\n\n4-element Vector{Float64}:\n  1.943746862749113\n 86.39077197089858\n  0.789333067313891\n  0.12104289634011653\n\n\n\nAR(1):\n\n\n5-element Vector{Float64}:\n   2.0068089111198297\n 109.38026355047445\n   0.7915448981319909\n   0.10196962494870278\n   0.5421594991244063"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#comparison-of-model-simulation",
+    "href": "slides/lecture05-1.html#comparison-of-model-simulation",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Comparison of Model Simulation",
+    "text": "Comparison of Model Simulation\n\n\nCode\n# iid simulations\nresiduals_iid = rand(Normal(0, θ[end]), (n_samples, length(hind_years)))\nmodel_iid = ebm_wrap(θ[1:end-1])\nmodel_sim_iid = residuals_iid .+ model_iid'\n\n# ar1 simulations\nresiduals_ar1 = zeros(n_samples, length(hind_years))\nresiduals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)\nfor i = 2:size(residuals_ar1)[2]\n    residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))\nend\nmodel_ar1 = ebm_wrap(θ_ar1[1:end-2])\nmodel_sim_ar1 = residuals_ar1 .+ model_ar1'\n\nq90_iid = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval\nq90_ar1 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval\n\nplot(hind_years, model_iid, color=:red, linewidth=3, label=\"IID Model Simulation\", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nplot!(hind_years, model_ar1, color=:blue, linewidth=3, label=\"AR(1) Model Simulation\", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_out), fillalpha=0.3)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Comparison of best fit with uncertain realization for the EBM with normal residuals."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#impacts-on-projections-rcp-8.5",
+    "href": "slides/lecture05-1.html#impacts-on-projections-rcp-8.5",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Impacts on Projections (RCP 8.5)",
+    "text": "Impacts on Projections (RCP 8.5)\n\n\nCode\n# iid simulations\nresiduals_iid = rand(Normal(0, θ[end]), (n_samples, length(sim_years)))\nmodel_iid = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ[1:end-1])\nmodel_sim_iid = residuals_iid .+ model_iid'\n\n# ar1 simulations\nresiduals_ar1 = zeros(n_samples, length(sim_years))\nresiduals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)\nfor i = 2:size(residuals_ar1)[2]\n    residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))\nend\nmodel_ar1 = ebm(forcing_non_aerosol_85[sim_idx], forcing_aerosol_85[sim_idx], p=θ_ar1[1:end-2])\nmodel_sim_ar1 = residuals_ar1 .+ model_ar1'\n\nq90_iid = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval\nq90_ar1 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval\n\nplot(sim_years, model_iid, color=:red, linewidth=3, label=\"IID Model Simulation\", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm, right_margin=8mm)\nplot!(sim_years, model_ar1, color=:blue, linewidth=3, label=\"AR(1) Model Simulation\", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_ar1), fillalpha=0.3)\nxlims!(2000, 2100)\nylims!(0, 5)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Comparisons of different residual structures for RCP 8.5 projections."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#ok-but-what-about-parameter-uncertainty",
+    "href": "slides/lecture05-1.html#ok-but-what-about-parameter-uncertainty",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Ok, But What About Parameter Uncertainty?",
+    "text": "Ok, But What About Parameter Uncertainty?\nThe frameworks we’ve been using so far: no parametric uncertainty and minimal prior information.\nThis can sometimes lead to odd outcomes, e.g. low climate sensitivities.\nIn a few weeks, we will look at approaches to incorporate parametric uncertainty and prior information."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#key-points-1",
+    "href": "slides/lecture05-1.html#key-points-1",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Key Points",
+    "text": "Key Points\n\nProbability models for data let us generate alternate datasets/realizations.\nDifferent probability models may have more or less impact on simulated outcomes but may result in different parameter values."
+  },
+  {
+    "objectID": "slides/lecture05-1.html#next-classes",
+    "href": "slides/lecture05-1.html#next-classes",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Next Class(es)",
+    "text": "Next Class(es)\nNext Week: Exploratory data analysis"
+  },
+  {
+    "objectID": "slides/lecture05-1.html#assessments",
+    "href": "slides/lecture05-1.html#assessments",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Assessments",
+    "text": "Assessments\nFriday: HW1 and Exercise 1 due by 9pm."
   }
 ]

@@ -47,6 +47,7 @@ Pkg.instantiate()
 using Random
 using Distributions
 using Plots
+using GLM
 using StatsPlots
 using StatsBase
 using LaTeXStrings
@@ -315,29 +316,90 @@ We assumed our models were independently and identically distributed according t
 
 ***How can we check these assumptions***?
 
-## Some Diagnostic Plots
+## Diagnostics: Normality
 
 ```{julia}
 #| echo: true
 #| output: true
 #| code-fold: true
-#| label: fig-resid-diagnostics
+#| label: fig-resid-diagnostics-normal
 #| fig-align: center
-#| fig-cap: Checking residual assumptions
+#| fig-cap: Checking residual assumptions of normality
 #| fig-subcap: 
 #|  - "Distribution"
-#|  - "Autocorrelation"
+#|  - "Q-Q Plot"
 #| layout-ncol: 2
 
 residuals = model_out .- temp_obs # calculate residuals
 p1 = histogram(residuals, tickfontsize=16, guidefontsize=18, legend=false, xlabel="Residual (°C)", ylabel="Count") # plot histogram to check distributional assumption
-p2 = plot(pacf(residuals, 1:5), marker=:circle, line=:stem, linewidth=3, markersize=8, tickfontsize=16, guidefontsize=18, legend=false, ylabel="Partial Autocorrelation", xlabel="Time Lag")
+p2 = qqplot(Normal, residuals, tickfontsize=16, guidefontsize=18, xlabel="Normal Theoretical Quantile", ylabel="Sample Residual Quantile")
 
 plot!(p1, size=(500, 500))
 plot!(p2, size=(500, 500))
 display(p1)
 display(p2)
 ```
+
+## Diagnostics: Independence
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-resid-diagnostics-autocor
+#| fig-align: center
+#| fig-cap: Checking residual assumptions for independence and autocorrelation
+#| fig-subcap: 
+#|  - "Partial autocorrelation"
+#|  - "Scatterplot of lag-1 residuals"
+#| layout-ncol: 2
+
+
+p1 = plot(pacf(residuals, 1:5), marker=:circle, line=:stem, linewidth=3, markersize=8, tickfontsize=16, guidefontsize=18, legend=false, ylabel="Partial Autocorrelation", xlabel="Time Lag")
+p2 = scatter(residuals[1:end-1], residuals[2:end], legend=false, xlabel=L"Residual $t_i$ (°C)", ylabel=L"Residual $t_{i+1}$ (°C)", guidefontsize=18, tickfontsize=16)  
+dat = DataFrame(X=residuals[1:end-1], Y=residuals[2:end])
+fit = lm(@formula(Y~X), dat)
+pred = predict(fit,dat)
+plot!(p2, dat.X, pred, linewidth=2)
+
+plot!(p1, size=(500, 500))
+plot!(p2, size=(500, 500))
+display(p1)
+display(p2)
+```
+
+## Diagnostics: Constant Variance
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-resid-diagnostics-var
+#| fig-align: center
+#| fig-cap: Checking residual assumptions for constant variance
+#| fig-subcap: 
+#|  - "Time dependence"
+#|  - "Temperature depednence"
+#| layout-ncol: 2
+
+
+p1 = scatter(residuals,  tickfontsize=16, guidefontsize=18, legend=false, ylabel="Residual (°C)", xlabel="Time")
+dat = DataFrame(Y=residuals, X=1:length(residuals))
+fit = lm(@formula(Y~X), dat)
+pred = predict(fit,dat)
+plot!(p1, dat.X, pred, linewidth=2)
+p2 = scatter(model_out, residuals, legend=false, xlabel="Modeled Temperature (°C)", ylabel="Residual (°C)", guidefontsize=18, tickfontsize=16)  
+dat = DataFrame(Y=residuals, X=model_out)
+fit = lm(@formula(Y~X), dat)
+pred = predict(fit,dat)
+plot!(p2, dat.X, pred, linewidth=2)
+
+plot!(p1, size=(500, 500))
+plot!(p2, size=(500, 500))
+display(p1)
+display(p2)
+```
+
 
 ## A Model for Residual Autocorrelation
 
