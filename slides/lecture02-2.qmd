@@ -1,0 +1,401 @@
+---
+title: "Bayesian Statistics and Probability Models"
+subtitle: "Lecture 04"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "January 31, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+execute:
+    freeze: auto
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using Distributions
+using Plots
+using StatsPlots
+using StatsBase
+using LaTeXStrings
+using Measures
+using CSV
+using DataFrames
+using Optim
+
+Random.seed!(1)
+```
+
+# Last Class(es)
+
+## Probability Models
+
+**Goal**: Write down a probability model for the data-generating process for $\mathbf{y}$.
+
+This could be:
+
+- Direct statistical model, $$\mathbf{y} \sim \mathcal{D}(\theta).$$
+- Model for the residuals of a numerical model, $$\mathbf{r} = \mathbf{y} - F(\mathbf{x}) \sim \mathcal{D}(\theta).$$
+
+## Model Fitting as Maximum Likelihood Estimation
+
+We can interpret fitting a model (reducing error according to some loss or error metric) as maximizing the probability of observing our data from this data generating process.
+
+# Accounting for Model Residuals
+
+## The Energy Balance Model Revisited
+
+Last class, we introduced the Energy Balance Model (EBM):
+
+$$T_{i+1} = T_i + \frac{F_i - \lambda T_i}{cd} \Delta t$$
+
+Let's write this as $\mathbf{T} = \Lambda(\mathbf{F})$.
+
+```{julia}
+#| output: false
+#| echo: false
+
+# use default values of S=3.2°C, d=100m, α=1.3
+function ebm(rf_nonaerosol, rf_aerosol; p=(3.2, 100, 1.3))
+    # set up model parameters
+    S, d, α = p # this unpacks the parameter tuple into variables
+    F2xCO₂ = 4.0 # radiative forcing [W/m²] for a doubling of CO₂
+    λ = F2xCO₂ / S
+
+    c = 4.184e6 # heat capacity/area [J/K/m²]
+    C = c*d # heat capacity of mixed layer (per area)
+    F = rf_nonaerosol + α*rf_aerosol # radiative forcing
+    Δt = 31558152. # annual timestep [s]
+
+    T = zero(F)
+    for i in 1:length(F)-1
+        T[i+1] = T[i] + (F[i] - λ*T[i])/C * Δt
+    end
+    
+    # return after normalizing to reference period
+    return T .- mean(T[1:20])
+end
+
+# Dataset from https://zenodo.org/record/3973015
+# The CSV is read into a DataFrame object, and we specify that it is comma delimited
+forcings_all_85 = CSV.read("data/climate/ERF_ssp585_1750-2500.csv", DataFrame, delim=",")
+
+# Separate out the individual components
+forcing_co2_85 = forcings_all_85[!,"co2"]
+# Get total aerosol forcings
+forcing_aerosol_rad_85 = forcings_all_85[!,"aerosol-radiation_interactions"]
+forcing_aerosol_cloud_85 = forcings_all_85[!,"aerosol-cloud_interactions"]
+forcing_aerosol_85 = forcing_aerosol_rad_85 + forcing_aerosol_cloud_85
+forcing_total_85 = forcings_all_85[!,"total"]
+forcing_non_aerosol_85 = forcing_total_85 - forcing_aerosol_85
+forcing_other_85 = forcing_total_85 - (forcing_co2_85 + forcing_aerosol_85)
+
+t = time_forcing = Int64.(forcings_all_85[!,"year"]) # Ensure that years are interpreted as integers
+
+temps = CSV.read("data/climate/HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv", DataFrame, delim=",")
+
+time_obs = temps[:, 1]
+temp_obs = temps[:, 2]
+temp_lo = temps[:, 3]
+temp_hi = temps[:, 4]
+
+# generate simulations
+sim_years = 1850:2020 # model years to simulate
+idx = indexin(sim_years, t) # find indices in t vector of simulation years
+# since we specified default values for p, those are used for the parameters
+temp_default = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx]) 
+
+temp_obs = temp_obs[indexin(sim_years, time_obs)] # filter to simulated years for plotting
+temp_lo = temp_lo[indexin(sim_years, time_obs)] # filter to simulated years for plotting
+temp_hi = temp_hi[indexin(sim_years, time_obs)] # filter to simulated years for plotting
+temp_obs = temp_obs .- mean(temp_obs[1:20]) # re-normalize to be consistent with the model
+temp_lo = temp_lo .- mean(temp_obs[1:20]) # re-normalize to be consistent with the model
+temp_hi = temp_hi .- mean(temp_obs[1:20]) # re-normalize to be consistent with the model
+```
+
+## EBM Probability Model
+
+Assume independent and identically distributed (*i.i.d.*) normal residuals:
+
+$$\mathbf{y_i} \sim \mathcal{N}(\Lambda(\mathbf{F_i}), \sigma).$$
+
+## i.i.d. Log-Likelihood
+
+$$
+\log \mathcal{L}(\theta | \mathbf{y}, F) = \sum_{i=1}^n \left[\log \frac{1}{\sqrt{2\pi}} - \frac{1}{2\sigma^2}(y_i - F(x_i))  ^2 \right] 
+$$
+
+If we ignore all of the constants, this is proportional to the negative mean-squared error.
+
+## Maximum Likelihood Estimate
+
+```{julia}
+#| echo: true
+#| output: true
+#| output-location: slide
+#| code-line-numbers: "|2,3,4,5|11,12,13,14"
+
+# p are the model parameters, σ the standard deviation of the normal errors, y is the data, m the model function
+function log_likelihood(p, σ, y, m)
+    y_pred = m(p)
+    ll = sum(logpdf.(Normal.(y_pred, σ), y))
+end
+
+ebm_wrap(params) = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx], p = params)
+
+# maximize log-likelihood within some range
+# important to make everything a Float instead of an Int 
+lower = [1.0, 50.0, 0.0, 0.0]
+upper = [4.0, 150.0, 2.0, 10.0]
+p0 = [2.0, 100.0, 1.0, 1.0]
+result = Optim.optimize(params -> -log_likelihood(params[1:end-1], params[end], temp_obs, ebm_wrap), lower, upper, p0)
+θ = result.minimizer
+```
+
+## Generating Simulations
+
+```{julia}
+#| echo: true
+#| output: false
+
+# set number of sampled simulations
+n_samples = 1000
+residuals = rand(Normal(0, θ[end]), (n_samples, length(temp_obs)))
+model_out = ebm_wrap(θ[1:end-1])
+# this uses broadcasting to "sweep" the model simulation across the sampled residual matrix
+model_sim = residuals .+ model_out' # need to transpose the model output vector due to how Julia treats vector dimensions
+```
+
+## "Best Fit"
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-temp-best
+#| fig-align: center
+#| fig-cap: Best fit for the EBM with normal residuals.
+
+plot(sim_years, model_out, color=:red, linewidth=3, label="Model Simulation", guidefontsize=18, tickfontsize=16, legendfontsize=16, xlabel="Year", ylabel="Temperature anomaly (°C)", bottom_margin=5mm, left_margin=5mm)
+scatter!(sim_years, temp_obs, color=:black, label="Data")
+```
+
+## Adding In Uncertain Residuals...
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-temp-realizations
+#| fig-align: center
+#| fig-cap: Comparison of best fit with uncertain realization for the EBM with normal residuals.
+
+plot(sim_years, model_out, color=:red, linewidth=3, label="Model Simulation", xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+plot!(sim_years, model_sim[1, :], color=:grey, linewidth=1, label="Model Simulation With Noise", alpha=0.5)
+plot!(sim_years, model_sim[2:10, :]', color=:grey, linewidth=1, label=false, alpha=0.5)
+scatter!(sim_years, temp_obs, color=:black, label="Data")
+```
+
+## Visualizing the Uncertainty Spread
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-temp-interval
+#| fig-align: center
+#| fig-cap: Comparison of best fit with uncertain realization for the EBM with normal residuals.
+
+q_90 = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim,; dims=1) # compute 90% prediction interval
+
+plot(sim_years, model_out, color=:red, linewidth=3, label="Model Simulation", ribbon=(model_out .- q_90[1, :], q_90[2, :] .- model_out), fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+scatter!(sim_years, temp_obs, color=:black, label="Data")
+```
+
+# More General Probability Models
+
+## Checking The Model Residuals
+
+One mantra in this class: **check your residuals**!
+
+We assumed our models were independently and identically distributed according to a normal distribution. 
+
+***How can we check these assumptions***?
+
+## Some Diagnostic Plots
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-resid-diagnostics
+#| fig-align: center
+#| fig-cap: Checking residual assumptions
+#| fig-subcap: 
+#|  - "Distribution"
+#|  - "Autocorrelation"
+#| layout-ncol: 2
+
+residuals = model_out .- temp_obs # calculate residuals
+p1 = histogram(residuals, tickfontsize=16, guidefontsize=18, legend=false, xlabel="Residual (°C)", ylabel="Count") # plot histogram to check distributional assumption
+p2 = plot(pacf(residuals, 1:5), marker=:circle, line=:stem, linewidth=3, markersize=8, tickfontsize=16, guidefontsize=18, legend=false, ylabel="Partial Autocorrelation", xlabel="Time Lag")
+
+plot!(p1, size=(500, 500))
+plot!(p2, size=(500, 500))
+display(p1)
+display(p2)
+```
+
+## A Model for Residual Autocorrelation
+
+An autoregressive with lag 1 model (AR(1)):
+
+$$
+\begin{gather*}
+r_{i+1} = \rho r_i + \varepsilon_i \\
+\varepsilon_i \sim \mathcal{N}(0, \sigma)
+\end{gather*}
+$$
+
+## Rearranging for Likelihood
+$$\begin{gather*}
+r_{i+1} \sim \mathcal{N}(\rho r_i, \sigma) \\
+r_1 \sim \mathcal{N}\left(0, \frac{\sigma}{\sqrt{1-\rho^2}}\right)
+\end{gather*}
+$$
+
+## Fitting AR(1) Model
+
+```{julia}
+#| echo: true
+#| output: false
+#| code-line-numbers: "|2-12"
+
+# p are the model parameters, σ the standard deviation of the AR(1) errors, ρ is the autocorrelation coefficient, y is the data, m the model function
+function ar_log_likelihood(p, σ, ρ, y, m)
+    y_pred = m(p)
+    ll = 0 # initialize log-likelihood counter
+    residuals = y_pred .- y
+    ll += logpdf(Normal(0, σ/sqrt(1-ρ^2)), residuals[1])
+    for i = 1:length(residuals)-1
+        residuals_whitened = residuals[i+1] - ρ * residuals[i]
+        ll += logpdf(Normal(0, σ), residuals_whitened)
+    end
+    return ll
+end
+
+ebm_wrap(params) = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx], p = params)
+
+# maximize log-likelihood within some range
+# important to make everything a Float instead of an Int 
+lower = [1.0, 50.0, 0.0, 0.0, -1.0]
+upper = [4.0, 150.0, 2.0, 10.0, 1.0]
+p0 = [2.0, 100.0, 1.0, 1.0, 0.0]
+result = Optim.optimize(params -> -ar_log_likelihood(params[1:end-2], params[end-1], params[end], temp_obs, ebm_wrap), lower, upper, p0)
+θ_ar1 = result.minimizer
+```
+
+## Comparison of IID and AR(1) Fits
+
+:::: {.columns}
+::: {.column width=50%}
+***Normal IID***:
+```{julia}
+θ
+```
+:::
+::: {.column width=50%}
+***AR(1)***:
+```{julia}
+θ_ar1
+```
+:::
+::::
+
+## Comparison of Model Simulation
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| label: fig-temp-comparison
+#| fig-align: center
+#| fig-cap: Comparison of best fit with uncertain realization for the EBM with normal residuals.
+
+# iid simulations
+residuals_iid = rand(Normal(0, θ[end]), (n_samples, length(sim_years)))
+model_iid = ebm_wrap(θ[1:end-1])
+model_sim_iid = residuals_iid .+ model_iid'
+
+# ar1 simulations
+residuals_ar1 = zeros(n_samples, length(sim_years))
+residuals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)
+for i = 2:size(residuals_ar1)[2]
+    residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))
+end
+model_ar1 = ebm_wrap(θ_ar1[1:end-2])
+model_sim_ar1 = residuals_ar1 .+ model_ar1'
+
+q90_iid = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval
+q90_ar1 = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval
+
+plot(sim_years, model_iid, color=:red, linewidth=3, label="IID Model Simulation", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+plot!(sim_years, model_ar1, color=:blue, linewidth=3, label="AR(1) Model Simulation", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_out), fillalpha=0.3)
+scatter!(sim_years, temp_obs, color=:black, label="Data")
+```
+
+
+
+# Key Points
+
+## Key Points
+
+- **Goal of model-based data analysis**: Gain insights into data or underlying system through model simulations.
+- Requires developing probability model for data or remodel_out = ebm_wrap(θ[1:end-1])
+- Fitting a model as maximum likelihood estimation.
+- Can develop more complex models (autocorrelated residuals, non-normal errors) but these may not result in "standard" error metrics.
+
+
+# Upcoming Schedule
+
+## Next Class(es)
+
+**Wednesday**: Bayesian statistics and probability models
+
+**Next Week**: Exploratory data analysis
+
+## Assessments
+
+**Friday**: HW1 and Exercise 1 due by 9pm.
