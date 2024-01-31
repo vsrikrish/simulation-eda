@@ -269,6 +269,34 @@ scatter!(hind_years, temp_obs, color=:black, label="Data")
 ylims!(-0.5, 1.2)
 ```
 
+## Checking for Calibration
+
+For an $\alpha$% projection interval $\mathcal{I}_\alpha$, we would expect ~$\alpha$% of the data to be contained in this interval.
+
+This rate is quantified by the **surprise index**: $1 - \frac{1}{n} \sum_{i=1}^n \mathbb{I}_{\mathcal{I}_\alpha}(y_i).$
+
+## Surprise Index
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+
+surprises = 0 # initialize surprise counter
+# go through the data and check which points are outside of the 90% interval
+for i = 1:length(temp_obs)
+    ## The || operator is an OR, so returns true if either of the terms are true
+    if (temp_obs[i] < q_90[1, i]) || (q_90[2, i] < temp_obs[i])
+        surprises += 1
+    end
+end
+surprises / length(temp_obs)
+```
+
+We used a 90% projection interval: 
+
+- How does this compare? 
+
 ## Projections (Best Fit)
 
 ```{julia}
@@ -500,6 +528,24 @@ q90_ar1 = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) #
 plot(hind_years, model_iid, color=:red, linewidth=3, label="IID Model Simulation", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
 plot!(hind_years, model_ar1, color=:blue, linewidth=3, label="AR(1) Model Simulation", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_out), fillalpha=0.3)
 scatter!(hind_years, temp_obs, color=:black, label="Data")
+```
+
+## AR(1) Surprise Index
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+
+surprises = 0 # initialize surprise counter
+# go through the data and check which points are outside of the 90% interval
+for i = 1:length(temp_obs)
+    ## The || operator is an OR, so returns true if either of the terms are true
+    if (temp_obs[i] < q90_ar1[1, i]) || (q90_ar1[2, i] < temp_obs[i])
+        surprises += 1
+    end
+end
+surprises / length(temp_obs)
 ```
 
 ## Impacts on Projections (RCP 8.5)
