@@ -29,6 +29,9 @@ format:
         include-in-header: mathjax-config.html
         date-format: long
         email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
 execute:
     freeze: auto
 ---

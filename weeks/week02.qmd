@@ -21,4 +21,4 @@ As you're reading along, please use the collaborative annotation in Canvas to ma
 ## Lectures
 
 - [Lecture 02-1: Probability Models and Model Residuals](../slides/lecture02-1.qmd)
-- Lecture 02-2: Uncertainty and Probability Review
+- [Lecture 02-2: Probability Models II](../slides/lecture02-2.qmd)
