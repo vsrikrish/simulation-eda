@@ -1401,6 +1401,20 @@
     "text": "Visualizing the Uncertainty Spread\n\n\nCode\nq_90 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim,; dims=1) # compute 90% prediction interval\n\nplot(hind_years, model_out, color=:red, linewidth=3, label=\"Model Simulation\", ribbon=(model_out .- q_90[1, :], q_90[2, :] .- model_out), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\nylims!(-0.5, 1.2)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Comparison of best fit with uncertain realization for the EBM with normal residuals."
   },
   {
+    "objectID": "slides/lecture02-2.html#checking-for-calibration",
+    "href": "slides/lecture02-2.html#checking-for-calibration",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Checking for Calibration",
+    "text": "Checking for Calibration\nFor an \\(\\alpha\\)% projection interval \\(\\mathcal{I}_\\alpha\\), we would expect ~\\(\\alpha\\)% of the data to be contained in this interval.\nThis rate is quantified by the surprise index: \\(1 - \\frac{1}{n} \\sum_{i=1}^n \\mathbb{I}_{\\mathcal{I}_\\alpha}(y_i).\\)"
+  },
+  {
+    "objectID": "slides/lecture02-2.html#surprise-index",
+    "href": "slides/lecture02-2.html#surprise-index",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "Surprise Index",
+    "text": "Surprise Index\n\n\nCode\nsurprises = 0 # initialize surprise counter\n# go through the data and check which points are outside of the 90% interval\nfor i = 1:length(temp_obs)\n    ## The || operator is an OR, so returns true if either of the terms are true\n    if (temp_obs[i] &lt; q_90[1, i]) || (q_90[2, i] &lt; temp_obs[i])\n        surprises += 1\n    end\nend\nsurprises / length(temp_obs)\n\n\n0.11695906432748537\n\n\nWe used a 90% projection interval:\n\nHow does this compare?"
+  },
+  {
     "objectID": "slides/lecture02-2.html#projections-best-fit",
     "href": "slides/lecture02-2.html#projections-best-fit",
     "title": "Bayesian Statistics and Probability Models",
@@ -1476,6 +1490,13 @@
     "title": "Bayesian Statistics and Probability Models",
     "section": "Comparison of Model Simulation",
     "text": "Comparison of Model Simulation\n\n\nCode\n# iid simulations\nresiduals_iid = rand(Normal(0, θ[end]), (n_samples, length(hind_years)))\nmodel_iid = ebm_wrap(θ[1:end-1])\nmodel_sim_iid = residuals_iid .+ model_iid'\n\n# ar1 simulations\nresiduals_ar1 = zeros(n_samples, length(hind_years))\nresiduals_ar1[:, 1] = rand(Normal(0, θ_ar1[end-1] / sqrt(1-θ_ar1[end]^2)), n_samples)\nfor i = 2:size(residuals_ar1)[2]\n    residuals_ar1[:, i] .= rand.(Normal.(θ_ar1[end] * residuals_ar1[:, i-1], θ_ar1[end-1]))\nend\nmodel_ar1 = ebm_wrap(θ_ar1[1:end-2])\nmodel_sim_ar1 = residuals_ar1 .+ model_ar1'\n\nq90_iid = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) # compute 90% prediction interval\nq90_ar1 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_ar1; dims=1) # compute 90% prediction interval\n\nplot(hind_years, model_iid, color=:red, linewidth=3, label=\"IID Model Simulation\", ribbon=(model_iid .- q90_iid[1, :], q90_iid[2, :] .- model_iid), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nplot!(hind_years, model_ar1, color=:blue, linewidth=3, label=\"AR(1) Model Simulation\", ribbon=(model_ar1 .- q90_ar1[1, :], q90_ar1[2, :] .- model_out), fillalpha=0.3)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 9: Comparison of best fit with uncertain realization for the EBM with normal residuals."
+  },
+  {
+    "objectID": "slides/lecture02-2.html#ar1-surprise-index",
+    "href": "slides/lecture02-2.html#ar1-surprise-index",
+    "title": "Bayesian Statistics and Probability Models",
+    "section": "AR(1) Surprise Index",
+    "text": "AR(1) Surprise Index\n\n\nCode\nsurprises = 0 # initialize surprise counter\n# go through the data and check which points are outside of the 90% interval\nfor i = 1:length(temp_obs)\n    ## The || operator is an OR, so returns true if either of the terms are true\n    if (temp_obs[i] &lt; q90_ar1[1, i]) || (q90_ar1[2, i] &lt; temp_obs[i])\n        surprises += 1\n    end\nend\nsurprises / length(temp_obs)\n\n\n0.14035087719298245"
   },
   {
     "objectID": "slides/lecture02-2.html#impacts-on-projections-rcp-8.5",
