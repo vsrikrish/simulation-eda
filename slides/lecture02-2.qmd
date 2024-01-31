@@ -68,8 +68,6 @@ Random.seed!(1)
 
 **Goal**: Write down a probability model for the data-generating process for $\mathbf{y}$.
 
-This could be:
-
 - Direct statistical model, $$\mathbf{y} \sim \mathcal{D}(\theta).$$
 - Model for the residuals of a numerical model, $$\mathbf{r} = \mathbf{y} - F(\mathbf{x}) \sim \mathcal{D}(\theta).$$
 
