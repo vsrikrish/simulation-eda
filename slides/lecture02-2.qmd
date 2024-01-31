@@ -32,6 +32,8 @@ format:
         chalkboard:
             theme: whiteboard
             buttons: true
+        touch: false
+        controls: true
 execute:
     freeze: auto
 ---
@@ -267,7 +269,7 @@ scatter!(hind_years, temp_obs, color=:black, label="Data")
 ylims!(-0.5, 1.2)
 ```
 
-## Projections Without Residual Uncertainty
+## Projections (Best Fit)
 
 ```{julia}
 #| echo: true
@@ -287,7 +289,7 @@ scatter!(hind_years, temp_obs, color=:black, label="Data")
 ylims!(-0.5, 5)
 ```
 
-## Projections With Residual Uncertainty
+## Projections (Residual Uncertainty)
 
 ```{julia}
 #| echo: true
