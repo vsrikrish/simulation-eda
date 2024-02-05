@@ -1764,7 +1764,7 @@
     "href": "slides/lecture03-1.html#spurious-correlations",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Spurious Correlations",
-    "text": "Spurious Correlations\n\n\nSource: Spurious Correlations #7602"
+    "text": "Spurious Correlations\n\nSpurious Correlation Example\nSource: Spurious Correlations #7602"
   },
   {
     "objectID": "slides/lecture03-1.html#correlated-data-likelihood",
@@ -1792,7 +1792,7 @@
     "href": "slides/lecture03-1.html#autocorrelation-function",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Autocorrelation Function",
-    "text": "Autocorrelation Function\nMany modern programming languages have autocorrelation functions (e.g. StatsBase.autocor() in Julia) which calculates the autocorrelation at varying lags.\n\n\nautocor(sample_ar, 1:10)\n\n\n10-element Vector{Float64}:\n  0.5584861939778754\n  0.2715973028691899\n -0.024160973730345363\n -0.20302169868921682\n -0.27701812018221406\n -0.22360530073259474\n  0.0653064827991369\n  0.12749901066451022\n  0.16800165913435977\n  0.0607066386595902"
+    "text": "Autocorrelation Function\nMany modern programming languages have autocorrelation functions (e.g. StatsBase.autocor() in Julia) which calculates the autocorrelation at varying lags.\n\n\nautocor(sample_ar, 1:10)\n\n\n10-element Vector{Float64}:\n  0.5584861939778755\n  0.2715973028691898\n -0.024160973730345342\n -0.20302169868921682\n -0.2770181201822141\n -0.2236053007325947\n  0.06530648279913691\n  0.12749901066451025\n  0.1680016591343598\n  0.06070663865959022"
   },
   {
     "objectID": "slides/lecture03-1.html#autocorrelation-function-1",
@@ -1806,7 +1806,7 @@
     "href": "slides/lecture03-1.html#partial-autocorrelation-function",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Partial Autocorrelation Function",
-    "text": "Partial Autocorrelation Function\nThis is solved by using the partial autocorrelation function (e.g. StatsBase.pacf()):\n\n\npacf(sample_ar, 1:10)\n\n\n10-element Vector{Float64}:\n  0.5610578719938641\n -0.07132505760984406\n -0.23567190666036678\n -0.13760028534427998\n -0.07852404120927237\n -0.03265094625098848\n  0.317641607455578\n -0.13655492164639593\n  0.002413001297937716\n -0.1569823772883165"
+    "text": "Partial Autocorrelation Function\nThis is solved by using the partial autocorrelation function (e.g. StatsBase.pacf()):\n\n\npacf(sample_ar, 1:10)\n\n\n10-element Vector{Float64}:\n  0.5610578719938641\n -0.07132505760984406\n -0.23567190666036678\n -0.13760028534428004\n -0.07852404120927241\n -0.03265094625098847\n  0.31764160745557796\n -0.1365549216463958\n  0.0024130012979377024\n -0.15698237728831643"
   },
   {
     "objectID": "slides/lecture03-1.html#autoregressive-models",
@@ -1858,11 +1858,11 @@
     "text": "Simple Discrepancy Example\nCommon to model observation errors as normally-distributed: \\(\\varepsilon_t \\sim \\mathcal{N}(0, \\omega)\\)\nIf the discrepancy is also i.i.d. normal: \\(\\zeta_t \\sim \\mathcal{N}(0, \\sigma)\\).\nResiduals: \\[\\zeta_t + \\varepsilon_t \\sim \\mathcal{N}(0, \\sqrt{\\omega^2 + \\sigma^2})\\]"
   },
   {
-    "objectID": "slides/lecture03-1.html#more-complex-discrepancy-example",
-    "href": "slides/lecture03-1.html#more-complex-discrepancy-example",
+    "objectID": "slides/lecture03-1.html#complex-discrepancy-example",
+    "href": "slides/lecture03-1.html#complex-discrepancy-example",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
-    "section": "More Complex Discrepancy Example",
-    "text": "More Complex Discrepancy Example\nNow suppose the discrepancy is AR(1).\n\\[\\begin{gather*}\n\\mathbf{\\zeta} + \\mathbf{\\varepsilon} \\sim \\mathcal{N}(\\mathbf{0}, \\Sigma) \\\\\n\\Sigma = \\begin{pmatrix}\\frac{\\sigma^2}{1-\\rho^2} + {\\color{red}\\omega^2} & \\rho & \\rho^2 & \\ldots & \\rho^{T-1} \\\\ \\rho & \\frac{\\sigma^2}{1-\\rho^2} + {\\color{red}\\omega^2} & \\rho & \\ldots & \\rho^{T-2} \\\\ \\vdots & \\vdots & \\vdots & \\ddots & \\vdots \\\\ \\rho^{T-1} & \\rho^{T-2} & \\rho^{T-3} & \\ldots & \\frac{\\sigma^2}{1-\\rho^2} + {\\color{red}\\omega^2} \\end{pmatrix}\n\\end{gather*}\n\\]"
+    "section": "Complex Discrepancy Example",
+    "text": "Complex Discrepancy Example\nNow suppose the discrepancy is AR(1).\n\\[\\begin{gather*}\n\\mathbf{\\zeta} + \\mathbf{\\varepsilon} \\sim \\mathcal{N}(\\mathbf{0}, \\Sigma) \\\\\n\\Sigma = \\begin{pmatrix}\\frac{\\sigma^2}{1-\\rho^2} + {\\color{red}\\omega^2} & \\rho & \\rho^2 & \\ldots & \\rho^{T-1} \\\\ \\rho & \\frac{\\sigma^2}{1-\\rho^2} + {\\color{red}\\omega^2} & \\rho & \\ldots & \\rho^{T-2} \\\\ \\vdots & \\vdots & \\vdots & \\ddots & \\vdots \\\\ \\rho^{T-1} & \\rho^{T-2} & \\rho^{T-3} & \\ldots & \\frac{\\sigma^2}{1-\\rho^2} + {\\color{red}\\omega^2} \\end{pmatrix}\n\\end{gather*}\n\\]"
   },
   {
     "objectID": "slides/lecture03-1.html#fitting-discrepancies",
