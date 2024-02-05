@@ -345,7 +345,7 @@ display(p2)
 
 ## Predictive Checks
 
-How well do projections match data [@Gelman2004-gh]?
+How well do projections match data @Gelman2004-gh?
 
 Can be quantitative or qualitative.
 
@@ -388,9 +388,9 @@ model_out = ebm_wrap(θ[1:end-1])
 # this uses broadcasting to "sweep" the model simulation across the sampled residual matrix
 model_sim = residuals .+ model_out' # need to transpose the model output vector due to how Julia treats vector dimensions
 
-q_90 = mapslices(col -> quantile(col, [0.05, 0.95]), model_sim,; dims=1) # compute 90% prediction interval
-
-plot(hind_years, model_out, color=:red, linewidth=3, label="Model Simulation", ribbon=(model_out .- q_90[1, :], q_90[2, :] .- model_out), fillalpha=0.3, xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+plot(hind_years, model_out, color=:red, linewidth=3, label="Model Simulation", xlabel="Year", ylabel="Temperature anomaly (°C)", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)
+plot!(hind_years, model_sim[1, :], color=:grey, linewidth=1, label="Model Simulation With Noise", alpha=0.5)
+plot!(hind_years, model_sim[2:10, :]', color=:grey, linewidth=1, label=false, alpha=0.5)
 scatter!(hind_years, temp_obs, color=:black, label="Data")
 ylims!(-0.5, 1.2)
 ```
@@ -478,7 +478,7 @@ Source: [Spurious Correlations #7602](https://www.tylervigen.com/spurious/correl
 ## Correlated Data Likelihood
 
 - Marginal distributions normal: use a Multivariate Normal distribution
-- Otherwise: Use [copulas](https://en.wikipedia.org/wiki/Copula_(probability_theory)) to "glue" marginal distributions together.
+- Otherwise: Use [copulas](https://en.wikipedia.org/wiki/Copula_(probability_theory)) to "glue" marginal distributions together with right correlation structure
 
 ## Autocorrelation
 
@@ -619,10 +619,9 @@ $$
 
 ## Model-Data Discrepancy
 
-**Model-data discrepancy**: systematic disagreements between model and the modeled system state [@Brynjarsdottir2014-ve].
+**Model-data discrepancy**: systematic disagreements between model and the modeled system state @Brynjarsdottir2014-ve.
 
 Let $F(\mathbf{x}; \mathbf{\theta})$ be the simulation model:
-
 - $\mathbf{x}$ are the "control variables";
 - $\mathbf{\theta}$ are the "calibration variables".
 
@@ -631,7 +630,6 @@ Let $F(\mathbf{x}; \mathbf{\theta})$ be the simulation model:
 If $\mathbf{y}$ are the "observations,"" we can model these as:
 $$\mathbf{y} = z(\mathbf{x}) + \mathbf{\varepsilon},$$
 where
-
 - $z(\mathbf{x})$ is the "true" system state at control variable $\mathbf{x}$;
 - $\mathbf{\varepsilon}$ are observation errors.
 
@@ -650,7 +648,7 @@ $$\mathbf{y} =  F(\mathbf{x}; \mathbf{\theta}) + \zeta(\mathbf{x}; \mathbf{\thet
 
 Common to model observation errors as normally-distributed: $\varepsilon_t \sim \mathcal{N}(0, \omega)$
 
-If the discrepancy is also i.i.d. normal: $\zeta_t \sim \mathcal{N}(0, \sigma)$.
+If the discrepancy is also i.i.d. normal $\zeta_t \sim \mathcal{N}(0, \sigma)$:
 
 Residuals: $$\zeta_t + \varepsilon_t \sim \mathcal{N}(0, \sqrt{\omega^2 + \sigma^2})$$
 
@@ -658,10 +656,9 @@ Residuals: $$\zeta_t + \varepsilon_t \sim \mathcal{N}(0, \sqrt{\omega^2 + \sigma
 
 Now suppose the discrepancy is AR(1).
 
-$$\begin{gather*}
-\mathbf{\zeta} + \mathbf{\varepsilon} \sim \mathcal{N}(\mathbf{0}, \Sigma) \\
-\Sigma = \begin{pmatrix}\frac{\sigma^2}{1-\rho^2} + {\color{red}\omega^2} & \rho & \rho^2 & \ldots & \rho^{T-1} \\ \rho & \frac{\sigma^2}{1-\rho^2} + {\color{red}\omega^2} & \rho & \ldots & \rho^{T-2} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ \rho^{T-1} & \rho^{T-2} & \rho^{T-3} & \ldots & \frac{\sigma^2}{1-\rho^2} + {\color{red}\omega^2} \end{pmatrix}
-\end{gather*}
+$$
+\mathbf{\zeta} + \mathbf{\varepsilon} \sim \mathcal{N}(\mathbf{0}, \Sigma) \qquad
+\Sigma = \begin{pmatrix}\frac{\sigma^2}{1-\rho^2} + \omega^2 & \rho & \rho^2 & \ldots & \rho^{T-1} \\ \rho & \frac{\sigma^2}{1-\rho^2} + \omega^2 & \rho & \ldots & \rho^{T-2} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ \rho^{T-1} & \rho^{T-2} & \rho^{T-3} & \ldots & \frac{\sigma^2}{1-\rho^2} + \omega^2 \end{pmatrix}
 $$
 
 ## Fitting Discrepancies
@@ -708,6 +705,4 @@ More on ML as an emulation/error tool later in the semester.
 HW2 assigned this week (will announce on Ed), due 2/23 by 9pm.
 
 # References
-
-## References
 
