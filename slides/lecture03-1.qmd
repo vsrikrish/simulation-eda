@@ -4,7 +4,7 @@ subtitle: "Lecture 05"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
 institution: "Cornell University"
-date: "January 31, 2024"
+date: "February 5, 2024"
 format:
     revealjs:
         slide-number: c/t
@@ -532,8 +532,8 @@ fit = lm(@formula(Y~X), dat)
 pred = predict(fit,dat)
 p1 = scatter(sample_independent[1:end-1], sample_independent[2:end], label=:false, title="Independent Variables: r=$(round(coef(fit)[2], digits=2))", tickfontsize=16, titlefontsize=18, guidefontsize=18)
 plot!(p1, dat.X, pred, linewidth=2, label=:false)
-xlabel!(p1, L"$y_t$")
-ylabel!(p1, L"$y_{t-1}$")
+ylabel!(p1, L"$y_t$")
+xlabel!(p1, L"$y_{t-1}$")
 plot!(p1, size=(600, 500))
 
 # autocorrelated
@@ -542,8 +542,8 @@ fit = lm(@formula(Y~X), dat)
 pred = predict(fit,dat)
 p2 = scatter(sample_ar[1:end-1], sample_ar[2:end], label=:false, title="Autocorrelated Variables: r=$(round(coef(fit)[2], digits=2))", tickfontsize=16, titlefontsize=18, guidefontsize=18)
 plot!(p2, dat.X, pred, linewidth=2, label=:false)
-xlabel!(p2, L"$y_t$")
-ylabel!(p2, L"$y_{t-1}$")
+ylabel!(p2, L"$y_t$")
+xlabel!(p2, L"$y_{t-1}$")
 plot!(p2, size=(600, 500))
 
 display(p1)
