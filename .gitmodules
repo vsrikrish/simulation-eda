@@ -4,3 +4,6 @@
 [submodule "exercises/ex01"]
 	path = exercises/ex01
 	url = https://github.com/BEE4850/ex-week01
+[submodule "exercises/ex03"]
+	path = exercises/ex03
+	url = https://github.com/BEE4850/ex-week03.git
