@@ -1,0 +1,16 @@
+---
+title: "Week 3"
+---
+
+## Announcements
+
+- [Exercise 3](../exercises/ex03/ex03.qmd) due 2/9/24.
+
+## Exercises
+
+- [Spurious Correlations](../exercises/ex03/ex03.qmd)
+
+## Lectures
+
+- [Lecture 03-1: Exploratory Data Analysis](../slides/lecture03-1.qmd)
+- Lecture 03-2: Clustering and Mixture Models

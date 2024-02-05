@@ -1,0 +1,496 @@
+---
+title: "Exploratory Data Analysis, Correlations, and Autocorrelations"
+subtitle: "Lecture 05"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "January 31, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        touch: false
+        controls: true
+execute:
+    freeze: auto
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using Distributions
+using Plots
+using GLM
+using StatsPlots
+using StatsBase
+using LaTeXStrings
+using Measures
+using CSV
+using DataFrames
+using Optim
+
+Random.seed!(1)
+```
+
+# Last Class(es)
+
+## Probability Models
+
+**Goal**: Write down a probability model for the data-generating process for $\mathbf{y}$.
+
+- Direct statistical model, $$\mathbf{y} \sim \mathcal{D}(\theta).$$
+- Model for the residuals of a numerical model, $$\mathbf{r} = \mathbf{y} - F(\mathbf{x}) \sim \mathcal{D}(\theta).$$
+
+## Model Fitting as Maximum Likelihood Estimation
+
+We can interpret fitting a model (reducing error according to some loss or error metric) as maximizing the probability of observing our data from this data generating process.
+
+# Exploratory Data Analysis (EDA)
+
+## EDA: Assessing Model-Data Fit
+
+**Examples**:
+
+::: {.fragment .fade-in}
+
+- Skewness
+- Tails
+- Clusters
+- (Auto)correlations
+:::
+
+## Curve Fitting
+
+:::: {.columns}
+::: {.column width=70%}
+![](https://imgs.xkcd.com/comics/curve_fitting_2x.png){width=40%}
+:::
+::: {.column width=30%}
+::: {.caption}
+Source: [XKCD #2048](https://xkcd.com/2048/)
+:::
+:::
+::::
+
+## Is EDA Ever Model-Free?
+
+Some characterize EDA as model-free (versus "confirmatory" data analysis).
+
+Is this right?
+
+## Visual Approaches to EDA
+
+Make plots!
+
+- Histograms
+- Scatterplots/Pairs plots
+- Quantile-Quantile Plots
+
+## Skew
+
+```{julia}
+#| label: fig-skew
+#| code-fold: true
+#| code-overflow: wrap
+#| echo: true
+#| layout-ncol: 2
+#| fig-cap: "Skew"
+#| fig-subcap: 
+#|  - "Normal vs. Skewed Data"
+#|  - "Histograms"
+
+# specify regression model
+f(x) = 2 + 2 * x
+pred = rand(Uniform(0, 10), 20)
+trend = f.(pred)
+
+# generate normal residuals
+normal_residuals = rand(Normal(0, 3), length(pred))
+normal_obs = trend .+ normal_residuals
+
+## generate skewed residuals
+skewed_residuals = rand(SkewNormal(0, 3, 2), length(pred))
+skewed_obs = trend .+ skewed_residuals
+
+# make plots
+# scatterplot of observations
+p1 = plot(0:10, f.(0:10), color=:black, label="Trend Line", linewidth=2, guidefontsize=18, tickfontsize=16, legendfontsize=16) # trend line
+scatter!(p1, pred, normal_obs, color=:orange, markershape=:circle, label="Normal Residuals")
+scatter!(p1, pred, skewed_obs, color=:green, markershape=:square, label="Skewed Residuals")
+xlabel!(p1, "Predictors")
+ylabel!(p1, "Observations")
+plot!(p1, size=(600, 450))
+
+# densities of residual distributions
+p2 = histogram(rand(Normal(0, 3), 1000), color=:orange, alpha=0.5, label="Normal Distribution", guidefontsize=18, tickfontsize=16, legendfontsize=16)
+histogram!(p2, rand(SkewNormal(0, 3, 2), 1000), color=:green, alpha=0.5, label="SkewNormal Distribution")
+plot!(p2, size=(600, 450))
+
+display(p1)
+display(p2)
+```
+
+## Fat Tails
+
+```{julia}
+#| label: fig-cauchy
+#| code-fold: true
+#| code-overflow: wrap
+#| echo: true
+#| layout-ncol: 2
+#| fig-cap: "Fat Tails"
+#| fig-subcap: 
+#|  - "Normal vs. Fat-Tailed Data"
+#|  - "Histograms"
+
+# generate normal residuals
+normal_residuals = rand(Normal(0, 3), length(pred))
+normal_obs = trend .+ normal_residuals
+
+## generate fat-tailed residuals
+cauchy_residuals = rand(Cauchy(0, 1), length(pred))
+cauchy_obs = trend .+ cauchy_residuals
+
+# make plots
+# scatterplot of observations
+p1 = plot(0:10, f.(0:10), color=:black, label="Trend Line", linewidth=2, guidefontsize=18, tickfontsize=16, legendfontsize=16) # trend line
+scatter!(p1, pred, normal_obs, color=:orange, markershape=:circle, label="Normal Residuals")
+scatter!(p1, pred, cauchy_obs, color=:green, markershape=:square, label="Fat-Tailed Residuals")
+xlabel!(p1, "Predictors")
+ylabel!(p1, "Observations")
+plot!(p1, size=(600, 450))
+
+# densities of residual distributions
+p2 = histogram(rand(Normal(0, 3), 1000), color=:orange, alpha=0.5, label="Normal Distribution", guidefontsize=18, tickfontsize=16, legendfontsize=16)
+histogram!(p2, rand(Cauchy(0, 1), 1000), color=:green, alpha=0.5, label="Cauchy Distribution")
+plot!(p2, size=(600, 450))
+xlims!(-20, 20)
+
+display(p1)
+display(p2)
+```
+
+
+## Quantile-Quantile (Q-Q) Plots
+
+:::: {.columns}
+::: {.column width=50%}
+Particularly with small sample sizes, just staring at data can be unhelpful.
+
+Q-Q plots are useful for checking goodness of fit of a proposed distribution.
+:::
+
+::: {.column width=50%}
+```{julia}
+#| label: fig-norm-qq
+#| code-fold: true
+#| code-overflow: wrap
+#| echo: true
+
+samps = rand(Normal(0, 3), 20)
+qqplot(Normal, samps, tickfontsize=16, guidefontsize=18, linewidth=3, markersize=6)
+xlabel!("Theoretical Quantiles")
+ylabel!("Empirical Quantiles")
+plot!(size=(500, 450))
+```
+:::
+::::
+
+## Q-Q Plot Example
+
+```{julia}
+#| label: fig-cauchy-qq
+#| code-fold: true
+#| code-overflow: wrap
+#| echo: true
+#| layout-ncol: 2
+#| fig-cap: "Q-Q Plot for Cauchy Data and Normal Distribution"
+#| fig-subcap: 
+#|  - "Normal vs Cauchy Distribution"
+#|  - "Q-Q Plot"
+
+## generate fat-tailed residuals
+cauchy_samps = rand(Cauchy(0, 1), 20)
+
+# make plots
+# scatterplot of observations
+p1 = plot(Normal(0, 2), linewidth=3, color=:green, label="Normal Distribution", yaxis=false, tickfontsize=16, guidefontsize=18, legendfontsize=18)
+plot!(p1, Cauchy(0, 1), linewidth=3, color=:orange, linestyle=:dash, label="Cauchy Distribution")
+xlims!(p1, (-10, 10))
+xlabel!("Value")
+plot!(p1, size=(500, 450))
+
+# densities of residual distributions
+p2 = qqplot(Normal, cauchy_samps, tickfontsize=16, guidefontsize=18, linewidth=3, markersize=6)
+xlabel!(p2, "Theoretical Quantiles")
+ylabel!(p2, "Empirical Quantiles")
+plot!(p2, size=(500, 450))
+
+display(p1)
+display(p2)
+```
+
+
+# Correlation and Auto-Correlation
+
+## What Is Correlation?
+
+**Correlation** refers to whether two variables increase or decrease simultaneously.
+
+Typically measured with Pearson's coefficient:
+
+$$r = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y} \in (-1, 1)$$
+
+## Correlation Examples
+
+```{julia}
+#| label: fig-correlation
+#| code-fold: true
+#| code-overflow: wrap
+#| echo: true
+#| layout-ncol: 3
+#| fig-cap: "Independent vs. Correlated Normal Variables"
+#| fig-subcap: 
+#|  - "Independent Variables"
+#|  - "Correlated Variables ($r=0.7$)"
+#|  - "Anti-Correlated Variables ($r=-0.7$)"
+
+# sample 1000 independent variables from a given normal distribution
+sample_independent = rand(Normal(0, 1), (2, 1000))
+p1 = scatter(sample_independent[1, :], sample_independent[2, :], label=:false, title="Independent Variables", tickfontsize=14, titlefontsize=18, guidefontsize=18)
+xlabel!(p1, L"$x_1$")
+ylabel!(p1, L"$x_2$")
+plot!(p1, size=(400, 500))
+
+# sample 1000 correlated variables, with r=0.7
+sample_correlated = rand(MvNormal([0; 0], [1 0.7; 0.7 1]), 1000)
+p2 = scatter(sample_correlated[1, :], sample_correlated[2, :], label=:false, title=L"Correlated ($r=0.7$)", tickfontsize=14, titlefontsize=18, guidefontsize=18)
+xlabel!(p2, L"$x_1$")
+ylabel!(p2, L"$x_2$")
+plot!(p2, size=(400, 500))
+
+# sample 1000 anti-correlated variables, with r=-0.7
+sample_anticorrelated = rand(MvNormal([0; 0], [1 -0.7; -0.7 1]), 1000)
+p3 = scatter(sample_anticorrelated[1, :], sample_anticorrelated[2, :], label=:false, title=L"Anticorrelated ($r=-0.7$)", tickfontsize=14, titlefontsize=18, guidefontsize=18)
+xlabel!(p3, L"$x_1$")
+ylabel!(p3, L"$x_2$")
+plot!(p3, size=(400, 500))
+
+display(p1)
+display(p2)
+display(p3)
+```
+
+## Correlation vs. Causation
+
+![XKCD 552](https://imgs.xkcd.com/comics/correlation_2x.png)
+
+::: {.caption}
+Source: [XKCD #552](https://xkcd.com/552/)
+:::
+
+## "Correlation Does Not Imply Causation"
+
+- Data can be correlated randomly (a spurious correlation)
+- Data can be correlated due to a mutual causal factor
+
+
+## Spurious Correlations
+
+![](https://www.tylervigen.com/spurious/correlation/image/7602_the-distance-between-uranus-and-mercury_correlates-with_biomass-power-generated-in-united-states.svg)
+
+::: {.caption}
+Source: [Spurious Correlations #7602](https://www.tylervigen.com/spurious/correlation/7602_the-distance-between-uranus-and-mercury_correlates-with_biomass-power-generated-in-united-states)
+:::
+
+## Correlated Data Likelihood
+
+- Marginal distributions normal: use a Multivariate Normal distribution
+- Otherwise: Use [copulas](https://en.wikipedia.org/wiki/Copula_(probability_theory)) to "glue" marginal distributions together with right correlation structure
+
+## Autocorrelation
+
+An important concept for time series is **autocorrelation** between $y_t$ and $y_{t-1}$.
+
+```{julia}
+#| label: fig-autocorrelation
+#| code-fold: true
+#| code-overflow: wrap
+#| echo: true
+#| layout-ncol: 2
+#| fig-cap: "Autocorrelated vs. Independent Samples"
+#| fig-subcap: 
+#|  - "Independent Variables"
+#|  - "Autocorrelated Variables"
+
+# sample independent series from a given normal distribution
+sample_independent = rand(Normal(0, 1), 50)
+p1 = plot(sample_independent, linewidth=3, ylabel=L"$y$", xlabel=L"$t$", title="Independent Series", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)
+plot!(p1, size=(500, 300))
+
+# sample an autocorrelated series
+sample_ar = zeros(50)
+sample_ar[1] = rand(Normal(0, 1 / sqrt(1-0.6^2)))
+for i = 2:50
+    sample_ar[i] = 0.6 * sample_ar[i-1] + rand(Normal(0, 1))
+end
+p2 = plot(sample_ar, linewidth=3, ylabel=L"$y$", xlabel=L"$t$", title="Autocorrelated Series", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)
+plot!(p2, size=(500, 300))
+
+display(p1)
+display(p2)
+```
+
+## Lagged Regression
+
+```{julia}
+#| label: fig-autocorrelation-2
+#| code-fold: true
+#| code-overflow: wrap
+#| echo: true
+#| layout-ncol: 2
+#| fig-cap: "Autocorrelated vs. Independent Samples"
+#| fig-subcap: 
+#|  - "Independent Variables"
+#|  - "Autocorrelated Variables"
+
+# independent samples
+dat = DataFrame(Y=sample_independent[2:end], X=sample_independent[1:end-1])
+fit = lm(@formula(Y~X), dat)
+pred = predict(fit,dat)
+p1 = scatter(sample_independent[1:end-1], sample_independent[2:end], label=:false, title="Independent Variables: r=$(round(coef(fit)[2], digits=2))", tickfontsize=16, titlefontsize=18, guidefontsize=18)
+plot!(p1, dat.X, pred, linewidth=2, label=:false)
+xlabel!(p1, L"$y_t$")
+ylabel!(p1, L"$y_{t-1}$")
+plot!(p1, size=(600, 500))
+
+# autocorrelated
+dat = DataFrame(Y=sample_ar[2:end], X=sample_ar[1:end-1])
+fit = lm(@formula(Y~X), dat)
+pred = predict(fit,dat)
+p2 = scatter(sample_ar[1:end-1], sample_ar[2:end], label=:false, title="Autocorrelated Variables: r=$(round(coef(fit)[2], digits=2))", tickfontsize=16, titlefontsize=18, guidefontsize=18)
+plot!(p2, dat.X, pred, linewidth=2, label=:false)
+xlabel!(p2, L"$y_t$")
+ylabel!(p2, L"$y_{t-1}$")
+plot!(p2, size=(600, 500))
+
+display(p1)
+display(p2)
+```
+
+## Autocorrelation Function
+
+Many modern programming languages have **autocorrelation functions** (e.g. `StatsBase.autocor()` in Julia) which calculates the autocorrelation at varying lags.
+
+```{julia}
+#| output: true
+#| echo: true
+#| output-location: column
+
+autocor(sample_ar, 1:10)
+```
+
+## Autocorrelation Function
+
+But the autocorrelation function just computes the autocorrelations at every lag. Why is this a modeling problem?
+
+## Partial Autocorrelation Function
+
+This is solved by using the **partial autocorrelation function** (*e.g.* `StatsBase.pacf()`):
+
+```{julia}
+#| output: true
+#| echo: true
+#| output-location: column
+
+pacf(sample_ar, 1:10)
+```
+
+## Autoregressive Models
+
+An autoregressive-with-lag-$p$ (**AR($p$)**) model:
+$$y_t = \sum_{i=1}^{p} \rho_i y_{t-i} + \varepsilon_t$$
+
+::: {.fragment .fade-in}
+***Example***: An AR(1) model: 
+$$
+\begin{gather*}
+y_t = \rho y_{t-1} + \varepsilon_t \\
+\varepsilon_t \sim \mathcal{N}(0, \sigma)
+\end{gather*}
+$$  
+:::
+
+## AR(1) Likelihood
+
+There are two ways to write down an AR(1) likelihood.
+
+1. "Whiten" the series:
+   
+$$
+\begin{gather*}
+\varepsilon_t = y_t - y_{t-1} \sim \mathcal{N}(0, \sigma)\\
+y_1 \sim \mathcal{N}\left(0, \frac{\sigma}{\sqrt{1-\rho^2}}\right)
+\end{gather*}
+$$
+
+## AR(1) Likelihood
+
+2. Joint likelihood:
+
+$$
+\mathbf{y} \sim \mathcal{N}(\mathbf{0}, \Sigma) \qquad
+\Sigma = \begin{pmatrix}\frac{\sigma}{\sqrt{1-\rho^2}} & \rho & \rho^2 & \ldots & \rho^{T-1} \\ \rho & \frac{\sigma}{\sqrt{1-\rho^2}} & \rho & \ldots & \rho^{T-2} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ \rho^{T-1} & \rho^{T-2} & \rho^{T-3} & \ldots & \frac{\sigma}{\sqrt{1-\rho^2}} \end{pmatrix}
+$$
+
+# Key Points
+
+## Key Points
+
+- EDA helps identify a good or bad probability model;
+- **No black-box workflow**: make plots, compare samples from proposed model to data, try to be skeptical
+- Autoregressive models for autocorrelated time series.
+
+# Upcoming Schedule
+
+## Next Class(es)
+
+**Wednesday**: Clustering and Mixture Models
+
+## Assessments
+
+**Friday**: Exercise 1 due by 9pm.
+
+HW2 assigned this week (will announce on Ed), due 2/23 by 9pm.

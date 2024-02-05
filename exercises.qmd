@@ -22,4 +22,5 @@ The standard rubric for homework problems is available [here](rubrics/standard.q
 | Week | Instructions | Due Date |
 |:----------:|:------------:|:------:|:---------|
 | Week 1 | [{{< fa sharp pen-field >}}](exercises/ex01/ex01.qmd) | Feb 02, 2024 |
+| Week 3 | [{{< fa sharp pen-field >}}](exercises/ex03/ex03.qmd) | Feb 09, 2024 |
 
