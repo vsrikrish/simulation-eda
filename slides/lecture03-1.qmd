@@ -455,7 +455,7 @@ display(p3)
 
 ## Correlation vs. Causation
 
-![XKCD 552](https://imgs.xkcd.com/comics/correlation_2x.png)
+![XKCD 552](https://imgs.xkcd.com/comics/correlation_2x.png){fig-align="center"}
 
 ::: {.caption}
 Source: [XKCD #552](https://xkcd.com/552/)
@@ -469,7 +469,7 @@ Source: [XKCD #552](https://xkcd.com/552/)
 
 ## Spurious Correlations
 
-![](https://www.tylervigen.com/spurious/correlation/image/7602_the-distance-between-uranus-and-mercury_correlates-with_biomass-power-generated-in-united-states.svg)
+![Spurious Correlation Example](https://www.tylervigen.com/spurious/correlation/image/7602_the-distance-between-uranus-and-mercury_correlates-with_biomass-power-generated-in-united-states.svg){fig-align="center"}
 
 ::: {.caption}
 Source: [Spurious Correlations #7602](https://www.tylervigen.com/spurious/correlation/7602_the-distance-between-uranus-and-mercury_correlates-with_biomass-power-generated-in-united-states)
@@ -654,7 +654,7 @@ If the discrepancy is also i.i.d. normal: $\zeta_t \sim \mathcal{N}(0, \sigma)$.
 
 Residuals: $$\zeta_t + \varepsilon_t \sim \mathcal{N}(0, \sqrt{\omega^2 + \sigma^2})$$
 
-## More Complex Discrepancy Example
+## Complex Discrepancy Example
 
 Now suppose the discrepancy is AR(1).
 
