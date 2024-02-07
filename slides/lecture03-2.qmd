@@ -177,7 +177,7 @@ where $\omega_t$ is estimated as half the 95% CI of the temperature data.
 
 ## Covariance Matrix
 
-The likelihood is $\zeta + \varepsilon \sim N(\text{EBM}(F; \theta), \Sigma)$.
+The likelihood is $\zeta + \varepsilon \sim N(\mathbf{0}, \Sigma)$.
 
 $$
 \begin{gather*}
