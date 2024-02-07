@@ -167,9 +167,9 @@ $$\zeta_t + \varepsilon_t \sim \mathcal{N}(0, \sqrt{\omega^2 + \sigma^2})$$
 
 $$
 \begin{gather*}
-y_t = \Lambda(F_t; \theta) + \zeta_t + \varepsilon_t \\
+y_t = \text{EBM}(F_t; \theta) + \zeta_t + \varepsilon_t \\
 \zeta_t = \rho \zeta_{t-1} \sim \mathcal{N}(0, \sigma)\\
-\varepsilon_t \sim \mathcal{N((0, \omega_t))}
+\varepsilon_t \sim \mathcal{N}(0, \omega_t)
 \end{gather*}
 $$
 
@@ -177,13 +177,12 @@ where $\omega_t$ is estimated as half the 95% CI of the temperature data.
 
 ## Covariance Matrix
 
-The likelihood is $\zeta + \varepsilon \sim N(0, \Sigma)$.
+The likelihood is $\zeta + \varepsilon \sim N(\text{EBM}(F; \theta), \Sigma)$.
 
 $$
 \begin{gather*}
 \Sigma = V + D \\
-D = \text{diag}(\omega_t^2)
-V = \frac{\sigma^2}{1-\rho^2}\begin{pmatrix}1 & \rho \ldots & \rho^{T-1} \\ \rho & 1 & \ldots & \rho^{T-2} \\ \rho^2 & \rho \ldots & \rho^{T-3} \\ \vdots & \vdots & \ddots & \vdots \\ \rho^{T-1} & \rho^{T-2} & \ldots & 1\end{pmatrix}
+D = \text{diag}(\omega_t^2), \quad V = \frac{\sigma^2}{1-\rho^2}\begin{pmatrix}1 & \rho & \ldots & \rho^{T-1} \\ \rho & 1 & \ldots & \rho^{T-2} \\ \rho^2 & \rho & \ldots & \rho^{T-3} \\ \vdots & \vdots & \ddots & \vdots \\ \rho^{T-1} & \rho^{T-2} & \ldots & 1\end{pmatrix}
 \end{gather*}
 $$
 
@@ -402,6 +401,13 @@ $$p(\theta | y) = \frac{p(y | \theta)}{p(y)} p(\theta)$$
 
 $$\underbrace{{p(\theta | y)}}_{\text{posterior}} = \frac{\overbrace{p(y | \theta)}^{\text{likelihood}}}{\underbrace{p(y)}_\text{normalization}} \overbrace{p(\theta)}^\text{prior}$$
 
+## On The Normalizing Constant
+
+The normalizing constant (also called the **marginal likelihood**) is the integral
+$$p(y) = \int_\Theta p(y | \theta) p(\theta) d\theta.$$
+
+Since this *generally* doesn't depend on $\theta$, it can often be ignored, as the relative probabilities don't change. 
+
 ## Bayes' Rule (Ignoring Normalizing Constants)
 
 The version of Bayes' rule which matters the most for 95% (approximate) of Bayesian statistics:
@@ -410,11 +416,24 @@ $$p(\theta | y) \propto p(y | \theta) \times p(\theta)$$
 
 > "The posterior is the prior times the likelihood..."
 
+## How To Choose A Prior?
+
+**One perspective**: Priors should reflect "actual knowledge" independent of the analysis [@Jaynes2003-lx]
+
+**Another**: Priors are part of the probability model, and can be specified/changed accordingly based on predictive skill [@Gelman2017-zp; @Gelman2013-dw]
+
 ## What Makes A Good Prior?
 
 - Reflects level of understanding (informative vs. weakly informative vs. non-informative).
 - Does not zero out probability of plausible values.
 - Regularization (extreme values should be less probable)
+
+## What Makes A Bad Prior?
+
+- Assigns probability zero to plausible values;
+- Weights implausible values equally as more plausible ones;
+- Double counts information (*e.g.* fitting a prior to data which is also used in the likelihood)
+- Chosen based on vibes.
 
 ## A Coin Flipping Example
 
@@ -470,6 +489,7 @@ Combining using Bayes' rule lets us calculate the **maximum *a posteriori* (MAP)
 
 ```{julia}
 #| echo: true
+#| code-line-numbers: "|2,3"
 
 flip_ll(θ) = sum(logpdf(Bernoulli(θ), flips .== "H"))
 flip_lprior(θ) = logpdf(Beta(5, 5), θ)
@@ -503,19 +523,10 @@ plot!(size=(1000, 450))
 
 ## Bayesian Updating
 
-Updating the prior with the likelihood of new data.
-
 - The posterior is a "compromise" between the prior and the data.
 - The posterior mean is a weighted combination of the data and the prior mean.
 - The weights depend on the prior and the likelihood variances.
 - More data *usually* makes the posterior more confident.
-
-## On The Normalizing Constant
-
-The normalizing constant (also called the **marginal likelihood**) is the integral
-$$p(y) = \int_\Theta p(y | \theta) p(\theta) d\theta.$$
-
-Since this *generally* doesn't depend on $\theta$, it can often be ignored, as the relative probabilities don't change. 
 
 # Example: Local Sea Level Extremes
 
@@ -598,7 +609,7 @@ $$
 & y \sim LogNormal(\mu, \sigma) \tag{likelihood}\\
 & \left. \begin{aligned} 
 & \mu \sim Normal(0, 1) \\
-& \sigma \sim HalfNormal(0, 1)
+& \sigma \sim HalfNormal(0, 5)
 \end{aligned} \right\} \tag{priors}
 \end{align*}
 $$
@@ -606,6 +617,85 @@ $$
 Want to find:
 
 $$p(\mu, \sigma | y) \propto p(y | \mu, \sigma) p(\mu)p(\sigma)$$
+
+## Are Our Priors Reasonable?
+
+Hard to tell! Let's simulate data to see we get plausible outcomes.
+
+This is called a **prior predictive check**.
+
+## Prior Predictive Check
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| fig-align: center
+#| fig-cap: Prior predictive check of return periods with revised model
+#| label: fig-surge-prior-1
+
+# sample from priors
+μ_sample = rand(Normal(0, 1), 1_000)
+σ_sample = rand(truncated(Normal(0, 5), 0, +Inf), 1_000)
+
+# define return periods and cmopute return levels for parameters
+return_periods = 2:100
+return_levels = zeros(1_000, length(return_periods))
+for i in 1:1_000
+    return_levels[i, :] = quantile.(LogNormal(μ_sample[i], σ_sample[i]), 1 .- (1 ./ return_periods))
+end
+
+plt_prior_1 = plot(; yscale=:log10, yticks=10 .^ collect(0:2:16), ylabel="Return Level (m)", xlabel="Return Period (yrs)",
+    tickfontsize=16, legendfontsize=18, guidefontsize=18, bottom_margin=10mm, left_margin=10mm, legend=:topleft)
+for idx in 1:1_000
+    label = idx == 1 ? "Prior" : false
+    plot!(plt_prior_1, return_periods, return_levels[idx, :]; color=:black, alpha=0.1, label=label)
+end
+plt_prior_1
+```
+
+## Let's Revise the Prior
+
+$$
+\begin{align*}
+& y \sim LogNormal(\mu, \sigma) \tag{likelihood}\\
+& \left. \begin{aligned} 
+& \mu \sim Normal(0, 0.5) \\
+& \sigma \sim HalfNormal(0, 0.1)
+\end{aligned} \right\} \tag{priors}
+\end{align*}
+$$
+
+
+
+## Prior Predictive Check 2
+
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| fig-align: center
+#| fig-cap: Prior predictive check of return periods with revised model
+#| label: fig-surge-prior-2
+
+# sample from priors
+μ_sample = rand(Normal(0, 0.5), 1_000)
+σ_sample = rand(truncated(Normal(0, 0.1), 0, +Inf), 1_000)
+
+return_periods = 2:100
+return_levels = zeros(1_000, length(return_periods))
+for i in 1:1_000
+    return_levels[i, :] = quantile.(LogNormal(μ_sample[i], σ_sample[i]), 1 .- (1 ./ return_periods))
+end
+
+plt_prior_2 = plot(; ylabel="Return Level (m)", xlabel="Return Period (yrs)", tickfontsize=16, legendfontsize=18, guidefontsize=18, bottom_margin=10mm, left_margin=10mm)
+for idx in 1:1_000
+    label = idx == 1 ? "Prior" : false
+    plot!(plt_prior_2, return_periods, return_levels[idx, :]; color=:black, alpha=0.1, label=label)
+end
+plt_prior_2
+```
 
 ## Compute Posterior
 
@@ -621,7 +711,7 @@ $$p(\mu, \sigma | y) \propto p(y | \mu, \sigma) p(\mu)p(\sigma)$$
 #| fig-cap: Posterior samples from surge model.
 
 ll(μ, σ) = sum(logpdf(LogNormal(μ, σ), dat_annmax.residual))
-lprior(μ, σ) = logpdf(Normal(0, 1), μ) + logpdf(truncated(Normal(0, 1), 0, Inf), σ)
+lprior(μ, σ) = logpdf(Normal(0, 0.5), μ) + logpdf(truncated(Normal(0, 0.1), 0, Inf), σ)
 lposterior(μ, σ) = ll(μ, σ) + lprior(μ, σ)
 
 p_map = optimize(p -> -lposterior(p[1], p[2]), [0.0, 0.0], [1.0, 1.0], [0.5, 0.5]).minimizer
@@ -699,7 +789,7 @@ function exceedance_plot_pos(y)
 end
 xp, ys = exceedance_plot_pos(dat_annmax.residual)
 
-p2 = plot(return_periods, return_levels, linewidth=3, color=:blue, label="Model Fit", tickfontsize=16, legendfontsize=18, guidefontsize=18, bottom_margin=5mm, left_margin=5mm, legend=:bottomright)
+p2 = plot(return_periods, return_levels, linewidth=3, color=:blue, label="Model Fit", tickfontsize=16, legendfontsize=18, guidefontsize=18, bottom_margin=5mm, left_margin=5mm, right_margin=10mm, legend=:bottomright)
 scatter!(p2, 1 ./ xp, ys, label="Observations", color=:black, markersize=5)
 xlabel!(p2, "Return Period (yrs)")
 ylabel!(p2, "Return Level (m)")
@@ -729,7 +819,7 @@ Conjugate priors are often convenient, but may be poor choices.
 
 We will talk about how to sample more generally with Monte Carlo later.
 
-# Key Points
+# Key Points and Upcoming Schedule
 
 ## Key Points: Discrepancy
 
@@ -740,12 +830,10 @@ We will talk about how to sample more generally with Monte Carlo later.
 ## Key Points: Bayesian Statistics
 
 - Bayesian probability: parameters have probabilities conditional on data
-- Need to specify prior distribution.
-- **Prior is part of the model! Can evaluate and change based on predictive checks**.
+- Need to specify prior distribution (think generatively!).
+- Be transparent and principled about prior choices (sensitivity analyses?).
 - Maximum *a posteriori* gives "most probable" parameter values
 - Will talk more about general sampling later.
-
-# Upcoming Schedule
 
 ## Next Class(es)
 
