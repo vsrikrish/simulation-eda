@@ -19,7 +19,7 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 | [2](weeks/week02.qmd) | Mon, Jan 29 |  Probability Models and Model Residuals | [{{< fa sharp presentation-screen >}}](slides/lecture02-1.qmd)  | Stein ([2020](https://projecteuclid-org.proxy.library.cornell.edu/journals/statistical-science/volume-35/issue-1/Some-Statistical-Issues-in-Climate-Science/10.1214/19-STS730.full)) | | |
 |  | Wed, Jan 31 | Probability Models II  | [{{< fa sharp presentation-screen >}}](slides/lecture02-2.qmd)  | | |  |
 | [3](weeks/week03.qmd) | Mon, Feb 5 | Exploratory Data Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture03-1.qmd) | | [{{< fa sharp coffee-pot >}}](exercises/ex03/ex03.qmd) | | 
-|  | Wed, Feb 7 | Bayesian Statistics and Prior Information| | | | |
+|  | Wed, Feb 7 | More on Discrepancy and Bayesian Statistics | [{{< fa sharp presentation-screen >}}](slides/lecture03-2.qmd) | | | [{{< fa sharp pen-field >}}](assignments/hw02/hw02.qmd) |
 | 4 | Mon, Feb 12 | Clustering and Mixture Models | | | |
 |  | Wed, Feb 14 |*No Class: Project Work | | | | 
 | 5 | Mon, Feb 19 | Extreme Values | | | | 
