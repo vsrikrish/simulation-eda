@@ -1622,23 +1622,23 @@
   {
     "objectID": "slides/lecture03-2.html#key-points-discrepancy",
     "href": "slides/lecture03-2.html#key-points-discrepancy",
-    "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
     "section": "Key Points: Discrepancy",
-    "text": "Key Points: Discrepancy\n\nSeparate out “model bias” from observation errors.\nOften neglected: can be hard to fit without prior information on parameters.\nUse provided observation error variances when available to avoid non-identifiability."
+    "text": "Key Points: Discrepancy\n\nModeling discrepancy can separate system state-relevant errors from observation errors.\nFurther decomposition of data generating process.\nWhen hindcasting, include observation errors; do not when projecting!"
   },
   {
     "objectID": "slides/lecture03-2.html#next-classes",
     "href": "slides/lecture03-2.html#next-classes",
-    "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
     "section": "Next Class(es)",
-    "text": "Next Class(es)\nWednesday: Bayesian Statistics and Prior Information"
+    "text": "Next Class(es)\nMonday: Extreme Value Theory and Models\nWednesday: No class! Develop project proposals."
   },
   {
     "objectID": "slides/lecture03-2.html#assessments",
     "href": "slides/lecture03-2.html#assessments",
-    "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
     "section": "Assessments",
-    "text": "Assessments\nFriday: Exercise 1 due by 9pm.\nHW2 assigned this week (will announce on Ed), due 2/23 by 9pm."
+    "text": "Assessments\nFriday: Exercise 1 due by 9pm.\nHW2 available! Due 2/23 by 9pm."
   },
   {
     "objectID": "slides/lecture03-1.html#probability-models",
@@ -1666,7 +1666,7 @@
     "href": "slides/lecture03-1.html#curve-fitting",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Curve Fitting",
-    "text": "Curve Fitting\n\n\n\n\n\nSource: XKCD #2048"
+    "text": "Curve Fitting\n\n\n\n\n\n\n\n\n\n\n\nSource: XKCD #2048"
   },
   {
     "objectID": "slides/lecture03-1.html#is-eda-ever-model-free",
@@ -1701,14 +1701,14 @@
     "href": "slides/lecture03-1.html#quantile-quantile-q-q-plots",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Quantile-Quantile (Q-Q) Plots",
-    "text": "Quantile-Quantile (Q-Q) Plots\n\n\nParticularly with small sample sizes, just staring at data can be unhelpful.\nQ-Q plots are useful for checking goodness of fit of a proposed distribution.\n\n\n\nCode\nsamps = rand(Normal(0, 3), 20)\nqqplot(Normal, samps, tickfontsize=16, guidefontsize=18, linewidth=3, markersize=6)\nxlabel!(\"Theoretical Quantiles\")\nylabel!(\"Empirical Quantiles\")\nplot!(size=(500, 450))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3"
+    "text": "Quantile-Quantile (Q-Q) Plots\n\n\nParticularly with small sample sizes, just staring at data can be unhelpful.\nQ-Q plots are useful for checking goodness of fit of a proposed distribution.\n\n\n\nCode\nsamps = rand(Normal(0, 3), 20)\nqqplot(Normal, samps, tickfontsize=16, guidefontsize=18, linewidth=3, markersize=6)\nxlabel!(\"Theoretical Quantiles\")\nylabel!(\"Empirical Quantiles\")\nplot!(size=(500, 450))"
   },
   {
     "objectID": "slides/lecture03-1.html#q-q-plot-example",
     "href": "slides/lecture03-1.html#q-q-plot-example",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Q-Q Plot Example",
-    "text": "Q-Q Plot Example\n\nCode\n## generate fat-tailed residuals\ncauchy_samps = rand(Cauchy(0, 1), 20)\n\n# make plots\n# scatterplot of observations\np1 = plot(Normal(0, 2), linewidth=3, color=:green, label=\"Normal Distribution\", yaxis=false, tickfontsize=16, guidefontsize=18, legendfontsize=18)\nplot!(p1, Cauchy(0, 1), linewidth=3, color=:orange, linestyle=:dash, label=\"Cauchy Distribution\")\nxlims!(p1, (-10, 10))\nxlabel!(\"Value\")\nplot!(p1, size=(500, 450))\n\n# densities of residual distributions\np2 = qqplot(Normal, cauchy_samps, tickfontsize=16, guidefontsize=18, linewidth=3, markersize=6)\nxlabel!(p2, \"Theoretical Quantiles\")\nylabel!(p2, \"Empirical Quantiles\")\nplot!(p2, size=(500, 450))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Normal vs Cauchy Distribution\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Q-Q Plot\n\n\n\n\n\n\n\nFigure 4: Q-Q Plot for Cauchy Data and Normal Distribution"
+    "text": "Q-Q Plot Example\n\nCode\n## generate fat-tailed residuals\ncauchy_samps = rand(Cauchy(0, 1), 20)\n\n# make plots\n# scatterplot of observations\np1 = plot(Normal(0, 2), linewidth=3, color=:green, label=\"Normal Distribution\", yaxis=false, tickfontsize=16, guidefontsize=18, legendfontsize=18)\nplot!(p1, Cauchy(0, 1), linewidth=3, color=:orange, linestyle=:dash, label=\"Cauchy Distribution\")\nxlims!(p1, (-10, 10))\nxlabel!(\"Value\")\nplot!(p1, size=(500, 450))\n\n# densities of residual distributions\np2 = qqplot(Normal, cauchy_samps, tickfontsize=16, guidefontsize=18, linewidth=3, markersize=6)\nxlabel!(p2, \"Theoretical Quantiles\")\nylabel!(p2, \"Empirical Quantiles\")\nplot!(p2, size=(500, 450))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Normal vs Cauchy Distribution\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Q-Q Plot\n\n\n\n\n\n\n\nFigure 3: Q-Q Plot for Cauchy Data and Normal Distribution"
   },
   {
     "objectID": "slides/lecture03-1.html#predictive-checks",
@@ -1722,7 +1722,7 @@
     "href": "slides/lecture03-1.html#predictive-check-ebm-example",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Predictive Check: EBM Example",
-    "text": "Predictive Check: EBM Example\n\n\nCode\n# set number of sampled simulations\nn_samples = 1000\nresiduals = rand(Normal(0, θ[end]), (n_samples, length(temp_obs)))\nmodel_out = ebm_wrap(θ[1:end-1])\n# this uses broadcasting to \"sweep\" the model simulation across the sampled residual matrix\nmodel_sim = residuals .+ model_out' # need to transpose the model output vector due to how Julia treats vector dimensions\n\nq_90 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim,; dims=1) # compute 90% prediction interval\n\nplot(hind_years, model_out, color=:red, linewidth=3, label=\"Model Simulation\", ribbon=(model_out .- q_90[1, :], q_90[2, :] .- model_out), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\nylims!(-0.5, 1.2)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Comparison of best fit with uncertain realization for the EBM with normal residuals."
+    "text": "Predictive Check: EBM Example\n\n\nCode\n# set number of sampled simulations\nn_samples = 1000\nresiduals = rand(Normal(0, θ[end]), (n_samples, length(temp_obs)))\nmodel_out = ebm_wrap(θ[1:end-1])\n# this uses broadcasting to \"sweep\" the model simulation across the sampled residual matrix\nmodel_sim = residuals .+ model_out' # need to transpose the model output vector due to how Julia treats vector dimensions\n\nq_90 = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim,; dims=1) # compute 90% prediction interval\n\nplot(hind_years, model_out, color=:red, linewidth=3, label=\"Model Simulation\", ribbon=(model_out .- q_90[1, :], q_90[2, :] .- model_out), fillalpha=0.3, xlabel=\"Year\", ylabel=\"Temperature anomaly (°C)\", guidefontsize=18, tickfontsize=16, legendfontsize=16, bottom_margin=5mm, left_margin=5mm)\nscatter!(hind_years, temp_obs, color=:black, label=\"Data\")\nylims!(-0.5, 1.2)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Comparison of best fit with uncertain realization for the EBM with normal residuals."
   },
   {
     "objectID": "slides/lecture03-1.html#predictive-checks-1",
@@ -1743,7 +1743,7 @@
     "href": "slides/lecture03-1.html#correlation-examples",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Correlation Examples",
-    "text": "Correlation Examples\n\nCode\n# sample 1000 independent variables from a given normal distribution\nsample_independent = rand(Normal(0, 1), (2, 1000))\np1 = scatter(sample_independent[1, :], sample_independent[2, :], label=:false, title=\"Independent Variables\", tickfontsize=14, titlefontsize=18, guidefontsize=18)\nxlabel!(p1, L\"$x_1$\")\nylabel!(p1, L\"$x_2$\")\nplot!(p1, size=(400, 500))\n\n# sample 1000 correlated variables, with r=0.7\nsample_correlated = rand(MvNormal([0; 0], [1 0.7; 0.7 1]), 1000)\np2 = scatter(sample_correlated[1, :], sample_correlated[2, :], label=:false, title=L\"Correlated ($r=0.7$)\", tickfontsize=14, titlefontsize=18, guidefontsize=18)\nxlabel!(p2, L\"$x_1$\")\nylabel!(p2, L\"$x_2$\")\nplot!(p2, size=(400, 500))\n\n# sample 1000 anti-correlated variables, with r=-0.7\nsample_anticorrelated = rand(MvNormal([0; 0], [1 -0.7; -0.7 1]), 1000)\np3 = scatter(sample_anticorrelated[1, :], sample_anticorrelated[2, :], label=:false, title=L\"Anticorrelated ($r=-0.7$)\", tickfontsize=14, titlefontsize=18, guidefontsize=18)\nxlabel!(p3, L\"$x_1$\")\nylabel!(p3, L\"$x_2$\")\nplot!(p3, size=(400, 500))\n\ndisplay(p1)\ndisplay(p2)\ndisplay(p3)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Independent Variables\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Correlated Variables (\\(r=0.7\\))\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) Anti-Correlated Variables (\\(r=-0.7\\))\n\n\n\n\n\n\n\nFigure 6: Independent vs. Correlated Normal Variables"
+    "text": "Correlation Examples\n\nCode\n# sample 1000 independent variables from a given normal distribution\nsample_independent = rand(Normal(0, 1), (2, 1000))\np1 = scatter(sample_independent[1, :], sample_independent[2, :], label=:false, title=\"Independent Variables\", tickfontsize=14, titlefontsize=18, guidefontsize=18)\nxlabel!(p1, L\"$x_1$\")\nylabel!(p1, L\"$x_2$\")\nplot!(p1, size=(400, 500))\n\n# sample 1000 correlated variables, with r=0.7\nsample_correlated = rand(MvNormal([0; 0], [1 0.7; 0.7 1]), 1000)\np2 = scatter(sample_correlated[1, :], sample_correlated[2, :], label=:false, title=L\"Correlated ($r=0.7$)\", tickfontsize=14, titlefontsize=18, guidefontsize=18)\nxlabel!(p2, L\"$x_1$\")\nylabel!(p2, L\"$x_2$\")\nplot!(p2, size=(400, 500))\n\n# sample 1000 anti-correlated variables, with r=-0.7\nsample_anticorrelated = rand(MvNormal([0; 0], [1 -0.7; -0.7 1]), 1000)\np3 = scatter(sample_anticorrelated[1, :], sample_anticorrelated[2, :], label=:false, title=L\"Anticorrelated ($r=-0.7$)\", tickfontsize=14, titlefontsize=18, guidefontsize=18)\nxlabel!(p3, L\"$x_1$\")\nylabel!(p3, L\"$x_2$\")\nplot!(p3, size=(400, 500))\n\ndisplay(p1)\ndisplay(p2)\ndisplay(p3)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Independent Variables\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Correlated Variables (\\(r=0.7\\))\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) Anti-Correlated Variables (\\(r=-0.7\\))\n\n\n\n\n\n\n\nFigure 5: Independent vs. Correlated Normal Variables"
   },
   {
     "objectID": "slides/lecture03-1.html#correlation-vs.-causation",
@@ -1778,21 +1778,21 @@
     "href": "slides/lecture03-1.html#autocorrelation",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Autocorrelation",
-    "text": "Autocorrelation\nAn important concept for time series is autocorrelation between \\(y_t\\) and \\(y_{t-1}\\).\n\nCode\n# sample independent series from a given normal distribution\nsample_independent = rand(Normal(0, 1), 50)\np1 = plot(sample_independent, linewidth=3, ylabel=L\"$y$\", xlabel=L\"$t$\", title=\"Independent Series\", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)\nplot!(p1, size=(500, 300))\n\n# sample an autocorrelated series\nsample_ar = zeros(50)\nsample_ar[1] = rand(Normal(0, 1 / sqrt(1-0.6^2)))\nfor i = 2:50\n    sample_ar[i] = 0.6 * sample_ar[i-1] + rand(Normal(0, 1))\nend\np2 = plot(sample_ar, linewidth=3, ylabel=L\"$y$\", xlabel=L\"$t$\", title=\"Autocorrelated Series\", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)\nplot!(p2, size=(500, 300))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Independent Variables\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Autocorrelated Variables\n\n\n\n\n\n\n\nFigure 7: Autocorrelated vs. Independent Samples"
+    "text": "Autocorrelation\nAn important concept for time series is autocorrelation between \\(y_t\\) and \\(y_{t-1}\\).\n\nCode\n# sample independent series from a given normal distribution\nsample_independent = rand(Normal(0, 1), 50)\np1 = plot(sample_independent, linewidth=3, ylabel=L\"$y$\", xlabel=L\"$t$\", title=\"Independent Series\", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)\nplot!(p1, size=(500, 300))\n\n# sample an autocorrelated series\nsample_ar = zeros(50)\nsample_ar[1] = rand(Normal(0, 1 / sqrt(1-0.6^2)))\nfor i = 2:50\n    sample_ar[i] = 0.6 * sample_ar[i-1] + rand(Normal(0, 1))\nend\np2 = plot(sample_ar, linewidth=3, ylabel=L\"$y$\", xlabel=L\"$t$\", title=\"Autocorrelated Series\", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)\nplot!(p2, size=(500, 300))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Independent Variables\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Autocorrelated Variables\n\n\n\n\n\n\n\nFigure 6: Autocorrelated vs. Independent Samples"
   },
   {
     "objectID": "slides/lecture03-1.html#lagged-regression",
     "href": "slides/lecture03-1.html#lagged-regression",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Lagged Regression",
-    "text": "Lagged Regression\n\nCode\n# independent samples\ndat = DataFrame(Y=sample_independent[2:end], X=sample_independent[1:end-1])\nfit = lm(@formula(Y~X), dat)\npred = predict(fit,dat)\np1 = scatter(sample_independent[1:end-1], sample_independent[2:end], label=:false, title=\"Independent Variables: r=$(round(coef(fit)[2], digits=2))\", tickfontsize=16, titlefontsize=18, guidefontsize=18)\nplot!(p1, dat.X, pred, linewidth=2, label=:false)\nxlabel!(p1, L\"$y_t$\")\nylabel!(p1, L\"$y_{t-1}$\")\nplot!(p1, size=(600, 500))\n\n# autocorrelated\ndat = DataFrame(Y=sample_ar[2:end], X=sample_ar[1:end-1])\nfit = lm(@formula(Y~X), dat)\npred = predict(fit,dat)\np2 = scatter(sample_ar[1:end-1], sample_ar[2:end], label=:false, title=\"Autocorrelated Variables: r=$(round(coef(fit)[2], digits=2))\", tickfontsize=16, titlefontsize=18, guidefontsize=18)\nplot!(p2, dat.X, pred, linewidth=2, label=:false)\nxlabel!(p2, L\"$y_t$\")\nylabel!(p2, L\"$y_{t-1}$\")\nplot!(p2, size=(600, 500))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Independent Variables\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Autocorrelated Variables\n\n\n\n\n\n\n\nFigure 8: Autocorrelated vs. Independent Samples"
+    "text": "Lagged Regression\n\nCode\n# independent samples\ndat = DataFrame(Y=sample_independent[2:end], X=sample_independent[1:end-1])\nfit = lm(@formula(Y~X), dat)\npred = predict(fit,dat)\np1 = scatter(sample_independent[1:end-1], sample_independent[2:end], label=:false, title=\"Independent Variables: r=$(round(coef(fit)[2], digits=2))\", tickfontsize=16, titlefontsize=18, guidefontsize=18)\nplot!(p1, dat.X, pred, linewidth=2, label=:false)\nylabel!(p1, L\"$y_t$\")\nxlabel!(p1, L\"$y_{t-1}$\")\nplot!(p1, size=(600, 500))\n\n# autocorrelated\ndat = DataFrame(Y=sample_ar[2:end], X=sample_ar[1:end-1])\nfit = lm(@formula(Y~X), dat)\npred = predict(fit,dat)\np2 = scatter(sample_ar[1:end-1], sample_ar[2:end], label=:false, title=\"Autocorrelated Variables: r=$(round(coef(fit)[2], digits=2))\", tickfontsize=16, titlefontsize=18, guidefontsize=18)\nplot!(p2, dat.X, pred, linewidth=2, label=:false)\nylabel!(p2, L\"$y_t$\")\nxlabel!(p2, L\"$y_{t-1}$\")\nplot!(p2, size=(600, 500))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Independent Variables\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) Autocorrelated Variables\n\n\n\n\n\n\n\nFigure 7: Autocorrelated vs. Independent Samples"
   },
   {
     "objectID": "slides/lecture03-1.html#autocorrelation-function",
     "href": "slides/lecture03-1.html#autocorrelation-function",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Autocorrelation Function",
-    "text": "Autocorrelation Function\nMany modern programming languages have autocorrelation functions (e.g. StatsBase.autocor() in Julia) which calculates the autocorrelation at varying lags.\n\n\nautocor(sample_ar, 1:10)\n\n\n10-element Vector{Float64}:\n  0.5584861939778755\n  0.2715973028691898\n -0.024160973730345342\n -0.20302169868921682\n -0.2770181201822141\n -0.2236053007325947\n  0.06530648279913691\n  0.12749901066451025\n  0.1680016591343598\n  0.06070663865959022"
+    "text": "Autocorrelation Function\nMany modern programming languages have autocorrelation functions (e.g. StatsBase.autocor() in Julia) which calculates the autocorrelation at varying lags.\n\n\nautocor(sample_ar, 1:10)\n\n\n10-element Vector{Float64}:\n  0.5584861939778754\n  0.2715973028691899\n -0.024160973730345363\n -0.20302169868921682\n -0.27701812018221406\n -0.22360530073259474\n  0.0653064827991369\n  0.12749901066451022\n  0.16800165913435977\n  0.0607066386595902"
   },
   {
     "objectID": "slides/lecture03-1.html#autocorrelation-function-1",
@@ -1806,7 +1806,7 @@
     "href": "slides/lecture03-1.html#partial-autocorrelation-function",
     "title": "Exploratory Data Analysis, Correlations, and Autocorrelations",
     "section": "Partial Autocorrelation Function",
-    "text": "Partial Autocorrelation Function\nThis is solved by using the partial autocorrelation function (e.g. StatsBase.pacf()):\n\n\npacf(sample_ar, 1:10)\n\n\n10-element Vector{Float64}:\n  0.5610578719938641\n -0.07132505760984406\n -0.23567190666036678\n -0.13760028534428004\n -0.07852404120927241\n -0.03265094625098847\n  0.31764160745557796\n -0.1365549216463958\n  0.0024130012979377024\n -0.15698237728831643"
+    "text": "Partial Autocorrelation Function\nThis is solved by using the partial autocorrelation function (e.g. StatsBase.pacf()):\n\n\npacf(sample_ar, 1:10)\n\n\n10-element Vector{Float64}:\n  0.5610578719938641\n -0.07132505760984406\n -0.23567190666036678\n -0.13760028534427998\n -0.07852404120927237\n -0.03265094625098848\n  0.317641607455578\n -0.13655492164639593\n  0.002413001297937716\n -0.1569823772883165"
   },
   {
     "objectID": "slides/lecture03-1.html#autoregressive-models",
@@ -2428,5 +2428,301 @@
     "crumbs": [
       "Term Project"
     ]
+  },
+  {
+    "objectID": "exercises/ex03/ex03.html",
+    "href": "exercises/ex03/ex03.html",
+    "title": "Exercise Set 03: Spurious Correlations",
+    "section": "",
+    "text": "Due Date\n\n\n\nFriday, 2/9/24, 9:00pm",
+    "crumbs": [
+      "Exercises",
+      "Exercise 3"
+    ]
+  },
+  {
+    "objectID": "exercises/ex03/ex03.html#overview",
+    "href": "exercises/ex03/ex03.html#overview",
+    "title": "Exercise Set 03: Spurious Correlations",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\nThe goal of this exercise is for you to find datasets and reason about the relationships (or lack thereof!) between variables.\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
+    "crumbs": [
+      "Exercises",
+      "Exercise 3"
+    ]
+  },
+  {
+    "objectID": "exercises/ex03/ex03.html#problem",
+    "href": "exercises/ex03/ex03.html#problem",
+    "title": "Exercise Set 03: Spurious Correlations",
+    "section": "Problem",
+    "text": "Problem\nFind a single or multiple datasets (don’t just pull from Spurious Correlations!!) where two or more variables appear to be correlated, but this correlation is likely spurious. Plot the relevant variable(s) and show they are correlated through any needed quantiative and/or qualitative means. Explain why you think the correlation is spurious.",
+    "crumbs": [
+      "Exercises",
+      "Exercise 3"
+    ]
+  },
+  {
+    "objectID": "exercises/ex03/ex03.html#references",
+    "href": "exercises/ex03/ex03.html#references",
+    "title": "Exercise Set 03: Spurious Correlations",
+    "section": "References",
+    "text": "References",
+    "crumbs": [
+      "Exercises",
+      "Exercise 3"
+    ]
+  },
+  {
+    "objectID": "slides/lecture03-2.html#model-data-discrepancy",
+    "href": "slides/lecture03-2.html#model-data-discrepancy",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Model-Data Discrepancy",
+    "text": "Model-Data Discrepancy\nSystematic mismatch between model and system state (not observation error!)\n\\[\\mathbf{y} =  \\underbrace{F(\\mathbf{x}; \\mathbf{\\theta})}_\\text{simulation} + \\underbrace{\\zeta(\\mathbf{x}; \\mathbf{\\theta})}_\\text{discrepancy} + \\underbrace{\\mathbf{\\varepsilon}}_\\text{observation error}.\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#non-identifiability",
+    "href": "slides/lecture03-2.html#non-identifiability",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Non-Identifiability",
+    "text": "Non-Identifiability\nInability to distinguish between statistical parameters, e.g.\n\\[\\zeta_t + \\varepsilon_t \\sim \\mathcal{N}(0, \\sqrt{\\omega^2 + \\sigma^2})\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#ebm-with-ar1-discrepancy",
+    "href": "slides/lecture03-2.html#ebm-with-ar1-discrepancy",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "EBM With AR(1) Discrepancy",
+    "text": "EBM With AR(1) Discrepancy\n\\[\n\\begin{gather*}\ny_t = \\Lambda(F_t; \\theta) + \\zeta_t + \\varepsilon_t \\\\\n\\zeta_t = \\rho \\zeta_{t-1} \\sim \\mathcal{N}(0, \\sigma)\\\\\n\\varepsilon_t \\sim \\mathcal{N((0, \\omega_t))}\n\\end{gather*}\n\\]\nwhere \\(\\omega_t\\) is estimated as half the 95% CI of the temperature data."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#covariance-matrix",
+    "href": "slides/lecture03-2.html#covariance-matrix",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Covariance Matrix",
+    "text": "Covariance Matrix\nThe likelihood is \\(\\zeta + \\varepsilon \\sim N(0, \\Sigma)\\).\n\\[\n\\begin{gather*}\n\\Sigma = V + D \\\\\nD = \\text{diag}(\\omega_t^2)\nV = \\frac{\\sigma^2}{1-\\rho^2}\\begin{pmatrix}1 & \\rho \\ldots & \\rho^{T-1} \\\\ \\rho & 1 & \\ldots & \\rho^{T-2} \\\\ \\rho^2 & \\rho \\ldots & \\rho^{T-3} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ \\rho^{T-1} & \\rho^{T-2} & \\ldots & 1\\end{pmatrix}\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#in-code",
+    "href": "slides/lecture03-2.html#in-code",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "In Code…",
+    "text": "In Code…\n\n# p are the model parameters, σ the standard deviation of the AR(1) errors, ρ is the autocorrelation coefficient, y is the data, m the model function\nfunction ar_covariance_mat(σ, ρ, y_err)\n    H = abs.((1:length(y_err)) .- (1:(length(y_err)))') # compute the outer product to get the correlation lags\n    ζ_var = σ^2 / (1-ρ^2)\n    Σ = ρ.^H * ζ_var\n    for i in 1:length(y_err)\n        Σ[i, i] += y_err[i]^2\n    end\n    return Σ\nend\n\nar_covariance_mat (generic function with 1 method)"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#maximize-likelihood",
+    "href": "slides/lecture03-2.html#maximize-likelihood",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Maximize Likelihood",
+    "text": "Maximize Likelihood\n\nfunction ar_discrep_log_likelihood(p, σ, ρ, y, m, y_err)\n    y_pred = m(p)\n    residuals = y_pred .- y\n    Σ = ar_covariance_mat(σ, ρ, y_err)\n    ll = logpdf(MvNormal(zeros(length(y)), Σ), residuals)\n    return ll\nend\n\nebm_wrap(params) = ebm(forcing_non_aerosol_85[idx], forcing_aerosol_85[idx], p = params)\n\n# maximize log-likelihood within some range\n# important to make everything a Float instead of an Int \nlower = [1.0, 50.0, 0.0, 0.0, -1.0]\nupper = [4.0, 150.0, 2.0, 10.0, 1.0]\np0 = [2.0, 100.0, 1.0, 1.0, 0.0]\nresult = Optim.optimize(params -&gt; -ar_discrep_log_likelihood(params[1:end-2], params[end-1], params[end], temp_obs, ebm_wrap, temp_sd), lower, upper, p0)\nθ_discrep = result.minimizer"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#comparison-of-model-fits",
+    "href": "slides/lecture03-2.html#comparison-of-model-fits",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Comparison of Model Fits",
+    "text": "Comparison of Model Fits\n\n\nNormal IID:\n\n\n4-element Vector{Float64}:\n  1.9437468626999923\n 86.39077196261964\n  0.789333067296\n  0.12104289634093851\n\n\n\nTotal-Residual AR(1):\n\n\n5-element Vector{Float64}:\n   2.006808911185199\n 109.38026352760137\n   0.791544898198773\n   0.10196962494888041\n   0.542159499126698\n\n\n\nDiscrepancy AR(1):\n\n\n5-element Vector{Float64}:\n  1.9063093043711343\n 88.29298073785507\n  0.7492605984904022\n  0.07978677011429039\n  0.5379510506527603"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#hindcast",
+    "href": "slides/lecture03-2.html#hindcast",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Hindcast",
+    "text": "Hindcast\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Hindcasts from different EBM fits."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#projections-rcp-2.6",
+    "href": "slides/lecture03-2.html#projections-rcp-2.6",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Projections (RCP 2.6)",
+    "text": "Projections (RCP 2.6)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Projections from different EBM fits."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#prior-information",
+    "href": "slides/lecture03-2.html#prior-information",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Prior Information",
+    "text": "Prior Information\nSo far: no way to use prior information about parameters (other than bounds on MLE optimization)."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#bayes-rule",
+    "href": "slides/lecture03-2.html#bayes-rule",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Bayes’ Rule",
+    "text": "Bayes’ Rule\nOriginal version (Bayes, 1763):\n\\[P(A | B) = \\frac{P(B | A) \\times P(A)}{P(B)} \\quad \\text{if} \\quad P(B) \\neq 0.\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#bayes-rule-1",
+    "href": "slides/lecture03-2.html#bayes-rule-1",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Bayes’ Rule",
+    "text": "Bayes’ Rule\n“Modern” version (Laplace, 1774):\n\\[p(\\theta | y) = \\frac{p(y | \\theta)}{p(y)} p(\\theta)\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#bayes-rule-2",
+    "href": "slides/lecture03-2.html#bayes-rule-2",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Bayes’ Rule",
+    "text": "Bayes’ Rule\n“Modern” version (Laplace, 1774):\n\\[\\underbrace{{p(\\theta | y)}}_{\\text{posterior}} = \\frac{\\overbrace{p(y | \\theta)}^{\\text{likelihood}}}{\\underbrace{p(y)}_\\text{normalization}} \\overbrace{p(\\theta)}^\\text{prior}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#bayes-rule-ignoring-normalizing-constants",
+    "href": "slides/lecture03-2.html#bayes-rule-ignoring-normalizing-constants",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Bayes’ Rule (Ignoring Normalizing Constants)",
+    "text": "Bayes’ Rule (Ignoring Normalizing Constants)\nThe version of Bayes’ rule which matters the most for 95% (approximate) of Bayesian statistics:\n\\[p(\\theta | y) \\propto p(y | \\theta) \\times p(\\theta)\\]\n\n“The posterior is the prior times the likelihood…”"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#a-coin-flipping-example",
+    "href": "slides/lecture03-2.html#a-coin-flipping-example",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "A Coin Flipping Example",
+    "text": "A Coin Flipping Example\nWe would like to understand if a coin-flipping game is fair. We’ve observed the following sequence of flips:\n\nflips = [\"H\", \"H\", \"H\", \"T\", \"H\", \"H\", \"H\", \"H\", \"H\"]\n\n9-element Vector{String}:\n \"H\"\n \"H\"\n \"H\"\n \"T\"\n \"H\"\n \"H\"\n \"H\"\n \"H\"\n \"H\""
+  },
+  {
+    "objectID": "slides/lecture03-2.html#coin-flipping-likelihood",
+    "href": "slides/lecture03-2.html#coin-flipping-likelihood",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Coin Flipping Likelihood",
+    "text": "Coin Flipping Likelihood\nThe data-generating process here is straightforward: we can represent a coin flip with a heads-probability of \\(\\theta\\) as a sample from a Bernoulli distribution,\n\\[y_i \\sim \\text{Bernoulli}(\\theta).\\]\n\nflip_ll(θ) = sum(logpdf(Bernoulli(θ), flips .== \"H\"))\nθ_mle = Optim.optimize(θ -&gt; -flip_ll(θ), 0, 1).minimizer\nround(θ_mle, digits=2)\n\n0.89"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#coin-flipping-prior",
+    "href": "slides/lecture03-2.html#coin-flipping-prior",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Coin Flipping Prior",
+    "text": "Coin Flipping Prior\nSuppose that we spoke to a friend who knows something about coins, and she tells us that it is extremely difficult to make a passable weighted coin which comes up heads more than 75% of the time."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#maximum-a-posteriori-estimate",
+    "href": "slides/lecture03-2.html#maximum-a-posteriori-estimate",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Maximum A Posteriori Estimate",
+    "text": "Maximum A Posteriori Estimate\nCombining using Bayes’ rule lets us calculate the maximum a posteriori (MAP) estimate:\n\nflip_ll(θ) = sum(logpdf(Bernoulli(θ), flips .== \"H\"))\nflip_lprior(θ) = logpdf(Beta(5, 5), θ)\nflip_lposterior(θ) = flip_ll(θ) + flip_lprior(θ)\nθ_map = Optim.optimize(θ -&gt; -(flip_lposterior(θ)), 0, 1).minimizer\nround(θ_map, digits=2)\n\n0.71"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#coin-flipping-posterior-distribution",
+    "href": "slides/lecture03-2.html#coin-flipping-posterior-distribution",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Coin Flipping Posterior Distribution",
+    "text": "Coin Flipping Posterior Distribution\n\n\nCode\nθ_range = 0:0.01:1\nplot(θ_range, flip_lposterior.(θ_range), color=:black, label=\"Posterior\", linewidth=3, tickfontsize=16, legendfontsize=16, guidefontsize=18, bottom_margin=5mm, left_margin=5mm)\nvline!([θ_map], color=:red, label=\"MAP\", linewidth=2)\nvline!([θ_mle], color=:blue, label=\"MLE\", linewidth=2)\nxlabel!(L\"$\\theta$\")\nylabel!(\"Posterior Density\")\nplot!(size=(1000, 450))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Posterior distribution for the coin-flipping example"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#bayes-and-parametric-uncertainty",
+    "href": "slides/lecture03-2.html#bayes-and-parametric-uncertainty",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Bayes and Parametric Uncertainty",
+    "text": "Bayes and Parametric Uncertainty\nFrequentist: Parametric uncertainty is purely the result of sampling variability\nBayesian: Parameters have probabilities based on consistency with data and priors."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#bayesian-updating",
+    "href": "slides/lecture03-2.html#bayesian-updating",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Bayesian Updating",
+    "text": "Bayesian Updating\nUpdating the prior with the likelihood of new data.\n\nThe posterior is a “compromise” between the prior and the data.\nThe posterior mean is a weighted combination of the data and the prior mean.\nThe weights depend on the prior and the likelihood variances.\nMore data usually makes the posterior more confident."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#on-the-normalizing-constant",
+    "href": "slides/lecture03-2.html#on-the-normalizing-constant",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "On The Normalizing Constant",
+    "text": "On The Normalizing Constant\nThe normalizing constant (also called the marginal likelihood) is the integral \\[p(y) = \\int_\\Theta p(y | \\theta) p(\\theta) d\\theta.\\]\nSince this generally doesn’t depend on \\(\\theta\\), it can often be ignored, as the relative probabilities don’t change."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#coin-flipping-prior-1",
+    "href": "slides/lecture03-2.html#coin-flipping-prior-1",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Coin Flipping Prior",
+    "text": "Coin Flipping Prior\n\n\nSince \\(\\theta\\) is bounded between 0 and 1, we’ll use a Beta distribution for our prior, specifically \\(\\text{Beta}(4,4)\\).\n\n\n\nCode\nprior_dist = Beta(5, 5)\nplot(prior_dist; label=false, xlabel=L\"$θ$\", ylabel=L\"$p(θ)$\", linewidth=3, tickfontsize=16, guidefontsize=18)\nplot!(size=(500, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Beta prior for coin flipping example"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#references-1",
+    "href": "slides/lecture03-2.html#references-1",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nBayes, T. (1763). An Essay towards Solving a Problem in the Doctrine of Chance. Philosophical Transactions of the Royal Society of London, 53, 370–418.\n\n\nLaplace, P. S. (1774). Mémoire sur la Probabilité des Causes par les évènemens. In Mémoires de Mathematique et de Physique, Presentés à l’Académie Royale des Sciences, Par Divers Savans & Lus Dans ses Assemblées (pp. 621–656)."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#san-francisco-tide-gauge-data",
+    "href": "slides/lecture03-2.html#san-francisco-tide-gauge-data",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "San Francisco Tide Gauge Data",
+    "text": "San Francisco Tide Gauge Data\n\n\nCode\n# read in data and get annual maxima\nfunction load_data(fname)\n    date_format = DateFormat(\"yyyy-mm-dd HH:MM:SS\")\n    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data\n    df = @chain fname begin\n        CSV.read(DataFrame; header=false)\n        rename(\"Column1\" =&gt; \"year\", \"Column2\" =&gt; \"month\", \"Column3\" =&gt; \"day\", \"Column4\" =&gt; \"hour\", \"Column5\" =&gt; \"gauge\")\n        # need to reformat the decimal date in the data file\n        @transform :datetime = DateTime.(:year, :month, :day, :hour)\n        # replace -99999 with missing\n        @transform :gauge = ifelse.(abs.(:gauge) .&gt;= 9999, missing, :gauge)\n        select(:datetime, :gauge)\n    end\n    return df\nend\n\ndat = load_data(\"data/surge/h551.csv\")\n\n# detrend the data to remove the effects of sea-level rise and seasonal dynamics\nma_length = 366\nma_offset = Int(floor(ma_length/2))\nmoving_average(series,n) = [mean(@view series[i-n:i+n]) for i in n+1:length(series)-n]\ndat_ma = DataFrame(datetime=dat.datetime[ma_offset+1:end-ma_offset], residual=dat.gauge[ma_offset+1:end-ma_offset] .- moving_average(dat.gauge, ma_offset))\n\n# group data by year and compute the annual maxima\ndat_ma = dropmissing(dat_ma) # drop missing data\ndat_annmax = combine(dat_ma -&gt; dat_ma[argmax(dat_ma.residual), :], groupby(transform(dat_ma, :datetime =&gt; x-&gt;year.(x)), :datetime_function))\ndelete!(dat_annmax, nrow(dat_annmax)) # delete 2023; haven't seen much of that year yet\nrename!(dat_annmax, :datetime_function =&gt; :Year)\nselect!(dat_annmax, [:Year, :residual])\ndat_annmax.residual = dat_annmax.residual / 1000 # convert to m\n\n# make plots\np1 = plot(\n    dat_annmax.Year,\n    dat_annmax.residual;\n    xlabel=\"Year\",\n    ylabel=\"Annual Max Tide Level (m)\",\n    label=false,\n    marker=:circle,\n    markersize=5,\n    tickfontsize=16,\n    guidefontsize=18\n)\np2 = histogram(\n    dat_annmax.residual,\n    normalize=:pdf,\n    orientation=:horizontal,\n    label=:false,\n    xlabel=\"PDF\",\n    ylabel=\"\",\n    yticks=[],\n    tickfontsize=16,\n    guidefontsize=18\n)\n\nl = @layout [a{0.7w} b{0.3w}]\nplot(p1, p2; layout=l, link=:y, ylims=(1, 1.7), bottom_margin=5mm, left_margin=5mm)\nplot!(size=(1000, 450))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Annual maxima surge data from the San Francisco, CA tide gauge."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#proposed-probability-model",
+    "href": "slides/lecture03-2.html#proposed-probability-model",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Proposed Probability Model",
+    "text": "Proposed Probability Model\n\\[\n\\begin{align*}\n& y \\sim LogNormal(\\mu, \\sigma) \\tag{likelihood}\\\\\n& \\left. \\begin{aligned}\n& \\mu \\sim Normal(0, 1) \\\\\n& \\sigma \\sim HalfNormal(0, 1)\n\\end{aligned} \\right\\} \\tag{priors}\n\\end{align*}\n\\]\nWant to find:\n\\[p(\\mu, \\sigma | y) \\propto p(y | \\mu, \\sigma) p(\\mu)p(\\sigma)\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#upcoming-schedule",
+    "href": "slides/lecture03-2.html#upcoming-schedule",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Upcoming Schedule",
+    "text": "Upcoming Schedule"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#compute-posterior-across-possible-values",
+    "href": "slides/lecture03-2.html#compute-posterior-across-possible-values",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Compute Posterior Across Possible Values",
+    "text": "Compute Posterior Across Possible Values\n\n\nCode\nll(μ, σ) = sum(logpdf(LogNormal(μ, σ), dat_annmax.residual))\nlprior(μ, σ) = logpdf(Normal(0, 10), μ) + logpdf(truncated(Normal(0, 10), 0, Inf), σ)\nlposterior(μ, σ) = ll(μ, σ) + lprior(μ, σ)\n\np_map = optimize(p -&gt; -lposterior(p[1], p[2]), [0.0, 0.0], [1.0, 1.0], [0.5, 0.5]).minimizer\np_mle = optimize(p -&gt; -ll(p[1], p[2]), [0.0, 0.0], [1.0, 1.0], [0.5, 0.5]).minimizer\n\nμ = 0.15:0.005:0.35\nσ = 0.04:0.01:0.1\nposterior_vals = @. lposterior(μ', σ)\n\ncontour(μ, σ, posterior_vals, \n    levels=100, \n    clabels=false, \n    cbar=true, lw=1, \n    fill=(true,cgrad(:grays,[0,0.1,1.0])),\n    tickfontsize=16,\n    guidefontsize=18,\n    legendfontsize=18\n)\nscatter!([p_map[1]], [p_map[2]], label=\"MAP\", markersize=10, marker=:star)\nscatter!([p_mle[1]], [p_mle[2]], label=\"MLE\", markersize=10, marker=:star)\nxlabel!(L\"$\\mu$\")\nylabel!(L\"$\\sigma$\")\nplot!(size=(800, 450))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Posterior samples from surge model."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#compute-posterior",
+    "href": "slides/lecture03-2.html#compute-posterior",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Compute Posterior",
+    "text": "Compute Posterior\n\n\n\n\nCode\nll(μ, σ) = sum(logpdf(LogNormal(μ, σ), dat_annmax.residual))\nlprior(μ, σ) = logpdf(Normal(0, 1), μ) + logpdf(truncated(Normal(0, 1), 0, Inf), σ)\nlposterior(μ, σ) = ll(μ, σ) + lprior(μ, σ)\n\np_map = optimize(p -&gt; -lposterior(p[1], p[2]), [0.0, 0.0], [1.0, 1.0], [0.5, 0.5]).minimizer\n\nμ = 0.15:0.005:0.35\nσ = 0.04:0.01:0.1\nposterior_vals = @. lposterior(μ', σ)\n\ncontour(μ, σ, posterior_vals, \n    levels=100, \n    clabels=false, \n    cbar=true, lw=1, \n    fill=(true,cgrad(:grays,[0,0.1,1.0])),\n    tickfontsize=16,\n    guidefontsize=18,\n    legendfontsize=18,\n    right_margin=20mm,\n    bottom_margin=5mm,\n    left_margin=5mm\n)\nscatter!([p_map[1]], [p_map[2]], label=\"MAP\", markersize=10, marker=:star)\nxlabel!(L\"$\\mu$\")\nylabel!(L\"$\\sigma$\")\nplot!(size=(900, 400))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Posterior samples from surge model.\n\n\n\n\n\n\n\n2-element Vector{Float64}:\n 0.2547060183753728\n 0.05548896626979179"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#assess-fit",
+    "href": "slides/lecture03-2.html#assess-fit",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Assess Fit",
+    "text": "Assess Fit\n\nCode\np1 = histogram(\n    dat_annmax.residual,\n    normalize=:pdf,\n    legend=:false,\n    ylabel=\"PDF\",\n    xlabel=\"Annual Max Tide Level (m)\",\n    tickfontsize=16,\n    guidefontsize=18,\n    bottom_margin=5mm, left_margin=5mm\n)\nplot!(p1, LogNormal(p_map[1], p_map[2]),\n    linewidth=3,\n    color=:red)\nxlims!(p1, (1, 1.7))\nplot!(p1, size=(500, 400))\n\nreturn_periods = 2:500\nreturn_levels = quantile.(LogNormal(p_map[1], p_map[2]), 1 .- (1 ./ return_periods))\n\n# function to calculate exceedance probability and plot positions based on data quantile\nfunction exceedance_plot_pos(y)\n    N = length(y)\n    ys = sort(y; rev=false) # sorted values of y\n    nxp = xp = [r / (N + 1) for r in 1:N] # exceedance probability\n    xp = 1 .- nxp\n    return xp, ys\nend\nxp, ys = exceedance_plot_pos(dat_annmax.residual)\n\np2 = plot(return_periods, return_levels, linewidth=3, color=:blue, label=\"Model Fit\", tickfontsize=16, legendfontsize=18, guidefontsize=18, bottom_margin=5mm, left_margin=5mm)\nscatter!(p2, 1 ./ xp, ys, label=\"Observations\", color=:black, markersize=5)\nxlabel!(p2, \"Return Period (yrs)\")\nylabel!(p2, \"Return Level (m)\")\nplot!(p2, size=(500, 400))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Checks for model fit."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#what-about-the-posterior-distribution",
+    "href": "slides/lecture03-2.html#what-about-the-posterior-distribution",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "What About The Posterior Distribution?",
+    "text": "What About The Posterior Distribution?\nOne of the points of Bayesian statistics is we get a distribution over parameters."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#assess-map-fit",
+    "href": "slides/lecture03-2.html#assess-map-fit",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Assess MAP Fit",
+    "text": "Assess MAP Fit\n\nCode\np1 = histogram(\n    dat_annmax.residual,\n    normalize=:pdf,\n    legend=:false,\n    ylabel=\"PDF\",\n    xlabel=\"Annual Max Tide Level (m)\",\n    tickfontsize=16,\n    guidefontsize=18,\n    bottom_margin=5mm, left_margin=5mm\n)\nplot!(p1, LogNormal(p_map[1], p_map[2]),\n    linewidth=3,\n    color=:red)\nxlims!(p1, (1, 1.7))\nplot!(p1, size=(600, 450))\n\nreturn_periods = 2:500\nreturn_levels = quantile.(LogNormal(p_map[1], p_map[2]), 1 .- (1 ./ return_periods))\n\n# function to calculate exceedance probability and plot positions based on data quantile\nfunction exceedance_plot_pos(y)\n    N = length(y)\n    ys = sort(y; rev=false) # sorted values of y\n    nxp = xp = [r / (N + 1) for r in 1:N] # exceedance probability\n    xp = 1 .- nxp\n    return xp, ys\nend\nxp, ys = exceedance_plot_pos(dat_annmax.residual)\n\np2 = plot(return_periods, return_levels, linewidth=3, color=:blue, label=\"Model Fit\", tickfontsize=16, legendfontsize=18, guidefontsize=18, bottom_margin=5mm, left_margin=5mm, legend=:bottomright)\nscatter!(p2, 1 ./ xp, ys, label=\"Observations\", color=:black, markersize=5)\nxlabel!(p2, \"Return Period (yrs)\")\nylabel!(p2, \"Return Level (m)\")\nxlims!(-1, 300)\nplot!(p2, size=(600, 450))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Checks for model fit."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#what-makes-a-good-prior",
+    "href": "slides/lecture03-2.html#what-makes-a-good-prior",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "What Makes A Good Prior?",
+    "text": "What Makes A Good Prior?\n\nReflects level of understanding (informative vs. weakly informative vs. non-informative).\nDoes not zero out probability of plausible values.\nRegularization (extreme values should be less probable)"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#conjugate-priors",
+    "href": "slides/lecture03-2.html#conjugate-priors",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Conjugate Priors",
+    "text": "Conjugate Priors\nWhen the mathematical forms of the likelihood and the prior(s) are conjugate, the posterior is a nice closed-form distribution.\nExamples:\n\nNormal \\(p(y | \\mu)\\), Normal \\(p(\\mu)\\) ⇒ Normal \\(p(\\mu | y)\\)\nBinomial \\(p(y | \\theta)\\), Beta \\((p\\theta)\\), ⇒ Beta \\(p(\\theta | y)\\)"
+  },
+  {
+    "objectID": "slides/lecture03-2.html#but-in-general",
+    "href": "slides/lecture03-2.html#but-in-general",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "But In General…",
+    "text": "But In General…\nConjugate priors are often convenient, but may be poor choices.\nWe will talk about how to sample more generally with Monte Carlo later."
+  },
+  {
+    "objectID": "slides/lecture03-2.html#key-points-bayesian-statistics",
+    "href": "slides/lecture03-2.html#key-points-bayesian-statistics",
+    "title": "Model-Data Discrepancy and Bayesian Statistics",
+    "section": "Key Points: Bayesian Statistics",
+    "text": "Key Points: Bayesian Statistics\n\nBayesian probability: parameters have probabilities conditional on data\nNeed to specify prior distribution.\nPrior is part of the model! Can evaluate and change based on predictive checks.\nMaximum a posteriori gives “most probable” parameter values\nWill talk more about general sampling later."
   }
 ]

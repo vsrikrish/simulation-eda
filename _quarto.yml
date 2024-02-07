@@ -72,6 +72,8 @@ website:
             text: Standard Rubric
           - href: assignments/hw01/hw01.qmd
             text: Homework 1
+          - href: assignments/hw02/hw02.qmd
+            text: Homework 2
       - section: exercises.qmd
         contents:
           - href: exercises/ex01/ex01.qmd
