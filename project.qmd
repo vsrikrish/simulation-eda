@@ -15,7 +15,7 @@ The term project gives you an opportunity to use and extend the methods we have 
 
 | Milestone | Instructions | Due Date |
 |:---------:|:------------:|:-----------|
-| Proposal | | | Fri, Feb 23 |
+| Proposal | [{{< fa sharp pen-field >}}](project/proposal.qmd) |  Fri, Feb 23 |
 | Simulation Study | | Fri, Mar 27|
 | Presentations | | Mon, May 06 |
 | Final Report | | TBD (During Finals Week) | 

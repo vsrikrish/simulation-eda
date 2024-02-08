@@ -10,7 +10,11 @@ title: "Week 3"
 
 - [Spurious Correlations](../exercises/ex03/ex03.qmd)
 
+## Homework
+
+- [Homework 2: Probability Models](../assignments/hw02/hw02.qmd)
+
 ## Lectures
 
 - [Lecture 03-1: Exploratory Data Analysis](../slides/lecture03-1.qmd)
-- Lecture 03-2: Clustering and Mixture Models
+- [Lecture 03-2: Discrepancy and Bayesian Statistics](../slides/lecture03-2.qmd)

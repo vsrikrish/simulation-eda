@@ -4,28 +4,7 @@ format:
     html:        
         warning: true
         error: true
-    pdf:
-        warning: true
-        error: true
-        keep-tex: true
-        include-in-header: 
-            text: |
-                \usepackage{fvextra}
-                \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
-        include-before-body:
-            text: |
-                \RecustomVerbatimEnvironment{verbatim}{Verbatim}{
-                showspaces = false,
-                showtabs = false,
-                breaksymbolleft={},
-                breaklines
-                % Note: setting commandchars=\\\{\} here will cause an error 
-                }
-    ipynb:
-        warning: true
-        error: true
 jupyter: julia-1.9
-format-links: [pdf, ipynb]
 freeze: false
 ---
 
@@ -359,6 +338,7 @@ Finally, let's test with a 70% probability of a left bounce.
 #| echo: true
 #| output: true
 #| label: fig-galton-hist-skewed
+#| fig-cap: Histogram for Galton Board with 70% left bounce.
 
 galton_simulation = galton_sim(250, 8, p=0.7)
 histogram(galton_simulation, legend=:false) # plot histogram
@@ -370,6 +350,7 @@ ylabel!("Ball Count")
 #| echo: true
 #| output: true
 #| label: fig-galton-qq-3
+#| fig-cap: QQ plot for Galton Board with 70% left bounce.
 
 qqplot(Normal, galton_simulation)
 xlabel!("Theoretical Normal Quantiles")
