@@ -29,6 +29,11 @@ format:
         include-in-header: mathjax-config.html
         date-format: long
         email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        touch: false
+        controls: true
 execute:
     freeze: auto
 ---
@@ -115,15 +120,26 @@ A **fully specified** Bayesian model includes:
 
 ## Prior Probabilities and Non-Identifiability
 
-Can deal with non-identifiability issues for complex models, such as hierarchical models,
+Can deal with non-identifiability issues for complex models, such as hierarchical models by placing appropriate priors to distinguish between components or specify dependence between levels.
+
+
+
+## Hierarchical Models
 
 $$\begin{align}
-y_j | \theta_j, \phi &\sim P(y_j | \theta_j, \phi) \nonumber \\\\
-\theta_j | \phi &\sim P(\theta_j | \phi) \nonumber \\\\
+y_j | \theta_j, \phi &\sim P(y_j | \theta_j, \phi) \nonumber \\
+\theta_j | \phi &\sim P(\theta_j | \phi) \nonumber \\
 \phi &\sim P(\phi) \nonumber
 \end{align}$$
 
-by placing appropriate priors to distinguish between components or specify dependence between levels.
+## Mixture Models
+
+$$\begin{align}
+y_j | \theta_{z_j} &\sim P(y_j | \theta_{z_j}) \\
+z_j &\sim \text{Categorical}(\phi) \\
+\theta_{z_j} &\sim P(\theta_{z_j}) \\
+\phi &\sim P(\phi) 
+\end{align}$$
 
 ## Generative Modeling
 
@@ -297,7 +313,7 @@ p1 = plot(dat.datetime, dat.gauge; ylabel="Gauge Measurement (m)", label="Observ
 plot!(p1, dat.datetime, dat.harmonic, label="Predicted", alpha=0.7)
 ```
 
-## Example: Detrended Tide Gauge Data
+## Example: Detrended Data
 
 ```{julia}
 #| output: true
