@@ -1,10 +1,10 @@
 ---
-title: "Uncertainty and Probability Review"
-subtitle: "Lecture 02"
+title: "More Bayes and Extreme Value Modeling"
+subtitle: "Lecture 07"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
 institution: "Cornell University"
-date: "January 24, 2024"
+date: "February 12, 2024"
 format:
     revealjs:
         slide-number: c/t
@@ -46,96 +46,638 @@ Pkg.instantiate()
 
 using Random
 using Distributions
+using ColorSchemes
 using Plots
 using StatsPlots
+using StatsBase
 using LaTeXStrings
 using Measures
+using CSV
+using DataFrames
+using DataFramesMeta
+using Dates
+using Optim
 
 Random.seed!(1)
 ```
 
-# Last Class
-
-## Modes of Data Analysis
-
-::: {.center}
-![](figures/data_settings.png)
-:::
-
-## Workflow/Course Organization
-
-::: {.center}
-![](figures/course_overview.png){width=70%}
-:::
-
-## Questions?
-
-{{< include _poll-prompt.qmd >}}
-
-# Uncertainty and Probability
-
-## What Is Probability?
-
-::: {.fragment .fade-in}
-How we communicate/capture uncertainty depends on how we interpret probability:
-
-1. **Frequentist**: $\mathbb{P}[A]$ is the long-run *frequency* of event A occurring.
-2. **Bayesian**: $\mathbb{P}[A]$ is the degree of belief (betting odds) of event A occurring.
-
-:::
-
-## Frequentist Probability
-
-- Data is random, but there is a "true" parameter set for a given model.
-- Concerned with consistency of estimates of those parameters obtained from different samples.
+# Last Class/More on Bayes
 
 ## Bayesian Probability
 
-Two different types of random quantities:
+From the Bayesian perspective, probability is interpreted as the degree of belief in an outcome or proposition.
 
-1. Observable quantities, or data (also random for frequentists);
-2. Unobservable quantities, or parameters (not random for frequentists!).
+There are two different types of random quantities:
+- Observable quantities, or data (also random for frequentists);
+- Unobservable quantities, or parameters/structures.
 
-## Bayesian Probability
+## Conditional Probability Notation
 
-Can discuss the *probability* of
-
+Then it makes sense to discuss the *probability* of
 - model parameters $\mathbf{\theta}$
 - unobserved data $\tilde{\mathbf{y}}$ 
+- model structures $\mathcal{M}$
 
-conditional on the observations $\mathbf{y}$, which we can denote:
-$$p(\mathbf{\theta} | \mathbf{y}) \text{ or } p(\tilde{\mathbf{y}} | \mathbf{y})$$
+conditional on the observations $\mathbf{y}$, which we can denote.
+
+## Bayesian Probability as Conditional Probability
+
+This fundamental conditioning on observations $p(\mathbf{\theta} | \mathbf{y})$ is a distinguishing feature of Bayesian inference.
+
+**Compare**: frequentist approaches are based on re-estimating $\theta^\mathbf{y}_{\text{MLE}}$ over the distribution of possible $\mathbf{y}$ conditional on the "true" $\hat{\theta}$.
 
 ## Bayes' Rule
 
-Original version [@Bayes1763-at]:
-
-$$P(A | B) = \frac{P(B | A) \times P(A)}{P(B)} \quad \text{if} \quad P(B) \neq 0.$$
-
-## Bayes' Rule:
-
-Later generalized [@Laplace1774-nf]:
-
 $$\underbrace{{p(\theta | y)}}_{\text{posterior}} = \frac{\overbrace{p(y | \theta)}^{\text{likelihood}}}{\underbrace{p(y)}_\text{normalization}} \overbrace{p(\theta)}^\text{prior}$$
 
-## Confidence Intervals
+## Sequential Bayesian Updating
 
-Frequentist estimates have **confidence intervals**: 
+Can update sequentially by treating the "old" posterior as the "new" prior:
 
-- If you repeat the experiment and re-do the analysis, how often are your estimates "wrong" due to outlying data?
-- The procedure for generating an $\alpha$% confidence interval will contain the "true" data-generating parameters for $\alpha$% of experiments.
-- **This says nothing about whether a given interval contains the "true" value!**
+$$p(\theta | y_{\text{old}}, y_{\text{new}}) \propto p(y_{new} | y_\text{old}, \theta) \color{red}p(y_{\text{old}} | \theta) p(\theta)$$
+
 
 ## Credible Intervals
 
-Bayesian estimates have **credible intervals**:
+Bayesian **credible intervals** are straightforward to interpret: $\theta$ is in $I$ with probability $\alpha$.
 
-- Every parameter has a distribution associated with it ()
+In other words, choose $I$ such that $$p(\theta \in I | \mathbf{y}) = \alpha.$$
 
-## Projection Intervals
+This is not usually a unique choice, but the "equal-tailed interval" between the $(1-\alpha)/2$ and $(1+\alpha)/2$ quantiles is a common choice.
 
-Simulations have **projection intervals** summarizing the sampling distribution of the simulated data.
 
+## Bayesian Model Components
+
+A **fully specified** Bayesian model includes:
+
+1. Probability model for the data given the parameters (the *likelihood*), $p(y | \theta)$t
+2. Prior distributions over the parameters, $p(\theta)$
+
+## Prior Probabilities and Non-Identifiability
+
+Can deal with non-identifiability issues for complex models, such as hierarchical models,
+
+$$\begin{align}
+y_j | \theta_j, \phi &\sim P(y_j | \theta_j, \phi) \nonumber \\\\
+\theta_j | \phi &\sim P(\theta_j | \phi) \nonumber \\\\
+\phi &\sim P(\phi) \nonumber
+\end{align}$$
+
+by placing appropriate priors to distinguish between components or specify dependence between levels.
+
+## Generative Modeling
+
+Bayesian models lend themselves towards generative simulation by generating new data $\tilde{y}$ through the *posterior predictive distribution*:
+
+$$p(\tilde{y} | \mathbf{y}) = \int_{\Theta} p(\tilde{y} | \theta) p(\theta | \mathbf{y}) d\theta$$
+
+This allows us to test the model through simulation (*e.g.* hindcasting) and generate probabilistic predictions.
+
+## What Makes A Good Prior?
+
+- Reflects level of understanding (informative vs. weakly informative vs. non-informative).
+- Does not zero out probability of plausible values.
+- Regularization (extreme values should be less probable)
+
+## What Makes A Bad Prior?
+
+- Assigns probability zero to plausible values;
+- Weights implausible values equally as more plausible ones;
+- Double counts information (*e.g.* fitting a prior to data which is also used in the likelihood)
+- Chosen based on vibes.
+
+
+# Modeling Extreme Values
+
+## Extreme Values and Environmental Data
+
+::: {.center}
+![](figures/dossgollin-keller-2023_extreme.jpeg)
+:::
+::: {.caption}
+Source: @Doss-Gollin2023-kl
+:::
+
+## Extreme Values and Environmental Data
+
+- Streamflow
+- Precipitation
+- Storm tides
+- Heat waves
+- Wind speeds
+
+## Extreme Values and Risk
+
+::: {.center}
+![](https://imgs.xkcd.com/comics/launch_risk.png){width=25%}
+:::
+::: {.caption}
+Source: [XKCD 2107](https://xkcd.com/2107/)
+:::
+
+## Return Periods and Return Levels
+
+- Exceedance probability (often framed as **annual exceedance probability (AEP)**) $p$
+- **Return period** or recurrence interval: $T=\frac{1}{p}
+- **Return level**: Value that will be exceeded with probability $p=\frac{1}{T}$, aka the $1-p$ quantile.
+
+
+## Why Is Modeling/Extrapolating Extremes Challenging?
+
+::: {.fragment .fade-in}
+- Not much data
+- Sensitive to small changes in distributional assumptions/tail areas (Exercise 4!)
+:::
+
+## Impact of Distribution Change on Extremes
+
+```{julia}
+#| echo: true
+#| code-fold: true
+#| layout-ncol: 2
+#| fig-align: center
+#| label: fig-extremes
+#| fig-cap: Impact of distributional assumptions on extreme frequencies.
+
+xhi = quantile(Normal(0, 2), 0.975)
+xlo = quantile(Normal(0, 2), 0.025)
+
+p1 = plot(Normal(0, 2), label="Base", linewidth=2, color=:black, xticks=:false, yticks=:false, guidefontsize=16, legendfontsize=14, tickfontsize=14)
+plot!(Normal(0.5, 2), label="Shifted Mean", linewidth=2, color=:black, linestyle=:dash)
+plot!(xhi:0.01:8, Normal(0, 2), color=:red, linewidth=0, fill=(0, 0.5, :red), label=false)
+plot!(xhi:0.01:8, Normal(0.5, 2), color=:red, linewidth=0, fill=(0, 0.5, :red), label=false)
+xlabel!("Variable")
+plot!(size=(500, 400))
+
+nsamples = 100000
+xhi = quantile(Normal(0, 2), 0.99)
+xbase = rand(Normal(0, 2), nsamples)
+xshift = rand(Normal(0.5, 2), nsamples)
+p2 = plot(sort(xbase), 1(nsamples:-1:1) ./ nsamples, label="Base", color=:black, linewidth=2, xticks=:false, guidefontsize=16, legendfontsize=14, tickfontsize=14)
+xlabel!("Variable")
+xlims!((-7, 6))
+ylims!((1/1000, 1))
+plot!(sort(xshift), 1(nsamples:-1:1) ./ nsamples, color=:black, linestyle=:dash, linewidth=2, label="Shifted Mean", legend=:bottomleft)
+yticks = [1, 1/10, 1/50, 1/100, 1/1000]
+yaxis!("Exceedance Probability", yticks, :log, formatter=y -> string(round(y; digits=3)))
+hline!([1-cdf(Normal(0, 2), xhi)], color=:red, label=:false)
+hline!([1-cdf(Normal(0.5, 2), xhi)], color=:red, label=:false, linestyle=:dash, linewidth=2)
+vline!([xhi], color=:blue, linewidth=2, label=:false)
+yticks = [1, 1/10, 1/50, 1/100, 1/1000]
+yaxis!("Exceedance Probability", yticks, :log, formatter=y -> string(round(y; digits=3)))
+plot!(size=(500, 400))
+
+display(p1)
+display(p2)
+```
+
+
+## Frequency of Cccurrence &NotEqual; Extreme impacts 
+
+::: {.center}
+![Extremity of Winter Storm Uri Heat Demands](figures/doss-gollin-2021-uri-extreme.jpeg){width=80%}
+:::
+
+::: {.caption}
+Source: @Doss-Gollin2021-kc
+:::
+
+# Theoretical Frameworks for Extremes
+
+## Two Ways to Frame "Extremes"
+
+::: {.incremental}
+1. What is the distribution of "block" extremes, *e.g.* annual maxima (**block maxima**)?
+2. What is the distribution of extremes which exceed a certain value (**peaks over threshold**)?
+:::
+
+## Example: Tide Gauge Data
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| code-overflow: wrap
+#| fig-align: center
+#| label: fig-norfolk-data
+#| fig-cap: 2015 tide gauge data from the Norfolk, VA tide gauge.
+
+function load_data(fname)
+    date_format = "yyyy-mm-dd HH:MM"
+    # this uses the DataFramesMeta package -- it's pretty cool
+    return @chain fname begin
+        CSV.File(; dateformat=date_format)
+        DataFrame
+        rename(
+            "Time (GMT)" => "time", "Predicted (m)" => "harmonic", "Verified (m)" => "gauge"
+        )
+        @transform :datetime = (Date.(:Date, "yyyy/mm/dd") + Time.(:time))
+        select(:datetime, :gauge, :harmonic)
+        @transform :weather = :gauge - :harmonic
+        @transform :month = (month.(:datetime))
+    end
+end
+
+dat = load_data("data/surge/norfolk-hourly-surge-2015.csv")
+
+p1 = plot(dat.datetime, dat.gauge; ylabel="Gauge Measurement (m)", label="Observed", legend=:topleft, tickfontsize=14, guidefontsize=16, legendfontsize=14, xlabel="Date/Time", bottom_margin=5mm, left_margin=5mm, right_margin=5mm)
+```
+
+## Example: Tide Gauge Data
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| code-overflow: wrap
+#| fig-align: center
+#| label: fig-norfolk-data-harmonics
+#| fig-cap: 2015 tide gauge data with predicted harmonics from the Norfolk, VA tide gauge.
+
+plot!(p1, dat.datetime, dat.harmonic, label="Predicted", alpha=0.7)
+```
+
+## Example: Detrended Tide Gauge Data
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| code-overflow: wrap
+#| fig-align: center
+#| label: fig-norfolk-data-detrend
+#| fig-cap: 2015 detrended tide gauge data from the Norfolk, VA tide gauge.
+
+plot(dat.datetime, dat.weather; ylabel="Gauge Weather Variability (m)", label="Detrended Data", linewidth=3, legend=:topleft, tickfontsize=14, guidefontsize=16, legendfontsize=14, xlabel="Date/Time", bottom_margin=5mm, left_margin=5mm, right_margin=5mm)
+```
+
+## Example: Block Maxima
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| code-overflow: wrap
+#| fig-align: center
+#| label: fig-norfolk-data-maxima
+#| fig-cap: 2015 detrended tide gauge data from the Norfolk, VA tide gauge.
+
+p1 = plot(dat.datetime, dat.weather; ylabel="Gauge Weather Variability (m)", label="Detrended Data", linewidth=2, legend=:topleft, tickfontsize=14, guidefontsize=16, legendfontsize=14, xlabel="Date/Time", bottom_margin=5mm, left_margin=5mm, right_margin=5mm)
+max_dat = combine(dat -> dat[argmax(dat.weather), :], groupby(transform(dat, :datetime => x->yearmonth.(x)), :datetime_function))
+scatter!(max_dat.datetime, max_dat.weather, label="Monthly Maxima", markersize=5)
+month_start = collect(Date(2015, 01, 01):Dates.Month(1):Date(2015, 12, 01))
+vline!(DateTime.(month_start), color=:black, label=:false, linestyle=:dash)
+
+p2 = histogram(
+    max_dat.weather,
+    normalize=:pdf,
+    orientation=:horizontal,
+    label=:false,
+    xlabel="PDF",
+    ylabel="",
+    yticks=[],
+    tickfontsize=16,
+    guidefontsize=18
+)
+
+l = @layout [a{0.7w} b{0.3w}]
+plot(p1, p2; layout=l, link=:y, ylims=(-0.4, 1.4), bottom_margin=5mm, left_margin=5mm)
+plot!(size=(1000, 450))
+```
+
+## Example: Peaks Over Threshold
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| code-overflow: wrap
+#| fig-align: center
+#| label: fig-norfolk-data-peaks
+#| fig-cap: 2015 detrended tide gauge data from the Norfolk, VA tide gauge.
+
+thresh = 0.5
+p1 = plot(dat.datetime, dat.weather; linewidth=2, ylabel="Gauge Weather Variability (m)", label="Observations", legend=:top, tickfontsize=14, guidefontsize=16, legendfontsize=14, xlabel="Date/Time")
+hline!([thresh], color=:red, linestyle=:dash, label="Threshold")
+scatter!(dat.datetime[dat.weather .> thresh], dat.weather[dat.weather .> thresh], markershape=:x, color=:black, markersize=3, label="Exceedances")
+
+p2 = histogram(
+    dat.weather[dat.weather .> thresh],
+    normalize=:pdf,
+    orientation=:horizontal,
+    label=:false,
+    xlabel="PDF",
+    ylabel="",
+    yticks=[],
+    tickfontsize=16,
+    guidefontsize=18
+)
+
+l = @layout [a{0.7w} b{0.3w}]
+plot(p1, p2; layout=l, link=:y, ylims=(-0.4, 1.4), bottom_margin=5mm, left_margin=5mm)
+plot!(size=(1000, 450))
+```
+
+# Modeling Extremes
+
+## San Francisco Tide Gauge Data
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| code-overflow: wrap
+#| fig-align: center
+#| label: fig-surge-data
+#| fig-cap: Annual maxima surge data from the San Francisco, CA tide gauge.
+
+# load SF tide gauge data
+# read in data and get annual maxima
+function load_data(fname)
+    date_format = DateFormat("yyyy-mm-dd HH:MM:SS")
+    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data
+    df = @chain fname begin
+        CSV.read(DataFrame; header=false)
+        rename("Column1" => "year", "Column2" => "month", "Column3" => "day", "Column4" => "hour", "Column5" => "gauge")
+        # need to reformat the decimal date in the data file
+        @transform :datetime = DateTime.(:year, :month, :day, :hour)
+        # replace -99999 with missing
+        @transform :gauge = ifelse.(abs.(:gauge) .>= 9999, missing, :gauge)
+        select(:datetime, :gauge)
+    end
+    return df
+end
+
+dat = load_data("data/surge/h551.csv")
+
+# detrend the data to remove the effects of sea-level rise and seasonal dynamics
+ma_length = 366
+ma_offset = Int(floor(ma_length/2))
+moving_average(series,n) = [mean(@view series[i-n:i+n]) for i in n+1:length(series)-n]
+dat_ma = DataFrame(datetime=dat.datetime[ma_offset+1:end-ma_offset], residual=dat.gauge[ma_offset+1:end-ma_offset] .- moving_average(dat.gauge, ma_offset))
+
+# group data by year and compute the annual maxima
+dat_ma = dropmissing(dat_ma) # drop missing data
+dat_annmax = combine(dat_ma -> dat_ma[argmax(dat_ma.residual), :], groupby(transform(dat_ma, :datetime => x->year.(x)), :datetime_function))
+delete!(dat_annmax, nrow(dat_annmax)) # delete 2023; haven't seen much of that year yet
+rename!(dat_annmax, :datetime_function => :Year)
+select!(dat_annmax, [:Year, :residual])
+dat_annmax.residual = dat_annmax.residual / 1000 # convert to m
+
+# make plots
+p1 = plot(
+    dat_annmax.Year,
+    dat_annmax.residual;
+    xlabel="Year",
+    ylabel="Annual Max Tide Level (m)",
+    label=false,
+    marker=:circle,
+    markersize=5,
+    tickfontsize=16,
+    guidefontsize=18
+)
+p2 = histogram(
+    dat_annmax.residual,
+    normalize=:pdf,
+    orientation=:horizontal,
+    label=:false,
+    xlabel="PDF",
+    ylabel="",
+    yticks=[],
+    tickfontsize=16,
+    guidefontsize=18
+)
+
+l = @layout [a{0.7w} b{0.3w}]
+plot(p1, p2; layout=l, link=:y, ylims=(1, 1.7), bottom_margin=5mm, left_margin=5mm)
+plot!(size=(1000, 450))
+```
+
+## Proposed Probability Model
+
+$$
+\begin{align*}
+& y \sim LogNormal(\mu, \sigma) \tag{likelihood}\\
+& \left. \begin{aligned} 
+& \mu \sim Normal(0, 1) \\
+& \sigma \sim HalfNormal(0, 5)
+\end{aligned} \right\} \tag{priors}
+\end{align*}
+$$
+
+Want to find:
+
+$$p(\mu, \sigma | y) \propto p(y | \mu, \sigma) p(\mu)p(\sigma)$$
+
+## Are Our Priors Reasonable?
+
+Hard to tell! Let's simulate data to see we get plausible outcomes.
+
+This is called a **prior predictive check**.
+
+## Prior Predictive Check
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| fig-align: center
+#| fig-cap: Prior predictive check of return periods with revised model
+#| label: fig-surge-prior-1
+
+# sample from priors
+μ_sample = rand(Normal(0, 1), 1_000)
+σ_sample = rand(truncated(Normal(0, 5), 0, +Inf), 1_000)
+
+# define return periods and cmopute return levels for parameters
+return_periods = 2:100
+return_levels = zeros(1_000, length(return_periods))
+for i in 1:1_000
+    return_levels[i, :] = quantile.(LogNormal(μ_sample[i], σ_sample[i]), 1 .- (1 ./ return_periods))
+end
+
+plt_prior_1 = plot(; yscale=:log10, yticks=10 .^ collect(0:2:16), ylabel="Return Level (m)", xlabel="Return Period (yrs)",
+    tickfontsize=16, legendfontsize=18, guidefontsize=18, bottom_margin=10mm, left_margin=10mm, legend=:topleft)
+for idx in 1:1_000
+    label = idx == 1 ? "Prior" : false
+    plot!(plt_prior_1, return_periods, return_levels[idx, :]; color=:black, alpha=0.1, label=label)
+end
+plt_prior_1
+```
+
+## Let's Revise the Prior
+
+$$
+\begin{align*}
+& y \sim LogNormal(\mu, \sigma) \tag{likelihood}\\
+& \left. \begin{aligned} 
+& \mu \sim Normal(0, 0.5) \\
+& \sigma \sim HalfNormal(0, 0.1)
+\end{aligned} \right\} \tag{priors}
+\end{align*}
+$$
+
+## Prior Predictive Check 2
+
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| fig-align: center
+#| fig-cap: Prior predictive check of return periods with revised model
+#| label: fig-surge-prior-2
+
+# sample from priors
+μ_sample = rand(Normal(0, 0.5), 1_000)
+σ_sample = rand(truncated(Normal(0, 0.1), 0, +Inf), 1_000)
+
+return_periods = 2:100
+return_levels = zeros(1_000, length(return_periods))
+for i in 1:1_000
+    return_levels[i, :] = quantile.(LogNormal(μ_sample[i], σ_sample[i]), 1 .- (1 ./ return_periods))
+end
+
+plt_prior_2 = plot(; ylabel="Return Level (m)", xlabel="Return Period (yrs)", tickfontsize=16, legendfontsize=18, guidefontsize=18, bottom_margin=10mm, left_margin=10mm)
+for idx in 1:1_000
+    label = idx == 1 ? "Prior" : false
+    plot!(plt_prior_2, return_periods, return_levels[idx, :]; color=:black, alpha=0.1, label=label)
+end
+plt_prior_2
+```
+
+## Compute Posterior
+
+:::: {.columns}
+::: {.column width=70%}
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| code-overflow: wrap
+#| fig-align: center
+#| label: fig-surge-posterior
+#| fig-cap: Posterior samples from surge model.
+
+ll(μ, σ) = sum(logpdf(LogNormal(μ, σ), dat_annmax.residual))
+lprior(μ, σ) = logpdf(Normal(0, 0.5), μ) + logpdf(truncated(Normal(0, 0.1), 0, Inf), σ)
+lposterior(μ, σ) = ll(μ, σ) + lprior(μ, σ)
+
+p_map = optimize(p -> -lposterior(p[1], p[2]), [0.0, 0.0], [1.0, 1.0], [0.5, 0.5]).minimizer
+
+μ = 0.15:0.005:0.35
+σ = 0.04:0.01:0.1
+posterior_vals = @. lposterior(μ', σ)
+
+contour(μ, σ, posterior_vals, 
+    levels=100, 
+    clabels=false, 
+    cbar=true, lw=1, 
+    fill=(true,cgrad(:grays,[0,0.1,1.0])),
+    tickfontsize=16,
+    guidefontsize=18,
+    legendfontsize=18,
+    right_margin=20mm,
+    bottom_margin=5mm,
+    left_margin=5mm
+)
+scatter!([p_map[1]], [p_map[2]], label="MAP", markersize=10, marker=:star)
+xlabel!(L"$\mu$")
+ylabel!(L"$\sigma$")
+plot!(size=(900, 400))
+```
+:::
+::: {.column width=30%}
+```{julia}
+#| echo: false
+#| output: true
+
+p_map
+```
+:::
+::::
+
+## Assess MAP Fit
+
+```{julia}
+#| label: fig-surge-fit
+#| output: true
+#| echo: true
+#| code-fold: true
+#| layout-ncol: 2
+#| fig-align: center
+#| fig-cap: Checks for model fit.
+
+
+p1 = histogram(
+    dat_annmax.residual,
+    normalize=:pdf,
+    legend=:false,
+    ylabel="PDF",
+    xlabel="Annual Max Tide Level (m)",
+    tickfontsize=16,
+    guidefontsize=18,
+    bottom_margin=5mm, left_margin=5mm
+)
+plot!(p1, LogNormal(p_map[1], p_map[2]),
+    linewidth=3,
+    color=:red)
+xlims!(p1, (1, 1.7))
+plot!(p1, size=(600, 450))
+
+return_periods = 2:500
+return_levels = quantile.(LogNormal(p_map[1], p_map[2]), 1 .- (1 ./ return_periods))
+
+# function to calculate exceedance probability and plot positions based on data quantile
+function exceedance_plot_pos(y)
+    N = length(y)
+    ys = sort(y; rev=false) # sorted values of y
+    nxp = xp = [r / (N + 1) for r in 1:N] # exceedance probability
+    xp = 1 .- nxp
+    return xp, ys
+end
+xp, ys = exceedance_plot_pos(dat_annmax.residual)
+
+p2 = plot(return_periods, return_levels, linewidth=3, color=:blue, label="Model Fit", tickfontsize=16, legendfontsize=18, guidefontsize=18, bottom_margin=5mm, left_margin=5mm, right_margin=10mm, legend=:bottomright)
+scatter!(p2, 1 ./ xp, ys, label="Observations", color=:black, markersize=5)
+xlabel!(p2, "Return Period (yrs)")
+ylabel!(p2, "Return Level (m)")
+xlims!(-1, 300)
+plot!(p2, size=(600, 450))
+
+display(p1)
+display(p2)
+```
+
+# Key Points and Upcoming Schedule
+
+## Key Points: Bayesian Statistics
+
+- Probability as degree of belief
+- Bayes' Rule as the fundamental theorem of conditional probability
+- Bayesian updating as an information filter
+- Prior selection important: lots to consider!
+- Credible Intervals: Bayesian representations of uncertainty
+
+## Key Points: Extremes
+
+- Easy to under-estimate extreme events due to lack of data;
+- Two different approaches to understanding extremes
+  - Block Maxima
+  - Peaks over Thresholds
+- These require different statistical approaches (more next week...)
+
+## Next Classes
+
+**Wednesday**: No class
+
+**Monday**: Extreme Value Theory and Models
+
+## Assessments
+
+**Exercise 4**: Assigned, due Friday
+
+**Reading**: @Doss-Gollin2021-kc
 
 # References
 

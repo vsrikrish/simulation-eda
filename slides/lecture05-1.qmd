@@ -1,0 +1,127 @@
+---
+title: "Extreme Value Modeling"
+subtitle: "Lecture 07"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "February 12, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+execute:
+    freeze: auto
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using Distributions
+using ColorSchemes
+using Plots
+using StatsPlots
+using StatsBase
+using LaTeXStrings
+using Measures
+using CSV
+using DataFrames
+using DataFramesMeta
+using Dates
+using Optim
+
+Random.seed!(1)
+```
+
+# Better Models for Extremes
+
+## Block Maxima
+
+Given independent and identically-distributed random variables $X_1, X_2, \ldots, X_{mk}$, what is the distribution of maxima of "blocks" of size $m$:
+
+$$\tilde{X}_i = \max_{(i-1)m < j \leq im} X_j,$$
+
+for $i = 1, 2, \ldots, k$?
+
+## Analogy: Central Limit Theorem
+
+Recall that the **Central Limit Theorem** tells us:
+
+If we have independent and identically-distributed variables $$X_1, X_2, \ldots, X_n$$ from some population with mean $\mu$ and standard deviation $\sigma$, the sample mean $\bar{X}$ has the approximate distribution
+
+$$\bar{X} \sim \text{Normal}(\mu, \sigma/\sqrt{n}).$$
+
+## Extreme Value Theorem
+
+The **Extreme Value Theorem** is the equivalent for block maxima.
+
+If the limiting distribution exists, it can only by given as a **Generalized Extreme Value (GEV)** distribution:
+
+$$H(y) = \exp\left\{-\left[1 + \xi\left(\frac{y-\mu}{\sigma}\right)\right]^{-1/\xi}\right\},$$
+defined for $y$ such that $1 + \xi(y-\mu)/\sigma > 0$.
+
+## GEV Distributions
+
+GEV distributions have three parameters:
+
+- location $\mu$;
+- scale $\sigma > 0$;
+- shape $\xi$.
+
+## GEV Distributions
+
+:::: {.columns}
+::: {.column width=40%}
+The shape parameter $\xi$ is particularly influential, as the GEV distribution can take on three shapes depending on its sign.
+:::
+::: {.column width=60%}
+
+```{julia}
+#| label: fig-gev-shape
+#| output: true
+#| echo: true
+#| code-fold: true
+#| fig-align: center
+#| fig-cap: Shape of the GEV distribution with different choices of $\xi$.
+
+p1 = plot(-2:0.1:6, GeneralizedExtremeValue(0, 1, 0.5), linewidth=3, color=:red, label=L"$\xi = 1/2$", guidefontsize=18, legendfontsize=16, tickfontsize=16)
+plot!(-4:0.1:6, GeneralizedExtremeValue(0, 1, 0), linewidth=3, color=:green, label=L"$\xi = 0$")
+plot!(-4:0.1:2, GeneralizedExtremeValue(0, 1, -0.5), linewidth=3, color=:blue, label=L"$\xi = -1/2$")
+scatter!((-2, 0), color=:red, label=:false)
+scatter!((2, 0), color=:blue, label=:false)
+ylabel!("Density")
+xlabel!(L"$x$")
+plot!(size=(600, 450))
+```
+:::
+::::
+
+## 

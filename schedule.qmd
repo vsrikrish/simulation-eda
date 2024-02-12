@@ -20,10 +20,10 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 |  | Wed, Jan 31 | Probability Models II  | [{{< fa sharp presentation-screen >}}](slides/lecture02-2.qmd)  | | |  |
 | [3](weeks/week03.qmd) | Mon, Feb 5 | Exploratory Data Analysis | [{{< fa sharp presentation-screen >}}](slides/lecture03-1.qmd) | | [{{< fa sharp coffee-pot >}}](exercises/ex03/ex03.qmd) | | 
 |  | Wed, Feb 7 | More on Discrepancy and Bayesian Statistics | [{{< fa sharp presentation-screen >}}](slides/lecture03-2.qmd) | | | [{{< fa sharp pen-field >}}](assignments/hw02/hw02.qmd) |
-| 4 | Mon, Feb 12 | Clustering and Mixture Models | | | |
+| 4 | Mon, Feb 12 | More Bayes and Extreme Values | [{{< fa sharp presentation-screen >}}](slides/lecture04-1.qmd) | Doss-Gollin et al ([2021](https://iopscience-iop-org.proxy.library.cornell.edu/article/10.1088/1748-9326/ac0278)) | [{{< fa sharp coffee-pot >}}](exercises/ex04/ex04.qmd)  | |
 |  | Wed, Feb 14 |*No Class: Project Work | | | | 
-| 5 | Mon, Feb 19 | Extreme Values | | | | 
-|  | Wed, Feb 21 | Data Visualization | | |  |
+| 5 | Mon, Feb 19 | Extreme Value Theory and Models | | | | 
+|  | Wed, Feb 21 | Clustering and Mixture Models | | |  |
 | 6  | Mon, Feb 26 | *No Class: February Break* | | | | 
 |  | Wed, Feb 28 | In-Class Figure Discussion | | | | 
 | | | ***Simulation Methods*** | | | |

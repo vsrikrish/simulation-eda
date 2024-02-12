@@ -1,0 +1,16 @@
+---
+title: "Week 4"
+---
+
+## Announcements
+
+- [Exercise 4](../exercises/ex04/ex04.qmd) due 2/16/24.
+- No class Wednesday, 2/14!
+
+## Exercises
+
+- [Distributions and Extreme Values](../exercises/ex04/ex04.qmd)
+
+## Lectures
+
+- [Lecture 04-1: More Bayes and Extreme Values](../slides/lecture04-1.qmd)
