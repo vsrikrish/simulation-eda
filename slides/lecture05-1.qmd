@@ -1,5 +1,5 @@
 ---
-title: "Extreme Value Theory Modeling"
+title: "Extreme Value Theory & Modeling"
 subtitle: "Lecture 08"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
@@ -124,7 +124,6 @@ dat = load_data("data/surge/norfolk-hourly-surge-2015.csv")
 p1 = plot(dat.datetime, dat.gauge; ylabel="Gauge Measurement (m)", label="Observed", legend=:topleft, tickfontsize=14, guidefontsize=16, legendfontsize=14, xlabel="Date/Time", bottom_margin=5mm, left_margin=5mm, right_margin=5mm)
 ```
 
-## Block Maxima
 
 ## Example: Tide Gauge Data
 
@@ -288,8 +287,8 @@ plot!(size=(600, 450))
 
 ## GEV Types
 
-- $\xi < 0$ implies the extremes are *bounded* (the Weibull distribution comes up in the context of temperature and wind speed extremes).
-- $\xi > 0$ implies that the tails are *heavy*, and there is no expectation. Common for streamflow, storm surge, precipitation.
+- $\xi < 0$: extremes are *bounded* (the Weibull distribution comes up in the context of temperature and wind speed extremes).
+- $\xi > 0$: tails are *heavy*, and there is no expectation if $\xi > 1$. Common for streamflow, storm surge, precipitation.
 - The Gumbel distribution ($\xi = 0$) is common for extremes from normal distributions, doesn't occur often in real-world data.
 
 ## San Francisco Tide Gauge Data
@@ -392,7 +391,8 @@ p = histogram(
     guidefontsize=18,
     legendfontsize=16,
     left_margin=10mm, 
-    right_margin=10mm
+    right_margin=10mm,
+    bottom_margin=5mm
 )
 plot!(GeneralizedExtremeValue(θ_mle[1], θ_mle[2], θ_mle[3]), linewidth=3, label="GEV Fit")
 plot!(fit(LogNormal, dat_annmax.residual), linewidth=3, label="LogNormal Fit", color=:black)
@@ -486,6 +486,7 @@ defined for $y$ such that $1 + \xi(y-\mu)/\sigma > 0$.
 ## Generalized Pareto Distribution (GPD)
 
 Similarly to the GEV distribution, the GPD distribution has three parameters:
+
 - location $\mu$;
 - scale $\sigma > 0$;
 - shape $\xi$.
