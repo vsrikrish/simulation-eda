@@ -65,6 +65,10 @@ website:
             text: Week 2
           - href: weeks/week03.qmd
             text: Week 3
+          - href: weeks/week04.qmd
+            text: Week 4
+          - href: weeks/week05.qmd
+            text: Week 5
       - section: homework.qmd
         text: "Homework"
         contents:
