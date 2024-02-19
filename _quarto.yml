@@ -84,7 +84,7 @@ website:
             text: Exercise 1
           - href: exercises/ex03/ex03.qmd
             text: Exercise 3
-      - section: project.qmd
+      - project.qmd
       - section: "Julia Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
