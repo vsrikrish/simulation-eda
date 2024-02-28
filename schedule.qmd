@@ -25,7 +25,7 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 | 5 | Mon, Feb 19 | Extreme Value Theory and Models | [{{< fa sharp presentation-screen >}}](slides/lecture05-1.qmd) | Arns et al ([2013](https://linkinghub-elsevier-com.proxy.library.cornell.edu/retrieve/pii/S0378383913001270)) | [{{< fa sharp coffee-pot >}}](exercises/ex05/ex05.qmd) | | | 
 |  | Wed, Feb 21 | Data Visualization | [{{< fa sharp presentation-screen >}}](slides/lecture05-2.qmd) | |  |
 | 6  | Mon, Feb 26 | *No Class: February Break* | | | | 
-|  | Wed, Feb 28 | In-Class Figure Discussion | | | | 
+|  | Wed, Feb 28 | In-Class Figure Discussion | [{{< fa sharp presentation-screen >}}](slides/lecture06-2.qmd) | | | 
 | | | ***Simulation Methods*** | | | |
 | 7 | Mon, Mar 4 | Uncertainty Propagation and Monte Carlo Simulation | | | | 
 |  | Wed, Mar 6 | Monte Carlo Simulation II | | | | 

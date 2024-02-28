@@ -1,0 +1,65 @@
+---
+title: "Figure Discussion"
+subtitle: "Lecture 10"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "February 28, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        touch: false
+        controls: true
+execute:
+    freeze: auto
+---
+
+# Announcements
+
+## Monday Schedule Change
+
+- No office hours Monday, please email me if you need to meet!
+
+## Literature Critique
+
+- 3/27: Literature Critique
+- Find and read a peer-reviewed journal article involving an application of data analysis.
+- Write a short discussion paper (1-2 pages?) analyzing the hypotheses and statistical choices.
+- Prepare presentation of the paper (10 minutes; students will submit peer evaluations).
+- 5850: Write a more formal referee report.
+
+# Upcoming Schedule
+
+## Next Class(es)
+
+**Next Week**: Monte Carlo
+
+## Assessments
+
+**Friday**: Project proposal due by 9pm.
+
+HW3 released this weekend, due 3/15.

@@ -13,4 +13,4 @@ title: "Week 5"
 ## Lectures
 
 - [Lecture 05-1: Extreme Value Theory and Models](../slides/lecture05-1.qmd)
-- [Lecture 05-2: Data Visualization](../slides/lecture05-1.qmd)
+- [Lecture 05-2: Data Visualization](../slides/lecture05-2.qmd)
