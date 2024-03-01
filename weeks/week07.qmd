@@ -1,0 +1,11 @@
+---
+title: "Week 7"
+---
+
+## Announcements
+
+- No office hours on 3/4.
+
+## Lectures
+
+- [Lecture 07-1: Monte Carlo Simulation](../slides/lecture07-1.qmd)

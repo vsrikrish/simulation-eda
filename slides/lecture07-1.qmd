@@ -1,0 +1,168 @@
+---
+title: "Monte Carlo Simulation"
+subtitle: "Lecture 10"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "March 4, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        touch: false
+        controls: true
+execute:
+    freeze: auto
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using Distributions
+using ColorSchemes
+using Plots
+using StatsPlots
+using StatsBase
+using LaTeXStrings
+using Measures
+using CSV
+using DataFrames
+using DataFramesMeta
+using Dates
+
+Random.seed!(1)
+```
+
+# Previously In Class
+
+## Probability Models
+
+- Probability Models for Data-Generating Processes
+- Can be used for statistical models and simulation models (discrepancy)
+
+## What's Next?
+
+- How do we:
+    - Simulate from models/propagate uncertainty;
+    - Go beyond MLE/MAP estimation for parameter values?
+- Model assessment/selection
+
+# Monte Carlo Simulation
+
+## Stochastic Simulation
+
+**Monte Carlo simulation**: Propagating random samples through a model to estimate a value (usually an expectation or a quantile).
+
+```{dot}
+//| fig-width: 100%
+digraph G {
+    graph [
+        rankdir=LR
+        layout=dot
+    ]
+    node [
+        fontname = "IBM Plex Sans, sans-serif"
+        fontsize=25
+    ]
+    edge [
+        arrowsize=0.75
+        labeldistance=3
+        penwidth=3
+        fontname = "IBM Plex Sans, sans-serif"
+        fontsize=25
+        style=dashed
+        color="#b31b1b"
+        fontcolor="#b31b1b"
+    ]
+    a [label="Probability\n Distribution"]
+    b [label = "Random\n Samples"]
+    c [label="Model"]
+    d [label="Outputs"]
+
+    a -> b [
+        label="Sample"
+    ]
+    b -> c [
+        label="Input"
+    ]
+    c -> d [
+        label="Simulate"
+    ]
+}
+
+```
+
+## Goals of Monte Carlo
+
+Monte Carlo is a broad method, which can be used to:
+
+1. Obtain probability distributions of outputs;
+2. Estimate deterministic quantities (***Monte Carlo estimation***).
+
+
+
+# Key Points and Upcoming Schedule
+
+## Key Points: Bayesian Statistics
+
+- Probability as degree of belief
+- Bayes' Rule as the fundamental theorem of conditional probability
+- Bayesian updating as an information filter
+- Prior selection important: lots to consider!
+- Credible Intervals: Bayesian representations of uncertainty
+
+## Key Points: Extremes
+
+- Easy to under-estimate extreme events due to lack of data;
+- Two different approaches to understanding extremes
+  - Block Maxima
+  - Peaks over Thresholds
+- These require different statistical approaches (more next week...)
+
+## Next Classes
+
+**Wednesday**: No class
+
+**Monday**: Extreme Value Theory and Models
+
+## Assessments
+
+**Exercise 4**: Assigned, due Friday
+
+**Reading**: @Doss-Gollin2021-kc
+
+# References
+
+## References
