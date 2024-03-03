@@ -16,3 +16,9 @@
 [submodule "exercises/ex05"]
 	path = exercises/ex05
 	url = https://github.com/BEE4850/ex-week05
+[submodule "assignments/hw03"]
+	path = assignments/hw03
+	url = https://github.com/BEE4850/hw03.git
+[submodule "exercises/ex07"]
+	path = exercises/ex07
+	url = https://github.com/BEE4850/ex-week07.git
