@@ -71,6 +71,8 @@ website:
             text: Week 5
           - href: weeks/week06.qmd
             text: Week 6
+          - href: weeks/week07.qmd
+            text: Week 7
       - section: homework.qmd
         text: "Homework"
         contents:
@@ -80,6 +82,8 @@ website:
             text: Homework 1
           - href: assignments/hw02/hw02.qmd
             text: Homework 2
+          - href: assignments/hw03/hw03.qmd
+            text: Homework 3
       - section: exercises.qmd
         contents:
           - href: exercises/ex01/ex01.qmd
@@ -90,6 +94,8 @@ website:
             text: Exercise 4
           - href: exercises/ex05/ex05.qmd
             text: Exercise 5
+          - href: exercises/ex07/ex07.qmd
+            text: Exercise 7
       - project.qmd
       - section: "Julia Tutorials"
         contents:

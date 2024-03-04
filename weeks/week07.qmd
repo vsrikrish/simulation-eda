@@ -6,6 +6,18 @@ title: "Week 7"
 
 - No office hours on 3/4.
 
+## Readings
+
+- Kale, A., Kay, M., & Hullman, J. (2021). Visual reasoning strategies for effect size judgments and decisions. IEEE Transactions on Visualization and Computer Graphics, 27(2), 272–282. https://doi.org/10.1109/TVCG.2020.3030335
+
+## Exercises
+
+- [Monte Carlo and Distributional Assumptions](../exercises/ex07/ex07.qmd)
+
 ## Lectures
 
 - [Lecture 07-1: Monte Carlo Simulation](../slides/lecture07-1.qmd)
+- Lecture 07-2: Monte Carlo Examples
+
+
+

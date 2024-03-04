@@ -22,13 +22,13 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 |  | Wed, Feb 7 | More on Discrepancy and Bayesian Statistics | [{{< fa sharp presentation-screen >}}](slides/lecture03-2.qmd) | | | [{{< fa sharp pen-field >}}](assignments/hw02/hw02.qmd) |
 | 4 | Mon, Feb 12 | More Bayes and Extreme Values | [{{< fa sharp presentation-screen >}}](slides/lecture04-1.qmd) | Doss-Gollin et al ([2021](https://iopscience-iop-org.proxy.library.cornell.edu/article/10.1088/1748-9326/ac0278)) | [{{< fa sharp coffee-pot >}}](exercises/ex04/ex04.qmd)  | |
 |  | Wed, Feb 14 | *No Class: Project Work* | | | | 
-| 5 | Mon, Feb 19 | Extreme Value Theory and Models | [{{< fa sharp presentation-screen >}}](slides/lecture05-1.qmd) | Arns et al ([2013](https://linkinghub-elsevier-com.proxy.library.cornell.edu/retrieve/pii/S0378383913001270)) | [{{< fa sharp coffee-pot >}}](exercises/ex05/ex05.qmd) | | | 
+| 5 | Mon, Feb 19 | Extreme Value Theory and Models | [{{< fa sharp presentation-screen >}}](slides/lecture05-1.qmd) | Arns et al ([2013](https://linkinghub-elsevier-com.proxy.library.cornell.edu/retrieve/pii/S0378383913001270)) | [{{< fa sharp coffee-pot >}}](exercises/ex05/ex05.qmd) | | 
 |  | Wed, Feb 21 | Data Visualization | [{{< fa sharp presentation-screen >}}](slides/lecture05-2.qmd) | |  |
 | 6  | Mon, Feb 26 | *No Class: February Break* | | | | 
 |  | Wed, Feb 28 | In-Class Figure Discussion | [{{< fa sharp presentation-screen >}}](slides/lecture06-2.qmd) | | | 
 | | | ***Simulation Methods*** | | | |
-| 7 | Mon, Mar 4 | Uncertainty Propagation and Monte Carlo Simulation | | | | 
-|  | Wed, Mar 6 | Monte Carlo Simulation II | | | | 
+| 7 | Mon, Mar 4 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture07-1.qmd) | Kale ([2021](https://ieeexplore-ieee-org.proxy.library.cornell.edu/document/9222364/)) | [{{< fa sharp coffee-pot >}}](exercises/ex07/ex07.qmd) |  [{{< fa sharp pen-field >}}](assignments/hw03/hw03.qmd) | 
+|  | Wed, Mar 6 | Monte Carlo Examples | | | | 
 | 8 | Mon, Mar 11 | Sampling Distributions and The Bootstrap | | | | 
 |  | Wed, Mar 13 | The Bootstrap II | | | | 
 | 9 | Mon, Mar 18 | Markov Chain Monte Carlo | | | | 

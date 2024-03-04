@@ -1,0 +1,14 @@
+---
+title: "Simulation Study Instructions"
+---
+
+The goal of the simulation study is to implement your model(s) and evaluate their simulations to assess the differences between them. Your goal is **not** to "test" relevant hypotheses yet, but to visualize and describe the differences in the model hindcasts and projections.
+
+## Simulation Study Guidelines
+
+The proposal should have the following components with 1 inch margins (on all sides) and at least 11 point font.
+
+* **Calibration**: Find and report appropriate parameter values for your model(s). This can be done through finding the maximum likelihood or maximum *a posteriori* estimates, with relevant uncertainty estimates obtained from the bootstrap or sampling from the posterior distribution using MCMC. Whatever approach you take, make sure to justify it and any associated assumptions (*e.g.* prior distributions). 
+* **Simulation**: Using the calibrated model(s), simulate synthetic datasets and compute useful summaries. Include useful graphical checks (including, if appropriate, hindcasts and projections) as needed.
+* **Comparison**: Discuss the differences in the calibrations and simulations and what they mean for your hypotheses(s). Were there any surprises? 
+* **References**: Make sure to include any references cited in your proposal.
