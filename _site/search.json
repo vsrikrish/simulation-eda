@@ -1174,14 +1174,14 @@
     "href": "slides/lecture07-1.html#stochastic-simulation",
     "title": "Monte Carlo Simulation",
     "section": "Stochastic Simulation",
-    "text": "Stochastic Simulation\nGoal: Estimate \\(\\mathbb{E}_p\\left[f(x)\\right]\\), \\(x \\sim p(x)\\)\n\n\n\nStandard approach: Compute \\(\\mathbb{E}_\\mathcal{D}\\left[f(x)\\right] = \\int_X f(x)p(x)dx\\)\nMonte Carlo:\n\nSample \\(x^1, x^2, \\ldots, x^N \\sim p(x)\\)\nEstimate \\(\\mathbb{E}_\\mathcal{D}\\left[f(x)\\right] \\approx \\sum_{n=1}^N f(x^n)\\) / N"
+    "text": "Stochastic Simulation\nGoal: Estimate \\(\\mathbb{E}_p\\left[f(x)\\right]\\), \\(x \\sim p(x)\\)\n\n\n\nStandard approach: Compute \\(\\mathbb{E}_p\\left[f(x)\\right] = \\int_X f(x)p(x)dx\\)\nMonte Carlo:\n\nSample \\(x^1, x^2, \\ldots, x^N \\sim p(x)\\)\nEstimate \\(\\mathbb{E}_p\\left[f(x)\\right] \\approx \\sum_{n=1}^N f(x^n)\\) / N"
   },
   {
     "objectID": "slides/lecture07-1.html#monte-carlo-process-schematic",
     "href": "slides/lecture07-1.html#monte-carlo-process-schematic",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo Process Schematic",
-    "text": "Monte Carlo Process Schematic\n\n\n\n\n\n\n\nG\n\n\n\na\n\nProbability\n Distribution\n\n\n\nb\n\nRandom\n Samples\n\n\n\na-&gt;b\n\n\nSample\n\n\n\nc\n\nModel\n\n\n\nb-&gt;c\n\n\nInput\n\n\n\nd\n\nOutputs\n\n\n\nc-&gt;d\n\n\nSimulate"
+    "text": "Monte Carlo Process Schematic\n\n\n\n\n\n\nG\n\n\n\na\n\nProbability\n Distribution\n\n\n\nb\n\nRandom\n Samples\n\n\n\na-&gt;b\n\n\nSample\n\n\n\nc\n\nModel\n\n\n\nb-&gt;c\n\n\nInput\n\n\n\nd\n\nOutputs\n\n\n\nc-&gt;d\n\n\nSimulate"
   },
   {
     "objectID": "slides/lecture07-1.html#goals-of-monte-carlo",
@@ -1202,21 +1202,21 @@
     "href": "slides/lecture07-1.html#mc-example-finding-pi-1",
     "title": "Monte Carlo Simulation",
     "section": "MC Example: Finding \\(\\pi\\)",
-    "text": "MC Example: Finding \\(\\pi\\)\n\n\n\nFinding \\(\\pi\\) by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of Monte Carlo integration.\n\\[\\frac{\\text{Area of Circle}}{\\text{Area of Square}} = \\frac{\\pi}{4}\\]\n\n\n\n\n\nCode\nfunction circleShape(r)\n    θ = LinRange(0, 2 * π, 500)\n    r * sin.(θ), r * cos.(θ)\nend\n\nnsamp = 3000\nunif = Uniform(-1, 1)\nx = rand(unif, (nsamp, 2))\nl = mapslices(v -&gt; sum(v.^2), x, dims=2)\nin_circ = l .&lt; 1\npi_est = [4 * mean(in_circ[1:i]) for i in 1:nsamp]\n\nplt1 = plot(\n    1,\n    xlim = (-1, 1),\n    ylim = (-1, 1),\n    legend = false,\n    markersize = 4,\n    framestyle = :origin,\n    tickfontsize=16,\n    grid=:false\n    )\nplt2 = plot(\n    1,\n    xlim = (1, nsamp),\n    ylim = (3, 3.5),\n    legend = :false,\n    linewidth=3, \n    color=:black,\n    tickfontsize=16,\n    guidefontsize=16,\n    xlabel=\"Iteration\",\n    ylabel=\"Estimate\",\n    right_margin=5mm\n)\nhline!(plt2, [π], color=:red, linestyle=:dash)\nplt = plot(plt1, plt2, layout=grid(2, 1, heights=[2/3, 1/3]), size=(600, 500))\n\nplot!(plt, circleShape(1), linecolor=:blue, lw=1, aspectratio=1, subplot=1)\n\n\nmc_anim = @animate for i = 1:nsamp\n    if l[i] &lt; 1\n        scatter!(plt[1], Tuple(x[i, :]), color=:blue, markershape=:x, subplot=1)\n    else\n        scatter!(plt[1], Tuple(x[i, :]), color=:red, markershape=:x, subplot=1)\n    end\n    push!(plt, 2, i, pi_est[i])\nend every 100\n\ngif(mc_anim, \"figures/mc_pi.gif\", fps=3)\n\n\n\n\n\n\n\nFigure 1: MCMC Estimation of pi"
+    "text": "MC Example: Finding \\(\\pi\\)\n\n\n\nFinding \\(\\pi\\) by sampling random values from the unit square and computing the fraction in the unit circle. This is an example of Monte Carlo integration.\n\\[\\frac{\\text{Area of Circle}}{\\text{Area of Square}} = \\frac{\\pi}{4}\\]\n\n\n\n\n\nCode\nfunction circleShape(r)\n    θ = LinRange(0, 2 * π, 500)\n    r * sin.(θ), r * cos.(θ)\nend\n\nnsamp = 3000\nunif = Uniform(-1, 1)\nx = rand(unif, (nsamp, 2))\nl = mapslices(v -&gt; sum(v.^2), x, dims=2)\nin_circ = l .&lt; 1\npi_est = [4 * mean(in_circ[1:i]) for i in 1:nsamp]\n\nplt1 = plot(\n    1,\n    xlim = (-1, 1),\n    ylim = (-1, 1),\n    legend = false,\n    markersize = 4,\n    framestyle = :origin,\n    tickfontsize=16,\n    grid=:false\n    )\nplt2 = plot(\n    1,\n    xlim = (1, nsamp),\n    ylim = (3, 3.5),\n    legend = :false,\n    linewidth=3, \n    color=:black,\n    tickfontsize=16,\n    guidefontsize=16,\n    xlabel=\"Iteration\",\n    ylabel=\"Estimate\",\n    right_margin=5mm\n)\nhline!(plt2, [π], color=:red, linestyle=:dash)\nplt = plot(plt1, plt2, layout=Plots.grid(2, 1, heights=[2/3, 1/3]), size=(600, 500))\n\nplot!(plt, circleShape(1), linecolor=:blue, lw=1, aspectratio=1, subplot=1)\n\n\nmc_anim = @animate for i = 1:nsamp\n    if l[i] &lt; 1\n        scatter!(plt[1], Tuple(x[i, :]), color=:blue, markershape=:x, subplot=1)\n    else\n        scatter!(plt[1], Tuple(x[i, :]), color=:red, markershape=:x, subplot=1)\n    end\n    push!(plt, 2, i, pi_est[i])\nend every 100\n\ngif(mc_anim, \"figures/mc_pi.gif\", fps=3)\n\n\n\n\n\n\n\nFigure 1: MCMC Estimation of pi"
   },
   {
     "objectID": "slides/lecture07-1.html#mc-example-dice",
     "href": "slides/lecture07-1.html#mc-example-dice",
     "title": "Monte Carlo Simulation",
     "section": "MC Example: Dice",
-    "text": "MC Example: Dice\n\n\nWhat is the probability of rolling 4 dice for a total of 19?\n\nCan simulate dice rolls and find the frequency of 19s among the samples.\n\n\n\n\n\nCode\nfunction dice_roll_repeated(n_trials, n_dice)\n    dice_dist = DiscreteUniform(1, 6) \n    roll_results = zeros(n_trials)\n    for i=1:n_trials\n        roll_results[i] = sum(rand(dice_dist, n_dice))\n    end\n    return roll_results\nend\n\nnsamp = 10000\n# roll four dice 10000 times\nrolls = dice_roll_repeated(nsamp, 4) \n\n# calculate probability of 19\nsum(rolls .== 19) / length(rolls)\n\n# initialize storage for frequencies by sample length\navg_freq = zeros(length(rolls)) \n# compute average frequencies of 19\navg_freq[1] = (rolls[1] == 19)\ncount = 1\nfor i=2:length(rolls)\n    avg_freq[i] = (avg_freq[i-1] * (i-1) + (rolls[i] == 19)) / i\nend\n\nplt = plot(\n    1,\n    xlim = (1, nsamp),\n    ylim = (0, 0.1),\n    legend = :false,\n    tickfontsize=16,\n    guidefontsize=16,\n    xlabel=\"Iteration\",\n    ylabel=\"Estimate\",\n    right_margin=8mm,\n    color=:black,\n    linewidth=3,\n    size=(600, 400)\n)\nhline!(plt, [0.0432], color=\"red\", \n    linestyle=:dash) \n\nmc_anim = @animate for i = 1:nsamp\n    push!(plt, 1, i, avg_freq[i])\nend every 100\n\ngif(mc_anim, \"figures/mc_dice.gif\", fps=10)\n\n\n\n\n\n\n\nFigure 2: MCMC Estimation of pi"
+    "text": "MC Example: Dice\n\n\nWhat is the probability of rolling 4 dice for a total of 19?\n\nCan simulate dice rolls and find the frequency of 19s among the samples.\n\n\n\n\n\nCode\nfunction dice_roll_repeated(n_trials, n_dice)\n    dice_dist = DiscreteUniform(1, 6) \n    roll_results = zeros(n_trials)\n    for i=1:n_trials\n        roll_results[i] = sum(rand(dice_dist, n_dice))\n    end\n    return roll_results\nend\n\nnsamp = 10000\n# roll four dice 10000 times\nrolls = dice_roll_repeated(nsamp, 4) \n\n# calculate probability of 19\nsum(rolls .== 19) / length(rolls)\n\n# initialize storage for frequencies by sample length\navg_freq = zeros(length(rolls)) \nstd_freq = zeros(length(rolls)) \n\n# compute average frequencies of 19\navg_freq[1] = (rolls[1] == 19)\ncount = 1\nfor i=2:length(rolls)\n    avg_freq[i] = (avg_freq[i-1] * (i-1) + (rolls[i] == 19)) / i\n    std_freq[i] = 1/sqrt(i-1) * std(rolls[1:i] .== 19)\nend\n\nplt = plot(\n    1,\n    xlim = (1, nsamp),\n    ylim = (0, 0.1),\n    legend = :false,\n    tickfontsize=16,\n    guidefontsize=16,\n    xlabel=\"Iteration\",\n    ylabel=\"Estimate\",\n    right_margin=8mm,\n    color=:black,\n    linewidth=3,\n    size=(600, 400)\n)\nhline!(plt, [0.0432], color=\"red\", \n    linestyle=:dash) \n\nmc_anim = @animate for i = 1:nsamp\n    push!(plt, 1, i, avg_freq[i])\nend every 100\n\ngif(mc_anim, \"figures/mc_dice.gif\", fps=10)\n\n\n\n\n\n\n\nFigure 2: MCMC Estimation of pi"
   },
   {
     "objectID": "slides/lecture07-1.html#monte-carlo-and-uncertainty-propagation",
     "href": "slides/lecture07-1.html#monte-carlo-and-uncertainty-propagation",
     "title": "Monte Carlo Simulation",
     "section": "Monte Carlo and Uncertainty Propagation",
-    "text": "Monte Carlo and Uncertainty Propagation\nMonte Carlo simulation: propagate uncertainties from\nThis is an example of uncertainty propagation: draw samples from some distribution, and run them through one or more models to find the (conditional) probability of outcomes of interest (for good or bad)."
+    "text": "Monte Carlo and Uncertainty Propagation\nMonte Carlo simulation: propagate uncertainties from inputs through a model to outputs.\nThis is an example of uncertainty propagation: draw samples from some distribution, and run them through one or more models to find the (conditional) probability of outcomes of interest (for good or bad)."
   },
   {
     "objectID": "slides/lecture07-1.html#uncertainty-propagation-flowchart",
@@ -1286,7 +1286,7 @@
     "href": "slides/lecture07-1.html#when-might-we-want-to-use-monte-carlo",
     "title": "Monte Carlo Simulation",
     "section": "When Might We Want to Use Monte Carlo?",
-    "text": "When Might We Want to Use Monte Carlo?\n\n\nAll models are wrong, and so there always exists some irreducible model error. Can we reduce the Monte Carlo error enough so it’s less than the model error and other uncertainties?\nWe often need a lot of simulations. Do we have enough computational power?"
+    "text": "When Might We Want to Use Monte Carlo?\nIf you can compute your answers analytically or through quadrature, you probably should.\nBut for many “real” problems, this is either\n\nNot possible (or computationally intractable);\nRequires a lot of stylization and simplification."
   },
   {
     "objectID": "slides/lecture07-1.html#when-might-we-want-to-use-monte-carlo-1",
@@ -1342,7 +1342,7 @@
     "href": "slides/lecture07-1.html#references-1",
     "title": "Monte Carlo Simulation",
     "section": "References",
-    "text": "References\n\n\n\n\n\n\n\n\nKale, A., Kay, M., & Hullman, J. (2021). Visual reasoning strategies for effect size judgments and decisions. IEEE Trans. Vis. Comput. Graph., 27, 272–282. https://doi.org/10.1109/TVCG.2020.3030335"
+    "text": "References\n\n\n\n\n\n\nKale, A., Kay, M., & Hullman, J. (2021). Visual reasoning strategies for effect size judgments and decisions. IEEE Trans. Vis. Comput. Graph., 27, 272–282. https://doi.org/10.1109/TVCG.2020.3030335"
   },
   {
     "objectID": "slides/lecture01-2.html#modes-of-data-analysis",
@@ -3904,5 +3904,26 @@
     "crumbs": [
       "Term Project"
     ]
+  },
+  {
+    "objectID": "slides/lecture07-1.html#sidebar-estimating-sigma_y",
+    "href": "slides/lecture07-1.html#sidebar-estimating-sigma_y",
+    "title": "Monte Carlo Simulation",
+    "section": "Sidebar: Estimating \\(\\sigma_Y\\)",
+    "text": "Sidebar: Estimating \\(\\sigma_Y\\)\nWe don’t know the standard deviation \\(\\sigma_Y\\).\nBut we can estimate it using the simulation standard deviation:"
+  },
+  {
+    "objectID": "slides/lecture07-1.html#basic-strategy",
+    "href": "slides/lecture07-1.html#basic-strategy",
+    "title": "Monte Carlo Simulation",
+    "section": "Basic Strategy",
+    "text": "Basic Strategy\nStore the results for each iteration and update the mean/standard deviation:\n\\[\\tilde{\\mu}_{n+1} = n \\tilde{\\mu}_n + f(Y_{n+1})\\]\n\\[\\tilde{\\sigma}_{n+1} = \\frac{Var(Y_{\\{1:n+1\\}})}{\\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "slides/lecture07-1.html#example-dice-rolls",
+    "href": "slides/lecture07-1.html#example-dice-rolls",
+    "title": "Monte Carlo Simulation",
+    "section": "Example: Dice Rolls",
+    "text": "Example: Dice Rolls\n\n\nCode\nplt = plot(\n    avg_freq,\n    legend = :false,\n    tickfontsize=16,\n    guidefontsize=16,\n    xlabel=\"Iteration\",\n    ylabel=\"Estimate\",\n    right_margin=8mm,\n    color=:black,\n    linewidth=3,\n    size=(800, 400),\n    ribbon=1.96*std_freq, fillalpha=0.3\n)\nhline!(plt, [0.0432], color=\"red\", \n    linestyle=:dash) \n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Confidence Interval for Dice Example"
   }
 ]
