@@ -17,7 +17,7 @@ title: "Week 7"
 ## Lectures
 
 - [Lecture 07-1: Monte Carlo Simulation](../slides/lecture07-1.qmd)
-- Lecture 07-2: Monte Carlo Examples
+- [Lecture 07-2: The Bootstrap](../slides/lecture07-2.qmd)
 
 
 

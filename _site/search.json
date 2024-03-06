@@ -3925,5 +3925,222 @@
     "title": "Monte Carlo Simulation",
     "section": "Example: Dice Rolls",
     "text": "Example: Dice Rolls\n\n\nCode\nplt = plot(\n    avg_freq,\n    legend = :false,\n    tickfontsize=16,\n    guidefontsize=16,\n    xlabel=\"Iteration\",\n    ylabel=\"Estimate\",\n    right_margin=8mm,\n    color=:black,\n    linewidth=3,\n    size=(800, 400),\n    ribbon=1.96*std_freq, fillalpha=0.3\n)\nhline!(plt, [0.0432], color=\"red\", \n    linestyle=:dash) \n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Confidence Interval for Dice Example"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#monte-carlo",
+    "href": "slides/lecture07-2.html#monte-carlo",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Monte Carlo",
+    "text": "Monte Carlo\n\nStochastic Simulation\nEstimate \\[\\mu = \\mathbb{E}_p[f(x)] \\approx \\frac{1}{N} \\sum_{i=1}^n f(x_n) = \\hat{\\mu}_n\\]"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#monte-carlo-error-analysis",
+    "href": "slides/lecture07-2.html#monte-carlo-error-analysis",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Monte Carlo Error Analysis",
+    "text": "Monte Carlo Error Analysis\n\nStandard error \\[\\hat{\\sigma}_n = \\frac{\\sigma_{f(x)}}{\\sqrt{n} \\approx \\frac{\\hat{\\sigma}_{f(x)|_{i=1}^n}}{\\sqrt{n-1}}\\]\nConfidence interval given by CLT based on standard error."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#airshed-model",
+    "href": "slides/lecture07-2.html#airshed-model",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Airshed Model",
+    "text": "Airshed Model\n\n\n\n\n\n\n\n\nFigure 1: Illustration of the airshed, including notation.\n\n\n\n\n\\[\\frac{dC}{dt} = \\frac{u}{L} C_\\text{in} + \\frac{S-D}{WHL} - \\left(\\frac{u}{L} + k\\right)C\\]"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#airshed-model-1",
+    "href": "slides/lecture07-2.html#airshed-model-1",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Airshed Model",
+    "text": "Airshed Model\n\n\n\n\n\n\n\n\nFigure 2: Illustration of the airshed, including notation.\n\n\n\n\nGoal: Find the probability of exceeding the 1-hour SO2 average exposure concentration standard, which is 0.14 ppm.\n\n\nUncertainties: Hourly wind speed \\(u\\), the inflow concentration \\(C_\\text{in}\\), net rate of SO2 emission within the airshed \\(R=S-D\\)."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#monte-carlo-samples",
+    "href": "slides/lecture07-2.html#monte-carlo-samples",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Monte Carlo Samples",
+    "text": "Monte Carlo Samples\n\nCode\nnsamp = 1000\nu = rand(LogNormal(log(2), 1), nsamp)\nCin = rand(LogNormal(log(0.16), 0.12), nsamp)\nR = rand(Normal(0.5, 0.5), nsamp)\n\np1 = histogram(u, ylabel=\"count\", xlabel=L\"$u$ (m/s)\", label=false, tickfontsize=16, guidefontsize=18, size=(450, 450))\np2 = histogram(Cin, ylabel=\"count\", xlabel=L\"$C_{in}$ (ppm)\", label=false, tickfontsize=16, guidefontsize=18, size=(450, 450))\np3 = histogram(R, ylabel=\"count\", xlabel=L\"$R$ (ppm/s)\", label=false, tickfontsize=16, guidefontsize=18, size=(450, 450))\ndisplay(p1)\ndisplay(p2)\ndisplay(p3)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Monte Carlo samples for the airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c)\n\n\n\n\n\n\n\nFigure 3"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#simulation-results",
+    "href": "slides/lecture07-2.html#simulation-results",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Simulation Results",
+    "text": "Simulation Results\n\nCode\n# other parameters\nC₀ = 0.07\nT = 60\nk = 0.3\nW = 4\nH = 5\nL = 4\n# conduct simulation\nP = u / L .* Cin\nl = u / L .+ k\nC2 = zeros(T*100 + 1, nsamp)\nS = 0:0.01:T\nfor (i, t) in pairs(S)\n    if i == 1\n        C2[i, :] .= C₀\n    else\n        C2[i, :] = (1 .- 0.01*l) .* C2[i-1, :] .+ 0.01 * P .+ 0.01 * R / (H * W * L)\n    end\nend\nmean_SO2 = map(mean, eachcol(C2)) # calculate means\n# plot histogram\np1 = histogram(mean_SO2, xlabel=\"1-Hour Average Exposure (ppm)\", ylabel=\"Count\", legend=false, tickfontsize=16, guidefontsize=18)\nvline!(p1, [0.14], color=:red, linestyle=:dash, linewidth=3)\nxticks!(p1, 0:0.04:0.3)\nxaxis!(p1, xminorticks=2)\nplot!(p1, size=(600, 450))\n# plot cdf\np2 = plot(sort(mean_SO2), (1:nsamp) ./ nsamp, xlabel=\"1-Hour Average Exposure (ppm)\", ylabel=\"Cumulative Probability\", legend=false, tickfontsize=17, guidefontsize=18, linewidth=3)\nvline!(p2, [0.14], linestyle=:dash, color=:red, linewidth=3, minorgrid=true)\nxticks!(p2, 0:0.04:0.3)\nxaxis!(p2, xminorticks=2)\nyaxis!(p2, yminorticks=5)\nplot!(p2, size=(600, 450))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Monte Carlo samples for the airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 4"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#monte-carlo-estimation",
+    "href": "slides/lecture07-2.html#monte-carlo-estimation",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Monte Carlo Estimation",
+    "text": "Monte Carlo Estimation\n\n\n\\[\\hat{\\mu}_n = \\frac{1}{n}\\sum_{i=1}^n \\mathbb{I}[x_i &gt; 0.14]\\]\n\\[\\hat{\\sigma}_n = \\sqrt{\\frac{\\text{Var}(\\mathbb{I}[x_{1:n} &gt; 0.14])}{n-1}}\\]\n\n\n\nCode\n# show Monte Carlo estimate stabilization\navg_mc_out = zeros(nsamp)\navg_mc_out[1] = mean_SO2[1] &gt; 0.14\nstd_mc_out = zeros(nsamp)\nstd_mc_out[1] = 0\nfor i = 2:nsamp\n    avg_mc_out[i] = (avg_mc_out[i-1] * (i-1) + (mean_SO2[i] &gt; 0.14)) / i\n    std_mc_out[i] = 1/sqrt(i-1) * std(mean_SO2[1:i] .&gt; 0.14)\nend\np = plot(avg_mc_out, xlabel=\"Monte Carlo Iteration\", ylabel=\"Probability\", left_margin=3mm, legend=:false, ribbon=1.96*std_mc_out, fillalpha=0.3, linewidth=2, tickfontsize=16, guidefontsize=18, fillcolor=:red, right_margin=5mm, minorgrid=true)\nylims!(p, (0, 0.3))\nyaxis!(p, yminorticks=5)\nplot!(p, size=(600, 450))\ndisplay(p)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Monte Carlo estimation for the airshed model."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#key-points",
+    "href": "slides/lecture07-2.html#key-points",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Key Points",
+    "text": "Key Points\n\n\nBootstrap: Approximate sampling distribution by re-simulating data\nNon-Parametric Bootstrap: Treat data as representative of population and re-sample.\nMore complicated for structured data."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#next-classes",
+    "href": "slides/lecture07-2.html#next-classes",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Next Classes",
+    "text": "Next Classes\nMonday: Parametric Bootstrap and Examples\nWednesday: What is a Markov Chain?"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#assessments",
+    "href": "slides/lecture07-2.html#assessments",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Assessments",
+    "text": "Assessments\nExercise 7: Due Friday"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#references-1",
+    "href": "slides/lecture07-2.html#references-1",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nEfron, B. (1979). Bootstrap methods: Another look at the jackknife. Ann. Stat., 7, 1–26. https://doi.org/10.1214/aos/1176344552"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#upshot-of-monte-carlo",
+    "href": "slides/lecture07-2.html#upshot-of-monte-carlo",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Upshot of Monte Carlo",
+    "text": "Upshot of Monte Carlo\n\nEstimate summary statistics through simulation\nNeed input distributions. How do we get them?\nUncertainty Quantification: Inferring probabilistic representations of uncertainties (such as input distributions).\nSome UQ methods:\n\nThe Bootstrap\nMarkov chain Monte Carlo\nExpert elicitation"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#sampling-distributions",
+    "href": "slides/lecture07-2.html#sampling-distributions",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Sampling Distributions",
+    "text": "Sampling Distributions\n\n\nThe sampling distribution of a statistic captures the uncertainty associated with random samples.\n\n\n\n\nSampling Distribution"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#the-bootstrap-principle",
+    "href": "slides/lecture07-2.html#the-bootstrap-principle",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "The Bootstrap Principle",
+    "text": "The Bootstrap Principle\n\n\nEfron (1979) suggested combining estimation with simulation: the bootstrap.\nKey idea: use the data to simulate a data-generating mechanism.\n\n\n\n\n\nBaron von Munchhausen Pulling Himself By His Hair\n\n\n\nSource: Wikipedia"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#monte-carlo-vs-bootstrapping",
+    "href": "slides/lecture07-2.html#monte-carlo-vs-bootstrapping",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Monte Carlo vs Bootstrapping",
+    "text": "Monte Carlo vs Bootstrapping\nMonte Carlo: If we have a generative probability model (including input distributions), simulate new samples from the model and estimate the sampling distribution.\nBootstrap: assumes the existing data is representative of the “true” population, and can simulate based on properties of the data itself."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#why-does-the-bootstrap-work",
+    "href": "slides/lecture07-2.html#why-does-the-bootstrap-work",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Why Does The Bootstrap Work?",
+    "text": "Why Does The Bootstrap Work?\nEfron’s key insight: due to the Central Limit Theorem, the differences between estimates drawn from the sampling distribution and the true value converge to a normal distribution.\n\nUse the bootstrap to approximate the sampling distribution through re-sampling and re-estimation.\nCan draw asymptotic quantities (bias estimates, confidence intervals, etc) from the differences between the sample estimate and the bootstrap estimates."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#what-can-we-do-with-the-bootstrap",
+    "href": "slides/lecture07-2.html#what-can-we-do-with-the-bootstrap",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "What Can We Do With The Bootstrap?",
+    "text": "What Can We Do With The Bootstrap?\nLet \\(t_0\\) the “true” value of a statistic, \\(\\hat{t}\\) the estimate of the statistic from the sample, and \\((\\tilde{t}_i)\\) the bootstrap estimates.\n\n\nEstimate Variance: \\(\\text{Var}[\\hat{t}] \\approx \\text{Var}[\\tilde{t}]\\)\nBias Correction: \\(\\mathbb{E}[\\hat{t}] - t_0 \\approx \\mathbb{E}[\\tilde{t}] - \\hat{t}\\)\nCompute basic \\(\\alpha\\)-confidence intervals: \\[\\left(\\hat{t} - (Q_{\\tilde{t}}(1-\\alpha/2) - \\hat{t}), \\hat{t} - (Q_{\\tilde{t}}(\\alpha/2) - \\hat{t})\\right)\\]"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#the-non-parametric-bootstrap-1",
+    "href": "slides/lecture07-2.html#the-non-parametric-bootstrap-1",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "The Non-Parametric Bootstrap",
+    "text": "The Non-Parametric Bootstrap\n\n\nThe non-parametric bootstrap is the most “naive” approach to the bootstrap: resample-then-estimate.\n\n\n\n\nNon-Parametric Bootstrap"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#simple-example-is-a-coin-fair",
+    "href": "slides/lecture07-2.html#simple-example-is-a-coin-fair",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Simple Example: Is A Coin Fair?",
+    "text": "Simple Example: Is A Coin Fair?\nSuppose we have observed twenty flips with a coin, and want to know if it is weighted.\n\n\nCode\n# define coin-flip model\np_true = 0.6\nn_flips = 20\ncoin_dist = Bernoulli(p_true)\n# generate data set\ndat = rand(coin_dist, n_flips)\nfreq_dat = sum(dat) / length(dat)\ndat'\n\n\n1×20 adjoint(::Vector{Bool}) with eltype Bool:\n 0  1  0  1  0  0  1  0  1  0  1  0  1  1  1  0  0  1  1  0\n\n\nThe frequency of heads is 0.5."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#coin-example-bootstrap",
+    "href": "slides/lecture07-2.html#coin-example-bootstrap",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Coin Example Bootstrap",
+    "text": "Coin Example Bootstrap"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#is-the-coin-fair",
+    "href": "slides/lecture07-2.html#is-the-coin-fair",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Is The Coin Fair?",
+    "text": "Is The Coin Fair?\n\n\nCode\n# bootstrap: draw new samples\nfunction coin_boot_sample(dat)\n    boot_sample = sample(dat, length(dat); replace=true)\n    return boot_sample\nend\n\nfunction coin_boot_freq(dat, nsamp)\n    boot_freq = [sum(coin_boot_sample(dat)) for _ in 1:nsamp]\n    return boot_freq / length(dat)\nend\n\nboot_out = coin_boot_freq(dat, 1000)\nq_boot = 2 * freq_dat .- quantile(boot_out, [0.975, 0.025])\n\np = histogram(boot_out, xlabel=\"Heads Frequency\", ylabel=\"Count\", title=\"1000 Bootstrap Samples\", titlefontsize=20, guidefontsize=18, tickfontsize=16, legendfontsize=16, label=false, bottom_margin=7mm, left_margin=5mm, right_margin=5mm)\nvline!(p, [p_true], linewidth=3, color=:orange, linestyle=:dash, label=\"True Probability\")\nvline!(p, [mean(boot_out) ], linewidth=3, color=:red, linestyle=:dash, label=\"Bootstrap Mean\")\nvline!(p, [freq_dat], linewidth=3, color=:purple, linestyle=:dash, label=\"Observed Frequency\")\nvspan!(p, q_boot, linecolor=:grey, fillcolor=:grey, alpha=0.3, fillalpha=0.3, label=\"95% CI\")\nplot!(p, size=(1000, 450))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Bootstrap heads frequencies for 20 resamples."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#larger-sample-example",
+    "href": "slides/lecture07-2.html#larger-sample-example",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Larger Sample Example",
+    "text": "Larger Sample Example\n\n\nCode\nn_flips = 50\ndat = rand(coin_dist, n_flips)\nfreq_dat = sum(dat) / length(dat)\n\nboot_out = coin_boot_freq(dat, 1000)\nq_boot = 2 * freq_dat .- quantile(boot_out, [0.975, 0.025])\n\np = histogram(boot_out, xlabel=\"Heads Frequency\", ylabel=\"Count\", title=\"1000 Bootstrap Samples\", titlefontsize=20, guidefontsize=18, tickfontsize=16, legendfontsize=16, label=false, bottom_margin=7mm, left_margin=5mm, right_margin=5mm)\nvline!(p, [p_true], linewidth=3, color=:orange, linestyle=:dash, label=\"True Probability\")\nvline!(p, [mean(boot_out) ], linewidth=3, color=:red, linestyle=:dash, label=\"Bootstrap Mean\")\nvline!(p, [freq_dat], linewidth=3, color=:purple, linestyle=:dash, label=\"Observed Frequency\")\nvspan!(p, q_boot, linecolor=:grey, fillcolor=:grey, alpha=0.3, fillalpha=0.3, label=\"95% CI\")\nplot!(p, size=(1000, 450))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Bootstrap heads frequencies for 20 resamples."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#bootstrapping-with-structured-data",
+    "href": "slides/lecture07-2.html#bootstrapping-with-structured-data",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Bootstrapping with Structured Data",
+    "text": "Bootstrapping with Structured Data\nThe naive non-parametric bootstrap that we just saw doesn’t work if data has structure, e.g. spatial or temporal dependence."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#bootstrapping-with-structured-data-1",
+    "href": "slides/lecture07-2.html#bootstrapping-with-structured-data-1",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Bootstrapping with Structured Data",
+    "text": "Bootstrapping with Structured Data\n\nCode\nsl_dat = CSV.read(joinpath(@__DIR__, \"data\", \"sealevel\", \"CSIRO_Recons_gmsl_yr_2015.csv\"), DataFrame)\np1 = plot(sl_dat[:, 1] .- 0.5, sl_dat[:, 2], xlabel=\"Year\", ylabel=\"GMSL (mm)\", title=\"Sea-Level Rise Observations\", label=:false, linewidth=2, tickfontsize=16, guidefontsize=18, titlefontsize=20)\nplot!(p1, size=(600, 450))\n\nresample_index = sample(1:nrow(sl_dat), nrow(sl_dat); replace=true)\np2 = plot(sl_dat[:, 1] .- 0.5, sl_dat[resample_index, 2], xlabel=\"Year\", ylabel=\"GMSL (mm)\", title=\"Sea-Level Rise Resample\", label=:false, linewidth=2, tickfontsize=16, guidefontsize=18, titlefontsize=20)\nplot!(p2, size=(600, 450))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Simple bootstrap with time series data.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 8"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#why-use-the-bootstrap",
+    "href": "slides/lecture07-2.html#why-use-the-bootstrap",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Why Use The Bootstrap?",
+    "text": "Why Use The Bootstrap?\n\nDo not need to rely on variance asymptotics;\nCan obtain non-symmetric CIs."
+  },
+  {
+    "objectID": "slides/lecture07-2.html#approaches-to-bootstrapping-structured-data",
+    "href": "slides/lecture07-2.html#approaches-to-bootstrapping-structured-data",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Approaches to Bootstrapping Structured Data",
+    "text": "Approaches to Bootstrapping Structured Data\n\nCorrelations: Transform to uncorrelated data (principal components, etc.), sample, transform back.\nTime Series: Block bootstrap"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#block-bootstrap",
+    "href": "slides/lecture07-2.html#block-bootstrap",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Block Bootstrap",
+    "text": "Block Bootstrap\nDivide the data \\(x_t\\) into blocks of length \\(b\\), \\(X_1, \\ldots, X_n\\).\nFor example: \\[X_1 = x_{1:b}, X_2 = x_{b+1:2b}, \\ldots, X_n = x_{(n-1)b+1:nb}\\]\nThen resample blocks and glue back: \\(X_{\\sigma(1)}, \\ldots, X_{\\sigma(n)}\\)"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#sources-of-non-parametric-bootstrap-error",
+    "href": "slides/lecture07-2.html#sources-of-non-parametric-bootstrap-error",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Sources of Non-Parametric Bootstrap Error",
+    "text": "Sources of Non-Parametric Bootstrap Error\n\nSampling error: error from using finitely many replications\nStatistical error: error in the bootstrap sampling distribution approximation"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#block-bootstrap-example",
+    "href": "slides/lecture07-2.html#block-bootstrap-example",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Block Bootstrap Example",
+    "text": "Block Bootstrap Example\n\nCode\nblock_idx = collect(1:10:131)\nblocks_resample_idx = sample(1:length(block_idx)-1, length(block_idx)-1)\np1 = plot(sl_dat[1:130, 1] .- 0.5, sl_dat[1:130, 2], xlabel=\"Year\", ylabel=\"GMSL (mm)\", title=\"Sea-Level Rise Observations\", label=:false, linewidth=2, tickfontsize=16, guidefontsize=18, titlefontsize=20)\nvspan!(p1, sl_dat[block_idx, 1] .- 0.5, fillcolor=:gray, fillalpha=0.3, label=false)\nplot!(p1, size=(600, 450))\n\nblock_resample = zeros(130)\nfor i = 1:length(block_idx)-1\n    block_resample[(i-1)*10+1:i*10] = sl_dat[block_idx[blocks_resample_idx[i]]:block_idx[blocks_resample_idx[i]]+9, 2]\nend\np2 = plot(sl_dat[1:130, 1] .- 0.5, block_resample, xlabel=\"Year\", ylabel=\"GMSL (mm)\", title=\"Sea-Level Rise Resample\", label=:false, linewidth=2, tickfontsize=16, guidefontsize=18, titlefontsize=20)\nplot!(p2, size=(600, 450))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Simple bootstrap with time series data.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 9"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#generalizing-the-block-bootstrap",
+    "href": "slides/lecture07-2.html#generalizing-the-block-bootstrap",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Generalizing the Block Bootstrap",
+    "text": "Generalizing the Block Bootstrap\nThe rough transitions in the block bootstrap can really degrade estimator quality.\n\nImprove transitions between blocks\nMoving blocks (allow overlaps)"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#when-to-use-the-non-parametric-bootstrap",
+    "href": "slides/lecture07-2.html#when-to-use-the-non-parametric-bootstrap",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "When To Use The Non-Parametric Bootstrap",
+    "text": "When To Use The Non-Parametric Bootstrap\n\nSample is representative of the sampling distribution\nDoesn’t work well for extreme values!"
   }
 ]

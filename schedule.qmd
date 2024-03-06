@@ -28,11 +28,11 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 |  | Wed, Feb 28 | In-Class Figure Discussion | [{{< fa sharp presentation-screen >}}](slides/lecture06-2.qmd) | | | 
 | | | ***Simulation Methods*** | | | |
 | 7 | Mon, Mar 4 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture07-1.qmd) | Kale ([2021](https://ieeexplore-ieee-org.proxy.library.cornell.edu/document/9222364/)) | [{{< fa sharp coffee-pot >}}](exercises/ex07/ex07.qmd) |  [{{< fa sharp pen-field >}}](assignments/hw03/hw03.qmd) | 
-|  | Wed, Mar 6 | Monte Carlo Examples | | | | 
-| 8 | Mon, Mar 11 | Sampling Distributions and The Bootstrap | | | | 
-|  | Wed, Mar 13 | The Bootstrap II | | | | 
+|  | Wed, Mar 6 | Sampling Distributions and The Bootstrap | [{{< fa sharp presentation-screen >}}](slides/lecture07-2.qmd) | | | 
+| 8 | Mon, Mar 11 | The Parametric Bootstrap | | | | 
+|  | Wed, Mar 13 | Markov Chains | | | | 
 | 9 | Mon, Mar 18 | Markov Chain Monte Carlo | | | | 
-|  | Wed, Mar 20 | MCMC II | | | | 
+|  | Wed, Mar 20 | MCMC Convergence | | | | 
 | | | ***Model Calibration*** | | | |
 | 10 | Mon, Mar 25 | Statistical Model Calibration | | | | 
 |  | Wed, Mar 27 | Literature Review Presentations | | | |
