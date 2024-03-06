@@ -476,41 +476,6 @@ Converging at a rate of $1/\sqrt{n}$ is not great. But:
 - All models are wrong, and so there always exists some irreducible model error. 
 - We often need a lot of simulations. Do we have enough computational power?
 
-# Implementing Monte Carlo
-
-## Basic Strategy
-
-Store the results for each iteration and update the mean/standard deviation:
-
-$$\tilde{\mu}_{n+1} = n \tilde{\mu}_n + f(Y_{n+1})$$
-
-$$\tilde{\sigma}_{n+1} = \frac{Var(Y_{\{1:n+1\}})}{\sqrt{n}}$$
-
-## Example: Dice Rolls
-
-```{julia}
-#| label: fig-dice-uncertainty
-#| fig-cap: Confidence Interval for Dice Example
-#| echo: true
-#| code-fold: true
-
-plt = plot(
-    avg_freq,
-    legend = :false,
-    tickfontsize=16,
-    guidefontsize=16,
-    xlabel="Iteration",
-    ylabel="Estimate",
-    right_margin=8mm,
-    color=:black,
-    linewidth=3,
-    size=(800, 400),
-    ribbon=1.96*std_freq, fillalpha=0.3
-)
-hline!(plt, [0.0432], color="red", 
-    linestyle=:dash) 
-```
-
 
 # Key Points and Upcoming Schedule
 
