@@ -493,11 +493,11 @@
 <div class="fragment fade-in">
 <div>
 <ul>
-<li class="fragment">Standard approach: Compute <span class="math inline">\(\mathbb{E}_\mathcal{D}\left[f(x)\right] = \int_X f(x)p(x)dx\)</span></li>
+<li class="fragment">Standard approach: Compute <span class="math inline">\(\mathbb{E}_p\left[f(x)\right] = \int_X f(x)p(x)dx\)</span></li>
 <li class="fragment">Monte Carlo:
 <ul>
 <li class="fragment">Sample <span class="math inline">\(x^1, x^2, \ldots, x^N \sim p(x)\)</span></li>
-<li class="fragment">Estimate <span class="math inline">\(\mathbb{E}_\mathcal{D}\left[f(x)\right] \approx \sum_{n=1}^N f(x^n)\)</span> / N</li>
+<li class="fragment">Estimate <span class="math inline">\(\mathbb{E}_p\left[f(x)\right] \approx \sum_{n=1}^N f(x^n)\)</span> / N</li>
 </ul></li>
 </ul>
 </div>
@@ -631,7 +631,7 @@
 <span id="cb1-34"><a></a>    right_margin<span class="op">=</span><span class="fl">5</span>mm</span>
 <span id="cb1-35"><a></a>)</span>
 <span id="cb1-36"><a></a><span class="fu">hline!</span>(plt2, [<span class="cn">π</span>], color<span class="op">=:</span>red, linestyle<span class="op">=:</span>dash)</span>
-<span id="cb1-37"><a></a>plt <span class="op">=</span> <span class="fu">plot</span>(plt1, plt2, layout<span class="op">=</span><span class="fu">grid</span>(<span class="fl">2</span>, <span class="fl">1</span>, heights<span class="op">=</span>[<span class="fl">2</span><span class="op">/</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">/</span><span class="fl">3</span>]), size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">500</span>))</span>
+<span id="cb1-37"><a></a>plt <span class="op">=</span> <span class="fu">plot</span>(plt1, plt2, layout<span class="op">=</span>Plots.<span class="fu">grid</span>(<span class="fl">2</span>, <span class="fl">1</span>, heights<span class="op">=</span>[<span class="fl">2</span><span class="op">/</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">/</span><span class="fl">3</span>]), size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">500</span>))</span>
 <span id="cb1-38"><a></a></span>
 <span id="cb1-39"><a></a><span class="fu">plot!</span>(plt, <span class="fu">circleShape</span>(<span class="fl">1</span>), linecolor<span class="op">=:</span>blue, lw<span class="op">=</span><span class="fl">1</span>, aspectratio<span class="op">=</span><span class="fl">1</span>, subplot<span class="op">=</span><span class="fl">1</span>)</span>
 <span id="cb1-40"><a></a></span>
@@ -693,35 +693,38 @@ Figure&nbsp;1: MCMC Estimation of pi
 <span id="cb2-16"><a></a></span>
 <span id="cb2-17"><a></a><span class="co"># initialize storage for frequencies by sample length</span></span>
 <span id="cb2-18"><a></a>avg_freq <span class="op">=</span> <span class="fu">zeros</span>(<span class="fu">length</span>(rolls)) </span>
-<span id="cb2-19"><a></a><span class="co"># compute average frequencies of 19</span></span>
-<span id="cb2-20"><a></a>avg_freq[<span class="fl">1</span>] <span class="op">=</span> (rolls[<span class="fl">1</span>] <span class="op">==</span> <span class="fl">19</span>)</span>
-<span id="cb2-21"><a></a>count <span class="op">=</span> <span class="fl">1</span></span>
-<span id="cb2-22"><a></a><span class="cf">for</span> i<span class="op">=</span><span class="fl">2</span><span class="op">:</span><span class="fu">length</span>(rolls)</span>
-<span id="cb2-23"><a></a>    avg_freq[i] <span class="op">=</span> (avg_freq[i<span class="op">-</span><span class="fl">1</span>] <span class="op">*</span> (i<span class="op">-</span><span class="fl">1</span>) <span class="op">+</span> (rolls[i] <span class="op">==</span> <span class="fl">19</span>)) <span class="op">/</span> i</span>
-<span id="cb2-24"><a></a><span class="cf">end</span></span>
-<span id="cb2-25"><a></a></span>
-<span id="cb2-26"><a></a>plt <span class="op">=</span> <span class="fu">plot</span>(</span>
-<span id="cb2-27"><a></a>    <span class="fl">1</span>,</span>
-<span id="cb2-28"><a></a>    xlim <span class="op">=</span> (<span class="fl">1</span>, nsamp),</span>
-<span id="cb2-29"><a></a>    ylim <span class="op">=</span> (<span class="fl">0</span>, <span class="fl">0.1</span>),</span>
-<span id="cb2-30"><a></a>    legend <span class="op">=</span> <span class="op">:</span><span class="cn">false</span>,</span>
-<span id="cb2-31"><a></a>    tickfontsize<span class="op">=</span><span class="fl">16</span>,</span>
-<span id="cb2-32"><a></a>    guidefontsize<span class="op">=</span><span class="fl">16</span>,</span>
-<span id="cb2-33"><a></a>    xlabel<span class="op">=</span><span class="st">"Iteration"</span>,</span>
-<span id="cb2-34"><a></a>    ylabel<span class="op">=</span><span class="st">"Estimate"</span>,</span>
-<span id="cb2-35"><a></a>    right_margin<span class="op">=</span><span class="fl">8</span>mm,</span>
-<span id="cb2-36"><a></a>    color<span class="op">=:</span>black,</span>
-<span id="cb2-37"><a></a>    linewidth<span class="op">=</span><span class="fl">3</span>,</span>
-<span id="cb2-38"><a></a>    size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">400</span>)</span>
-<span id="cb2-39"><a></a>)</span>
-<span id="cb2-40"><a></a><span class="fu">hline!</span>(plt, [<span class="fl">0.0432</span>], color<span class="op">=</span><span class="st">"red"</span>, </span>
-<span id="cb2-41"><a></a>    linestyle<span class="op">=:</span>dash) </span>
-<span id="cb2-42"><a></a></span>
-<span id="cb2-43"><a></a>mc_anim <span class="op">=</span> <span class="pp">@animate</span> <span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span>nsamp</span>
-<span id="cb2-44"><a></a>    <span class="fu">push!</span>(plt, <span class="fl">1</span>, i, avg_freq[i])</span>
-<span id="cb2-45"><a></a><span class="cf">end</span> every <span class="fl">100</span></span>
-<span id="cb2-46"><a></a></span>
-<span id="cb2-47"><a></a><span class="fu">gif</span>(mc_anim, <span class="st">"figures/mc_dice.gif"</span>, fps<span class="op">=</span><span class="fl">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-19"><a></a>std_freq <span class="op">=</span> <span class="fu">zeros</span>(<span class="fu">length</span>(rolls)) </span>
+<span id="cb2-20"><a></a></span>
+<span id="cb2-21"><a></a><span class="co"># compute average frequencies of 19</span></span>
+<span id="cb2-22"><a></a>avg_freq[<span class="fl">1</span>] <span class="op">=</span> (rolls[<span class="fl">1</span>] <span class="op">==</span> <span class="fl">19</span>)</span>
+<span id="cb2-23"><a></a>count <span class="op">=</span> <span class="fl">1</span></span>
+<span id="cb2-24"><a></a><span class="cf">for</span> i<span class="op">=</span><span class="fl">2</span><span class="op">:</span><span class="fu">length</span>(rolls)</span>
+<span id="cb2-25"><a></a>    avg_freq[i] <span class="op">=</span> (avg_freq[i<span class="op">-</span><span class="fl">1</span>] <span class="op">*</span> (i<span class="op">-</span><span class="fl">1</span>) <span class="op">+</span> (rolls[i] <span class="op">==</span> <span class="fl">19</span>)) <span class="op">/</span> i</span>
+<span id="cb2-26"><a></a>    std_freq[i] <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fu">sqrt</span>(i<span class="op">-</span><span class="fl">1</span>) <span class="op">*</span> <span class="fu">std</span>(rolls[<span class="fl">1</span><span class="op">:</span>i] <span class="op">.==</span> <span class="fl">19</span>)</span>
+<span id="cb2-27"><a></a><span class="cf">end</span></span>
+<span id="cb2-28"><a></a></span>
+<span id="cb2-29"><a></a>plt <span class="op">=</span> <span class="fu">plot</span>(</span>
+<span id="cb2-30"><a></a>    <span class="fl">1</span>,</span>
+<span id="cb2-31"><a></a>    xlim <span class="op">=</span> (<span class="fl">1</span>, nsamp),</span>
+<span id="cb2-32"><a></a>    ylim <span class="op">=</span> (<span class="fl">0</span>, <span class="fl">0.1</span>),</span>
+<span id="cb2-33"><a></a>    legend <span class="op">=</span> <span class="op">:</span><span class="cn">false</span>,</span>
+<span id="cb2-34"><a></a>    tickfontsize<span class="op">=</span><span class="fl">16</span>,</span>
+<span id="cb2-35"><a></a>    guidefontsize<span class="op">=</span><span class="fl">16</span>,</span>
+<span id="cb2-36"><a></a>    xlabel<span class="op">=</span><span class="st">"Iteration"</span>,</span>
+<span id="cb2-37"><a></a>    ylabel<span class="op">=</span><span class="st">"Estimate"</span>,</span>
+<span id="cb2-38"><a></a>    right_margin<span class="op">=</span><span class="fl">8</span>mm,</span>
+<span id="cb2-39"><a></a>    color<span class="op">=:</span>black,</span>
+<span id="cb2-40"><a></a>    linewidth<span class="op">=</span><span class="fl">3</span>,</span>
+<span id="cb2-41"><a></a>    size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">400</span>)</span>
+<span id="cb2-42"><a></a>)</span>
+<span id="cb2-43"><a></a><span class="fu">hline!</span>(plt, [<span class="fl">0.0432</span>], color<span class="op">=</span><span class="st">"red"</span>, </span>
+<span id="cb2-44"><a></a>    linestyle<span class="op">=:</span>dash) </span>
+<span id="cb2-45"><a></a></span>
+<span id="cb2-46"><a></a>mc_anim <span class="op">=</span> <span class="pp">@animate</span> <span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span>nsamp</span>
+<span id="cb2-47"><a></a>    <span class="fu">push!</span>(plt, <span class="fl">1</span>, i, avg_freq[i])</span>
+<span id="cb2-48"><a></a><span class="cf">end</span> every <span class="fl">100</span></span>
+<span id="cb2-49"><a></a></span>
+<span id="cb2-50"><a></a><span class="fu">gif</span>(mc_anim, <span class="st">"figures/mc_dice.gif"</span>, fps<span class="op">=</span><span class="fl">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-mcmc-dice" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="5">
 <figure class="quarto-float quarto-float-fig">
@@ -740,7 +743,7 @@ Figure&nbsp;2: MCMC Estimation of pi
 </section>
 <section id="monte-carlo-and-uncertainty-propagation" class="slide level2">
 <h2>Monte Carlo and Uncertainty Propagation</h2>
-<p><strong>Monte Carlo simulation</strong>: propagate uncertainties from</p>
+<p><strong>Monte Carlo simulation</strong>: propagate uncertainties from inputs through a model to outputs.</p>
 <p>This is an example of <strong>uncertainty propagation</strong>: draw samples from some distribution, and run them through one or more models to find the (conditional) probability of outcomes of interest (for good or bad).</p>
 </section>
 <section id="uncertainty-propagation-flowchart" class="slide level2">
@@ -853,15 +856,6 @@ Figure&nbsp;2: MCMC Estimation of pi
 </section>
 <section id="when-might-we-want-to-use-monte-carlo" class="slide level2">
 <h2>When Might We Want to Use Monte Carlo?</h2>
-<div class="fragment fade-in">
-<ul>
-<li>All models are wrong, and so there always exists some irreducible model error. Can we reduce the Monte Carlo error enough so it’s less than the model error and other uncertainties?</li>
-<li>We often need a lot of simulations. Do we have enough computational power?</li>
-</ul>
-</div>
-</section>
-<section id="when-might-we-want-to-use-monte-carlo-1" class="slide level2">
-<h2>When Might We Want to Use Monte Carlo?</h2>
 <p>If you can compute your answers analytically or through quadrature, you probably should.</p>
 <p>But for <em>many</em> “real” problems, this is either</p>
 <ol type="1">
@@ -878,6 +872,11 @@ Figure&nbsp;2: MCMC Estimation of pi
 <h2>Monte Carlo Confidence Intervals</h2>
 <p>The <span class="math inline">\(\alpha\)</span>-confidence interval is: <span class="math display">\[\tilde{\mu}_n \pm \Phi^{-1}\left(1 - \frac{\alpha}{2}\right) \frac{\sigma_Y}{\sqrt{n}}\]</span></p>
 <p>For example, the 95% confidence interval is <span class="math display">\[\tilde{\mu}_n \pm 1.96 \frac{\sigma_Y}{\sqrt{n}}.\]</span></p>
+</section>
+<section id="sidebar-estimating-sigma_y" class="slide level2">
+<h2>Sidebar: Estimating <span class="math inline">\(\sigma_Y\)</span></h2>
+<p>We don’t know the standard deviation <span class="math inline">\(\sigma_Y\)</span>.</p>
+<p>But we can estimate it using the simulation standard deviation:</p>
 </section>
 <section id="implications-of-monte-carlo-error" class="slide level2">
 <h2>Implications of Monte Carlo Error</h2>
