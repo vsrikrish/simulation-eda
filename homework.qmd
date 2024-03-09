@@ -22,6 +22,6 @@ The standard rubric for homework problems is available [here](rubrics/standard.q
 | Assignment | Instructions | Due Date | Solutions |
 |:----------:|:------------:|:------:|:---------|
 | HW1 | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.qmd) | Feb 02, 2024 | [{{< fa sharp key-skeleton >}}](solutions/hw01/hw01.qmd) |
-| HW2 | [{{< fa sharp pen-field >}}](assignments/hw02/hw02.qmd) | Feb 23, 2024 | |
+| HW2 | [{{< fa sharp pen-field >}}](assignments/hw02/hw02.qmd) | Feb 23, 2024 | [{{< fa sharp key-skeleton >}}](solutions/hw02/hw02.qmd) |
 | HW3 | [{{< fa sharp pen-field >}}](assignments/hw03/hw03.qmd) | Mar 22, 2024 | |
 

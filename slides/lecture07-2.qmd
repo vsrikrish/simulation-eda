@@ -87,26 +87,33 @@ Random.seed!(1)
 :::
 
 ::: {.column width=50%}
-$$\frac{dC}{dt} = \frac{u}{L} C_\text{in} + \frac{S-D}{WHL} - \left(\frac{u}{L} + k\right)C$$
-:::
-::::
-
-$$\bbox[yellow, 10px, border:5px solid red]{C(t+1) = \left(1 - \Delta t\left(\frac{u}{L} + k\right)\right)C(t) + \Delta t \left(\frac{u}{L} C_\text{in}(t) + \frac{S-D}{WHL}\right)}$$
-
-## Airshed Model
-
-:::: {.columns}
-::: {.column width=50%}
-![Illustration of the airshed, including notation.](figures/airshed-box.svg){#fig-airshed}
-:::
-
-::: {.column width=50%}
 **Goal**: Find the probability of exceeding the 1-hour SO~2~ average exposure concentration standard, which is 0.14 ppm.
 
 :::
 ::::
 
 **Uncertainties**: Hourly wind speed $u$, the inflow concentration $C_\text{in}$, net rate of SO~2~ emission within the airshed $R=S-D$.
+
+## Airshed Model
+
+![Illustration of the airshed, including notation.](figures/airshed-box.svg){#fig-airshed}
+
+$$\frac{dC}{dt} = \frac{u}{L} C_\text{in} + \frac{S-D}{WHL} - \left(\frac{u}{L} + k\right)C$$
+
+## Forward Euler Discretization
+
+$$
+\frac{dC}{dt} = \frac{u}{L} C_\text{in}(t) + \frac{S-D}{WHL} - \left(\frac{u}{L} + k\right)C$$
+
+. . .
+
+
+$$\Rightarrow \frac{C(t+1) - C(t)}{\Delta t} = \frac{u}{L} C_\text{in}(t) + \frac{R}{WHL} - \left(\frac{u}{L} + k\right)C(t)$$
+
+. . .
+
+$$\bbox[yellow, 10px, border:5px solid red]{C(t+1) = \left(1 - \Delta t\left(\frac{u}{L} + k\right)\right)C(t) + \Delta t \left(\frac{u}{L} C_\text{in}(t) + \frac{R}{WHL}\right)}
+$$
 
 ## Monte Carlo Samples
 
@@ -122,9 +129,9 @@ u = rand(LogNormal(log(2), 1), nsamp)
 Cin = rand(LogNormal(log(0.16), 0.12), nsamp)
 R = rand(Normal(0.5, 0.5), nsamp)
 
-p1 = histogram(u, ylabel="count", xlabel=L"$u$ (m/s)", label=false, tickfontsize=16, guidefontsize=18, size=(450, 450))
-p2 = histogram(Cin, ylabel="count", xlabel=L"$C_{in}$ (ppm)", label=false, tickfontsize=16, guidefontsize=18, size=(450, 450))
-p3 = histogram(R, ylabel="count", xlabel=L"$R$ (ppm/s)", label=false, tickfontsize=16, guidefontsize=18, size=(450, 450))
+p1 = histogram(u, ylabel="count", xlabel=L"$u$ (m/s)", label=false, tickfontsize=16, guidefontsize=18, size=(400, 450))
+p2 = histogram(Cin, ylabel="count", xlabel=L"$C_{in}$ (ppm)", label=false, tickfontsize=16, guidefontsize=18, size=(400, 450))
+p3 = histogram(R, ylabel="count", xlabel=L"$R$ (ppm/hr)", label=false, tickfontsize=16, guidefontsize=18, size=(400, 450))
 display(p1)
 display(p2)
 display(p3)

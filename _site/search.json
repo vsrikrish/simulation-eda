@@ -645,21 +645,28 @@
     "href": "slides/lecture07-2.html#airshed-model",
     "title": "Monte Carlo Application and the Bootstrap",
     "section": "Airshed Model",
-    "text": "Airshed Model\n\n\n\n\n\n\n\n\nFigure 1: Illustration of the airshed, including notation.\n\n\n\n\n\\[\\frac{dC}{dt} = \\frac{u}{L} C_\\text{in} + \\frac{S-D}{WHL} - \\left(\\frac{u}{L} + k\\right)C\\]\n\n\n\\[\\bbox[yellow, 10px, border:5px solid red]{C(t+1) = \\left(1 - \\Delta t\\left(\\frac{u}{L} + k\\right)\\right)C(t) + \\Delta t \\left(\\frac{u}{L} C_\\text{in}(t) + \\frac{S-D}{WHL}\\right)}\\]"
+    "text": "Airshed Model\n\n\n\n\n\n\n\n\nFigure 1: Illustration of the airshed, including notation.\n\n\n\n\nGoal: Find the probability of exceeding the 1-hour SO2 average exposure concentration standard, which is 0.14 ppm.\n\n\nUncertainties: Hourly wind speed \\(u\\), the inflow concentration \\(C_\\text{in}\\), net rate of SO2 emission within the airshed \\(R=S-D\\)."
   },
   {
     "objectID": "slides/lecture07-2.html#airshed-model-1",
     "href": "slides/lecture07-2.html#airshed-model-1",
     "title": "Monte Carlo Application and the Bootstrap",
     "section": "Airshed Model",
-    "text": "Airshed Model\n\n\n\n\n\n\n\n\nFigure 2: Illustration of the airshed, including notation.\n\n\n\n\nGoal: Find the probability of exceeding the 1-hour SO2 average exposure concentration standard, which is 0.14 ppm.\n\n\nUncertainties: Hourly wind speed \\(u\\), the inflow concentration \\(C_\\text{in}\\), net rate of SO2 emission within the airshed \\(R=S-D\\)."
+    "text": "Airshed Model\n\n\nFigure 2: Illustration of the airshed, including notation.\n\\[\\frac{dC}{dt} = \\frac{u}{L} C_\\text{in} + \\frac{S-D}{WHL} - \\left(\\frac{u}{L} + k\\right)C\\]"
+  },
+  {
+    "objectID": "slides/lecture07-2.html#forward-euler-discretization",
+    "href": "slides/lecture07-2.html#forward-euler-discretization",
+    "title": "Monte Carlo Application and the Bootstrap",
+    "section": "Forward Euler Discretization",
+    "text": "Forward Euler Discretization\n\\[\n\\frac{dC}{dt} = \\frac{u}{L} C_\\text{in}(t) + \\frac{S-D}{WHL} - \\left(\\frac{u}{L} + k\\right)C\\]\n\n\\[\\Rightarrow \\frac{C(t+1) - C(t)}{\\Delta t} = \\frac{u}{L} C_\\text{in}(t) + \\frac{R}{WHL} - \\left(\\frac{u}{L} + k\\right)C(t)\\]\n\n\n\\[\\bbox[yellow, 10px, border:5px solid red]{C(t+1) = \\left(1 - \\Delta t\\left(\\frac{u}{L} + k\\right)\\right)C(t) + \\Delta t \\left(\\frac{u}{L} C_\\text{in}(t) + \\frac{R}{WHL}\\right)}\n\\]"
   },
   {
     "objectID": "slides/lecture07-2.html#monte-carlo-samples",
     "href": "slides/lecture07-2.html#monte-carlo-samples",
     "title": "Monte Carlo Application and the Bootstrap",
     "section": "Monte Carlo Samples",
-    "text": "Monte Carlo Samples\n\nCode\nnsamp = 1000\nu = rand(LogNormal(log(2), 1), nsamp)\nCin = rand(LogNormal(log(0.16), 0.12), nsamp)\nR = rand(Normal(0.5, 0.5), nsamp)\n\np1 = histogram(u, ylabel=\"count\", xlabel=L\"$u$ (m/s)\", label=false, tickfontsize=16, guidefontsize=18, size=(450, 450))\np2 = histogram(Cin, ylabel=\"count\", xlabel=L\"$C_{in}$ (ppm)\", label=false, tickfontsize=16, guidefontsize=18, size=(450, 450))\np3 = histogram(R, ylabel=\"count\", xlabel=L\"$R$ (ppm/s)\", label=false, tickfontsize=16, guidefontsize=18, size=(450, 450))\ndisplay(p1)\ndisplay(p2)\ndisplay(p3)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Monte Carlo samples for the airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c)\n\n\n\n\n\n\n\nFigure 3"
+    "text": "Monte Carlo Samples\n\nCode\nnsamp = 1000\nu = rand(LogNormal(log(2), 1), nsamp)\nCin = rand(LogNormal(log(0.16), 0.12), nsamp)\nR = rand(Normal(0.5, 0.5), nsamp)\n\np1 = histogram(u, ylabel=\"count\", xlabel=L\"$u$ (m/s)\", label=false, tickfontsize=16, guidefontsize=18, size=(400, 450))\np2 = histogram(Cin, ylabel=\"count\", xlabel=L\"$C_{in}$ (ppm)\", label=false, tickfontsize=16, guidefontsize=18, size=(400, 450))\np3 = histogram(R, ylabel=\"count\", xlabel=L\"$R$ (ppm/hr)\", label=false, tickfontsize=16, guidefontsize=18, size=(400, 450))\ndisplay(p1)\ndisplay(p2)\ndisplay(p3)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Monte Carlo samples for the airshed model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c)\n\n\n\n\n\n\n\nFigure 3"
   },
   {
     "objectID": "slides/lecture07-2.html#simulation-results",
@@ -1570,340 +1577,137 @@
     ]
   },
   {
-    "objectID": "homework.html",
-    "href": "homework.html",
-    "title": "Homework Assignments",
+    "objectID": "solutions/hw01/hw01.html",
+    "href": "solutions/hw01/hw01.html",
+    "title": "Homework 1 Solutions",
     "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
-    "crumbs": [
-      "Homework"
-    ]
+    "text": "The goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\n\n\n\n\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # adds some basic statistical functionality (means, medians, empirical cumulative densities, etc)\nusing StatsPlots # for qqplots"
   },
   {
-    "objectID": "homework.html#general-information",
-    "href": "homework.html#general-information",
-    "title": "Homework Assignments",
-    "section": "General Information",
-    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "homework.html#rubric",
-    "href": "homework.html#rubric",
-    "title": "Homework Assignments",
-    "section": "Rubric",
-    "text": "Rubric\nThe standard rubric for homework problems is available here.",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "homework.html#schedule",
-    "href": "homework.html#schedule",
-    "title": "Homework Assignments",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\nSolutions\n\n\n\n\nHW1\n\nFeb 02, 2024\n\n\n\nHW2\n\nFeb 23, 2024\n\n\n\nHW3\n\nMar 22, 2024",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "weeks/week02.html",
-    "href": "weeks/week02.html",
-    "title": "Week 2",
+    "objectID": "solutions/hw01/hw01.html#overview",
+    "href": "solutions/hw01/hw01.html#overview",
+    "title": "Homework 1 Solutions",
     "section": "",
-    "text": "Homework 1 and Exercise 1 due 2/2/24.",
-    "crumbs": [
-      "Weeks",
-      "Week 2"
-    ]
+    "text": "The goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\n\n\n\n\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # adds some basic statistical functionality (means, medians, empirical cumulative densities, etc)\nusing StatsPlots # for qqplots"
   },
   {
-    "objectID": "weeks/week02.html#announcements",
-    "href": "weeks/week02.html#announcements",
-    "title": "Week 2",
-    "section": "",
-    "text": "Homework 1 and Exercise 1 due 2/2/24.",
-    "crumbs": [
-      "Weeks",
-      "Week 2"
-    ]
+    "objectID": "solutions/hw01/hw01.html#problems",
+    "href": "solutions/hw01/hw01.html#problems",
+    "title": "Homework 1 Solutions",
+    "section": "Problems",
+    "text": "Problems\n\nProblem 1\n\ndata = DataFrame(load(\"data/bites.csv\")) # load data into DataFrame\n\n# print data variable (semi-colon suppresses echoed output in Julia, which in this case would duplicate the output)\n@show data; \n\ndata = 43×2 DataFrame\n Row │ group   bites\n     │ String  Int64\n─────┼───────────────\n   1 │ beer       27\n   2 │ beer       20\n   3 │ beer       21\n   4 │ beer       26\n   5 │ beer       27\n   6 │ beer       31\n   7 │ beer       24\n   8 │ beer       21\n   9 │ beer       20\n  10 │ beer       19\n  11 │ beer       23\n  12 │ beer       24\n  13 │ beer       28\n  14 │ beer       19\n  15 │ beer       24\n  16 │ beer       29\n  17 │ beer       18\n  18 │ beer       20\n  19 │ beer       17\n  20 │ beer       31\n  21 │ beer       20\n  22 │ beer       25\n  23 │ beer       28\n  24 │ beer       21\n  25 │ beer       27\n  26 │ water      21\n  27 │ water      22\n  28 │ water      15\n  29 │ water      12\n  30 │ water      21\n  31 │ water      16\n  32 │ water      19\n  33 │ water      15\n  34 │ water      22\n  35 │ water      24\n  36 │ water      19\n  37 │ water      23\n  38 │ water      13\n  39 │ water      22\n  40 │ water      20\n  41 │ water      24\n  42 │ water      18\n  43 │ water      20\n\n\n\n# split data into vectors of bites for each group\nbeer = data[data.group .== \"beer\", :bites]\nwater = data[data.group .== \"water\", :bites]\n\nobserved_difference = mean(beer) - mean(water)\n@show observed_difference;\n\nobserved_difference = 4.37777777777778\n\n\nIn this problem:\n\nConduct the above procedure to generate 50,000 simulated datasets under the skeptic’s hypothesis.\nPlot a histogram of the results and add a dashed vertical line to show the experimental difference (if you are using Julia, feel free to look at the Making Plots with Julia tutorial on the class website).\nDraw conclusions about the plausibility of the skeptic’s hypothesis that there is no difference? Feel free to use any quantitative or qualitative assessments of your simulations and the observed difference.\n\nSolution:\nFirst, we write a function (simulate_differences()) to generate a new data set and compute the group differences under the skeptic’s hypothesis by shuffling the data across the two groups (this is called the non-parametric bootstrap, which we will talk about more later):\n\n# simulate_differences: function which simulates a new group difference based on the skeptic's hypothesis of no \"real\" difference between groups by shuffling the input data across groups\n# inputs:\n#   y₁: vector of bite counts for the beer-drinking group\n#   y₂: vector of bite counts for the water-drinking group\n# output:\n#   a simulated difference between shuffled group averages\nfunction simulate_differences(y₁, y₂)\n    # concatenate both vectors into a single vector\n    y = vcat(y₁, y₂)\n\n    # create new experimental groups consistent with skeptic's hypothesis\n    y_shuffle = shuffle(y)   # shuffle the combined data\n    n₁ = length(y₁)\n    x₁ = y_shuffle[1:n₁]\n    x₂ = y_shuffle[(n₁+1):end]\n\n    # compute difference between new group means\n    diff = mean(x₁) - mean(x₂)\n    return diff\nend\n\nsimulate_differences (generic function with 1 method)\n\n\nNext, we evaluate this function 10,000 times and plot the resulting histogram of differences.\nIn Julia (and in Python), it is convenient to use a comprehension to automatically allocate the output of the for loop to a vector. The syntax for a comprehension is [some_function(input) for input in some_range]. In this case, the index input doesn’t appear in the comprehension as we’re just repeating the exact same calculation every time:\n\nshuffled_differences = [simulate_differences(beer, water) for i in 1:50_000]\n\n50000-element Vector{Float64}:\n  1.0333333333333314\n -1.2600000000000016\n -0.4955555555555584\n -1.6422222222222231\n  2.0844444444444434\n -1.068888888888889\n  2.1799999999999997\n -1.9288888888888884\n  0.36444444444444457\n -1.9288888888888884\n -0.3044444444444423\n  0.6511111111111099\n  1.5111111111111093\n  ⋮\n -0.4955555555555584\n -0.017777777777777004\n  0.2688888888888883\n -3.2666666666666693\n -1.1644444444444417\n  0.5555555555555571\n -2.120000000000001\n -1.8333333333333321\n  0.36444444444444457\n  2.84888888888889\n -0.7822222222222202\n  1.1288888888888877\n\n\nWithout a comprehension, this loop would look something like:\nshuffled_diffs = zeros(10_000)\nfor i in 1:length(shuffled_diffs)\n    shuffled_differences[i] = simulate_differences(beer, water)\nend\nBack to the problem. Now let’s plot the histogram. When you see a ! after a function name in Julia, it means that this is a mutating function, which changes the object that it acts on, rather than returning a new object and preserving the old one. In this case, the plot object is changed to add new elements to the original histogram.\n\nhist = histogram(shuffled_differences, label=\"Simulated Differences\") # plot the basic histogram\n# MAKE SURE TO ADD AXIS LABELS!\nxlabel!(hist, \"Increased Number of Average Bites for Beer Group\")\nylabel!(hist, \"Count\")\n\n# now add a vertical line for the experimentally-observed difference\nvline!(hist, [observed_difference], color=:red, linestyle=:dash, label=\"Observed Difference\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Histogram of simulated differences between the average bites for the beer group and the average bites for the water group under the assumption that differences are due only to random chance. A positive value indicates that the beer group is bitten more often. The red line is the group difference from the experimental data.\n\n\n\n\nWhat do we see from Figure 1?\n\nThe simulated differences follow roughly a normal distribution centered at a value of zero. This is not surprising given the hypothesis that there is no “true” difference in bite frequency between the two groups.\nThe observed data are extremely unlikely if the skeptic’s hypothesis is true. We can calculate the probability of seeing data that extreme given this hypothesis (also called the p-value) by finding the empirical cumulative density function of the simulated data vector:\n\nempirical_cdf = ecdf(shuffled_differences)\n1 - empirical_cdf(observed_difference)\n\n0.00046000000000001595\n\n\nThis shows that we would only expect, given the skeptic’s hypothesis, to see data at least this extreme by chance in 0.04% of experiments. If we don’t think that our experiment is likely to be an outlier, this suggests that the skeptic’s hypothesis is quite unlikely. However, this does not mean our mechanistic theory for the group difference is correct: this would require more work and maybe a more targeted experiment!\n\n\n\nProblem 2\nIn this problem:\n\nDerive and code a simulation model for the above interview procedure given the “true” probability of cheating \\(p\\).\nSimulate your model (for a class of 100 students) 50,000 times under the your hypothesis and the TA’s hypothesis, and plot the two resulting datasets.\nIf you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude? Feel free to use any qualitative or quantiative assessments to justify your conclusions.\nHow useful do you think the interview procedure is to identify systemic teaching? What changes to the design might you make?\n\nSolution:\nLet’s start by sketching out the simulation model. For every student, we first need to simulate the outcome of the first coin flip, which has a 50% probability of heads. If this coin flip comes up as heads, then the student answers honestly, and admits to cheating with probability \\(p\\). If the coin flip comes up tails, the student flips another coin and answers that they cheated with probability 50%. After looping over this procedure for each student in the class, we add up the “true” values.\nWe might code this model as follows.\n\n# cheating_model: function which simulates the outcome of the interview procedure described in this problem and returns the number of confessions obtained.\n# inputs:\n#   p: base probability of cheating under a given hypothesis\n#   n: vector of bite counts for the water-drinking group\n# output:\n#   a simulated number of confessions for one realization of the process.\nfunction cheating_model(p, n)\n    # initialize the storage vector for whether students admit to cheating\n    # we do this with a boolean vector, which is a little faster, but storing integers is basically the same thing\n    cheat = zeros(Bool, n)\n    # loop over every student to simulate the interview process\n    for i in 1:n\n        # initial coin flip\n        # rand() simulates a uniform random number between 0 and 1\n        if rand() &gt;= 0.5\n            # if this came up heads, simulate whether the student cheated based on the cheating probability\n            if rand() &lt; p\n                cheat[i] = true\n            else\n                cheat[i] = false\n            end\n        else\n            # otherwise, simulate another coin flip\n            if rand() &gt;= 0.5\n                cheat[i] = true\n            else\n                cheat[i] = false\n            end\n        end\n    end\n    # return the total number of cheating admissions\n    return sum(cheat)\nend\n\ncheating_model (generic function with 1 method)\n\n\nNow we simulate under our assumption of low cheating and the TA’s assumption of widespread cheating and plot the results.\n\n# conduct the simulations\nlow_cheat_data = [cheating_model(0.05, 100) for i in 1:50_000]\nhigh_cheat_data = [cheating_model(0.30, 100) for i in 1:50_000]\n\n# plot the histograms with axis labels and a vertical line for the \"real\" outcome of the procedure\nhistogram(low_cheat_data, color=:blue, label=\"Cheating Rate 5%\", alpha=0.4)\nhistogram!(high_cheat_data, color=:red, label=\"Cheating Rate 30%\", alpha=0.4)\nxlabel!(\"Number of Students who Confess to Cheating\")\nylabel!(\"Count\")\nvline!([31], linestyle=:dash, color=:green, linewidth=3, label=\"Observed Outcome\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Histograms of the number of simulated confessions obtained under the hypothesis of a 5% cheating rate (blue) and a 30% cheating rate (red). The green line is the observed number of cheating confessions.\n\n\n\n\nFrom Figure 2, we can see:\n\nThe distributions look roughly normal (not surprising given the Central Limit Theorem!).\nThere is some overlap around the 25-42 confession count rate. Lower than 25 students confessing would strongly suggest that the TA is overstating the rate of cheating, while more than 40 would strongly suggest that we are underestimating the cheating rate.\nNote that neither of these is “confirmation” of either theory, but evidence about the relative proportion of cheating being more or less consistent with one of our hypotheses.\nThe outcome of 31 confessions is in the range where the evidence isn’t completely clear either way. However, it appears more likely that this outcome is explained by a lower rate of cheating than a higher rate. For example, under our hypothesis, the “high-tail” p-value of the outcome is:\n\necdf_low = ecdf(low_cheat_data)\n1 - ecdf_low(31)\n\n0.18403999999999998\n\n\nwhile under the TA’s hypothesis, the “low-tail” p-value is\n\necdf_high = ecdf(high_cheat_data)\necdf_high(31)\n\n0.03928\n\n\nSo there is a 18% probability of seeing 31 or more confessions under our assumed 5% cheating rate, while there is only a 4% probability of seeing 31 or fewer confessions under the TA’s assumed 30% cheating rate, which seems to suggest a lower rate is more likely.\nWe can’t draw any strong conclusions from this, but we will talk more later this semester about how to quantify consistency of models with data based on simulations!\nThis interview process is noisy, but appears to work to separate very large differences in cheating rates. On the other hand, it might not work so well if we cared about the difference between 5% cheating and 10% cheating rates, as the difference in the “true” confessions would be swamped by the coin flips. If we wanted to tease out those differences, we could use a weighted coin (to increase the number of “honest” confessions).\n\nLater in the semester, we will look at methods for how we might quantify what base cheating rates are consistent with a given outcome (though we won’t apply them to this example!)."
   },
   {
-    "objectID": "weeks/week02.html#readings",
-    "href": "weeks/week02.html#readings",
-    "title": "Week 2",
-    "section": "Readings",
-    "text": "Readings\nAs you’re reading along, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. Post a summary of key points, takeaways, and thoughts on Ed Discussion and be prepared to engage in the discussion on-line. We will dedicate class time to this reading on Wednesday, so make sure you’ve read it, though you’ll have more time to finalize your thoughts for the online.\nNote: The link here will require additional access through the Cornell library; use the class schedule for a direct link or access through Canvas.\n\nStein, M. L. (2020). Some statistical issues in climate science. Statistical Science: A Review Journal of the Institute of Mathematical Statistics, 35(1), 31–41. https://doi.org/10.1214/19-sts730",
-    "crumbs": [
-      "Weeks",
-      "Week 2"
-    ]
-  },
-  {
-    "objectID": "weeks/week02.html#exercises",
-    "href": "weeks/week02.html#exercises",
-    "title": "Week 2",
-    "section": "Exercises",
-    "text": "Exercises\n\nLoading, Plotting, and Reasoning About Data",
-    "crumbs": [
-      "Weeks",
-      "Week 2"
-    ]
-  },
-  {
-    "objectID": "weeks/week02.html#lectures",
-    "href": "weeks/week02.html#lectures",
-    "title": "Week 2",
-    "section": "Lectures",
-    "text": "Lectures\n\nLecture 02-1: Probability Models and Model Residuals\nLecture 02-2: Probability Models II",
-    "crumbs": [
-      "Weeks",
-      "Week 2"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html",
-    "href": "weeks/week01.html",
-    "title": "Week 1",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion.\nHomework 1 assigned, due 2/2/24.",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#announcements",
-    "href": "weeks/week01.html#announcements",
-    "title": "Week 1",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion.\nHomework 1 assigned, due 2/2/24.",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#readings",
-    "href": "weeks/week01.html#readings",
-    "title": "Week 1",
-    "section": "Readings",
-    "text": "Readings\nAs you’re reading along, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. Post a summary of key points, takeaways, and thoughts on Ed Discussion and be prepared to engage in the discussion on-line. We will not dedicate class time to this reading but relevant concepts will come up over the first few weeks of class.\n\nRockmore, D. (2024, January 15). How Much of the World Is It Possible to Model? The New Yorker. Retrieved from https://www.newyorker.com/culture/annals-of-inquiry/how-much-of-the-world-is-it-possible-to-model",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#exercises",
-    "href": "weeks/week01.html#exercises",
-    "title": "Week 1",
-    "section": "Exercises",
-    "text": "Exercises\n\nLoading, Plotting, and Reasoning About Data",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#lectures",
-    "href": "weeks/week01.html#lectures",
-    "title": "Week 1",
-    "section": "Lectures",
-    "text": "Lectures\n\nLecture 01-1: Class Overview\nLecture 01-2: Uncertainty and Probability Review",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week05.html",
-    "href": "weeks/week05.html",
-    "title": "Week 5",
-    "section": "",
-    "text": "Exercise 5 due 2/23/24.",
-    "crumbs": [
-      "Weeks",
-      "Week 5"
-    ]
-  },
-  {
-    "objectID": "weeks/week05.html#announcements",
-    "href": "weeks/week05.html#announcements",
-    "title": "Week 5",
-    "section": "",
-    "text": "Exercise 5 due 2/23/24.",
-    "crumbs": [
-      "Weeks",
-      "Week 5"
-    ]
-  },
-  {
-    "objectID": "weeks/week05.html#exercises",
-    "href": "weeks/week05.html#exercises",
-    "title": "Week 5",
-    "section": "Exercises",
-    "text": "Exercises\n\nGood and Bad Visualizations",
-    "crumbs": [
-      "Weeks",
-      "Week 5"
-    ]
-  },
-  {
-    "objectID": "weeks/week05.html#lectures",
-    "href": "weeks/week05.html#lectures",
-    "title": "Week 5",
-    "section": "Lectures",
-    "text": "Lectures\n\nLecture 05-1: Extreme Value Theory and Models\nLecture 05-2: Data Visualization",
-    "crumbs": [
-      "Weeks",
-      "Week 5"
-    ]
-  },
-  {
-    "objectID": "weeks/week06.html",
-    "href": "weeks/week06.html",
-    "title": "Week 6",
-    "section": "",
-    "text": "No office hours on 3/4.",
-    "crumbs": [
-      "Weeks",
-      "Week 6"
-    ]
-  },
-  {
-    "objectID": "weeks/week06.html#announcements",
-    "href": "weeks/week06.html#announcements",
-    "title": "Week 6",
-    "section": "",
-    "text": "No office hours on 3/4.",
-    "crumbs": [
-      "Weeks",
-      "Week 6"
-    ]
-  },
-  {
-    "objectID": "weeks/week06.html#lectures",
-    "href": "weeks/week06.html#lectures",
-    "title": "Week 6",
-    "section": "Lectures",
-    "text": "Lectures\n\nLecture 06-2: Figure Discussion",
-    "crumbs": [
-      "Weeks",
-      "Week 6"
-    ]
-  },
-  {
-    "objectID": "assignments/hw03/hw03.html",
-    "href": "assignments/hw03/hw03.html",
-    "title": "Homework 3: Bayesian and Extreme Value Statistics",
-    "section": "",
-    "text": "Due Date\n\n\n\nFriday, 3/22/24, 9:00pm",
-    "crumbs": [
-      "Homework",
-      "Homework 3"
-    ]
-  },
-  {
-    "objectID": "assignments/hw03/hw03.html#overview",
-    "href": "assignments/hw03/hw03.html#overview",
-    "title": "Homework 3: Bayesian and Extreme Value Statistics",
-    "section": "Overview",
-    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to practice developing and working with probability models for data.\n\n\nLearning Outcomes\nAfter completing this assignments, students will be able to:\n\ndevelop probability models for data and model residuals under a variety of statistical assumptions;\nevaluate the appropriateness of those assumptions through the use of qualitative and quantitative evaluations of goodness-of-fit;\nfit a basic Bayesian model to data.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing DataFramesMeta # API which can simplify chains of DataFrames transformations\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools\nusing Optim # optimization tools",
-    "crumbs": [
-      "Homework",
-      "Homework 3"
-    ]
-  },
-  {
-    "objectID": "assignments/hw03/hw03.html#problems-total-30-points-for-4850-40-for-5850",
-    "href": "assignments/hw03/hw03.html#problems-total-30-points-for-4850-40-for-5850",
-    "title": "Homework 3: Bayesian and Extreme Value Statistics",
-    "section": "Problems (Total: 30 Points for 4850; 40 for 5850)",
-    "text": "Problems (Total: 30 Points for 4850; 40 for 5850)\n\nProblem 1\n\nConsider the Rahmstorf (2007) sea-level rise model from Homework 2:\n\\[\\frac{dH(t)}{dt} = \\alpha (T(t) - T_0),\\] where \\(T_0\\) is the temperature (in \\(^\\circ C\\)) where sea-level is in equilibrium (\\(dH/dt = 0\\)), and \\(\\alpha\\) is the sea-level rise sensitivity to temperature. Discretizing this equation using the Euler method and using an annual timestep (\\(\\delta t = 1\\)), we get \\[H(t+1) = H(t) + \\alpha (T(t) - T_0).\\]\nSuppose that we wanted to develop a Bayesian probability model for this problem, assuming independent normal residuals:\n\\[\\begin{gather*}\ny(t) = F(t) - \\varepsilon_t \\\\\n\\varepsilon_t \\sim \\mathcal{N}(0, \\sigma^2)\n\\end{gather*}\\]\nWe might specify the following priors (assuming independence across parameters):\n\n\\(T_0 \\sim \\mathcal{N}(-0.5, 0.1)\\);\n\\(\\alpha \\sim \\mathcal{TN}(0, 5; 0, \\infty)\\) (truncated normal between 0 and infinity);\n\\(H_0 \\sim \\mathcal{N}(-150, 25)\\).\n\nIn this problem:\n\nLoad the data from the data/ folder\n\nHistorical and RCP 8.5 global mean temperatures from NOAA can be found in data/NOAA_IPCC_RCPtempsscenarios.csv (use the fourth column for the temperature series).\nGlobal mean sea level anomalies (relative to the 1990 mean global sea level) are in data/CSIRO_Recons_gmsl_yr_2015.csv, courtesy of CSIRO (https://www.cmar.csiro.au/sealevel/sl_data_cmar.html).\n\nSimulate from the prior predictive distribution. What do you think about the priors?\nWould you propose new priors? If so, what might they be and why?\n\n\n\n\nProblem 2\nFollowing from Problem 1, compare the maximum likelihood and maximum a posteriori estimates for the model.\nIn this problem:\n\nFind the MLE and MAP parameter values using the prior distributions given in Problem 1.\nPlot the median and 95% credible intervals for the hindcasts and the projections under RCP 8.5 (using ERF_ssp585_1750-2500.csv; make sure \\(T_0\\) and \\(H_0\\) have the same meaning as in Problem 1!).\nWhat differences do you observe? What do you attribute these differences to? What conclusions can you draw about the Bayesian model?\n\n\n\nProblem 3\nLet’s look at how (modeled) daily maximum temperatures have (or have not) increased in Ithaca from 1850–2014. Model output from NOAA’s GFDL-ESM4 climate model (one of the models used in the latest Climate Model Intercomparison Project, CMIP6) is available in data/gfdl-esm4-tempmax-ithaca.csv. While this model output has not been bias-corrected, we won’t worry about that for the purposes of this assignment.\nIn this problem:\n\nLoad and plot the temperature maxima data from data/gfdl-esm4-tempmax-ithaca.csv.\nSuppose that we were interested in looking at temperature exceedances over 28°C. Decluster these occurrences and plot the number of exceedances by year. Have they increased over time?\nFit a stationary GPD model for the exceedances. What does this distribution look like?\n\n\n\nProblem 4\nGRADED FOR 5850 STUDENTS ONLY\nIn class, we modeled the annual maxima of the San Francisco tide gauge data using a stationary GEV distribution. We could also hypothesize that the tide extremes are influenced by the Pacific Decadal Oscillation (PDO), which is a climate pattern related to the sea-surface temperatures in the Pacific Ocean (similar to the El Niño-Southern Oscillation), in the following fashion (where only the GEV location is variable):\n\\[y_t \\sim \\text{GEV}(\\mu_0 + \\mu_1 p_t, \\sigma, \\xi)\\]\nIn this problem:\n\nLoad the San Francisco tide gauge data (data/h551.csv) and the PDO index dataset (data/errst.v5.pdo.dat; this file is a space-delimited file, versus the comma-delimited .csv files, which can be loaded in Julia with CSV.read(data/errst.v5.pdo.dat, DataFrame; delim=\" \", header=2, ignorerepeated=true)). The PDO data is given as monthly values; convert these to yearly indices by taking the mean. You should also drop 2023 due to the incomplete record. You can use the function at the bottom of these instructions to load the data, or adapt accordingly to a different language.\nFind the MLE of the non-stationary GEV model and for a stationary GEV (constant \\(\\mu\\); we did this in class).\nDiscuss the difference(s) between the two fitted models based on the coefficient values (you can also bring to bear the range(s) of PDO values from the data), the 100- and 500-year return periods in 2022, and plotted hindcasts.\n\n\n## load the data from the file and return a DataFrame of DateTime values and gauge measurements\n\nfunction load_pdo(fname)\n    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data\n    df = CSV.read(fname, DataFrame; delim=\" \", header=2, ignorerepeated=true)\n    # take yearly average\n    @transform!(df, :PDO = mean(AsTable(names(df)[2:13])))\n    @select!(df, $[:Year, :PDO])\n    @rsubset!(df, :Year != 2023)\n    return df\nend\n\npdo = load_pdo(\"data/ersst.v5.pdo.dat\")\n# subset for years that match the tide gauge data\nyears = dat_annmax[!, :Year]\n@rsubset!(pdo, :Year in years)\n\nLoadError: LoadError: UndefVarError: `@transform!` not defined\nin expression starting at In[4]:8",
-    "crumbs": [
-      "Homework",
-      "Homework 3"
-    ]
-  },
-  {
-    "objectID": "assignments/hw01/hw01.html",
-    "href": "assignments/hw01/hw01.html",
-    "title": "Homework 1: Simulation-Based Data Analysis",
-    "section": "",
-    "text": "Due Date\n\n\n\nFriday, 2/2/24, 9:00pm",
-    "crumbs": [
-      "Homework",
-      "Homework 1"
-    ]
-  },
-  {
-    "objectID": "assignments/hw01/hw01.html#overview",
-    "href": "assignments/hw01/hw01.html#overview",
-    "title": "Homework 1: Simulation-Based Data Analysis",
-    "section": "Overview",
-    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\nProblem 3 asks you to assess the quality of fit of a normal distribution to realizations from a Galton Board simulation.\nProblem 4 (graded only for graduate students) asks you to simulate outcomes from the Price Is Right Showcase game to identify a bidding strategy.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
-    "crumbs": [
-      "Homework",
-      "Homework 1"
-    ]
-  },
-  {
-    "objectID": "assignments/hw01/hw01.html#problems-total-20-points",
-    "href": "assignments/hw01/hw01.html#problems-total-20-points",
-    "title": "Homework 1: Simulation-Based Data Analysis",
-    "section": "Problems (Total: 20 Points)",
-    "text": "Problems (Total: 20 Points)\n\nProblem 1 (10 points)\nThe underlying question we would like to address is: what is the influence of drinking beer on the likelihood of being bitten by mosquitoes? There is a mechanistic reason why this might occur: mosquitoes are attracted by changes in body temperature and released CO2, and it might be that drinking beer induces these changes. We’ll analyze this question using (synthetic) data which separates an experimental population into two groups, one which drank beer and the other which drank only water.\nFirst, we’ll load data for the number of bites reported by the participants who drank beer. This is in a comma-delimited file, data/bites.csv (which is grossly overkill for this assignment). Each row contains two columns: the group (beer and water) the person belonged to and the number of times that person was bitten.\nIn Julia, we can do this using CSVFiles.jl, which will read in the .csv file into a DataFrame, which is a typical data structure for tabular data (and equivalent to a Pandas DataFrame in Python or a dataframe in R).\n\n\ndata = DataFrame(load(\"data/bites.csv\")) # load data into DataFrame\n\n# print data variable (semi-colon suppresses echoed output in Julia, which in this case would duplicate the output)\n@show data; \n\n\nHow can we tell if there’s a meaningful difference between the two groups? Naively, we might just look at the differences in group means.\n\n\n\n\n\n\n\nBroadcasting\n\n\n\nThe subsetting operations in the below code use .==, which “broadcasts” the element-wise comparison operator == across every element. The decimal in front of == indicates that this should be used element-wise (every pair of elements compared for equality, returning a vector of true or false values); otherwise Julia would try to just check for vector equality (returning a single true or false value).\nBroadcasting is a very specific feature of Julia, so this syntax would look different in a different programming language.\n\n\n\n# split data into vectors of bites for each group\nbeer = data[data.group .== \"beer\", :bites]\nwater = data[data.group .== \"water\", :bites]\n\nobserved_difference = mean(beer) - mean(water)\n@show observed_difference;\n\nobserved_difference = 4.37777777777778\n\n\n\nThis tells us that, on average, the participants in the experiment who drank beer were bitten approximately 4.4 more times than the participants who drank water! Does that seem like a meaningful difference, or could it be the result of random chance?\nWe will use a simulation approach to address this question, as follows.\n\nSuppose someone is skeptical of the idea that drinking beer could result in a higher attraction to mosquitoes, and therefore more bites. To this skeptic, the two datasets are really just different samples from the same underlying population of people getting bitten by mosquitoes, rather than two different populations with different propensities for being bitten. This is the skeptic’s hypothesis, versus our hypothesis that drinking beer changes body temperature and CO2 release sufficiently to attract mosquitoes.\nIf the skeptic’s hypothesis is true, then we can “shuffle” all of the measurements between the two datasets and re-compute the differences in the means. After repeating this procedure a large number of times, we would obtain a distribution of the differences in means under the assumption that the skeptic’s hypothesis is true.\nComparing our experimentally-observed difference to this distribution, we can then evaluate the consistency of the skeptic’s hypothesis with the experimental results.\n\n\n\n\n\n\n\n\nWhy Do We Call This A Simulation-Based Approach?\n\n\n\nThis is a simulation-based approach because the “shuffling” is a non-parametric way of generating new samples from the underlying distribution (more on this later in the semester).\nThe alternative to this approach is to use a statistical test, such as a t-test, which may have other assumptions which may not be appropriate for this setting, particularly given the seemingly small sample sizes.\n\n\n\nIn this problem:\n\nConduct the above procedure to generate 50,000 simulated datasets under the skeptic’s hypothesis.\nPlot a histogram of the results and add a dashed vertical line to show the experimental difference (if you are using Julia, feel free to look at the Making Plots with Julia tutorial on the class website).\nDraw conclusions about the plausibility of the skeptic’s hypothesis that there is no difference between groups. Feel free to use any quantitative or qualitative assessments of your simulations and the observed difference.\n\n\n\nProblem 2 (10 points)\nYou are trying to detect if how prevalent cheating was on an exam. You are skeptical of the efficacy of just asking the students if they cheated. You are also concerned about privacy — your goal is not to punish individual students, but to see if there are systemic problems that need to be addressed. Someone proposes the following interview procedure, which the class agrees to participate in:\n\nEach student flips a fair coin, with the results hidden from the interviewer. The student answers honestly if the coin comes up heads. Otherwise, if the coin comes up tails, the student flips the coin again, and answers “I did cheat” if heads, and “I did not cheat”, if tails.\n\nWe have a hypothesis that cheating was not prevalent, and the proportion of cheaters was no more than 5% of the class; in other words, we expect 5 “true” cheaters out of a class of 100 students. Our TA is more jaded and thinks that cheating was more rampant, and that 30% of the class cheated. The proposed interview procedure is noisy: the interviewer does not know if an admission means that the student cheated, or the result of a heads. However, it gives us a data-generating process that we can model and analyze for consistency with our hypothesis and that of the TA.\nIn this problem:\n\nDerive and code a simulation model for the above interview procedure given the “true” probability of cheating \\(p\\).\nSimulate your model (for a class of 100 students) 50,000 times under the your hypothesis and the TA’s hypothesis, and plot the two resulting datasets.\nIf you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude? Feel free to use any qualitative or quantiative assessments to justify your conclusions.\nHow useful do you think the interview procedure is to identify systemic teaching? What changes to the design might you make?\n\n\n\nProblem 3 (10 points)\nSuppose that we ask a class of students to walk individually from one end of a field to the other and count the number of steps that they take in order to cover the distance. More than likely, each student will get a somewhat different answer. After each student has paced off the field, we then make a histogram of the number of steps taken by the individual students. For a sufficiently large number of students, this histogram would resemble a normal distribution, due to the Central Limit Theorem.\nA Galton board (named after Sir Francis Galton, a pioneering statistician1, shown below, is a physical device that demonstrates the Central Limit Theorem. A Galton board has rows of pins arranged in a triangular shape, with each row of pins offset horizontally relative to the rows above and below it. As illustrated in Figure 1, the top row has one pin, the second row has two pins, and so forth. If you’ve watched The Price is Right, you’ve seen this as “Plinko”.\n1 And, notably, a leading eugenicist, which is unfortunately a recurring theme with leading early statisticians…)\n\n\n\n\n\n\nFigure 1: Galton Board simulation. The top shows a schematic of how the Galton board works and the bottom shows a histogram of the landing positions after 200 simulations.\n\n\n\n\nIf a ball is dropped into the Galton board, it falls either to the right or the left when it bounces off the top pin. The ball then falls all the way to the bottom of the board, moving slightly to the right or left as it passes through each row of pins. Bins at the bottom of the board capture the ball and record its final position. If this experiment is repeated with many balls, the number of balls in each bin resembles a normal distribution, which is expected due to the Central Limit Theorem.\nYour goal in this exercise is to explore how well a normal distribution fits the outcomes of repeated Galton Board trials as the number increases using quantile-quantile plots. Assessing the appropriateness of a probability model for a data set is a key part of exploratory analysis; we will return to this theme repeatedly. Or, to put it another way, it’s time for you to play Plinko!\nIn this problem:\n\nWrite a function galton_sim which simulates n Galton board trials (assume the board has 8 board rows, as in the image above) and returns a vector with the number of balls which fall into each bin. You can assume (for now) that the board is fair, e.g. that the probability of a left or right bounce is 0.5; you may want to make this probability a function parameter so you can change it later.\nRun your simulation for a sample of 50 balls. Create a histogram of the results, with each bar corresponding to one bin. Make sure you use a random seed for reproducibility, and label your axes!\nEach Galton board trial can be represented as a realization from a binomial distribution. But as we noted above, by the Central Limit Theorem, the distribution of a large enough number of trials should be approximately normal. Use a quantile-quantile (Q-Q) plot to compare a fitted normal distribution with your simulation results. How well does a normal distribution fit the data?\nRepeat your simulation experiment with 250 trials and compare to a normal distribution. Does it describe the empirical distribution better?\nIf the probability of a left bounce is 70%, what does this do to the fit of a normal distribution? What other distribution might you use if not a normal and why?\n\n\n\nProblem 4 (10 points)\nGRADED FOR 5850 STUDENTS ONLY\nYour mastery of the Central Limit Theorem has led you to win your game of Plinko, and it’s time for the Showcases. This is the final round of an episode of The Price is Right, matching the two big winners from the episode. Each contestant is shown a “showcase” of prizes, which are usually some combination of a trip, a motor vehicle, some furniture, and maybe some other stuff. They then each have to make a bid on the retail price of the showcase. The rules are:\n\nan overbid is an automatic loss;\nthe contest who gets closest to the retail price wins their showcase;\nif a contestant gets within \\(\\$250\\) of the retail price and is closer than their opponent, they win both showcases.\n\nThanks to exhaustive statistics kept by game show fans, in Season 51 of The Price is Right showcase values had the following properties:\n\nmedian: $33,0481;\nlowest-value: $20,432\nhighest-value: $72,409\n\nIn this problem:\n\nWrite down a model which encodes the Showcase rules as a function of the showcase value and your bid. You can assume that your wagering is independent of your opponent.\nSelect and fit a distribution to the above statistics (you have some freedom to pick a distribution, but make sure you justify it).\nUsing 1,000 samples from your price distribution in your model, plot the expected winnings for bids from $20,000 through $72,000.\nFind the bid which maximizes your expected winnings. If you were playing The Price Is Right, is this the strategy you would adopt, or are there other considerations you would take into account which were not included in this model?",
-    "crumbs": [
-      "Homework",
-      "Homework 1"
-    ]
-  },
-  {
-    "objectID": "assignments/hw02/hw02.html",
-    "href": "assignments/hw02/hw02.html",
-    "title": "Homework 2: Probability Models",
-    "section": "",
-    "text": "Due Date\n\n\n\nFriday, 2/23/24, 9:00pm",
-    "crumbs": [
-      "Homework",
-      "Homework 2"
-    ]
-  },
-  {
-    "objectID": "assignments/hw02/hw02.html#overview",
-    "href": "assignments/hw02/hw02.html#overview",
-    "title": "Homework 2: Probability Models",
-    "section": "Overview",
-    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to practice developing and working with probability models for data.\n\nProblem 1 asks you to fit a sea-level rise model using normal residuals and to assess the validity of that assumption.\nProblem 2 asks you to model the time series of hourly weather-related variability at a tide gauge.\nProblem 3 asks you to model the occurrences of Cayuga Lake freezing, and is only slightly adapted from Example 4.1 in Statistical Methods in the Atmospheric Sciences by Daniel Wilks.\nProblem 4 (graded only for graduate students) asks you to revisit the sea-level model in Problem 1 by including a model-data discrepancy term in the model calibration.\n\n\n\nLearning Outcomes\nAfter completing this assignments, students will be able to:\n\ndevelop probability models for data and model residuals under a variety of statistical assumptions;\nevaluate the appropriateness of those assumptions through the use of qualitative and quantitative evaluations of goodness-of-fit;\nfit a basic Bayesian model to data.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools\nusing Optim # optimization tools",
-    "crumbs": [
-      "Homework",
-      "Homework 2"
-    ]
-  },
-  {
-    "objectID": "assignments/hw02/hw02.html#problems-total-30-points-for-4850-40-for-5850",
-    "href": "assignments/hw02/hw02.html#problems-total-30-points-for-4850-40-for-5850",
-    "title": "Homework 2: Probability Models",
-    "section": "Problems (Total: 30 Points for 4850; 40 for 5850)",
-    "text": "Problems (Total: 30 Points for 4850; 40 for 5850)\n\nProblem 1\n\nConsider the following sea-level rise model from Rahmstorf (2007):\n\\[\\frac{dH(t)}{dt} = \\alpha (T(t) - T_0),\\] where \\(T_0\\) is the temperature (in \\(^\\circ C\\)) where sea-level is in equilibrium (\\(dH/dt = 0\\)), and \\(\\alpha\\) is the sea-level rise sensitivity to temperature. Discretizing this equation using the Euler method and using an annual timestep (\\(\\delta t = 1\\)), we get \\[H(t+1) = H(t) + \\alpha (T(t) - T_0).\\]\nIn this problem:\n\nLoad the data from the data/ folder\n\nGlobal mean temperature data from the HadCRUT 5.0.2.0 dataset (https://hadobs.metoffice.gov.uk/hadcrut5/data/HadCRUT.5.0.2.0/download.html) can be found in data/HadCRUT.5.0.2.0.analysis.summary_series.global.annual.csv. This data is averaged over the Northern and Southern Hemispheres and over the whole year.\nGlobal mean sea level anomalies (relative to the 1990 mean global sea level) are in data/CSIRO_Recons_gmsl_yr_2015.csv, courtesy of CSIRO (https://www.cmar.csiro.au/sealevel/sl_data_cmar.html).\n\nFit the model under the assumption of normal i.i.d. residuals by maximizing the likelihood and report the parameter estimates. Note that you will need another parameter \\(H_0\\) for the initial sea level. What can you conclude about the relationship between global mean temperature increases and global mean sea level rise?\nHow appropriate was the normal i.i.d. probability model for the residuals? Use any needed quantitative or qualitative assessments of goodness of fit to justify your answer. If this was not an appropriate probability model, what would you change?\n\n\n\n\nProblem 2\n\nTide gauge data is complicated to analyze because it is influenced by different harmonic processes (such as the linear cycle). In this problem, we will develop a model for this data using NOAA data from the Sewell’s Point tide gauge outside of Norfolk, VA from data/norfolk-hourly-surge-2015.csv. This is hourly data (in m) from 2015 and includes both the observed data (Verified (m)) and the tide level predicted by NOAA’s sinusoidal model for periodic variability, such as tides and other seasonal cycles (Predicted (m)).\nIn this problem: * Load the data file. Take the difference between the observations and the sinusoidal predictions to obtain the tide level which could be attributed to weather-related variability (since for one year sea-level rise and other factors are unlikely to matter). Plot this data. * Develop an autoregressive model for the weather-related variability in the Norfolk tide gauge. Make sure to include your logic or exploratory analysis used in determining the model specification. * Use your model to simulate 1,000 realizations of hourly tide gauge observations. What is the distribution of the maximum tide level? How does this compare to the observed value?",
-    "crumbs": [
-      "Homework",
-      "Homework 2"
-    ]
-  },
-  {
-    "objectID": "assignments/hw02/hw02.html#problem-3",
-    "href": "assignments/hw02/hw02.html#problem-3",
-    "title": "Homework 2: Probability Models",
+    "objectID": "solutions/hw01/hw01.html#problem-3",
+    "href": "solutions/hw01/hw01.html#problem-3",
+    "title": "Homework 1 Solutions",
     "section": "Problem 3",
-    "text": "Problem 3\n\nAs of 2010, Cayuga Lake has frozen in the following years: 1796, 1816, 1856, 1875, 1884, 1904, 1912, 1934, 1961, and 1979. Based on this data, we would like to project whether Cayuga Lake is likely to freeze again in the next 25 years.\nIn this problem:\n\nAssuming that observations began in 1780, write down a Bayesian model for whether Cayuga Lake will freeze in a given year, using a Bernoulli distribution. How did you select what prior to use?\nFind the maximum a posteriori estimate using your model.\nGenerate 1,000 realizations of Cayuga Lake freezing occurrences from 1780 to 2010 and check the simulations against the occurrance data.\nUsing your model, calculate the probability of Cayuga Lake freezing at least once in the next 10 years.\nWhat do you think about the validity of your model, both in terms of its ability to reproduce historical data and its use to make future projections? Why might you believe or discount it? What changes might you make (include thoughts about the prior)?\n\n\n\nProblem 4\nGRADED FOR 5850 STUDENTS ONLY\nFor the sea-level model in Problem 1, model the model-data discrepancy using an AR(1) process, with observation error modeled as normally distributed with standard deviation given by the uncertainty column in the data file.\nIn this problem:\n\nFind the maximum likelihood estimate of the parameters with this discrepancy structure. How does the parameter inference change from the normal i.i.d. estimate in Problem 1?\nGenerate 1,000 traces, plot a comparison of the hindcasts to those from Problem 1, and compare the surprise indices.\nDetermine whether you have accounted for autocorrelation in the residuals appropriately (hint: generate realizations of just the discrepancy series, compute the resulting residuals from the model fit + discrepancy, and look at the distribution of autocorrelation values).\nWhich model specification would you prefer and why?\n\n:::",
+    "text": "Problem 3\nIn this problem:\n\nWrite a function galton_sim which simulates n Galton board trials (assume the board has 8 board rows, as in the image above) and returns a vector with the number of balls which fall into each bin. You can assume (for now) that the board is fair, e.g. that the probability of a left or right bounce is 0.5; you may want to make this probability a function parameter so you can change it later.\nRun your simulation for a sample of 50 balls. Create a histogram of the results, with each bar corresponding to one bin. Make sure you use a random seed for reproducibility, and label your axes!\nEach Galton board trial can be represented as a realization from a binomial distribution. But as we noted above, by the Central Limit Theorem, the distribution of a large enough number of trials should be approximately normal. Use a quantile-quantile (Q-Q) plot to compare a fitted normal distribution with your simulation results. How well does a normal distribution fit the data?\nRepeat your simulation experiment with 250 trials and compare to a normal distribution. Does it describe the empirical distribution better?\nIf the probability of a left bounce is 70%, what does this do to the fit of a normal distribution? What other distribution might you use if not a normal and why?\n\nSolution:\nFirst, we write the galton_sim function.\n\n# p is the probability of a left bounce\nfunction galton_sim(n_balls, n_rows; p=0.5)\n    n_bins = n_rows + 1 # number of bins balls can fall into\n    # this subfunction simulates the trajectory of a single ball; this is not entirely necessary but cleans things up a bit\n    function simulate_ball(n_rows, p)\n        bin = 0 # start in the center\n        # for every row, see if the ball bounces to the left (0) or to the right (+1)\n        # the accounting here is a little different than might be intuitive: it's easier to calculate the bin if we start from 0 (all left bounces) and just count the number of right increments. We could also have set this up to start in the middle and bounce to the left/right with -/+ 1.\n        for row in 1:n_rows\n            bin = bin + sample([0, 1], ProbabilityWeights([p, 1-p]))  # prob\n        end\n        return bin\n    end\n    # simulate outcome for every ball\n    # the use of a comprehension lets us avoid pre-allocation and looping\n    bins = [simulate_ball(n_rows, p) for _ in 1:n_balls] # the _ just avoids introducing a new counter variable we don't use\n\n    return bins # return simulated outcomes\nend\n\nNext, we run our simulation for 50 balls and create a histogram.\n\nRandom.seed!(1)\n\ngalton_simulation = galton_sim(50, 8)\nhistogram(galton_simulation, legend=:false) # plot histogram\nxlabel!(\"Galton Board Bin\")\nylabel!(\"Ball Count\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n50 Ball Galton Board Histogram\n\n\nHow well does a normal distribution fit this data? We use StatsPlots.qqplot() to check.\n\nqqplot(Normal, galton_simulation)\nxlabel!(\"Theoretical Normal Quantiles\")\nylabel!(\"Empirical Quantiles\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: 50 Ball Galton Board QQ Plot\n\n\n\n\nFigure 3 might be slightly tricky to interpret as the data is not continuous. We can see how the repeated samples form horizontal lines across the 1-1 line. But in general, the fit is pretty good; the values seem to follow those predicted by a normal once you account for the discretization.\nLet’s repeat this with 250 samples:\n\ngalton_simulation = galton_sim(250, 8)\nhistogram(galton_simulation, legend=:false) # plot histogram\nxlabel!(\"Galton Board Bin\")\nylabel!(\"Ball Count\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n250 Ball Galton Board Histogram\n\n\n\nqqplot(Normal, galton_simulation)\nxlabel!(\"Theoretical Normal Quantiles\")\nylabel!(\"Empirical Quantiles\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: 250 Ball Galton Board QQ Plot\n\n\n\n\nFigure 4 is similar to the last 50-ball simulation, which is not entirely surprising given that the Central Limit Theorem should only work better with larger samples.\nFinally, let’s test with a 70% probability of a left bounce.\n\ngalton_simulation = galton_sim(250, 8, p=0.7)\nhistogram(galton_simulation, legend=:false) # plot histogram\nxlabel!(\"Galton Board Bin\")\nylabel!(\"Ball Count\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Histogram for Galton Board with 70% left bounce.\n\n\n\n\n\nqqplot(Normal, galton_simulation)\nxlabel!(\"Theoretical Normal Quantiles\")\nylabel!(\"Empirical Quantiles\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: QQ plot for Galton Board with 70% left bounce.\n\n\n\n\nWe can see a bit more of a skew in Figure 5, though Figure 6 still looks reasonable. We could think about using a SkewNormal distribution to capture that skew."
+  },
+  {
+    "objectID": "solutions/hw01/hw01.html#problem-4",
+    "href": "solutions/hw01/hw01.html#problem-4",
+    "title": "Homework 1 Solutions",
+    "section": "Problem 4",
+    "text": "Problem 4\nIn this problem:\n\nWrite down a model which encodes the Showcase rules as a function of the showcase value and your bid. You can assume that your wagering is independent of your opponent.\nSelect and fit a distribution to the above statistics (you have some freedom to pick a distribution, but make sure you justify it).\nUsing 1,000 samples from your price distribution in your model, plot the expected winnings for bids from $20,000 through $72,000.\nFind the bid which maximizes your expected winnings. If you were playing The Price Is Right, is this the strategy you would adopt, or are there other considerations you would take into account which were not included in this model?\n\nSolution:\nHere’s a function for the outcome of a bid:\n\nfunction showcase_model(value, bid)\n    if bid &gt; value\n        winnings = 0\n    elseif value - bid &lt; 250\n        winnings = 2 * value\n    else\n        winnings = value\n    end\n    return winnings\nend\n\nshowcase_model (generic function with 1 method)\n\n\nWe’ll use a truncated normal distribution to reflect an assumption that moderate showcase values (near the median) are more typical than the extremes (this is an assumption, not part of the problem; other choices are fine!).\n\nshowcase_dist = truncated(Normal(33_048, 5_000); lower=20_432, upper=72_409)\nhistogram(rand(showcase_dist, 100_000))\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow let’s write a function to calculate the expected winnings for a given bid, which we will then evaluate through the bidding range.\n\nfunction showcase_winnings(bid, value_dist)\n    # sample 100,000 values of showcases\n    showcase_values = rand(value_dist, 100_000)\n    winnings = [showcase_model(val, bid) for val in showcase_values]\n    return mean(winnings)\nend\n\nbids = 20_000:1_000:72_000\nexp_winnings = [showcase_winnings(bid, showcase_dist) for bid in bids]\nplot(bids, exp_winnings)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7\n\n\n\n\n\nbids[argmax(exp_winnings)]\n\n20000\n\n\nSo with this assumed distribution, the lowest bid maximizes the expected winnings because there is a large skew to the showcase values, meaning that higher bids pose a correspondingly higher probability of overbidding. This would likely not translate well to the actual show given that the lowest bid also increases the probability of being outbid by the opponent. We also might have actual clues from the showcase itself about the relative value within the distribution, rather than assuming that it’s random."
+  },
+  {
+    "objectID": "weeks/week03.html",
+    "href": "weeks/week03.html",
+    "title": "Week 3",
+    "section": "",
+    "text": "Exercise 3 due 2/9/24.",
     "crumbs": [
-      "Homework",
-      "Homework 2"
+      "Weeks",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week03.html#announcements",
+    "href": "weeks/week03.html#announcements",
+    "title": "Week 3",
+    "section": "",
+    "text": "Exercise 3 due 2/9/24.",
+    "crumbs": [
+      "Weeks",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week03.html#exercises",
+    "href": "weeks/week03.html#exercises",
+    "title": "Week 3",
+    "section": "Exercises",
+    "text": "Exercises\n\nSpurious Correlations",
+    "crumbs": [
+      "Weeks",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week03.html#homework",
+    "href": "weeks/week03.html#homework",
+    "title": "Week 3",
+    "section": "Homework",
+    "text": "Homework\n\nHomework 2: Probability Models",
+    "crumbs": [
+      "Weeks",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week03.html#lectures",
+    "href": "weeks/week03.html#lectures",
+    "title": "Week 3",
+    "section": "Lectures",
+    "text": "Lectures\n\nLecture 03-1: Exploratory Data Analysis\nLecture 03-2: Discrepancy and Bayesian Statistics",
+    "crumbs": [
+      "Weeks",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week04.html",
+    "href": "weeks/week04.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "Exercise 4 due 2/16/24.\nNo class Wednesday, 2/14!",
+    "crumbs": [
+      "Weeks",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week04.html#announcements",
+    "href": "weeks/week04.html#announcements",
+    "title": "Week 4",
+    "section": "",
+    "text": "Exercise 4 due 2/16/24.\nNo class Wednesday, 2/14!",
+    "crumbs": [
+      "Weeks",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week04.html#exercises",
+    "href": "weeks/week04.html#exercises",
+    "title": "Week 4",
+    "section": "Exercises",
+    "text": "Exercises\n\nDistributions and Extreme Values",
+    "crumbs": [
+      "Weeks",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week04.html#lectures",
+    "href": "weeks/week04.html#lectures",
+    "title": "Week 4",
+    "section": "Lectures",
+    "text": "Lectures\n\nLecture 04-1: More Bayes and Extreme Values",
+    "crumbs": [
+      "Weeks",
+      "Week 4"
     ]
   },
   {
@@ -1962,138 +1766,362 @@
     ]
   },
   {
-    "objectID": "weeks/week04.html",
-    "href": "weeks/week04.html",
-    "title": "Week 4",
+    "objectID": "assignments/hw02/hw02.html",
+    "href": "assignments/hw02/hw02.html",
+    "title": "Homework 2: Probability Models",
     "section": "",
-    "text": "Exercise 4 due 2/16/24.\nNo class Wednesday, 2/14!",
+    "text": "Due Date\n\n\n\nFriday, 2/23/24, 9:00pm",
     "crumbs": [
-      "Weeks",
-      "Week 4"
+      "Homework",
+      "Homework 2"
     ]
   },
   {
-    "objectID": "weeks/week04.html#announcements",
-    "href": "weeks/week04.html#announcements",
-    "title": "Week 4",
-    "section": "",
-    "text": "Exercise 4 due 2/16/24.\nNo class Wednesday, 2/14!",
+    "objectID": "assignments/hw02/hw02.html#overview",
+    "href": "assignments/hw02/hw02.html#overview",
+    "title": "Homework 2: Probability Models",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to practice developing and working with probability models for data.\n\nProblem 1 asks you to fit a sea-level rise model using normal residuals and to assess the validity of that assumption.\nProblem 2 asks you to model the time series of hourly weather-related variability at a tide gauge.\nProblem 3 asks you to model the occurrences of Cayuga Lake freezing, and is only slightly adapted from Example 4.1 in Statistical Methods in the Atmospheric Sciences by Daniel Wilks.\nProblem 4 (graded only for graduate students) asks you to revisit the sea-level model in Problem 1 by including a model-data discrepancy term in the model calibration.\n\n\n\nLearning Outcomes\nAfter completing this assignments, students will be able to:\n\ndevelop probability models for data and model residuals under a variety of statistical assumptions;\nevaluate the appropriateness of those assumptions through the use of qualitative and quantitative evaluations of goodness-of-fit;\nfit a basic Bayesian model to data.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools\nusing Optim # optimization tools",
     "crumbs": [
-      "Weeks",
-      "Week 4"
+      "Homework",
+      "Homework 2"
     ]
   },
   {
-    "objectID": "weeks/week04.html#exercises",
-    "href": "weeks/week04.html#exercises",
-    "title": "Week 4",
-    "section": "Exercises",
-    "text": "Exercises\n\nDistributions and Extreme Values",
+    "objectID": "assignments/hw02/hw02.html#problems-total-30-points-for-4850-40-for-5850",
+    "href": "assignments/hw02/hw02.html#problems-total-30-points-for-4850-40-for-5850",
+    "title": "Homework 2: Probability Models",
+    "section": "Problems (Total: 30 Points for 4850; 40 for 5850)",
+    "text": "Problems (Total: 30 Points for 4850; 40 for 5850)\n\nProblem 1\n\nConsider the following sea-level rise model from Rahmstorf (2007):\n\\[\\frac{dH(t)}{dt} = \\alpha (T(t) - T_0),\\] where \\(T_0\\) is the temperature (in \\(^\\circ C\\)) where sea-level is in equilibrium (\\(dH/dt = 0\\)), and \\(\\alpha\\) is the sea-level rise sensitivity to temperature. Discretizing this equation using the Euler method and using an annual timestep (\\(\\delta t = 1\\)), we get \\[H(t+1) = H(t) + \\alpha (T(t) - T_0).\\]\nIn this problem:\n\nLoad the data from the data/ folder\n\nGlobal mean temperature data from the HadCRUT 5.0.2.0 dataset (https://hadobs.metoffice.gov.uk/hadcrut5/data/HadCRUT.5.0.2.0/download.html) can be found in data/HadCRUT.5.0.2.0.analysis.summary_series.global.annual.csv. This data is averaged over the Northern and Southern Hemispheres and over the whole year.\nGlobal mean sea level anomalies (relative to the 1990 mean global sea level) are in data/CSIRO_Recons_gmsl_yr_2015.csv, courtesy of CSIRO (https://www.cmar.csiro.au/sealevel/sl_data_cmar.html).\n\nFit the model under the assumption of normal i.i.d. residuals by maximizing the likelihood and report the parameter estimates. Note that you will need another parameter \\(H_0\\) for the initial sea level. What can you conclude about the relationship between global mean temperature increases and global mean sea level rise?\nHow appropriate was the normal i.i.d. probability model for the residuals? Use any needed quantitative or qualitative assessments of goodness of fit to justify your answer. If this was not an appropriate probability model, what would you change?\n\n\n\n\nProblem 2\n\nTide gauge data is complicated to analyze because it is influenced by different harmonic processes (such as the linear cycle). In this problem, we will develop a model for this data using NOAA data from the Sewell’s Point tide gauge outside of Norfolk, VA from data/norfolk-hourly-surge-2015.csv. This is hourly data (in m) from 2015 and includes both the observed data (Verified (m)) and the tide level predicted by NOAA’s sinusoidal model for periodic variability, such as tides and other seasonal cycles (Predicted (m)).\nIn this problem: * Load the data file. Take the difference between the observations and the sinusoidal predictions to obtain the tide level which could be attributed to weather-related variability (since for one year sea-level rise and other factors are unlikely to matter). Plot this data. * Develop an autoregressive model for the weather-related variability in the Norfolk tide gauge. Make sure to include your logic or exploratory analysis used in determining the model specification. * Use your model to simulate 1,000 realizations of hourly tide gauge observations. What is the distribution of the maximum tide level? How does this compare to the observed value?",
     "crumbs": [
-      "Weeks",
-      "Week 4"
+      "Homework",
+      "Homework 2"
     ]
   },
   {
-    "objectID": "weeks/week04.html#lectures",
-    "href": "weeks/week04.html#lectures",
-    "title": "Week 4",
-    "section": "Lectures",
-    "text": "Lectures\n\nLecture 04-1: More Bayes and Extreme Values",
-    "crumbs": [
-      "Weeks",
-      "Week 4"
-    ]
-  },
-  {
-    "objectID": "weeks/week03.html",
-    "href": "weeks/week03.html",
-    "title": "Week 3",
-    "section": "",
-    "text": "Exercise 3 due 2/9/24.",
-    "crumbs": [
-      "Weeks",
-      "Week 3"
-    ]
-  },
-  {
-    "objectID": "weeks/week03.html#announcements",
-    "href": "weeks/week03.html#announcements",
-    "title": "Week 3",
-    "section": "",
-    "text": "Exercise 3 due 2/9/24.",
-    "crumbs": [
-      "Weeks",
-      "Week 3"
-    ]
-  },
-  {
-    "objectID": "weeks/week03.html#exercises",
-    "href": "weeks/week03.html#exercises",
-    "title": "Week 3",
-    "section": "Exercises",
-    "text": "Exercises\n\nSpurious Correlations",
-    "crumbs": [
-      "Weeks",
-      "Week 3"
-    ]
-  },
-  {
-    "objectID": "weeks/week03.html#homework",
-    "href": "weeks/week03.html#homework",
-    "title": "Week 3",
-    "section": "Homework",
-    "text": "Homework\n\nHomework 2: Probability Models",
-    "crumbs": [
-      "Weeks",
-      "Week 3"
-    ]
-  },
-  {
-    "objectID": "weeks/week03.html#lectures",
-    "href": "weeks/week03.html#lectures",
-    "title": "Week 3",
-    "section": "Lectures",
-    "text": "Lectures\n\nLecture 03-1: Exploratory Data Analysis\nLecture 03-2: Discrepancy and Bayesian Statistics",
-    "crumbs": [
-      "Weeks",
-      "Week 3"
-    ]
-  },
-  {
-    "objectID": "solutions/hw01/hw01.html",
-    "href": "solutions/hw01/hw01.html",
-    "title": "Homework 1 Solutions",
-    "section": "",
-    "text": "The goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\n\n\n\n\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # adds some basic statistical functionality (means, medians, empirical cumulative densities, etc)\nusing StatsPlots # for qqplots"
-  },
-  {
-    "objectID": "solutions/hw01/hw01.html#overview",
-    "href": "solutions/hw01/hw01.html#overview",
-    "title": "Homework 1 Solutions",
-    "section": "",
-    "text": "The goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\n\n\n\n\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # adds some basic statistical functionality (means, medians, empirical cumulative densities, etc)\nusing StatsPlots # for qqplots"
-  },
-  {
-    "objectID": "solutions/hw01/hw01.html#problems",
-    "href": "solutions/hw01/hw01.html#problems",
-    "title": "Homework 1 Solutions",
-    "section": "Problems",
-    "text": "Problems\n\nProblem 1\n\ndata = DataFrame(load(\"data/bites.csv\")) # load data into DataFrame\n\n# print data variable (semi-colon suppresses echoed output in Julia, which in this case would duplicate the output)\n@show data; \n\ndata = 43×2 DataFrame\n Row │ group   bites\n     │ String  Int64\n─────┼───────────────\n   1 │ beer       27\n   2 │ beer       20\n   3 │ beer       21\n   4 │ beer       26\n   5 │ beer       27\n   6 │ beer       31\n   7 │ beer       24\n   8 │ beer       21\n   9 │ beer       20\n  10 │ beer       19\n  11 │ beer       23\n  12 │ beer       24\n  13 │ beer       28\n  14 │ beer       19\n  15 │ beer       24\n  16 │ beer       29\n  17 │ beer       18\n  18 │ beer       20\n  19 │ beer       17\n  20 │ beer       31\n  21 │ beer       20\n  22 │ beer       25\n  23 │ beer       28\n  24 │ beer       21\n  25 │ beer       27\n  26 │ water      21\n  27 │ water      22\n  28 │ water      15\n  29 │ water      12\n  30 │ water      21\n  31 │ water      16\n  32 │ water      19\n  33 │ water      15\n  34 │ water      22\n  35 │ water      24\n  36 │ water      19\n  37 │ water      23\n  38 │ water      13\n  39 │ water      22\n  40 │ water      20\n  41 │ water      24\n  42 │ water      18\n  43 │ water      20\n\n\n\n# split data into vectors of bites for each group\nbeer = data[data.group .== \"beer\", :bites]\nwater = data[data.group .== \"water\", :bites]\n\nobserved_difference = mean(beer) - mean(water)\n@show observed_difference;\n\nobserved_difference = 4.37777777777778\n\n\nIn this problem:\n\nConduct the above procedure to generate 50,000 simulated datasets under the skeptic’s hypothesis.\nPlot a histogram of the results and add a dashed vertical line to show the experimental difference (if you are using Julia, feel free to look at the Making Plots with Julia tutorial on the class website).\nDraw conclusions about the plausibility of the skeptic’s hypothesis that there is no difference? Feel free to use any quantitative or qualitative assessments of your simulations and the observed difference.\n\nSolution:\nFirst, we write a function (simulate_differences()) to generate a new data set and compute the group differences under the skeptic’s hypothesis by shuffling the data across the two groups (this is called the non-parametric bootstrap, which we will talk about more later):\n\n# simulate_differences: function which simulates a new group difference based on the skeptic's hypothesis of no \"real\" difference between groups by shuffling the input data across groups\n# inputs:\n#   y₁: vector of bite counts for the beer-drinking group\n#   y₂: vector of bite counts for the water-drinking group\n# output:\n#   a simulated difference between shuffled group averages\nfunction simulate_differences(y₁, y₂)\n    # concatenate both vectors into a single vector\n    y = vcat(y₁, y₂)\n\n    # create new experimental groups consistent with skeptic's hypothesis\n    y_shuffle = shuffle(y)   # shuffle the combined data\n    n₁ = length(y₁)\n    x₁ = y_shuffle[1:n₁]\n    x₂ = y_shuffle[(n₁+1):end]\n\n    # compute difference between new group means\n    diff = mean(x₁) - mean(x₂)\n    return diff\nend\n\nsimulate_differences (generic function with 1 method)\n\n\nNext, we evaluate this function 10,000 times and plot the resulting histogram of differences.\nIn Julia (and in Python), it is convenient to use a comprehension to automatically allocate the output of the for loop to a vector. The syntax for a comprehension is [some_function(input) for input in some_range]. In this case, the index input doesn’t appear in the comprehension as we’re just repeating the exact same calculation every time:\n\nshuffled_differences = [simulate_differences(beer, water) for i in 1:50_000]\n\n50000-element Vector{Float64}:\n -1.5466666666666669\n -0.4955555555555584\n -0.20888888888888957\n  0.5555555555555571\n  2.6577777777777776\n  2.4666666666666686\n -0.11333333333333329\n  1.4155555555555566\n -0.017777777777777004\n -1.3555555555555578\n  1.0333333333333314\n  0.46000000000000085\n -0.4955555555555584\n  ⋮\n -0.11333333333333329\n -0.017777777777777004\n -1.4511111111111106\n -1.1644444444444417\n  0.6511111111111099\n  0.173333333333332\n -1.3555555555555578\n -1.1644444444444417\n -1.1644444444444417\n -0.87777777777778\n  2.275555555555556\n  0.173333333333332\n\n\nWithout a comprehension, this loop would look something like:\nshuffled_diffs = zeros(10_000)\nfor i in 1:length(shuffled_diffs)\n    shuffled_differences[i] = simulate_differences(beer, water)\nend\nBack to the problem. Now let’s plot the histogram. When you see a ! after a function name in Julia, it means that this is a mutating function, which changes the object that it acts on, rather than returning a new object and preserving the old one. In this case, the plot object is changed to add new elements to the original histogram.\n\nhist = histogram(shuffled_differences, label=\"Simulated Differences\") # plot the basic histogram\n# MAKE SURE TO ADD AXIS LABELS!\nxlabel!(hist, \"Increased Number of Average Bites for Beer Group\")\nylabel!(hist, \"Count\")\n\n# now add a vertical line for the experimentally-observed difference\nvline!(hist, [observed_difference], color=:red, linestyle=:dash, label=\"Observed Difference\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Histogram of simulated differences between the average bites for the beer group and the average bites for the water group under the assumption that differences are due only to random chance. A positive value indicates that the beer group is bitten more often. The red line is the group difference from the experimental data.\n\n\n\n\nWhat do we see from Figure 1?\n\nThe simulated differences follow roughly a normal distribution centered at a value of zero. This is not surprising given the hypothesis that there is no “true” difference in bite frequency between the two groups.\nThe observed data are extremely unlikely if the skeptic’s hypothesis is true. We can calculate the probability of seeing data that extreme given this hypothesis (also called the p-value) by finding the empirical cumulative density function of the simulated data vector:\n\nempirical_cdf = ecdf(shuffled_differences)\n1 - empirical_cdf(observed_difference)\n\n0.00046000000000001595\n\n\nThis shows that we would only expect, given the skeptic’s hypothesis, to see data at least this extreme by chance in 0.04% of experiments. If we don’t think that our experiment is likely to be an outlier, this suggests that the skeptic’s hypothesis is quite unlikely. However, this does not mean our mechanistic theory for the group difference is correct: this would require more work and maybe a more targeted experiment!\n\n\n\nProblem 2\nIn this problem:\n\nDerive and code a simulation model for the above interview procedure given the “true” probability of cheating \\(p\\).\nSimulate your model (for a class of 100 students) 50,000 times under the your hypothesis and the TA’s hypothesis, and plot the two resulting datasets.\nIf you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude? Feel free to use any qualitative or quantiative assessments to justify your conclusions.\nHow useful do you think the interview procedure is to identify systemic teaching? What changes to the design might you make?\n\nSolution:\nLet’s start by sketching out the simulation model. For every student, we first need to simulate the outcome of the first coin flip, which has a 50% probability of heads. If this coin flip comes up as heads, then the student answers honestly, and admits to cheating with probability \\(p\\). If the coin flip comes up tails, the student flips another coin and answers that they cheated with probability 50%. After looping over this procedure for each student in the class, we add up the “true” values.\nWe might code this model as follows.\n\n# cheating_model: function which simulates the outcome of the interview procedure described in this problem and returns the number of confessions obtained.\n# inputs:\n#   p: base probability of cheating under a given hypothesis\n#   n: vector of bite counts for the water-drinking group\n# output:\n#   a simulated number of confessions for one realization of the process.\nfunction cheating_model(p, n)\n    # initialize the storage vector for whether students admit to cheating\n    # we do this with a boolean vector, which is a little faster, but storing integers is basically the same thing\n    cheat = zeros(Bool, n)\n    # loop over every student to simulate the interview process\n    for i in 1:n\n        # initial coin flip\n        # rand() simulates a uniform random number between 0 and 1\n        if rand() &gt;= 0.5\n            # if this came up heads, simulate whether the student cheated based on the cheating probability\n            if rand() &lt; p\n                cheat[i] = true\n            else\n                cheat[i] = false\n            end\n        else\n            # otherwise, simulate another coin flip\n            if rand() &gt;= 0.5\n                cheat[i] = true\n            else\n                cheat[i] = false\n            end\n        end\n    end\n    # return the total number of cheating admissions\n    return sum(cheat)\nend\n\ncheating_model (generic function with 1 method)\n\n\nNow we simulate under our assumption of low cheating and the TA’s assumption of widespread cheating and plot the results.\n\n# conduct the simulations\nlow_cheat_data = [cheating_model(0.05, 100) for i in 1:50_000]\nhigh_cheat_data = [cheating_model(0.30, 100) for i in 1:50_000]\n\n# plot the histograms with axis labels and a vertical line for the \"real\" outcome of the procedure\nhistogram(low_cheat_data, color=:blue, label=\"Cheating Rate 5%\", alpha=0.4)\nhistogram!(high_cheat_data, color=:red, label=\"Cheating Rate 30%\", alpha=0.4)\nxlabel!(\"Number of Students who Confess to Cheating\")\nylabel!(\"Count\")\nvline!([31], linestyle=:dash, color=:green, linewidth=3, label=\"Observed Outcome\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Histograms of the number of simulated confessions obtained under the hypothesis of a 5% cheating rate (blue) and a 30% cheating rate (red). The green line is the observed number of cheating confessions.\n\n\n\n\nFrom Figure 2, we can see:\n\nThe distributions look roughly normal (not surprising given the Central Limit Theorem!).\nThere is some overlap around the 25-42 confession count rate. Lower than 25 students confessing would strongly suggest that the TA is overstating the rate of cheating, while more than 40 would strongly suggest that we are underestimating the cheating rate.\nNote that neither of these is “confirmation” of either theory, but evidence about the relative proportion of cheating being more or less consistent with one of our hypotheses.\nThe outcome of 31 confessions is in the range where the evidence isn’t completely clear either way. However, it appears more likely that this outcome is explained by a lower rate of cheating than a higher rate. For example, under our hypothesis, the “high-tail” p-value of the outcome is:\n\necdf_low = ecdf(low_cheat_data)\n1 - ecdf_low(31)\n\n0.18608000000000002\n\n\nwhile under the TA’s hypothesis, the “low-tail” p-value is\n\necdf_high = ecdf(high_cheat_data)\necdf_high(31)\n\n0.03862\n\n\nSo there is a 19% probability of seeing 31 or more confessions under our assumed 5% cheating rate, while there is only a 4% probability of seeing 31 or fewer confessions under the TA’s assumed 30% cheating rate, which seems to suggest a lower rate is more likely.\nWe can’t draw any strong conclusions from this, but we will talk more later this semester about how to quantify consistency of models with data based on simulations!\nThis interview process is noisy, but appears to work to separate very large differences in cheating rates. On the other hand, it might not work so well if we cared about the difference between 5% cheating and 10% cheating rates, as the difference in the “true” confessions would be swamped by the coin flips. If we wanted to tease out those differences, we could use a weighted coin (to increase the number of “honest” confessions).\n\nLater in the semester, we will look at methods for how we might quantify what base cheating rates are consistent with a given outcome (though we won’t apply them to this example!)."
-  },
-  {
-    "objectID": "solutions/hw01/hw01.html#problem-3",
-    "href": "solutions/hw01/hw01.html#problem-3",
-    "title": "Homework 1 Solutions",
+    "objectID": "assignments/hw02/hw02.html#problem-3",
+    "href": "assignments/hw02/hw02.html#problem-3",
+    "title": "Homework 2: Probability Models",
     "section": "Problem 3",
-    "text": "Problem 3\nIn this problem:\n\nWrite a function galton_sim which simulates n Galton board trials (assume the board has 8 board rows, as in the image above) and returns a vector with the number of balls which fall into each bin. You can assume (for now) that the board is fair, e.g. that the probability of a left or right bounce is 0.5; you may want to make this probability a function parameter so you can change it later.\nRun your simulation for a sample of 50 balls. Create a histogram of the results, with each bar corresponding to one bin. Make sure you use a random seed for reproducibility, and label your axes!\nEach Galton board trial can be represented as a realization from a binomial distribution. But as we noted above, by the Central Limit Theorem, the distribution of a large enough number of trials should be approximately normal. Use a quantile-quantile (Q-Q) plot to compare a fitted normal distribution with your simulation results. How well does a normal distribution fit the data?\nRepeat your simulation experiment with 250 trials and compare to a normal distribution. Does it describe the empirical distribution better?\nIf the probability of a left bounce is 70%, what does this do to the fit of a normal distribution? What other distribution might you use if not a normal and why?\n\nSolution:\nFirst, we write the galton_sim function.\n\n# p is the probability of a left bounce\nfunction galton_sim(n_balls, n_rows; p=0.5)\n    n_bins = n_rows + 1 # number of bins balls can fall into\n    # this subfunction simulates the trajectory of a single ball; this is not entirely necessary but cleans things up a bit\n    function simulate_ball(n_rows, p)\n        bin = 0 # start in the center\n        # for every row, see if the ball bounces to the left (0) or to the right (+1)\n        # the accounting here is a little different than might be intuitive: it's easier to calculate the bin if we start from 0 (all left bounces) and just count the number of right increments. We could also have set this up to start in the middle and bounce to the left/right with -/+ 1.\n        for row in 1:n_rows\n            bin = bin + sample([0, 1], ProbabilityWeights([p, 1-p]))  # prob\n        end\n        return bin\n    end\n    # simulate outcome for every ball\n    # the use of a comprehension lets us avoid pre-allocation and looping\n    bins = [simulate_ball(n_rows, p) for _ in 1:n_balls] # the _ just avoids introducing a new counter variable we don't use\n\n    return bins # return simulated outcomes\nend\n\nNext, we run our simulation for 50 balls and create a histogram.\n\nRandom.seed!(1)\n\ngalton_simulation = galton_sim(50, 8)\nhistogram(galton_simulation, legend=:false) # plot histogram\nxlabel!(\"Galton Board Bin\")\nylabel!(\"Ball Count\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n50 Ball Galton Board Histogram\n\n\nHow well does a normal distribution fit this data? We use StatsPlots.qqplot() to check.\n\nqqplot(Normal, galton_simulation)\nxlabel!(\"Theoretical Normal Quantiles\")\nylabel!(\"Empirical Quantiles\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: 50 Ball Galton Board QQ Plot\n\n\n\n\nFigure 3 might be slightly tricky to interpret as the data is not continuous. We can see how the repeated samples form horizontal lines across the 1-1 line. But in general, the fit is pretty good; the values seem to follow those predicted by a normal once you account for the discretization.\nLet’s repeat this with 250 samples:\n\ngalton_simulation = galton_sim(250, 8)\nhistogram(galton_simulation, legend=:false) # plot histogram\nxlabel!(\"Galton Board Bin\")\nylabel!(\"Ball Count\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n250 Ball Galton Board Histogram\n\n\n\nqqplot(Normal, galton_simulation)\nxlabel!(\"Theoretical Normal Quantiles\")\nylabel!(\"Empirical Quantiles\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: 250 Ball Galton Board QQ Plot\n\n\n\n\nFigure 4 is similar to the last 50-ball simulation, which is not entirely surprising given that the Central Limit Theorem should only work better with larger samples.\nFinally, let’s test with a 70% probability of a left bounce.\n\ngalton_simulation = galton_sim(250, 8, p=0.7)\nhistogram(galton_simulation, legend=:false) # plot histogram\nxlabel!(\"Galton Board Bin\")\nylabel!(\"Ball Count\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Histogram for Galton Board with 70% left bounce.\n\n\n\n\n\nqqplot(Normal, galton_simulation)\nxlabel!(\"Theoretical Normal Quantiles\")\nylabel!(\"Empirical Quantiles\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: QQ plot for Galton Board with 70% left bounce.\n\n\n\n\nWe can see a bit more of a skew in Figure 5, though Figure 6 still looks reasonable. We could think about using a SkewNormal distribution to capture that skew."
+    "text": "Problem 3\n\nAs of 2010, Cayuga Lake has frozen in the following years: 1796, 1816, 1856, 1875, 1884, 1904, 1912, 1934, 1961, and 1979. Based on this data, we would like to project whether Cayuga Lake is likely to freeze again in the next 25 years.\nIn this problem:\n\nAssuming that observations began in 1780, write down a Bayesian model for whether Cayuga Lake will freeze in a given year, using a Bernoulli distribution. How did you select what prior to use?\nFind the maximum a posteriori estimate using your model.\nGenerate 1,000 realizations of Cayuga Lake freezing occurrences from 1780 to 2010 and check the simulations against the occurrance data.\nUsing your model, calculate the probability of Cayuga Lake freezing at least once in the next 10 years.\nWhat do you think about the validity of your model, both in terms of its ability to reproduce historical data and its use to make future projections? Why might you believe or discount it? What changes might you make (include thoughts about the prior)?\n\n\n\nProblem 4\nGRADED FOR 5850 STUDENTS ONLY\nFor the sea-level model in Problem 1, model the model-data discrepancy using an AR(1) process, with observation error modeled as normally distributed with standard deviation given by the uncertainty column in the data file.\nIn this problem:\n\nFind the maximum likelihood estimate of the parameters with this discrepancy structure. How does the parameter inference change from the normal i.i.d. estimate in Problem 1?\nGenerate 1,000 traces, plot a comparison of the hindcasts to those from Problem 1, and compare the surprise indices.\nDetermine whether you have accounted for autocorrelation in the residuals appropriately (hint: generate realizations of just the discrepancy series, compute the resulting residuals from the model fit + discrepancy, and look at the distribution of autocorrelation values).\nWhich model specification would you prefer and why?\n\n:::",
+    "crumbs": [
+      "Homework",
+      "Homework 2"
+    ]
   },
   {
-    "objectID": "solutions/hw01/hw01.html#problem-4",
-    "href": "solutions/hw01/hw01.html#problem-4",
-    "title": "Homework 1 Solutions",
-    "section": "Problem 4",
-    "text": "Problem 4\nIn this problem:\n\nWrite down a model which encodes the Showcase rules as a function of the showcase value and your bid. You can assume that your wagering is independent of your opponent.\nSelect and fit a distribution to the above statistics (you have some freedom to pick a distribution, but make sure you justify it).\nUsing 1,000 samples from your price distribution in your model, plot the expected winnings for bids from $20,000 through $72,000.\nFind the bid which maximizes your expected winnings. If you were playing The Price Is Right, is this the strategy you would adopt, or are there other considerations you would take into account which were not included in this model?\n\nSolution:\nHere’s a function for the outcome of a bid:\n\nfunction showcase_model(value, bid)\n    if bid &gt; value\n        winnings = 0\n    elseif value - bid &lt; 250\n        winnings = 2 * value\n    else\n        winnings = value\n    end\n    return winnings\nend\n\nshowcase_model (generic function with 1 method)\n\n\nWe’ll use a truncated normal distribution to reflect an assumption that moderate showcase values (near the median) are more typical than the extremes (this is an assumption, not part of the problem; other choices are fine!).\n\nshowcase_dist = truncated(Normal(33_048, 5_000); lower=20_432, upper=72_409)\nhistogram(rand(showcase_dist, 100_000))\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow let’s write a function to calculate the expected winnings for a given bid, which we will then evaluate through the bidding range.\n\nfunction showcase_winnings(bid, value_dist)\n    # sample 100,000 values of showcases\n    showcase_values = rand(value_dist, 100_000)\n    winnings = [showcase_model(val, bid) for val in showcase_values]\n    return mean(winnings)\nend\n\nbids = 20_000:1_000:72_000\nexp_winnings = [showcase_winnings(bid, showcase_dist) for bid in bids]\nplot(bids, exp_winnings)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7\n\n\n\n\n\nbids[argmax(exp_winnings)]\n\n20000\n\n\nSo with this assumed distribution, the lowest bid maximizes the expected winnings because there is a large skew to the showcase values, meaning that higher bids pose a correspondingly higher probability of overbidding. This would likely not translate well to the actual show given that the lowest bid also increases the probability of being outbid by the opponent. We also might have actual clues from the showcase itself about the relative value within the distribution, rather than assuming that it’s random."
+    "objectID": "assignments/hw01/hw01.html",
+    "href": "assignments/hw01/hw01.html",
+    "title": "Homework 1: Simulation-Based Data Analysis",
+    "section": "",
+    "text": "Due Date\n\n\n\nFriday, 2/2/24, 9:00pm",
+    "crumbs": [
+      "Homework",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "assignments/hw01/hw01.html#overview",
+    "href": "assignments/hw01/hw01.html#overview",
+    "title": "Homework 1: Simulation-Based Data Analysis",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to introduce you to simulation-based data analysis.\n\nProblem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from Statistics Without The Agonizing Pain by John Rauser (which is a neat watch!).\nProblem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from Bayesian Methods for Hackers.\nProblem 3 asks you to assess the quality of fit of a normal distribution to realizations from a Galton Board simulation.\nProblem 4 (graded only for graduate students) asks you to simulate outcomes from the Price Is Right Showcase game to identify a bidding strategy.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools",
+    "crumbs": [
+      "Homework",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "assignments/hw01/hw01.html#problems-total-20-points",
+    "href": "assignments/hw01/hw01.html#problems-total-20-points",
+    "title": "Homework 1: Simulation-Based Data Analysis",
+    "section": "Problems (Total: 20 Points)",
+    "text": "Problems (Total: 20 Points)\n\nProblem 1 (10 points)\nThe underlying question we would like to address is: what is the influence of drinking beer on the likelihood of being bitten by mosquitoes? There is a mechanistic reason why this might occur: mosquitoes are attracted by changes in body temperature and released CO2, and it might be that drinking beer induces these changes. We’ll analyze this question using (synthetic) data which separates an experimental population into two groups, one which drank beer and the other which drank only water.\nFirst, we’ll load data for the number of bites reported by the participants who drank beer. This is in a comma-delimited file, data/bites.csv (which is grossly overkill for this assignment). Each row contains two columns: the group (beer and water) the person belonged to and the number of times that person was bitten.\nIn Julia, we can do this using CSVFiles.jl, which will read in the .csv file into a DataFrame, which is a typical data structure for tabular data (and equivalent to a Pandas DataFrame in Python or a dataframe in R).\n\n\ndata = DataFrame(load(\"data/bites.csv\")) # load data into DataFrame\n\n# print data variable (semi-colon suppresses echoed output in Julia, which in this case would duplicate the output)\n@show data; \n\n\nHow can we tell if there’s a meaningful difference between the two groups? Naively, we might just look at the differences in group means.\n\n\n\n\n\n\n\nBroadcasting\n\n\n\nThe subsetting operations in the below code use .==, which “broadcasts” the element-wise comparison operator == across every element. The decimal in front of == indicates that this should be used element-wise (every pair of elements compared for equality, returning a vector of true or false values); otherwise Julia would try to just check for vector equality (returning a single true or false value).\nBroadcasting is a very specific feature of Julia, so this syntax would look different in a different programming language.\n\n\n\n# split data into vectors of bites for each group\nbeer = data[data.group .== \"beer\", :bites]\nwater = data[data.group .== \"water\", :bites]\n\nobserved_difference = mean(beer) - mean(water)\n@show observed_difference;\n\nobserved_difference = 4.37777777777778\n\n\n\nThis tells us that, on average, the participants in the experiment who drank beer were bitten approximately 4.4 more times than the participants who drank water! Does that seem like a meaningful difference, or could it be the result of random chance?\nWe will use a simulation approach to address this question, as follows.\n\nSuppose someone is skeptical of the idea that drinking beer could result in a higher attraction to mosquitoes, and therefore more bites. To this skeptic, the two datasets are really just different samples from the same underlying population of people getting bitten by mosquitoes, rather than two different populations with different propensities for being bitten. This is the skeptic’s hypothesis, versus our hypothesis that drinking beer changes body temperature and CO2 release sufficiently to attract mosquitoes.\nIf the skeptic’s hypothesis is true, then we can “shuffle” all of the measurements between the two datasets and re-compute the differences in the means. After repeating this procedure a large number of times, we would obtain a distribution of the differences in means under the assumption that the skeptic’s hypothesis is true.\nComparing our experimentally-observed difference to this distribution, we can then evaluate the consistency of the skeptic’s hypothesis with the experimental results.\n\n\n\n\n\n\n\n\nWhy Do We Call This A Simulation-Based Approach?\n\n\n\nThis is a simulation-based approach because the “shuffling” is a non-parametric way of generating new samples from the underlying distribution (more on this later in the semester).\nThe alternative to this approach is to use a statistical test, such as a t-test, which may have other assumptions which may not be appropriate for this setting, particularly given the seemingly small sample sizes.\n\n\n\nIn this problem:\n\nConduct the above procedure to generate 50,000 simulated datasets under the skeptic’s hypothesis.\nPlot a histogram of the results and add a dashed vertical line to show the experimental difference (if you are using Julia, feel free to look at the Making Plots with Julia tutorial on the class website).\nDraw conclusions about the plausibility of the skeptic’s hypothesis that there is no difference between groups. Feel free to use any quantitative or qualitative assessments of your simulations and the observed difference.\n\n\n\nProblem 2 (10 points)\nYou are trying to detect if how prevalent cheating was on an exam. You are skeptical of the efficacy of just asking the students if they cheated. You are also concerned about privacy — your goal is not to punish individual students, but to see if there are systemic problems that need to be addressed. Someone proposes the following interview procedure, which the class agrees to participate in:\n\nEach student flips a fair coin, with the results hidden from the interviewer. The student answers honestly if the coin comes up heads. Otherwise, if the coin comes up tails, the student flips the coin again, and answers “I did cheat” if heads, and “I did not cheat”, if tails.\n\nWe have a hypothesis that cheating was not prevalent, and the proportion of cheaters was no more than 5% of the class; in other words, we expect 5 “true” cheaters out of a class of 100 students. Our TA is more jaded and thinks that cheating was more rampant, and that 30% of the class cheated. The proposed interview procedure is noisy: the interviewer does not know if an admission means that the student cheated, or the result of a heads. However, it gives us a data-generating process that we can model and analyze for consistency with our hypothesis and that of the TA.\nIn this problem:\n\nDerive and code a simulation model for the above interview procedure given the “true” probability of cheating \\(p\\).\nSimulate your model (for a class of 100 students) 50,000 times under the your hypothesis and the TA’s hypothesis, and plot the two resulting datasets.\nIf you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude? Feel free to use any qualitative or quantiative assessments to justify your conclusions.\nHow useful do you think the interview procedure is to identify systemic teaching? What changes to the design might you make?\n\n\n\nProblem 3 (10 points)\nSuppose that we ask a class of students to walk individually from one end of a field to the other and count the number of steps that they take in order to cover the distance. More than likely, each student will get a somewhat different answer. After each student has paced off the field, we then make a histogram of the number of steps taken by the individual students. For a sufficiently large number of students, this histogram would resemble a normal distribution, due to the Central Limit Theorem.\nA Galton board (named after Sir Francis Galton, a pioneering statistician1, shown below, is a physical device that demonstrates the Central Limit Theorem. A Galton board has rows of pins arranged in a triangular shape, with each row of pins offset horizontally relative to the rows above and below it. As illustrated in Figure 1, the top row has one pin, the second row has two pins, and so forth. If you’ve watched The Price is Right, you’ve seen this as “Plinko”.\n1 And, notably, a leading eugenicist, which is unfortunately a recurring theme with leading early statisticians…)\n\n\n\n\n\n\nFigure 1: Galton Board simulation. The top shows a schematic of how the Galton board works and the bottom shows a histogram of the landing positions after 200 simulations.\n\n\n\n\nIf a ball is dropped into the Galton board, it falls either to the right or the left when it bounces off the top pin. The ball then falls all the way to the bottom of the board, moving slightly to the right or left as it passes through each row of pins. Bins at the bottom of the board capture the ball and record its final position. If this experiment is repeated with many balls, the number of balls in each bin resembles a normal distribution, which is expected due to the Central Limit Theorem.\nYour goal in this exercise is to explore how well a normal distribution fits the outcomes of repeated Galton Board trials as the number increases using quantile-quantile plots. Assessing the appropriateness of a probability model for a data set is a key part of exploratory analysis; we will return to this theme repeatedly. Or, to put it another way, it’s time for you to play Plinko!\nIn this problem:\n\nWrite a function galton_sim which simulates n Galton board trials (assume the board has 8 board rows, as in the image above) and returns a vector with the number of balls which fall into each bin. You can assume (for now) that the board is fair, e.g. that the probability of a left or right bounce is 0.5; you may want to make this probability a function parameter so you can change it later.\nRun your simulation for a sample of 50 balls. Create a histogram of the results, with each bar corresponding to one bin. Make sure you use a random seed for reproducibility, and label your axes!\nEach Galton board trial can be represented as a realization from a binomial distribution. But as we noted above, by the Central Limit Theorem, the distribution of a large enough number of trials should be approximately normal. Use a quantile-quantile (Q-Q) plot to compare a fitted normal distribution with your simulation results. How well does a normal distribution fit the data?\nRepeat your simulation experiment with 250 trials and compare to a normal distribution. Does it describe the empirical distribution better?\nIf the probability of a left bounce is 70%, what does this do to the fit of a normal distribution? What other distribution might you use if not a normal and why?\n\n\n\nProblem 4 (10 points)\nGRADED FOR 5850 STUDENTS ONLY\nYour mastery of the Central Limit Theorem has led you to win your game of Plinko, and it’s time for the Showcases. This is the final round of an episode of The Price is Right, matching the two big winners from the episode. Each contestant is shown a “showcase” of prizes, which are usually some combination of a trip, a motor vehicle, some furniture, and maybe some other stuff. They then each have to make a bid on the retail price of the showcase. The rules are:\n\nan overbid is an automatic loss;\nthe contest who gets closest to the retail price wins their showcase;\nif a contestant gets within \\(\\$250\\) of the retail price and is closer than their opponent, they win both showcases.\n\nThanks to exhaustive statistics kept by game show fans, in Season 51 of The Price is Right showcase values had the following properties:\n\nmedian: $33,0481;\nlowest-value: $20,432\nhighest-value: $72,409\n\nIn this problem:\n\nWrite down a model which encodes the Showcase rules as a function of the showcase value and your bid. You can assume that your wagering is independent of your opponent.\nSelect and fit a distribution to the above statistics (you have some freedom to pick a distribution, but make sure you justify it).\nUsing 1,000 samples from your price distribution in your model, plot the expected winnings for bids from $20,000 through $72,000.\nFind the bid which maximizes your expected winnings. If you were playing The Price Is Right, is this the strategy you would adopt, or are there other considerations you would take into account which were not included in this model?",
+    "crumbs": [
+      "Homework",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "assignments/hw03/hw03.html",
+    "href": "assignments/hw03/hw03.html",
+    "title": "Homework 3: Bayesian and Extreme Value Statistics",
+    "section": "",
+    "text": "Due Date\n\n\n\nFriday, 3/22/24, 9:00pm",
+    "crumbs": [
+      "Homework",
+      "Homework 3"
+    ]
+  },
+  {
+    "objectID": "assignments/hw03/hw03.html#overview",
+    "href": "assignments/hw03/hw03.html#overview",
+    "title": "Homework 3: Bayesian and Extreme Value Statistics",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to practice developing and working with probability models for data.\n\n\nLearning Outcomes\nAfter completing this assignments, students will be able to:\n\ndevelop probability models for data and model residuals under a variety of statistical assumptions;\nevaluate the appropriateness of those assumptions through the use of qualitative and quantitative evaluations of goodness-of-fit;\nfit a basic Bayesian model to data.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing DataFramesMeta # API which can simplify chains of DataFrames transformations\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools\nusing Optim # optimization tools",
+    "crumbs": [
+      "Homework",
+      "Homework 3"
+    ]
+  },
+  {
+    "objectID": "assignments/hw03/hw03.html#problems-total-30-points-for-4850-40-for-5850",
+    "href": "assignments/hw03/hw03.html#problems-total-30-points-for-4850-40-for-5850",
+    "title": "Homework 3: Bayesian and Extreme Value Statistics",
+    "section": "Problems (Total: 30 Points for 4850; 40 for 5850)",
+    "text": "Problems (Total: 30 Points for 4850; 40 for 5850)\n\nProblem 1\n\nConsider the Rahmstorf (2007) sea-level rise model from Homework 2:\n\\[\\frac{dH(t)}{dt} = \\alpha (T(t) - T_0),\\] where \\(T_0\\) is the temperature (in \\(^\\circ C\\)) where sea-level is in equilibrium (\\(dH/dt = 0\\)), and \\(\\alpha\\) is the sea-level rise sensitivity to temperature. Discretizing this equation using the Euler method and using an annual timestep (\\(\\delta t = 1\\)), we get \\[H(t+1) = H(t) + \\alpha (T(t) - T_0).\\]\nSuppose that we wanted to develop a Bayesian probability model for this problem, assuming independent normal residuals:\n\\[\\begin{gather*}\ny(t) = F(t) - \\varepsilon_t \\\\\n\\varepsilon_t \\sim \\mathcal{N}(0, \\sigma^2)\n\\end{gather*}\\]\nWe might specify the following priors (assuming independence across parameters):\n\n\\(T_0 \\sim \\mathcal{N}(-0.5, 0.1)\\);\n\\(\\alpha \\sim \\mathcal{TN}(0, 5; 0, \\infty)\\) (truncated normal between 0 and infinity);\n\\(H_0 \\sim \\mathcal{N}(-150, 25)\\).\n\nIn this problem:\n\nLoad the data from the data/ folder\n\nHistorical and RCP 8.5 global mean temperatures from NOAA can be found in data/NOAA_IPCC_RCPtempsscenarios.csv (use the fourth column for the temperature series).\nGlobal mean sea level anomalies (relative to the 1990 mean global sea level) are in data/CSIRO_Recons_gmsl_yr_2015.csv, courtesy of CSIRO (https://www.cmar.csiro.au/sealevel/sl_data_cmar.html).\n\nSimulate from the prior predictive distribution. What do you think about the priors?\nWould you propose new priors? If so, what might they be and why?\n\n\n\n\nProblem 2\nFollowing from Problem 1, compare the maximum likelihood and maximum a posteriori estimates for the model.\nIn this problem:\n\nFind the MLE and MAP parameter values using the prior distributions given in Problem 1.\nPlot the median and 95% credible intervals for the hindcasts and the projections under RCP 8.5 (using ERF_ssp585_1750-2500.csv; make sure \\(T_0\\) and \\(H_0\\) have the same meaning as in Problem 1!).\nWhat differences do you observe? What do you attribute these differences to? What conclusions can you draw about the Bayesian model?\n\n\n\nProblem 3\nLet’s look at how (modeled) daily maximum temperatures have (or have not) increased in Ithaca from 1850–2014. Model output from NOAA’s GFDL-ESM4 climate model (one of the models used in the latest Climate Model Intercomparison Project, CMIP6) is available in data/gfdl-esm4-tempmax-ithaca.csv. While this model output has not been bias-corrected, we won’t worry about that for the purposes of this assignment.\nIn this problem:\n\nLoad and plot the temperature maxima data from data/gfdl-esm4-tempmax-ithaca.csv.\nSuppose that we were interested in looking at temperature exceedances over 28°C. Decluster these occurrences and plot the number of exceedances by year. Have they increased over time?\nFit a stationary GPD model for the exceedances. What does this distribution look like?\n\n\n\nProblem 4\nGRADED FOR 5850 STUDENTS ONLY\nIn class, we modeled the annual maxima of the San Francisco tide gauge data using a stationary GEV distribution. We could also hypothesize that the tide extremes are influenced by the Pacific Decadal Oscillation (PDO), which is a climate pattern related to the sea-surface temperatures in the Pacific Ocean (similar to the El Niño-Southern Oscillation), in the following fashion (where only the GEV location is variable):\n\\[y_t \\sim \\text{GEV}(\\mu_0 + \\mu_1 p_t, \\sigma, \\xi)\\]\nIn this problem:\n\nLoad the San Francisco tide gauge data (data/h551.csv) and the PDO index dataset (data/errst.v5.pdo.dat; this file is a space-delimited file, versus the comma-delimited .csv files, which can be loaded in Julia with CSV.read(data/errst.v5.pdo.dat, DataFrame; delim=\" \", header=2, ignorerepeated=true)). The PDO data is given as monthly values; convert these to yearly indices by taking the mean. You should also drop 2023 due to the incomplete record. You can use the function at the bottom of these instructions to load the data, or adapt accordingly to a different language.\nFind the MLE of the non-stationary GEV model and for a stationary GEV (constant \\(\\mu\\); we did this in class).\nDiscuss the difference(s) between the two fitted models based on the coefficient values (you can also bring to bear the range(s) of PDO values from the data), the 100- and 500-year return periods in 2022, and plotted hindcasts.\n\n\n## load the data from the file and return a DataFrame of DateTime values and gauge measurements\n\nfunction load_pdo(fname)\n    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data\n    df = CSV.read(fname, DataFrame; delim=\" \", header=2, ignorerepeated=true)\n    # take yearly average\n    @transform!(df, :PDO = mean(AsTable(names(df)[2:13])))\n    @select!(df, $[:Year, :PDO])\n    @rsubset!(df, :Year != 2023)\n    return df\nend\n\npdo = load_pdo(\"data/ersst.v5.pdo.dat\")\n# subset for years that match the tide gauge data\nyears = dat_annmax[!, :Year]\n@rsubset!(pdo, :Year in years)\n\nLoadError: LoadError: UndefVarError: `@transform!` not defined\nin expression starting at In[4]:8",
+    "crumbs": [
+      "Homework",
+      "Homework 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week06.html",
+    "href": "weeks/week06.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "No office hours on 3/4.",
+    "crumbs": [
+      "Weeks",
+      "Week 6"
+    ]
+  },
+  {
+    "objectID": "weeks/week06.html#announcements",
+    "href": "weeks/week06.html#announcements",
+    "title": "Week 6",
+    "section": "",
+    "text": "No office hours on 3/4.",
+    "crumbs": [
+      "Weeks",
+      "Week 6"
+    ]
+  },
+  {
+    "objectID": "weeks/week06.html#lectures",
+    "href": "weeks/week06.html#lectures",
+    "title": "Week 6",
+    "section": "Lectures",
+    "text": "Lectures\n\nLecture 06-2: Figure Discussion",
+    "crumbs": [
+      "Weeks",
+      "Week 6"
+    ]
+  },
+  {
+    "objectID": "weeks/week05.html",
+    "href": "weeks/week05.html",
+    "title": "Week 5",
+    "section": "",
+    "text": "Exercise 5 due 2/23/24.",
+    "crumbs": [
+      "Weeks",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "weeks/week05.html#announcements",
+    "href": "weeks/week05.html#announcements",
+    "title": "Week 5",
+    "section": "",
+    "text": "Exercise 5 due 2/23/24.",
+    "crumbs": [
+      "Weeks",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "weeks/week05.html#exercises",
+    "href": "weeks/week05.html#exercises",
+    "title": "Week 5",
+    "section": "Exercises",
+    "text": "Exercises\n\nGood and Bad Visualizations",
+    "crumbs": [
+      "Weeks",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "weeks/week05.html#lectures",
+    "href": "weeks/week05.html#lectures",
+    "title": "Week 5",
+    "section": "Lectures",
+    "text": "Lectures\n\nLecture 05-1: Extreme Value Theory and Models\nLecture 05-2: Data Visualization",
+    "crumbs": [
+      "Weeks",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html",
+    "href": "weeks/week01.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion.\nHomework 1 assigned, due 2/2/24.",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html#announcements",
+    "href": "weeks/week01.html#announcements",
+    "title": "Week 1",
+    "section": "",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion.\nHomework 1 assigned, due 2/2/24.",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html#readings",
+    "href": "weeks/week01.html#readings",
+    "title": "Week 1",
+    "section": "Readings",
+    "text": "Readings\nAs you’re reading along, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. Post a summary of key points, takeaways, and thoughts on Ed Discussion and be prepared to engage in the discussion on-line. We will not dedicate class time to this reading but relevant concepts will come up over the first few weeks of class.\n\nRockmore, D. (2024, January 15). How Much of the World Is It Possible to Model? The New Yorker. Retrieved from https://www.newyorker.com/culture/annals-of-inquiry/how-much-of-the-world-is-it-possible-to-model",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html#exercises",
+    "href": "weeks/week01.html#exercises",
+    "title": "Week 1",
+    "section": "Exercises",
+    "text": "Exercises\n\nLoading, Plotting, and Reasoning About Data",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week01.html#lectures",
+    "href": "weeks/week01.html#lectures",
+    "title": "Week 1",
+    "section": "Lectures",
+    "text": "Lectures\n\nLecture 01-1: Class Overview\nLecture 01-2: Uncertainty and Probability Review",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week02.html",
+    "href": "weeks/week02.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "Homework 1 and Exercise 1 due 2/2/24.",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week02.html#announcements",
+    "href": "weeks/week02.html#announcements",
+    "title": "Week 2",
+    "section": "",
+    "text": "Homework 1 and Exercise 1 due 2/2/24.",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week02.html#readings",
+    "href": "weeks/week02.html#readings",
+    "title": "Week 2",
+    "section": "Readings",
+    "text": "Readings\nAs you’re reading along, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. Post a summary of key points, takeaways, and thoughts on Ed Discussion and be prepared to engage in the discussion on-line. We will dedicate class time to this reading on Wednesday, so make sure you’ve read it, though you’ll have more time to finalize your thoughts for the online.\nNote: The link here will require additional access through the Cornell library; use the class schedule for a direct link or access through Canvas.\n\nStein, M. L. (2020). Some statistical issues in climate science. Statistical Science: A Review Journal of the Institute of Mathematical Statistics, 35(1), 31–41. https://doi.org/10.1214/19-sts730",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week02.html#exercises",
+    "href": "weeks/week02.html#exercises",
+    "title": "Week 2",
+    "section": "Exercises",
+    "text": "Exercises\n\nLoading, Plotting, and Reasoning About Data",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week02.html#lectures",
+    "href": "weeks/week02.html#lectures",
+    "title": "Week 2",
+    "section": "Lectures",
+    "text": "Lectures\n\nLecture 02-1: Probability Models and Model Residuals\nLecture 02-2: Probability Models II",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "homework.html",
+    "href": "homework.html",
+    "title": "Homework Assignments",
+    "section": "",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
+    "crumbs": [
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "homework.html#general-information",
+    "href": "homework.html#general-information",
+    "title": "Homework Assignments",
+    "section": "General Information",
+    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
+    "crumbs": [
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "homework.html#rubric",
+    "href": "homework.html#rubric",
+    "title": "Homework Assignments",
+    "section": "Rubric",
+    "text": "Rubric\nThe standard rubric for homework problems is available here.",
+    "crumbs": [
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "homework.html#schedule",
+    "href": "homework.html#schedule",
+    "title": "Homework Assignments",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\nSolutions\n\n\n\n\nHW1\n\nFeb 02, 2024\n\n\n\nHW2\n\nFeb 23, 2024\n\n\n\nHW3\n\nMar 22, 2024",
+    "crumbs": [
+      "Homework"
+    ]
+  },
+  {
+    "objectID": "solutions/hw02/hw02.html",
+    "href": "solutions/hw02/hw02.html",
+    "title": "Homework 2 Solutions",
+    "section": "",
+    "text": "Due Date\n\n\n\nFriday, 2/23/24, 9:00pm"
+  },
+  {
+    "objectID": "solutions/hw02/hw02.html#overview",
+    "href": "solutions/hw02/hw02.html#overview",
+    "title": "Homework 2 Solutions",
+    "section": "Overview",
+    "text": "Overview\n\nInstructions\nThe goal of this homework assignment is to practice developing and working with probability models for data.\n\nProblem 1 asks you to fit a sea-level rise model using normal residuals and to assess the validity of that assumption.\nProblem 2 asks you to model the time series of hourly weather-related variability at a tide gauge.\nProblem 3 asks you to model the occurrences of Cayuga Lake freezing, and is only slightly adapted from Example 4.1 in Statistical Methods in the Atmospheric Sciences by Daniel Wilks.\nProblem 4 (graded only for graduate students) asks you to revisit the sea-level model in Problem 1 by including a model-data discrepancy term in the model calibration.\n\n\n\nLearning Outcomes\nAfter completing this assignments, students will be able to:\n\ndevelop probability models for data and model residuals under a variety of statistical assumptions;\nevaluate the appropriateness of those assumptions through the use of qualitative and quantitative evaluations of goodness-of-fit;\nfit a basic Bayesian model to data.\n\n\n\nLoad Environment\nThe following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.\n\n\nimport Pkg\nPkg.activate(@__DIR__)\nPkg.instantiate()\n\n\nThe following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).\n\n\nusing Random # random number generation and seed-setting\nusing DataFrames # tabular data structure\nusing CSVFiles # reads/writes .csv files\nusing Distributions # interface to work with probability distributions\nusing Plots # plotting library\nusing StatsBase # statistical quantities like mean, median, etc\nusing StatsPlots # some additional statistical plotting tools\nusing Optim # optimization tools\n\nRandom.seed!(1)"
+  },
+  {
+    "objectID": "solutions/hw02/hw02.html#problems-total-30-points-for-4850-40-for-5850",
+    "href": "solutions/hw02/hw02.html#problems-total-30-points-for-4850-40-for-5850",
+    "title": "Homework 2 Solutions",
+    "section": "Problems (Total: 30 Points for 4850; 40 for 5850)",
+    "text": "Problems (Total: 30 Points for 4850; 40 for 5850)\n\nProblem 1\n\nConsider the following sea-level rise model from Rahmstorf (2007):\n\\[\\frac{dH(t)}{dt} = \\alpha (T(t) - T_0),\\] where \\(T_0\\) is the temperature (in \\(^\\circ C\\)) where sea-level is in equilibrium (\\(dH/dt = 0\\)), and \\(\\alpha\\) is the sea-level rise sensitivity to temperature. Discretizing this equation using the Euler method and using an annual timestep (\\(\\delta t = 1\\)), we get \\[H(t+1) = H(t) + \\alpha (T(t) - T_0).\\]\nIn this problem:\n\nLoad the data from the data/ folder\n\nGlobal mean temperature data from the HadCRUT 5.0.2.0 dataset (https://hadobs.metoffice.gov.uk/hadcrut5/data/HadCRUT.5.0.2.0/download.html) can be found in data/HadCRUT.5.0.2.0.analysis.summary_series.global.annual.csv. This data is averaged over the Northern and Southern Hemispheres and over the whole year.\nGlobal mean sea level anomalies (relative to the 1990 mean global sea level) are in data/CSIRO_Recons_gmsl_yr_2015.csv, courtesy of CSIRO (https://www.cmar.csiro.au/sealevel/sl_data_cmar.html).\n\nFit the model under the assumption of normal i.i.d. residuals by maximizing the likelihood and report the parameter estimates. Note that you will need another parameter \\(H_0\\) for the initial sea level. What can you conclude about the relationship between global mean temperature increases and global mean sea level rise?\nHow appropriate was the normal i.i.d. probability model for the residuals? Use any needed quantitative or qualitative assessments of goodness of fit to justify your answer. If this was not an appropriate probability model, what would you change?\n\n\nSolution:\nFirst, let’s load the data and implement the model with a function.\n\n# load data files\nslr_data = DataFrame(load(\"data/CSIRO_Recons_gmsl_yr_2015.csv\"))\ngmt_data = DataFrame(load(\"data/HadCRUT.5.0.2.0.analysis.summary_series.global.annual.csv\"))\nslr_data[:, :Time] = slr_data[:, :Time] .- 0.5; # remove 0.5 from Times\ndat = leftjoin(slr_data, gmt_data, on=\"Time\") # join data frames on time\nselect!(dat, [1, 2, 3, 4])  # drop columns we don't need\nfirst(dat, 6)\n\n\n6×4 DataFrame\n\n\n\nRow\nTime\nGMSL (mm)\nGMSL uncertainty (mm)\nAnomaly (deg C)\n\n\n\nFloat64\nFloat64\nFloat64\nFloat64?\n\n\n\n\n1\n1880.0\n-158.7\n24.2\n-0.315832\n\n\n2\n1881.0\n-153.1\n24.2\n-0.232246\n\n\n3\n1882.0\n-169.9\n23.0\n-0.29553\n\n\n4\n1883.0\n-164.6\n22.8\n-0.346474\n\n\n5\n1884.0\n-143.7\n22.2\n-0.49232\n\n\n6\n1885.0\n-145.2\n21.9\n-0.471124\n\n\n\n\n\n\n\n\n# slr_model: function to simulate sea-level rise from global mean temperature based on the Rahmstorf (2007) model\n\nfunction slr_model(α, T₀, H₀, temp_data)\n    temp_effect = α .* (temp_data .- T₀)\n    slr_predict = cumsum(temp_effect) .+ H₀\n    return slr_predict\nend\n\nslr_model (generic function with 1 method)\n\n\nNow, let’s fit the model under the normal residual assumption.\n\n# split data structure into individual pieces\nyears = dat[:, 1]\nsealevels = dat[:, 2]\ntemp = dat[:, 4]\n\n# write function to calculate likelihood of residuals for given parameters\n# parameters are a vector [α, T₀, H₀, σ]\nfunction llik_normal(params, temp_data, slr_data)\n    slr_out = slr_model(params[1], params[2], params[3], temp_data)\n    resids = slr_out - slr_data\n    return sum(logpdf.(Normal(0, params[4]), resids))\nend\n\n# set up lower and upper bounds for the parameters for the optimization\nlbds = [0.0, -50.0, -200.0, 0.0]\nubds = [10.0, 1.0, 0.0, 20.0]\np0 = [5.0, -1.0, -100.0, 5.0]\np_mle = Optim.optimize(p -&gt; -llik_normal(p, temp, sealevels), lbds, ubds, p0).minimizer\n\n4-element Vector{Float64}:\n    1.863932768247625\n   -0.9709731494908135\n -157.3346053534705\n    5.911511282104595\n\n\nAs p_mle[1] has a positive value of 1.86, this suggests a positive correlation between global mean temperature and global mean sea levels. Of course, we can’t conclude anything about causality, as it could be that both are independently increasing simultaneously, or that there is a mutual cause of both increases. However, mechanistically it makes sense that temperature increases would increase sea levels, due to melting ice and thermal expansion of ocean waters.\nTo look at the appropriateness of the normal residual assumption, let’s compute the residuals and look at a Q-Q plot and their autocorrelation.\n\n# compute the residuals\nresids = slr_model(p_mle[1], p_mle[2], p_mle[3], temp) - sealevels\nhistogram(resids, xlabel=\"Residual\", ylabel=\"Count\", legend=false)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Histogram of the residuals from the maximum likelihood estimation.\n\n\n\n\nThe residual histogram in Figure 1 looks a bit skewed. Let’s look at a Q-Q plot.\n\nqqplot(Normal, resids, xlabel=\"Normal Theoretical Quantile\", ylabel=\"Sample Residual Quantile\", legend=false)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Q-Q plot of the residuals from the maximum likelihood estimation.\n\n\n\n\nThe Q-Q plot (Figure 2) looks good; there are some discrepancies near the tail, but that is not surprising.\n\nresid_acf = pacf(resids, 1:5)\nplot(resid_acf , marker=:circle, line=:stem, linewidth=3, markersize=5, legend=false, ylabel=\"Partial Autocorrelation\", xlabel=\"Time Lag\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Autocorrelation plot of the residuals from the maximum likelihood estimation.\n\n\n\n\nThe bigger problem is that the lag-1 autocorrelation coefficient is 0.54, which is not consistent with the normally-distributed assumption. The next thing to try would be an AR(1) model for the residuals.\n\n\nProblem 2\n\nTide gauge data is complicated to analyze because it is influenced by different harmonic processes (such as the linear cycle). In this problem, we will develop a model for this data using NOAA data from the Sewell’s Point tide gauge outside of Norfolk, VA from data/norfolk-hourly-surge-2015.csv. This is hourly data (in m) from 2015 and includes both the observed data (Verified (m)) and the tide level predicted by NOAA’s sinusoidal model for periodic variability, such as tides and other seasonal cycles (Predicted (m)).\nIn this problem:\n\nLoad the data file. Take the difference between the observations and the sinusoidal predictions to obtain the tide level which could be attributed to weather-related variability (since for one year sea-level rise and other factors are unlikely to matter). Plot this data.\nDevelop an autoregressive model for the weather-related variability in the Norfolk tide gauge. Make sure to include your logic or exploratory analysis used in determining the model specification.\nUse your model to simulate 1,000 realizations of hourly tide gauge observations. What is the distribution of the maximum tide level? How does this compare to the observed value?\n\n\nSolution:\nFirst, load the data, find the weather-related residuals, and plot. To load and process the data, we will use the DataFramesMeta.jl package, which lets us string together commands in a convenient way. This is completely optional, however.\n\ntide_dat = DataFrame(load(\"data/norfolk-hourly-surge-2015.csv\"))\nsurge_resids = tide_dat[:, 5] - tide_dat[:, 3]\nplot(surge_resids; ylabel=\"Gauge Measurement (m)\", label=\"Weather-Related Residual\", legend=:topleft, xlabel=\"Hour Number\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Plot of the weather-related variability from the 2015 Sewell’s Point hourly tide gauge data.\n\n\n\n\nLet’s look at the autocorrelation function of the residuals to determine what the autoregressive lag should be.\n\nresid_acf = pacf(surge_resids, 1:5)\nplot(resid_acf , marker=:circle, line=:stem, linewidth=3, markersize=5, legend=false, ylabel=\"Partial Autocorrelation\", xlabel=\"Time Lag\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Autocorrelation plot of the tide gauge residuals.\n\n\n\n\nWe can see that there is a very strong autocorrelation at lag 1, but not much additional autocorrelation introduced at lag 2, so we will use an AR(1) model (though you might be justified in using an AR(2) model, as the lag-2 partial autocorrelation is not completely negligible).\nThis AR(1) model is \\[y_t = \\rho y_{t+1} + \\varepsilon, \\quad \\varepsilon \\sim N(0, \\sigma).\\] Let’s implement this model and fit it. We’ll specify the likelihood based on whitening the residuals and computing the individual normal likelihoods of the resulting terms.\n\nfunction llik_ar(ρ, σ, y)\n    ll = 0 # initialize log-likelihood counter\n    ll += logpdf(Normal(0, σ/sqrt(1-ρ^2)), y[1])\n    for i = 1:length(y)-1\n        residuals_whitened = y[i+1] - ρ * y[i]\n        ll += logpdf(Normal(0, σ), residuals_whitened)\n    end\n    return ll\nend\n\n# set up lower and upper bounds for the parameters for the optimization\nlbds = [0.0, 0.0]\nubds = [1.0, 5.0]\np0 = [0.5, 2.0]\np_tide_mle = Optim.optimize(p -&gt; -llik_ar(p[1], p[2], surge_resids), lbds, ubds, p0).minimizer\n\n2-element Vector{Float64}:\n 0.9956392098280269\n 0.019663589611082367\n\n\nNow we can simulate these residuals and add them back to the NOAA model predictions using the mapslices() function. The resulting histogram of the maximum values is shown in Figure 6.\n\n# T is the length of the simulated series, N the number of simulations\nfunction simulate_ar1(ρ, σ, T, N)\n    y = zeros(T, N) # initialize storage\n    y[1, :] = rand(Normal(0, σ/sqrt(1-ρ^2)), N) # sample initial value\n    # simulate the remaining residuals\n    for t = 2:T\n        y[t, :] = ρ * y[t-1, :] + rand(Normal(0, σ), N)\n    end\n    return y\nend\n\n# simulate new observations\nsimulated_resids = simulate_ar1(p_tide_mle[1], p_tide_mle[2], length(surge_resids), 1000)\nsimulated_obs = mapslices(col -&gt; col + tide_dat[:, 3], simulated_resids, dims=1)\n# plot histogram\nmax_obs = [maximum(simulated_obs[:, n]) for n in 1:size(simulated_obs, 2)]\nhistogram(max_obs, xlabel=\"Maximum Simulated Gauge Level (m)\", ylabel=\"Count\", legend=false)\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Histogram of the maximum simulated tide gauge measurements.\n\n\n\n\nThis distribution fails to capture the observed maximum 1.98, which could be due to a model structural problem (we might want to allow for more extreme AR(1) innovations than the normal distribution of \\(\\varepsilon_t\\)) or just the unlikeliness of that one observation.\n\n\nProblem 3\n\nAs of 2010, Cayuga Lake has frozen in the following years: 1796, 1816, 1856, 1875, 1884, 1904, 1912, 1934, 1961, and 1979. Based on this data, we would like to project whether Cayuga Lake is likely to freeze again in the next 25 years.\nIn this problem:\n\nAssuming that observations began in 1780, write down a Bayesian model for whether Cayuga Lake will freeze in a given year, using a Bernoulli distribution. How did you select what prior to use?\nFind the maximum a posteriori estimate using your model.\nGenerate 1,000 realizations of Cayuga Lake freezing occurrences from 1780 to 2010 and check the simulations against the occurrance data.\nUsing your model, calculate the probability of Cayuga Lake freezing at least once in the next 10 years.\nWhat do you think about the validity of your model, both in terms of its ability to reproduce historical data and its use to make future projections? Why might you believe or discount it? What changes might you make (include thoughts about the prior)?\n\n\nSolution:\nFirst, let’s enter the data.\n\nfz_yrs = [1796, 1816, 1856, 1875, 1884, 1904, 1912, 1934, 1961, 1979]\ny = DataFrame(year=1780:2010, freeze=zeros(Bool, length(1780:2010)))\n# indexin(a, b) finds indices of a which are in b and returns nothing if not found\n# so we use !isnothing to only get the indices which occur in fz_yrs, and (.!) is needed\n# to broadcast\ny[.!(isnothing.(indexin(y.year, fz_yrs))), :freeze] .= true\n\n10-element view(::Vector{Bool}, [17, 37, 77, 96, 105, 125, 133, 155, 182, 200]) with eltype Bool:\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n 1\n\n\nUsing a Bernoulli distribution means that we need \\(y_t \\sim Bernoulli(p)\\), where \\(p\\) is the probability of freezing in year \\(t\\). The maximum-likelihood estimate of \\(p\\) is easy: it’s just the empirical frequency of true. But we want to develop a Bayesian model, as this empirically-observed frequency might not actually be the most likely outcome. To do this, we need to specify a prior for \\(p\\), which is usually given as \\(p \\sim Beta(\\alpha, \\beta)\\). We will use prior predictive simulations to determine appropriate Beta parameters.\n\nfunction sim_freeze(α, β, nyrs, nsamples)\n    p = rand(Beta(α, β), nsamples)\n    fz = sum.(rand.(Bernoulli.(p), nyrs))\n    return fz\nend\n\nsim_freeze (generic function with 1 method)\n\n\nLet’s see what the impact of a \\(Beta(1, 10)\\) prior and a \\(Beta(1, 20)\\) prior look like.\n\nfz_10 = sim_freeze(1, 10, nrow(y), 1000)\np1 = histogram(fz_10, xlabel=\"Number of Freezes\", ylabel=\"Count\", legend=false)\nplot!(p1, size=(300, 250))\n\nfz_20 = sim_freeze(1, 20, nrow(y), 1000)\np2 = histogram(fz_20, xlabel=\"Number of Freezes\", ylabel=\"Count\", legend=false)\nplot!(p2, size=(300, 250))\n\ndisplay(p1)\ndisplay(p2)\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) \\(Beta(1,10)\\) prior\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b) \\(Beta(1,20)\\) prior\n\n\n\n\n\n\n\nFigure 7: Prior predictive distribution results.\n\n\n\n\nFigure 7 (b) looks reasonable, since we might suspect that freezing shouldn’t occur too frequently. As a result, we’ll work with the \\(p \\sim Beta(1, 20)\\) prior for this model. So the full model specification is:\n\\[\\begin{align*}\ny_t &\\sim Bernoulli(p) \\\\\np &\\sim Beta(1, 20)\n\\end{align*}\\]\nNow we can compute the MAP estimate.\n\n# compute the log-posterior\nfunction lpost(p, dat)\n    lpri = logpdf(Beta(1, 20), p)\n    llik = sum(logpdf.(Bernoulli(p), dat))\n    return lpri + llik\nend\n\nmap = Optim.optimize(p -&gt; -lpost(p, y[:, :freeze]), 0, 1).minimizer\n\n0.039999999097374374\n\n\nThat gives us a MAP estimate of 0.039999999097374374. Note that your answer might differ depending on the prior you selected. Now we can do simulations and compare the results to the observations. We will do this using histograms to show the number of occurrences, as the model does not account for any temporal changes in frequency.\n\nfunction sim_freeze_map(p, nyrs, nsamples)\n    fz = mapslices(sum, rand(Bernoulli(p), (nyrs, nsamples)), dims=1)'\n    return fz\nend\n\np = histogram(sim_freeze_map(map, nrow(y), 1000), xlabel=\"Number of Freezing Occurrences\", ylabel=\"Count\", label=false)\nvline!(p, [sum(y[:, :freeze])], label=\"Data\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Histogram of number of freezing occurrences from model simulations.\n\n\n\n\nThe probability of Cayuga Lake freezing in the next 10 years is calculated with:\n\n100 * sum(sim_freeze_map(map, 10, 1000)) / (10*1000)\n\n4.22\n\n\nBased on Figure 8, the model seems to replicate the data well (with a slight bias towards fewer freezing events due to the prior). However, the model might be improved with time or temperature dependence, as the original data appears to have more freezing events earlier in the record and fewer after 1950.\n\n\nProblem 4\nGRADED FOR 5850 STUDENTS ONLY\nFor the sea-level model in Problem 1, model the model-data discrepancy using an AR(1) process, with observation error modeled as normally distributed with standard deviation given by the uncertainty column in the data file.\nIn this problem:\n\nFind the maximum likelihood estimate of the parameters with this discrepancy structure. How does the parameter inference change from the normal i.i.d. estimate in Problem 1?\nGenerate 1,000 traces, plot a comparison of the hindcasts to those from Problem 1, and compare the surprise indices.\nDetermine whether you have accounted for autocorrelation in the residuals appropriately (hint: generate realizations of just the discrepancy series, compute the resulting residuals from the model fit + discrepancy, and look at the distribution of autocorrelation values).\nWhich model specification would you prefer and why?\n\n:::\nFrom the lecture, we can implement the discrepancy structure likelihood as:\n\nfunction ar_covariance_mat(σ, ρ, y_err)\n    H = abs.((1:length(y_err)) .- (1:(length(y_err)))') # compute the outer product to get the correlation lags\n    ζ_var = σ^2 / (1-ρ^2)\n    Σ = ρ.^H * ζ_var\n    for i in 1:length(y_err)\n        Σ[i, i] += y_err[i]^2\n    end\n    return Σ\nend\n\nfunction ar_discrep_log_likelihood(p, σ, ρ, y, m, y_err)\n    y_pred = m(p)\n    residuals = y_pred .- y\n    Σ = ar_covariance_mat(σ, ρ, y_err)\n    ll = logpdf(MvNormal(zeros(length(y)), Σ), residuals)\n    return ll\nend\n\n# params vector is [α, T₀, H₀]\nslr_wrap(params) = slr_model(params[1], params[2], params[3], temp)\n\n# maximize log-likelihood within some range\n# important to make everything a Float instead of an Int \nlower = [0.0, -5.0, -200.0, 0.0, -1.0]\nupper = [5.0, 1.0, 0.0, 20.0, 1.0]\np0 = [2.0, 0.0, -100.0, 5.0, 0.5]\nresult = Optim.optimize(params -&gt; -ar_discrep_log_likelihood(params[1:end-2], params[end-1], params[end], sealevels, slr_wrap, dat[:, 3]), lower, upper, p0)\np_ar_mle = result.minimizer\n\n5-element Vector{Float64}:\n    1.998198372838903\n   -0.9076726257161041\n -154.93253804174117\n    1.3977277644676105\n    0.8557998637644137\n\n\nThe AR discrepancy model has a higher sea-level sensitivity to temperature and a slightly higher equilibrium temperature and initial condition. Simulating a hindcast:\n\nnsamples = 1000\nΣ = ar_covariance_mat(p_ar_mle[4], p_ar_mle[5], dat[:, 3])\nresiduals_discrep = rand(MvNormal(zeros(nrow(dat)), Σ), nsamples)\nmodel_discrep = slr_wrap(p_ar_mle[1:end-2])\nmodel_sim_discrep = (residuals_discrep .+ model_discrep)'\nmedian_discrep = mapslices(col -&gt; quantile(col, 0.5), model_sim_discrep; dims=1)' # compute median\nq90_discrep = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_discrep; dims=1) # compute 90% prediction interval\nplot(years, median_discrep, linewidth=2, label=\"Discrepancy Model\", ribbon=(median_discrep .- q90_discrep[1, :], q90_discrep[2, :] .- median_discrep), fillalpha=0.2, xlabel=\"Year\", ylabel=\"Sea Level Anomaly (mm)\")\nscatter!(years, sealevels, label=\"Observations\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 9: Hindcast generated from 1,000 simulations from the SLR model with AR discrepancy.\n\n\n\n\nCalculating the surprise index (\\(1 - \\frac{1}{n} \\sum_{i=1}^n \\mathbb{I}_{\\mathcal{I}_\\alpha}(y_i)\\)) of both 90% intervals:\n\n# need to compute the hindcast projection intervals for the iid model\nslr_iid_out = slr_model(p_mle[1], p_mle[2], p_mle[3], temp)\niid_residuals = rand(Normal(0, p_mle[4]), (length(years), nsamples))\nmodel_sim_iid = (iid_residuals .+ slr_iid_out)'\nq90_iid = mapslices(col -&gt; quantile(col, [0.05, 0.95]), model_sim_iid; dims=1) \n\n2×134 Matrix{Float64}:\n -165.159  -164.663  -161.948  …  46.7122  48.602   52.3031  55.1233\n -146.702  -145.918  -144.36      65.5852  69.0316  70.9158  74.4833\n\n\n\nsurprise_discrep = 0 # initialize surprise counter\nsurprise_iid = 0\n# go through the data and check which points are outside of the 90% interval\nfor i = 1:length(sealevels)\n    ## The || operator is an OR, so returns true if either of the terms are true\n    if (sealevels[i] &lt; q90_discrep[1, i]) || (q90_discrep[2, i] &lt; sealevels[i])\n        surprise_discrep += 1\n    end\n    if (sealevels[i] &lt; q90_iid[1, i]) || (q90_iid[2, i] &lt; sealevels[i])\n        surprise_iid += 1\n    end\n\nend\nsi_iid = surprise_iid / length(sealevels) * 100\nsi_discrep = surprise_discrep / length(sealevels) * 100\n[si_iid; si_discrep]\n\n2-element Vector{Float64}:\n 8.955223880597014\n 1.4925373134328357\n\n\nThe AR(1) discrepancy model here actually looks underconfident, which might suggest that the variance for the discrepancy process is too large due to the large historical SLR observation errors (which could be accounted for with a tighter prior in a Bayesian setup). But we should also check if we did account for the residual autocorrelation that we saw in Problem 1, which we can do by generating simulations without observation error.\n\nnsamples = 1000\nΣ = ar_covariance_mat(p_ar_mle[4], p_ar_mle[5], zeros(nrow(dat)))\nresiduals_discrep = rand(MvNormal(zeros(nrow(dat)), Σ), nsamples)\nmodel_discrep = slr_wrap(p_ar_mle[1:end-2])\nmodel_sim_discrep = (residuals_discrep .+ model_discrep)'\nobs_error = model_sim_discrep .- sealevels'\nobs_error_acf = mapslices(col -&gt; pacf(col, 1:5), obs_error, dims=2)\nboxplot(obs_error_acf, legend=false, xlabel=\"Autocorrelation Lag\", ylabel=\"Partial Autocorrelation\")\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 10: Autocorrelation of residuals generated from 1,000 simulations from the SLR model with AR discrepancy.\n\n\n\n\nFigure 10 suggests that the lag-1 autocorrelation has not actually been accounted for properly, which might suggest that there is a problem with the model structure or that a more sophisticated error model is needed (for example, linking the residuals to the global mean temperature or accounting for clustering in the residual variance). Between the two models, since neither model properly accounted for the lag-1 residual autocorrelation, we might prefer the simpler i.i.d. normal model which had a more appropriate surprise index."
   },
   {
     "objectID": "policies/homework.html",
