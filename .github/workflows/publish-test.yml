@@ -2,6 +2,7 @@ on:
   workflow_dispatch:
   push:
     branches: main
+  
 
 name: Quarto Publish
 
@@ -13,10 +14,16 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
-
+        with:
+            submodules: 'true'
+      - name: Install Julia
+        uses: julia-actions/setup-julia@v1.9.4
+        run: |
+          julia -e 'import Pkg; Pkg.activate("."); Pkg.instantiate(); Pkg.add("IJulia"); Pkg.build("IJulia")'
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-
+        with:
+            tinytex: true
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
