@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -104,6 +104,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -479,7 +482,7 @@ Due Date
 <h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
 <p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
 </section>
-<div id="eedbe582" class="cell" data-execution_count="1">
+<div id="37014cc4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -487,7 +490,7 @@ Due Date
 <div class="cell markdown">
 <p>The following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).</p>
 </div>
-<div id="b90dae4f" class="cell" data-execution_count="2">
+<div id="fda54982" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span> <span class="co"># random number generation and seed-setting</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span> <span class="co"># tabular data structure</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFramesMeta</span> <span class="co"># API which can simplify chains of DataFrames transformations</span></span>
@@ -505,7 +508,8 @@ Due Date
 <h3 class="anchored" data-anchor-id="problem-1">Problem 1</h3>
 <div class="cell markdown">
 <p>Consider the <a href="https://doi.org/10.1073/pnas.0907765106">Rahmstorf (2007)</a> sea-level rise model from <a href="https://viveks.me/simulation-data-analysis/assignments/hw02/hw02.html">Homework 2</a>:</p>
-<p><span class="math display">\[\frac{dH(t)}{dt} = \alpha (T(t) - T_0),\]</span> where <span class="math inline">\(T_0\)</span> is the temperature (in <span class="math inline">\(^\circ C\)</span>) where sea-level is in equilibrium (<span class="math inline">\(dH/dt = 0\)</span>), and <span class="math inline">\(\alpha\)</span> is the sea-level rise sensitivity to temperature. Discretizing this equation using the Euler method and using an annual timestep (<span class="math inline">\(\delta t = 1\)</span>), we get <span class="math display">\[H(t+1) = H(t) + \alpha (T(t) - T_0).\]</span></p>
+<p><span class="math display">\[\frac{dH(t)}{dt} = \alpha (T(t) - T_0),\]</span></p>
+<p>where <span class="math inline">\(T_0\)</span> is the temperature (in <span class="math inline">\(^\circ C\)</span>) where sea-level is in equilibrium (<span class="math inline">\(dH/dt = 0\)</span>), and <span class="math inline">\(\alpha\)</span> is the sea-level rise sensitivity to temperature. Discretizing this equation using the Euler method and using an annual timestep (<span class="math inline">\(\delta t = 1\)</span>), we get <span class="math display">\[H(t+1) = H(t) + \alpha (T(t) - T_0).\]</span></p>
 <p>Suppose that we wanted to develop a Bayesian probability model for this problem, assuming independent normal residuals:</p>
 <p><span class="math display">\[\begin{gather*}
 y(t) = F(t) - \varepsilon_t \\
@@ -535,7 +539,7 @@ y(t) = F(t) - \varepsilon_t \\
 <p><strong>In this problem</strong>:</p>
 <ul>
 <li>Find the MLE and MAP parameter values using the prior distributions given in Problem 1.</li>
-<li>Plot the median and 95% credible intervals for the hindcasts and the projections under RCP 8.5 (using <code>ERF_ssp585_1750-2500.csv</code>; make sure <span class="math inline">\(T_0\)</span> and <span class="math inline">\(H_0\)</span> have the same meaning as in Problem 1!).</li>
+<li>Plot the median and 95% credible intervals for the hindcasts and the projections until 2100 under RCP 8.5 (using <code>data/NOAA_IPCC_RCPtempsscenarios.csv</code>; make sure <span class="math inline">\(T_0\)</span> and <span class="math inline">\(H_0\)</span> have the same meaning as in Problem 1!).</li>
 <li>What differences do you observe? What do you attribute these differences to? What conclusions can you draw about the Bayesian model?</li>
 </ul>
 </section>
@@ -560,12 +564,12 @@ y(t) = F(t) - \varepsilon_t \\
 <li>Find the MLE of the non-stationary GEV model and for a stationary GEV (constant <span class="math inline">\(\mu\)</span>; we did this in class).</li>
 <li>Discuss the difference(s) between the two fitted models based on the coefficient values (you can also bring to bear the range(s) of PDO values from the data), the 100- and 500-year return periods in 2022, and plotted hindcasts.</li>
 </ul>
-<div id="d6753b71" class="cell" data-execution_count="3">
+<div id="4f0d074a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">## load the data from the file and return a DataFrame of DateTime values and gauge measurements</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">load_pdo</span>(fname)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> CSV.<span class="fu">read</span>(fname, DataFrame; delim<span class="op">=</span><span class="st">" "</span>, header<span class="op">=</span><span class="fl">2</span>, ignorerepeated<span class="op">=</span><span class="cn">true</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> <span class="fu">DataFrame</span>(CSVFiles.<span class="fu">load</span>(<span class="fu">File</span>(format<span class="st">"CSV"</span>, fname), spacedelim<span class="op">=</span><span class="cn">true</span>, skiplines_begin<span class="op">=</span><span class="fl">1</span>))</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># take yearly average</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@transform</span>!(df, <span class="op">:</span>PDO <span class="op">=</span> <span class="fu">mean</span>(<span class="fu">AsTable</span>(<span class="fu">names</span>(df)[<span class="fl">2</span><span class="op">:</span><span class="fl">13</span>])))</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@select</span>!(df, <span class="op">$</span>[<span class="op">:</span>Year, <span class="op">:</span>PDO])</span>
@@ -575,11 +579,159 @@ y(t) = F(t) - \varepsilon_t \\
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>pdo <span class="op">=</span> <span class="fu">load_pdo</span>(<span class="st">"data/ersst.v5.pdo.dat"</span>)</span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># subset for years that match the tide gauge data</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> dat_annmax[!, <span class="op">:</span>Year]</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> pdo[!, <span class="op">:</span>Year]</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="pp">@rsubset</span>!(pdo, <span class="op">:</span>Year <span class="kw">in</span> years)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>LoadError: LoadError: UndefVarError: `@transform!` not defined
-in expression starting at In[4]:8</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<div><div style="float: left;"><span>169×2 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">144 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<table class="data-frame table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Year</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">PDO</th>
+</tr>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Float64">Float64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: right;">1854</td>
+<td style="text-align: right;">-0.818333</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: right;">1855</td>
+<td style="text-align: right;">-0.743333</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: right;">1856</td>
+<td style="text-align: right;">-0.2075</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">4</td>
+<td style="text-align: right;">1857</td>
+<td style="text-align: right;">-0.0266667</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">5</td>
+<td style="text-align: right;">1858</td>
+<td style="text-align: right;">0.196667</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">6</td>
+<td style="text-align: right;">1859</td>
+<td style="text-align: right;">-1.74333</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">7</td>
+<td style="text-align: right;">1860</td>
+<td style="text-align: right;">-0.954167</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">8</td>
+<td style="text-align: right;">1861</td>
+<td style="text-align: right;">-0.955</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">9</td>
+<td style="text-align: right;">1862</td>
+<td style="text-align: right;">-0.226667</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">10</td>
+<td style="text-align: right;">1863</td>
+<td style="text-align: right;">-0.095</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">11</td>
+<td style="text-align: right;">1864</td>
+<td style="text-align: right;">-0.281667</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">12</td>
+<td style="text-align: right;">1865</td>
+<td style="text-align: right;">-0.553333</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">13</td>
+<td style="text-align: right;">1866</td>
+<td style="text-align: right;">-0.9425</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+<td style="text-align: right;">⋮</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">158</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">-1.81167</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">159</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">-1.73333</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">160</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">-1.16583</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">161</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">0.554167</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">162</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">0.920833</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">163</td>
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">0.673333</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">164</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">-0.0933333</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">165</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">-0.365</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">166</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">-0.154167</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">167</td>
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">-1.145</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">168</td>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">-1.87417</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">169</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">-2.115</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 
