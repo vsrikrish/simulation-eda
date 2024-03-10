@@ -29,7 +29,7 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 | | | ***Simulation Methods*** | | | |
 | 7 | Mon, Mar 4 | Monte Carlo Simulation | [{{< fa sharp presentation-screen >}}](slides/lecture07-1.qmd) | Kale ([2021](https://ieeexplore-ieee-org.proxy.library.cornell.edu/document/9222364/)) | [{{< fa sharp coffee-pot >}}](exercises/ex07/ex07.qmd) |  [{{< fa sharp pen-field >}}](assignments/hw03/hw03.qmd) | 
 |  | Wed, Mar 6 | Sampling Distributions and The Bootstrap | [{{< fa sharp presentation-screen >}}](slides/lecture07-2.qmd) | | | 
-| 8 | Mon, Mar 11 | The Parametric Bootstrap | | | | 
+| 8 | Mon, Mar 11 | The Parametric Bootstrap | [{{< fa sharp presentation-screen >}}](slides/lecture08-1.qmd) | Rahmstorf & Coumou ([2011](http://dx.doi.org/10.1073/pnas.1101766108))  | [{{< fa sharp coffee-pot >}}](exercises/ex08/ex08.qmd) | | 
 |  | Wed, Mar 13 | Markov Chains | | | | 
 | 9 | Mon, Mar 18 | Markov Chain Monte Carlo | | | | 
 |  | Wed, Mar 20 | MCMC Convergence | | | | 

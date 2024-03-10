@@ -1,0 +1,23 @@
+---
+title: "Week 8"
+---
+
+## Announcements
+
+- No office hours on 3/18.
+
+## Readings
+
+- Rahmstorf, S., & Coumou, D. (2011). Increase of extreme events in a warming world. Proceedings of the National Academy of Sciences of the United States of America, 108(44), 17905–17909. <https://doi.org/10.1073/pnas.1101766108>
+
+## Exercises
+
+- [Non-Parametric vs. Parametric Bootstrap](../exercises/ex08/ex08.qmd)
+
+## Lectures
+
+- [Lecture 08-1: The Parametric Bootstrap](../slides/lecture08-1.qmd)
+- Lecture 07-2: Bayesian Computation and Markov Chains
+
+
+
