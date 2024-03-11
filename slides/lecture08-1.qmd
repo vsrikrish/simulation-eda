@@ -280,7 +280,7 @@ gev_lik(θ) = -sum(logpdf(GeneralizedExtremeValue(θ[1], θ[2], θ[3]), dat_annm
 rp_emp = quantile(dat_annmax.residual, 0.99)
 θ_mle = Optim.optimize(gev_lik, init_θ).minimizer
 
-p = histogram(dat_annmax.residual, xlabel="Annual Maximum Storm Tide (m)", ylabel="Probability Density", tickfontsize=16, guidefontsize=18, label=false, right_margin=5mm, bottom_margin=5mm, legendfontsize=18, left_margin=5mm)
+p = histogram(dat_annmax.residual,  normalize=:pdf, xlabel="Annual Maximum Storm Tide (m)", ylabel="Probability Density", tickfontsize=16, guidefontsize=18, label=false, right_margin=5mm, bottom_margin=5mm, legendfontsize=18, left_margin=5mm)
 plot!(p, GeneralizedExtremeValue(θ_mle[1], θ_mle[2], θ_mle[3]), linewidth=3, label="Parametric Model")
 vline!(p, [rp_emp], color=:red, linewidth=3, linestyle=:dash, label="Empirical Return Level")
 xlims!(p ,0, 2)
