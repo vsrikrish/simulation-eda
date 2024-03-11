@@ -96,6 +96,8 @@ website:
             text: Exercise 5
           - href: exercises/ex07/ex07.qmd
             text: Exercise 7
+          - href: exercises/ex08/ex08.qmd
+            text: Exercise 8
       - project.qmd
       - lit_review.qmd
       - section: "Julia Tutorials"
