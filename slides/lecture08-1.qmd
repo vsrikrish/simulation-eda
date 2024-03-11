@@ -279,7 +279,9 @@ gev_lik(θ) = -sum(logpdf(GeneralizedExtremeValue(θ[1], θ[2], θ[3]), dat_annm
 # get estimates from observations
 rp_emp = quantile(dat_annmax.residual, 0.99)
 θ_mle = Optim.optimize(gev_lik, init_θ).minimizer
-p = plot(GeneralizedExtremeValue(θ_mle[1], θ_mle[2], θ_mle[3]), linewidth=3, xlabel="Annual Maximum Storm Tide (m)", ylabel="Probability Density", tickfontsize=16, guidefontsize=18, label=false, right_margin=5mm, bottom_margin=5mm, legendfontsize=18, left_margin=5mm)
+
+p = histogram(dat_annmax.residual, xlabel="Annual Maximum Storm Tide (m)", ylabel="Probability Density", tickfontsize=16, guidefontsize=18, label=false, right_margin=5mm, bottom_margin=5mm, legendfontsize=18, left_margin=5mm)
+plot!(p, GeneralizedExtremeValue(θ_mle[1], θ_mle[2], θ_mle[3]), linewidth=3, label="Parametric Model")
 vline!(p, [rp_emp], color=:red, linewidth=3, linestyle=:dash, label="Empirical Return Level")
 xlims!(p ,0, 2)
 ```
@@ -297,6 +299,9 @@ n_boot = 1000
 boot_samp = rand(GeneralizedExtremeValue(θ_mle[1], θ_mle[2], θ_mle[3]), (nrow(dat_annmax), n_boot))
 rp_boot = mapslices(col -> quantile(col, 0.99), boot_samp, dims=1)'
 
+p = plot(GeneralizedExtremeValue(θ_mle[1], θ_mle[2], θ_mle[3]), linewidth=3, label="Parametric Model", xlabel="Annual Maximum Storm Tide (m)", ylabel="Probability Density", tickfontsize=16, guidefontsize=18, right_margin=5mm, bottom_margin=5mm, legendfontsize=18, left_margin=5mm)
+vline!(p, [rp_emp], color=:red, linewidth=3, linestyle=:dash, label="Empirical Return Level")
+xlims!(p ,0, 2)
 scatter!(p, boot_samp[:, 1], zeros(nrow(dat_annmax)), color=:black, label="Bootstrap Replicates", markersize=5)
 vline!(p, [rp_boot[1]], color=:grey, linewidth=2, label="Bootstrap Estimate")
 ```
@@ -428,11 +433,42 @@ vspan!(plt, q_boot, linecolor=:grey, fillcolor=:grey, alpha=0.3, fillalpha=0.3, 
 plot!(plt, size=(1000, 400))
 ```
 
+# Interpreting the Bootstrap
+
+## What Does The Bootstrap Give Us?
+
+The bootstrap gives us an estimate of the sampling distribution of a statistic or parameter.
+
+We can use this for confidence intervals, statistical tests, bias correction, etc.
+
+## Bootstrap vs. Monte Carlo
+
+**Bootstrap** "if I had a different sample (*conditional on the bootstrap principle*), what could I have inferred"?
+
+**Monte Carlo**: Given specification of input uncertainty, what data could we generate?
+
+## Bootstrap Distribution and Monte Carlo
+
+Could we use a bootstrap distribution for MC?
+
+::: {.incremental}
+
+- Sure, that's just one specification of the data-generating process.
+- Nothing unique or particularly rigorous in using the bootstrap for this; substituting the bootstrap principle for other assumptions.
+
+:::
+
+## Bootstrap vs. Bayes
+
+**Bootstrap**: "if I had a different sample (*conditional on the bootstrap principle*), what could I have inferred"?
+
+**Bayesian Inference**: "what different parameters could have produced the observed data"?
+
 # Key Points and Upcoming Schedule
 
 ## Key Points
 
-- Bootstrap Principle
+- **Bootstrap Principle**: Use the data as a proxy for the population.
 - **Key**: Bootstrap gives idea of sampling error in statistics (including model parameters)
 - Distribution of $\tilde{t} - \hat{t}$ approximates distribution around estimate $\hat{t} - t_0$.
 - Allows us to estimate uncertainty of estimates (confidence intervals, bias, etc).
@@ -441,7 +477,7 @@ plot!(plt, size=(1000, 400))
 ## Bootstrap Variants
 
   - Resample Cases (Non-Parametric)
-  - Resample Residuals
+  - Resample Residuals (Semi-Parametric)
   - Simulate from Fitted Model (Parametric)
 
 ## Which Bootstrap To Use?
