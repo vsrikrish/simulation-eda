@@ -24,6 +24,12 @@ jobs:
         uses: julia-actions/setup-julia@v1
         with:
           version: '1.9.4'
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Setup Jupyter
+        run: pip install jupyter
       - name: Install IJulia
         run: |
           julia -e 'import Pkg; Pkg.activate("."); Pkg.instantiate(); Pkg.add("IJulia"); Pkg.build("IJulia")'
