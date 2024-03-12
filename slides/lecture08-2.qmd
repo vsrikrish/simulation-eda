@@ -67,84 +67,27 @@ Random.seed!(1)
 
 # Last Class
 
-## Sampling Distributions
+## The Bootstrap
 
-:::: {.columns}
-::: {.column width=40%}
-The **sampling distribution** of a statistic captures the uncertainty associated with random samples.
-:::
-::: {.column width=60%}
-![Sampling Distribution](figures/true-sampling.png)
-:::
-::::
+- **Bootstrap Principle**: Use the data as a proxy for the population.
+- **Key**: Bootstrap gives idea of sampling error in statistics (including model parameters)
+- Distribution of $\tilde{t} - \hat{t}$ approximates distribution around estimate $\hat{t} - t_0$.
+- Allows us to estimate uncertainty of estimates (confidence intervals, bias, etc).
+- Parametric bootstrap introduces model specification error
 
-## The Bootstrap Principle
+## Bootstrap Variants
 
-:::: {.columns}
-::: {.column width=60%}
-@Efron1979-zv suggested combining estimation with simulation: the **bootstrap**.
+  - Resample Cases (Non-Parametric)
+  - Resample Residuals (Semi-Parametric)
+  - Simulate from Fitted Model (Parametric)
 
-**Key idea**: use the data to simulate a data-generating mechanism.
-:::
-::: {.column width=40%}
-::: {.center}
-![Baron von Munchhausen Pulling Himself By His Hair](https://upload.wikimedia.org/wikipedia/commons/3/3b/Muenchhausen_Herrfurth_7_500x789.jpg){width=60%}
+## Which Bootstrap To Use?
 
-::: {.caption}
-Source: [Wikipedia](https://en.wikipedia.org/wiki/M%C3%BCnchhausen_trilemma)
-:::
-:::
-:::
-::::
-
-## Why Does The Bootstrap Work?
-
-Let $t_0$ the "true" value of a statistic, $\hat{t}$ the estimate of the statistic from the sample, and $(\tilde{t}_i)$ the bootstrap estimates.
-
-- Variance: $\text{Var}[\hat{t}] \approx \text{Var}[\tilde{t}]$
-- Then the bootstrap error distribution approximates the sampling distribution
-  $$(\tilde{t}_i - \hat{t}) \overset{\mathcal{D}}{\sim} \hat{t} - t_0$$
-
-
-## The Non-Parametric Bootstrap
-
-:::: {.columns}
-::: {.column width=40%}
-The non-parametric bootstrap is the most "naive" approach to the bootstrap: **resample-then-estimate**.
-:::
-::: {.column width=60%}
-![Non-Parametric Bootstrap](figures/npboot-sampling.png)
-:::
-::::
-
-## Why Use The Bootstrap?
-
-- Do not need to rely on variance asymptotics;
-- Can obtain non-symmetric CIs.
-
-
-## Approaches to Bootstrapping Structured Data
-
-- **Correlations**: Transform to uncorrelated data (principal components, etc.), sample, transform back.
-- **Time Series**: Block bootstrap
-
-## Generalizing the Block Bootstrap
-
-The rough transitions in the block bootstrap can really degrade estimator quality.
-
-- Improve transitions between blocks
-- Moving blocks (allow overlaps)
-
-
-## Sources of Non-Parametric Bootstrap Error
-
-1. **Sampling error**: error from using finitely many replications
-2. **Statistical error**: error in the bootstrap sampling distribution approximation
-
-## When To Use The Non-Parametric Bootstrap
-
-- Sample is representative of the data distribution
-- Doesn't work well for extreme values!
+- **Bias-Variance Tradeoff**: Parametric Bootstrap has narrowest intervals, Resampling Cases widest (*Exercise 8*)
+- Depends on trust in model "correctness": 
+  - Do we trust the model parameters to be "correct"?
+  - Do we trust the shape of the regression model?
+  - Do we trust the data-generating process?
 
 # Bayesian Computation
 
@@ -193,16 +136,22 @@ Trivial for *extremely* simple problems:
 1. low-dimensional.
 2. with "conjugate" priors (which make the posterior a closed-form distribution).
 
-::: {.fragment .fade-in}
-But in general these can be high-dimensional distributions that don't have closed form from which we can conveniently sample.
-:::
+For example: normal likelihood, normal prior &Rightarrow; normal posterior
+
 
 ## A First Algorithm: Rejection Sampling
 
+:::: {.columns}
+::: {.column width=50%}
 Idea: 
 
 1. Generate proposed samples from another distribution $g(\theta)$ which covers the target $p(\theta | \mathbf{y})$;
 2. Accept those proposals based on the ratio of the two distributions.
+:::
+::: {.column width=50%}
+![Proposal Distribution for Rejection Sampling](figures/rejection-cover.svg)
+:::
+::::
 
 ## Rejection Sampling Algorithm
 
@@ -210,8 +159,7 @@ Suppose $p(\theta | \mathbf{y}) \leq M g(\theta)$ for some $1 < M < \infty$.
 
 1. Simulate $u \sim \text{Unif}(0, 1)$.
 2. Simulate a proposal $\hat{\theta} \sim g(\theta)$.
-3. If 
-  $$u < \frac{p(\hat{\theta} | \mathbf{y})}{Mg(\hat{\theta})},$$
+3. If $u < \frac{p(\hat{\theta} | \mathbf{y})}{Mg(\hat{\theta})},$
   accept $\hat{\theta}$. Otherwise reject.
 
 ## Rejection Sampling Challenges
@@ -233,24 +181,36 @@ What if we could construct an proposal/acceptance/rejection scheme that necessar
 
 ## What Is A Markov Chain?
 
-Consider a stochastic process $\\{X\_t\\}\_{t \in \mathcal{T}}$, where 
+::: {.columns}
+::: {.column width=60%}
+Consider a stochastic process $\{X_t\}_{t \in \mathcal{T}}$, where 
 
-- $X\_t \in \mathcal{S}$ is the state at time $t$, and 
+- $X_t \in \mathcal{S}$ is the state at time $t$, and 
 - $\mathcal{T}$ is a time-index set (can be discrete or continuous)
-- $\mathbb{P}(s\_i \to s\_j) = p\_{ij}$. 
-
+- $\mathbb{P}(s_i \to s_j) = p_{ij}$. 
+::: 
+::: {.column width=40%}
+![Markov State Space](figures/markov-state.png){width=75%}
+:::
+::::
 ## Markovian Property
 
 This stochastic process is a **Markov chain** if it satisfies the **Markovian (or memoryless) property**:
-$$
-\mathbb{P}(X_{T+1} = s_i | X_1=x_1, \ldots, X_T=x_T) = \mathbb{P}(X_{T+1} = s_i| X_T=x_T)
+$$\begin{align*}
+\mathbb{P}(X_{T+1} = s_i &| X_1=x_1, \ldots, X_T=x_T) = \\ &\qquad\mathbb{P}(X_{T+1} = s_i| X_T=x_T)
+\end{align*}
 $$
 
 ## Example: "Drunkard's Walk"
 
-Consider a process where we can "stumble" to the left or right with equal probability.
+::: {.center}
+![:img Random Walk, 80%](figures/random_walk.png)
+:::
 
-The *unconditional* probability $\mathbb{P}(X\_T = s\_i)$ can be modeled by a sum of coin flips from the initial state $X\_0$, but the *conditional* probability $\mathbb{P}(X\_T = s\_i | X\_{T-1} = x\_{T-1})$ only depends on the current node, not how we got there.
+::: {.incremental}
+- How can we model the *unconditional* probability $\mathbb{P}(X_T = s_i)$?
+- How about the *conditional* probability $\mathbb{P}(X_T = s_i | X_{T-1} = x_{T-1})$?
+:::
 
 ## Example: Weather
 
@@ -280,20 +240,20 @@ P =
 \begin{array}{ccc}
 \phantom{i}\color{red}{F}\phantom{i} & \phantom{i}\color{red}{S}\phantom{i} & \phantom{i}\color{red}{R}\phantom{i}
 \end{array}
-\\\\
+\\
 \begin{pmatrix}
-      1/2 & 1/4 & 1/4 \\\\
-      1/2 & 0 & 1/2 \\\\
+      1/2 & 1/4 & 1/4 \\
+      1/2 & 0 & 1/2 \\
       1/4 & 1/4 & 1/2
       \end{pmatrix}
 &
 \begin{array}{ccc}
-\color{red}F  \\\\ \color{red}S  \\\\ \color{red}R
+\color{red}F  \\ \color{red}S  \\ \color{red}R
 \end{array}   
 \end{array}
 $$
 
-Rows are the current state, columns are the next step, so $\sum\_i p\_{ij} = 1$.
+Rows are the current state, columns are the next step, so $\sum_i p_{ij} = 1$.
 
 ## Weather Example: State Probabilities
 
@@ -304,8 +264,8 @@ Then $\lambda^t = \lambda^{t-1}P$:
 $$\begin{pmatrix}\lambda^t_F & \lambda^t_S & \lambda^t_R \end{pmatrix} =  
 \begin{pmatrix}\lambda^{t-1}_F & \lambda^{t-1}_S & \lambda^{t-1}_R \end{pmatrix} 
       \begin{pmatrix}
-      1/2 & 1/4 & 1/4 \\\\
-      1/2 & 0 & 1/2 \\\\
+      1/2 & 1/4 & 1/4 \\
+      1/2 & 0 & 1/2 \\
       1/4 & 1/4 & 1/2
       \end{pmatrix}
 $$
@@ -319,15 +279,15 @@ $$P^3 =
 \begin{array}{ccc}
 \phantom{iii}\color{red}{F}\phantom{ii} & \phantom{iii}\color{red}{S}\phantom{iii} & \phantom{ii}\color{red}{R}\phantom{iii}
 \end{array}
-\\\\
+\\
 \begin{pmatrix}
-      26/64 & 13/64 & 25/64 \\\\
-      26/64 & 12/64 & 26/64 \\\\
+      26/64 & 13/64 & 25/64 \\
+      26/64 & 12/64 & 26/64 \\
       26/64 & 13/64 & 26/64
       \end{pmatrix}
 &
 \begin{array}{ccc}
-\color{red}F  \\\\ \color{red}S  \\\\ \color{red}R
+\color{red}F  \\ \color{red}S  \\ \color{red}R
 \end{array}   
 \end{array}
 $$
@@ -335,6 +295,34 @@ $$
 ## Long Run Probabilities
 
 What happens if we let the system run for a while starting from an initial sunny day? 
+
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| fig-align: center
+#| label: fig-markov-weather
+#| fig-cap: State probabilities for the weather examples.
+
+current = [1.0, 0.0, 0.0]
+P = [1/2 1/4 1/4
+    1/2 0 1/2
+    1/4 1/4 1/2]   
+
+T = 21
+
+state_probs = zeros(T, 3)
+state_probs[1,:] = current
+for t=1:T-1
+    state_probs[t+1, :] = state_probs[t:t, :] * P
+end
+
+
+p = plot(0:T-1, state_probs, label=["Foggy" "Sunny" "Rainy"], palette=:mk_8, linewidth=3, tickfontsize=16, guidefontsize=18, legendfontsize=16, left_margin=5mm, bottom_margin=10mm)
+xlabel!("Time")
+ylabel!("State Probability")
+plot!(p, size=(1000, 400))
+```
 
 ## Stationary Distributions
 
@@ -354,7 +342,10 @@ Not necessarily! The key is two properties:
 
 ## Irreducibility
 
-A Markov chain is **irreducible** if every state is accessible from every other state, *e.g.* for every pair of states $s\_i$ and $s\_j$ there is some $k > 0$ such that $P\_{ij}^k > 0.$
+A Markov chain is **irreducible** if every state is accessible from every other state, *e.g.* for every pair of states $s_i$ and $s_j$ there is some $k > 0$ such that $P_{ij}^k > 0.$
+
+![Reducible Markov Chain](figures/markov-reducible.png)
+
 
 ## Aperiodicity
 
@@ -362,14 +353,21 @@ The period of a state $s_i$ is the greatest common divisor $k$ of all $t$ such t
 
 In other words, if a state $s_i$ has period $k$, all returns must occur after time steps which are multiples of $k$.
 
+:::: {.columns}
+::: {.column width=50%}
 A Markov chain is **aperiodic** if all states have period 1.
+:::
+::: {.column width=50%}
+![Periodic Markov Chain](figures/markov-periodic.png){width=50%}
+:::
+::::
 
 ## Ergodicity
 
 A Markov chain is **ergodic** if it is aperiodic and irreducible.
 
 Ergodic Markov chains have a  *limiting* distribution which is the limit of the time-evolution of the chain dynamics, *e.g.*
-$$\pi\_j = \lim\_{t \to \infty} \mathbb{P}(X\_t = s_j).$$
+$$\pi_j = \lim_{t \to \infty} \mathbb{P}(X_t = s_j).$$
 
 **Key**: this limit is *independent* of the initial state probability.
 
@@ -380,28 +378,51 @@ $$\pi\_j = \lim\_{t \to \infty} \mathbb{P}(X\_t = s_j).$$
 For an ergodic chain, the limiting distribution is the unique stationary distribution (we won't prove uniqueness):
 
 \begin{align}
-\pi\_j &= \lim\_{t \to \infty} \mathbb{P}(X\_t = s\_j | X\_0 = s\_i) \\\\
-&= \lim\_{t \to \infty} (P^{t+1})\_{ij} = \lim\_{t \to \infty} (P^tP)\_{ij} \\\\
-&= \lim\_{t \to \infty} \sum\_d (P^n)\_{id} P\_{dj} \\\\
-&= \sum\_d \pi\_d P\_{dj}
+\pi_j &= \lim_{t \to \infty} \mathbb{P}(X_t = s_j | X_0 = s_i) \\
+&= \lim_{t \to \infty} (P^{t+1})_{ij} = \lim_{t \to \infty} (P^tP)_{ij} \\
+&= \lim_{t \to \infty} \sum_d (P^t)_{id} P_{dj} \\
+&= \sum_d \pi_d P_{dj}
 \end{align}
 
 ## Transient Portion of the Chain
 
+
 The portion of the chain prior to convergence to the stationary distribution is called the **transient** portion. 
 
-This will be important next week!
+```{julia}
+#| echo: true
+#| output: true
+#| code-fold: true
+#| fig-align: center
+#| label: fig-markov-transient
+#| fig-cap: Transient portion of the weather Markov chain.
+
+vspan!(p, [0, 4], color=:red, alpha=0.3, label="Transient Portion")
+```
 
 ## Detailed Balance
 
 The last important concept is **detailed balance**.
 
-Let $\{X\_t\}$ be a Markov chain and let $\pi$ be a probability distribution over the states. Then the chain is in detailed balance with respect to $\pi$ if
-$$\pi_i P\_{ij} = \pi_j P_{ji}.$$
+Let $\{X_t\}$ be a Markov chain and let $\pi$ be a probability distribution over the states. Then the chain is in detailed balance with respect to $\pi$ if
+$$\pi_i P_{ij} = \pi_j P_{ji}.$$
 
 ::: {.fragment .fade-in}
 Detailed balance implies **reversibility**: the chain's dynamics are the same when viewed forwards or backwards in time.
 :::
+
+## Detailed Balance Intuition
+
+A nice analogy (from [Miranda Holmes-Cerfon](https://personal.math.ubc.ca/~holmescerfon/)) is traffic flow.
+
+:::: {.columns}
+::: {.column width=50%}
+Consider NYC and its surroundings: each borough/region can be thought of as a node, and population transitions occur across bridges/tunnels.
+:::
+::: {.column width=50%}
+![New York City Graph](figures/detailed-balance-nyc.png)
+:::
+::::
 
 ## Detailed Balance and Stationary Distributions
 
@@ -439,42 +460,26 @@ Any algorithm which follows this procedure is a Markov chain Monte Carlo algorit
 
 ## Sampling Algorithm
 
-**Annoying news**: Convergence to the stationary distribution is only guaranteed asymptotically; evaluating if the chain has been run long enough requires lots of heuristics.
+**Annoying news**: 
+
+- Convergence to the stationary distribution is only guaranteed asymptotically; evaluating if the chain has been run long enough requires lots of heuristics.
+- Due to Markovian property, samples are *dependent*, so smaller "effective sample size".
 
 
 # Key Points and Upcoming Schedule
 
 ## Key Points
 
-- **Bootstrap Principle**: Use the data as a proxy for the population.
-- **Key**: Bootstrap gives idea of sampling error in statistics (including model parameters)
-- Distribution of $\tilde{t} - \hat{t}$ approximates distribution around estimate $\hat{t} - t_0$.
-- Allows us to estimate uncertainty of estimates (confidence intervals, bias, etc).
-- Parametric bootstrap introduces model specification error
-
-## Bootstrap Variants
-
-  - Resample Cases (Non-Parametric)
-  - Resample Residuals (Semi-Parametric)
-  - Simulate from Fitted Model (Parametric)
-
-## Which Bootstrap To Use?
-
-- **Bias-Variance Tradeoff**: Parametric Bootstrap has narrowest intervals, Resampling Cases widest (*Exercise 8*)
-- Depends on trust in model "correctness": 
-  - Do we trust the model parameters to be "correct"?
-  - Do we trust the shape of the regression model?
-  - Do we trust the data-generating process?
+- Bayesian computation is difficult because we need to sample from effectively arbitrary distributions.
+- Markov chains provide a path forward if we can construct a chain satisfying detailed balance whose stationary distribution is the target distribution.
+- Then a post-convergence chain of samples is the same as a *dependent* Monte Carlo set of samples.
 
 ## Next Classes
-
-**Wednesday**: Bayesian Computation and Markov chains
 
 **Next Week**: Markov chain Monte Carlo
 
 ## Assessments
 
-- **Reading**: @Rahmstorf2011-oj
 - **Exercise 8**: Due Friday
 - **Homework 3**: Due 3/22
 

@@ -17,7 +17,7 @@ title: "Week 8"
 ## Lectures
 
 - [Lecture 08-1: The Parametric Bootstrap](../slides/lecture08-1.qmd)
-- Lecture 07-2: Bayesian Computation and Markov Chains
+- [Lecture 08-2: Bayesian Computation and Markov Chains](../slides/lecture08-2.qmd)
 
 
 
