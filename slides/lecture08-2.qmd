@@ -72,7 +72,6 @@ Random.seed!(1)
 - **Bootstrap Principle**: Use the data as a proxy for the population.
 - **Key**: Bootstrap gives idea of sampling error in statistics (including model parameters)
 - Distribution of $\tilde{t} - \hat{t}$ approximates distribution around estimate $\hat{t} - t_0$.
-- Allows us to estimate uncertainty of estimates (confidence intervals, bias, etc).
 - Parametric bootstrap introduces model specification error
 
 ## Bootstrap Variants
@@ -95,12 +94,11 @@ Random.seed!(1)
 
 Probability is the *degree of belief in a "proposition"*.
 
-Then it makes sense to discuss the *probability* of
+Then it makes sense to discuss the *probability conditional on observations $\mathbf{y}$* of
 
 - model parameters $\mathbf{\theta}$
 - unobserved data $\tilde{\mathbf{y}}$ 
 
-conditional on the observations $\mathbf{y}$, which we can denote:
 $$p(\mathbf{\theta} | \mathbf{y}) \text{ or } p(\tilde{\mathbf{y}} | \mathbf{y})$$
 
 ## Conditioning on Observations
@@ -321,7 +319,7 @@ end
 p = plot(0:T-1, state_probs, label=["Foggy" "Sunny" "Rainy"], palette=:mk_8, linewidth=3, tickfontsize=16, guidefontsize=18, legendfontsize=16, left_margin=5mm, bottom_margin=10mm)
 xlabel!("Time")
 ylabel!("State Probability")
-plot!(p, size=(1000, 400))
+plot!(p, size=(1000, 350))
 ```
 
 ## Stationary Distributions
@@ -369,7 +367,11 @@ A Markov chain is **ergodic** if it is aperiodic and irreducible.
 Ergodic Markov chains have a  *limiting* distribution which is the limit of the time-evolution of the chain dynamics, *e.g.*
 $$\pi_j = \lim_{t \to \infty} \mathbb{P}(X_t = s_j).$$
 
-**Key**: this limit is *independent* of the initial state probability.
+**Key**: The limiting distribution limit is *independent* of the initial state probability.
+
+## Ergodicity
+
+$$\pi_j = \lim_{t \to \infty} \mathbb{P}(X_t = s_j).$$
 
 **Intuition**: Ergodicity means we can exchange thinking about *time-averages* and *ensemble-averages*.
 
@@ -424,7 +426,7 @@ Consider NYC and its surroundings: each borough/region can be thought of as a no
 :::
 ::::
 
-## Detailed Balance and Stationary Distributions
+## Detailed Balance: Stationary Distributions
 
 Detailed balance is a sufficient but not necessary condition for the existence of a stationary distribution (namely $\pi$):
 
