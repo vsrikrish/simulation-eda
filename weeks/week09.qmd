@@ -1,0 +1,19 @@
+---
+title: "Week 9"
+---
+
+## Announcements
+
+- Office hour modifications; see Ed.
+
+## Readings
+
+- Ruckert, K. L., Guan, Y., Bakker, A. M. R., Forest, C. E. & Keller, K. *The effects of time-varying observation errors on semi-empirical sea-level projections*. Clim. Change 140, 349–360 (2017), <http://dx.doi.org/10.1007/s10584-016-1858-z>
+
+## Lectures
+
+- [Lecture 09-1: Markov Chain Monte Carlo](../slides/lecture09-1.qmd)
+- Lecture 09-2: MCMC Examples
+
+
+

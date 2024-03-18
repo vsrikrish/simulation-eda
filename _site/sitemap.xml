@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://viveks.me/simulation-data-analysis/schedule.html</loc>
-    <lastmod>2024-03-13T11:25:35.750Z</lastmod>
+    <lastmod>2024-03-18T00:40:07.928Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/lit_review.html</loc>
@@ -61,36 +61,36 @@
     <lastmod>2024-02-08T01:04:45.322Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/slides/lecture08-1.html</loc>
-    <lastmod>2024-03-11T23:07:22.382Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/slides/lecture09-1.html</loc>
+    <lastmod>2024-03-18T00:40:05.132Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/policies/homework.html</loc>
-    <lastmod>2024-01-16T18:30:58.580Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/slides/lecture08-2.html</loc>
+    <lastmod>2024-03-13T12:02:05.545Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/solutions/hw02/hw02.html</loc>
-    <lastmod>2024-03-09T01:08:46.505Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/index.html</loc>
+    <lastmod>2024-03-06T02:09:59.103Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/homework.html</loc>
-    <lastmod>2024-03-08T12:42:26.262Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/solutions/hw01/hw01.html</loc>
+    <lastmod>2024-02-08T01:48:12.517Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/weeks/week02.html</loc>
-    <lastmod>2024-01-31T13:24:19.385Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/weeks/week03.html</loc>
+    <lastmod>2024-02-08T01:26:27.564Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/weeks/week01.html</loc>
-    <lastmod>2024-01-18T14:08:55.194Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/weeks/week04.html</loc>
+    <lastmod>2024-02-11T23:18:10.744Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/weeks/week05.html</loc>
-    <lastmod>2024-03-01T22:59:49.747Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/weeks/week07.html</loc>
+    <lastmod>2024-03-06T02:09:03.755Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/weeks/week06.html</loc>
-    <lastmod>2024-03-01T22:59:49.748Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/weeks/week08.html</loc>
+    <lastmod>2024-03-13T11:25:35.758Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/assignments/hw02/hw02.html</loc>
@@ -105,32 +105,40 @@
     <lastmod>2024-03-09T13:50:23.549Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/weeks/week08.html</loc>
-    <lastmod>2024-03-13T11:25:35.758Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/weeks/week09.html</loc>
+    <lastmod>2024-03-18T00:45:14.115Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/weeks/week07.html</loc>
-    <lastmod>2024-03-06T02:09:03.755Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/weeks/week06.html</loc>
+    <lastmod>2024-03-01T22:59:49.748Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/weeks/week04.html</loc>
-    <lastmod>2024-02-11T23:18:10.744Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/weeks/week05.html</loc>
+    <lastmod>2024-03-01T22:59:49.747Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/weeks/week03.html</loc>
-    <lastmod>2024-02-08T01:26:27.564Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/weeks/week01.html</loc>
+    <lastmod>2024-01-18T14:08:55.194Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/solutions/hw01/hw01.html</loc>
-    <lastmod>2024-02-08T01:48:12.517Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/weeks/week02.html</loc>
+    <lastmod>2024-01-31T13:24:19.385Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/index.html</loc>
-    <lastmod>2024-03-06T02:09:59.103Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/homework.html</loc>
+    <lastmod>2024-03-08T12:42:26.262Z</lastmod>
   </url>
   <url>
-    <loc>https://viveks.me/simulation-data-analysis/slides/lecture08-2.html</loc>
-    <lastmod>2024-03-13T12:02:05.545Z</lastmod>
+    <loc>https://viveks.me/simulation-data-analysis/solutions/hw02/hw02.html</loc>
+    <lastmod>2024-03-09T01:08:46.505Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/simulation-data-analysis/policies/homework.html</loc>
+    <lastmod>2024-01-16T18:30:58.580Z</lastmod>
+  </url>
+  <url>
+    <loc>https://viveks.me/simulation-data-analysis/slides/lecture08-1.html</loc>
+    <lastmod>2024-03-11T23:07:22.382Z</lastmod>
   </url>
   <url>
     <loc>https://viveks.me/simulation-data-analysis/slides/lecture01-1.html</loc>
