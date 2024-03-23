@@ -13,7 +13,7 @@ title: "Week 9"
 ## Lectures
 
 - [Lecture 09-1: Markov Chain Monte Carlo](../slides/lecture09-1.qmd)
-- Lecture 09-2: MCMC Examples
+- [Lecture 09-2: MCMC Convergence and Example](../slides/lecture09-2.qmd)
 
 
 

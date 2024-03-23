@@ -481,75 +481,6 @@ Two common measures of sampling efficiency:
 ![MCMC Sampling for Various Proposals](figures/mcmc-ess.svg){width=60%}
 :::
 
-
-# Assessing Convergence
-
-## Transient Chain Portion
-
-What do we do with the transient portion of the chain?
-
-::: {.fragment .fade-in}
-- Discard as *burn-in*;
-- Just run the chain longer.
-:::
-
-## How To Identify Convergence?
-
-**Short answer**: There is no guarantee! Judgement based on an accumulation of evidence from various heuristics.
-
-- The good news &mdash; getting the precise "right" end of the transient chain doesn't matter. 
-- If a few transient iterations remain, the effect will be washed out with a large enough post-convergence chain.
-
-## Heuristics for Convergence
-
-Compare distribution (histogram/kernel density plot) after half of the chain to full chain.
-
-::: {#fig-convergence layout-ncol=2}
-![2000 Iterations](figures/mh-densitycheck-2000.svg){width=100%}
-
-![10000 Iterations](figures/mh-densitycheck-10000.svg){width=100%}
-
-:::
-
-## Gelman-Rubin Diagnostic
-
-@Gelman1992-da
-
-- Run multiple chains from "overdispersed" starting points
-- Compare intra-chain and inter-chain variances
-- Summarized as $\hat{R}$ statistic: closer to 1 implies better convergence.
-- Can also check distributions across multiple chains vs. the half-chain check.
-
-## On Multiple Chains
-
-Unless a specific scheme is used, multiple chains are not a solution for issues of convergence, as each individual chain needs to converge and have burn-in discarded/watered-down. 
-
-This means multiple chains are more useful for diagnostics, but once they've all been run long enough, can mix samples freely.
-
-
-## Heuristics for Convergence
-
-- If you're more interested in the mean estimate, can also look at the its stability by iteration or the *Monte Carlo standard error*.
-- Look at traceplots; do you see sudden "jumps"?
-- **When in doubt, run the chain longer.**
-
-# Increasing Efficiency
-
-## Adaptive Metropolis-Hastings
-
-Adjust proposal density to hit target acceptance rate.
-
-- Need to be cautious about detailed balance.
-- Typical strategy is to adapt for a portion of the initial chain (part of the burn-in), then run longer with that proposal.
-
-## Hamiltonian Monte Carlo
-
-- **Idea**: Use proposals which steer towards "typical set" without collapsing towards the mode (based on Hamiltonian vector field);
-- Requires gradient information: can be obtained through autodifferentiation; challenging for external models;
-- Can be very efficient due to potential for anti-correlated samples, but very sensitive to parameterization.
-- Will see how to use this next class.
-
-
 # Key Points, Upcoming Schedule, and References
 
 ## Key Points (Metropolis-Hastings)
@@ -557,12 +488,6 @@ Adjust proposal density to hit target acceptance rate.
 - Construct ergodic and reversible Markov chains with posterior as stationary distribution.
 - Metropolis-Hastings: conceptually simple algorithm, but implementation plays a major role.
 - Proposal distribution plays a large role in acceptance rate and effective sample size.
-
-## Key Points (Convergence)
-
-- Must rely on "accumulation of evidence" from heuristics for determination about convergence to stationary distribution.
-- Transient portion of chain: Meh. Some people worry about this too much. Discard or run the chain longer.
-- Parallelizing solves few problems, but running multiple chains can be useful for diagnostics.
 
 ## Next Classes
 
