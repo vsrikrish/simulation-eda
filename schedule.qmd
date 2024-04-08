@@ -38,8 +38,8 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 |  | Wed, Mar 27 | Literature Review Presentations | | | |
 |   | Mon, Apr 1 | *No Class: Spring Break* | | | |
 |   | Wed, Apr 3 | *No Class: Spring Break* | | |  |
-| 11 | Mon, Apr 8 | Model-Data Discrepancy | | |  |
-|  | Wed, Apr 10 | Missing and Censored Data | | | |
+| 11 | Mon, Apr 8 | *No Class: Eclipse* | | |  |
+|  | Wed, Apr 10 | Hypothesis Testing | | | |
 | | | ***Model Assessment and Selection*** | | | |
 | 12 | Mon, Apr 15 | Model Assessment and Predictive Accuracy | | | | 
 | 13 | Wed, Apr 17 | Cross-Validation and Information Criteria | | | | 
