@@ -1,0 +1,130 @@
+---
+title: "Hypothesis Testing"
+subtitle: "Lecture 16"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "April 10, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        touch: false
+        controls: true
+execute:
+    freeze: auto
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using DataFrames
+using CSV
+using Dates
+using Distributions
+using ColorSchemes
+using Plots
+using StatsPlots
+using StatsBase
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+```
+
+# Last Class(es)
+
+## Markov Chain Monte Carlo
+
+- Generate an appropriate Markov chain so that its stationary distribution of the target distribution $\pi$;
+- Run its dynamics long enough to converge to the stationary distribution;
+- Use the resulting ensemble of states as Monte Carlo samples from $\pi$ .
+
+## Markov Chain Convergence
+
+Given a Markov chain $\{X_t\}_{t=1, \ldots, T}$ returned from this procedure, sampling from distribution $\pi$:
+
+- $\mathbb{P}(X_t = y) \to \pi(y)$ as $t \to \infty$
+- This means the chain can be considered a *dependent* sample approximately distributed from $\pi$.
+- The first values (the *transient portion*) of the chain are highly dependent on the initial value.
+
+## The Metropolis-Hastings Algorithm
+
+Given $X_t = x_t$:
+
+1. Generate $Y_t \sim q(y | x_t)$;
+2. Set $X_{t+1} = Y_t$ with probability $\rho(x_t, Y_t)$, where
+    $$\rho(x, y) = \min \left\{\frac{\pi(y)}{\pi(x)}\frac{q(x | y)}{q(y | x)}, 1\right\},$$
+    else set $X_{t+1} = x_t$.
+
+## MCMC Convergence
+
+- Must rely on "accumulation of evidence" from heuristics for determination about convergence to stationary distribution.
+- Transient portion of chain: Meh. Some people worry about this too much. Discard or run the chain longer.
+- Parallelizing solves few problems, but running multiple chains can be useful for diagnostics.
+
+# Hypothesis Testing
+
+## What Is Hypothesis Testing?
+
+::: {.fragment .fade-in}
+- Is a time series stationary?
+- Does some environmental condition have an effect on water quality/etc?
+- Does a drug or treatment have some effect?
+:::
+
+## Example: Storm Surge Nonstationarity
+
+**Standard Extreme Value Models (GEV/GPD)**: No long-term trend in the data (extremes follow the same distribution)
+
+This is an example of a **null hypothesis**: no meaningful effect.
+
+## Example: Storm Surge Nonstationarity
+
+**Alternative Hypothesis**: There is a long-term trend in the data, 
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Next Week**: Model Evaluation/Selection Criteria
+
+## Assessments
+
+- **Homework 4**: Released End of Week, Due 5/3 (Last One!)
+
+# References
+
+## References
