@@ -5250,5 +5250,131 @@
     "crumbs": [
       "Term Project"
     ]
+  },
+  {
+    "objectID": "slides/lecture10-1.html#markov-chain-monte-carlo",
+    "href": "slides/lecture10-1.html#markov-chain-monte-carlo",
+    "title": "Hypothesis Testing",
+    "section": "Markov Chain Monte Carlo",
+    "text": "Markov Chain Monte Carlo\n\nGenerate an appropriate Markov chain so that its stationary distribution of the target distribution \\(\\pi\\);\nRun its dynamics long enough to converge to the stationary distribution;\nUse the resulting ensemble of states as Monte Carlo samples from \\(\\pi\\) ."
+  },
+  {
+    "objectID": "slides/lecture10-1.html#markov-chain-convergence",
+    "href": "slides/lecture10-1.html#markov-chain-convergence",
+    "title": "Hypothesis Testing",
+    "section": "Markov Chain Convergence",
+    "text": "Markov Chain Convergence\nGiven a Markov chain \\(\\{X_t\\}_{t=1, \\ldots, T}\\) returned from this procedure, sampling from distribution \\(\\pi\\):\n\n\\(\\mathbb{P}(X_t = y) \\to \\pi(y)\\) as \\(t \\to \\infty\\)\nThis means the chain can be considered a dependent sample approximately distributed from \\(\\pi\\).\nThe first values (the transient portion) of the chain are highly dependent on the initial value."
+  },
+  {
+    "objectID": "slides/lecture10-1.html#the-metropolis-hastings-algorithm",
+    "href": "slides/lecture10-1.html#the-metropolis-hastings-algorithm",
+    "title": "Hypothesis Testing",
+    "section": "The Metropolis-Hastings Algorithm",
+    "text": "The Metropolis-Hastings Algorithm\nGiven \\(X_t = x_t\\):\n\nGenerate \\(Y_t \\sim q(y | x_t)\\);\nSet \\(X_{t+1} = Y_t\\) with probability \\(\\rho(x_t, Y_t)\\), where \\[\\rho(x, y) = \\min \\left\\{\\frac{\\pi(y)}{\\pi(x)}\\frac{q(x | y)}{q(y | x)}, 1\\right\\},\\] else set \\(X_{t+1} = x_t\\)."
+  },
+  {
+    "objectID": "slides/lecture10-1.html#mcmc-convergence",
+    "href": "slides/lecture10-1.html#mcmc-convergence",
+    "title": "Hypothesis Testing",
+    "section": "MCMC Convergence",
+    "text": "MCMC Convergence\n\nMust rely on “accumulation of evidence” from heuristics for determination about convergence to stationary distribution.\nTransient portion of chain: Meh. Some people worry about this too much. Discard or run the chain longer.\nParallelizing solves few problems, but running multiple chains can be useful for diagnostics."
+  },
+  {
+    "objectID": "slides/lecture10-1.html#what-is-hypothesis-testing",
+    "href": "slides/lecture10-1.html#what-is-hypothesis-testing",
+    "title": "Hypothesis Testing",
+    "section": "What Is Hypothesis Testing?",
+    "text": "What Is Hypothesis Testing?\n\n\nIs a time series stationary?\nDoes some environmental condition have an effect on water quality/etc?\nDoes a drug or treatment have some effect?"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-storm-surge-nonstationarity",
+    "href": "slides/lecture10-1.html#example-storm-surge-nonstationarity",
+    "title": "Hypothesis Testing",
+    "section": "Example: Storm Surge Nonstationarity",
+    "text": "Example: Storm Surge Nonstationarity\nStandard Extreme Value Models (GEV/GPD): No long-term trend in the data (extremes follow the same distribution)\nThis is an example of a null hypothesis: no meaningful effect."
+  },
+  {
+    "objectID": "slides/lecture10-1.html#example-storm-surge-nonstationarity-1",
+    "href": "slides/lecture10-1.html#example-storm-surge-nonstationarity-1",
+    "title": "Hypothesis Testing",
+    "section": "Example: Storm Surge Nonstationarity",
+    "text": "Example: Storm Surge Nonstationarity\nAlternative Hypothesis: There is a long-term trend in the data.\n\nHow can we draw conclusions about whether apparent trends are “real” (alternative hypothesis) or noise (null hypothesis)?"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#hypothesis-testing-notation",
+    "href": "slides/lecture10-1.html#hypothesis-testing-notation",
+    "title": "Hypothesis Testing",
+    "section": "Hypothesis Testing Notation",
+    "text": "Hypothesis Testing Notation\n\n\\(\\mathcal{H}_0\\): null\n\\(\\mathcal{H}\\): alternative"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#non-parametric-statistics-for-non-stationarity",
+    "href": "slides/lecture10-1.html#non-parametric-statistics-for-non-stationarity",
+    "title": "Hypothesis Testing",
+    "section": "Non-Parametric Statistics for Non-Stationarity",
+    "text": "Non-Parametric Statistics for Non-Stationarity\nMann-Kendall Test: Assume data is independent, but no specific distributional assumption\n\\[S = \\sum_{i=1}^{n-1} \\sum_{j={1+1}}^n \\text{sgn}\\left(y_i - y_j\\right).\\]"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#parametric-statistics-for-non-stationarity",
+    "href": "slides/lecture10-1.html#parametric-statistics-for-non-stationarity",
+    "title": "Hypothesis Testing",
+    "section": "Parametric Statistics for Non-Stationarity",
+    "text": "Parametric Statistics for Non-Stationarity\nFit a regression\n\\[\n\\begin{gather*}\ny_i = \\beta t + \\varepsilon_i, \\\\\n\\varepsilon_i \\sim \\mathcal{N}(0, \\sigma^2\\mathbb{I}).\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#statistical-significance",
+    "href": "slides/lecture10-1.html#statistical-significance",
+    "title": "Hypothesis Testing",
+    "section": "Statistical Significance",
+    "text": "Statistical Significance\nIs the value of the test statistic consistent with the null hypothesis?\nMore formally, could the test statistic have been reasonably observed from a random sample given the null hypothesis?"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#error-types",
+    "href": "slides/lecture10-1.html#error-types",
+    "title": "Hypothesis Testing",
+    "section": "Error Types",
+    "text": "Error Types\n\n\n\n\n\n\n\nNull Hypothesis Is\n\n\n\n\n\n\n\n\nTrue\n\n\nFalse\n\n\n\n\nDecision About Null Hypothesis\n\n\nDon’t reject\n\n\nTrue negative (probability \\(1-\\alpha\\))\n\n\nType II error (false negative, probability \\(\\beta\\))\n\n\n\n\nReject\n\n\nType I Error (false positive, probability \\(\\alpha\\))\n\n\nTrue positive (probability \\(1-\\beta\\))\n\n\n\nThe significance level \\(\\alpha\\) is the probability of rejecting the null hypothesis assuming that it is true (Type I errror)."
+  },
+  {
+    "objectID": "slides/lecture10-1.html#next-classes",
+    "href": "slides/lecture10-1.html#next-classes",
+    "title": "Hypothesis Testing",
+    "section": "Next Classes",
+    "text": "Next Classes\nNext Week: Model Evaluation/Selection Criteria"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#assessments",
+    "href": "slides/lecture10-1.html#assessments",
+    "title": "Hypothesis Testing",
+    "section": "Assessments",
+    "text": "Assessments\n\nHomework 4: Released End of Week, Due 5/3 (Last One!)"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#references-1",
+    "href": "slides/lecture10-1.html#references-1",
+    "title": "Hypothesis Testing",
+    "section": "References",
+    "text": "References"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#non-parametric-null-hypothesis",
+    "href": "slides/lecture10-1.html#non-parametric-null-hypothesis",
+    "title": "Hypothesis Testing",
+    "section": "Non-Parametric Null Hypothesis",
+    "text": "Non-Parametric Null Hypothesis\n\\(\\mathcal{H}_0: S = 0\\) (no average trend).\nThe sampling distribution of \\(S\\) consistent with that hypothesis is \\[S \\sim \\mathcal{N}\\left(0, \\frac{2(2n+5)}{9n(n-1)}\\right).\\]"
+  },
+  {
+    "objectID": "slides/lecture10-1.html#parametric-null-hypothesis",
+    "href": "slides/lecture10-1.html#parametric-null-hypothesis",
+    "title": "Hypothesis Testing",
+    "section": "Parametric Null Hypothesis",
+    "text": "Parametric Null Hypothesis\n\\(\\mathcal{H}_0\\): = 0\nAssuming normally-distributed errors and sampling distributions for the OLS estimate of \\(\\beta\\):\n\\[\\beta \\sim \\mathcal{N}\\left(\\mathbf{0}, \\sigma^2\\left(X^TX\\right)^{-1}\\right)\\]."
+  },
+  {
+    "objectID": "slides/lecture10-1.html#statistical-significance-1",
+    "href": "slides/lecture10-1.html#statistical-significance-1",
+    "title": "Hypothesis Testing",
+    "section": "Statistical Significance",
+    "text": "Statistical Significance\nNote: Statistical significance does not mean anything about whether the alternative hypothesis is “true” or an accurate reflection of the data-generating process.\nMore clever null hypothesis setups can get around this, but they aren’t the default."
   }
 ]
