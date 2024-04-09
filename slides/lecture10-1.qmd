@@ -113,7 +113,45 @@ This is an example of a **null hypothesis**: no meaningful effect.
 
 ## Example: Storm Surge Nonstationarity
 
-**Alternative Hypothesis**: There is a long-term trend in the data, 
+**Alternative Hypothesis**: There is a long-term trend in the data.
+
+::: {.fragment .fade-in}
+How can we draw conclusions about whether apparent trends are "real" (alternative hypothesis) or noise (null hypothesis)?
+:::
+
+## Hypothesis Testing Notation
+
+- $\mathcal{H}_0$: null
+- $\mathcal{H}$: alternative
+
+## Non-Parametric Statistics for Non-Stationarity
+
+**Mann-Kendall Test**: Assume data is independent, but no specific distributional assumption
+
+$$S = \sum_{i=1}^{n-1} \sum_{j={1+1}}^n \text{sgn}\left(y_i - y_j\right).$$
+
+$\mathcal{H}_0: S = 0$.
+
+The sampling distribution of $S$ is
+$$S \sim \mathcal{N}\sim(0, \frac{2(2n+5)}{9n(n-1)}).$$
+
+
+## Parametric Statistics for Non-Stationarity
+
+Fit a regression 
+
+$$\begin{gather*}
+y_i = \beta t + \varepsilon_i,
+\varepsilon_i \sim \mathcal{N}(0, \sigma^2\mathbb{I}).
+$$
+
+$\mathcal{H}_0$: \beta = 0
+Assuming normally-distributed errors and sampling distributions, the OLS estimate of the coefficient:
+
+$$\hat{\beta} \sim \mathcal{N}\left(\beta, \sigma^2\left(X^TX\right)^{-1}\right)$$. 
+
+## 
+
 
 # Upcoming Schedule
 
