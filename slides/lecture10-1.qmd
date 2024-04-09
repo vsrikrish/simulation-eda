@@ -126,7 +126,7 @@ How can we draw conclusions about whether apparent trends are "real" (alternativ
 
 ## Non-Parametric Statistics for Non-Stationarity
 
-**Mann-Kendall Test**: Assume data is independent, but no specific distributional assumption
+**Mann-Kendall Test**: Assume data is independent and no periodic signals, but no specific distributional assumption
 
 $$S = \sum_{i=1}^{n-1} \sum_{j={1+1}}^n \text{sgn}\left(y_i - y_j\right).$$
 
@@ -160,7 +160,7 @@ More clever null hypothesis setups can get around this, but they aren't the defa
 $\mathcal{H}_0: S = 0$ (no average trend).
 
 The sampling distribution of $S$ consistent with that hypothesis is
-$$S \sim \mathcal{N}\left(0, \frac{2(2n+5)}{9n(n-1)}\right).$$
+$$S \sim \mathcal{N}\left(0, \frac{n(n-1)(2n+5)}{18}\right).$$
 
 ## Parametric Null Hypothesis
 
@@ -203,7 +203,52 @@ The standard null hypothesis significance framework is based on balancing the ch
 
 **Idea**: Set a significance level $\alpha$ which is an "acceptable" probability of making a Type I error.
 
+## p-Values
 
+:::: {.columns}
+::: {.column width=50%}
+The **p-value** captures the probability that, **assuming the null hypothesis**, you would observe results **at least as extreme as you observed**
+:::
+::: {.column width=50%}
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| label: fig-p-value
+#| fig-cap: Illustration of a p-value
+
+test_dist = Normal(0, 3)
+x = -10:0.01:10
+plot(x, pdf.(test_dist, x), linewidth=3, legend=false, color=:black, xticks=false,  yticks=false, ylabel="Probability", xlabel=L"y", bottom_margin=10mm, left_margin=10mm, guidefontsize=16)
+vline!([5], linestyle=:dash, color=:purple, linewidth=3, )
+areaplot!(5:0.01:10, pdf.(test_dist, 5:0.01:10), color=:green, alpha=0.4)
+quiver!([-4.5], [0.095], quiver=([1], [-0.02]), color=:black, linewidth=2)
+annotate!([-5], [0.11], text("Null\nSampling\nDistribution", color=:black))
+quiver!([6.5], [0.03], quiver=([-1], [-0.015]), color=:green, linewidth=2)
+annotate!([6.85], [0.035], text("p-value", :green))
+quiver!([3.5], [0.02], quiver=([1.5], [0]), color=:purple, linewidth=2)
+annotate!([0.9], [0.02], text("Observation", :purple))
+```
+
+## p-Value and Significance
+
+If the p-value is sufficiently small (below $\alpha$), we say that we can reject the null hypothesis with $1-\alpha$ confidence, or that the finding is statistically significant at the $1-\alpha$ level.
+
+This can mean:
+
+::: {.fade-in .fragment}
+1. The null hypothesis is not true for that data-generating process;
+2. The null hypothesis *is* true but the data is an outlying sample.
+:::
+
+## What the p-Value Is Not
+
+::: {.incremental}
+1. Probability that the null hypothesis is true;
+2. Probability that the effect was produced by chance alone;
+3. An indication of the effect size.
+:::
 
 # Upcoming Schedule
 
