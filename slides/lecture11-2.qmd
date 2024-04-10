@@ -1,0 +1,407 @@
+---
+title: "Hypothesis Testing"
+subtitle: "Lecture 16"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "April 10, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        touch: false
+        controls: true
+execute:
+    freeze: auto
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using DataFrames
+using DataFramesMeta
+using CSV
+using Dates
+using Distributions
+using ColorSchemes
+using Plots
+using StatsPlots
+using StatsBase
+using GLM
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+```
+
+# Class Overview
+
+## What We've Done
+
+- Develop probability models consistent with data-generating processes;
+- Simulate from probability models (Monte Carlo)
+- Calibrate (fit) models to data and quantify uncertainties (bootstrap, MCMC).
+
+## What's Left?
+
+- Assessing evidence/model selection
+- *Maybe*: Emulation and surrogate modeling
+
+# Hypothesis Testing
+
+## What Is Hypothesis Testing?
+
+::: {.fragment .fade-in}
+- Is a time series stationary?
+- Does some environmental condition have an effect on water quality/etc?
+- Does a drug or treatment have some effect?
+:::
+
+## Example: Storm Surge Nonstationarity
+
+**Standard Extreme Value Models (GEV/GPD)**: No long-term trend in the data (extremes follow the same distribution)
+
+This is an example of a **null hypothesis**: no meaningful effect.
+
+## Example: Storm Surge Nonstationarity
+
+**Alternative Hypothesis**: There is a long-term trend in the data.
+
+::: {.fragment .fade-in}
+How can we draw conclusions about whether apparent trends are "real" (alternative hypothesis) or noise (null hypothesis)?
+:::
+
+## Hypothesis Testing Notation
+
+- $\mathcal{H}_0$: null
+- $\mathcal{H}$: alternative
+
+## San Francisco Tide Gauge Data
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| code-overflow: wrap
+#| fig-align: center
+#| label: fig-surge-data
+#| fig-cap: Annual maxima surge data from the San Francisco, CA tide gauge.
+
+# load SF tide gauge data
+# read in data and get annual maxima
+function load_data(fname)
+    date_format = DateFormat("yyyy-mm-dd HH:MM:SS")
+    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data
+    df = @chain fname begin
+        CSV.read(DataFrame; header=false)
+        rename("Column1" => "year", "Column2" => "month", "Column3" => "day", "Column4" => "hour", "Column5" => "gauge")
+        # need to reformat the decimal date in the data file
+        @transform :datetime = DateTime.(:year, :month, :day, :hour)
+        # replace -99999 with missing
+        @transform :gauge = ifelse.(abs.(:gauge) .>= 9999, missing, :gauge)
+        select(:datetime, :gauge)
+    end
+    return df
+end
+
+dat = load_data("data/surge/h551.csv")
+
+# detrend the data to remove the effects of sea-level rise and seasonal dynamics
+ma_length = 366
+ma_offset = Int(floor(ma_length/2))
+moving_average(series,n) = [mean(@view series[i-n:i+n]) for i in n+1:length(series)-n]
+dat_ma = DataFrame(datetime=dat.datetime[ma_offset+1:end-ma_offset], residual=dat.gauge[ma_offset+1:end-ma_offset] .- moving_average(dat.gauge, ma_offset))
+
+# group data by year and compute the annual maxima
+dat_ma = dropmissing(dat_ma) # drop missing data
+dat_annmax = combine(dat_ma -> dat_ma[argmax(dat_ma.residual), :], groupby(transform(dat_ma, :datetime => x->year.(x)), :datetime_function))
+delete!(dat_annmax, nrow(dat_annmax)) # delete 2023; haven't seen much of that year yet
+rename!(dat_annmax, :datetime_function => :Year)
+select!(dat_annmax, [:Year, :residual])
+dat_annmax.residual = dat_annmax.residual / 1000 # convert to m
+
+# make plots
+p1 = plot(
+    dat_annmax.Year,
+    dat_annmax.residual;
+    xlabel="Year",
+    ylabel="Annual Max Tide Level (m)",
+    label=false,
+    marker=:circle,
+    markersize=5,
+    tickfontsize=16,
+    guidefontsize=18,
+    left_margin=5mm, 
+    bottom_margin=5mm
+)
+
+n = nrow(dat_annmax)
+linfit = lm(@formula(residual ~ Year), dat_annmax)
+pred = coef(linfit)[1] .+ coef(linfit)[2] * dat_annmax.Year
+
+plot!(p1, dat_annmax.Year, pred, linewidth=3, label="Linear Trend")
+```
+
+## Non-Parametric Statistics for Non-Stationarity
+
+**Mann-Kendall Test**: Assume data is independent and no periodic signals, but no specific distributional assumption
+
+$$S = \sum_{i=1}^{n-1} \sum_{j={1+1}}^n \text{sgn}\left(y_j - y_i\right).$$
+
+SF Tide Gauge Data: $S=921$.
+
+## Parametric Statistics for Non-Stationarity
+
+Fit a regression 
+
+$$
+\begin{gather*}
+y_i = \beta_0 + \beta_1 t + \varepsilon_i, \\
+\varepsilon_i \sim \mathcal{N}(0, \sigma^2\mathbb{I}).
+\end{gather*}
+$$
+
+SF Tide Gauge Data: $\hat{\beta} \approx (1.26, 4 \times 10^{-4})^T$
+
+## Statistical Significance
+
+Is the value of the test statistic consistent with the null hypothesis?
+
+More formally, could the test statistic have been reasonably observed from a random sample **given the null hypothesis**?
+
+## Statistical Significance
+
+***Note***: Statistical significance does not mean anything about whether the alternative hypothesis is "true" or an accurate reflection of the data-generating process.
+
+More clever null hypothesis setups can get around this, but they aren't the default.
+
+## Non-Parametric Null Hypothesis
+
+$\mathcal{H}_0: S = 0$ (no average trend).
+
+The sampling distribution of $S$ consistent with that hypothesis is
+$$S \sim \mathcal{N}\left(0, \frac{n(n-1)(2n+5)}{18}\right).$$
+
+SF Tide Gauge Data: $Var(S) = 224875$
+
+## Parametric Null Hypothesis
+
+$\mathcal{H}_0: \beta_1 = 0$ (time does not explain trends).
+
+Use the $t$-statistic:
+
+$$\hat{t} = \frac{\hat{\beta_1}}{se(\hat{\beta_1)}},$$  $\hat{t} \sim t_{n-2}$.
+
+SF Data: $t = 2.31$.
+
+
+## Error Types
+
+<table>
+  <tr>
+    <td></td>
+    <td></td>
+    <td colspan="2">**Null Hypothesis Is**</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>True</td>
+    <td>False </td>
+  </tr>
+  <tr>
+    <td rowspan="2">**Decision About Null Hypothesis**</td>
+    <td>Don't reject</td>
+    <td>True negative (probability $1-\alpha$)</td>
+    <td>Type II error (false negative, probability $\beta$)</td>
+  </tr>
+  <tr>
+    <td>Reject</td>
+    <td>Type I Error (false positive, probability $\alpha$)</td>
+    <td>True positive (probability $1-\beta$)</td>
+  </tr>
+</table>
+
+## Type I and Type II Errors
+
+The standard null hypothesis significance framework is based on balancing the chance of making **Type I (false positive)** and **Type II (false negative)** errors.
+
+**Idea**: Set a significance level $\alpha$ which is an "acceptable" probability of making a Type I error.
+
+**Aside**: The probability $1-\beta$ of correctly rejecting $H_0$ is the *power*.
+
+## p-Values
+
+:::: {.columns}
+::: {.column width=50%}
+The **p-value** captures the probability that, **assuming the null hypothesis**, you would observe results **at least as extreme as you observed**.
+:::
+::: {.column width=50%}
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| label: fig-p-value
+#| fig-cap: Illustration of a p-value
+
+test_dist = Normal(0, 3)
+x = -10:0.01:10
+plot(x, pdf.(test_dist, x), linewidth=3, legend=false, color=:black, xticks=false,  yticks=false, ylabel="Probability", xlabel=L"y", bottom_margin=10mm, left_margin=10mm, guidefontsize=16)
+vline!([5], linestyle=:dash, color=:purple, linewidth=3, )
+areaplot!(5:0.01:10, pdf.(test_dist, 5:0.01:10), color=:green, alpha=0.4)
+quiver!([-4.5], [0.095], quiver=([1], [-0.02]), color=:black, linewidth=2)
+annotate!([-5], [0.11], text("Null\nSampling\nDistribution", color=:black))
+quiver!([6.5], [0.03], quiver=([-1], [-0.015]), color=:green, linewidth=2)
+annotate!([6.85], [0.035], text("p-value", :green))
+quiver!([3.5], [0.02], quiver=([1.5], [0]), color=:purple, linewidth=2)
+annotate!([0.9], [0.02], text("Observation", :purple))
+plot!(size=(650, 500))
+```
+:::
+::::
+
+## p-Value and Significance
+
+If the p-value is sufficiently small (below $\alpha$), we say that we can reject the null hypothesis with $1-\alpha$ confidence, or that the finding is statistically significant at the $1-\alpha$ level.
+
+This can mean:
+
+::: {.fade-in .fragment}
+1. The null hypothesis is not true for that data-generating process;
+2. The null hypothesis *is* true but the data is an outlying sample.
+:::
+
+## What p-Values Are Not
+
+::: {.incremental}
+1. Probability that the null hypothesis is true;
+2. Probability that the effect was produced by chance alone;
+3. An indication of the effect size.
+:::
+
+## Aside: p-Values
+
+::: {.center}
+![XKCD #1478 ](https://imgs.xkcd.com/comics/p_values_2x.png){width=30%}
+
+::: {.caption}
+*Source*: [XKCD](https://xkcd.com/1478/)
+:::
+:::
+
+## SF Tide Gauge Data
+
+For the SF tide gauge data, the p-value for the Mann-Kendall test is 0.5. 
+
+::: {.incremental}
+- What can you conclude?
+- What can't you conclude?
+:::
+
+## SF Tide Gauge Data
+
+The p-value for the coefficient of the time-varying term in a regression is 0.02.
+
+What can/can't you conclude?
+
+## What is Any Statistical Test Doing?
+
+1. Assume the null hypothesis $H_0$.
+2. Compute the test statistic $\hat{S}$ for the sample.
+3. **Obtain the sampling distribution of the test statistic $S$ under $H_0$.**
+4. Calculate $\mathbb{P}(S > \hat{S})$ (*the p-value*).
+
+## Some Criticisms of Null Hypothesis Significance Testing
+
+::: {.incremental}
+- Does a dichotomy between $H_0$ and $H$ make sense?
+- What are the implications of (not) rejecting $H_0$?
+- Why was the significance level chosen?
+:::
+
+## What Might Be More Satisfying?
+
+::: {.incremental}
+- Consideration of multiple plausible (possibly more nuanced) hypotheses.
+- Assessment/quantification of evidence consistent with different hypotheses.
+- Insight into the effect size.
+:::
+
+# Model Selection as Hypothesis Testing
+
+## Model Assessment Through Simulation
+
+If we have a model which permits simulation (through Monte Carlo or the bootstrap):
+
+1. Calibrate models under different assumptions;
+2. Simulate realizations from those models;
+3. Compute the distribution of the relevant statistic $S$ from these realizations;
+4. Assess which distribution is most consistent with the observed quantity.
+
+## Advances of Simulation for "Testing"
+
+- More structural freedom (don't need to write down the sampling distribution of $S$ in closed form);
+- Don't need to set up a dichotomous "null vs alternative" test;
+- Models can reflect more nuanced hypotheses about data generating processes.
+
+## How Do We Assess Models For Selection?
+
+Generally, through **predictive performance**: how probable is some data (out-of-sample or the calibration dataset)?
+
+But there are also metrics of how well you explain the existing data (RMSE, R^2^).
+
+# Key Points
+
+## Hypothesis Testing
+
+- Null Hypothesis Significance Testing: Compare a null hypothesis (no effect) to an alternative (effect)
+- $p$-value: probability (under $H_0$) of more extreme test statistic than observed.
+- $p$-values are often over-interpreted, with negative outcomes!
+- "Significant" if $p$-value is below a significance level reflecting acceptable Type I error rate.
+
+
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Next Week**: Model Evaluation/Selection Criteria
+
+## Assessments
+
+**Homework 4**: Released End of Week, Due 5/3 (Last One!)
+
+**Project**: Simulation Study Due Friday (4/12).

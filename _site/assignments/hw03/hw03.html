@@ -284,6 +284,18 @@ window.Quarto = {
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -500,7 +512,7 @@ Due Date
 <h3 class="anchored" data-anchor-id="load-environment">Load Environment</h3>
 <p>The following code loads the environment and makes sure all needed packages are installed. This should be at the start of most Julia scripts.</p>
 </section>
-<div id="e5ea78e7" class="cell" data-execution_count="1">
+<div id="dae23179" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">Pkg</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">activate</span>(<span class="pp">@__DIR__</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">instantiate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -508,7 +520,7 @@ Due Date
 <div class="cell markdown">
 <p>The following packages are included in the environment (to help you find other similar packages in other languages). The code below loads these packages for use in the subsequent notebook (the desired functionality for each package is commented next to the package).</p>
 </div>
-<div id="0b0f3a49" class="cell" data-execution_count="2">
+<div id="27b01ee4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Random</span> <span class="co"># random number generation and seed-setting</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span> <span class="co"># tabular data structure</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFramesMeta</span> <span class="co"># API which can simplify chains of DataFrames transformations</span></span>
@@ -530,22 +542,21 @@ Due Date
 <p>where <span class="math inline">\(T_0\)</span> is the temperature (in <span class="math inline">\(^\circ C\)</span>) where sea-level is in equilibrium (<span class="math inline">\(dH/dt = 0\)</span>), and <span class="math inline">\(\alpha\)</span> is the sea-level rise sensitivity to temperature. Discretizing this equation using the Euler method and using an annual timestep (<span class="math inline">\(\delta t = 1\)</span>), we get <span class="math display">\[H(t+1) = H(t) + \alpha (T(t) - T_0).\]</span></p>
 <p>Suppose that we wanted to develop a Bayesian probability model for this problem, assuming independent normal residuals:</p>
 <p><span class="math display">\[\begin{gather*}
-y(t) = F(t) - \varepsilon_t \\
+y(t) = F(t) + \varepsilon_t \\
 \varepsilon_t \sim \mathcal{N}(0, \sigma^2)
 \end{gather*}\]</span></p>
 <p>We might specify the following priors (assuming independence across parameters):</p>
 <ul>
 <li><span class="math inline">\(T_0 \sim \mathcal{N}(-0.5, 0.1)\)</span>;</li>
 <li><span class="math inline">\(\alpha \sim \mathcal{TN}(0, 5; 0, \infty)\)</span> (truncated normal between 0 and infinity);</li>
-<li><span class="math inline">\(H_0 \sim \mathcal{N}(-150, 25)\)</span>.</li>
+<li><span class="math inline">\(H_0 \sim \mathcal{N}(-150, 25)\)</span>;</li>
+<li><span class="math inline">\(\sigma \sim \mathcal{TN}(0, 5; 0, \infty)\)</span></li>
 </ul>
 <p><strong>In this problem</strong>:</p>
-<ul>
-<li>Load the data from the <code>data/</code> folder
+<!-- * Load the data from the `data/` folder -->
 <ul>
 <li>Historical and RCP 8.5 global mean temperatures from NOAA can be found in <code>data/NOAA_IPCC_RCPtempsscenarios.csv</code> (use the fourth column for the temperature series).</li>
 <li>Global mean sea level anomalies (relative to the 1990 mean global sea level) are in <code>data/CSIRO_Recons_gmsl_yr_2015.csv</code>, courtesy of CSIRO (<a href="https://www.cmar.csiro.au/sealevel/sl_data_cmar.html" class="uri">https://www.cmar.csiro.au/sealevel/sl_data_cmar.html</a>).</li>
-</ul></li>
 <li>Simulate from the prior predictive distribution. What do you think about the priors?</li>
 <li>Would you propose new priors? If so, what might they be and why?</li>
 </ul>
@@ -582,7 +593,7 @@ y(t) = F(t) - \varepsilon_t \\
 <li>Find the MLE of the non-stationary GEV model and for a stationary GEV (constant <span class="math inline">\(\mu\)</span>; we did this in class).</li>
 <li>Discuss the difference(s) between the two fitted models based on the coefficient values (you can also bring to bear the range(s) of PDO values from the data), the 100- and 500-year return periods in 2022, and plotted hindcasts.</li>
 </ul>
-<div id="81d3dd50" class="cell" data-execution_count="3">
+<div id="560de0ba" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">## load the data from the file and return a DataFrame of DateTime values and gauge measurements</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">load_pdo</span>(fname)</span>

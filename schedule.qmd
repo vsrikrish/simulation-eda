@@ -33,18 +33,17 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 |  | Wed, Mar 13 | Bayesian Computation | [{{< fa sharp presentation-screen >}}](slides/lecture08-2.qmd) | | | 
 | 9 | Mon, Mar 18 | Markov Chain Monte Carlo | [{{< fa sharp presentation-screen >}}](slides/lecture09-1.qmd) | Ruckert et al ([2017](https://link-springer-com.proxy.library.cornell.edu/article/10.1007/s10584-016-1858-z)) | | 
 |  | Wed, Mar 20 | MCMC Convergence and Example | [{{< fa sharp presentation-screen >}}](slides/lecture09-2.qmd) | | | 
-| | | ***Model Calibration*** | | | |
 | 10 | Mon, Mar 25 | MCMC Lab | | | | 
 |  | Wed, Mar 27 | Literature Review Presentations | | | |
 |   | Mon, Apr 1 | *No Class: Spring Break* | | | |
 |   | Wed, Apr 3 | *No Class: Spring Break* | | |  |
-| 11 | Mon, Apr 8 | *No Class: Eclipse* | | |  |
-|  | Wed, Apr 10 | Hypothesis Testing | | | |
 | | | ***Model Assessment and Selection*** | | | |
+| 11 | Mon, Apr 8 | *No Class: Eclipse* | | |  |
+|  | Wed, Apr 10 | Hypothesis Testing | [{{< fa sharp presentation-screen >}}](slides/lecture11-2.qmd) | | |
 | 12 | Mon, Apr 15 | Model Assessment and Predictive Accuracy | | | | 
 | 13 | Wed, Apr 17 | Cross-Validation and Information Criteria | | | | 
-| 1 | Mon, Apr 22 | Graphical Model Evaluation | | |  |
-|  | Wed, Apr 24 | Model Assessment and Selection: Examples  | | | | 
+| 1 | Mon, Apr 22 | Model Assessment and Selection: Examples | | |  |
+|  | Wed, Apr 24 |  Missing Data Models | | | | 
 | | | ***Emulation*** | | | |
 | 14 | Mon, Apr 29 | Tradeoffs Between Complexity and Ensemble Size | | | | 
 |  | Wed, May 1 | Emulating Expensive Models | | | | 
