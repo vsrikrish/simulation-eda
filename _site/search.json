@@ -5504,5 +5504,262 @@
     "crumbs": [
       "Term Project"
     ]
+  },
+  {
+    "objectID": "slides/lecture12-1.html#hypothesis-testing",
+    "href": "slides/lecture12-1.html#hypothesis-testing",
+    "title": "Model Assessment",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\nStandard null hypothesis significance testing framework:\n\nFrame problem with null hypothesis \\(\\mathcal{H}_0\\) and alternative hypothesis \\(\\mathcal{H}\\).\nSet significance level \\(\\alpha\\).\nFind \\(p\\)-value \\[\\mathbb{P}\\left(y_{\\mathcal{H}_0} &gt; y\\right)\\]"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#what-is-a-p-value",
+    "href": "slides/lecture12-1.html#what-is-a-p-value",
+    "title": "Model Assessment",
+    "section": "What is a \\(p\\)-value?",
+    "text": "What is a \\(p\\)-value?\n\n\nThe p-value captures the probability that, assuming the null hypothesis, you would observe results at least as extreme as you observed.\n\n\n\nCode\ntest_dist = Normal(0, 3)\nx = -10:0.01:10\nplot(x, pdf.(test_dist, x), linewidth=3, legend=false, color=:black, xticks=false,  yticks=false, ylabel=\"Probability\", xlabel=L\"y\", bottom_margin=10mm, left_margin=10mm, guidefontsize=16)\nvline!([5], linestyle=:dash, color=:purple, linewidth=3, )\nareaplot!(5:0.01:10, pdf.(test_dist, 5:0.01:10), color=:green, alpha=0.4)\nquiver!([-4.5], [0.095], quiver=([1], [-0.02]), color=:black, linewidth=2)\nannotate!([-5], [0.11], text(\"Null\\nSampling\\nDistribution\", color=:black))\nquiver!([6.5], [0.03], quiver=([-1], [-0.015]), color=:green, linewidth=2)\nannotate!([6.85], [0.035], text(\"p-value\", :green))\nquiver!([3.5], [0.02], quiver=([1.5], [0]), color=:purple, linewidth=2)\nannotate!([0.9], [0.02], text(\"Observation\", :purple))\nplot!(size=(650, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Illustration of a p-value"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#rejecting-the-null",
+    "href": "slides/lecture12-1.html#rejecting-the-null",
+    "title": "Model Assessment",
+    "section": "Rejecting the Null",
+    "text": "Rejecting the Null\nIf \\(p\\text{-value} &lt; \\alpha\\), “reject” the null hypothesis in favor of the alternative and say that the effect is “statistically significant.”\nOtherwise, do not reject the null.\nThe goal is to strike a balance between Type I and Type II errors."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#error-types",
+    "href": "slides/lecture12-1.html#error-types",
+    "title": "Model Assessment",
+    "section": "Error Types",
+    "text": "Error Types\n\n\n\n\n\n\n\nNull Hypothesis Is\n\n\n\n\n\n\n\n\nTrue\n\n\nFalse\n\n\n\n\nDecision About Null Hypothesis\n\n\nDon’t reject\n\n\nTrue negative (probability \\(1-\\alpha\\))\n\n\nType II error (false negative, probability \\(\\beta\\))\n\n\n\n\nReject\n\n\nType I Error (false positive, probability \\(\\alpha\\))\n\n\nTrue positive (probability \\(1-\\beta\\))"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#but-what-is-statistical-significance",
+    "href": "slides/lecture12-1.html#but-what-is-statistical-significance",
+    "title": "Model Assessment",
+    "section": "But What Is Statistical Significance?",
+    "text": "But What Is Statistical Significance?\n\nBut, this doesn’t mean:\n\n\nThat the null is “wrong”;\nThat the alternative is a better descriptor of the data-generating process;\nThat the effect sized of the hypothesized mechanism is “significant”."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#what-a-p-value-is-not",
+    "href": "slides/lecture12-1.html#what-a-p-value-is-not",
+    "title": "Model Assessment",
+    "section": "What a \\(p\\)-value is Not",
+    "text": "What a \\(p\\)-value is Not\n\n\nProbability that the null hypothesis is true;\nProbability that the effect was produced by chance alone;\nAn indication of the effect size."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#how-might-we-do-better",
+    "href": "slides/lecture12-1.html#how-might-we-do-better",
+    "title": "Model Assessment",
+    "section": "How Might We Do Better?",
+    "text": "How Might We Do Better?\n\n\nConsideration of multiple plausible (possibly more nuanced) hypotheses.\nAssessment/quantification of evidence consistent with different hypotheses.\nInsight into the effect size."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#fundamental-data-analysis-challenge",
+    "href": "slides/lecture12-1.html#fundamental-data-analysis-challenge",
+    "title": "Model Assessment",
+    "section": "Fundamental Data Analysis Challenge",
+    "text": "Fundamental Data Analysis Challenge\nGoal (often): Explain data and/or make predictions about unobserved data.\nChallenges: Environmental systems are:\n\n\nhigh-dimensional\nmulti-scale\nnonlinear\nsubject to many uncertainties"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#multiplicities-of-models",
+    "href": "slides/lecture12-1.html#multiplicities-of-models",
+    "title": "Model Assessment",
+    "section": "Multiplicities of Models",
+    "text": "Multiplicities of Models\nIn general, we are in an \\(\\mathcal{M}\\)-open setting: no model is the “true” data-generating model, so we want to pick a model which performs well enough for the intended purpose.\nThe contrast to this is \\(\\mathcal{M}\\)-closed, in which one of the models under consideration is the “true” data-generating model, and we would like to recover it."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#what-is-any-statistical-test-doing",
+    "href": "slides/lecture12-1.html#what-is-any-statistical-test-doing",
+    "title": "Model Assessment",
+    "section": "What Is Any Statistical Test Doing?",
+    "text": "What Is Any Statistical Test Doing?\nIf we think about what a test like Mann-Kendall is doing:\n\nAssume the null hypothesis \\(H_0\\);\nObtain the sampling distribution of a test statistic \\(S\\) which captures the property of interest under \\(H_0\\);\nCalculate the probability of \\(S\\) more extreme than \\(\\hat{S}\\) (the \\(p\\)-value).\n\n\nNone of this requires a NHST framework!"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#simulation-for-statistical-testing",
+    "href": "slides/lecture12-1.html#simulation-for-statistical-testing",
+    "title": "Model Assessment",
+    "section": "Simulation for Statistical Testing",
+    "text": "Simulation for Statistical Testing\nInstead, if we have a model which permits simulation:\n\nCalibrate models under different assumptions (e.g. stationarity vs. nonstationary based on different covariates);\nSimulate realizations from those models;\nCompute the distribution of the relevant statistic \\(S\\) from these realizations;\nAssess which distribution is most consistent with the observed quantity."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#model-assessment-criteria",
+    "href": "slides/lecture12-1.html#model-assessment-criteria",
+    "title": "Model Assessment",
+    "section": "Model Assessment Criteria",
+    "text": "Model Assessment Criteria\nHow do we assess models?\nTwo general categories:\n\n\nHow well do we explain the data?\nHow well do we predict new data?"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#explanatory-criteria",
+    "href": "slides/lecture12-1.html#explanatory-criteria",
+    "title": "Model Assessment",
+    "section": "Explanatory Criteria",
+    "text": "Explanatory Criteria\nGenerally based on the error (RMSE, MAE) or probability of the data \\(p(y | \\mathbf{\\mathcal{M}})\\).\nTo select a model:\n\\[\\argmax_{M_i \\in \\mathcal{M}} p(y |M_i)\\]"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#sf-tide-gauge-data",
+    "href": "slides/lecture12-1.html#sf-tide-gauge-data",
+    "title": "Model Assessment",
+    "section": "SF Tide Gauge Data",
+    "text": "SF Tide Gauge Data\n\n\nCode\n# load SF tide gauge data\n# read in data and get annual maxima\nfunction load_data(fname)\n    date_format = DateFormat(\"yyyy-mm-dd HH:MM:SS\")\n    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data\n    df = @chain fname begin\n        CSV.read(DataFrame; header=false)\n        rename(\"Column1\" =&gt; \"year\", \"Column2\" =&gt; \"month\", \"Column3\" =&gt; \"day\", \"Column4\" =&gt; \"hour\", \"Column5\" =&gt; \"gauge\")\n        # need to reformat the decimal date in the data file\n        @transform :datetime = DateTime.(:year, :month, :day, :hour)\n        # replace -99999 with missing\n        @transform :gauge = ifelse.(abs.(:gauge) .&gt;= 9999, missing, :gauge)\n        select(:datetime, :gauge)\n    end\n    return df\nend\n\ndat = load_data(\"data/surge/h551.csv\")\n\n# detrend the data to remove the effects of sea-level rise and seasonal dynamics\nma_length = 366\nma_offset = Int(floor(ma_length/2))\nmoving_average(series,n) = [mean(@view series[i-n:i+n]) for i in n+1:length(series)-n]\ndat_ma = DataFrame(datetime=dat.datetime[ma_offset+1:end-ma_offset], residual=dat.gauge[ma_offset+1:end-ma_offset] .- moving_average(dat.gauge, ma_offset))\n\n# group data by year and compute the annual maxima\ndat_ma = dropmissing(dat_ma) # drop missing data\ndat_annmax = combine(dat_ma -&gt; dat_ma[argmax(dat_ma.residual), :], groupby(DataFrames.transform(dat_ma, :datetime =&gt; x-&gt;year.(x)), :datetime_function))\ndelete!(dat_annmax, nrow(dat_annmax)) # delete 2023; haven't seen much of that year yet\nrename!(dat_annmax, :datetime_function =&gt; :Year)\nselect!(dat_annmax, [:Year, :residual])\n\n# make plots\np1 = plot(\n    dat_annmax.Year,\n    dat_annmax.residual;\n    xlabel=\"Year\",\n    ylabel=\"Annual Max Tide Level (m)\",\n    label=false,\n    marker=:circle,\n    markersize=5,\n    tickfontsize=16,\n    guidefontsize=18,\n    left_margin=5mm, \n    bottom_margin=5mm\n)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Annual maxima surge data from the San Francisco, CA tide gauge."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#models-under-consideration",
+    "href": "slides/lecture12-1.html#models-under-consideration",
+    "title": "Model Assessment",
+    "section": "Models Under Consideration",
+    "text": "Models Under Consideration\nThree hypotheses (there could be many more!):\n\nStationary (“null”) model, \\(y_t \\sim \\text{GEV}(\\mu, \\sigma, \\xi);\\)\nTime nonstationary model, \\(y_t \\sim \\text{GEV}(\\mu_0 + \\mu_1 t, \\sigma, \\xi);\\)\nPDO nonstationary model, \\(y_t \\sim \\text{GEV}(\\mu_0 | mu_1 \\text{PDO}_t, \\sigma, \\xi)\\)"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#stationary-model",
+    "href": "slides/lecture12-1.html#stationary-model",
+    "title": "Model Assessment",
+    "section": "Stationary Model",
+    "text": "Stationary Model\n\n@model function sf_stat(y)\n    μ ~ truncated(Normal(1500, 200), lower=0)\n    σ ~ truncated(Normal(100, 25), lower=0)\n    ξ ~ Normal(0, 1)\n\n    for i in 1:length(y)\n        y[i] ~ GeneralizedExtremeValue(μ, σ, ξ)\n    end\nend\n\nstat_chain = sample(sf_stat(dat_annmax.residual), NUTS(), MCMCThreads(), 10_000, 4)\nsummarystats(stat_chain)"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#stationary-model-output",
+    "href": "slides/lecture12-1.html#stationary-model-output",
+    "title": "Model Assessment",
+    "section": "Stationary Model",
+    "text": "Stationary Model\n\n\nSummary Statistics\n  parameters        mean       std      mcse     ess_bulk     ess_tail      rh ⋯\n      Symbol     Float64   Float64   Float64      Float64      Float64   Float ⋯\n           μ   1259.4997    5.7712    0.0337   29339.3655   29203.0510    1.00 ⋯\n           σ     58.7998    4.3917    0.0288   23204.2945   25033.9178    1.00 ⋯\n           ξ      0.0223    0.0641    0.0004   22727.3890   21346.3533    1.00 ⋯\n                                                               2 columns omitted"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#nonstationary-time-model",
+    "href": "slides/lecture12-1.html#nonstationary-time-model",
+    "title": "Model Assessment",
+    "section": "Nonstationary (Time) Model",
+    "text": "Nonstationary (Time) Model\n\n@model function sf_nonstat(y)\n    a ~ truncated(Normal(1500, 200), lower=0)\n    b ~ Normal(0, 5)\n    σ ~ truncated(Normal(100, 25), lower=0)\n    ξ ~ Normal(0, 1)\n\n    T = length(y)\n    for i in 1:T\n        y[i] ~ GeneralizedExtremeValue.(a .+ b * i, σ, ξ)\n    end\nend\n\nnonstat_chain = sample(sf_nonstat(dat_annmax.residual), NUTS(), MCMCThreads(), 10_000, 4)\nsummarystats(nonstat_chain)"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#nonstationary-time-model-output",
+    "href": "slides/lecture12-1.html#nonstationary-time-model-output",
+    "title": "Model Assessment",
+    "section": "Nonstationary (Time) Model",
+    "text": "Nonstationary (Time) Model\n\n\nSummary Statistics\n  parameters        mean       std      mcse     ess_bulk     ess_tail      rh ⋯\n      Symbol     Float64   Float64   Float64      Float64      Float64   Float ⋯\n           a   1233.3188    9.8465    0.0717   18929.6497   21590.1106    1.00 ⋯\n           b      0.4049    0.1259    0.0009   19824.6827   22141.2461    1.00 ⋯\n           σ     55.0537    4.3812    0.0273   25640.0996   24242.6588    1.00 ⋯\n           ξ      0.0719    0.0755    0.0005   23415.4908   20872.0226    1.00 ⋯\n                                                               2 columns omitted"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#nonstationary-pdo-model",
+    "href": "slides/lecture12-1.html#nonstationary-pdo-model",
+    "title": "Model Assessment",
+    "section": "Nonstationary (PDO) Model",
+    "text": "Nonstationary (PDO) Model\n\n@model function sf_pdo(y, pdo)\n    a ~ truncated(Normal(1500, 200), lower=0)\n    b ~ Normal(0, 5)\n    σ ~ truncated(Normal(100, 25), lower=0)\n    ξ ~ Normal(0, 1)\n\n    for i in 1:length(y)\n        y[i] ~ GeneralizedExtremeValue.(a + b * pdo[i], σ, ξ)\n    end\nend\n\npdo_chain = sample(sf_pdo(dat_annmax.residual, pdo.PDO), NUTS(), MCMCThreads(), 10_000, 4)\nsummarystats(pdo_chain)"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#nonstationary-pdo-model-output",
+    "href": "slides/lecture12-1.html#nonstationary-pdo-model-output",
+    "title": "Model Assessment",
+    "section": "Nonstationary (PDO) Model",
+    "text": "Nonstationary (PDO) Model\n\n\nSummary Statistics\n  parameters        mean       std      mcse     ess_bulk     ess_tail      rh ⋯\n      Symbol     Float64   Float64   Float64      Float64      Float64   Float ⋯\n           a   1258.2872    5.7574    0.0332   30214.7749   29815.5208    1.00 ⋯\n           b     -5.2382    3.8411    0.0208   34129.3540   29277.3890    1.00 ⋯\n           σ     57.8907    4.3793    0.0271   26091.9447   25579.3171    1.00 ⋯\n           ξ      0.0318    0.0651    0.0004   25707.9710   23214.9304    1.00 ⋯\n                                                               2 columns omitted"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#model-simulations",
+    "href": "slides/lecture12-1.html#model-simulations",
+    "title": "Model Assessment",
+    "section": "Model Simulations",
+    "text": "Model Simulations\n\n\nCode\n# make predictions from each model\nstat_sim = predict(sf_stat(Vector{Union{Missing, Float64}}(undef, length(dat_annmax.residual))), stat_chain)\nnonstat_sim = predict(sf_nonstat(Vector{Union{Missing, Float64}}(undef, length(dat_annmax.residual))), nonstat_chain)\npdo_sim = predict(sf_pdo(Vector{Union{Missing, Float64}}(undef, length(dat_annmax.residual)), pdo.PDO), pdo_chain)\n\n# get quantiles\nstat_q = mapslices(x -&gt; quantile(x, [0.05, 0.5, 0.95]), stat_sim.value.data[:, :, 1], dims=1)\nnonstat_q = mapslices(x -&gt; quantile(x, [0.05, 0.5, 0.95]), nonstat_sim.value.data[:, :, 1], dims=1)\npdo_q = mapslices(x -&gt; quantile(x, [0.05, 0.5, 0.95]), pdo_sim.value.data[:, :, 1], dims=1)\n\n# plot\np = plot(; xlabel=\"Year\", ylabel=\"Storm Tide Annual Maximum (mm)\", left_margin=5mm, bottom_margin=5mm, right_margin=5mm, tickfontsize=16, guidefontsize=18, legendfontsize=16, legend=:outerright)\nplot!(p, dat_annmax.Year, stat_q[2, :], ribbon=(stat_q[2, :] - stat_q[1, :], stat_q[3, :] - stat_q[2, :]), color=:sienna, label=\"Stationary\", fillalpha=0.2, linewidth=3)\nplot!(p, dat_annmax.Year, nonstat_q[2, :], ribbon=(nonstat_q[2, :] - nonstat_q[1, :], nonstat_q[3, :] - nonstat_q[2, :]), color=:red, label=\"Nonstationary (Time)\", fillalpha=0.2, linewidth=3)\nplot!(p, dat_annmax.Year, pdo_q[2, :], ribbon=(pdo_q[2, :] - pdo_q[1, :], pdo_q[3, :] - pdo_q[2, :]), color=:teal, label=\"Nonstationary (PDO)\", fillalpha=0.2, linewidth=3)\nscatter!(p, dat_annmax.Year, dat_annmax.residual, color=:black, markersize=5, label=\"Observations\", alpha=0.5)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Model simulations for the three storm surge models."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#key-aside-point-estimates-vs.-posteriors",
+    "href": "slides/lecture12-1.html#key-aside-point-estimates-vs.-posteriors",
+    "title": "Model Assessment",
+    "section": "Key Aside: Point Estimates vs. Posteriors",
+    "text": "Key Aside: Point Estimates vs. Posteriors\nCan calculate these metrics using some point estimate \\(\\hat{\\theta}\\) (MLE, MAP, etc):\n\\[\\max_i p(y | \\hat{\\theta}, \\mathcal{M}_i)\\]\nor the posterior \\(\\Theta\\) (if this was found):\n\\[\\max_i \\int_{\\theta \\in \\Theta} p(y | \\theta, M)\\]\nWhat do we think the differences are?"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#relative-evidence-for-models",
+    "href": "slides/lecture12-1.html#relative-evidence-for-models",
+    "title": "Model Assessment",
+    "section": "Relative Evidence for Models",
+    "text": "Relative Evidence for Models\nSimplest approach: What is the log-posterior probability of the data \\(\\log p(y | M_i)\\)?\nCan convert to a relative probability:\n\\[\\mathbb{P}(M_i | \\mathcal{M}) = \\frac{p(y | M_i)}{\\sum_j p(y | M_j)}\\]"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#relative-evidence-for-models-1",
+    "href": "slides/lecture12-1.html#relative-evidence-for-models-1",
+    "title": "Model Assessment",
+    "section": "Relative Evidence for Models",
+    "text": "Relative Evidence for Models\n\n\nCode\nmodel_evidence = DataFrame(Model=[\"Stationary\", \"Time\", \"PDO\"], LogPost=[mean(stat_chain[:lp]), mean(nonstat_chain[:lp]), mean(pdo_chain[:lp])])\nmodel_evidence.ModelProb = round.(exp.(model_evidence.LogPost .- log(sum(exp.(model_evidence.LogPost)))); digits=2)\nmodel_evidence.LogPost = round.(model_evidence.LogPost; digits=0)\nmodel_evidence\n\n\n\n3×3 DataFrame\n\n\n\nRow\nModel\nLogPost\nModelProb\n\n\n\nString\nFloat64\nFloat64\n\n\n\n\n1\nStationary\n-711.0\n0.16\n\n\n2\nTime\n-710.0\n0.82\n\n\n3\nPDO\n-714.0\n0.02"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#problems-with-explanatory-criteria",
+    "href": "slides/lecture12-1.html#problems-with-explanatory-criteria",
+    "title": "Model Assessment",
+    "section": "Problems with Explanatory Criteria",
+    "text": "Problems with Explanatory Criteria\n\n\nRisk of overfitting\nWhat if historical dynamics are similar, but out-of-sample predictions are distinct?\n\n\n\nThe alternative is predictive performance: how probable is unobserved data?"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#cross-validation",
+    "href": "slides/lecture12-1.html#cross-validation",
+    "title": "Model Assessment",
+    "section": "Cross-Validation",
+    "text": "Cross-Validation\nGold standard of predictive criteria: hold out data, fit model on remaining data, and see how well it performs.\n\nBut:\n\nWhat to do for data with structure, e.g. temporal or spatial data?\nAlso can be computationally expensive."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#posterior-predictive-distributions",
+    "href": "slides/lecture12-1.html#posterior-predictive-distributions",
+    "title": "Model Assessment",
+    "section": "Posterior Predictive Distributions",
+    "text": "Posterior Predictive Distributions\nNext class: will build up approximations to cross-validation. Idea: Consider a new realization \\(y^{\\text{rep}}\\) simulated from\n\\[p(y^{\\text{rep}} | y) = \\int_{\\theta} p(y^{\\text{rep}} | \\theta) p(\\theta | y) d\\theta.\\]\nCan sample:\n\\[p(\\theta | y) \\xrightarrow{\\hat{\\theta}} \\mathcal{M}(\\hat{\\theta}) \\rightarrow y^{\\text{rep}}\\]"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#key-points-1",
+    "href": "slides/lecture12-1.html#key-points-1",
+    "title": "Model Assessment",
+    "section": "Key Points",
+    "text": "Key Points\n\nSimulation lets us generalize hypothesis testing.\nAdvantage: Can look at probabilities of multiple candidate models, not just “rejecting” a null hypothesis.\nBayesian updating applies to these models: how does new data\nExplanatory vs. Predictive model evaluation."
+  },
+  {
+    "objectID": "slides/lecture12-1.html#next-classes",
+    "href": "slides/lecture12-1.html#next-classes",
+    "title": "Model Assessment",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Cross-Validation and Information Criteria"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#assessments",
+    "href": "slides/lecture12-1.html#assessments",
+    "title": "Model Assessment",
+    "section": "Assessments",
+    "text": "Assessments\nHomework 4: Released End of Week, Due 5/3 (Last One!)"
+  },
+  {
+    "objectID": "slides/lecture12-1.html#point-estimates-vs.-posteriors",
+    "href": "slides/lecture12-1.html#point-estimates-vs.-posteriors",
+    "title": "Model Assessment",
+    "section": "Point Estimates vs. Posteriors",
+    "text": "Point Estimates vs. Posteriors\nCan calculate these metrics using some point estimate \\(\\hat{\\theta}\\) (MLE, MAP, etc):\n\\[\\max_i p(y | \\hat{\\theta}, \\mathcal{M}_i)\\]\nor the posterior \\(\\Theta\\) (if this was found):\n\\[\\max_i \\int_{\\theta \\in \\Theta} p(y | \\theta, M)\\]\nWhat do we think the differences are?"
+  },
+  {
+    "objectID": "weeks/week12.html",
+    "href": "weeks/week12.html",
+    "title": "Week 12",
+    "section": "",
+    "text": "Lecture 12-1: Model Assessment\nLecture 12-2: Cross-Validation and Information Criteria",
+    "crumbs": [
+      "Weeks",
+      "Week 12"
+    ]
+  },
+  {
+    "objectID": "weeks/week12.html#readings",
+    "href": "weeks/week12.html#readings",
+    "title": "Week 12",
+    "section": "",
+    "text": "Rahmstorf, S., & Coumou, D. (2011). Increase of extreme events in a warming world. Proceedings of the National Academy of Sciences of the United States of America, 108(44), 17905–17909. https://doi.org/10.1073/pnas.1101766108",
+    "crumbs": [
+      "Weeks",
+      "Week 12"
+    ]
+  },
+  {
+    "objectID": "weeks/week12.html#lectures",
+    "href": "weeks/week12.html#lectures",
+    "title": "Week 12",
+    "section": "",
+    "text": "Lecture 12-1: Model Assessment\nLecture 12-2: Cross-Validation and Information Criteria",
+    "crumbs": [
+      "Weeks",
+      "Week 12"
+    ]
   }
 ]

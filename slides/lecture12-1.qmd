@@ -1,0 +1,505 @@
+---
+title: "Model Assessment"
+subtitle: "Lecture 17"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "April 15, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        touch: false
+        controls: true
+execute:
+    freeze: auto
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using DataFrames
+using DataFramesMeta
+using CSV
+using Dates
+using Distributions
+using Turing
+using ColorSchemes
+using Plots
+using StatsPlots
+using StatsBase
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+```
+
+# Review of Last Class
+
+## Hypothesis Testing
+
+Standard null hypothesis significance testing framework:
+
+- Frame problem with null hypothesis $\mathcal{H}_0$ and alternative hypothesis $\mathcal{H}$.
+- Set significance level $\alpha$.
+- Find $p$-value $$\mathbb{P}\left(y_{\mathcal{H}_0} > y\right)$$
+
+## What is a $p$-value?
+
+:::: {.columns}
+::: {.column width=50%}
+The **p-value** captures the probability that, **assuming the null hypothesis**, you would observe results **at least as extreme as you observed**.
+:::
+::: {.column width=50%}
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| label: fig-p-value
+#| fig-cap: Illustration of a p-value
+
+test_dist = Normal(0, 3)
+x = -10:0.01:10
+plot(x, pdf.(test_dist, x), linewidth=3, legend=false, color=:black, xticks=false,  yticks=false, ylabel="Probability", xlabel=L"y", bottom_margin=10mm, left_margin=10mm, guidefontsize=16)
+vline!([5], linestyle=:dash, color=:purple, linewidth=3, )
+areaplot!(5:0.01:10, pdf.(test_dist, 5:0.01:10), color=:green, alpha=0.4)
+quiver!([-4.5], [0.095], quiver=([1], [-0.02]), color=:black, linewidth=2)
+annotate!([-5], [0.11], text("Null\nSampling\nDistribution", color=:black))
+quiver!([6.5], [0.03], quiver=([-1], [-0.015]), color=:green, linewidth=2)
+annotate!([6.85], [0.035], text("p-value", :green))
+quiver!([3.5], [0.02], quiver=([1.5], [0]), color=:purple, linewidth=2)
+annotate!([0.9], [0.02], text("Observation", :purple))
+plot!(size=(650, 500))
+```
+:::
+::::
+
+## Rejecting the Null
+
+If $p\text{-value} < \alpha$, "reject" the null hypothesis in favor of the alternative and say that the effect is "**statistically significant**."
+
+Otherwise, do not reject the null.
+
+The goal is to strike a balance between **Type I** and **Type II** errors.
+
+## Error Types
+
+<table>
+  <tr>
+    <td></td>
+    <td></td>
+    <td colspan="2">**Null Hypothesis Is**</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>True</td>
+    <td>False </td>
+  </tr>
+  <tr>
+    <td rowspan="2">**Decision About Null Hypothesis**</td>
+    <td>Don't reject</td>
+    <td>True negative (probability $1-\alpha$)</td>
+    <td>Type II error (false negative, probability $\beta$)</td>
+  </tr>
+  <tr>
+    <td>Reject</td>
+    <td>Type I Error (false positive, probability $\alpha$)</td>
+    <td>True positive (probability $1-\beta$)</td>
+  </tr>
+</table>
+
+## But What Is Statistical Significance?
+
+::: {.fragment .fade-in}
+But, this doesn't mean:
+
+::: {.incremental}
+- That the null is "wrong";
+- That the alternative is a better descriptor of the data-generating process;
+- That the effect sized of the hypothesized mechanism is "significant".
+:::
+:::
+
+## What a $p$-value is Not
+
+::: {.incremental}
+1. Probability that the null hypothesis is true;
+2. Probability that the effect was produced by chance alone;
+3. An indication of the effect size.
+:::
+
+## How Might We Do Better?
+
+::: {.incremental}
+- Consideration of multiple plausible (possibly more nuanced) hypotheses.
+- Assessment/quantification of evidence consistent with different hypotheses.
+- Insight into the effect size.
+:::
+
+# Model Assessment
+
+## Fundamental Data Analysis Challenge
+
+**Goal** (often): Explain data and/or make predictions about **unobserved** data.
+
+**Challenges**: Environmental systems are:
+
+::: {.incremental}
+- high-dimensional
+- multi-scale
+- nonlinear
+- subject to many uncertainties
+:::
+
+## Multiplicities of Models
+
+In general, we are in an **$\mathcal{M}$-open setting**: no model is the "true" data-generating model, so we want to pick a model which performs well enough for the intended purpose.
+
+The contrast to this is **$\mathcal{M}$-closed**, in which one of the models under consideration is the "true" data-generating model, and we would like to recover it.
+
+## What Is Any Statistical Test Doing?
+
+If we think about what a test like Mann-Kendall is doing:
+
+1. Assume the null hypothesis $H_0$;
+2. *Obtain the sampling distribution of a test statistic $S$ which captures the property of interest under $H_0$*;
+3. Calculate the probability of $S$ more extreme than $\hat{S}$ (the $p$-value).
+
+::: {.fragment .fade-in}
+**None of this requires a NHST framework!**
+:::
+
+## Simulation for Statistical Testing
+
+Instead, if we have a model which permits simulation:
+
+1. Calibrate models under different assumptions (*e.g.* stationarity vs. nonstationary based on different covariates);
+2. Simulate realizations from those models;
+3. Compute the distribution of the relevant statistic $S$ from these realizations;
+4. Assess which distribution is most consistent with the observed quantity.
+
+## Model Assessment Criteria
+
+How do we assess models?
+
+Two general categories:
+
+::: {.incremental}
+1. How well do we explain the data?
+2. How well do we predict new data?
+:::
+
+## Explanatory Criteria
+
+Generally based on the error (RMSE, MAE) or probability of the data $p(y | \mathbf{\mathcal{M}})$.
+
+To select a model:
+
+$$\argmax_{M_i \in \mathcal{M}} p(y |M_i)$$
+
+# Example: Are Storm Surges Nonstationary?
+
+## SF Tide Gauge Data
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| code-overflow: wrap
+#| fig-align: center
+#| label: fig-surge-data
+#| fig-cap: Annual maxima surge data from the San Francisco, CA tide gauge.
+
+# load SF tide gauge data
+# read in data and get annual maxima
+function load_data(fname)
+    date_format = DateFormat("yyyy-mm-dd HH:MM:SS")
+    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data
+    df = @chain fname begin
+        CSV.read(DataFrame; header=false)
+        rename("Column1" => "year", "Column2" => "month", "Column3" => "day", "Column4" => "hour", "Column5" => "gauge")
+        # need to reformat the decimal date in the data file
+        @transform :datetime = DateTime.(:year, :month, :day, :hour)
+        # replace -99999 with missing
+        @transform :gauge = ifelse.(abs.(:gauge) .>= 9999, missing, :gauge)
+        select(:datetime, :gauge)
+    end
+    return df
+end
+
+dat = load_data("data/surge/h551.csv")
+
+# detrend the data to remove the effects of sea-level rise and seasonal dynamics
+ma_length = 366
+ma_offset = Int(floor(ma_length/2))
+moving_average(series,n) = [mean(@view series[i-n:i+n]) for i in n+1:length(series)-n]
+dat_ma = DataFrame(datetime=dat.datetime[ma_offset+1:end-ma_offset], residual=dat.gauge[ma_offset+1:end-ma_offset] .- moving_average(dat.gauge, ma_offset))
+
+# group data by year and compute the annual maxima
+dat_ma = dropmissing(dat_ma) # drop missing data
+dat_annmax = combine(dat_ma -> dat_ma[argmax(dat_ma.residual), :], groupby(DataFrames.transform(dat_ma, :datetime => x->year.(x)), :datetime_function))
+delete!(dat_annmax, nrow(dat_annmax)) # delete 2023; haven't seen much of that year yet
+rename!(dat_annmax, :datetime_function => :Year)
+select!(dat_annmax, [:Year, :residual])
+
+# make plots
+p1 = plot(
+    dat_annmax.Year,
+    dat_annmax.residual;
+    xlabel="Year",
+    ylabel="Annual Max Tide Level (m)",
+    label=false,
+    marker=:circle,
+    markersize=5,
+    tickfontsize=16,
+    guidefontsize=18,
+    left_margin=5mm, 
+    bottom_margin=5mm
+)
+```
+
+## Models Under Consideration
+
+Three hypotheses (there could be many more!):
+
+1. Stationary ("null") model, $y_t \sim \text{GEV}(\mu, \sigma, \xi);$
+2. Time nonstationary model, $y_t \sim \text{GEV}(\mu_0 + \mu_1 t, \sigma, \xi);$
+3. PDO nonstationary model, $y_t \sim \text{GEV}(\mu_0 | mu_1 \text{PDO}_t, \sigma, \xi)$
+
+## Stationary Model
+
+```{julia}
+#| output: false
+#| echo: false
+
+## load the data from the file and return a DataFrame of DateTime values and gauge measurements
+
+function load_pdo(fname)
+    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data
+    df = CSV.read(fname, DataFrame, delim=" ", ignorerepeated=true, header=2)
+    # take yearly average
+    @transform!(df, :PDO = mean(AsTable(names(df)[2:13])))
+    @select!(df, $[:Year, :PDO])
+    @rsubset!(df, :Year != 2023)
+    return df
+end
+
+pdo = load_pdo("data/surge/ersst.v5.pdo.dat")
+# subset for years that match the tide gauge data
+years = dat_annmax[!, :Year]
+@rsubset!(pdo, :Year in years)
+```
+
+
+```{julia}
+#| output: true
+#| echo: true
+#| output-location: slide
+
+@model function sf_stat(y)
+    μ ~ truncated(Normal(1500, 200), lower=0)
+    σ ~ truncated(Normal(100, 25), lower=0)
+    ξ ~ Normal(0, 1)
+
+    for i in 1:length(y)
+        y[i] ~ GeneralizedExtremeValue(μ, σ, ξ)
+    end
+end
+
+stat_chain = sample(sf_stat(dat_annmax.residual), NUTS(), MCMCThreads(), 10_000, 4)
+summarystats(stat_chain)
+```
+
+## Nonstationary (Time) Model
+
+```{julia}
+#| output: true
+#| echo: true
+#| output-location: slide
+
+@model function sf_nonstat(y)
+    a ~ truncated(Normal(1500, 200), lower=0)
+    b ~ Normal(0, 5)
+    σ ~ truncated(Normal(100, 25), lower=0)
+    ξ ~ Normal(0, 1)
+
+    T = length(y)
+    for i in 1:T
+        y[i] ~ GeneralizedExtremeValue.(a .+ b * i, σ, ξ)
+    end
+end
+
+nonstat_chain = sample(sf_nonstat(dat_annmax.residual), NUTS(), MCMCThreads(), 10_000, 4)
+summarystats(nonstat_chain)
+```
+
+## Nonstationary (PDO) Model
+
+```{julia}
+#| output: true
+#| echo: true
+#| output-location: slide
+
+@model function sf_pdo(y, pdo)
+    a ~ truncated(Normal(1500, 200), lower=0)
+    b ~ Normal(0, 5)
+    σ ~ truncated(Normal(100, 25), lower=0)
+    ξ ~ Normal(0, 1)
+
+    for i in 1:length(y)
+        y[i] ~ GeneralizedExtremeValue.(a + b * pdo[i], σ, ξ)
+    end
+end
+
+pdo_chain = sample(sf_pdo(dat_annmax.residual, pdo.PDO), NUTS(), MCMCThreads(), 10_000, 4)
+summarystats(pdo_chain)
+```
+
+## Model Simulations
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| label: fig-surge-sim
+#| fig-cap: Model simulations for the three storm surge models.
+
+# make predictions from each model
+stat_sim = predict(sf_stat(Vector{Union{Missing, Float64}}(undef, length(dat_annmax.residual))), stat_chain)
+nonstat_sim = predict(sf_nonstat(Vector{Union{Missing, Float64}}(undef, length(dat_annmax.residual))), nonstat_chain)
+pdo_sim = predict(sf_pdo(Vector{Union{Missing, Float64}}(undef, length(dat_annmax.residual)), pdo.PDO), pdo_chain)
+
+# get quantiles
+stat_q = mapslices(x -> quantile(x, [0.05, 0.5, 0.95]), stat_sim.value.data[:, :, 1], dims=1)
+nonstat_q = mapslices(x -> quantile(x, [0.05, 0.5, 0.95]), nonstat_sim.value.data[:, :, 1], dims=1)
+pdo_q = mapslices(x -> quantile(x, [0.05, 0.5, 0.95]), pdo_sim.value.data[:, :, 1], dims=1)
+
+# plot
+p = plot(; xlabel="Year", ylabel="Storm Tide Annual Maximum (mm)", left_margin=5mm, bottom_margin=5mm, right_margin=5mm, tickfontsize=16, guidefontsize=18, legendfontsize=16, legend=:outerright)
+plot!(p, dat_annmax.Year, stat_q[2, :], ribbon=(stat_q[2, :] - stat_q[1, :], stat_q[3, :] - stat_q[2, :]), color=:sienna, label="Stationary", fillalpha=0.2, linewidth=3)
+plot!(p, dat_annmax.Year, nonstat_q[2, :], ribbon=(nonstat_q[2, :] - nonstat_q[1, :], nonstat_q[3, :] - nonstat_q[2, :]), color=:red, label="Nonstationary (Time)", fillalpha=0.2, linewidth=3)
+plot!(p, dat_annmax.Year, pdo_q[2, :], ribbon=(pdo_q[2, :] - pdo_q[1, :], pdo_q[3, :] - pdo_q[2, :]), color=:teal, label="Nonstationary (PDO)", fillalpha=0.2, linewidth=3)
+scatter!(p, dat_annmax.Year, dat_annmax.residual, color=:black, markersize=5, label="Observations", alpha=0.5)
+```
+
+## Point Estimates vs. Posteriors
+
+Can calculate these metrics using some point estimate $\hat{\theta}$ (MLE, MAP, etc):
+
+$$\max_i p(y | \hat{\theta}, \mathcal{M}_i)$$
+
+or the posterior $\Theta$ (if this was found):
+
+$$\max_i \int_{\theta \in \Theta} p(y | \theta, M)$$
+
+What do we think the differences are?
+
+## Relative Evidence for Models
+
+Simplest approach: What is the log-posterior probability of the data $\log p(y | M_i)$? 
+
+Can convert to a relative probability:
+
+$$\mathbb{P}(M_i | \mathcal{M}) = \frac{p(y | M_i)}{\sum_j p(y | M_j)}$$
+
+## Relative Evidence for Models
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+
+model_evidence = DataFrame(Model=["Stationary", "Time", "PDO"], LogPost=[mean(stat_chain[:lp]), mean(nonstat_chain[:lp]), mean(pdo_chain[:lp])])
+model_evidence.ModelProb = round.(exp.(model_evidence.LogPost .- log(sum(exp.(model_evidence.LogPost)))); digits=2)
+model_evidence.LogPost = round.(model_evidence.LogPost; digits=0)
+model_evidence
+```
+
+
+# Predictive Evaluation Criteria
+
+## Problems with Explanatory Criteria
+
+::: {.incremental}
+- Risk of overfitting
+- What if historical dynamics are similar, but out-of-sample predictions are distinct?
+:::
+::: {.fragment .fade-in}
+The alternative is **predictive** performance: how probable is unobserved data?
+:::
+
+## Cross-Validation
+
+Gold standard of predictive criteria: hold out data, fit model on remaining data, and see how well it performs.
+
+::: {.fragment .fade-in}
+**But**: 
+
+- What to do for data with structure, e.g. temporal or spatial data?
+- Also can be computationally expensive.
+:::
+
+## Posterior Predictive Distributions
+
+Next class: will build up approximations to cross-validation. Idea: Consider a new realization $y^{\text{rep}}$ simulated from 
+
+$$p(y^{\text{rep}} | y) = \int_{\theta} p(y^{\text{rep}} | \theta) p(\theta | y) d\theta.$$
+
+Can sample:
+
+$$p(\theta | y) \xrightarrow{\hat{\theta}} \mathcal{M}(\hat{\theta}) \rightarrow y^{\text{rep}}$$
+
+
+# Key Points
+
+## Key Points
+
+- Simulation lets us generalize hypothesis testing.
+- Advantage: Can look at *probabilities* of multiple candidate models, not just "rejecting" a null hypothesis.
+- Bayesian updating applies to these models: how does new data 
+- Explanatory vs. Predictive model evaluation.
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Wednesday**: Cross-Validation and Information Criteria
+
+## Assessments
+
+**Homework 4**: Released End of Week, Due 5/3 (Last One!)
+
