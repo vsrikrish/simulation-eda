@@ -40,7 +40,7 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 | | | ***Model Assessment and Selection*** | | | |
 | 11 | Mon, Apr 8 | *No Class: Eclipse* | | |  |
 |  | Wed, Apr 10 | Hypothesis Testing | [{{< fa sharp presentation-screen >}}](slides/lecture11-2.qmd) | | |
-| 12 | Mon, Apr 15 | Model Assessment and Predictive Accuracy | | | | 
+| 12 | Mon, Apr 15 | Model Assessment | [{{< fa sharp presentation-screen >}}](slides/lecture11-2.qmd) | |  [{{< fa sharp pen-field >}}](assignments/hw04/hw04.qmd) | 
 | 13 | Wed, Apr 17 | Cross-Validation and Information Criteria | | | | 
 | 1 | Mon, Apr 22 | Model Assessment and Selection: Examples | | |  |
 |  | Wed, Apr 24 |  Missing Data Models | | | | 

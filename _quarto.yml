@@ -94,6 +94,8 @@ website:
             text: Homework 2
           - href: assignments/hw03/hw03.qmd
             text: Homework 3
+          - href: assignments/hw04/hw04.qmd
+            text: Homework 4
       - section: exercises.qmd
         contents:
           - href: exercises/ex01/ex01.qmd

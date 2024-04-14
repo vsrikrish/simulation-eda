@@ -2,6 +2,10 @@
 title: "Week 12"
 ---
 
+## Homework
+
+- [Homework 4: Probabilistic Calibration and Model Assessment](../assignments/hw04/hw04.qmd)
+
 ## Lectures
 
 - [Lecture 12-1: Model Assessment](../slides/lecture12-1.qmd)
