@@ -197,7 +197,8 @@ If we think about what a test like Mann-Kendall is doing:
 
 1. Assume the null hypothesis $H_0$;
 2. *Obtain the sampling distribution of a test statistic $S$ which captures the property of interest under $H_0$*;
-3. Calculate the probability of $S$ more extreme than $\hat{S}$ (the $p$-value).
+3. Compute the test statistic $\hat{S}$ on the data.
+4. Calculate the probability of $S$ more extreme than $\hat{S}$ (the $p$-value).
 
 ::: {.fragment .fade-in}
 **None of this requires a NHST framework!**
@@ -225,11 +226,11 @@ Two general categories:
 
 ## Explanatory Criteria
 
-Generally based on the error (RMSE, MAE) or probability of the data $p(y | \mathbf{\mathcal{M}})$.
+Generally based on the error (RMSE, MAE) or probability of the data $p(y | M)$.
 
 To select a model:
 
-$$\argmax_{M_i \in \mathcal{M}} p(y |M_i)$$
+$$\underset{M_i \in \mathcal{M}}{\operatorname{argmax}} p(y |M_i)$$
 
 # Example: Are Storm Surges Nonstationary?
 
@@ -297,8 +298,8 @@ p1 = plot(
 Three hypotheses (there could be many more!):
 
 1. Stationary ("null") model, $y_t \sim \text{GEV}(\mu, \sigma, \xi);$
-2. Time nonstationary model, $y_t \sim \text{GEV}(\mu_0 + \mu_1 t, \sigma, \xi);$
-3. PDO nonstationary model, $y_t \sim \text{GEV}(\mu_0 | mu_1 \text{PDO}_t, \sigma, \xi)$
+2. Time nonstationary ("null-ish") model, $y_t \sim \text{GEV}(\mu_0 + \mu_1 t, \sigma, \xi);$
+3. PDO nonstationary model, $y_t \sim \text{GEV}(\mu_0 + \mu_1 \text{PDO}_t, \sigma, \xi)$
 
 ## Stationary Model
 
@@ -420,11 +421,11 @@ scatter!(p, dat_annmax.Year, dat_annmax.residual, color=:black, markersize=5, la
 
 Can calculate these metrics using some point estimate $\hat{\theta}$ (MLE, MAP, etc):
 
-$$\max_i p(y | \hat{\theta}, \mathcal{M}_i)$$
+$$\underset{M_i \in \mathcal{M}}{\operatorname{argmax}} p(y | \hat{\theta}, \mathcal{M}_i)$$
 
 or the posterior $\Theta$ (if this was found):
 
-$$\max_i \int_{\theta \in \Theta} p(y | \theta, M)$$
+$$\underset{M_i \in \mathcal{M}}{\operatorname{argmax}} \int_{\theta \in \Theta} p(y | \theta, M_i)$$
 
 What do we think the differences are?
 

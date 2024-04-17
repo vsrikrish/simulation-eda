@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nExercises\nHomework\n\n\n\n\n\n\nHypothesis Testing and Modeling\n\n\n\n\n\n\n1\nMon, Jan 22\nOverview, GitHub Intro\n\nRockmore (2024)\n\n\n\n\n\nWed, Jan 24\nUncertainty and Probability Review\n\n\n\n\n\n\n2\nMon, Jan 29\nProbability Models and Model Residuals\n\nStein (2020)\n\n\n\n\n\nWed, Jan 31\nProbability Models II\n\n\n\n\n\n\n3\nMon, Feb 5\nExploratory Data Analysis\n\n\n\n\n\n\n\nWed, Feb 7\nMore on Discrepancy and Bayesian Statistics\n\n\n\n\n\n\n4\nMon, Feb 12\nMore Bayes and Extreme Values\n\nDoss-Gollin et al (2021)\n\n\n\n\n\nWed, Feb 14\nNo Class: Project Work\n\n\n\n\n\n\n5\nMon, Feb 19\nExtreme Value Theory and Models\n\nArns et al (2013)\n\n\n\n\n\nWed, Feb 21\nData Visualization\n\n\n\n\n\n\n6\nMon, Feb 26\nNo Class: February Break\n\n\n\n\n\n\n\nWed, Feb 28\nIn-Class Figure Discussion\n\n\n\n\n\n\n\n\nSimulation Methods\n\n\n\n\n\n\n7\nMon, Mar 4\nMonte Carlo Simulation\n\nKale (2021)\n\n\n\n\n\nWed, Mar 6\nSampling Distributions and The Bootstrap\n\n\n\n\n\n\n8\nMon, Mar 11\nThe Parametric Bootstrap\n\nRahmstorf & Coumou (2011)\n\n\n\n\n\nWed, Mar 13\nBayesian Computation\n\n\n\n\n\n\n9\nMon, Mar 18\nMarkov Chain Monte Carlo\n\nRuckert et al (2017)\n\n\n\n\n\nWed, Mar 20\nMCMC Convergence and Example\n\n\n\n\n\n\n10\nMon, Mar 25\nMCMC Lab\n\n\n\n\n\n\n\nWed, Mar 27\nLiterature Review Presentations\n\n\n\n\n\n\n\nMon, Apr 1\nNo Class: Spring Break\n\n\n\n\n\n\n\nWed, Apr 3\nNo Class: Spring Break\n\n\n\n\n\n\n\n\nModel Assessment and Selection\n\n\n\n\n\n\n11\nMon, Apr 8\nNo Class: Eclipse\n\n\n\n\n\n\n\nWed, Apr 10\nHypothesis Testing\n\n\n\n\n\n\n12\nMon, Apr 15\nModel Assessment and Predictive Accuracy\n\n\n\n\n\n\n13\nWed, Apr 17\nCross-Validation and Information Criteria\n\n\n\n\n\n\n1\nMon, Apr 22\nModel Assessment and Selection: Examples\n\n\n\n\n\n\n\nWed, Apr 24\nMissing Data Models\n\n\n\n\n\n\n\n\nEmulation\n\n\n\n\n\n\n14\nMon, Apr 29\nTradeoffs Between Complexity and Ensemble Size\n\n\n\n\n\n\n\nWed, May 1\nEmulating Expensive Models\n\n\n\n\n\n\n15\nMon, May 6\nProject Presentations",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nExercises\nHomework\n\n\n\n\n\n\nHypothesis Testing and Modeling\n\n\n\n\n\n\n1\nMon, Jan 22\nOverview, GitHub Intro\n\nRockmore (2024)\n\n\n\n\n\nWed, Jan 24\nUncertainty and Probability Review\n\n\n\n\n\n\n2\nMon, Jan 29\nProbability Models and Model Residuals\n\nStein (2020)\n\n\n\n\n\nWed, Jan 31\nProbability Models II\n\n\n\n\n\n\n3\nMon, Feb 5\nExploratory Data Analysis\n\n\n\n\n\n\n\nWed, Feb 7\nMore on Discrepancy and Bayesian Statistics\n\n\n\n\n\n\n4\nMon, Feb 12\nMore Bayes and Extreme Values\n\nDoss-Gollin et al (2021)\n\n\n\n\n\nWed, Feb 14\nNo Class: Project Work\n\n\n\n\n\n\n5\nMon, Feb 19\nExtreme Value Theory and Models\n\nArns et al (2013)\n\n\n\n\n\nWed, Feb 21\nData Visualization\n\n\n\n\n\n\n6\nMon, Feb 26\nNo Class: February Break\n\n\n\n\n\n\n\nWed, Feb 28\nIn-Class Figure Discussion\n\n\n\n\n\n\n\n\nSimulation Methods\n\n\n\n\n\n\n7\nMon, Mar 4\nMonte Carlo Simulation\n\nKale (2021)\n\n\n\n\n\nWed, Mar 6\nSampling Distributions and The Bootstrap\n\n\n\n\n\n\n8\nMon, Mar 11\nThe Parametric Bootstrap\n\nRahmstorf & Coumou (2011)\n\n\n\n\n\nWed, Mar 13\nBayesian Computation\n\n\n\n\n\n\n9\nMon, Mar 18\nMarkov Chain Monte Carlo\n\nRuckert et al (2017)\n\n\n\n\n\nWed, Mar 20\nMCMC Convergence and Example\n\n\n\n\n\n\n10\nMon, Mar 25\nMCMC Lab\n\n\n\n\n\n\n\nWed, Mar 27\nLiterature Review Presentations\n\n\n\n\n\n\n\nMon, Apr 1\nNo Class: Spring Break\n\n\n\n\n\n\n\nWed, Apr 3\nNo Class: Spring Break\n\n\n\n\n\n\n\n\nModel Assessment and Selection\n\n\n\n\n\n\n11\nMon, Apr 8\nNo Class: Eclipse\n\n\n\n\n\n\n\nWed, Apr 10\nHypothesis Testing\n\n\n\n\n\n\n12\nMon, Apr 15\nModel Assessment\n\n\n\n\n\n\n13\nWed, Apr 17\nCross-Validation and Information Criteria\n\n\n\n\n\n\n1\nMon, Apr 22\nModel Assessment and Selection: Examples\n\n\n\n\n\n\n\nWed, Apr 24\nMissing Data Models\n\n\n\n\n\n\n\n\nEmulation\n\n\n\n\n\n\n14\nMon, Apr 29\nTradeoffs Between Complexity and Ensemble Size\n\n\n\n\n\n\n\nWed, May 1\nEmulating Expensive Models\n\n\n\n\n\n\n15\nMon, May 6\nProject Presentations",
     "crumbs": [
       "Course Information",
       "Class Schedule"
@@ -5573,7 +5573,7 @@
     "href": "slides/lecture12-1.html#what-is-any-statistical-test-doing",
     "title": "Model Assessment",
     "section": "What Is Any Statistical Test Doing?",
-    "text": "What Is Any Statistical Test Doing?\nIf we think about what a test like Mann-Kendall is doing:\n\nAssume the null hypothesis \\(H_0\\);\nObtain the sampling distribution of a test statistic \\(S\\) which captures the property of interest under \\(H_0\\);\nCalculate the probability of \\(S\\) more extreme than \\(\\hat{S}\\) (the \\(p\\)-value).\n\n\nNone of this requires a NHST framework!"
+    "text": "What Is Any Statistical Test Doing?\nIf we think about what a test like Mann-Kendall is doing:\n\nAssume the null hypothesis \\(H_0\\);\nObtain the sampling distribution of a test statistic \\(S\\) which captures the property of interest under \\(H_0\\);\nCompute the test statistic \\(\\hat{S}\\) on the data.\nCalculate the probability of \\(S\\) more extreme than \\(\\hat{S}\\) (the \\(p\\)-value).\n\n\nNone of this requires a NHST framework!"
   },
   {
     "objectID": "slides/lecture12-1.html#simulation-for-statistical-testing",
@@ -5594,7 +5594,7 @@
     "href": "slides/lecture12-1.html#explanatory-criteria",
     "title": "Model Assessment",
     "section": "Explanatory Criteria",
-    "text": "Explanatory Criteria\nGenerally based on the error (RMSE, MAE) or probability of the data \\(p(y | \\mathbf{\\mathcal{M}})\\).\nTo select a model:\n\\[\\argmax_{M_i \\in \\mathcal{M}} p(y |M_i)\\]"
+    "text": "Explanatory Criteria\nGenerally based on the error (RMSE, MAE) or probability of the data \\(p(y | M)\\).\nTo select a model:\n\\[\\underset{M_i \\in \\mathcal{M}}{\\operatorname{argmax}} p(y |M_i)\\]"
   },
   {
     "objectID": "slides/lecture12-1.html#sf-tide-gauge-data",
@@ -5608,7 +5608,7 @@
     "href": "slides/lecture12-1.html#models-under-consideration",
     "title": "Model Assessment",
     "section": "Models Under Consideration",
-    "text": "Models Under Consideration\nThree hypotheses (there could be many more!):\n\nStationary (“null”) model, \\(y_t \\sim \\text{GEV}(\\mu, \\sigma, \\xi);\\)\nTime nonstationary model, \\(y_t \\sim \\text{GEV}(\\mu_0 + \\mu_1 t, \\sigma, \\xi);\\)\nPDO nonstationary model, \\(y_t \\sim \\text{GEV}(\\mu_0 | mu_1 \\text{PDO}_t, \\sigma, \\xi)\\)"
+    "text": "Models Under Consideration\nThree hypotheses (there could be many more!):\n\nStationary (“null”) model, \\(y_t \\sim \\text{GEV}(\\mu, \\sigma, \\xi);\\)\nTime nonstationary (“null-ish”) model, \\(y_t \\sim \\text{GEV}(\\mu_0 + \\mu_1 t, \\sigma, \\xi);\\)\nPDO nonstationary model, \\(y_t \\sim \\text{GEV}(\\mu_0 + \\mu_1 \\text{PDO}_t, \\sigma, \\xi)\\)"
   },
   {
     "objectID": "slides/lecture12-1.html#stationary-model",
@@ -5727,7 +5727,7 @@
     "href": "slides/lecture12-1.html#point-estimates-vs.-posteriors",
     "title": "Model Assessment",
     "section": "Point Estimates vs. Posteriors",
-    "text": "Point Estimates vs. Posteriors\nCan calculate these metrics using some point estimate \\(\\hat{\\theta}\\) (MLE, MAP, etc):\n\\[\\max_i p(y | \\hat{\\theta}, \\mathcal{M}_i)\\]\nor the posterior \\(\\Theta\\) (if this was found):\n\\[\\max_i \\int_{\\theta \\in \\Theta} p(y | \\theta, M)\\]\nWhat do we think the differences are?"
+    "text": "Point Estimates vs. Posteriors\nCan calculate these metrics using some point estimate \\(\\hat{\\theta}\\) (MLE, MAP, etc):\n\\[\\underset{M_i \\in \\mathcal{M}}{\\operatorname{argmax}} p(y | \\hat{\\theta}, \\mathcal{M}_i)\\]\nor the posterior \\(\\Theta\\) (if this was found):\n\\[\\underset{M_i \\in \\mathcal{M}}{\\operatorname{argmax}} \\int_{\\theta \\in \\Theta} p(y | \\theta, M_i)\\]\nWhat do we think the differences are?"
   },
   {
     "objectID": "weeks/week12.html",
@@ -5761,5 +5761,397 @@
       "Weeks",
       "Week 12"
     ]
+  },
+  {
+    "objectID": "slides/lecture12-2.html#simulation-as-hypothesis-testing",
+    "href": "slides/lecture12-2.html#simulation-as-hypothesis-testing",
+    "title": "Predictive Model Assessment",
+    "section": "Simulation as Hypothesis Testing",
+    "text": "Simulation as Hypothesis Testing\n\n\nDefine models for hypotheses (including baseline/null).\nFit models to data.\nSimulate alternative datasets.\nCompare output/test statistics to data.\nMaybe: Convert metrics to probabilities (condition on \\(\\mathcal{M}\\))."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#metrics-for-model-adequacyperformance",
+    "href": "slides/lecture12-2.html#metrics-for-model-adequacyperformance",
+    "title": "Predictive Model Assessment",
+    "section": "Metrics for Model Adequacy/Performance",
+    "text": "Metrics for Model Adequacy/Performance\n\nExplanatory Metrics\n\nBased on same training/calibration data\nRMSE, R2, \\(\\log p(y | M)\\)\n\nPredictive Metrics\n\nHeld-out data/cross-validation"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#bias",
+    "href": "slides/lecture12-2.html#bias",
+    "title": "Predictive Model Assessment",
+    "section": "Bias",
+    "text": "Bias\nBias is error from mismatches between the model predictions and the data (\\(\\text{Bias}[\\hat{f}] = \\mathbb{E}[\\hat{f}] - y\\)).\nBias comes from under-fitting meaningful relationships between inputs and outputs.\n\ntoo few degrees of freedom (“too simple”)\nneglected processes."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#variance",
+    "href": "slides/lecture12-2.html#variance",
+    "title": "Predictive Model Assessment",
+    "section": "Variance",
+    "text": "Variance\nVariance is error from over-sensitivity to small fluctuations in inputs (\\(\\text{Variance} = \\text{Var}(\\hat{f})\\)).\nVariance can come from over-fitting noise in the data.\n\ntoo many degrees of freedom (“too complex”)\npoor identifiability"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#decomposition-of-mse",
+    "href": "slides/lecture12-2.html#decomposition-of-mse",
+    "title": "Predictive Model Assessment",
+    "section": "Decomposition of MSE",
+    "text": "Decomposition of MSE\n\\[\n\\begin{align*}\n\\text{MSE} &= \\mathbb{E}[y - \\hat{f}^2] \\\\\n&= \\mathbb{E}[y^2 - 2y\\hat{f}(x) + \\hat{f}^2] \\\\\n&= \\mathbb{E}[y^2] - 2\\mathbb{E}[y\\hat{f}] + E[\\hat{f}^2] \\\\\n&= \\mathbb{E}[(f + \\varepsilon)^2] - \\mathbb{E}[(f + \\varepsilon)\\hat{f}] + E[\\hat{f}^2] \\\\\n&\\vdots \\\\\n&= \\text{Bias}(\\hat{f})^2 + \\text{Var}(\\hat{f}) + \\sigma^2\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#bias-variance-tradeoff-1",
+    "href": "slides/lecture12-2.html#bias-variance-tradeoff-1",
+    "title": "Predictive Model Assessment",
+    "section": "Bias-Variance Tradeoff",
+    "text": "Bias-Variance Tradeoff\nUpshot: For achieve a fixed error level, you can reduce bias (more “complex” model) or you can reduce variance (more “simple” model) but there’s a tradeoff."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#bias-variance-tradeoff-more-generally",
+    "href": "slides/lecture12-2.html#bias-variance-tradeoff-more-generally",
+    "title": "Predictive Model Assessment",
+    "section": "Bias-Variance Tradeoff More Generally",
+    "text": "Bias-Variance Tradeoff More Generally\nThis decomposition is for MSE, but the principle holds more generally.\n\nModels which perform better “on average” over the training data (low bias) are more likely to overfit (high variance);\nModels which have less uncertainty for training data (low variance) will do worse “on average”."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#model-complexity",
+    "href": "slides/lecture12-2.html#model-complexity",
+    "title": "Predictive Model Assessment",
+    "section": "Model Complexity",
+    "text": "Model Complexity\nModel complexity is not necessarily the same as the number of parameters.\nSometimes processes in the model can compensate for each other (“reducing degrees of freedom”)\nThis can help improve the representation of the dynamics and reduce error/uncertainty even when additional parameters are included."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#occams-razor",
+    "href": "slides/lecture12-2.html#occams-razor",
+    "title": "Predictive Model Assessment",
+    "section": "Occam’s Razor",
+    "text": "Occam’s Razor\n\n\nEntities are not to be multiplied without necessity.\n\n\nCredited to William of Ockham, appears much earlier in the works of Maimonides, Ptolemy, and Aristotle, first formulated as such by John Punch (1639)"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#zebra-principle",
+    "href": "slides/lecture12-2.html#zebra-principle",
+    "title": "Predictive Model Assessment",
+    "section": "“Zebra Principle”",
+    "text": "“Zebra Principle”\nMore colloquially:\n\n\nWhen you hear hoofbeats, think of horses, not zebras.\n\n\n— Theodore Woodward"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#log-likelihood-as-predictive-fit-measure",
+    "href": "slides/lecture12-2.html#log-likelihood-as-predictive-fit-measure",
+    "title": "Predictive Model Assessment",
+    "section": "Log-Likelihood as Predictive Fit Measure",
+    "text": "Log-Likelihood as Predictive Fit Measure\nThe measure of predictive fit that we will use:\nThe log predictive density or log-likelihood of a replicated data point/set, \\[p(y^{rep} | \\theta).\\]"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#why-use-log-likelihood",
+    "href": "slides/lecture12-2.html#why-use-log-likelihood",
+    "title": "Predictive Model Assessment",
+    "section": "Why Use Log-Likelihood?",
+    "text": "Why Use Log-Likelihood?\nWhy use the log-likelihood density instead of the log-posterior?\n\nThe likelihood captures the data-generating process;\nThe posterior includes the prior, which is only relevant for parameter estimation.\n\nImportant: This means that the prior is still relevant in predictive model assessment, and should be thought of as part of the model structure!"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#cross-validation",
+    "href": "slides/lecture12-2.html#cross-validation",
+    "title": "Predictive Model Assessment",
+    "section": "Cross-Validation",
+    "text": "Cross-Validation\nThe “gold standard” way to test for predictive performance is cross-validation:\n\nSplit data into training/testing sets;\nCalibrate model to training set;\nCheck for predictive ability on testing set."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#leave-one-out-cross-validation",
+    "href": "slides/lecture12-2.html#leave-one-out-cross-validation",
+    "title": "Predictive Model Assessment",
+    "section": "Leave-One-Out Cross-Validation",
+    "text": "Leave-One-Out Cross-Validation\n\nDrop one value \\(y_i\\).\nRefit model on rest of data \\(y_{-i}\\).\nEvaluate \\(\\log p(y_i | y_{-i})\\).\nRepeat on rest of data set."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#leave-k-out-cross-validation",
+    "href": "slides/lecture12-2.html#leave-k-out-cross-validation",
+    "title": "Predictive Model Assessment",
+    "section": "Leave-\\(k\\)-Out Cross-Validation",
+    "text": "Leave-\\(k\\)-Out Cross-Validation\nDrop \\(k\\) values, refit model on rest of data, check for predictive skill.\nAs \\(k \\to n\\), this reduces to the prior predictive distribution \\[p(y^{\\text{rep}}) = \\int_{\\theta} p(y^{\\text{rep}} | \\theta) p(\\theta) d\\theta.\\]"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#challenges-with-cross-validation",
+    "href": "slides/lecture12-2.html#challenges-with-cross-validation",
+    "title": "Predictive Model Assessment",
+    "section": "Challenges with Cross-Validation",
+    "text": "Challenges with Cross-Validation\n\n\nThis can be very computationally expensive!\nWe often don’t have a lot of data for calibration, so holding some back can be a problem.\nHow to divide data with spatial or temporal structure? This can be addressed by partitioning the data more cleverly: \\[y = \\{y_{1:t}, y_{-((t+1):T)}\\}\\] but this makes the data problem worse."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#bayesian-loo-cv",
+    "href": "slides/lecture12-2.html#bayesian-loo-cv",
+    "title": "Predictive Model Assessment",
+    "section": "Bayesian LOO-CV",
+    "text": "Bayesian LOO-CV\nBy default, Bayesian LOO-CV is extremely expensive:\n\\[\\text{loo-cv} = \\sum_{i=1}^n \\log p_{\\text{post}(-i)}(y_i),\\]\nwhich requires refitting the model without \\(y_i\\) for every data point."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#expected-out-of-sample-predictive-accuracy",
+    "href": "slides/lecture12-2.html#expected-out-of-sample-predictive-accuracy",
+    "title": "Predictive Model Assessment",
+    "section": "Expected Out-Of-Sample Predictive Accuracy",
+    "text": "Expected Out-Of-Sample Predictive Accuracy\nThe out-of-sample predictive fit of a new data point \\(\\tilde{y}_i\\) is\n\\[\n\\begin{align}\n\\log p_\\text{post}(\\tilde{y}_i) &= \\log \\mathbb{E}_\\text{post}\\left[p(\\tilde{y}_i | \\theta)\\right] \\\\\n&= \\log \\int p(\\tilde{y_i} | \\theta) p_\\text{post}(\\theta)\\,d\\theta.\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#expected-out-of-sample-predictive-accuracy-1",
+    "href": "slides/lecture12-2.html#expected-out-of-sample-predictive-accuracy-1",
+    "title": "Predictive Model Assessment",
+    "section": "Expected Out-Of-Sample Predictive Accuracy",
+    "text": "Expected Out-Of-Sample Predictive Accuracy\nHowever, the out-of-sample data \\(\\tilde{y}_i\\) is itself unknown, so we need to compute the expected out-of-sample log-predictive density\n\\[\n\\begin{align}\n\\text{elpd} &= \\text{expected log-predictive density for } \\tilde{y}_i \\\\\n&= \\mathbb{E}_P \\left[\\log p_\\text{post}(\\tilde{y}_i)\\right] \\\\\n&= \\int \\log\\left(p_\\text{post}(\\tilde{y}_i)\\right) P(\\tilde{y}_i)\\,d\\tilde{y}.\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#expected-out-of-sample-predictive-accuracy-2",
+    "href": "slides/lecture12-2.html#expected-out-of-sample-predictive-accuracy-2",
+    "title": "Predictive Model Assessment",
+    "section": "Expected Out-Of-Sample Predictive Accuracy",
+    "text": "Expected Out-Of-Sample Predictive Accuracy\nWhat is the challenge?\n\nWe don’t know \\(P\\) (the distribution of new data)!\nWe need some measure of the error induced by using an approximating distribution \\(Q\\) from some model."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#information-criteria-1",
+    "href": "slides/lecture12-2.html#information-criteria-1",
+    "title": "Predictive Model Assessment",
+    "section": "Information Criteria",
+    "text": "Information Criteria\n“Information criteria” refers to a category of estimators of prediction error.\nThe idea: estimate predictive error using the fitted model."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#information-criteria-overview",
+    "href": "slides/lecture12-2.html#information-criteria-overview",
+    "title": "Predictive Model Assessment",
+    "section": "Information Criteria Overview",
+    "text": "Information Criteria Overview\nThere is a common framework for all of these:\nIf we compute the expected log-predictive density for the existing data \\(p(y | \\theta)\\), this will be too good of a fit and will overestimate the predictive skill for new data."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#information-criteria-corrections",
+    "href": "slides/lecture12-2.html#information-criteria-corrections",
+    "title": "Predictive Model Assessment",
+    "section": "Information Criteria Corrections",
+    "text": "Information Criteria Corrections\nWe can adjust for that bias by correcting for the effective number of parameters, which can be thought of as the expected degrees of freedom in a model contributing to overfitting."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#akaike-information-criterion-aic",
+    "href": "slides/lecture12-2.html#akaike-information-criterion-aic",
+    "title": "Predictive Model Assessment",
+    "section": "Akaike Information Criterion (AIC)",
+    "text": "Akaike Information Criterion (AIC)\nThe “first” information criterion that most people see.\nUses a point estimate (the maximum-likelihood estimate \\(\\hat{\\theta}_\\text{MLE}\\)) to compute the log-predictive density for the data, corrected by the number of parameters \\(k\\):\n\\[\\widehat{\\text{elpd}}_\\text{AIC} = \\log p(y | \\hat{\\theta}_\\text{MLE}) - k.\\]"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#aic-formula",
+    "href": "slides/lecture12-2.html#aic-formula",
+    "title": "Predictive Model Assessment",
+    "section": "AIC Formula",
+    "text": "AIC Formula\nThe AIC is defined as \\(-2\\widehat{\\text{elpd}}_\\text{AIC}\\).\nDue to this convention, lower AICs are better (they correspond to a higher predictive skill)."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#aic-correction-term",
+    "href": "slides/lecture12-2.html#aic-correction-term",
+    "title": "Predictive Model Assessment",
+    "section": "AIC Correction Term",
+    "text": "AIC Correction Term\nIn the case of a normal model with independent and identically-distributed data and uniform priors, \\(k\\) is the asymptotically “correct” bias term (there are modified corrections for small sample sizes).\nHowever, with more informative priors and/or hierarchical models, the bias correction \\(k\\) is no longer appropriate, as there is less “freedom” associated with each parameter."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#aic-storm-surge-example",
+    "href": "slides/lecture12-2.html#aic-storm-surge-example",
+    "title": "Predictive Model Assessment",
+    "section": "AIC: Storm Surge Example",
+    "text": "AIC: Storm Surge Example\nModels:\n\nStationary (“null”) model, \\(y_t \\sim \\text{GEV}(\\mu, \\sigma, \\xi);\\)\nTime nonstationary (“null-ish”) model, \\(y_t \\sim \\text{GEV}(\\mu_0 + \\mu_1 t, \\sigma, \\xi);\\)\nPDO nonstationary model, \\(y_t \\sim \\text{GEV}(\\mu_0 + \\mu_1 \\text{PDO}_t, \\sigma, \\xi)\\)"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#aic-example",
+    "href": "slides/lecture12-2.html#aic-example",
+    "title": "Predictive Model Assessment",
+    "section": "AIC Example",
+    "text": "AIC Example\n\n\nCode\nstat_mle = [1258.71, 56.27, 0.017]\nstat_ll = -707.67\nnonstat_mle = [1231.58, 0.42, 52.07, 0.075]\nnonstat_ll = -702.45\npdo_mle = [1255.87, -12.39, 54.73, 0.033]\npdo_ll = -705.24\n\n# compute AIC values\nstat_aic = stat_ll - 3\nnonstat_aic = nonstat_ll - 4\npdo_aic = pdo_ll - 4\n\nmodel_aic = DataFrame(Model=[\"Stationary\", \"Time\", \"PDO\"], LogLik=trunc.(Int64, round.([stat_ll, nonstat_ll, pdo_ll]; digits=0)), AIC=trunc.(Int64, round.(-2 * [stat_aic, nonstat_aic, pdo_aic]; digits=0)))\n\n\n\n3×3 DataFrame\n\n\n\nRow\nModel\nLogLik\nAIC\n\n\n\nString\nInt64\nInt64\n\n\n\n\n1\nStationary\n-708\n1421\n\n\n2\nTime\n-702\n1413\n\n\n3\nPDO\n-705\n1418"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#aic-interpretation",
+    "href": "slides/lecture12-2.html#aic-interpretation",
+    "title": "Predictive Model Assessment",
+    "section": "AIC Interpretation",
+    "text": "AIC Interpretation\nAbsolute AIC values have no meaning, only the differences \\(\\Delta_i = \\text{AIC}_i - \\text{AIC}_\\text{min}\\).\nSome basic rules of thumb (from Burnham & Anderson (2004)):\n\n\\(\\Delta_i &lt; 2\\) means the model has “strong” support across \\(\\mathcal{M}\\);\n\\(4 &lt; \\Delta_i &lt; 7\\) suggests “less” support;\n\\(\\Delta_i &gt; 10\\) suggests “weak” or “no” support."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#aic-and-model-evidence",
+    "href": "slides/lecture12-2.html#aic-and-model-evidence",
+    "title": "Predictive Model Assessment",
+    "section": "AIC and Model Evidence",
+    "text": "AIC and Model Evidence\n\\(\\exp(-\\Delta_i/2)\\) can be thought of as a measure of the likelihood of the model given the data \\(y\\).\nThe ratio \\[\\exp(-\\Delta_i/2) / \\exp(-\\Delta_j/2)\\] can approximate the relative evidence for \\(M_i\\) versus \\(M_j\\)."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#aic-and-model-averaging",
+    "href": "slides/lecture12-2.html#aic-and-model-averaging",
+    "title": "Predictive Model Assessment",
+    "section": "AIC and Model Averaging",
+    "text": "AIC and Model Averaging\nThis gives rise to the idea of Akaike weights: \\[w_i = \\frac{\\exp(-\\Delta_i/2)}{\\sum_{m=1}^M \\exp(-\\Delta_m/2)}.\\]\nModel projections can then be weighted based on \\(w_i\\), which can be interpreted as the probability that \\(M_i\\) is the best (in the sense of approximating the “true” predictive distribution) model in \\(\\mathcal{M}\\)."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#model-averaging-vs.-selection",
+    "href": "slides/lecture12-2.html#model-averaging-vs.-selection",
+    "title": "Predictive Model Assessment",
+    "section": "Model Averaging vs. Selection",
+    "text": "Model Averaging vs. Selection\nModel averaging can sometimes be beneficial vs. model selection.\nModel selection can introduce bias from the selection process (this is particularly acute for stepwise selection due to path-dependence)."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#deviance-information-criterion-dic",
+    "href": "slides/lecture12-2.html#deviance-information-criterion-dic",
+    "title": "Predictive Model Assessment",
+    "section": "Deviance Information Criterion (DIC)",
+    "text": "Deviance Information Criterion (DIC)\nThe Deviance Information Criterion (DIC) is a more Bayesian generalization of AIC which uses the posterior mean \\[\\hat{\\theta}_\\text{Bayes} = \\mathbb{E}\\left[\\theta | y\\right]\\] and a bias correction derived from the data."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#dic",
+    "href": "slides/lecture12-2.html#dic",
+    "title": "Predictive Model Assessment",
+    "section": "DIC",
+    "text": "DIC\n\\[\\widehat{\\text{elpd}}_\\text{DIC} = \\log p(y | \\hat{\\theta}_\\text{Bayes}) - p_{\\text{DIC}},\\] where \\[p_\\text{DIC} = 2\\left(\\log p(y | \\hat{\\theta}_\\text{Bayes}) - \\mathbb{E}_\\text{post}\\left[\\log p(y | \\theta)\\right]\\right).\\]\nThen, as with AIC, \\[\\text{DIC} = -2\\widehat{\\text{elpd}}_\\text{DIC}.\\]"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#dic-effective-number-of-parameters",
+    "href": "slides/lecture12-2.html#dic-effective-number-of-parameters",
+    "title": "Predictive Model Assessment",
+    "section": "DIC: Effective Number of Parameters",
+    "text": "DIC: Effective Number of Parameters\nWhat is the meaning of \\(p_\\text{DIC}\\)?\n\nThe difference between the average log-likelihood (across parameters) and the log-likelihood at a parameter average measures “degrees of freedom”.\nThe DIC adjustment assumes independence of residuals for fixed \\(\\theta\\)."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#aic-vs.-dic",
+    "href": "slides/lecture12-2.html#aic-vs.-dic",
+    "title": "Predictive Model Assessment",
+    "section": "AIC vs. DIC",
+    "text": "AIC vs. DIC\nAIC and DIC often give similar results, but don’t have to.\nThe key difference is the impact of priors on parameter estimation and model degrees of freedom."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#aic-vs.-dic-example",
+    "href": "slides/lecture12-2.html#aic-vs.-dic-example",
+    "title": "Predictive Model Assessment",
+    "section": "AIC vs. DIC Example",
+    "text": "AIC vs. DIC Example\n\n\nCode\n# fit models\nstat_chain = sample(stat_mod, NUTS(), MCMCThreads(), 10_000, 4)\nnonstat_chain = sample(nonstat_mod, NUTS(), MCMCThreads(), 10_000, 4)\npdo_chain = sample(pdo_mod, NUTS(), MCMCThreads(), 10_000, 4)\n\nstat_est = mean(stat_chain)[:, 2]\nnonstat_est = mean(nonstat_chain)[:, 2]\npdo_est = mean(pdo_chain)[:, 2]\n\nstat_bayes = loglikelihood(stat_mod, (μ = stat_est[1], σ = stat_est[2], ξ = stat_est[3]))\nnonstat_bayes = loglikelihood(nonstat_mod, (a = nonstat_est[1], b = nonstat_est[2], σ = nonstat_est[3], ξ = nonstat_est[4]))\npdo_bayes = loglikelihood(pdo_mod, (a = pdo_est[1], b = pdo_est[2], σ = pdo_est[3], ξ = pdo_est[4]))\n\nstat_ll = mean([loglikelihood(stat_mod, row) for row in eachrow(DataFrame(stat_chain))]) \nnonstat_ll = mean([loglikelihood(nonstat_mod, row) for row in eachrow(DataFrame(nonstat_chain))])\npdo_ll = mean([loglikelihood(pdo_mod, row) for row in eachrow(DataFrame(pdo_chain))])\n\nstat_dic = 2 * stat_ll - stat_bayes\nnonstat_dic = 2 * nonstat_ll - nonstat_bayes\npdo_dic = 2 * pdo_ll - pdo_bayes\n\nmodel_dic = DataFrame(Model=[\"Stationary\", \"Time\", \"PDO\"], AIC=trunc.(Int64, round.(-2 * [stat_aic, nonstat_aic, pdo_aic]; digits=0)), DIC=trunc.(Int64, round.(-2 * [stat_dic, nonstat_dic, pdo_dic]; digits=0)))\n\n\n\n3×3 DataFrame\n\n\n\nRow\nModel\nAIC\nDIC\n\n\n\nString\nInt64\nInt64\n\n\n\n\n1\nStationary\n1421\n1421\n\n\n2\nTime\n1413\n1413\n\n\n3\nPDO\n1418\n1419"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#convergence-of-aic-and-dic",
+    "href": "slides/lecture12-2.html#convergence-of-aic-and-dic",
+    "title": "Predictive Model Assessment",
+    "section": "Convergence of AIC and DIC",
+    "text": "Convergence of AIC and DIC\nBoth AIC and DIC converge (as \\(n \\to \\infty\\)) to expected leave-one-out CV.\nThe question is how well they do under limited sample sizes!"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#watanabe-akaike-information-criterion-waic",
+    "href": "slides/lecture12-2.html#watanabe-akaike-information-criterion-waic",
+    "title": "Predictive Model Assessment",
+    "section": "Watanabe-Akaike Information Criterion (WAIC)",
+    "text": "Watanabe-Akaike Information Criterion (WAIC)\n\\[\\widehat{\\text{elpd}}_\\text{WAIC} = \\sum_{i=1}^n \\log \\int p(y_i | \\theta) p_\\text{post}(\\theta)\\,d\\theta - p_{\\text{WAIC}},\\]\nwhere \\[p_\\text{WAIC} = \\sum_{i=1}^n \\text{Var}_\\text{post}\\left(\\log p(y_i | \\theta)\\right).\\]"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#waic-correction-factor",
+    "href": "slides/lecture12-2.html#waic-correction-factor",
+    "title": "Predictive Model Assessment",
+    "section": "WAIC Correction Factor",
+    "text": "WAIC Correction Factor\n\\(p_\\text{WAIC}\\) is an estimate of the number of “unconstrained” parameters in the model.\n\nA parameter counts as 1 if its estimate is “independent” of the prior;\nA parameter counts as 0 if it is fully constrained by the prior.\nA parameter gives a partial value if both the data and prior are informative."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#waic-vs.-aic-and-dic",
+    "href": "slides/lecture12-2.html#waic-vs.-aic-and-dic",
+    "title": "Predictive Model Assessment",
+    "section": "WAIC vs. AIC and DIC",
+    "text": "WAIC vs. AIC and DIC\n\nWAIC can be viewed as an approximation to leave-one-out CV, and averages over the entire posterior, vs. AIC and DIC which use point estimates.\nBut it doesn’t work well with highly structured data; no real alternative to more clever uses of Bayesian cross-validation."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#bayesian-information-criterion-bic",
+    "href": "slides/lecture12-2.html#bayesian-information-criterion-bic",
+    "title": "Predictive Model Assessment",
+    "section": "“Bayesian” “Information” Criterion (BIC)",
+    "text": "“Bayesian” “Information” Criterion (BIC)\n\\[\\text{BIC} = -2\\log p(y | \\hat{\\theta}_\\text{MLE}) + k\\log n.\\]\nBIC:\n\nIs not Bayesian (it relies on the MLE);\nHas no relationship to information theory (unlike AIC/DIC);\nAssumes \\(\\mathcal{M}\\)-closed (e.g. that the true model is under consideration)."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#bic",
+    "href": "slides/lecture12-2.html#bic",
+    "title": "Predictive Model Assessment",
+    "section": "BIC",
+    "text": "BIC\nBIC approximates the prior log-predictive likelihood and leave-\\(k\\)-out cross-validation (hence the extra penalization for additional parameters).\nThis is why it’s odd when model selection consists of examining both AIC and BIC: these are different quantities with different purposes!"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#key-takeaways",
+    "href": "slides/lecture12-2.html#key-takeaways",
+    "title": "Predictive Model Assessment",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nModel selection is a balance between bias (underfitting) and variance (overfitting).\nFor predictive assessment, leave-one-out cross-validation is an ideal, but hard to implement in practice (particularly for time series)."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#an-important-caveat",
+    "href": "slides/lecture12-2.html#an-important-caveat",
+    "title": "Predictive Model Assessment",
+    "section": "An Important Caveat",
+    "text": "An Important Caveat\nModel selection can result in significant overfitting when separated from hypothesis-driven model development (Freedman, 1983; Smith, 2018)"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#next-classes",
+    "href": "slides/lecture12-2.html#next-classes",
+    "title": "Predictive Model Assessment",
+    "section": "Next Classes",
+    "text": "Next Classes\nNext Week: Model Simplicity and Emulation"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#what-is-the-goal-of-model-selection",
+    "href": "slides/lecture12-2.html#what-is-the-goal-of-model-selection",
+    "title": "Predictive Model Assessment",
+    "section": "What Is The Goal of Model Selection?",
+    "text": "What Is The Goal of Model Selection?\nKey Idea: Model selection consists of navigating the bias-variance tradeoff.\nModel error (e.g. RMSE) is a combination of irreducible error, bias, and variance."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#key-takeaways-1",
+    "href": "slides/lecture12-2.html#key-takeaways-1",
+    "title": "Predictive Model Assessment",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nInformation Criteria are an approximation to LOO-CV based on “correcting” for model complexity.\nAIC and DIC can be used to approximate LOO-CV.\nBIC is an entirely different measure, approximating the prior predictive distribution (leave-\\(k\\)-out CV)."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#an-important-caveat-1",
+    "href": "slides/lecture12-2.html#an-important-caveat-1",
+    "title": "Predictive Model Assessment",
+    "section": "An Important Caveat",
+    "text": "An Important Caveat\n\nBetter off thinking about the scientific or engineering problem you want to solve and use domain knowledge/checks rather than throwing a large number of possible models into the selection machinery.\nRegularizing priors reduce potential for overfitting.\nModel averaging (Hoeting et al., 2021) and stacking (Yao et al., 2018) can combine multiple models as an alternative to selection."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#references-1",
+    "href": "slides/lecture12-2.html#references-1",
+    "title": "Predictive Model Assessment",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nBurnham, K. P., & Anderson, D. R. (2004). Multimodel Inference: Understanding AIC and BIC in Model Selection. Sociol. Methods Res., 33, 261–304. https://doi.org/10.1177/0049124104268644\n\n\nFreedman, D. A. (1983). A note on screening regression equations. Am. Stat., 37, 152. https://doi.org/10.2307/2685877\n\n\nHoeting, J. A., Madigan, D., Raftery, A. E., & Volinsky, C. T. (2021). Bayesian model averaging: a tutorial. Stat. Sci., 14, 382–401. https://doi.org/10.1214/ss/1009212519\n\n\nSmith, G. (2018). Step away from stepwise. J. Big Data, 5, 1–12. https://doi.org/10.1186/s40537-018-0143-6\n\n\nYao, Y., Vehtari, A., Simpson, D., & Gelman, A. (2018). Using stacking to average Bayesian predictive distributions. arXiv [Stat.ME]. https://doi.org/10.1214/17-BA1091"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#loo-cv-example",
+    "href": "slides/lecture12-2.html#loo-cv-example",
+    "title": "Predictive Model Assessment",
+    "section": "LOO-CV Example",
+    "text": "LOO-CV Example\n\n\nCode\ndrop_idx = rand(1:nrow(dat_annmax), 1)\np1 = plot(\n    dat_annmax.Year[setdiff(1:end, drop_idx)],\n    dat_annmax.residual[setdiff(1:end, drop_idx)];\n    xlabel=\"Year\",\n    ylabel=\"Annual Max Tide Level (m)\",\n    label=false,\n    marker=:circle,\n    markersize=5,\n    tickfontsize=16,\n    guidefontsize=18,\n    left_margin=5mm, \n    bottom_margin=5mm\n)\nscatter!(p1,\n    dat_annmax.Year[drop_idx],\n    dat_annmax.residual[drop_idx],\n    color=:red,\n    label=false,\n    markersize=5,\n    marker=:circle\n)\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#loo-cv-example-1",
+    "href": "slides/lecture12-2.html#loo-cv-example-1",
+    "title": "Predictive Model Assessment",
+    "section": "LOO-CV Example",
+    "text": "LOO-CV Example\n\n\n\n\nCode\n# fit held-out data\nstat_lb = [1000.0, 0.0, -1.0]\nstat_ub = [2000.0, 100.0, 1.0]\nstat_p0 = [1200.0, 50.0, 0.01]\nnonstat_lb = [1000.0, -20.0, 0.0, -5.0]\nnonstat_ub = [2000.0, 20.0, 100.0, 5.0]\nnonstat_p0 = [1200.0, 0.5, 50.0, 0.05]\n\nstat_cv = Optim.optimize(p -&gt; -sum(logpdf.(GeneralizedExtremeValue(p[1], p[2], p[3]), dat_annmax.residual[setdiff(1:end, drop_idx)])), stat_lb, stat_ub, stat_p0)\nstat_cv_mle = stat_cv.minimizer\nstat_cv_logp = logpdf(GeneralizedExtremeValue(stat_cv_mle[1], stat_cv_mle[2], stat_cv_mle[3]), dat_annmax.residual[drop_idx])\n\np = plot(GeneralizedExtremeValue(stat_cv_mle[1], stat_cv_mle[2], stat_cv_mle[3]),\n    xlabel=\"Storm Surge Extreme (mm)\",\n    ylabel=\"Probability Density\",\n    xlims=(1000, 1800),\n    linewidth=3,\n    label=false,\n    tickfontsize=16,\n    guidefontsize=18,\n    legendfontsize=16,\n    left_margin=5mm, \n    bottom_margin=5mm,\n    right_margin=10mm\n)\nvline!(p, [dat_annmax.residual[drop_idx]], color=:red, linestyle=:dash, label=\"Held-out Value\", linewidth=2)\nplot!(p, size=(600, 400))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: MLE for GEV fit without held out data point.\n\n\n\n\n\n\\(\\log p(y_i | y_{-i})\\):\n-5.1."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#loo-cv-example-2",
+    "href": "slides/lecture12-2.html#loo-cv-example-2",
+    "title": "Predictive Model Assessment",
+    "section": "LOO-CV Example",
+    "text": "LOO-CV Example\n\n\n\n2×2 DataFrame\n\n\n\nRow\nModel\nLOOCV\n\n\n\nString\nFloat64\n\n\n\n\n1\nStationary\n-711.064\n\n\n2\nNonstationary\n-706.663"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#loo-cv-example-3",
+    "href": "slides/lecture12-2.html#loo-cv-example-3",
+    "title": "Predictive Model Assessment",
+    "section": "LOO-CV Example",
+    "text": "LOO-CV Example\n\n\n\n2×2 DataFrame\n\n\n\nRow\nModel\nLOOCV\n\n\n\nString\nFloat64\n\n\n\n\n1\nStationary\n-711.064\n\n\n2\nNonstationary\n-706.663"
+  },
+  {
+    "objectID": "slides/lecture12-2.html#setting-for-model-selection",
+    "href": "slides/lecture12-2.html#setting-for-model-selection",
+    "title": "Predictive Model Assessment",
+    "section": "Setting for Model Selection",
+    "text": "Setting for Model Selection\nSuppose we have a data-generating model \\[y = f(x) + \\varepsilon, \\varepsilon \\sim N(0, \\sigma)\\]. We want to fit a model \\(\\hat{y} \\approx \\hat{f}(x)\\)."
+  },
+  {
+    "objectID": "slides/lecture12-2.html#bias-variance-and-complexity",
+    "href": "slides/lecture12-2.html#bias-variance-and-complexity",
+    "title": "Predictive Model Assessment",
+    "section": "Bias-Variance and Complexity",
+    "text": "Bias-Variance and Complexity\n\n\n\n\nBias-Variance Tradeoff\n\n\n\nSource: Wikipedia"
   }
 ]
