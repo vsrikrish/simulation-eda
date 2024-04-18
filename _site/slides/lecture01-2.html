@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.519">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2024-01-24">
@@ -601,7 +601,7 @@
 <p><span class="math display">\[f_\mathcal{D}(x) = p(x | \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}^2\right)\right)\]</span></p>
 <div class="center">
 <div id="cell-fig-normal" class="cell" data-execution_count="3">
-<div id="fig-normal" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="4">
+<div id="fig-normal" class="cell-output cell-output-display quarto-figure quarto-figure-center" data-execution_count="4">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-normal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -780,78 +780,78 @@ Figure&nbsp;1
 <h2>Example: 95% CIs for N(0.4, 2)</h2>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a></a><span class="co"># set up distribution</span></span>
-<span id="cb1-2"><a></a>mean_true <span class="op">=</span> <span class="fl">0.4</span></span>
-<span id="cb1-3"><a></a>n_cis <span class="op">=</span> <span class="fl">100</span> <span class="co"># number of CIs to compute</span></span>
-<span id="cb1-4"><a></a>dist <span class="op">=</span> <span class="fu">Normal</span>(mean_true, <span class="fl">2</span>)</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a><span class="co"># use sample size of 100</span></span>
-<span id="cb1-7"><a></a>samples <span class="op">=</span> <span class="fu">rand</span>(dist, (<span class="fl">100</span>, n_cis))</span>
-<span id="cb1-8"><a></a><span class="co"># mapslices broadcasts over a matrix dimension, could also use a loop</span></span>
-<span id="cb1-9"><a></a>sample_means <span class="op">=</span> <span class="fu">mapslices</span>(mean, samples; dims<span class="op">=</span><span class="fl">1</span>)</span>
-<span id="cb1-10"><a></a>sample_sd <span class="op">=</span> <span class="fu">mapslices</span>(std, samples; dims<span class="op">=</span><span class="fl">1</span>) </span>
-<span id="cb1-11"><a></a>mc_sd <span class="op">=</span> <span class="fl">1.96</span> <span class="op">*</span> sample_sd <span class="op">/</span> <span class="fu">sqrt</span>(<span class="fl">100</span>)</span>
-<span id="cb1-12"><a></a>mc_ci <span class="op">=</span> <span class="fu">zeros</span>(n_cis, <span class="fl">2</span>) <span class="co"># preallocate</span></span>
-<span id="cb1-13"><a></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span>n_cis</span>
-<span id="cb1-14"><a></a>    mc_ci[i, <span class="fl">1</span>] <span class="op">=</span> sample_means[i] <span class="op">-</span> mc_sd[i]</span>
-<span id="cb1-15"><a></a>    mc_ci[i, <span class="fl">2</span>] <span class="op">=</span> sample_means[i] <span class="op">+</span> mc_sd[i]</span>
-<span id="cb1-16"><a></a><span class="cf">end</span></span>
-<span id="cb1-17"><a></a><span class="co"># find which CIs contain the true value</span></span>
-<span id="cb1-18"><a></a>ci_true <span class="op">=</span> (mc_ci[<span class="op">:</span>, <span class="fl">1</span>] <span class="op">.&lt;</span> mean_true) <span class="op">.&amp;&amp;</span> (mc_ci[<span class="op">:</span>, <span class="fl">2</span>] <span class="op">.&gt;</span> mean_true)</span>
-<span id="cb1-19"><a></a><span class="co"># compute percentage of CIs which contain the true value</span></span>
-<span id="cb1-20"><a></a>ci_frac1 <span class="op">=</span> <span class="fl">100</span> <span class="op">*</span> <span class="fu">sum</span>(ci_true) <span class="op">./</span> n_cis</span>
-<span id="cb1-21"><a></a></span>
-<span id="cb1-22"><a></a><span class="co"># plot CIs</span></span>
-<span id="cb1-23"><a></a>p1 <span class="op">=</span> <span class="fu">plot</span>([mc_ci[<span class="fl">1</span>, <span class="op">:</span>]], [<span class="fl">1</span>, <span class="fl">1</span>], linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>blue, label<span class="op">=</span><span class="st">"95% Confidence Interval"</span>, title<span class="op">=</span><span class="st">"Sample Size 100"</span>, yticks<span class="op">=:</span><span class="cn">false</span>, tickfontsize<span class="op">=</span><span class="fl">14</span>, titlefontsize<span class="op">=</span><span class="fl">20</span>, legend<span class="op">=:</span><span class="cn">false</span>, guidefontsize<span class="op">=</span><span class="fl">16</span>)</span>
-<span id="cb1-24"><a></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">2</span><span class="op">:</span>n_cis</span>
-<span id="cb1-25"><a></a>    <span class="cf">if</span> ci_true[i]</span>
-<span id="cb1-26"><a></a>        <span class="fu">plot!</span>(p1, [mc_ci[i, <span class="op">:</span>]], [i, i], linewidth<span class="op">=</span><span class="fl">2</span>, color<span class="op">=:</span>blue, label<span class="op">=:</span><span class="cn">false</span>)</span>
-<span id="cb1-27"><a></a>    <span class="cf">else</span></span>
-<span id="cb1-28"><a></a>        <span class="fu">plot!</span>(p1, [mc_ci[i, <span class="op">:</span>]], [i, i], linewidth<span class="op">=</span><span class="fl">2</span>, color<span class="op">=:</span>red, label<span class="op">=:</span><span class="cn">false</span>)</span>
-<span id="cb1-29"><a></a>    <span class="cf">end</span></span>
-<span id="cb1-30"><a></a><span class="cf">end</span></span>
-<span id="cb1-31"><a></a><span class="fu">vline!</span>(p1, [mean_true], color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">2</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span><span class="st">"True Value"</span>) <span class="co"># plot true value as a vertical line</span></span>
-<span id="cb1-32"><a></a><span class="fu">xaxis!</span>(p1, <span class="st">"Estimate"</span>)</span>
-<span id="cb1-33"><a></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">400</span>)) <span class="co"># resize to fit slide</span></span>
-<span id="cb1-34"><a></a></span>
-<span id="cb1-35"><a></a><span class="co"># use sample size of 1000</span></span>
-<span id="cb1-36"><a></a>samples <span class="op">=</span> <span class="fu">rand</span>(dist, (<span class="fl">1000</span>, n_cis))</span>
-<span id="cb1-37"><a></a><span class="co"># mapslices broadcasts over a matrix dimension, could also use a loop</span></span>
-<span id="cb1-38"><a></a>sample_means <span class="op">=</span> <span class="fu">mapslices</span>(mean, samples; dims<span class="op">=</span><span class="fl">1</span>)</span>
-<span id="cb1-39"><a></a>sample_sd <span class="op">=</span> <span class="fu">mapslices</span>(std, samples; dims<span class="op">=</span><span class="fl">1</span>) </span>
-<span id="cb1-40"><a></a>mc_sd <span class="op">=</span> <span class="fl">1.96</span> <span class="op">*</span> sample_sd <span class="op">/</span> <span class="fu">sqrt</span>(<span class="fl">1000</span>)</span>
-<span id="cb1-41"><a></a>mc_ci <span class="op">=</span> <span class="fu">zeros</span>(n_cis, <span class="fl">2</span>) <span class="co"># preallocate</span></span>
-<span id="cb1-42"><a></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span>n_cis</span>
-<span id="cb1-43"><a></a>    mc_ci[i, <span class="fl">1</span>] <span class="op">=</span> sample_means[i] <span class="op">-</span> mc_sd[i]</span>
-<span id="cb1-44"><a></a>    mc_ci[i, <span class="fl">2</span>] <span class="op">=</span> sample_means[i] <span class="op">+</span> mc_sd[i]</span>
-<span id="cb1-45"><a></a><span class="cf">end</span></span>
-<span id="cb1-46"><a></a><span class="co"># find which CIs contain the true value</span></span>
-<span id="cb1-47"><a></a>ci_true <span class="op">=</span> (mc_ci[<span class="op">:</span>, <span class="fl">1</span>] <span class="op">.&lt;</span> mean_true) <span class="op">.&amp;&amp;</span> (mc_ci[<span class="op">:</span>, <span class="fl">2</span>] <span class="op">.&gt;</span> mean_true)</span>
-<span id="cb1-48"><a></a><span class="co"># compute percentage of CIs which contain the true value</span></span>
-<span id="cb1-49"><a></a>ci_frac2 <span class="op">=</span> <span class="fl">100</span> <span class="op">*</span> <span class="fu">sum</span>(ci_true) <span class="op">./</span> n_cis</span>
-<span id="cb1-50"><a></a></span>
-<span id="cb1-51"><a></a><span class="co"># plot CIs</span></span>
-<span id="cb1-52"><a></a>p2 <span class="op">=</span> <span class="fu">plot</span>([mc_ci[<span class="fl">1</span>, <span class="op">:</span>]], [<span class="fl">1</span>, <span class="fl">1</span>], linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>blue, label<span class="op">=</span><span class="st">"95% Confidence Interval"</span>, title<span class="op">=</span><span class="st">"Sample Size 1,000"</span>, yticks<span class="op">=:</span><span class="cn">false</span>, tickfontsize<span class="op">=</span><span class="fl">14</span>, titlefontsize<span class="op">=</span><span class="fl">20</span>, legend<span class="op">=:</span><span class="cn">false</span>, guidefontsize<span class="op">=</span><span class="fl">16</span>)</span>
-<span id="cb1-53"><a></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">2</span><span class="op">:</span>n_cis</span>
-<span id="cb1-54"><a></a>    <span class="cf">if</span> ci_true[i]</span>
-<span id="cb1-55"><a></a>        <span class="fu">plot!</span>(p2, [mc_ci[i, <span class="op">:</span>]], [i, i], linewidth<span class="op">=</span><span class="fl">2</span>, color<span class="op">=:</span>blue, label<span class="op">=:</span><span class="cn">false</span>)</span>
-<span id="cb1-56"><a></a>    <span class="cf">else</span></span>
-<span id="cb1-57"><a></a>        <span class="fu">plot!</span>(p2, [mc_ci[i, <span class="op">:</span>]], [i, i], linewidth<span class="op">=</span><span class="fl">2</span>, color<span class="op">=:</span>red, label<span class="op">=:</span><span class="cn">false</span>)</span>
-<span id="cb1-58"><a></a>    <span class="cf">end</span></span>
-<span id="cb1-59"><a></a><span class="cf">end</span></span>
-<span id="cb1-60"><a></a><span class="fu">vline!</span>(p2, [mean_true], color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">2</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span><span class="st">"True Value"</span>) <span class="co"># plot true value as a vertical line</span></span>
-<span id="cb1-61"><a></a><span class="fu">xaxis!</span>(p2, <span class="st">"Estimate"</span>)</span>
-<span id="cb1-62"><a></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">400</span>)) <span class="co"># resize to fit slide</span></span>
-<span id="cb1-63"><a></a></span>
-<span id="cb1-64"><a></a><span class="fu">display</span>(p1)</span>
-<span id="cb1-65"><a></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># set up distribution</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>mean_true <span class="op">=</span> <span class="fl">0.4</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>n_cis <span class="op">=</span> <span class="fl">100</span> <span class="co"># number of CIs to compute</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>dist <span class="op">=</span> <span class="fu">Normal</span>(mean_true, <span class="fl">2</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># use sample size of 100</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>samples <span class="op">=</span> <span class="fu">rand</span>(dist, (<span class="fl">100</span>, n_cis))</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># mapslices broadcasts over a matrix dimension, could also use a loop</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>sample_means <span class="op">=</span> <span class="fu">mapslices</span>(mean, samples; dims<span class="op">=</span><span class="fl">1</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a>sample_sd <span class="op">=</span> <span class="fu">mapslices</span>(std, samples; dims<span class="op">=</span><span class="fl">1</span>) </span>
+<span id="cb1-11"><a href="#cb1-11"></a>mc_sd <span class="op">=</span> <span class="fl">1.96</span> <span class="op">*</span> sample_sd <span class="op">/</span> <span class="fu">sqrt</span>(<span class="fl">100</span>)</span>
+<span id="cb1-12"><a href="#cb1-12"></a>mc_ci <span class="op">=</span> <span class="fu">zeros</span>(n_cis, <span class="fl">2</span>) <span class="co"># preallocate</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span>n_cis</span>
+<span id="cb1-14"><a href="#cb1-14"></a>    mc_ci[i, <span class="fl">1</span>] <span class="op">=</span> sample_means[i] <span class="op">-</span> mc_sd[i]</span>
+<span id="cb1-15"><a href="#cb1-15"></a>    mc_ci[i, <span class="fl">2</span>] <span class="op">=</span> sample_means[i] <span class="op">+</span> mc_sd[i]</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="cf">end</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># find which CIs contain the true value</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>ci_true <span class="op">=</span> (mc_ci[<span class="op">:</span>, <span class="fl">1</span>] <span class="op">.&lt;</span> mean_true) <span class="op">.&amp;&amp;</span> (mc_ci[<span class="op">:</span>, <span class="fl">2</span>] <span class="op">.&gt;</span> mean_true)</span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># compute percentage of CIs which contain the true value</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>ci_frac1 <span class="op">=</span> <span class="fl">100</span> <span class="op">*</span> <span class="fu">sum</span>(ci_true) <span class="op">./</span> n_cis</span>
+<span id="cb1-21"><a href="#cb1-21"></a></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># plot CIs</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a>p1 <span class="op">=</span> <span class="fu">plot</span>([mc_ci[<span class="fl">1</span>, <span class="op">:</span>]], [<span class="fl">1</span>, <span class="fl">1</span>], linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>blue, label<span class="op">=</span><span class="st">"95% Confidence Interval"</span>, title<span class="op">=</span><span class="st">"Sample Size 100"</span>, yticks<span class="op">=:</span><span class="cn">false</span>, tickfontsize<span class="op">=</span><span class="fl">14</span>, titlefontsize<span class="op">=</span><span class="fl">20</span>, legend<span class="op">=:</span><span class="cn">false</span>, guidefontsize<span class="op">=</span><span class="fl">16</span>)</span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">2</span><span class="op">:</span>n_cis</span>
+<span id="cb1-25"><a href="#cb1-25"></a>    <span class="cf">if</span> ci_true[i]</span>
+<span id="cb1-26"><a href="#cb1-26"></a>        <span class="fu">plot!</span>(p1, [mc_ci[i, <span class="op">:</span>]], [i, i], linewidth<span class="op">=</span><span class="fl">2</span>, color<span class="op">=:</span>blue, label<span class="op">=:</span><span class="cn">false</span>)</span>
+<span id="cb1-27"><a href="#cb1-27"></a>    <span class="cf">else</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a>        <span class="fu">plot!</span>(p1, [mc_ci[i, <span class="op">:</span>]], [i, i], linewidth<span class="op">=</span><span class="fl">2</span>, color<span class="op">=:</span>red, label<span class="op">=:</span><span class="cn">false</span>)</span>
+<span id="cb1-29"><a href="#cb1-29"></a>    <span class="cf">end</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="cf">end</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="fu">vline!</span>(p1, [mean_true], color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">2</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span><span class="st">"True Value"</span>) <span class="co"># plot true value as a vertical line</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="fu">xaxis!</span>(p1, <span class="st">"Estimate"</span>)</span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">400</span>)) <span class="co"># resize to fit slide</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="co"># use sample size of 1000</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a>samples <span class="op">=</span> <span class="fu">rand</span>(dist, (<span class="fl">1000</span>, n_cis))</span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="co"># mapslices broadcasts over a matrix dimension, could also use a loop</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a>sample_means <span class="op">=</span> <span class="fu">mapslices</span>(mean, samples; dims<span class="op">=</span><span class="fl">1</span>)</span>
+<span id="cb1-39"><a href="#cb1-39"></a>sample_sd <span class="op">=</span> <span class="fu">mapslices</span>(std, samples; dims<span class="op">=</span><span class="fl">1</span>) </span>
+<span id="cb1-40"><a href="#cb1-40"></a>mc_sd <span class="op">=</span> <span class="fl">1.96</span> <span class="op">*</span> sample_sd <span class="op">/</span> <span class="fu">sqrt</span>(<span class="fl">1000</span>)</span>
+<span id="cb1-41"><a href="#cb1-41"></a>mc_ci <span class="op">=</span> <span class="fu">zeros</span>(n_cis, <span class="fl">2</span>) <span class="co"># preallocate</span></span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">1</span><span class="op">:</span>n_cis</span>
+<span id="cb1-43"><a href="#cb1-43"></a>    mc_ci[i, <span class="fl">1</span>] <span class="op">=</span> sample_means[i] <span class="op">-</span> mc_sd[i]</span>
+<span id="cb1-44"><a href="#cb1-44"></a>    mc_ci[i, <span class="fl">2</span>] <span class="op">=</span> sample_means[i] <span class="op">+</span> mc_sd[i]</span>
+<span id="cb1-45"><a href="#cb1-45"></a><span class="cf">end</span></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="co"># find which CIs contain the true value</span></span>
+<span id="cb1-47"><a href="#cb1-47"></a>ci_true <span class="op">=</span> (mc_ci[<span class="op">:</span>, <span class="fl">1</span>] <span class="op">.&lt;</span> mean_true) <span class="op">.&amp;&amp;</span> (mc_ci[<span class="op">:</span>, <span class="fl">2</span>] <span class="op">.&gt;</span> mean_true)</span>
+<span id="cb1-48"><a href="#cb1-48"></a><span class="co"># compute percentage of CIs which contain the true value</span></span>
+<span id="cb1-49"><a href="#cb1-49"></a>ci_frac2 <span class="op">=</span> <span class="fl">100</span> <span class="op">*</span> <span class="fu">sum</span>(ci_true) <span class="op">./</span> n_cis</span>
+<span id="cb1-50"><a href="#cb1-50"></a></span>
+<span id="cb1-51"><a href="#cb1-51"></a><span class="co"># plot CIs</span></span>
+<span id="cb1-52"><a href="#cb1-52"></a>p2 <span class="op">=</span> <span class="fu">plot</span>([mc_ci[<span class="fl">1</span>, <span class="op">:</span>]], [<span class="fl">1</span>, <span class="fl">1</span>], linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>blue, label<span class="op">=</span><span class="st">"95% Confidence Interval"</span>, title<span class="op">=</span><span class="st">"Sample Size 1,000"</span>, yticks<span class="op">=:</span><span class="cn">false</span>, tickfontsize<span class="op">=</span><span class="fl">14</span>, titlefontsize<span class="op">=</span><span class="fl">20</span>, legend<span class="op">=:</span><span class="cn">false</span>, guidefontsize<span class="op">=</span><span class="fl">16</span>)</span>
+<span id="cb1-53"><a href="#cb1-53"></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">2</span><span class="op">:</span>n_cis</span>
+<span id="cb1-54"><a href="#cb1-54"></a>    <span class="cf">if</span> ci_true[i]</span>
+<span id="cb1-55"><a href="#cb1-55"></a>        <span class="fu">plot!</span>(p2, [mc_ci[i, <span class="op">:</span>]], [i, i], linewidth<span class="op">=</span><span class="fl">2</span>, color<span class="op">=:</span>blue, label<span class="op">=:</span><span class="cn">false</span>)</span>
+<span id="cb1-56"><a href="#cb1-56"></a>    <span class="cf">else</span></span>
+<span id="cb1-57"><a href="#cb1-57"></a>        <span class="fu">plot!</span>(p2, [mc_ci[i, <span class="op">:</span>]], [i, i], linewidth<span class="op">=</span><span class="fl">2</span>, color<span class="op">=:</span>red, label<span class="op">=:</span><span class="cn">false</span>)</span>
+<span id="cb1-58"><a href="#cb1-58"></a>    <span class="cf">end</span></span>
+<span id="cb1-59"><a href="#cb1-59"></a><span class="cf">end</span></span>
+<span id="cb1-60"><a href="#cb1-60"></a><span class="fu">vline!</span>(p2, [mean_true], color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">2</span>, linestyle<span class="op">=:</span>dash, label<span class="op">=</span><span class="st">"True Value"</span>) <span class="co"># plot true value as a vertical line</span></span>
+<span id="cb1-61"><a href="#cb1-61"></a><span class="fu">xaxis!</span>(p2, <span class="st">"Estimate"</span>)</span>
+<span id="cb1-62"><a href="#cb1-62"></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">400</span>)) <span class="co"># resize to fit slide</span></span>
+<span id="cb1-63"><a href="#cb1-63"></a></span>
+<span id="cb1-64"><a href="#cb1-64"></a><span class="fu">display</span>(p1)</span>
+<span id="cb1-65"><a href="#cb1-65"></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-cis" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-cis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cis" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-cis-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cis" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-cis-1" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-cis-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -992,8 +992,8 @@ Figure&nbsp;1
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cis" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-cis-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cis" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-cis-2" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-cis-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1159,37 +1159,37 @@ Figure&nbsp;2: Display of 95% confidence intervals
 <h2>Correlation Examples</h2>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a></a><span class="co"># sample 1000 independent variables from a given normal distribution</span></span>
-<span id="cb2-2"><a></a>sample_independent <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>), (<span class="fl">2</span>, <span class="fl">1000</span>))</span>
-<span id="cb2-3"><a></a>p1 <span class="op">=</span> <span class="fu">scatter</span>(sample_independent[<span class="fl">1</span>, <span class="op">:</span>], sample_independent[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span><span class="st">"Independent Variables"</span>, tickfontsize<span class="op">=</span><span class="fl">14</span>, titlefontsize<span class="op">=</span><span class="fl">18</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>)</span>
-<span id="cb2-4"><a></a><span class="fu">xlabel!</span>(p1, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
-<span id="cb2-5"><a></a>ylabel<span class="st">!(p1, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
-<span id="cb2-6"><a></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a><span class="co"># sample 1000 correlated variables, with r=0.7</span></span>
-<span id="cb2-9"><a></a>sample_correlated <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">MvNormal</span>([<span class="fl">0</span>; <span class="fl">0</span>], [<span class="fl">1</span> <span class="fl">0.7</span>; <span class="fl">0.7</span> <span class="fl">1</span>]), <span class="fl">1000</span>)</span>
-<span id="cb2-10"><a></a>p2 <span class="op">=</span> <span class="fu">scatter</span>(sample_correlated[<span class="fl">1</span>, <span class="op">:</span>], sample_correlated[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span>L<span class="st">"Correlated (</span><span class="sc">$</span>r<span class="st">=0.7</span><span class="sc">$</span><span class="st">)", </span>tickfontsize<span class="st">=14, titlefontsize=18, guidefontsize=18)</span></span>
-<span id="cb2-11"><a></a><span class="fu">xlabel!</span>(p2, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
-<span id="cb2-12"><a></a>ylabel<span class="st">!(p2, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
-<span id="cb2-13"><a></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
-<span id="cb2-14"><a></a></span>
-<span id="cb2-15"><a></a><span class="co"># sample 1000 anti-correlated variables, with r=-0.7</span></span>
-<span id="cb2-16"><a></a>sample_anticorrelated <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">MvNormal</span>([<span class="fl">0</span>; <span class="fl">0</span>], [<span class="fl">1</span> <span class="op">-</span><span class="fl">0.7</span>; <span class="op">-</span><span class="fl">0.7</span> <span class="fl">1</span>]), <span class="fl">1000</span>)</span>
-<span id="cb2-17"><a></a>p3 <span class="op">=</span> <span class="fu">scatter</span>(sample_anticorrelated[<span class="fl">1</span>, <span class="op">:</span>], sample_anticorrelated[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span>L<span class="st">"Anticorrelated (</span><span class="sc">$</span>r<span class="st">=-0.7</span><span class="sc">$</span><span class="st">)", </span>tickfontsize<span class="st">=14, titlefontsize=18, guidefontsize=18)</span></span>
-<span id="cb2-18"><a></a><span class="fu">xlabel!</span>(p3, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
-<span id="cb2-19"><a></a>ylabel<span class="st">!(p3, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
-<span id="cb2-20"><a></a><span class="fu">plot!</span>(p3, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
-<span id="cb2-21"><a></a></span>
-<span id="cb2-22"><a></a><span class="fu">display</span>(p1)</span>
-<span id="cb2-23"><a></a><span class="fu">display</span>(p2)</span>
-<span id="cb2-24"><a></a><span class="fu">display</span>(p3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># sample 1000 independent variables from a given normal distribution</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>sample_independent <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>), (<span class="fl">2</span>, <span class="fl">1000</span>))</span>
+<span id="cb2-3"><a href="#cb2-3"></a>p1 <span class="op">=</span> <span class="fu">scatter</span>(sample_independent[<span class="fl">1</span>, <span class="op">:</span>], sample_independent[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span><span class="st">"Independent Variables"</span>, tickfontsize<span class="op">=</span><span class="fl">14</span>, titlefontsize<span class="op">=</span><span class="fl">18</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">xlabel!</span>(p1, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>ylabel<span class="st">!(p1, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="co"># sample 1000 correlated variables, with r=0.7</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>sample_correlated <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">MvNormal</span>([<span class="fl">0</span>; <span class="fl">0</span>], [<span class="fl">1</span> <span class="fl">0.7</span>; <span class="fl">0.7</span> <span class="fl">1</span>]), <span class="fl">1000</span>)</span>
+<span id="cb2-10"><a href="#cb2-10"></a>p2 <span class="op">=</span> <span class="fu">scatter</span>(sample_correlated[<span class="fl">1</span>, <span class="op">:</span>], sample_correlated[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span>L<span class="st">"Correlated (</span><span class="sc">$</span>r<span class="st">=0.7</span><span class="sc">$</span><span class="st">)", </span>tickfontsize<span class="st">=14, titlefontsize=18, guidefontsize=18)</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="fu">xlabel!</span>(p2, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>ylabel<span class="st">!(p2, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="co"># sample 1000 anti-correlated variables, with r=-0.7</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>sample_anticorrelated <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">MvNormal</span>([<span class="fl">0</span>; <span class="fl">0</span>], [<span class="fl">1</span> <span class="op">-</span><span class="fl">0.7</span>; <span class="op">-</span><span class="fl">0.7</span> <span class="fl">1</span>]), <span class="fl">1000</span>)</span>
+<span id="cb2-17"><a href="#cb2-17"></a>p3 <span class="op">=</span> <span class="fu">scatter</span>(sample_anticorrelated[<span class="fl">1</span>, <span class="op">:</span>], sample_anticorrelated[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span>L<span class="st">"Anticorrelated (</span><span class="sc">$</span>r<span class="st">=-0.7</span><span class="sc">$</span><span class="st">)", </span>tickfontsize<span class="st">=14, titlefontsize=18, guidefontsize=18)</span></span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="fu">xlabel!</span>(p3, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a>ylabel<span class="st">!(p3, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="fu">plot!</span>(p3, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
+<span id="cb2-21"><a href="#cb2-21"></a></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="fu">display</span>(p1)</span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="fu">display</span>(p2)</span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="fu">display</span>(p3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-correlation" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div id="fig-correlation-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-correlation-1" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-correlation-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -2237,8 +2237,8 @@ Figure&nbsp;2: Display of 95% confidence intervals
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div id="fig-correlation-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-correlation-2" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-correlation-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -3298,8 +3298,8 @@ Figure&nbsp;2: Display of 95% confidence intervals
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div id="fig-correlation-3" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-correlation-3" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-correlation-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -4434,10 +4434,8 @@ Figure&nbsp;3: Independent vs.&nbsp;Correlated Normal Variables
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
-</div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Errickson2021-kr" class="csl-entry" role="listitem">

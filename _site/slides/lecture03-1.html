@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.519">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2024-02-05">
@@ -523,44 +523,44 @@
 <h2>Skew</h2>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a></a><span class="co"># specify regression model</span></span>
-<span id="cb1-2"><a></a><span class="fu">f</span>(x) <span class="op">=</span> <span class="fl">2</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> x</span>
-<span id="cb1-3"><a></a>pred <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Uniform</span>(<span class="fl">0</span>, <span class="fl">10</span>), <span class="fl">20</span>)</span>
-<span id="cb1-4"><a></a>trend <span class="op">=</span> <span class="fu">f</span>.(pred)</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a><span class="co"># generate normal residuals</span></span>
-<span id="cb1-7"><a></a>normal_residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fu">length</span>(pred))</span>
-<span id="cb1-8"><a></a>normal_obs <span class="op">=</span> trend <span class="op">.+</span> normal_residuals</span>
-<span id="cb1-9"><a></a></span>
-<span id="cb1-10"><a></a><span class="co">## generate skewed residuals</span></span>
-<span id="cb1-11"><a></a>skewed_residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">SkewNormal</span>(<span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">2</span>), <span class="fu">length</span>(pred))</span>
-<span id="cb1-12"><a></a>skewed_obs <span class="op">=</span> trend <span class="op">.+</span> skewed_residuals</span>
-<span id="cb1-13"><a></a></span>
-<span id="cb1-14"><a></a><span class="co"># make plots</span></span>
-<span id="cb1-15"><a></a><span class="co"># scatterplot of observations</span></span>
-<span id="cb1-16"><a></a>p1 <span class="op">=</span> <span class="fu">plot</span>(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="fu">f</span>.(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>), color<span class="op">=:</span>black, label<span class="op">=</span><span class="st">"Trend Line"</span>, linewidth<span class="op">=</span><span class="fl">2</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>) <span class="co"># trend line</span></span>
-<span id="cb1-17"><a></a><span class="fu">scatter!</span>(p1, pred, normal_obs, color<span class="op">=:</span>orange, markershape<span class="op">=:</span>circle, label<span class="op">=</span><span class="st">"Normal Residuals"</span>)</span>
-<span id="cb1-18"><a></a><span class="fu">scatter!</span>(p1, pred, skewed_obs, color<span class="op">=:</span>green, markershape<span class="op">=:</span>square, label<span class="op">=</span><span class="st">"Skewed Residuals"</span>)</span>
-<span id="cb1-19"><a></a><span class="fu">xlabel!</span>(p1, <span class="st">"Predictors"</span>)</span>
-<span id="cb1-20"><a></a><span class="fu">ylabel!</span>(p1, <span class="st">"Observations"</span>)</span>
-<span id="cb1-21"><a></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">450</span>))</span>
-<span id="cb1-22"><a></a></span>
-<span id="cb1-23"><a></a><span class="co"># densities of residual distributions</span></span>
-<span id="cb1-24"><a></a>p2 <span class="op">=</span> <span class="fu">histogram</span>(<span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fl">1000</span>), color<span class="op">=:</span>orange, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">"Normal Distribution"</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>)</span>
-<span id="cb1-25"><a></a><span class="fu">histogram!</span>(p2, <span class="fu">rand</span>(<span class="fu">SkewNormal</span>(<span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">2</span>), <span class="fl">1000</span>), color<span class="op">=:</span>green, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">"SkewNormal Distribution"</span>)</span>
-<span id="cb1-26"><a></a><span class="fu">xlabel!</span>(<span class="st">"Value"</span>)</span>
-<span id="cb1-27"><a></a><span class="fu">ylabel!</span>(<span class="st">"Count"</span>)</span>
-<span id="cb1-28"><a></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">450</span>))</span>
-<span id="cb1-29"><a></a></span>
-<span id="cb1-30"><a></a><span class="fu">display</span>(p1)</span>
-<span id="cb1-31"><a></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># specify regression model</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">f</span>(x) <span class="op">=</span> <span class="fl">2</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">*</span> x</span>
+<span id="cb1-3"><a href="#cb1-3"></a>pred <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Uniform</span>(<span class="fl">0</span>, <span class="fl">10</span>), <span class="fl">20</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>trend <span class="op">=</span> <span class="fu">f</span>.(pred)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># generate normal residuals</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>normal_residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fu">length</span>(pred))</span>
+<span id="cb1-8"><a href="#cb1-8"></a>normal_obs <span class="op">=</span> trend <span class="op">.+</span> normal_residuals</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co">## generate skewed residuals</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>skewed_residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">SkewNormal</span>(<span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">2</span>), <span class="fu">length</span>(pred))</span>
+<span id="cb1-12"><a href="#cb1-12"></a>skewed_obs <span class="op">=</span> trend <span class="op">.+</span> skewed_residuals</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># make plots</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># scatterplot of observations</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>p1 <span class="op">=</span> <span class="fu">plot</span>(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="fu">f</span>.(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>), color<span class="op">=:</span>black, label<span class="op">=</span><span class="st">"Trend Line"</span>, linewidth<span class="op">=</span><span class="fl">2</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>) <span class="co"># trend line</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="fu">scatter!</span>(p1, pred, normal_obs, color<span class="op">=:</span>orange, markershape<span class="op">=:</span>circle, label<span class="op">=</span><span class="st">"Normal Residuals"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="fu">scatter!</span>(p1, pred, skewed_obs, color<span class="op">=:</span>green, markershape<span class="op">=:</span>square, label<span class="op">=</span><span class="st">"Skewed Residuals"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="fu">xlabel!</span>(p1, <span class="st">"Predictors"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="fu">ylabel!</span>(p1, <span class="st">"Observations"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">450</span>))</span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co"># densities of residual distributions</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a>p2 <span class="op">=</span> <span class="fu">histogram</span>(<span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fl">1000</span>), color<span class="op">=:</span>orange, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">"Normal Distribution"</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>)</span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="fu">histogram!</span>(p2, <span class="fu">rand</span>(<span class="fu">SkewNormal</span>(<span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">2</span>), <span class="fl">1000</span>), color<span class="op">=:</span>green, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">"SkewNormal Distribution"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="fu">xlabel!</span>(<span class="st">"Value"</span>)</span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="fu">ylabel!</span>(<span class="st">"Count"</span>)</span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">450</span>))</span>
+<span id="cb1-29"><a href="#cb1-29"></a></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="fu">display</span>(p1)</span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-skew" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-skew-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-skew" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-skew-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-skew" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-skew-1" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-skew-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -658,8 +658,8 @@
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-skew" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-skew-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-skew" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-skew-2" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-skew-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -844,40 +844,40 @@ Figure&nbsp;1: Skew
 <h2>Fat Tails</h2>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a></a><span class="co"># generate normal residuals</span></span>
-<span id="cb2-2"><a></a>normal_residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fu">length</span>(pred))</span>
-<span id="cb2-3"><a></a>normal_obs <span class="op">=</span> trend <span class="op">.+</span> normal_residuals</span>
-<span id="cb2-4"><a></a></span>
-<span id="cb2-5"><a></a><span class="co">## generate fat-tailed residuals</span></span>
-<span id="cb2-6"><a></a>cauchy_residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Cauchy</span>(<span class="fl">0</span>, <span class="fl">1</span>), <span class="fu">length</span>(pred))</span>
-<span id="cb2-7"><a></a>cauchy_obs <span class="op">=</span> trend <span class="op">.+</span> cauchy_residuals</span>
-<span id="cb2-8"><a></a></span>
-<span id="cb2-9"><a></a><span class="co"># make plots</span></span>
-<span id="cb2-10"><a></a><span class="co"># scatterplot of observations</span></span>
-<span id="cb2-11"><a></a>p1 <span class="op">=</span> <span class="fu">plot</span>(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="fu">f</span>.(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>), color<span class="op">=:</span>black, label<span class="op">=</span><span class="st">"Trend Line"</span>, linewidth<span class="op">=</span><span class="fl">2</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>) <span class="co"># trend line</span></span>
-<span id="cb2-12"><a></a><span class="fu">scatter!</span>(p1, pred, normal_obs, color<span class="op">=:</span>orange, markershape<span class="op">=:</span>circle, label<span class="op">=</span><span class="st">"Normal Residuals"</span>)</span>
-<span id="cb2-13"><a></a><span class="fu">scatter!</span>(p1, pred, cauchy_obs, color<span class="op">=:</span>green, markershape<span class="op">=:</span>square, label<span class="op">=</span><span class="st">"Fat-Tailed Residuals"</span>)</span>
-<span id="cb2-14"><a></a><span class="fu">xlabel!</span>(p1, <span class="st">"Predictors"</span>)</span>
-<span id="cb2-15"><a></a><span class="fu">ylabel!</span>(p1, <span class="st">"Observations"</span>)</span>
-<span id="cb2-16"><a></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">450</span>))</span>
-<span id="cb2-17"><a></a></span>
-<span id="cb2-18"><a></a><span class="co"># densities of residual distributions</span></span>
-<span id="cb2-19"><a></a>p2 <span class="op">=</span> <span class="fu">histogram</span>(<span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fl">1000</span>), color<span class="op">=:</span>orange, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">"Normal Distribution"</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>)</span>
-<span id="cb2-20"><a></a><span class="fu">histogram!</span>(p2, <span class="fu">rand</span>(<span class="fu">Cauchy</span>(<span class="fl">0</span>, <span class="fl">1</span>), <span class="fl">1000</span>), color<span class="op">=:</span>green, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">"Cauchy Distribution"</span>)</span>
-<span id="cb2-21"><a></a><span class="fu">xlabel!</span>(<span class="st">"Value"</span>)</span>
-<span id="cb2-22"><a></a><span class="fu">ylabel!</span>(<span class="st">"Count"</span>)</span>
-<span id="cb2-23"><a></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">450</span>))</span>
-<span id="cb2-24"><a></a><span class="fu">xlims!</span>(<span class="op">-</span><span class="fl">20</span>, <span class="fl">20</span>)</span>
-<span id="cb2-25"><a></a></span>
-<span id="cb2-26"><a></a><span class="fu">display</span>(p1)</span>
-<span id="cb2-27"><a></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># generate normal residuals</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>normal_residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fu">length</span>(pred))</span>
+<span id="cb2-3"><a href="#cb2-3"></a>normal_obs <span class="op">=</span> trend <span class="op">.+</span> normal_residuals</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">## generate fat-tailed residuals</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>cauchy_residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Cauchy</span>(<span class="fl">0</span>, <span class="fl">1</span>), <span class="fu">length</span>(pred))</span>
+<span id="cb2-7"><a href="#cb2-7"></a>cauchy_obs <span class="op">=</span> trend <span class="op">.+</span> cauchy_residuals</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="co"># make plots</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="co"># scatterplot of observations</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>p1 <span class="op">=</span> <span class="fu">plot</span>(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="fu">f</span>.(<span class="fl">0</span><span class="op">:</span><span class="fl">10</span>), color<span class="op">=:</span>black, label<span class="op">=</span><span class="st">"Trend Line"</span>, linewidth<span class="op">=</span><span class="fl">2</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>) <span class="co"># trend line</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="fu">scatter!</span>(p1, pred, normal_obs, color<span class="op">=:</span>orange, markershape<span class="op">=:</span>circle, label<span class="op">=</span><span class="st">"Normal Residuals"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="fu">scatter!</span>(p1, pred, cauchy_obs, color<span class="op">=:</span>green, markershape<span class="op">=:</span>square, label<span class="op">=</span><span class="st">"Fat-Tailed Residuals"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="fu">xlabel!</span>(p1, <span class="st">"Predictors"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="fu">ylabel!</span>(p1, <span class="st">"Observations"</span>)</span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">450</span>))</span>
+<span id="cb2-17"><a href="#cb2-17"></a></span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="co"># densities of residual distributions</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a>p2 <span class="op">=</span> <span class="fu">histogram</span>(<span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fl">1000</span>), color<span class="op">=:</span>orange, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">"Normal Distribution"</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>)</span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="fu">histogram!</span>(p2, <span class="fu">rand</span>(<span class="fu">Cauchy</span>(<span class="fl">0</span>, <span class="fl">1</span>), <span class="fl">1000</span>), color<span class="op">=:</span>green, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">"Cauchy Distribution"</span>)</span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="fu">xlabel!</span>(<span class="st">"Value"</span>)</span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="fu">ylabel!</span>(<span class="st">"Count"</span>)</span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">450</span>))</span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="fu">xlims!</span>(<span class="op">-</span><span class="fl">20</span>, <span class="fl">20</span>)</span>
+<span id="cb2-25"><a href="#cb2-25"></a></span>
+<span id="cb2-26"><a href="#cb2-26"></a><span class="fu">display</span>(p1)</span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-cauchy" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-cauchy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cauchy" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-cauchy-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cauchy" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-cauchy-1" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-cauchy-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -975,8 +975,8 @@ Figure&nbsp;1: Skew
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cauchy" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-cauchy-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cauchy" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-cauchy-2" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-cauchy-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -2987,13 +2987,13 @@ Figure&nbsp;2: Fat Tails
 <div id="cell-fig-norm-qq" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a></a>samps <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fl">20</span>)</span>
-<span id="cb3-2"><a></a><span class="fu">qqplot</span>(Normal, samps, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, linewidth<span class="op">=</span><span class="fl">3</span>, markersize<span class="op">=</span><span class="fl">6</span>)</span>
-<span id="cb3-3"><a></a><span class="fu">xlabel!</span>(<span class="st">"Theoretical Quantiles"</span>)</span>
-<span id="cb3-4"><a></a><span class="fu">ylabel!</span>(<span class="st">"Empirical Quantiles"</span>)</span>
-<span id="cb3-5"><a></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">450</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1"></a>samps <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>), <span class="fl">20</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">qqplot</span>(Normal, samps, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, linewidth<span class="op">=</span><span class="fl">3</span>, markersize<span class="op">=</span><span class="fl">6</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">xlabel!</span>(<span class="st">"Theoretical Quantiles"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">ylabel!</span>(<span class="st">"Empirical Quantiles"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">450</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-norm-qq" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="7">
+<div id="fig-norm-qq" class="cell-output cell-output-display quarto-figure quarto-figure-center" data-execution_count="7">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-norm-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -3073,32 +3073,32 @@ Figure&nbsp;3
 <h2>Q-Q Plot Example</h2>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a></a><span class="co">## generate fat-tailed residuals</span></span>
-<span id="cb4-2"><a></a>cauchy_samps <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Cauchy</span>(<span class="fl">0</span>, <span class="fl">1</span>), <span class="fl">20</span>)</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="co"># make plots</span></span>
-<span id="cb4-5"><a></a><span class="co"># scatterplot of observations</span></span>
-<span id="cb4-6"><a></a>p1 <span class="op">=</span> <span class="fu">plot</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">2</span>), linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>green, label<span class="op">=</span><span class="st">"Normal Distribution"</span>, yaxis<span class="op">=</span><span class="cn">false</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, legendfontsize<span class="op">=</span><span class="fl">18</span>)</span>
-<span id="cb4-7"><a></a><span class="fu">plot!</span>(p1, <span class="fu">Cauchy</span>(<span class="fl">0</span>, <span class="fl">1</span>), linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>orange, linestyle<span class="op">=:</span>dash, label<span class="op">=</span><span class="st">"Cauchy Distribution"</span>)</span>
-<span id="cb4-8"><a></a><span class="fu">xlims!</span>(p1, (<span class="op">-</span><span class="fl">10</span>, <span class="fl">10</span>))</span>
-<span id="cb4-9"><a></a><span class="fu">xlabel!</span>(<span class="st">"Value"</span>)</span>
-<span id="cb4-10"><a></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">450</span>))</span>
-<span id="cb4-11"><a></a></span>
-<span id="cb4-12"><a></a><span class="co"># densities of residual distributions</span></span>
-<span id="cb4-13"><a></a>p2 <span class="op">=</span> <span class="fu">qqplot</span>(Normal, cauchy_samps, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, linewidth<span class="op">=</span><span class="fl">3</span>, markersize<span class="op">=</span><span class="fl">6</span>)</span>
-<span id="cb4-14"><a></a><span class="fu">xlabel!</span>(p2, <span class="st">"Theoretical Quantiles"</span>)</span>
-<span id="cb4-15"><a></a><span class="fu">ylabel!</span>(p2, <span class="st">"Empirical Quantiles"</span>)</span>
-<span id="cb4-16"><a></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">450</span>))</span>
-<span id="cb4-17"><a></a></span>
-<span id="cb4-18"><a></a><span class="fu">display</span>(p1)</span>
-<span id="cb4-19"><a></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">## generate fat-tailed residuals</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>cauchy_samps <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Cauchy</span>(<span class="fl">0</span>, <span class="fl">1</span>), <span class="fl">20</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># make plots</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co"># scatterplot of observations</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>p1 <span class="op">=</span> <span class="fu">plot</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">2</span>), linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>green, label<span class="op">=</span><span class="st">"Normal Distribution"</span>, yaxis<span class="op">=</span><span class="cn">false</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, legendfontsize<span class="op">=</span><span class="fl">18</span>)</span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">plot!</span>(p1, <span class="fu">Cauchy</span>(<span class="fl">0</span>, <span class="fl">1</span>), linewidth<span class="op">=</span><span class="fl">3</span>, color<span class="op">=:</span>orange, linestyle<span class="op">=:</span>dash, label<span class="op">=</span><span class="st">"Cauchy Distribution"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="fu">xlims!</span>(p1, (<span class="op">-</span><span class="fl">10</span>, <span class="fl">10</span>))</span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="fu">xlabel!</span>(<span class="st">"Value"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">450</span>))</span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># densities of residual distributions</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>p2 <span class="op">=</span> <span class="fu">qqplot</span>(Normal, cauchy_samps, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, linewidth<span class="op">=</span><span class="fl">3</span>, markersize<span class="op">=</span><span class="fl">6</span>)</span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="fu">xlabel!</span>(p2, <span class="st">"Theoretical Quantiles"</span>)</span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="fu">ylabel!</span>(p2, <span class="st">"Empirical Quantiles"</span>)</span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">450</span>))</span>
+<span id="cb4-17"><a href="#cb4-17"></a></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="fu">display</span>(p1)</span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-cauchy-qq" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-cauchy-qq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cauchy-qq" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-cauchy-qq-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cauchy-qq" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-cauchy-qq-1" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-cauchy-qq-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -3151,8 +3151,8 @@ Figure&nbsp;3
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cauchy-qq" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-cauchy-qq-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-cauchy-qq" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-cauchy-qq-2" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-cauchy-qq-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -3245,20 +3245,20 @@ Figure&nbsp;4: Q-Q Plot for Cauchy Data and Normal Distribution
 <div id="cell-fig-temp-realizations" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a></a><span class="co"># set number of sampled simulations</span></span>
-<span id="cb5-2"><a></a>n_samples <span class="op">=</span> <span class="fl">1000</span></span>
-<span id="cb5-3"><a></a>residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, θ[<span class="kw">end</span>]), (n_samples, <span class="fu">length</span>(temp_obs)))</span>
-<span id="cb5-4"><a></a>model_out <span class="op">=</span> <span class="fu">ebm_wrap</span>(θ[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>])</span>
-<span id="cb5-5"><a></a><span class="co"># this uses broadcasting to "sweep" the model simulation across the sampled residual matrix</span></span>
-<span id="cb5-6"><a></a>model_sim <span class="op">=</span> residuals <span class="op">.+</span> model_out<span class="op">'</span> <span class="co"># need to transpose the model output vector due to how Julia treats vector dimensions</span></span>
-<span id="cb5-7"><a></a></span>
-<span id="cb5-8"><a></a>q_90 <span class="op">=</span> <span class="fu">mapslices</span>(col <span class="op">-&gt;</span> <span class="fu">quantile</span>(col, [<span class="fl">0.05</span>, <span class="fl">0.95</span>]), model_sim,; dims<span class="op">=</span><span class="fl">1</span>) <span class="co"># compute 90% prediction interval</span></span>
-<span id="cb5-9"><a></a></span>
-<span id="cb5-10"><a></a><span class="fu">plot</span>(hind_years, model_out, color<span class="op">=:</span>red, linewidth<span class="op">=</span><span class="fl">3</span>, label<span class="op">=</span><span class="st">"Model Simulation"</span>, ribbon<span class="op">=</span>(model_out <span class="op">.-</span> q_90[<span class="fl">1</span>, <span class="op">:</span>], q_90[<span class="fl">2</span>, <span class="op">:</span>] <span class="op">.-</span> model_out), fillalpha<span class="op">=</span><span class="fl">0.3</span>, xlabel<span class="op">=</span><span class="st">"Year"</span>, ylabel<span class="op">=</span><span class="st">"Temperature anomaly (°C)"</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>, bottom_margin<span class="op">=</span><span class="fl">5</span>mm, left_margin<span class="op">=</span><span class="fl">5</span>mm)</span>
-<span id="cb5-11"><a></a><span class="fu">scatter!</span>(hind_years, temp_obs, color<span class="op">=:</span>black, label<span class="op">=</span><span class="st">"Data"</span>)</span>
-<span id="cb5-12"><a></a><span class="fu">ylims!</span>(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">1.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># set number of sampled simulations</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>n_samples <span class="op">=</span> <span class="fl">1000</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>residuals <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, θ[<span class="kw">end</span>]), (n_samples, <span class="fu">length</span>(temp_obs)))</span>
+<span id="cb5-4"><a href="#cb5-4"></a>model_out <span class="op">=</span> <span class="fu">ebm_wrap</span>(θ[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>])</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># this uses broadcasting to "sweep" the model simulation across the sampled residual matrix</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>model_sim <span class="op">=</span> residuals <span class="op">.+</span> model_out<span class="op">'</span> <span class="co"># need to transpose the model output vector due to how Julia treats vector dimensions</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a>q_90 <span class="op">=</span> <span class="fu">mapslices</span>(col <span class="op">-&gt;</span> <span class="fu">quantile</span>(col, [<span class="fl">0.05</span>, <span class="fl">0.95</span>]), model_sim,; dims<span class="op">=</span><span class="fl">1</span>) <span class="co"># compute 90% prediction interval</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="fu">plot</span>(hind_years, model_out, color<span class="op">=:</span>red, linewidth<span class="op">=</span><span class="fl">3</span>, label<span class="op">=</span><span class="st">"Model Simulation"</span>, ribbon<span class="op">=</span>(model_out <span class="op">.-</span> q_90[<span class="fl">1</span>, <span class="op">:</span>], q_90[<span class="fl">2</span>, <span class="op">:</span>] <span class="op">.-</span> model_out), fillalpha<span class="op">=</span><span class="fl">0.3</span>, xlabel<span class="op">=</span><span class="st">"Year"</span>, ylabel<span class="op">=</span><span class="st">"Temperature anomaly (°C)"</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>, bottom_margin<span class="op">=</span><span class="fl">5</span>mm, left_margin<span class="op">=</span><span class="fl">5</span>mm)</span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="fu">scatter!</span>(hind_years, temp_obs, color<span class="op">=:</span>black, label<span class="op">=</span><span class="st">"Data"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="fu">ylims!</span>(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">1.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-temp-realizations" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="10">
+<div id="fig-temp-realizations" class="cell-output cell-output-display quarto-figure quarto-figure-center" data-execution_count="10">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-temp-realizations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -3507,37 +3507,37 @@ Figure&nbsp;5: Comparison of best fit with uncertain realization for the EBM wit
 <h2>Correlation Examples</h2>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a></a><span class="co"># sample 1000 independent variables from a given normal distribution</span></span>
-<span id="cb6-2"><a></a>sample_independent <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>), (<span class="fl">2</span>, <span class="fl">1000</span>))</span>
-<span id="cb6-3"><a></a>p1 <span class="op">=</span> <span class="fu">scatter</span>(sample_independent[<span class="fl">1</span>, <span class="op">:</span>], sample_independent[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span><span class="st">"Independent Variables"</span>, tickfontsize<span class="op">=</span><span class="fl">14</span>, titlefontsize<span class="op">=</span><span class="fl">18</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>)</span>
-<span id="cb6-4"><a></a><span class="fu">xlabel!</span>(p1, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
-<span id="cb6-5"><a></a>ylabel<span class="st">!(p1, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
-<span id="cb6-6"><a></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
-<span id="cb6-7"><a></a></span>
-<span id="cb6-8"><a></a><span class="co"># sample 1000 correlated variables, with r=0.7</span></span>
-<span id="cb6-9"><a></a>sample_correlated <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">MvNormal</span>([<span class="fl">0</span>; <span class="fl">0</span>], [<span class="fl">1</span> <span class="fl">0.7</span>; <span class="fl">0.7</span> <span class="fl">1</span>]), <span class="fl">1000</span>)</span>
-<span id="cb6-10"><a></a>p2 <span class="op">=</span> <span class="fu">scatter</span>(sample_correlated[<span class="fl">1</span>, <span class="op">:</span>], sample_correlated[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span>L<span class="st">"Correlated (</span><span class="sc">$</span>r<span class="st">=0.7</span><span class="sc">$</span><span class="st">)", </span>tickfontsize<span class="st">=14, titlefontsize=18, guidefontsize=18)</span></span>
-<span id="cb6-11"><a></a><span class="fu">xlabel!</span>(p2, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
-<span id="cb6-12"><a></a>ylabel<span class="st">!(p2, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
-<span id="cb6-13"><a></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
-<span id="cb6-14"><a></a></span>
-<span id="cb6-15"><a></a><span class="co"># sample 1000 anti-correlated variables, with r=-0.7</span></span>
-<span id="cb6-16"><a></a>sample_anticorrelated <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">MvNormal</span>([<span class="fl">0</span>; <span class="fl">0</span>], [<span class="fl">1</span> <span class="op">-</span><span class="fl">0.7</span>; <span class="op">-</span><span class="fl">0.7</span> <span class="fl">1</span>]), <span class="fl">1000</span>)</span>
-<span id="cb6-17"><a></a>p3 <span class="op">=</span> <span class="fu">scatter</span>(sample_anticorrelated[<span class="fl">1</span>, <span class="op">:</span>], sample_anticorrelated[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span>L<span class="st">"Anticorrelated (</span><span class="sc">$</span>r<span class="st">=-0.7</span><span class="sc">$</span><span class="st">)", </span>tickfontsize<span class="st">=14, titlefontsize=18, guidefontsize=18)</span></span>
-<span id="cb6-18"><a></a><span class="fu">xlabel!</span>(p3, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
-<span id="cb6-19"><a></a>ylabel<span class="st">!(p3, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
-<span id="cb6-20"><a></a><span class="fu">plot!</span>(p3, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
-<span id="cb6-21"><a></a></span>
-<span id="cb6-22"><a></a><span class="fu">display</span>(p1)</span>
-<span id="cb6-23"><a></a><span class="fu">display</span>(p2)</span>
-<span id="cb6-24"><a></a><span class="fu">display</span>(p3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># sample 1000 independent variables from a given normal distribution</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>sample_independent <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>), (<span class="fl">2</span>, <span class="fl">1000</span>))</span>
+<span id="cb6-3"><a href="#cb6-3"></a>p1 <span class="op">=</span> <span class="fu">scatter</span>(sample_independent[<span class="fl">1</span>, <span class="op">:</span>], sample_independent[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span><span class="st">"Independent Variables"</span>, tickfontsize<span class="op">=</span><span class="fl">14</span>, titlefontsize<span class="op">=</span><span class="fl">18</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">xlabel!</span>(p1, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>ylabel<span class="st">!(p1, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co"># sample 1000 correlated variables, with r=0.7</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a>sample_correlated <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">MvNormal</span>([<span class="fl">0</span>; <span class="fl">0</span>], [<span class="fl">1</span> <span class="fl">0.7</span>; <span class="fl">0.7</span> <span class="fl">1</span>]), <span class="fl">1000</span>)</span>
+<span id="cb6-10"><a href="#cb6-10"></a>p2 <span class="op">=</span> <span class="fu">scatter</span>(sample_correlated[<span class="fl">1</span>, <span class="op">:</span>], sample_correlated[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span>L<span class="st">"Correlated (</span><span class="sc">$</span>r<span class="st">=0.7</span><span class="sc">$</span><span class="st">)", </span>tickfontsize<span class="st">=14, titlefontsize=18, guidefontsize=18)</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="fu">xlabel!</span>(p2, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>ylabel<span class="st">!(p2, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="co"># sample 1000 anti-correlated variables, with r=-0.7</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a>sample_anticorrelated <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">MvNormal</span>([<span class="fl">0</span>; <span class="fl">0</span>], [<span class="fl">1</span> <span class="op">-</span><span class="fl">0.7</span>; <span class="op">-</span><span class="fl">0.7</span> <span class="fl">1</span>]), <span class="fl">1000</span>)</span>
+<span id="cb6-17"><a href="#cb6-17"></a>p3 <span class="op">=</span> <span class="fu">scatter</span>(sample_anticorrelated[<span class="fl">1</span>, <span class="op">:</span>], sample_anticorrelated[<span class="fl">2</span>, <span class="op">:</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span>L<span class="st">"Anticorrelated (</span><span class="sc">$</span>r<span class="st">=-0.7</span><span class="sc">$</span><span class="st">)", </span>tickfontsize<span class="st">=14, titlefontsize=18, guidefontsize=18)</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="fu">xlabel!</span>(p3, L<span class="st">"</span><span class="sc">$</span>x_1<span class="sc">$</span><span class="st">")</span></span>
+<span id="cb6-19"><a href="#cb6-19"></a>ylabel<span class="st">!(p3, L"</span><span class="op">$</span>x_2<span class="op">$</span><span class="st">")</span></span>
+<span id="cb6-20"><a href="#cb6-20"></a><span class="fu">plot!</span>(p3, size<span class="op">=</span>(<span class="fl">400</span>, <span class="fl">500</span>))</span>
+<span id="cb6-21"><a href="#cb6-21"></a></span>
+<span id="cb6-22"><a href="#cb6-22"></a><span class="fu">display</span>(p1)</span>
+<span id="cb6-23"><a href="#cb6-23"></a><span class="fu">display</span>(p2)</span>
+<span id="cb6-24"><a href="#cb6-24"></a><span class="fu">display</span>(p3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-correlation" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div id="fig-correlation-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-correlation-1" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-correlation-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -4597,8 +4597,8 @@ Figure&nbsp;5: Comparison of best fit with uncertain realization for the EBM wit
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div id="fig-correlation-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-correlation-2" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-correlation-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -5652,8 +5652,8 @@ Figure&nbsp;5: Comparison of best fit with uncertain realization for the EBM wit
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div id="fig-correlation-3" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-correlation" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-correlation-3" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-correlation-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -6716,7 +6716,7 @@ Figure&nbsp;6: Independent vs.&nbsp;Correlated Normal Variables
 <section id="correlation-vs.-causation" class="slide level2">
 <h2>Correlation vs.&nbsp;Causation</h2>
 
-<img data-src="https://imgs.xkcd.com/comics/correlation_2x.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">XKCD 552</p><div class="caption">
+<img data-src="https://imgs.xkcd.com/comics/correlation_2x.png" class="r-stretch quarto-figure-center"><p class="caption">XKCD 552</p><div class="caption">
 <p>Source: <a href="https://xkcd.com/552/">XKCD #552</a></p>
 </div>
 </section>
@@ -6730,7 +6730,7 @@ Figure&nbsp;6: Independent vs.&nbsp;Correlated Normal Variables
 <section id="spurious-correlations" class="slide level2">
 <h2>Spurious Correlations</h2>
 
-<img data-src="https://www.tylervigen.com/spurious/correlation/image/7602_the-distance-between-uranus-and-mercury_correlates-with_biomass-power-generated-in-united-states.svg" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">Spurious Correlation Example</p><div class="caption">
+<img data-src="https://www.tylervigen.com/spurious/correlation/image/7602_the-distance-between-uranus-and-mercury_correlates-with_biomass-power-generated-in-united-states.svg" class="r-stretch quarto-figure-center"><p class="caption">Spurious Correlation Example</p><div class="caption">
 <p>Source: <a href="https://www.tylervigen.com/spurious/correlation/7602_the-distance-between-uranus-and-mercury_correlates-with_biomass-power-generated-in-united-states">Spurious Correlations #7602</a></p>
 </div>
 </section>
@@ -6746,29 +6746,29 @@ Figure&nbsp;6: Independent vs.&nbsp;Correlated Normal Variables
 <p>An important concept for time series is <strong>autocorrelation</strong> between <span class="math inline">\(y_t\)</span> and <span class="math inline">\(y_{t-1}\)</span>.</p>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a></a><span class="co"># sample independent series from a given normal distribution</span></span>
-<span id="cb7-2"><a></a>sample_independent <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>), <span class="fl">50</span>)</span>
-<span id="cb7-3"><a></a>p1 <span class="op">=</span> <span class="fu">plot</span>(sample_independent, linewidth<span class="op">=</span><span class="fl">3</span>, ylabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>y<span class="sc">$</span><span class="st">", </span>xlabel<span class="st">=L"</span><span class="op">$</span>t<span class="op">$</span><span class="st">", title="</span>Independent Series<span class="st">", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)</span></span>
-<span id="cb7-4"><a></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">300</span>))</span>
-<span id="cb7-5"><a></a></span>
-<span id="cb7-6"><a></a><span class="co"># sample an autocorrelated series</span></span>
-<span id="cb7-7"><a></a>sample_ar <span class="op">=</span> <span class="fu">zeros</span>(<span class="fl">50</span>)</span>
-<span id="cb7-8"><a></a>sample_ar[<span class="fl">1</span>] <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span> <span class="op">/</span> <span class="fu">sqrt</span>(<span class="fl">1</span><span class="op">-</span><span class="fl">0.6</span><span class="op">^</span><span class="fl">2</span>)))</span>
-<span id="cb7-9"><a></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">50</span></span>
-<span id="cb7-10"><a></a>    sample_ar[i] <span class="op">=</span> <span class="fl">0.6</span> <span class="op">*</span> sample_ar[i<span class="op">-</span><span class="fl">1</span>] <span class="op">+</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>))</span>
-<span id="cb7-11"><a></a><span class="cf">end</span></span>
-<span id="cb7-12"><a></a>p2 <span class="op">=</span> <span class="fu">plot</span>(sample_ar, linewidth<span class="op">=</span><span class="fl">3</span>, ylabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>y<span class="sc">$</span><span class="st">", </span>xlabel<span class="st">=L"</span><span class="op">$</span>t<span class="op">$</span><span class="st">", title="</span>Autocorrelated Series<span class="st">", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)</span></span>
-<span id="cb7-13"><a></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">300</span>))</span>
-<span id="cb7-14"><a></a></span>
-<span id="cb7-15"><a></a><span class="fu">display</span>(p1)</span>
-<span id="cb7-16"><a></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># sample independent series from a given normal distribution</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>sample_independent <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>), <span class="fl">50</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>p1 <span class="op">=</span> <span class="fu">plot</span>(sample_independent, linewidth<span class="op">=</span><span class="fl">3</span>, ylabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>y<span class="sc">$</span><span class="st">", </span>xlabel<span class="st">=L"</span><span class="op">$</span>t<span class="op">$</span><span class="st">", title="</span>Independent Series<span class="st">", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">300</span>))</span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># sample an autocorrelated series</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>sample_ar <span class="op">=</span> <span class="fu">zeros</span>(<span class="fl">50</span>)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>sample_ar[<span class="fl">1</span>] <span class="op">=</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span> <span class="op">/</span> <span class="fu">sqrt</span>(<span class="fl">1</span><span class="op">-</span><span class="fl">0.6</span><span class="op">^</span><span class="fl">2</span>)))</span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="cf">for</span> i <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">50</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>    sample_ar[i] <span class="op">=</span> <span class="fl">0.6</span> <span class="op">*</span> sample_ar[i<span class="op">-</span><span class="fl">1</span>] <span class="op">+</span> <span class="fu">rand</span>(<span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>))</span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="cf">end</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>p2 <span class="op">=</span> <span class="fu">plot</span>(sample_ar, linewidth<span class="op">=</span><span class="fl">3</span>, ylabel<span class="op">=</span>L<span class="st">"</span><span class="sc">$</span>y<span class="sc">$</span><span class="st">", </span>xlabel<span class="st">=L"</span><span class="op">$</span>t<span class="op">$</span><span class="st">", title="</span>Autocorrelated Series<span class="st">", guidefontsize=18, legend=:false, tickfontsize=16, titlefontsize=18)</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">500</span>, <span class="fl">300</span>))</span>
+<span id="cb7-14"><a href="#cb7-14"></a></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="fu">display</span>(p1)</span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-autocorrelation" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-autocorrelation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-autocorrelation" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-autocorrelation-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-autocorrelation" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-autocorrelation-1" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-autocorrelation-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -6825,8 +6825,8 @@ Figure&nbsp;6: Independent vs.&nbsp;Correlated Normal Variables
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-autocorrelation" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-autocorrelation-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-autocorrelation" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-autocorrelation-2" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-autocorrelation-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -6895,35 +6895,35 @@ Figure&nbsp;7: Autocorrelated vs.&nbsp;Independent Samples
 <h2>Lagged Regression</h2>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a></a><span class="co"># independent samples</span></span>
-<span id="cb8-2"><a></a>dat <span class="op">=</span> <span class="fu">DataFrame</span>(Y<span class="op">=</span>sample_independent[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>], X<span class="op">=</span>sample_independent[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>])</span>
-<span id="cb8-3"><a></a>fit <span class="op">=</span> <span class="fu">lm</span>(<span class="pp">@formula</span>(Y<span class="op">~</span>X), dat)</span>
-<span id="cb8-4"><a></a>pred <span class="op">=</span> <span class="fu">predict</span>(fit,dat)</span>
-<span id="cb8-5"><a></a>p1 <span class="op">=</span> <span class="fu">scatter</span>(sample_independent[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>], sample_independent[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span><span class="st">"Independent Variables: r=</span><span class="sc">$</span>(<span class="fu">round</span>(<span class="fu">coef</span>(fit)[<span class="fl">2</span>], digits<span class="op">=</span><span class="fl">2</span>))<span class="st">"</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, titlefontsize<span class="op">=</span><span class="fl">18</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>)</span>
-<span id="cb8-6"><a></a><span class="fu">plot!</span>(p1, dat.X, pred, linewidth<span class="op">=</span><span class="fl">2</span>, label<span class="op">=:</span><span class="cn">false</span>)</span>
-<span id="cb8-7"><a></a><span class="fu">ylabel!</span>(p1, L<span class="st">"</span><span class="sc">$</span>y_t<span class="sc">$</span><span class="st">")</span></span>
-<span id="cb8-8"><a></a>xlabel<span class="st">!(p1, L"</span><span class="op">$</span>y_{t<span class="op">-</span><span class="fl">1</span>}<span class="op">$</span><span class="st">")</span></span>
-<span id="cb8-9"><a></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">500</span>))</span>
-<span id="cb8-10"><a></a></span>
-<span id="cb8-11"><a></a><span class="co"># autocorrelated</span></span>
-<span id="cb8-12"><a></a>dat <span class="op">=</span> <span class="fu">DataFrame</span>(Y<span class="op">=</span>sample_ar[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>], X<span class="op">=</span>sample_ar[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>])</span>
-<span id="cb8-13"><a></a>fit <span class="op">=</span> <span class="fu">lm</span>(<span class="pp">@formula</span>(Y<span class="op">~</span>X), dat)</span>
-<span id="cb8-14"><a></a>pred <span class="op">=</span> <span class="fu">predict</span>(fit,dat)</span>
-<span id="cb8-15"><a></a>p2 <span class="op">=</span> <span class="fu">scatter</span>(sample_ar[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>], sample_ar[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span><span class="st">"Autocorrelated Variables: r=</span><span class="sc">$</span>(<span class="fu">round</span>(<span class="fu">coef</span>(fit)[<span class="fl">2</span>], digits<span class="op">=</span><span class="fl">2</span>))<span class="st">"</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, titlefontsize<span class="op">=</span><span class="fl">18</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>)</span>
-<span id="cb8-16"><a></a><span class="fu">plot!</span>(p2, dat.X, pred, linewidth<span class="op">=</span><span class="fl">2</span>, label<span class="op">=:</span><span class="cn">false</span>)</span>
-<span id="cb8-17"><a></a><span class="fu">ylabel!</span>(p2, L<span class="st">"</span><span class="sc">$</span>y_t<span class="sc">$</span><span class="st">")</span></span>
-<span id="cb8-18"><a></a>xlabel<span class="st">!(p2, L"</span><span class="op">$</span>y_{t<span class="op">-</span><span class="fl">1</span>}<span class="op">$</span><span class="st">")</span></span>
-<span id="cb8-19"><a></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">500</span>))</span>
-<span id="cb8-20"><a></a></span>
-<span id="cb8-21"><a></a><span class="fu">display</span>(p1)</span>
-<span id="cb8-22"><a></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># independent samples</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>dat <span class="op">=</span> <span class="fu">DataFrame</span>(Y<span class="op">=</span>sample_independent[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>], X<span class="op">=</span>sample_independent[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>])</span>
+<span id="cb8-3"><a href="#cb8-3"></a>fit <span class="op">=</span> <span class="fu">lm</span>(<span class="pp">@formula</span>(Y<span class="op">~</span>X), dat)</span>
+<span id="cb8-4"><a href="#cb8-4"></a>pred <span class="op">=</span> <span class="fu">predict</span>(fit,dat)</span>
+<span id="cb8-5"><a href="#cb8-5"></a>p1 <span class="op">=</span> <span class="fu">scatter</span>(sample_independent[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>], sample_independent[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span><span class="st">"Independent Variables: r=</span><span class="sc">$</span>(<span class="fu">round</span>(<span class="fu">coef</span>(fit)[<span class="fl">2</span>], digits<span class="op">=</span><span class="fl">2</span>))<span class="st">"</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, titlefontsize<span class="op">=</span><span class="fl">18</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>)</span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="fu">plot!</span>(p1, dat.X, pred, linewidth<span class="op">=</span><span class="fl">2</span>, label<span class="op">=:</span><span class="cn">false</span>)</span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="fu">ylabel!</span>(p1, L<span class="st">"</span><span class="sc">$</span>y_t<span class="sc">$</span><span class="st">")</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>xlabel<span class="st">!(p1, L"</span><span class="op">$</span>y_{t<span class="op">-</span><span class="fl">1</span>}<span class="op">$</span><span class="st">")</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="fu">plot!</span>(p1, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">500</span>))</span>
+<span id="cb8-10"><a href="#cb8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="co"># autocorrelated</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>dat <span class="op">=</span> <span class="fu">DataFrame</span>(Y<span class="op">=</span>sample_ar[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>], X<span class="op">=</span>sample_ar[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>])</span>
+<span id="cb8-13"><a href="#cb8-13"></a>fit <span class="op">=</span> <span class="fu">lm</span>(<span class="pp">@formula</span>(Y<span class="op">~</span>X), dat)</span>
+<span id="cb8-14"><a href="#cb8-14"></a>pred <span class="op">=</span> <span class="fu">predict</span>(fit,dat)</span>
+<span id="cb8-15"><a href="#cb8-15"></a>p2 <span class="op">=</span> <span class="fu">scatter</span>(sample_ar[<span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span><span class="fl">1</span>], sample_ar[<span class="fl">2</span><span class="op">:</span><span class="kw">end</span>], label<span class="op">=:</span><span class="cn">false</span>, title<span class="op">=</span><span class="st">"Autocorrelated Variables: r=</span><span class="sc">$</span>(<span class="fu">round</span>(<span class="fu">coef</span>(fit)[<span class="fl">2</span>], digits<span class="op">=</span><span class="fl">2</span>))<span class="st">"</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, titlefontsize<span class="op">=</span><span class="fl">18</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>)</span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="fu">plot!</span>(p2, dat.X, pred, linewidth<span class="op">=</span><span class="fl">2</span>, label<span class="op">=:</span><span class="cn">false</span>)</span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="fu">ylabel!</span>(p2, L<span class="st">"</span><span class="sc">$</span>y_t<span class="sc">$</span><span class="st">")</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>xlabel<span class="st">!(p2, L"</span><span class="op">$</span>y_{t<span class="op">-</span><span class="fl">1</span>}<span class="op">$</span><span class="st">")</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a><span class="fu">plot!</span>(p2, size<span class="op">=</span>(<span class="fl">600</span>, <span class="fl">500</span>))</span>
+<span id="cb8-20"><a href="#cb8-20"></a></span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="fu">display</span>(p1)</span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="fu">display</span>(p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-autocorrelation-2" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-autocorrelation-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-autocorrelation-2" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-autocorrelation-2-1" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-autocorrelation-2" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-autocorrelation-2-1" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-autocorrelation-2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -7029,8 +7029,8 @@ Figure&nbsp;7: Autocorrelated vs.&nbsp;Independent Samples
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-autocorrelation-2" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-autocorrelation-2-2" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-autocorrelation-2" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-autocorrelation-2-2" class="cell-output cell-output-display quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-autocorrelation-2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -7149,7 +7149,7 @@ Figure&nbsp;8: Autocorrelated vs.&nbsp;Independent Samples
 <p>Many modern programming languages have <strong>autocorrelation functions</strong> (e.g.&nbsp;<code>StatsBase.autocor()</code> in Julia) which calculates the autocorrelation at varying lags.</p>
 <div id="7282937c" class="cell columns column-output-location" data-execution_count="13">
 <div class="column">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a></a><span class="fu">autocor</span>(sample_ar, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">autocor</span>(sample_ar, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>10-element Vector{Float64}:
@@ -7176,7 +7176,7 @@ Figure&nbsp;8: Autocorrelated vs.&nbsp;Independent Samples
 <p>This is solved by using the <strong>partial autocorrelation function</strong> (<em>e.g.</em> <code>StatsBase.pacf()</code>):</p>
 <div id="65520f7f" class="cell columns column-output-location" data-execution_count="14">
 <div class="column">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a></a><span class="fu">pacf</span>(sample_ar, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">pacf</span>(sample_ar, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>10-element Vector{Float64}:
@@ -7329,10 +7329,8 @@ y_1 \sim \mathcal{N}\left(0, \frac{\sigma}{\sqrt{1-\rho^2}}\right)
 <section id="references-1" class="slide level2 smaller scrollable">
 <h2>References</h2>
 
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
-</div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Brynjarsdottir2014-ve" class="csl-entry" role="listitem">

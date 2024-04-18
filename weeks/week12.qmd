@@ -9,7 +9,7 @@ title: "Week 12"
 ## Lectures
 
 - [Lecture 12-1: Model Assessment](../slides/lecture12-1.qmd)
-- Lecture 12-2: Cross-Validation and Information Criteria
+- [Lecture 12-2: Cross-Validation](../slides/lecture12-2.qmd)
 
 
 

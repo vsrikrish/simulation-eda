@@ -83,6 +83,8 @@ website:
             text: Week 11
           - href: weeks/week12.qmd
             text: Week 12
+          - href: weeks/week13.qmd
+            text: Week 13
       - section: homework.qmd
         text: "Homework"
         contents:
