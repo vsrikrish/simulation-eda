@@ -43,7 +43,7 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 | 12 | Mon, Apr 15 | Model Assessment | [{{< fa sharp presentation-screen >}}](slides/lecture12-1.qmd) | | | [{{< fa sharp pen-field >}}](assignments/hw04/hw04.qmd) | 
 |  | Wed, Apr 17 | Cross-Validation and Predictive Assessment  | [{{< fa sharp presentation-screen >}}](slides/lecture12-2.qmd) | | | 
 | 13 | Mon, Apr 22 | Information Criteria | [{{< fa sharp presentation-screen >}}](slides/lecture13-1.qmd) | |  |
-|  | Wed, Apr 24 |  Missing Data Models | | | | 
+|  | Wed, Apr 24 |  Other Information Criteria | [{{< fa sharp presentation-screen >}}](slides/lecture13-2.qmd) | | | 
 | | | ***Emulation*** | | | |
 | 14 | Mon, Apr 29 | Tradeoffs Between Complexity and Ensemble Size | | | | 
 |  | Wed, May 1 | Emulating Expensive Models | | | | 

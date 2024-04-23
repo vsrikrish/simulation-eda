@@ -6,7 +6,7 @@ title: "Week 13"
 ## Lectures
 
 - [Lecture 13-1: Information Criteria](../slides/lecture13-1.qmd)
-- Lecture 12-2: Emulation
+- [Lecture 13-2: Other Information Criteria](../slides/lecture13-2.qmd)
 
 
 
