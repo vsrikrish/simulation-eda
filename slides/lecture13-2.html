@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.519">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2024-04-22">
-  <title>BEE 4850 - Spring 2024 - Information Criteria</title>
+  <meta name="dcterms.date" content="2024-04-24">
+  <title>BEE 4850 - Spring 2024 - Other Information Criteria</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -433,8 +433,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<meta property="og:title" content="BEE 4850 - Spring 2024 - Information Criteria">
-<meta property="og:description" content="Lecture 19">
+<meta property="og:title" content="BEE 4850 - Spring 2024 - Other Information Criteria">
+<meta property="og:description" content="Lecture 20">
 <meta property="og:site_name" content="BEE 4850 - Spring 2024">
 </head>
 <body class="quarto-light">
@@ -442,16 +442,16 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Information Criteria</h1>
+    <h1 class="title">Other Information Criteria</h1>
   <hr>
-<p class="subtitle">Lecture 19</p>
-<p class="date">April 22, 2024</p>
+<p class="subtitle">Lecture 20</p>
+<p class="date">April 24, 2024</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
 <li><a href="#/review-of-last-class" id="/toc-review-of-last-class">Review of Last Class</a></li>
-<li><a href="#/information-criteria" id="/toc-information-criteria">Information Criteria</a></li>
+<li><a href="#/other-informtion-criteria" id="/toc-other-informtion-criteria">Other Informtion Criteria</a></li>
 <li><a href="#/key-takeaways-and-upcoming-schedule" id="/toc-key-takeaways-and-upcoming-schedule">Key Takeaways and Upcoming Schedule</a></li>
 <li><a href="#/references" id="/toc-references">References</a></li>
 </ul>
@@ -461,64 +461,6 @@
 <section id="review-of-last-class" class="title-slide slide level1 center">
 <h1>Review of Last Class</h1>
 
-</section>
-<section id="bias-variance-tradeoff" class="slide level2">
-<h2>Bias-Variance Tradeoff</h2>
-<p><strong>Key Idea</strong>: Model selection consists of navigating the bias-variance tradeoff.</p>
-<p>Model error (<em>e.g.</em> RMSE) is a combination of <em>irreducible error</em>, <em>bias</em>, and <em>variance</em>.</p>
-</section>
-<section id="bias" class="slide level2">
-<h2>Bias</h2>
-<p><strong>Bias</strong> is error from mismatches between the model predictions and the data (<span class="math inline">\(\text{Bias}[\hat{f}] = \mathbb{E}[\hat{f}] - y\)</span>).</p>
-<p>Bias comes from under-fitting meaningful relationships between inputs and outputs.</p>
-<ul>
-<li>too few degrees of freedom (“too simple”)</li>
-<li>neglected processes.</li>
-</ul>
-</section>
-<section id="variance" class="slide level2">
-<h2>Variance</h2>
-<p><strong>Variance</strong> is error from over-sensitivity to small fluctuations in inputs (<span class="math inline">\(\text{Variance} = \text{Var}(\hat{f})\)</span>).</p>
-<p>Variance can come from over-fitting noise in the data.</p>
-<ul>
-<li>too many degrees of freedom (“too complex”)</li>
-<li>poor identifiability</li>
-</ul>
-</section>
-<section id="bias-variance-tradeoff-1" class="slide level2">
-<h2>Bias-Variance Tradeoff</h2>
-<p><strong>Upshot</strong>: For achieve a fixed error level, you can reduce bias (more “complex” model) or you can reduce variance (more “simple” model) but there’s a tradeoff.</p>
-</section>
-<section id="bias-variance-tradeoff-more-generally" class="slide level2">
-<h2>Bias-Variance Tradeoff More Generally</h2>
-<p>This decomposition is for MSE, but the <strong>principle holds more generally</strong>.</p>
-<ul>
-<li>Models which perform better “on average” over the training data (low bias) are more likely to overfit (high variance);</li>
-<li>Models which have less uncertainty for training data (low variance) will do worse “on average”.</li>
-</ul>
-</section>
-<section id="cross-validation" class="slide level2">
-<h2>Cross-Validation</h2>
-<p>The “gold standard” way to test for predictive performance is <strong>cross-validation</strong>:</p>
-<ol type="1">
-<li>Split data into training/testing sets;</li>
-<li>Calibrate model to training set;</li>
-<li>Check for predictive ability on testing set.</li>
-</ol>
-</section>
-<section id="leave-one-out-cross-validation" class="slide level2">
-<h2>Leave-One-Out Cross-Validation</h2>
-<ol type="1">
-<li>Drop one value <span class="math inline">\(y_i\)</span>.</li>
-<li>Refit model on rest of data <span class="math inline">\(y_{-i}\)</span>.</li>
-<li>Evaluate <span class="math inline">\(\log p(y_i | y_{-i})\)</span>.</li>
-<li>Repeat on rest of data set.</li>
-</ol>
-</section>
-<section id="leave-k-out-cross-validation" class="slide level2">
-<h2>Leave-<span class="math inline">\(k\)</span>-Out Cross-Validation</h2>
-<p>Drop <span class="math inline">\(k\)</span> values, refit model on rest of data, check for predictive skill.</p>
-<p>As <span class="math inline">\(k \to n\)</span>, this reduces to the prior predictive distribution <span class="math display">\[p(y^{\text{rep}}) = \int_{\theta} p(y^{\text{rep}} | \theta) p(\theta) d\theta.\]</span></p>
 </section>
 <section id="expected-out-of-sample-predictive-accuracy" class="slide level2">
 <h2>Expected Out-Of-Sample Predictive Accuracy</h2>
@@ -548,16 +490,6 @@
 <p>We don’t know <span class="math inline">\(P\)</span> (the distribution of new data)!</p>
 <p>We need some measure of the error induced by using an approximating distribution <span class="math inline">\(Q\)</span> from some model.</p>
 </div>
-</section></section>
-<section>
-<section id="information-criteria" class="title-slide slide level1 center">
-<h1>Information Criteria</h1>
-
-</section>
-<section id="information-criteria-1" class="slide level2">
-<h2>Information Criteria</h2>
-<p>“Information criteria” refers to a category of estimators of prediction error.</p>
-<p>The idea: estimate predictive error using the fitted model.</p>
 </section>
 <section id="information-criteria-overview" class="slide level2">
 <h2>Information Criteria Overview</h2>
@@ -583,76 +515,6 @@
 <h2>AIC Correction Term</h2>
 <p>In the case of a normal model with independent and identically-distributed data and uniform priors, <span class="math inline">\(k\)</span> is the asymptotically “correct” bias term (there are modified corrections for small sample sizes).</p>
 <p>However, with more informative priors and/or hierarchical models, the bias correction <span class="math inline">\(k\)</span> is no longer appropriate, as there is less “freedom” associated with each parameter.</p>
-</section>
-<section id="aic-storm-surge-example" class="slide level2">
-<h2>AIC: Storm Surge Example</h2>
-<p>Models:</p>
-<ol type="1">
-<li>Stationary (“null”) model, <span class="math inline">\(y_t \sim \text{GEV}(\mu, \sigma, \xi);\)</span></li>
-<li>Time nonstationary (“null-ish”) model, <span class="math inline">\(y_t \sim \text{GEV}(\mu_0 + \mu_1 t, \sigma, \xi);\)</span></li>
-<li>PDO nonstationary model, <span class="math inline">\(y_t \sim \text{GEV}(\mu_0 + \mu_1 \text{PDO}_t, \sigma, \xi)\)</span></li>
-</ol>
-</section>
-<section id="aic-example" class="slide level2">
-<h2>AIC Example</h2>
-<div id="6013db61" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1"></a>stat_mle <span class="op">=</span> [<span class="fl">1258.71</span>, <span class="fl">56.27</span>, <span class="fl">0.017</span>]</span>
-<span id="cb1-2"><a href="#cb1-2"></a>stat_ll <span class="op">=</span> <span class="op">-</span><span class="fl">707.67</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>nonstat_mle <span class="op">=</span> [<span class="fl">1231.58</span>, <span class="fl">0.42</span>, <span class="fl">52.07</span>, <span class="fl">0.075</span>]</span>
-<span id="cb1-4"><a href="#cb1-4"></a>nonstat_ll <span class="op">=</span> <span class="op">-</span><span class="fl">702.45</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>pdo_mle <span class="op">=</span> [<span class="fl">1255.87</span>, <span class="op">-</span><span class="fl">12.39</span>, <span class="fl">54.73</span>, <span class="fl">0.033</span>]</span>
-<span id="cb1-6"><a href="#cb1-6"></a>pdo_ll <span class="op">=</span> <span class="op">-</span><span class="fl">705.24</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># compute AIC values</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>stat_aic <span class="op">=</span> stat_ll <span class="op">-</span> <span class="fl">3</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>nonstat_aic <span class="op">=</span> nonstat_ll <span class="op">-</span> <span class="fl">4</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>pdo_aic <span class="op">=</span> pdo_ll <span class="op">-</span> <span class="fl">4</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a>model_aic <span class="op">=</span> <span class="fu">DataFrame</span>(Model<span class="op">=</span>[<span class="st">"Stationary"</span>, <span class="st">"Time"</span>, <span class="st">"PDO"</span>], LogLik<span class="op">=</span><span class="fu">trunc</span>.(<span class="dt">Int64</span>, <span class="fu">round</span>.([stat_ll, nonstat_ll, pdo_ll]; digits<span class="op">=</span><span class="fl">0</span>)), AIC<span class="op">=</span><span class="fu">trunc</span>.(<span class="dt">Int64</span>, <span class="fu">round</span>.(<span class="op">-</span><span class="fl">2</span> <span class="op">*</span> [stat_aic, nonstat_aic, pdo_aic]; digits<span class="op">=</span><span class="fl">0</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div><div style="float: left;"><span>3×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
-<table class="data-frame" data-quarto-postprocess="true" style="margin-bottom: 6px;">
-<thead>
-<tr class="header">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Model</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">LogLik</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">AIC</th>
-</tr>
-<tr class="odd subheader headerLastRow">
-<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
-<td style="text-align: left;">Stationary</td>
-<td style="text-align: right;">-708</td>
-<td style="text-align: right;">1421</td>
-</tr>
-<tr class="even">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
-<td style="text-align: left;">Time</td>
-<td style="text-align: right;">-702</td>
-<td style="text-align: right;">1413</td>
-</tr>
-<tr class="odd">
-<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
-<td style="text-align: left;">PDO</td>
-<td style="text-align: right;">-705</td>
-<td style="text-align: right;">1418</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 </section>
 <section id="aic-interpretation" class="slide level2">
 <h2>AIC Interpretation</h2>
@@ -680,6 +542,153 @@
 <p>Model selection can introduce bias from the selection process (this is particularly acute for stepwise selection due to path-dependence).</p>
 </section></section>
 <section>
+<section id="other-informtion-criteria" class="title-slide slide level1 center">
+<h1>Other Informtion Criteria</h1>
+
+</section>
+<section id="deviance-information-criterion-dic" class="slide level2">
+<h2>Deviance Information Criterion (DIC)</h2>
+<p>The Deviance Information Criterion (DIC) is a more Bayesian generalization of AIC which uses the posterior mean <span class="math display">\[\hat{\theta}_\text{Bayes} = \mathbb{E}\left[\theta | y\right]\]</span> and a bias correction derived from the data.</p>
+</section>
+<section id="dic" class="slide level2">
+<h2>DIC</h2>
+<p><span class="math display">\[\widehat{\text{elpd}}_\text{DIC} = \log p(y | \hat{\theta}_\text{Bayes}) - p_{\text{DIC}},\]</span> where <span class="math display">\[p_\text{DIC} = 2\left(\log p(y | \hat{\theta}_\text{Bayes}) - \mathbb{E}_\text{post}\left[\log p(y | \theta)\right]\right).\]</span></p>
+<p>Then, as with AIC, <span class="math display">\[\text{DIC} = -2\widehat{\text{elpd}}_\text{DIC}.\]</span></p>
+</section>
+<section id="dic-effective-number-of-parameters" class="slide level2">
+<h2>DIC: Effective Number of Parameters</h2>
+<p><strong>What is the meaning of <span class="math inline">\(p_\text{DIC}\)</span>?</strong></p>
+<ul>
+<li>The difference between the average log-likelihood (across parameters) and the log-likelihood at a parameter average measures “degrees of freedom”.</li>
+<li>The DIC adjustment assumes independence of residuals for fixed <span class="math inline">\(\theta\)</span>.</li>
+</ul>
+</section>
+<section id="aic-vs.-dic" class="slide level2">
+<h2>AIC vs.&nbsp;DIC</h2>
+<p>AIC and DIC often give similar results, but don’t have to.</p>
+<p>The key difference is the impact of priors on parameter estimation and model degrees of freedom.</p>
+</section>
+<section id="aic-vs.-dic-storm-surge-example" class="slide level2">
+<h2>AIC vs.&nbsp;DIC Storm Surge Example</h2>
+<p>Models:</p>
+<ol type="1">
+<li>Stationary (“null”) model, <span class="math inline">\(y_t \sim \text{GEV}(\mu, \sigma, \xi);\)</span></li>
+<li>Time nonstationary (“null-ish”) model, <span class="math inline">\(y_t \sim \text{GEV}(\mu_0 + \mu_1 t, \sigma, \xi);\)</span></li>
+<li>PDO nonstationary model, <span class="math inline">\(y_t \sim \text{GEV}(\mu_0 + \mu_1 \text{PDO}_t, \sigma, \xi)\)</span></li>
+</ol>
+</section>
+<section id="aic-vs.-dic-1" class="slide level2">
+<h2>AIC vs.&nbsp;DIC</h2>
+<div id="f68cb91d" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># fit models</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>stat_chain <span class="op">=</span> <span class="fu">sample</span>(stat_mod, <span class="fu">NUTS</span>(), <span class="fu">MCMCThreads</span>(), <span class="fl">10_000</span>, <span class="fl">4</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>nonstat_chain <span class="op">=</span> <span class="fu">sample</span>(nonstat_mod, <span class="fu">NUTS</span>(), <span class="fu">MCMCThreads</span>(), <span class="fl">10_000</span>, <span class="fl">4</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>pdo_chain <span class="op">=</span> <span class="fu">sample</span>(pdo_mod, <span class="fu">NUTS</span>(), <span class="fu">MCMCThreads</span>(), <span class="fl">10_000</span>, <span class="fl">4</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>stat_est <span class="op">=</span> <span class="fu">mean</span>(stat_chain)[<span class="op">:</span>, <span class="fl">2</span>]</span>
+<span id="cb1-7"><a href="#cb1-7"></a>nonstat_est <span class="op">=</span> <span class="fu">mean</span>(nonstat_chain)[<span class="op">:</span>, <span class="fl">2</span>]</span>
+<span id="cb1-8"><a href="#cb1-8"></a>pdo_est <span class="op">=</span> <span class="fu">mean</span>(pdo_chain)[<span class="op">:</span>, <span class="fl">2</span>]</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>stat_bayes <span class="op">=</span> <span class="fu">loglikelihood</span>(stat_mod, (μ <span class="op">=</span> stat_est[<span class="fl">1</span>], σ <span class="op">=</span> stat_est[<span class="fl">2</span>], ξ <span class="op">=</span> stat_est[<span class="fl">3</span>]))</span>
+<span id="cb1-11"><a href="#cb1-11"></a>nonstat_bayes <span class="op">=</span> <span class="fu">loglikelihood</span>(nonstat_mod, (a <span class="op">=</span> nonstat_est[<span class="fl">1</span>], b <span class="op">=</span> nonstat_est[<span class="fl">2</span>], σ <span class="op">=</span> nonstat_est[<span class="fl">3</span>], ξ <span class="op">=</span> nonstat_est[<span class="fl">4</span>]))</span>
+<span id="cb1-12"><a href="#cb1-12"></a>pdo_bayes <span class="op">=</span> <span class="fu">loglikelihood</span>(pdo_mod, (a <span class="op">=</span> pdo_est[<span class="fl">1</span>], b <span class="op">=</span> pdo_est[<span class="fl">2</span>], σ <span class="op">=</span> pdo_est[<span class="fl">3</span>], ξ <span class="op">=</span> pdo_est[<span class="fl">4</span>]))</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a>stat_ll <span class="op">=</span> <span class="fu">mean</span>([<span class="fu">loglikelihood</span>(stat_mod, row) for row <span class="kw">in</span> <span class="fu">eachrow</span>(<span class="fu">DataFrame</span>(stat_chain))]) </span>
+<span id="cb1-15"><a href="#cb1-15"></a>nonstat_ll <span class="op">=</span> <span class="fu">mean</span>([<span class="fu">loglikelihood</span>(nonstat_mod, row) for row <span class="kw">in</span> <span class="fu">eachrow</span>(<span class="fu">DataFrame</span>(nonstat_chain))])</span>
+<span id="cb1-16"><a href="#cb1-16"></a>pdo_ll <span class="op">=</span> <span class="fu">mean</span>([<span class="fu">loglikelihood</span>(pdo_mod, row) for row <span class="kw">in</span> <span class="fu">eachrow</span>(<span class="fu">DataFrame</span>(pdo_chain))])</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a>stat_dic <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> stat_ll <span class="op">-</span> stat_bayes</span>
+<span id="cb1-19"><a href="#cb1-19"></a>nonstat_dic <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> nonstat_ll <span class="op">-</span> nonstat_bayes</span>
+<span id="cb1-20"><a href="#cb1-20"></a>pdo_dic <span class="op">=</span> <span class="fl">2</span> <span class="op">*</span> pdo_ll <span class="op">-</span> pdo_bayes</span>
+<span id="cb1-21"><a href="#cb1-21"></a></span>
+<span id="cb1-22"><a href="#cb1-22"></a>model_dic <span class="op">=</span> <span class="fu">DataFrame</span>(Model<span class="op">=</span>[<span class="st">"Stationary"</span>, <span class="st">"Time"</span>, <span class="st">"PDO"</span>], AIC<span class="op">=</span><span class="fu">trunc</span>.(<span class="dt">Int64</span>, <span class="fu">round</span>.(<span class="op">-</span><span class="fl">2</span> <span class="op">*</span> [stat_aic, nonstat_aic, pdo_aic]; digits<span class="op">=</span><span class="fl">0</span>)), DIC<span class="op">=</span><span class="fu">trunc</span>.(<span class="dt">Int64</span>, <span class="fu">round</span>.(<span class="op">-</span><span class="fl">2</span> <span class="op">*</span> [stat_dic, nonstat_dic, pdo_dic]; digits<span class="op">=</span><span class="fl">0</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div><div style="float: left;"><span>3×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
+<table class="data-frame" data-quarto-postprocess="true" style="margin-bottom: 6px;">
+<thead>
+<tr class="header">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">Row</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">AIC</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">DIC</th>
+</tr>
+<tr class="odd subheader headerLastRow">
+<th class="rowNumber" data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="String">String</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th" title="Int64">Int64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">1</td>
+<td style="text-align: left;">Stationary</td>
+<td style="text-align: right;">1421</td>
+<td style="text-align: right;">1421</td>
+</tr>
+<tr class="even">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">2</td>
+<td style="text-align: left;">Time</td>
+<td style="text-align: right;">1413</td>
+<td style="text-align: right;">1413</td>
+</tr>
+<tr class="odd">
+<td class="rowNumber" style="text-align: right; font-weight: bold;">3</td>
+<td style="text-align: left;">PDO</td>
+<td style="text-align: right;">1418</td>
+<td style="text-align: right;">1419</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="convergence-of-aic-and-dic" class="slide level2">
+<h2>Convergence of AIC and DIC</h2>
+<p>Both AIC and DIC converge (as <span class="math inline">\(n \to \infty\)</span>) to expected leave-one-out CV.</p>
+<p>The question is how well they do under limited sample sizes!</p>
+</section>
+<section id="watanabe-akaike-information-criterion-waic" class="slide level2">
+<h2>Watanabe-Akaike Information Criterion (WAIC)</h2>
+<p><span class="math display">\[\widehat{\text{elpd}}_\text{WAIC} = \sum_{i=1}^n \log \int p(y_i | \theta) p_\text{post}(\theta)\,d\theta - p_{\text{WAIC}},\]</span></p>
+<p>where <span class="math display">\[p_\text{WAIC} = \sum_{i=1}^n \text{Var}_\text{post}\left(\log p(y_i | \theta)\right).\]</span></p>
+</section>
+<section id="waic-correction-factor" class="slide level2">
+<h2>WAIC Correction Factor</h2>
+<p><span class="math inline">\(p_\text{WAIC}\)</span> is an estimate of the number of “unconstrained” parameters in the model.</p>
+<ul>
+<li>A parameter counts as 1 if its estimate is “independent” of the prior;</li>
+<li>A parameter counts as 0 if it is fully constrained by the prior.</li>
+<li>A parameter gives a partial value if both the data and prior are informative.</li>
+</ul>
+</section>
+<section id="waic-vs.-aic-and-dic" class="slide level2">
+<h2>WAIC vs.&nbsp;AIC and DIC</h2>
+<ul>
+<li>WAIC can be viewed as an approximation to leave-one-out CV, and averages over the entire posterior, vs.&nbsp;AIC and DIC which use point estimates.</li>
+<li>But it doesn’t work well with highly structured data; no real alternative to more clever uses of Bayesian cross-validation.</li>
+</ul>
+</section>
+<section id="bayesian-information-criterion-bic" class="slide level2">
+<h2>“Bayesian” “Information” Criterion (BIC)</h2>
+<p><span class="math display">\[\text{BIC} = -2\log p(y | \hat{\theta}_\text{MLE}) + k\log n.\]</span></p>
+<p>BIC:</p>
+<ul>
+<li>Is not Bayesian (it relies on the MLE);</li>
+<li>Has no relationship to information theory (unlike AIC/DIC);</li>
+<li>Assumes <span class="math inline">\(\mathcal{M}\)</span>-closed (e.g.&nbsp;that the true model is under consideration).</li>
+</ul>
+</section>
+<section id="bic" class="slide level2">
+<h2>BIC</h2>
+<p>BIC approximates the <em>prior</em> log-predictive likelihood and leave-<span class="math inline">\(k\)</span>-out cross-validation (hence the extra penalization for additional parameters).</p>
+<p><strong>This is why it’s odd when model selection consists of examining both AIC and BIC: these are different quantities with different purposes!</strong></p>
+</section></section>
+<section>
 <section id="key-takeaways-and-upcoming-schedule" class="title-slide slide level1 center">
 <h1>Key Takeaways and Upcoming Schedule</h1>
 
@@ -687,14 +696,26 @@
 <section id="key-takeaways" class="slide level2">
 <h2>Key Takeaways</h2>
 <ul>
-<li>LOO-CV is ideal for navigating bias-variance tradeoff but can be computationally prohibitive.</li>
 <li>Information Criteria are an approximation to LOO-CV based on “correcting” for model complexity.</li>
-<li>Approximation to out of sample predictive error as a penalty for <em>potential to overfit</em>.</li>
+<li>AIC and DIC can be used to approximate LOO-CV.</li>
+<li>BIC is an entirely different measure, approximating the prior predictive distribution (leave-<span class="math inline">\(k\)</span>-out CV).</li>
+</ul>
+</section>
+<section id="an-important-caveat" class="slide level2">
+<h2>An Important Caveat</h2>
+<p><strong>Model selection can result in significant overfitting when separated from hypothesis-driven model development</strong> <span class="citation" data-cites="Freedman1983-xq Smith2018-wt">(<a href="#/references-1" role="doc-biblioref" onclick="">Freedman, 1983</a>; <a href="#/references-1" role="doc-biblioref" onclick="">Smith, 2018</a>)</span></p>
+</section>
+<section id="an-important-caveat-1" class="slide level2">
+<h2>An Important Caveat</h2>
+<ul>
+<li>Better off thinking about the scientific or engineering problem you want to solve and use domain knowledge/checks rather than throwing a large number of possible models into the selection machinery.</li>
+<li>Regularizing priors reduce potential for overfitting.</li>
+<li>Model averaging <span class="citation" data-cites="Hoeting2021-vx">(<a href="#/references-1" role="doc-biblioref" onclick="">Hoeting et al., 2021</a>)</span> and stacking <span class="citation" data-cites="Yao2018-rr">(<a href="#/references-1" role="doc-biblioref" onclick="">Yao et al., 2018</a>)</span> can combine multiple models as an alternative to selection.</li>
 </ul>
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<p><strong>Wednesday</strong>: Other Information Criteria</p>
+<p><strong>Next Week</strong>: Emulating Complex Models</p>
 </section></section>
 <section>
 <section id="references" class="title-slide slide level1 center">
@@ -710,6 +731,18 @@
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Burnham2004-do" class="csl-entry" role="listitem">
 Burnham, K. P., &amp; Anderson, D. R. (2004). <span class="nocase">Multimodel Inference: Understanding AIC and BIC in Model Selection</span>. <em>Sociol. Methods Res.</em>, <em>33</em>, 261–304. <a href="https://doi.org/10.1177/0049124104268644">https://doi.org/10.1177/0049124104268644</a>
+</div>
+<div id="ref-Freedman1983-xq" class="csl-entry" role="listitem">
+Freedman, D. A. (1983). <span class="nocase">A note on screening regression equations</span>. <em>Am. Stat.</em>, <em>37</em>, 152. <a href="https://doi.org/10.2307/2685877">https://doi.org/10.2307/2685877</a>
+</div>
+<div id="ref-Hoeting2021-vx" class="csl-entry" role="listitem">
+Hoeting, J. A., Madigan, D., Raftery, A. E., &amp; Volinsky, C. T. (2021). <span class="nocase">Bayesian model averaging: a tutorial</span>. <em>Stat. Sci.</em>, <em>14</em>, 382–401. <a href="https://doi.org/10.1214/ss/1009212519">https://doi.org/10.1214/ss/1009212519</a>
+</div>
+<div id="ref-Smith2018-wt" class="csl-entry" role="listitem">
+Smith, G. (2018). <span class="nocase">Step away from stepwise</span>. <em>J. Big Data</em>, <em>5</em>, 1–12. <a href="https://doi.org/10.1186/s40537-018-0143-6">https://doi.org/10.1186/s40537-018-0143-6</a>
+</div>
+<div id="ref-Yao2018-rr" class="csl-entry" role="listitem">
+Yao, Y., Vehtari, A., Simpson, D., &amp; Gelman, A. (2018). <span class="nocase">Using stacking to average Bayesian predictive distributions</span>. <em>arXiv [Stat.ME]</em>. <a href="https://doi.org/10.1214/17-BA1091">https://doi.org/10.1214/17-BA1091</a>
 </div>
 </div>
 </section></section>
