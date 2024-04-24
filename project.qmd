@@ -17,5 +17,5 @@ The term project gives you an opportunity to use and extend the methods we have 
 |:---------:|:------------:|:-----------|
 | Proposal | [{{< fa sharp pen-field >}}](project/proposal.qmd) |  Fri, Mar 1 |
 | Simulation Study | [{{< fa sharp pen-field >}}](project/simulation.qmd) | Fri, Apr 12 |
-| Presentations | | Mon, May 06 |
-| Final Report | | TBD (During Finals Week) | 
+| Presentations |  [{{< fa sharp pen-field >}}](project/presentation.qmd) | Mon, May 06 |
+| Final Report | [{{< fa sharp pen-field >}}](project/report.qmd) | Fri, May 17 | 

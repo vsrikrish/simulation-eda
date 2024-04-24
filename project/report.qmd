@@ -1,0 +1,17 @@
+---
+title: "Project Report Instructions"
+---
+
+These are the instructions for your final project report. The report should be submitted on Gradescope during finals week, but **no later than May 17, 2024**.
+
+## Report Guidelines
+
+The proposal should have the following components with 1 inch margins (on all sides) and at least 11 point font. Some of this may be repeated from your proposal and/or simulation study; this is fine.
+
+* **Background**: Provide background on your project topic and the relevant environmental system. Why is this topic interesting or valuable to understand? What are you trying to understand or what do you hyptohesize?
+* **Data and Models**: What data are you using? Provide exploratory plots. What model(s) are you using to explore the data and your hypotheses? Include details about the probability or statistical assumptions your model is making and how well-founded you think these are in light of the system and the data.
+* **Results**: What have you learned from your analysis? Were your hypotheses well founded? What visual or quantative evidence are you using to support these conclusions?
+* **Discussion**: Reflect on the data and models that you used. How well suited were they for the analysis? In retrospect, what might have been better? How might they have biased or influenced your results?
+* **References**: Make sure to include any external sources referenced during the course of completing your project.
+
+You do not need to include any code in your reports, but if you do, please reserve this for an appendix at the end of the report, not mixed in with the above sections. If you generated a figure or fit a model using the code, include the figure along with the relevant text but do not include code. There is no page minimum or maximum on the report, but it should include, *clearly*, all of the above content.
