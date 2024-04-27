@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.519">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2024-04-15">
@@ -462,20 +462,20 @@
 <div id="cell-fig-p-value" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1"></a>test_dist <span class="op">=</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>x <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">10</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">plot</span>(x, <span class="fu">pdf</span>.(test_dist, x), linewidth<span class="op">=</span><span class="fl">3</span>, legend<span class="op">=</span><span class="cn">false</span>, color<span class="op">=:</span>black, xticks<span class="op">=</span><span class="cn">false</span>,  yticks<span class="op">=</span><span class="cn">false</span>, ylabel<span class="op">=</span><span class="st">"Probability"</span>, xlabel<span class="op">=</span>L<span class="st">"y"</span>, bottom_margin<span class="op">=</span><span class="fl">10</span>mm, left_margin<span class="op">=</span><span class="fl">10</span>mm, guidefontsize<span class="op">=</span><span class="fl">16</span>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">vline!</span>([<span class="fl">5</span>], linestyle<span class="op">=:</span>dash, color<span class="op">=:</span>purple, linewidth<span class="op">=</span><span class="fl">3</span>, )</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">areaplot!</span>(<span class="fl">5</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">10</span>, <span class="fu">pdf</span>.(test_dist, <span class="fl">5</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">10</span>), color<span class="op">=:</span>green, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">quiver!</span>([<span class="op">-</span><span class="fl">4.5</span>], [<span class="fl">0.095</span>], quiver<span class="op">=</span>([<span class="fl">1</span>], [<span class="op">-</span><span class="fl">0.02</span>]), color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">2</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">annotate!</span>([<span class="op">-</span><span class="fl">5</span>], [<span class="fl">0.11</span>], <span class="fu">text</span>(<span class="st">"Null</span><span class="sc">\n</span><span class="st">Sampling</span><span class="sc">\n</span><span class="st">Distribution"</span>, color<span class="op">=:</span>black))</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">quiver!</span>([<span class="fl">6.5</span>], [<span class="fl">0.03</span>], quiver<span class="op">=</span>([<span class="op">-</span><span class="fl">1</span>], [<span class="op">-</span><span class="fl">0.015</span>]), color<span class="op">=:</span>green, linewidth<span class="op">=</span><span class="fl">2</span>)</span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">annotate!</span>([<span class="fl">6.85</span>], [<span class="fl">0.035</span>], <span class="fu">text</span>(<span class="st">"p-value"</span>, <span class="op">:</span>green))</span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">quiver!</span>([<span class="fl">3.5</span>], [<span class="fl">0.02</span>], quiver<span class="op">=</span>([<span class="fl">1.5</span>], [<span class="fl">0</span>]), color<span class="op">=:</span>purple, linewidth<span class="op">=</span><span class="fl">2</span>)</span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="fu">annotate!</span>([<span class="fl">0.9</span>], [<span class="fl">0.02</span>], <span class="fu">text</span>(<span class="st">"Observation"</span>, <span class="op">:</span>purple))</span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">650</span>, <span class="fl">500</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a></a>test_dist <span class="op">=</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">3</span>)</span>
+<span id="cb1-2"><a></a>x <span class="op">=</span> <span class="op">-</span><span class="fl">10</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">10</span></span>
+<span id="cb1-3"><a></a><span class="fu">plot</span>(x, <span class="fu">pdf</span>.(test_dist, x), linewidth<span class="op">=</span><span class="fl">3</span>, legend<span class="op">=</span><span class="cn">false</span>, color<span class="op">=:</span>black, xticks<span class="op">=</span><span class="cn">false</span>,  yticks<span class="op">=</span><span class="cn">false</span>, ylabel<span class="op">=</span><span class="st">"Probability"</span>, xlabel<span class="op">=</span>L<span class="st">"y"</span>, bottom_margin<span class="op">=</span><span class="fl">10</span>mm, left_margin<span class="op">=</span><span class="fl">10</span>mm, guidefontsize<span class="op">=</span><span class="fl">16</span>)</span>
+<span id="cb1-4"><a></a><span class="fu">vline!</span>([<span class="fl">5</span>], linestyle<span class="op">=:</span>dash, color<span class="op">=:</span>purple, linewidth<span class="op">=</span><span class="fl">3</span>, )</span>
+<span id="cb1-5"><a></a><span class="fu">areaplot!</span>(<span class="fl">5</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">10</span>, <span class="fu">pdf</span>.(test_dist, <span class="fl">5</span><span class="op">:</span><span class="fl">0.01</span><span class="op">:</span><span class="fl">10</span>), color<span class="op">=:</span>green, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb1-6"><a></a><span class="fu">quiver!</span>([<span class="op">-</span><span class="fl">4.5</span>], [<span class="fl">0.095</span>], quiver<span class="op">=</span>([<span class="fl">1</span>], [<span class="op">-</span><span class="fl">0.02</span>]), color<span class="op">=:</span>black, linewidth<span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb1-7"><a></a><span class="fu">annotate!</span>([<span class="op">-</span><span class="fl">5</span>], [<span class="fl">0.11</span>], <span class="fu">text</span>(<span class="st">"Null</span><span class="sc">\n</span><span class="st">Sampling</span><span class="sc">\n</span><span class="st">Distribution"</span>, color<span class="op">=:</span>black))</span>
+<span id="cb1-8"><a></a><span class="fu">quiver!</span>([<span class="fl">6.5</span>], [<span class="fl">0.03</span>], quiver<span class="op">=</span>([<span class="op">-</span><span class="fl">1</span>], [<span class="op">-</span><span class="fl">0.015</span>]), color<span class="op">=:</span>green, linewidth<span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb1-9"><a></a><span class="fu">annotate!</span>([<span class="fl">6.85</span>], [<span class="fl">0.035</span>], <span class="fu">text</span>(<span class="st">"p-value"</span>, <span class="op">:</span>green))</span>
+<span id="cb1-10"><a></a><span class="fu">quiver!</span>([<span class="fl">3.5</span>], [<span class="fl">0.02</span>], quiver<span class="op">=</span>([<span class="fl">1.5</span>], [<span class="fl">0</span>]), color<span class="op">=:</span>purple, linewidth<span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb1-11"><a></a><span class="fu">annotate!</span>([<span class="fl">0.9</span>], [<span class="fl">0.02</span>], <span class="fu">text</span>(<span class="st">"Observation"</span>, <span class="op">:</span>purple))</span>
+<span id="cb1-12"><a></a><span class="fu">plot!</span>(size<span class="op">=</span>(<span class="fl">650</span>, <span class="fl">500</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-p-value" class="cell-output cell-output-display quarto-figure quarto-figure-center" data-execution_count="4">
+<div id="fig-p-value" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="4">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-p-value-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -686,54 +686,54 @@ True positive (probability <span class="math inline">\(1-\beta\)</span>)
 <div id="cell-fig-surge-data" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># load SF tide gauge data</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># read in data and get annual maxima</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">function</span> <span class="fu">load_data</span>(fname)</span>
-<span id="cb2-4"><a href="#cb2-4"></a>    date_format <span class="op">=</span> <span class="fu">DateFormat</span>(<span class="st">"yyyy-mm-dd HH:MM:SS"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5"></a>    <span class="co"># This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>    df <span class="op">=</span> <span class="pp">@chain</span> fname <span class="cf">begin</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>        CSV.<span class="fu">read</span>(DataFrame; header<span class="op">=</span><span class="cn">false</span>)</span>
-<span id="cb2-8"><a href="#cb2-8"></a>        <span class="fu">rename</span>(<span class="st">"Column1"</span> <span class="op">=&gt;</span> <span class="st">"year"</span>, <span class="st">"Column2"</span> <span class="op">=&gt;</span> <span class="st">"month"</span>, <span class="st">"Column3"</span> <span class="op">=&gt;</span> <span class="st">"day"</span>, <span class="st">"Column4"</span> <span class="op">=&gt;</span> <span class="st">"hour"</span>, <span class="st">"Column5"</span> <span class="op">=&gt;</span> <span class="st">"gauge"</span>)</span>
-<span id="cb2-9"><a href="#cb2-9"></a>        <span class="co"># need to reformat the decimal date in the data file</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>        <span class="pp">@transform</span> <span class="op">:</span>datetime <span class="op">=</span> <span class="fu">DateTime</span>.(<span class="op">:</span>year, <span class="op">:</span>month, <span class="op">:</span>day, <span class="op">:</span>hour)</span>
-<span id="cb2-11"><a href="#cb2-11"></a>        <span class="co"># replace -99999 with missing</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>        <span class="pp">@transform</span> <span class="op">:</span>gauge <span class="op">=</span> <span class="fu">ifelse</span>.(<span class="fu">abs</span>.(<span class="op">:</span>gauge) <span class="op">.&gt;=</span> <span class="fl">9999</span>, <span class="cn">missing</span>, <span class="op">:</span>gauge)</span>
-<span id="cb2-13"><a href="#cb2-13"></a>        <span class="fu">select</span>(<span class="op">:</span>datetime, <span class="op">:</span>gauge)</span>
-<span id="cb2-14"><a href="#cb2-14"></a>    <span class="cf">end</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>    <span class="cf">return</span> df</span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="kw">end</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a></span>
-<span id="cb2-18"><a href="#cb2-18"></a>dat <span class="op">=</span> <span class="fu">load_data</span>(<span class="st">"data/surge/h551.csv"</span>)</span>
-<span id="cb2-19"><a href="#cb2-19"></a></span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="co"># detrend the data to remove the effects of sea-level rise and seasonal dynamics</span></span>
-<span id="cb2-21"><a href="#cb2-21"></a>ma_length <span class="op">=</span> <span class="fl">366</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a>ma_offset <span class="op">=</span> <span class="fu">Int</span>(<span class="fu">floor</span>(ma_length<span class="op">/</span><span class="fl">2</span>))</span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="fu">moving_average</span>(series,n) <span class="op">=</span> [<span class="fu">mean</span>(<span class="pp">@view</span> series[i<span class="op">-</span>n<span class="op">:</span>i<span class="op">+</span>n]) for i <span class="kw">in</span> n<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(series)<span class="op">-</span>n]</span>
-<span id="cb2-24"><a href="#cb2-24"></a>dat_ma <span class="op">=</span> <span class="fu">DataFrame</span>(datetime<span class="op">=</span>dat.datetime[ma_offset<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span>ma_offset], residual<span class="op">=</span>dat.gauge[ma_offset<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span>ma_offset] <span class="op">.-</span> <span class="fu">moving_average</span>(dat.gauge, ma_offset))</span>
-<span id="cb2-25"><a href="#cb2-25"></a></span>
-<span id="cb2-26"><a href="#cb2-26"></a><span class="co"># group data by year and compute the annual maxima</span></span>
-<span id="cb2-27"><a href="#cb2-27"></a>dat_ma <span class="op">=</span> <span class="fu">dropmissing</span>(dat_ma) <span class="co"># drop missing data</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a>dat_annmax <span class="op">=</span> <span class="fu">combine</span>(dat_ma <span class="op">-&gt;</span> dat_ma[<span class="fu">argmax</span>(dat_ma.residual), <span class="op">:</span>], <span class="fu">groupby</span>(DataFrames.<span class="fu">transform</span>(dat_ma, <span class="op">:</span>datetime <span class="op">=&gt;</span> <span class="fu">x-&gt;year</span>.(x)), <span class="op">:</span>datetime_function))</span>
-<span id="cb2-29"><a href="#cb2-29"></a><span class="fu">delete!</span>(dat_annmax, <span class="fu">nrow</span>(dat_annmax)) <span class="co"># delete 2023; haven't seen much of that year yet</span></span>
-<span id="cb2-30"><a href="#cb2-30"></a><span class="fu">rename!</span>(dat_annmax, <span class="op">:</span>datetime_function <span class="op">=&gt;</span> <span class="op">:</span>Year)</span>
-<span id="cb2-31"><a href="#cb2-31"></a><span class="fu">select!</span>(dat_annmax, [<span class="op">:</span>Year, <span class="op">:</span>residual])</span>
-<span id="cb2-32"><a href="#cb2-32"></a></span>
-<span id="cb2-33"><a href="#cb2-33"></a><span class="co"># make plots</span></span>
-<span id="cb2-34"><a href="#cb2-34"></a>p1 <span class="op">=</span> <span class="fu">plot</span>(</span>
-<span id="cb2-35"><a href="#cb2-35"></a>    dat_annmax.Year,</span>
-<span id="cb2-36"><a href="#cb2-36"></a>    dat_annmax.residual;</span>
-<span id="cb2-37"><a href="#cb2-37"></a>    xlabel<span class="op">=</span><span class="st">"Year"</span>,</span>
-<span id="cb2-38"><a href="#cb2-38"></a>    ylabel<span class="op">=</span><span class="st">"Annual Max Tide Level (m)"</span>,</span>
-<span id="cb2-39"><a href="#cb2-39"></a>    label<span class="op">=</span><span class="cn">false</span>,</span>
-<span id="cb2-40"><a href="#cb2-40"></a>    marker<span class="op">=:</span>circle,</span>
-<span id="cb2-41"><a href="#cb2-41"></a>    markersize<span class="op">=</span><span class="fl">5</span>,</span>
-<span id="cb2-42"><a href="#cb2-42"></a>    tickfontsize<span class="op">=</span><span class="fl">16</span>,</span>
-<span id="cb2-43"><a href="#cb2-43"></a>    guidefontsize<span class="op">=</span><span class="fl">18</span>,</span>
-<span id="cb2-44"><a href="#cb2-44"></a>    left_margin<span class="op">=</span><span class="fl">5</span>mm, </span>
-<span id="cb2-45"><a href="#cb2-45"></a>    bottom_margin<span class="op">=</span><span class="fl">5</span>mm</span>
-<span id="cb2-46"><a href="#cb2-46"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource julia code-overflow-wrap number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a></a><span class="co"># load SF tide gauge data</span></span>
+<span id="cb2-2"><a></a><span class="co"># read in data and get annual maxima</span></span>
+<span id="cb2-3"><a></a><span class="kw">function</span> <span class="fu">load_data</span>(fname)</span>
+<span id="cb2-4"><a></a>    date_format <span class="op">=</span> <span class="fu">DateFormat</span>(<span class="st">"yyyy-mm-dd HH:MM:SS"</span>)</span>
+<span id="cb2-5"><a></a>    <span class="co"># This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data</span></span>
+<span id="cb2-6"><a></a>    df <span class="op">=</span> <span class="pp">@chain</span> fname <span class="cf">begin</span></span>
+<span id="cb2-7"><a></a>        CSV.<span class="fu">read</span>(DataFrame; header<span class="op">=</span><span class="cn">false</span>)</span>
+<span id="cb2-8"><a></a>        <span class="fu">rename</span>(<span class="st">"Column1"</span> <span class="op">=&gt;</span> <span class="st">"year"</span>, <span class="st">"Column2"</span> <span class="op">=&gt;</span> <span class="st">"month"</span>, <span class="st">"Column3"</span> <span class="op">=&gt;</span> <span class="st">"day"</span>, <span class="st">"Column4"</span> <span class="op">=&gt;</span> <span class="st">"hour"</span>, <span class="st">"Column5"</span> <span class="op">=&gt;</span> <span class="st">"gauge"</span>)</span>
+<span id="cb2-9"><a></a>        <span class="co"># need to reformat the decimal date in the data file</span></span>
+<span id="cb2-10"><a></a>        <span class="pp">@transform</span> <span class="op">:</span>datetime <span class="op">=</span> <span class="fu">DateTime</span>.(<span class="op">:</span>year, <span class="op">:</span>month, <span class="op">:</span>day, <span class="op">:</span>hour)</span>
+<span id="cb2-11"><a></a>        <span class="co"># replace -99999 with missing</span></span>
+<span id="cb2-12"><a></a>        <span class="pp">@transform</span> <span class="op">:</span>gauge <span class="op">=</span> <span class="fu">ifelse</span>.(<span class="fu">abs</span>.(<span class="op">:</span>gauge) <span class="op">.&gt;=</span> <span class="fl">9999</span>, <span class="cn">missing</span>, <span class="op">:</span>gauge)</span>
+<span id="cb2-13"><a></a>        <span class="fu">select</span>(<span class="op">:</span>datetime, <span class="op">:</span>gauge)</span>
+<span id="cb2-14"><a></a>    <span class="cf">end</span></span>
+<span id="cb2-15"><a></a>    <span class="cf">return</span> df</span>
+<span id="cb2-16"><a></a><span class="kw">end</span></span>
+<span id="cb2-17"><a></a></span>
+<span id="cb2-18"><a></a>dat <span class="op">=</span> <span class="fu">load_data</span>(<span class="st">"data/surge/h551.csv"</span>)</span>
+<span id="cb2-19"><a></a></span>
+<span id="cb2-20"><a></a><span class="co"># detrend the data to remove the effects of sea-level rise and seasonal dynamics</span></span>
+<span id="cb2-21"><a></a>ma_length <span class="op">=</span> <span class="fl">366</span></span>
+<span id="cb2-22"><a></a>ma_offset <span class="op">=</span> <span class="fu">Int</span>(<span class="fu">floor</span>(ma_length<span class="op">/</span><span class="fl">2</span>))</span>
+<span id="cb2-23"><a></a><span class="fu">moving_average</span>(series,n) <span class="op">=</span> [<span class="fu">mean</span>(<span class="pp">@view</span> series[i<span class="op">-</span>n<span class="op">:</span>i<span class="op">+</span>n]) for i <span class="kw">in</span> n<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(series)<span class="op">-</span>n]</span>
+<span id="cb2-24"><a></a>dat_ma <span class="op">=</span> <span class="fu">DataFrame</span>(datetime<span class="op">=</span>dat.datetime[ma_offset<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span>ma_offset], residual<span class="op">=</span>dat.gauge[ma_offset<span class="op">+</span><span class="fl">1</span><span class="op">:</span><span class="kw">end</span><span class="op">-</span>ma_offset] <span class="op">.-</span> <span class="fu">moving_average</span>(dat.gauge, ma_offset))</span>
+<span id="cb2-25"><a></a></span>
+<span id="cb2-26"><a></a><span class="co"># group data by year and compute the annual maxima</span></span>
+<span id="cb2-27"><a></a>dat_ma <span class="op">=</span> <span class="fu">dropmissing</span>(dat_ma) <span class="co"># drop missing data</span></span>
+<span id="cb2-28"><a></a>dat_annmax <span class="op">=</span> <span class="fu">combine</span>(dat_ma <span class="op">-&gt;</span> dat_ma[<span class="fu">argmax</span>(dat_ma.residual), <span class="op">:</span>], <span class="fu">groupby</span>(DataFrames.<span class="fu">transform</span>(dat_ma, <span class="op">:</span>datetime <span class="op">=&gt;</span> <span class="fu">x-&gt;year</span>.(x)), <span class="op">:</span>datetime_function))</span>
+<span id="cb2-29"><a></a><span class="fu">delete!</span>(dat_annmax, <span class="fu">nrow</span>(dat_annmax)) <span class="co"># delete 2023; haven't seen much of that year yet</span></span>
+<span id="cb2-30"><a></a><span class="fu">rename!</span>(dat_annmax, <span class="op">:</span>datetime_function <span class="op">=&gt;</span> <span class="op">:</span>Year)</span>
+<span id="cb2-31"><a></a><span class="fu">select!</span>(dat_annmax, [<span class="op">:</span>Year, <span class="op">:</span>residual])</span>
+<span id="cb2-32"><a></a></span>
+<span id="cb2-33"><a></a><span class="co"># make plots</span></span>
+<span id="cb2-34"><a></a>p1 <span class="op">=</span> <span class="fu">plot</span>(</span>
+<span id="cb2-35"><a></a>    dat_annmax.Year,</span>
+<span id="cb2-36"><a></a>    dat_annmax.residual;</span>
+<span id="cb2-37"><a></a>    xlabel<span class="op">=</span><span class="st">"Year"</span>,</span>
+<span id="cb2-38"><a></a>    ylabel<span class="op">=</span><span class="st">"Annual Max Tide Level (m)"</span>,</span>
+<span id="cb2-39"><a></a>    label<span class="op">=</span><span class="cn">false</span>,</span>
+<span id="cb2-40"><a></a>    marker<span class="op">=:</span>circle,</span>
+<span id="cb2-41"><a></a>    markersize<span class="op">=</span><span class="fl">5</span>,</span>
+<span id="cb2-42"><a></a>    tickfontsize<span class="op">=</span><span class="fl">16</span>,</span>
+<span id="cb2-43"><a></a>    guidefontsize<span class="op">=</span><span class="fl">18</span>,</span>
+<span id="cb2-44"><a></a>    left_margin<span class="op">=</span><span class="fl">5</span>mm, </span>
+<span id="cb2-45"><a></a>    bottom_margin<span class="op">=</span><span class="fl">5</span>mm</span>
+<span id="cb2-46"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-surge-data" class="cell-output cell-output-display quarto-figure quarto-figure-center" data-execution_count="5">
+<div id="fig-surge-data" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="5">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-surge-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -923,18 +923,18 @@ Figure&nbsp;2: Annual maxima surge data from the San Francisco, CA tide gauge.
 <section id="stationary-model" class="slide level2">
 <h2>Stationary Model</h2>
 <div id="63b5a09e" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1"></a><span class="pp">@model</span> <span class="kw">function</span> <span class="fu">sf_stat</span>(y)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>    μ <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">1500</span>, <span class="fl">200</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>    σ <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">100</span>, <span class="fl">25</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>    ξ <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(y)</span>
-<span id="cb3-7"><a href="#cb3-7"></a>        y[i] <span class="op">~</span> <span class="fu">GeneralizedExtremeValue</span>(μ, σ, ξ)</span>
-<span id="cb3-8"><a href="#cb3-8"></a>    <span class="cf">end</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="kw">end</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a>stat_chain <span class="op">=</span> <span class="fu">sample</span>(<span class="fu">sf_stat</span>(dat_annmax.residual), <span class="fu">NUTS</span>(), <span class="fu">MCMCThreads</span>(), <span class="fl">10_000</span>, <span class="fl">4</span>)</span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="fu">summarystats</span>(stat_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a></a><span class="pp">@model</span> <span class="kw">function</span> <span class="fu">sf_stat</span>(y)</span>
+<span id="cb3-2"><a></a>    μ <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">1500</span>, <span class="fl">200</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
+<span id="cb3-3"><a></a>    σ <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">100</span>, <span class="fl">25</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
+<span id="cb3-4"><a></a>    ξ <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>)</span>
+<span id="cb3-5"><a></a></span>
+<span id="cb3-6"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(y)</span>
+<span id="cb3-7"><a></a>        y[i] <span class="op">~</span> <span class="fu">GeneralizedExtremeValue</span>(μ, σ, ξ)</span>
+<span id="cb3-8"><a></a>    <span class="cf">end</span></span>
+<span id="cb3-9"><a></a><span class="kw">end</span></span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a>stat_chain <span class="op">=</span> <span class="fu">sample</span>(<span class="fu">sf_stat</span>(dat_annmax.residual), <span class="fu">NUTS</span>(), <span class="fu">MCMCThreads</span>(), <span class="fl">10_000</span>, <span class="fl">4</span>)</span>
+<span id="cb3-12"><a></a><span class="fu">summarystats</span>(stat_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -954,20 +954,20 @@ Figure&nbsp;2: Annual maxima surge data from the San Francisco, CA tide gauge.
 </div></section><section id="nonstationary-time-model" class="slide level2">
 <h2>Nonstationary (Time) Model</h2>
 <div id="64e5e74c" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">@model</span> <span class="kw">function</span> <span class="fu">sf_nonstat</span>(y)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>    a <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">1500</span>, <span class="fl">200</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a>    b <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">5</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>    σ <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">100</span>, <span class="fl">25</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
-<span id="cb4-5"><a href="#cb4-5"></a>    ξ <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>)</span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-7"><a href="#cb4-7"></a>    T <span class="op">=</span> <span class="fu">length</span>(y)</span>
-<span id="cb4-8"><a href="#cb4-8"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>T</span>
-<span id="cb4-9"><a href="#cb4-9"></a>        y[i] <span class="op">~</span> <span class="fu">GeneralizedExtremeValue</span>.(a <span class="op">.+</span> b <span class="op">*</span> i, σ, ξ)</span>
-<span id="cb4-10"><a href="#cb4-10"></a>    <span class="cf">end</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="kw">end</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a></span>
-<span id="cb4-13"><a href="#cb4-13"></a>nonstat_chain <span class="op">=</span> <span class="fu">sample</span>(<span class="fu">sf_nonstat</span>(dat_annmax.residual), <span class="fu">NUTS</span>(), <span class="fu">MCMCThreads</span>(), <span class="fl">10_000</span>, <span class="fl">4</span>)</span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="fu">summarystats</span>(nonstat_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a></a><span class="pp">@model</span> <span class="kw">function</span> <span class="fu">sf_nonstat</span>(y)</span>
+<span id="cb4-2"><a></a>    a <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">1500</span>, <span class="fl">200</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
+<span id="cb4-3"><a></a>    b <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">5</span>)</span>
+<span id="cb4-4"><a></a>    σ <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">100</span>, <span class="fl">25</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
+<span id="cb4-5"><a></a>    ξ <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>)</span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a>    T <span class="op">=</span> <span class="fu">length</span>(y)</span>
+<span id="cb4-8"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>T</span>
+<span id="cb4-9"><a></a>        y[i] <span class="op">~</span> <span class="fu">GeneralizedExtremeValue</span>.(a <span class="op">.+</span> b <span class="op">*</span> i, σ, ξ)</span>
+<span id="cb4-10"><a></a>    <span class="cf">end</span></span>
+<span id="cb4-11"><a></a><span class="kw">end</span></span>
+<span id="cb4-12"><a></a></span>
+<span id="cb4-13"><a></a>nonstat_chain <span class="op">=</span> <span class="fu">sample</span>(<span class="fu">sf_nonstat</span>(dat_annmax.residual), <span class="fu">NUTS</span>(), <span class="fu">MCMCThreads</span>(), <span class="fl">10_000</span>, <span class="fl">4</span>)</span>
+<span id="cb4-14"><a></a><span class="fu">summarystats</span>(nonstat_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -988,19 +988,19 @@ Figure&nbsp;2: Annual maxima surge data from the San Francisco, CA tide gauge.
 </div></section><section id="nonstationary-pdo-model" class="slide level2">
 <h2>Nonstationary (PDO) Model</h2>
 <div id="4496364e" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">@model</span> <span class="kw">function</span> <span class="fu">sf_pdo</span>(y, pdo)</span>
-<span id="cb5-2"><a href="#cb5-2"></a>    a <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">1500</span>, <span class="fl">200</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a>    b <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">5</span>)</span>
-<span id="cb5-4"><a href="#cb5-4"></a>    σ <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">100</span>, <span class="fl">25</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
-<span id="cb5-5"><a href="#cb5-5"></a>    ξ <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>)</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(y)</span>
-<span id="cb5-8"><a href="#cb5-8"></a>        y[i] <span class="op">~</span> <span class="fu">GeneralizedExtremeValue</span>.(a <span class="op">+</span> b <span class="op">*</span> pdo[i], σ, ξ)</span>
-<span id="cb5-9"><a href="#cb5-9"></a>    <span class="cf">end</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="kw">end</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a></span>
-<span id="cb5-12"><a href="#cb5-12"></a>pdo_chain <span class="op">=</span> <span class="fu">sample</span>(<span class="fu">sf_pdo</span>(dat_annmax.residual, pdo.PDO), <span class="fu">NUTS</span>(), <span class="fu">MCMCThreads</span>(), <span class="fl">10_000</span>, <span class="fl">4</span>)</span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="fu">summarystats</span>(pdo_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a></a><span class="pp">@model</span> <span class="kw">function</span> <span class="fu">sf_pdo</span>(y, pdo)</span>
+<span id="cb5-2"><a></a>    a <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">1500</span>, <span class="fl">200</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
+<span id="cb5-3"><a></a>    b <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">5</span>)</span>
+<span id="cb5-4"><a></a>    σ <span class="op">~</span> <span class="fu">truncated</span>(<span class="fu">Normal</span>(<span class="fl">100</span>, <span class="fl">25</span>), lower<span class="op">=</span><span class="fl">0</span>)</span>
+<span id="cb5-5"><a></a>    ξ <span class="op">~</span> <span class="fu">Normal</span>(<span class="fl">0</span>, <span class="fl">1</span>)</span>
+<span id="cb5-6"><a></a></span>
+<span id="cb5-7"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(y)</span>
+<span id="cb5-8"><a></a>        y[i] <span class="op">~</span> <span class="fu">GeneralizedExtremeValue</span>.(a <span class="op">+</span> b <span class="op">*</span> pdo[i], σ, ξ)</span>
+<span id="cb5-9"><a></a>    <span class="cf">end</span></span>
+<span id="cb5-10"><a></a><span class="kw">end</span></span>
+<span id="cb5-11"><a></a></span>
+<span id="cb5-12"><a></a>pdo_chain <span class="op">=</span> <span class="fu">sample</span>(<span class="fu">sf_pdo</span>(dat_annmax.residual, pdo.PDO), <span class="fu">NUTS</span>(), <span class="fu">MCMCThreads</span>(), <span class="fl">10_000</span>, <span class="fl">4</span>)</span>
+<span id="cb5-13"><a></a><span class="fu">summarystats</span>(pdo_chain)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -1023,24 +1023,24 @@ Figure&nbsp;2: Annual maxima surge data from the San Francisco, CA tide gauge.
 <div id="cell-fig-surge-sim" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># make predictions from each model</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>stat_sim <span class="op">=</span> <span class="fu">predict</span>(<span class="fu">sf_stat</span>(<span class="fu">Vector</span><span class="dt">{Union{Missing, Float64}}</span>(<span class="cn">undef</span>, <span class="fu">length</span>(dat_annmax.residual))), stat_chain)</span>
-<span id="cb6-3"><a href="#cb6-3"></a>nonstat_sim <span class="op">=</span> <span class="fu">predict</span>(<span class="fu">sf_nonstat</span>(<span class="fu">Vector</span><span class="dt">{Union{Missing, Float64}}</span>(<span class="cn">undef</span>, <span class="fu">length</span>(dat_annmax.residual))), nonstat_chain)</span>
-<span id="cb6-4"><a href="#cb6-4"></a>pdo_sim <span class="op">=</span> <span class="fu">predict</span>(<span class="fu">sf_pdo</span>(<span class="fu">Vector</span><span class="dt">{Union{Missing, Float64}}</span>(<span class="cn">undef</span>, <span class="fu">length</span>(dat_annmax.residual)), pdo.PDO), pdo_chain)</span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co"># get quantiles</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>stat_q <span class="op">=</span> <span class="fu">mapslices</span>(x <span class="op">-&gt;</span> <span class="fu">quantile</span>(x, [<span class="fl">0.05</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>]), stat_sim.value.data[<span class="op">:</span>, <span class="op">:</span>, <span class="fl">1</span>], dims<span class="op">=</span><span class="fl">1</span>)</span>
-<span id="cb6-8"><a href="#cb6-8"></a>nonstat_q <span class="op">=</span> <span class="fu">mapslices</span>(x <span class="op">-&gt;</span> <span class="fu">quantile</span>(x, [<span class="fl">0.05</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>]), nonstat_sim.value.data[<span class="op">:</span>, <span class="op">:</span>, <span class="fl">1</span>], dims<span class="op">=</span><span class="fl">1</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a>pdo_q <span class="op">=</span> <span class="fu">mapslices</span>(x <span class="op">-&gt;</span> <span class="fu">quantile</span>(x, [<span class="fl">0.05</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>]), pdo_sim.value.data[<span class="op">:</span>, <span class="op">:</span>, <span class="fl">1</span>], dims<span class="op">=</span><span class="fl">1</span>)</span>
-<span id="cb6-10"><a href="#cb6-10"></a></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="co"># plot</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a>p <span class="op">=</span> <span class="fu">plot</span>(; xlabel<span class="op">=</span><span class="st">"Year"</span>, ylabel<span class="op">=</span><span class="st">"Storm Tide Annual Maximum (mm)"</span>, left_margin<span class="op">=</span><span class="fl">5</span>mm, bottom_margin<span class="op">=</span><span class="fl">5</span>mm, right_margin<span class="op">=</span><span class="fl">5</span>mm, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>, legend<span class="op">=:</span>outerright)</span>
-<span id="cb6-13"><a href="#cb6-13"></a><span class="fu">plot!</span>(p, dat_annmax.Year, stat_q[<span class="fl">2</span>, <span class="op">:</span>], ribbon<span class="op">=</span>(stat_q[<span class="fl">2</span>, <span class="op">:</span>] <span class="op">-</span> stat_q[<span class="fl">1</span>, <span class="op">:</span>], stat_q[<span class="fl">3</span>, <span class="op">:</span>] <span class="op">-</span> stat_q[<span class="fl">2</span>, <span class="op">:</span>]), color<span class="op">=:</span>sienna, label<span class="op">=</span><span class="st">"Stationary"</span>, fillalpha<span class="op">=</span><span class="fl">0.2</span>, linewidth<span class="op">=</span><span class="fl">3</span>)</span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="fu">plot!</span>(p, dat_annmax.Year, nonstat_q[<span class="fl">2</span>, <span class="op">:</span>], ribbon<span class="op">=</span>(nonstat_q[<span class="fl">2</span>, <span class="op">:</span>] <span class="op">-</span> nonstat_q[<span class="fl">1</span>, <span class="op">:</span>], nonstat_q[<span class="fl">3</span>, <span class="op">:</span>] <span class="op">-</span> nonstat_q[<span class="fl">2</span>, <span class="op">:</span>]), color<span class="op">=:</span>red, label<span class="op">=</span><span class="st">"Nonstationary (Time)"</span>, fillalpha<span class="op">=</span><span class="fl">0.2</span>, linewidth<span class="op">=</span><span class="fl">3</span>)</span>
-<span id="cb6-15"><a href="#cb6-15"></a><span class="fu">plot!</span>(p, dat_annmax.Year, pdo_q[<span class="fl">2</span>, <span class="op">:</span>], ribbon<span class="op">=</span>(pdo_q[<span class="fl">2</span>, <span class="op">:</span>] <span class="op">-</span> pdo_q[<span class="fl">1</span>, <span class="op">:</span>], pdo_q[<span class="fl">3</span>, <span class="op">:</span>] <span class="op">-</span> pdo_q[<span class="fl">2</span>, <span class="op">:</span>]), color<span class="op">=:</span>teal, label<span class="op">=</span><span class="st">"Nonstationary (PDO)"</span>, fillalpha<span class="op">=</span><span class="fl">0.2</span>, linewidth<span class="op">=</span><span class="fl">3</span>)</span>
-<span id="cb6-16"><a href="#cb6-16"></a><span class="fu">scatter!</span>(p, dat_annmax.Year, dat_annmax.residual, color<span class="op">=:</span>black, markersize<span class="op">=</span><span class="fl">5</span>, label<span class="op">=</span><span class="st">"Observations"</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a></a><span class="co"># make predictions from each model</span></span>
+<span id="cb6-2"><a></a>stat_sim <span class="op">=</span> <span class="fu">predict</span>(<span class="fu">sf_stat</span>(<span class="fu">Vector</span><span class="dt">{Union{Missing, Float64}}</span>(<span class="cn">undef</span>, <span class="fu">length</span>(dat_annmax.residual))), stat_chain)</span>
+<span id="cb6-3"><a></a>nonstat_sim <span class="op">=</span> <span class="fu">predict</span>(<span class="fu">sf_nonstat</span>(<span class="fu">Vector</span><span class="dt">{Union{Missing, Float64}}</span>(<span class="cn">undef</span>, <span class="fu">length</span>(dat_annmax.residual))), nonstat_chain)</span>
+<span id="cb6-4"><a></a>pdo_sim <span class="op">=</span> <span class="fu">predict</span>(<span class="fu">sf_pdo</span>(<span class="fu">Vector</span><span class="dt">{Union{Missing, Float64}}</span>(<span class="cn">undef</span>, <span class="fu">length</span>(dat_annmax.residual)), pdo.PDO), pdo_chain)</span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a><span class="co"># get quantiles</span></span>
+<span id="cb6-7"><a></a>stat_q <span class="op">=</span> <span class="fu">mapslices</span>(x <span class="op">-&gt;</span> <span class="fu">quantile</span>(x, [<span class="fl">0.05</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>]), stat_sim.value.data[<span class="op">:</span>, <span class="op">:</span>, <span class="fl">1</span>], dims<span class="op">=</span><span class="fl">1</span>)</span>
+<span id="cb6-8"><a></a>nonstat_q <span class="op">=</span> <span class="fu">mapslices</span>(x <span class="op">-&gt;</span> <span class="fu">quantile</span>(x, [<span class="fl">0.05</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>]), nonstat_sim.value.data[<span class="op">:</span>, <span class="op">:</span>, <span class="fl">1</span>], dims<span class="op">=</span><span class="fl">1</span>)</span>
+<span id="cb6-9"><a></a>pdo_q <span class="op">=</span> <span class="fu">mapslices</span>(x <span class="op">-&gt;</span> <span class="fu">quantile</span>(x, [<span class="fl">0.05</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>]), pdo_sim.value.data[<span class="op">:</span>, <span class="op">:</span>, <span class="fl">1</span>], dims<span class="op">=</span><span class="fl">1</span>)</span>
+<span id="cb6-10"><a></a></span>
+<span id="cb6-11"><a></a><span class="co"># plot</span></span>
+<span id="cb6-12"><a></a>p <span class="op">=</span> <span class="fu">plot</span>(; xlabel<span class="op">=</span><span class="st">"Year"</span>, ylabel<span class="op">=</span><span class="st">"Storm Tide Annual Maximum (mm)"</span>, left_margin<span class="op">=</span><span class="fl">5</span>mm, bottom_margin<span class="op">=</span><span class="fl">5</span>mm, right_margin<span class="op">=</span><span class="fl">5</span>mm, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>, legend<span class="op">=:</span>outerright)</span>
+<span id="cb6-13"><a></a><span class="fu">plot!</span>(p, dat_annmax.Year, stat_q[<span class="fl">2</span>, <span class="op">:</span>], ribbon<span class="op">=</span>(stat_q[<span class="fl">2</span>, <span class="op">:</span>] <span class="op">-</span> stat_q[<span class="fl">1</span>, <span class="op">:</span>], stat_q[<span class="fl">3</span>, <span class="op">:</span>] <span class="op">-</span> stat_q[<span class="fl">2</span>, <span class="op">:</span>]), color<span class="op">=:</span>sienna, label<span class="op">=</span><span class="st">"Stationary"</span>, fillalpha<span class="op">=</span><span class="fl">0.2</span>, linewidth<span class="op">=</span><span class="fl">3</span>)</span>
+<span id="cb6-14"><a></a><span class="fu">plot!</span>(p, dat_annmax.Year, nonstat_q[<span class="fl">2</span>, <span class="op">:</span>], ribbon<span class="op">=</span>(nonstat_q[<span class="fl">2</span>, <span class="op">:</span>] <span class="op">-</span> nonstat_q[<span class="fl">1</span>, <span class="op">:</span>], nonstat_q[<span class="fl">3</span>, <span class="op">:</span>] <span class="op">-</span> nonstat_q[<span class="fl">2</span>, <span class="op">:</span>]), color<span class="op">=:</span>red, label<span class="op">=</span><span class="st">"Nonstationary (Time)"</span>, fillalpha<span class="op">=</span><span class="fl">0.2</span>, linewidth<span class="op">=</span><span class="fl">3</span>)</span>
+<span id="cb6-15"><a></a><span class="fu">plot!</span>(p, dat_annmax.Year, pdo_q[<span class="fl">2</span>, <span class="op">:</span>], ribbon<span class="op">=</span>(pdo_q[<span class="fl">2</span>, <span class="op">:</span>] <span class="op">-</span> pdo_q[<span class="fl">1</span>, <span class="op">:</span>], pdo_q[<span class="fl">3</span>, <span class="op">:</span>] <span class="op">-</span> pdo_q[<span class="fl">2</span>, <span class="op">:</span>]), color<span class="op">=:</span>teal, label<span class="op">=</span><span class="st">"Nonstationary (PDO)"</span>, fillalpha<span class="op">=</span><span class="fl">0.2</span>, linewidth<span class="op">=</span><span class="fl">3</span>)</span>
+<span id="cb6-16"><a></a><span class="fu">scatter!</span>(p, dat_annmax.Year, dat_annmax.residual, color<span class="op">=:</span>black, markersize<span class="op">=</span><span class="fl">5</span>, label<span class="op">=</span><span class="st">"Observations"</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-surge-sim" class="cell-output cell-output-display quarto-figure quarto-figure-center" data-execution_count="10">
+<div id="fig-surge-sim" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="10">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-surge-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -1248,12 +1248,13 @@ Figure&nbsp;3: Model simulations for the three storm surge models.
 <div id="bdbd9714" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1"></a>model_evidence <span class="op">=</span> <span class="fu">DataFrame</span>(Model<span class="op">=</span>[<span class="st">"Stationary"</span>, <span class="st">"Time"</span>, <span class="st">"PDO"</span>], LogPost<span class="op">=</span>[<span class="fu">mean</span>(stat_chain[<span class="op">:</span>lp]), <span class="fu">mean</span>(nonstat_chain[<span class="op">:</span>lp]), <span class="fu">mean</span>(pdo_chain[<span class="op">:</span>lp])])</span>
-<span id="cb7-2"><a href="#cb7-2"></a>model_evidence.ModelProb <span class="op">=</span> <span class="fu">round</span>.(<span class="fu">exp</span>.(model_evidence.LogPost <span class="op">.-</span> <span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">exp</span>.(model_evidence.LogPost)))); digits<span class="op">=</span><span class="fl">2</span>)</span>
-<span id="cb7-3"><a href="#cb7-3"></a>model_evidence.LogPost <span class="op">=</span> <span class="fu">round</span>.(model_evidence.LogPost; digits<span class="op">=</span><span class="fl">0</span>)</span>
-<span id="cb7-4"><a href="#cb7-4"></a>model_evidence</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a></a>model_evidence <span class="op">=</span> <span class="fu">DataFrame</span>(Model<span class="op">=</span>[<span class="st">"Stationary"</span>, <span class="st">"Time"</span>, <span class="st">"PDO"</span>], LogPost<span class="op">=</span>[<span class="fu">mean</span>(stat_chain[<span class="op">:</span>lp]), <span class="fu">mean</span>(nonstat_chain[<span class="op">:</span>lp]), <span class="fu">mean</span>(pdo_chain[<span class="op">:</span>lp])])</span>
+<span id="cb7-2"><a></a>model_evidence.ModelProb <span class="op">=</span> <span class="fu">round</span>.(<span class="fu">exp</span>.(model_evidence.LogPost <span class="op">.-</span> <span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">exp</span>.(model_evidence.LogPost)))); digits<span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb7-3"><a></a>model_evidence.LogPost <span class="op">=</span> <span class="fu">round</span>.(model_evidence.LogPost; digits<span class="op">=</span><span class="fl">0</span>)</span>
+<span id="cb7-4"><a></a>model_evidence</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="11">
+<div>
 <div><div style="float: left;"><span>3×3 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame" data-quarto-postprocess="true" style="margin-bottom: 6px;">
 <thead>
@@ -1291,6 +1292,7 @@ Figure&nbsp;3: Model simulations for the three storm surge models.
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -1357,8 +1359,10 @@ Figure&nbsp;3: Model simulations for the three storm surge models.
 <h2>Assessments</h2>
 <p><strong>Homework 4</strong>: Released End of Week, Due 5/3 (Last One!)</p>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
