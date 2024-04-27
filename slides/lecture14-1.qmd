@@ -38,40 +38,13 @@ execute:
     freeze: auto
 ---
 
-```{julia}
-#| output: false
-
-import Pkg
-Pkg.activate(@__DIR__)
-Pkg.instantiate()
-```
-
-```{julia}
-#| output: false
-
-using Random
-using DataFrames
-using DataFramesMeta
-using CSV
-using Dates
-using Distributions
-using Turing
-using ColorSchemes
-using Plots
-using StatsPlots
-using StatsBase
-using LaTeXStrings
-using Measures
-using Optim
-
-Random.seed!(1)
-```
-
 # Review of Model Selection
 
 ## What Is The Goal of Model Selection?
 
 **Key Idea**: Model selection consists of navigating the bias-variance tradeoff.
+
+## Bias and Variance
 
 Model error (*e.g.* MSE) is a combination of *irreducible error*, *bias*, and *variance*.
 
@@ -81,6 +54,8 @@ Model error (*e.g.* MSE) is a combination of *irreducible error*, *bias*, and *v
 ## Cross-Validation
 
 Cross-validation is the gold standard for predictive accuracy: how well does the fitted model predict out of sample data?
+
+## Cross-Validation
 
 The problems:
 
@@ -100,9 +75,9 @@ Examples (differ in the parameter values used and correction factor(s)):
 
 ## Model Weighting
 
-Information Criteria can be used to get averaging weights:
+Information Criteria can be used to get averaging weights across a model set $\mathcal{M} = \{M_1, \ldots, M_m\}$:
 
-$$w\_i = \frac{\exp(-\Delta\_i/2)}{\sum\_{m=1}^M \exp(-\Delta\_m/2)}.$$
+$$w_i = \frac{\exp(-\Delta_i/2)}{\sum_{m=1}^M \exp(-\Delta_m/2)}.$$
 
 ## Bayesian LOO-CV: Advanced Methods
 
@@ -122,6 +97,18 @@ Parsimony (fewer model terms/components) can reduce the chance of overfitting an
 
 Model simplicity has another advantange: **simpler models are less computationally expensive**.
 
+## Computational Budgets
+
+::: {.center}
+![Computational Budgets](figures/model_runtime.png){width=75%}
+
+::: {.caption}
+Source: @Helgeson2021-ok
+:::
+:::
+
+
+
 ## Benefits of Model Simplicity
 
 :::: {.columns}
@@ -132,8 +119,10 @@ Model simplicity has another advantange: **simpler models are less computational
 :::
 ::: {.column width=50%}
 ![Computational Complexity](figures/simplicity-calibration.png)
+
 ::: {.caption}
 Source: @Helgeson2021-ok
+:::
 :::
 ::::
 
@@ -169,6 +158,7 @@ Approximate (or **emulate**) the model response surface.
 
 ::: {.center}
 ![Emulation of a Toy Model](figures/toy-model.png)
+
 ::: {.caption}
 Source: @Haran2017-vz
 :::
@@ -178,6 +168,7 @@ Source: @Haran2017-vz
 
 ::: {.center}
 ![Emulation of a Toy Model](figures/emulator-ice-sheet.png)
+
 ::: {.caption}
 Source: @Haran2017-vz
 :::
@@ -187,6 +178,7 @@ Source: @Haran2017-vz
 
 ::: {.center}
 ![Emulation of a Toy Model](figures/calibration-emulation.png)
+
 ::: {.caption}
 Source: @Lee2020-ws
 :::
@@ -197,7 +189,8 @@ Source: @Lee2020-ws
 This error can have large knock-on effects for risk analysis:
 
 ::: {.center}
-![Emulation of a Toy Model](figures/calibration-ice-sheet.png)
+![Emulation of a Toy Model](figures/calibration-ice-sheet.png){width=55%}
+
 ::: {.caption}
 Source: @Lee2020-ws
 :::
@@ -205,10 +198,13 @@ Source: @Lee2020-ws
 
 # Key Takeaways and Upcoming Schedule
 
-## Key Takeaways
+## Key Takeaways (Simplicity)
 
-- Model simplicity can be valuable.
+- Model simplicity can be valuable for focusing on key dynamics and uncertainty representation.
 - Tradeoff between computational expense and fidelity of approximation.
+
+## Key Takeaways (Emulation)
+
 - Emulation can "simplify" complex models by approximating response surfaces
 - Emulator methods have different pros and cons which can make them more or less important.
 - Emulator error can strongly influence resulting risk estimates.
