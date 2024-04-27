@@ -45,6 +45,6 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 | 13 | Mon, Apr 22 | Information Criteria | [{{< fa sharp presentation-screen >}}](slides/lecture13-1.qmd) | |  |
 |  | Wed, Apr 24 |  Other Information Criteria | [{{< fa sharp presentation-screen >}}](slides/lecture13-2.qmd) | | | 
 | | | ***Emulation*** | | | |
-| 14 | Mon, Apr 29 | Tradeoffs Between Complexity and Ensemble Size | | | | 
-|  | Wed, May 1 | Emulating Expensive Models | | | | 
+| 14 | Mon, Apr 29 | Model Complexity and Emulation | [{{< fa sharp presentation-screen >}}](slides/lecture14-1.qmd) | | | 
+|  | Wed, May 1 | Emulation Methods | | | | 
 | 15 | Mon, May 6 | Project Presentations | | | | 

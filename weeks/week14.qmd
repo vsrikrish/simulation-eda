@@ -1,0 +1,12 @@
+---
+title: "Week 14"
+---
+
+
+## Lectures
+
+- [Lecture 14-1: Model Complexity and Emulation](../slides/lecture14-1.qmd)
+- [Lecture 14-2: Emulation Methods](../slides/lecture14-2.qmd)
+
+
+
