@@ -38,6 +38,28 @@ execute:
     freeze: auto
 ---
 
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using Distributions
+using Surrogates
+using Plots
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+```
+
+
 # Review of Model Selection
 
 ## What Is The Goal of Model Selection?
@@ -173,6 +195,66 @@ Source: @Haran2017-vz
 Source: @Haran2017-vz
 :::
 :::
+
+## Setting Up Emulation
+
+1. Select design points (**design of experiment**) and evaluate main model.
+2. Calibrate surrogate model to design inputs/outputs.
+
+## Design of Experiments
+
+Important to strike a balance betwee:
+
+- Computational expense for model evaluation
+- Dense/expansive enough sample for training
+
+## Sampling Example
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| label: fig-surrogate-true
+#| fig-label: Surrogate modeling example.
+
+# https://www.sfu.ca/~ssurjano/forretal08.html
+# Forrester et al. (2008) Function
+f(x) = (6 * x - 2)^2 * sin(12 * x - 4)
+
+n_samples = 10
+lower_bound = 0.0
+upper_bound = 1.0
+
+xs = lower_bound:0.001:upper_bound
+
+xrand = rand(Uniform(lower_bound, upper_bound), 10)
+xsobol = Surrogates.sample(n_samples, lower_bound, upper_bound, SobolSample())
+yrand = f.(xrand)
+ysobol = f.(xsobol)
+
+p = plot(; xlims=(lower_bound, upper_bound), legendfontsize=18, guidefontsize=18, tickfontsize=16, xlabel=L"$x$", ylabel=L"$f(x)$", size=(800, 500))
+plot!(p, xs, f.(xs), label="True Function", color=:red, linewidth=3)
+scatter!(p, xrand, yrand, color=:blue, markersize=7, label="Monte Carlo Sample")
+scatter!(p, xsobol, ysobol, color=:black, markersize=7, label="Sobol (Low-Discrepancy) Sample")
+```
+
+## Emulation and Different Samples
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| label: fig-surrogate-sample
+#| fig-label: Surrogate modeling example with different samples.
+
+surrogate_rand = Kriging(xrand, yrand, lower_bound, upper_bound)
+surrogate_sobol = Kriging(xsobol, ysobol, lower_bound, upper_bound)
+
+plot!(p, xs, surrogate_rand.(xs), label = "Surrogate function",
+    ribbon = x -> std_error_at_point(surrogate_rand, x), color=:blue, alpha=0.3, linewidth=2)
+plot!(p, xs, surrogate_sobol.(xs), label = "Surrogate function",
+    ribbon = x -> std_error_at_point(surrogate_sobol, x), color=:black, alpha=0.3, linewidth=2)
+```
 
 ## Is Emulation Always The Right Choice?
 

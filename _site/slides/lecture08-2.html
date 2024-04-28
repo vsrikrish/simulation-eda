@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.519">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Vivek Srikrishnan">
   <meta name="dcterms.date" content="2024-03-13">
@@ -691,26 +691,26 @@ P =
 <div id="cell-fig-markov-weather" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1"></a>current <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>]</span>
-<span id="cb1-2"><a href="#cb1-2"></a>P <span class="op">=</span> [<span class="fl">1</span><span class="op">/</span><span class="fl">2</span> <span class="fl">1</span><span class="op">/</span><span class="fl">4</span> <span class="fl">1</span><span class="op">/</span><span class="fl">4</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="fl">1</span><span class="op">/</span><span class="fl">2</span> <span class="fl">0</span> <span class="fl">1</span><span class="op">/</span><span class="fl">2</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>    <span class="fl">1</span><span class="op">/</span><span class="fl">4</span> <span class="fl">1</span><span class="op">/</span><span class="fl">4</span> <span class="fl">1</span><span class="op">/</span><span class="fl">2</span>]   </span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a>T <span class="op">=</span> <span class="fl">21</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a>state_probs <span class="op">=</span> <span class="fu">zeros</span>(T, <span class="fl">3</span>)</span>
-<span id="cb1-9"><a href="#cb1-9"></a>state_probs[<span class="fl">1</span>,<span class="op">:</span>] <span class="op">=</span> current</span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="cf">for</span> t<span class="op">=</span><span class="fl">1</span><span class="op">:</span>T<span class="op">-</span><span class="fl">1</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>    state_probs[t<span class="op">+</span><span class="fl">1</span>, <span class="op">:</span>] <span class="op">=</span> state_probs[t<span class="op">:</span>t, <span class="op">:</span>] <span class="op">*</span> P</span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="cf">end</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a>p <span class="op">=</span> <span class="fu">plot</span>(<span class="fl">0</span><span class="op">:</span>T<span class="op">-</span><span class="fl">1</span>, state_probs, label<span class="op">=</span>[<span class="st">"Foggy"</span> <span class="st">"Sunny"</span> <span class="st">"Rainy"</span>], palette<span class="op">=:</span>mk_8, linewidth<span class="op">=</span><span class="fl">3</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>, left_margin<span class="op">=</span><span class="fl">5</span>mm, bottom_margin<span class="op">=</span><span class="fl">10</span>mm)</span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="fu">xlabel!</span>(<span class="st">"Time"</span>)</span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="fu">ylabel!</span>(<span class="st">"State Probability"</span>)</span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="fu">plot!</span>(p, size<span class="op">=</span>(<span class="fl">1000</span>, <span class="fl">350</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a></a>current <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>]</span>
+<span id="cb1-2"><a></a>P <span class="op">=</span> [<span class="fl">1</span><span class="op">/</span><span class="fl">2</span> <span class="fl">1</span><span class="op">/</span><span class="fl">4</span> <span class="fl">1</span><span class="op">/</span><span class="fl">4</span></span>
+<span id="cb1-3"><a></a>    <span class="fl">1</span><span class="op">/</span><span class="fl">2</span> <span class="fl">0</span> <span class="fl">1</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb1-4"><a></a>    <span class="fl">1</span><span class="op">/</span><span class="fl">4</span> <span class="fl">1</span><span class="op">/</span><span class="fl">4</span> <span class="fl">1</span><span class="op">/</span><span class="fl">2</span>]   </span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>T <span class="op">=</span> <span class="fl">21</span></span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a>state_probs <span class="op">=</span> <span class="fu">zeros</span>(T, <span class="fl">3</span>)</span>
+<span id="cb1-9"><a></a>state_probs[<span class="fl">1</span>,<span class="op">:</span>] <span class="op">=</span> current</span>
+<span id="cb1-10"><a></a><span class="cf">for</span> t<span class="op">=</span><span class="fl">1</span><span class="op">:</span>T<span class="op">-</span><span class="fl">1</span></span>
+<span id="cb1-11"><a></a>    state_probs[t<span class="op">+</span><span class="fl">1</span>, <span class="op">:</span>] <span class="op">=</span> state_probs[t<span class="op">:</span>t, <span class="op">:</span>] <span class="op">*</span> P</span>
+<span id="cb1-12"><a></a><span class="cf">end</span></span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a>p <span class="op">=</span> <span class="fu">plot</span>(<span class="fl">0</span><span class="op">:</span>T<span class="op">-</span><span class="fl">1</span>, state_probs, label<span class="op">=</span>[<span class="st">"Foggy"</span> <span class="st">"Sunny"</span> <span class="st">"Rainy"</span>], palette<span class="op">=:</span>mk_8, linewidth<span class="op">=</span><span class="fl">3</span>, tickfontsize<span class="op">=</span><span class="fl">16</span>, guidefontsize<span class="op">=</span><span class="fl">18</span>, legendfontsize<span class="op">=</span><span class="fl">16</span>, left_margin<span class="op">=</span><span class="fl">5</span>mm, bottom_margin<span class="op">=</span><span class="fl">10</span>mm)</span>
+<span id="cb1-16"><a></a><span class="fu">xlabel!</span>(<span class="st">"Time"</span>)</span>
+<span id="cb1-17"><a></a><span class="fu">ylabel!</span>(<span class="st">"State Probability"</span>)</span>
+<span id="cb1-18"><a></a><span class="fu">plot!</span>(p, size<span class="op">=</span>(<span class="fl">1000</span>, <span class="fl">350</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-markov-weather" class="cell-output cell-output-display quarto-figure quarto-figure-center" data-execution_count="4">
+<div id="fig-markov-weather" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="4">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-markov-weather-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -834,9 +834,9 @@ Figure&nbsp;1: State probabilities for the weather examples.
 <div id="cell-fig-markov-transient" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">vspan!</span>(p, [<span class="fl">0</span>, <span class="fl">4</span>], color<span class="op">=:</span>red, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"Transient Portion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource julia number-lines code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a></a><span class="fu">vspan!</span>(p, [<span class="fl">0</span>, <span class="fl">4</span>], color<span class="op">=:</span>red, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"Transient Portion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-markov-transient" class="cell-output cell-output-display quarto-figure quarto-figure-center" data-execution_count="5">
+<div id="fig-markov-transient" class="cell-output cell-output-display quarto-figure quarto-figure-center quarto-float" data-execution_count="5">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-markov-transient-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <!--?xml version="1.0" encoding="utf-8"?-->
@@ -997,8 +997,10 @@ Figure&nbsp;2: Transient portion of the weather Markov chain.
 <section id="references-1" class="slide level2">
 <h2>References</h2>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
