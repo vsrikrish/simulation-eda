@@ -398,6 +398,9 @@
 <section id="what-is-the-goal-of-model-selection" class="slide level2">
 <h2>What Is The Goal of Model Selection?</h2>
 <p><strong>Key Idea</strong>: Model selection consists of navigating the bias-variance tradeoff.</p>
+</section>
+<section id="bias-and-variance" class="slide level2">
+<h2>Bias and Variance</h2>
 <p>Model error (<em>e.g.</em> MSE) is a combination of <em>irreducible error</em>, <em>bias</em>, and <em>variance</em>.</p>
 <ul>
 <li>Bias can come from under-dispersion (too little complexity) or neglected processes;</li>
@@ -407,6 +410,9 @@
 <section id="cross-validation" class="slide level2">
 <h2>Cross-Validation</h2>
 <p>Cross-validation is the gold standard for predictive accuracy: how well does the fitted model predict out of sample data?</p>
+</section>
+<section id="cross-validation-1" class="slide level2">
+<h2>Cross-Validation</h2>
 <p>The problems:</p>
 <ul>
 <li>Leave-one-out CV can be very computationally expensive!</li>
@@ -426,8 +432,8 @@
 </section>
 <section id="model-weighting" class="slide level2">
 <h2>Model Weighting</h2>
-<p>Information Criteria can be used to get averaging weights:</p>
-<p><span class="math display">\[w\_i = \frac{\exp(-\Delta\_i/2)}{\sum\_{m=1}^M \exp(-\Delta\_m/2)}.\]</span></p>
+<p>Information Criteria can be used to get averaging weights across a model set <span class="math inline">\(\mathcal{M} = \{M_1, \ldots, M_m\}\)</span>:</p>
+<p><span class="math display">\[w_i = \frac{\exp(-\Delta_i/2)}{\sum_{m=1}^M \exp(-\Delta_m/2)}.\]</span></p>
 </section>
 <section id="bayesian-loo-cv-advanced-methods" class="slide level2">
 <h2>Bayesian LOO-CV: Advanced Methods</h2>
@@ -449,6 +455,20 @@
 <p>Parsimony (fewer model terms/components) can reduce the chance of overfitting and increased variance, all else being equal.</p>
 <p>Model simplicity has another advantange: <strong>simpler models are less computationally expensive</strong>.</p>
 </section>
+<section id="computational-budgets" class="slide level2">
+<h2>Computational Budgets</h2>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/model_runtime.png" style="width:75.0%"></p>
+<figcaption>Computational Budgets</figcaption>
+</figure>
+</div>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Helgeson2021-ok">Helgeson et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2021</a>)</span></p>
+</div>
+</div>
+</section>
 <section id="benefits-of-model-simplicity" class="slide level2">
 <h2>Benefits of Model Simplicity</h2>
 <div class="columns">
@@ -459,7 +479,15 @@
 <li>Potential increase in generalizability</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><img data-src="figures/simplicity-calibration.png" alt="Computational Complexity"> ::: {.caption} Source: <span class="citation" data-cites="Helgeson2021-ok">Helgeson et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2021</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/simplicity-calibration.png"></p>
+<figcaption>Computational Complexity</figcaption>
+</figure>
+</div>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Helgeson2021-ok">Helgeson et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2021</a>)</span></p>
+</div>
 </div>
 </div>
 </section>
@@ -497,42 +525,75 @@
 <section id="emulation-of-a-1-d-toy-model" class="slide level2">
 <h2>Emulation of a 1-D Toy Model</h2>
 <div class="center">
-<p><img data-src="figures/toy-model.png" alt="Emulation of a Toy Model"> ::: {.caption} Source: <span class="citation" data-cites="Haran2017-vz">Haran et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2017</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/toy-model.png"></p>
+<figcaption>Emulation of a Toy Model</figcaption>
+</figure>
 </div>
-<p>:::</p>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Haran2017-vz">Haran et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2017</a>)</span></p>
+</div>
+</div>
 </section>
 <section id="emulator-of-a-spatial-ice-sheet-model" class="slide level2">
 <h2>Emulator of a Spatial (Ice Sheet) Model</h2>
 <div class="center">
-<p><img data-src="figures/emulator-ice-sheet.png" alt="Emulation of a Toy Model"> ::: {.caption} Source: <span class="citation" data-cites="Haran2017-vz">Haran et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2017</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/emulator-ice-sheet.png"></p>
+<figcaption>Emulation of a Toy Model</figcaption>
+</figure>
 </div>
-<p>:::</p>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Haran2017-vz">Haran et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2017</a>)</span></p>
+</div>
+</div>
 </section>
 <section id="is-emulation-always-the-right-choice" class="slide level2">
 <h2>Is Emulation Always The Right Choice?</h2>
 <div class="center">
-<p><img data-src="figures/calibration-emulation.png" alt="Emulation of a Toy Model"> ::: {.caption} Source: <span class="citation" data-cites="Lee2020-ws">Lee et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2020</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/calibration-emulation.png"></p>
+<figcaption>Emulation of a Toy Model</figcaption>
+</figure>
 </div>
-<p>:::</p>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Lee2020-ws">Lee et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2020</a>)</span></p>
+</div>
+</div>
 </section>
 <section id="impacts-of-poor-emulation" class="slide level2">
 <h2>Impacts of “Poor” Emulation</h2>
 <p>This error can have large knock-on effects for risk analysis:</p>
 <div class="center">
-<p><img data-src="figures/calibration-ice-sheet.png" alt="Emulation of a Toy Model"> ::: {.caption} Source: <span class="citation" data-cites="Lee2020-ws">Lee et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2020</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/calibration-ice-sheet.png" style="width:55.0%"></p>
+<figcaption>Emulation of a Toy Model</figcaption>
+</figure>
 </div>
-<p>:::</p>
+<div class="caption">
+<p>Source: <span class="citation" data-cites="Lee2020-ws">Lee et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2020</a>)</span></p>
+</div>
+</div>
 </section></section>
 <section>
 <section id="key-takeaways-and-upcoming-schedule" class="title-slide slide level1 center">
 <h1>Key Takeaways and Upcoming Schedule</h1>
 
 </section>
-<section id="key-takeaways" class="slide level2">
-<h2>Key Takeaways</h2>
+<section id="key-takeaways-simplicity" class="slide level2">
+<h2>Key Takeaways (Simplicity)</h2>
 <ul>
-<li>Model simplicity can be valuable.</li>
+<li>Model simplicity can be valuable for focusing on key dynamics and uncertainty representation.</li>
 <li>Tradeoff between computational expense and fidelity of approximation.</li>
+</ul>
+</section>
+<section id="key-takeaways-emulation" class="slide level2">
+<h2>Key Takeaways (Emulation)</h2>
+<ul>
 <li>Emulation can “simplify” complex models by approximating response surfaces</li>
 <li>Emulator methods have different pros and cons which can make them more or less important.</li>
 <li>Emulator error can strongly influence resulting risk estimates.</li>
