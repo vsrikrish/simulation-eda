@@ -46,5 +46,5 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 |  | Wed, Apr 24 |  Other Information Criteria | [{{< fa sharp presentation-screen >}}](slides/lecture13-2.qmd) | | | 
 | | | ***Emulation*** | | | |
 | 14 | Mon, Apr 29 | Model Complexity and Emulation | [{{< fa sharp presentation-screen >}}](slides/lecture14-1.qmd) | | | 
-|  | Wed, May 1 | Emulation Methods | | | | 
+|  | Wed, May 1 | Emulation Wrap-Up and Class Review | [{{< fa sharp presentation-screen >}}](slides/lecture14-2.qmd) | | | 
 | 15 | Mon, May 6 | Project Presentations | | | | 

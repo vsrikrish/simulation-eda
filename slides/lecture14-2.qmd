@@ -1,0 +1,213 @@
+---
+title: "Emulation Wrap-Up and Class Review"
+subtitle: "Lecture 22"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "May 1, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: 
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        touch: false
+        controls: true
+execute:
+    freeze: auto
+---
+
+
+# Review of Last Class
+
+## Benefits of Model Simplicity
+
+:::: {.columns}
+::: {.column width=50%}
+- More thorough representation of uncertainties
+- Can focus on "important" characteristics for problem at hand
+- Potential increase in generalizability
+:::
+::: {.column width=50%}
+![Computational Complexity](figures/simplicity-calibration.png)
+
+::: {.caption}
+Source: @Helgeson2021-ok
+:::
+:::
+::::
+
+## Downsides of Model Simplicity
+
+- Potential loss of salience
+- May miss important dynamics (creating bias)
+- Parameter/dynamical compensation can result in loss of interpretability
+
+## Simplicity Tradeoffs
+
+Simple models can be epistemically and practically valuable.
+
+**But**:
+
+Need to carefully select which processes/parameters are included in the simplified representation, and at what resolution.
+
+## Approximating Complex Models
+
+**Challenge**: How do we simplify complex models to keep key dynamics but reduce computational expense?
+
+::: {.fragment .fade-in}
+Approximate (or **emulate**) the model response surface.
+
+1. Evaluate original model at an ensemble of points (design of experiment)
+2. Calibrate emulator against those points.
+3. Use emulator for UQ with MCMC or other methods.
+:::
+
+## Design of Experiments
+
+Important to strike a balance betwee:
+
+- Computational expense for model evaluation
+- Dense/expansive enough sample for training
+
+# Emulation Methods
+
+## Overview of Methods
+
+Any "simple", fast to evaluate model structure can be used for emulation:
+
+::: {.incremental}
+- Gaussian processes;
+- Artificial neural networks (or other ML methods);
+- Polynomial chaos expansions;
+- Radial basis functions;
+- Reduced-form models (think SLR semi-empirical model)
+:::
+
+## How To Choose An Emulation Method?
+
+- Dimensionality of problem
+- Interpretability vs. response surface complexity
+- Needed number of training evaluations
+- Hyperparameter tuning
+
+## Selecting Parameters For Simplification
+
+Simplification often involves down-selecting parameters of interest.
+
+This could be based on:
+
+1. Scientific relevance;
+2. Factor importance
+
+## Factor Prioritization
+
+::: {.center}
+![Modes of Sensitivity Analysis](https://uc-ebook.org/docs/html/_images/figure3_2_factor_mapping.png){width=45%}
+
+::: {.caption}
+Source: @Reed2022-fm
+:::
+:::
+
+## How to Rank Factors?
+
+**Sensitivity Analysis**:
+
+- All-At-Once vs. One-at-a-Time
+- Local vs. Global
+
+::: {.fragment .fade-in}
+Good overview with some notebooks: @Reed2022-fm
+:::
+
+## Types of Sensitivity Analysis
+
+::: {.center}
+![Types of Sensitivity Analysis](https://uc-ebook.org/docs/html/_images/figure3_1_global_versus_local.png){width=75%}
+
+::: {.caption}
+Source: @Reed2022-fm
+:::
+:::
+
+## Design of Experiments
+
+::: {.center}
+![Design of Experiments](https://uc-ebook.org/docs/html/_images/figure3_3_alternative_designs.png){width=60%}
+
+::: {.caption}
+Source: @Reed2022-fm
+:::
+:::
+
+# Class Review
+
+## Why Does Data Analysis Matter?
+
+- Scientific insight;
+- Decision-making;
+- Understanding uncertainty
+
+## The Ideal
+
+::: {.center}
+![XKCD #2400](https://imgs.xkcd.com/comics/statistics.png){width=30%}
+
+::: {.caption}
+Source: [XKCD 2400](https://xkcd.com/2400/)
+:::
+:::
+
+## Modes of Data Analysis
+
+::: {.center}
+![](figures/data_settings.png)
+:::
+
+## What Did We Do?
+
+1. Probability Models for Data
+2. Bayesian and Frequentist Statistics
+3. Monte Carlo/Bootstrap Simulation
+4. Assessing Model-Data Fit and Hypothesis Testing
+
+## What Are Some  Next Directions?
+
+- More specific models/statistical methods (time series, spatial statistics, hidden Markov models, model-based clustering, etc)
+- Machine learning and clustering
+- Dimension reduction (principal components, singular value decomposition, etc)
+
+# Key Takeaways and Upcoming Schedule
+
+## Upcoming Schedule
+
+**Friday**: HW4 due
+
+**Next Monday**: Project Presentations, email slides by Saturday.
+
+# References
+
+## References
+

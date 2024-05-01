@@ -225,7 +225,39 @@ n_samples = 10
 lower_bound = 0.0
 upper_bound = 1.0
 
-xs = lower_bound:0.001:upper_bound
+xs = lower_bound - 0.1:0.001:upper_bound + 0.1
+
+xsmall = Surrogates.sample(4, lower_bound, upper_bound, SobolSample())
+ysmall = f.(xsmall)
+surrogate_small = Kriging(xsmall, ysmall, lower_bound, upper_bound)
+xsobol = Surrogates.sample(n_samples, lower_bound, upper_bound, SobolSample())
+ysobol = f.(xsobol)
+surrogate_sobol = Kriging(xsobol, ysobol, lower_bound - 0.1, upper_bound + 0.1)
+
+p1 = plot(; xlims=(lower_bound - 0.1, upper_bound + 0.1), legendfontsize=18, guidefontsize=18, tickfontsize=16, xlabel=L"$x$", ylabel=L"$f(x)$", size=(800, 500))
+plot!(p1, xs, f.(xs), label="True Function", color=:red, linewidth=3)
+scatter!(p1, xsobol, ysobol, color=:black, markersize=7, label="10 Samples")
+plot!(p1, xs, surrogate_sobol.(xs), label = "Surrogate Function",
+    ribbon = x -> std_error_at_point(surrogate_sobol, x), color=:black, alpha=0.3, linewidth=2)
+
+p2 = plot(; xlims=(lower_bound - 0.1, upper_bound + 0.1), legendfontsize=18, guidefontsize=18, tickfontsize=16, xlabel=L"$x$", ylabel=L"$f(x)$", size=(800, 500))
+plot!(p2, xs, f.(xs), label="True Function", color=:red, linewidth=3)
+scatter!(p2, xsmall, ysmall, color=:darkorange, markersize=7, label="4 Samples")
+plot!(p2, xs, surrogate_small.(xs), label = "Surrogate Function",
+    ribbon = x -> std_error_at_point(surrogate_small, x), color=:darkorange, alpha=0.3, linewidth=2)
+
+plot(p1, p2, size=(1200, 500), left_margin=5mm, bottom_margin=5mm)
+
+```
+
+## Design of Experiments
+
+```{julia}
+#| output: true
+#| echo: true
+#| code-fold: true
+#| label: fig-surrogate-size
+#| fig-label: Surrogate modeling example with different sample sizes
 
 xrand = rand(Uniform(lower_bound, upper_bound), 10)
 xsobol = Surrogates.sample(n_samples, lower_bound, upper_bound, SobolSample())
@@ -238,7 +270,7 @@ scatter!(p, xrand, yrand, color=:blue, markersize=7, label="Monte Carlo Sample")
 scatter!(p, xsobol, ysobol, color=:black, markersize=7, label="Sobol (Low-Discrepancy) Sample")
 ```
 
-## Emulation and Different Samples
+## Design of Experiments Example
 
 ```{julia}
 #| output: true
@@ -247,14 +279,31 @@ scatter!(p, xsobol, ysobol, color=:black, markersize=7, label="Sobol (Low-Discre
 #| label: fig-surrogate-sample
 #| fig-label: Surrogate modeling example with different samples.
 
-surrogate_rand = Kriging(xrand, yrand, lower_bound, upper_bound)
-surrogate_sobol = Kriging(xsobol, ysobol, lower_bound, upper_bound)
+surrogate_rand = Kriging(xrand, yrand, lower_bound - 0.1, upper_bound + 0.1)
 
-plot!(p, xs, surrogate_rand.(xs), label = "Surrogate function",
+p1 = plot(; xlims=(lower_bound - 0.1, upper_bound + 0.1), legendfontsize=18, guidefontsize=18, tickfontsize=16, xlabel=L"$x$", ylabel=L"$f(x)$", size=(800, 500))
+plot!(p1, xs, f.(xs), label="True Function", color=:red, linewidth=3)
+scatter!(p1, xrand, yrand, color=:blue, markersize=7, label="Monte Carlo Sample")
+plot!(p1, xs, surrogate_rand.(xs), label = "Surrogate Function",
     ribbon = x -> std_error_at_point(surrogate_rand, x), color=:blue, alpha=0.3, linewidth=2)
-plot!(p, xs, surrogate_sobol.(xs), label = "Surrogate function",
+
+p2 = plot(; xlims=(lower_bound - 0.1, upper_bound + 0.1), legendfontsize=18, guidefontsize=18, tickfontsize=16, xlabel=L"$x$", ylabel=L"$f(x)$", size=(800, 500))
+plot!(p2, xs, f.(xs), label="True Function", color=:red, linewidth=3)
+
+scatter!(p2, xsobol, ysobol, color=:black, markersize=7, label="Sobol Sample")
+plot!(p2, xs, surrogate_sobol.(xs), label = "Surrogate Function",
     ribbon = x -> std_error_at_point(surrogate_sobol, x), color=:black, alpha=0.3, linewidth=2)
+
+plot(p1, p2, size=(1200, 500), left_margin=5mm, bottom_margin=5mm)
 ```
+
+## Emulating Models and Discrepancies
+
+We can emulate model response functions $f$ by defining the surrogate on a set of parameters, e.g.:
+
+$$\hat{f}(p_1, p_2, \ldots, p_n) \approx f(p_1, p_2, \ldots, p_n; q_1, q_2, \ldots, q_m)$$
+
+We can also emulate the discrepancy of the model if we are not comfortable writing down a parametric model.
 
 ## Is Emulation Always The Right Choice?
 
