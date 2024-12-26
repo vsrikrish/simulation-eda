@@ -11,17 +11,22 @@ instructor:
     Use the class's Ed Discussion board for any class-related queries.
   appointment_url: https://book.vimcal.com/p/viveks/30-minutes
 
+TA:
+  name: Gabriela Ackermann Logan
+  email: ga345@cornell.edu
+  office: "319 Riley-Robb Hall"
+
 course:
   number: "BEE 4850/5850"
   title: "Environmental Data Analysis and Simulation"
-  semester: "Spring 2024"
+  semester: "Spring 2025"
   days: "MW"
   time: "11:40-12:55pm"
   location: "160 Riley-Robb Hall"
   github: "https://www.github.com/vsrikrish/simulation-data-analysis"
   url: "https://viveks.me/simulation-data-analysis"
-  copyright_year: "2024"
-  office_hours: "MW 10:00-11:00am, M 1:00-2:00pm"
+  copyright_year: "2025"
+  office_hours: "MW 1:00-2:00pm"
 
 university:
   name: Cornell University

@@ -58,62 +58,12 @@ website:
           - href: policies/homework.qmd
             text: Homework Policies
       - section: "Weeks"
-        contents:
-          - href: weeks/week01.qmd
-            text: Week 1
-          - href: weeks/week02.qmd
-            text: Week 2
-          - href: weeks/week03.qmd
-            text: Week 3
-          - href: weeks/week04.qmd
-            text: Week 4
-          - href: weeks/week05.qmd
-            text: Week 5
-          - href: weeks/week06.qmd
-            text: Week 6
-          - href: weeks/week07.qmd
-            text: Week 7
-          - href: weeks/week08.qmd
-            text: Week 8
-          - href: weeks/week09.qmd
-            text: Week 9
-          - href: weeks/week10.qmd
-            text: Week 10
-          - href: weeks/week11.qmd
-            text: Week 11
-          - href: weeks/week12.qmd
-            text: Week 12
-          - href: weeks/week13.qmd
-            text: Week 13
-          - href: weeks/week14.qmd
-            text: Week 14
       - section: homework.qmd
         text: "Homework"
         contents:
           - href: rubrics/standard.qmd
             text: Standard Rubric
-          - href: assignments/hw01/hw01.qmd
-            text: Homework 1
-          - href: assignments/hw02/hw02.qmd
-            text: Homework 2
-          - href: assignments/hw03/hw03.qmd
-            text: Homework 3
-          - href: assignments/hw04/hw04.qmd
-            text: Homework 4
       - section: exercises.qmd
-        contents:
-          - href: exercises/ex01/ex01.qmd
-            text: Exercise 1
-          - href: exercises/ex03/ex03.qmd
-            text: Exercise 3
-          - href: exercises/ex04/ex04.qmd
-            text: Exercise 4
-          - href: exercises/ex05/ex05.qmd
-            text: Exercise 5
-          - href: exercises/ex07/ex07.qmd
-            text: Exercise 7
-          - href: exercises/ex08/ex08.qmd
-            text: Exercise 8
       - project.qmd
       - lit_review.qmd
       - section: "Julia Tutorials"
@@ -142,7 +92,4 @@ format:
 
 bibliography: references.bib
 csl: _assets/references/american-geophysical-union.csl
-execute:
-  freeze: auto
-jupyter: julia-1.9
 

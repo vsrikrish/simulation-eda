@@ -1,6 +1,7 @@
 ---
 title: "Homework Assignments"
 tbl-colwidths: [20, 5, 10]
+engine: julia
 ---
 
 This page contains information about and a schedule of the homework assignments for the semester.
@@ -21,8 +22,9 @@ The standard rubric for homework problems is available [here](rubrics/standard.q
 
 | Assignment | Instructions | Due Date | Solutions |
 |:----------:|:------------:|:------:|:---------|
-| HW1 | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.qmd) | Feb 02, 2024 | [{{< fa sharp key-skeleton >}}](solutions/hw01/hw01.qmd) |
-| HW2 | [{{< fa sharp pen-field >}}](assignments/hw02/hw02.qmd) | Feb 23, 2024 | [{{< fa sharp key-skeleton >}}](solutions/hw02/hw02.qmd) |
-| HW3 | [{{< fa sharp pen-field >}}](assignments/hw03/hw03.qmd) | Mar 22, 2024 | [{{< fa sharp key-skeleton >}}](solutions/hw03/hw03.qmd) |
-| HW4 | [{{< fa sharp pen-field >}}](assignments/hw04/hw04.qmd) | May 04, 2024 |  |
-
+| HW1 | [{{< fa sharp pen-field >}}](assignments/hw01/hw01.qmd) | Feb 07, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"}|
+| HW2 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Feb 21, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
+| HW3 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Mar 07, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
+| HW4 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Mar 21, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
+| HW5 | [{{< fa sharp pen-field >}}]({style="color:grey"} | Apr 11, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
+| HW6 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Apr 25, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |

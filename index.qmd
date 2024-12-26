@@ -4,6 +4,15 @@ title: "{{< var course.number >}}: {{< var course.title >}}"
 
 This is the course website for the {{< var course.semester >}} edition of {{< var course.number >}}, {{< var course.title >}}, taught at [{{< var university.name >}}]({{< var university.url >}}) by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}).
 
+## Course Description
+
+This class teaches data analysis with an emphasis on conceptual models for scientific insights. In particular, we will:
+
+* learn how to construct generative probability models for common environmental datasets;
+* develop a toolkit for model calibration, uncertainty quantification, and simulation;
+* use cross-validation and predictive information criteria to evaluate over-fitting and test hypotheses;
+* identify potential confounds and explore implications for data gathering and experimental design.
+
 ## Course Information
 
 -   Details on the class and course policies are provided in the [syllabus](syllabus.html).

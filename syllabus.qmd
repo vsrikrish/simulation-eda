@@ -1,4 +1,5 @@
 ---
+engine: julia
 format:
   html:
     toc-depth: 3
@@ -30,7 +31,7 @@ This is a 3 credit course offered as an elective.
 
 :::: {.columns .course-details}
 
-::: {.column width="50%"}
+::: {.column width="33%"}
 ### Instructor
 
 - {{< fa sharp user title="Name" >}} [[{{< var instructor.name_no_title >}}]({{< var instructor.url >}})]{.ms-1}
@@ -38,15 +39,14 @@ This is a 3 credit course offered as an elective.
 - {{< fa sharp building title="Office" >}} [{{< var instructor.office >}}]{.ms-2}
 :::
 
-<!-- ::: {.column width="30%"}
 ### TA
 
-- {{< fa sharp user title="Name" >}} [TBD]{.ms-1}
-- {{< fa sharp envelope title="Email" >}} [TBD]{.ms-1}
-- {{< fa sharp building title="Office" >}} [TBD]{.ms-2}
+- {{< fa sharp user title="Name" >}} [{{< var TA.name >}}]{.ms-1}
+- {{< fa sharp envelope title="Email" >}} [[{{< var TA.email >}}](mailto:{{< var TA.email >}})]{.ms-1}
+- {{< fa sharp building title="Office" >}} [{{< var TA.office >}}]{.ms-2}
 ::::
  -->
-::: {.column width="50%"}
+::: {.column width="33%"}
 ### Meetings
 
 - {{< fa sharp calendar title="Class Days" >}} {{< var course.days >}}
@@ -59,7 +59,7 @@ This is a 3 credit course offered as an elective.
 
 ### Course Description
 
-Simulations from numerical and statistical models are a key tool used to quantify and represent our understanding of many different environmental systems, including but not limited to the climate, sea levels, air pollution, and the electric power system. Data analysis of environmental observations and model simulations is an integral part of developing and evaluating models used to 1) test our assumptions about environmental system dynamics; 2) develop new insights into environmental processes; and 3) project future environmental conditions and outcomes. This course will provide an overview of the use of simulation model development and evaluation in environmental data analysis. The goal is to provide students with a framework and an initial toolkit of methods that they can use to formulate and update hypotheses about data and models. Students will actively analyze and use real data from a variety of environmental systems. In particular, over the course of the semester, we will:
+Simulations from numerical and statistical models are a key tool used to quantify and represent our understanding of many different environmental systems, including but not limited to the climate, sea levels, air pollution, and the electric power system. Data analysis of environmental observations and model simulations is an integral part of developing and evaluating models used to 1) test our assumptions about environmental system dynamics; 2) develop new insights into environmental processes; and 3) project future environmental conditions and outcomes. This course will provide an overview of the use of generative probability models to understand data and examine hypotheses about data-generating processes. The goal is to provide students with a framework and an initial toolkit of methods for data analysis and simulation. Students will actively analyze and use real data from a variety of environmental systems. In particular, over the course of the semester, we will:
 
 * conduct exploratory analyses of environmental datasets;
 * discuss best practices for and complexities of data visualization;
@@ -86,7 +86,6 @@ The following courses/material would be ideal preparation:
 - One course in programming (*e.g.* CS 1110, 1112 or ENGRD/CEE 3200)
 - One course in probability or statistics (ENGRD 2700, CEE 3040, or equivalent) 
 
-
 In the absence of one or more these prerequisites, you can seek the permission of instructor.
 
 ::: {.callout-tip}
@@ -109,7 +108,7 @@ If your programming or statistics skills are a little rusty, don't worry! We wil
 
 ## Course Meetings
 
-This course meets MWF from 11:40--12:55 in 160 Riley-Robb Hall. In addition to the course meetings (a total of 42 lectures, 50 minutes each), the final project will be due during the university finals period. In addition to the work during the semester, students can expect to devote, on average, 6 hours of effort during the exam period.
+This course meets MW from 11:40--12:55 in 160 Riley-Robb Hall. In addition to the course meetings (a total of 42 lectures, 50 minutes each), the final project will be due during the university finals period. Students can expect to devote, on average, 6 hours of effort during the exam period.
 
 ## Course Philosophy and Expectations
 
@@ -200,7 +199,7 @@ Please stay home if you're feeling sick! This is beneficial for both for your ow
 
 ### Office Hours
 
-Office hours will be held in 318 Riley-Robb before class on MW, from 10-11AM, and after class on M, from 1-2PM, in 318 Riley-Robb Hall. Some time will be available after class for brief questions, but this is limited. If these times do not work for you, or you need some additional time outside of office hours, please reach out to Prof. Srikrishnan about scheduling a meeting. Depending on schedules, these requests may not be accepted on short notice (*e.g.* homework is due on Friday and you reach out late on Thursday), but with several days notice we should be able to find a time that will work.
+Office hours will be held in 318 Riley-Robb after class (1-2pm) on MW. If these times do not work for you, or you need some additional time outside of office hours, please reach out to Prof. Srikrishnan about scheduling a meeting. Depending on schedules, these requests may not be accepted on short notice (*e.g.* homework is due on Friday and you reach out late on Thursday), but with several days notice we should be able to find a time that will work.
 
 Office hours are intended to help all students who attend. This time is limited, and is best spent on issues that are relevant to as many students as possible. While we will do our best to answer individual questions, students asking us to verify or debug homework solutions will have the lowest priority (but please do ask about how to verify or debug your own solutions!). However, we are happy to discuss conceptual approaches to solving homework problems, which may help to reveal bugs.
 
@@ -208,7 +207,7 @@ Space at office hours can be limited (we may shift to the conference room in 316
 
 ### Mask Policies
 
-**Masks are encouraged but not required in the classroom**, per [university policy](https://covid.cornell.edu/updates/20220727-students-fall-semester.cfm). However, the University *strongly encourages* compliance with requests to mask from students, faculty, and staff who are concerned about the risk of infection. Please be respectful of these concerns and requests if you cannot wear a mask.
+Please stay home and rest if you have symptoms of COVID-19 or any other respiratory illness. No masking will be required, but please be respectful of others who may wear masks or take other precautions to avoid illness. This policy may change if there is another outbreak of COVID-19 (or other illness), but will be kept consistent with broader Cornell mask policies.
 
 ### Academic Integrity
 
@@ -297,20 +296,18 @@ The following grading scale will be used to convert the numerical weighted avera
 
 | Grade | Range |
 |:---:|:--------|
-| A | 94--100 |
-| A- | 90--94 |
+| A | 93--100 |
+| A- | 90--93 |
 | B+ | 87--90 |
-| B | 84--87 |
-| B- | 80--84 |
+| B | 83--87 |
+| B- | 80--83 |
 | C+ | 77--80 |
-| C | 74--77 |
-| C- | 70--74 |
+| C | 73--77 |
+| C- | 70--73 |
 | D+ | 67--70 |
-| D | 64--67 |
-| D- | 61--64 |
-| F | < 61 |
-
-
+| D | 63--67 |
+| D- | 60--63 |
+| F | < 60 |
 
 
 ### Exercises
@@ -323,7 +320,7 @@ Readings will be assigned for discussion throughout the semester. Students are e
 
 ### Literature Critique
 
-Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices. Students enrolled in BEE 5850 will also write a referee report, as if they were a peer reviewer. Students will give an in-class presentation of their paper during one class period. Other students will be asked to submit evaluations of the presentations.
+Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices. 
 
 ### Homework Assignments
 

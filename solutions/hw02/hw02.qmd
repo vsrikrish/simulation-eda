@@ -6,7 +6,7 @@ format:
         warning: true
         error: true
         fig-format: svg
-jupyter: julia-1.9
+engine: julia
 freeze: false
 ---
 

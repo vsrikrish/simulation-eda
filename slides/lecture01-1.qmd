@@ -30,9 +30,9 @@ format:
         chalkboard:
             theme: whiteboard
             buttons: true
-
-execute:
-    freeze: auto
+        mermaid: 
+            theme: dark
+engine: julia
 ---
 
 # Course Overview
@@ -67,11 +67,17 @@ Take a moment, write it down, and we'll share!
 ## The Ideal
 
 ::: {.center}
-![]{https://imgs.xkcd.com/comics/statistics.png}
+![XKCD 2400](https://imgs.xkcd.com/comics/statistics.png){width=30%}
 :::
 ::: {.caption}
 Source: [XKCD 2400](https://xkcd.com/2400/)
 :::
+
+## But in Actuality
+
+- Except in the most controlled experiments, **data are noisy**;
+- The **causes** of the data cannot be extracted from the data alone;
+- The **reasons** for statistical analyses are not found in the data themselves.
 
 ## Unique/Challenging Features Of Data
 
@@ -80,7 +86,7 @@ There are many features of environmental (and biological!) data which make data 
 ## Extreme Events
 
 ::: {.center}
-![](figures/dossgollin-keller-2023_extreme.jpeg)
+![Extreme Events](figures/dossgollin-keller-2023_extreme.jpeg)
 :::
 ::: {.caption}
 Source: @Doss-Gollin2023-kl
@@ -89,7 +95,7 @@ Source: @Doss-Gollin2023-kl
 ## Extreme Events
 
 ::: {.center}
-![](https://imgs.xkcd.com/comics/launch_risk.png){width=25%}
+![XKCD 2107](https://imgs.xkcd.com/comics/launch_risk.png){width=25%}
 :::
 ::: {.caption}
 Source: [XKCD 2107](https://xkcd.com/2107/)
@@ -99,8 +105,8 @@ Source: [XKCD 2107](https://xkcd.com/2107/)
 
 ::: {.center}
 ::: {.layout-ncol=2}
-![](figures/errickson-2021_correlations.png){width=30%}
-![](figures/errickson-2021_projections.png){width=60%}
+![Correlations](figures/errickson-2021_correlations.png){width=30%}
+![Projections](figures/errickson-2021_projections.png){width=60%}
 :::
 ::: {.caption}
 Source: @Errickson2021-kr
@@ -110,16 +116,16 @@ Source: @Errickson2021-kr
 ## Non-Stationarity
 
 ::: {.center}
-![](figures/fagnant-etal-2020_prcip.png){width=90%}
+![Non-Stationary Trends](figures/fagnant-etal-2020_prcip.png){width=90%}
 :::
 ::: {.caption}
 Source: @Fagnant2020-xu
 :::
 
-## Forcing & Structural Uncertainty
+## Forcing & Model Uncertainty
 
 ::: {.center}
-![](figures/dossgollin-keller-2023_slr.jpeg)
+![Different Uncertainties for SLR](figures/dossgollin-keller-2023_slr.jpeg)
 :::
 ::: {.caption}
 Source: @Doss-Gollin2023-kl
@@ -128,42 +134,37 @@ Source: @Doss-Gollin2023-kl
 ## Deep Uncertainty
 
 ::: {.center}
-![](figures/srikrishnan-etal-2022_co2.png)
+![Deep Uncertainty for Future Climate Projections](figures/srikrishnan-etal-2022_co2.png)
 :::
 ::: {.caption}
 Source: @Srikrishnan2022-yq
 :::
 
-## Modes of Data Analysis
-
-::: {.center}
-![](figures/data_settings.png)
-:::
-
-
-## Misspecification Can Bias Inferences...
+## Causation Is Not Association
 
 :::: {.columns}
-::: {.column width=60%}
+::: {.column width=50%}
+- We've all heard "correlation (**association**) does not imply causation"
+- But confounds/noise can mean **causation does not imply association**
+:::
+::: {.column width=50%}
+
 ::: {.center}
-![](figures/ruckert-etal-2018_inference.png){width=60%}
+![Correlation not Causation Meme](memes/causation_not_correlation.jpg){width=60%}
 :::
-:::
-::: {.column width=40%}
 ::: {.caption}
-Source: @Ruckert2017-qg
+Source: Richard McElreath
 :::
+
 :::
 ::::
 
-## ...And Projections
+## Modes of Data Analysis
 
 ::: {.center}
-![](figures/ruckert-etal-2018_projections.png){width=50%}
+![Modes of Data Analysis](figures/data_settings.png)
 :::
-::: {.caption}
-Source: @Ruckert2017-qg
-:::
+
 
 ## Some Problems With The "Standard" Data Analysis Toolkit
 
@@ -176,25 +177,44 @@ Source: @Ruckert2017-qg
 **Important**: "Big" data doesn't solve the problem!
 :::
 
-## Advantages of Model-Based Data Analysis
+
+## Model-Based Data Analysis
 
 We can:
 
-- Examine logical implications of model assumptions.
+- Examine logical implications of model assumptions (**including interventions/out-of-sample generation**).
 - Assess evidence for multiple hypotheses by generating simulated data.
 - Identify opportunities to design future experiments or observations to distinguish between competing hypotheses.
 
-## Workflow/Course Organization
 
-::: {.center}
-![](figures/course_overview.png){width=70%}
-:::
+## Course Organization
+
+```{mermaid}
+timeline
+      Introduction (Weeks 1-2): Overview
+                  : Modeling Data-Generating Processes
+                  : Hypothesis Testing and Scientific Inference
+      Probability Fundamentals (Weeks 3-5): Prob/Stats "Review"
+                              : Model Fitting
+                              : Bayesian Statistics
+      Simulation Methods (Weeks 6-7): Monte Carlo
+                                    : Bootstrap
+      Model Evaluation (Weeks 8-9): Cross-Validation
+                      : Model Selection
+      Useful Models (Weeks 10-12): Extreme Values
+                                 : Missing Data
+                                 : Latent Variable
+      Experimental Design (Weeks 13-14): Confounds
+                                       : Controls and Designing Experiments
+
+```
 
 # Course Policies
 
 ## Background Knowledge: Computing
 
 - Basics (at the level of CS 111x)
+- No specific language requirement.
 - Some extra work/effort may be needed if you haven't coded in a while.
 - May need some additional familiarity with statistical packages (and "light" optimization)
 
@@ -211,11 +231,11 @@ We can:
 
 | Assessment | % of Grade |
 |:-----------|-----------:|
-| Exercises | 10% |
+| Participation | 10% |
 | Readings | 10% |
 | Literature Critique | 15% |
-| Homework Assignments | 30% |
-| Term Project | 35% |
+| Homework Assignments | 40% |
+| Term Project | 25% |
 
 
 ## Overall Guidelines
@@ -226,25 +246,11 @@ We can:
 - Standard rubric available on website
 - **Always cite external references**
 
-## Exercises
-
-- (Mostly) weekly problem sets
-- Focus on conceptual material/small data analysis exercises
-- Will drop one.
-
 ## Readings
 
 - Several readings assigned for discussion throughout the semester.
-- One student responsible for leading the discussion (Ed/in class)
-
-## Literature Critique
-
-- Select a peer-reviewed journal article which analyzes data;
-- Short discussion paper analyzing:
-    - Scientific hypotheses;
-    - Modeling and statistical choices
-- In-class presentation before spring break
-- **5850 Students**: Write a referee report
+- Annotation assignments on Canvas: by end of day on a Monday.
+- One student responsible for leading the discussion on that Wednesday.
 
 ## Homework Assignments
 
@@ -261,7 +267,6 @@ We can:
 - Several deliverables throughout the semester
 - Final in-class presentation and report
 
-
 ## Attendance
 
 Not required, but students tend to do better when they're actively engaged in class.
@@ -269,7 +274,7 @@ Not required, but students tend to do better when they're actively engaged in cl
 
 ## Office Hours
 
-- MW 10-11 AM, 318 Riley-Robb
+- MW 1-2 PM, 318 Riley-Robb
 - Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.
 
 ## Accomodations
@@ -306,6 +311,10 @@ ChatGPT can be useful for certain tasks (*e.g.* understanding code errors), but 
 
 Just think about it as an unreliable Google search.
 :::
+
+## ChatGPT: The Stochastic Parrot
+
+Must specifically call out where you used ChatGPT in your work (beyond simple referencing).
 
 # Class Tools
 
@@ -355,8 +364,6 @@ Better: Use Ed Discussion and reserve email for matters that are particular urge
 ## Assessments
 
 **Homework 1** available; due *next* Friday.
-
-**Exercise 1** due *this* Friday.
 
 # References
 

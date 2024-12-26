@@ -4,7 +4,7 @@ format:
     html:        
         warning: true
         error: true
-jupyter: julia-1.9
+engine: julia
 freeze: false
 ---
 
