@@ -9,4 +9,4 @@ title: "Week 1 Information"
 ## Homework
 
 - If you don't have a GitHub account, make sure you set one up.
-- [Homework 1](../assignments/hw01/hw01.qmd) assigned, due 2/7/25. Check Ed Discussion for the link to create your repository. You will be prompted to link your GitHub account to the class roster, which will not be required once you do it once.
+- [Homework 1](../hw/hw01/hw01.qmd) assigned, due 2/7/25. Check Ed Discussion for the link to create your repository. You will be prompted to link your GitHub account to the class roster, which will not be required once you do it once.
