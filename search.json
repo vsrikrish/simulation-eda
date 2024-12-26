@@ -413,6 +413,13 @@
     "text": "Model-Based Data Analysis\nWe can (transparently):\n\nExamine logical implications of model assumptions (including interventions/out-of-sample generation).\nAssess evidence for multiple hypotheses by generating simulated data.\nIdentify opportunities to design future experiments or observations to distinguish between competing hypotheses."
   },
   {
+    "objectID": "slides/lecture01-1-intro.html#model-based-data-analysis-1",
+    "href": "slides/lecture01-1-intro.html#model-based-data-analysis-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Model-Based Data Analysis",
+    "text": "Model-Based Data Analysis\n\n\nModels are how we assess evidence for theories.\n\n\n\n\n\nRock Paper Scissors meme"
+  },
+  {
     "objectID": "slides/lecture01-1-intro.html#course-organization",
     "href": "slides/lecture01-1-intro.html#course-organization",
     "title": "Welcome to BEE 4850/5850!",
