@@ -1,9 +1,0 @@
----
-title: "Literature Review Instructions"
----
-
-For the literature review, you should pick a paper of your choice involving some aspect of data analysis and critically evaluate its statistical and scientific choices. The deliverables are:
-
-1. A short (10 minute) presentation, to be given in-class on 3/27 (submit this on Canvas on 3/28, **no later than 9pm**). Your presentation should *concisely* describe the paper's key question, its scientific hypothesis, a brief overview of how those hypotheses were represented by the data and/or model, and a discussion of whether these choices supported the conclusions that the paper drew about the question. Note that a 10 minute presentation means that you should aim for no more than 5-6 slides (not including titles, transitions, or wrap-ups/references).
-2. A short written evaluation (2-3 pages, not including figures or references) expanding on the topics in the presentation, to be submitted on 3/29.
-3. **For students in 5850**: Write a peer review for the paper, to be submitted on 5/6. This will require a more in-depth summary and critique of the scientific choices as well as the interpretability and utility of the figures. Try to identify places where the paper fails to make its central argument (or makes it well!) or where insufficient detail is provided for the claims that the paper is making and provide constructive ideas for what might improve the paper's claims or exposition.

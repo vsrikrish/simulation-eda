@@ -11,41 +11,35 @@ Instructions to save the slides as PDFs can be found [here](https://quarto.org/d
 
 Readings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas. 
 
-| Week | Date | Topic | Slides | Reading | Exercises | Homework | 
+| Week | Date | Topic | Slides | Reading | Homework | 
 :-----:|:---------|:---------|:---------:|:------:|:--:|:---:|
-| | | ***Data Analysis and Scientific Inference*** | | | |
-| 1 | 1/22 | Class Introduction |
-| 2 | 1/27 | Garden of Forking Data |
-|   | 1/29 | Generative Probability Models |
-| | | ***Probability and Statistical Fundamentals*** | | | |
-| 3 | 2/3  | Probability Models for Data  |
-|   | 2/5  | Spatial and Temporal Models |
-| 4 | 2/10 | Measurement and Model-Data Discrepancy |
-|   | 2/12 | Model Calibration and Maximum Likelihood |
-| 5 | 2/17 | ***February Break *** |
-|   | 2/19 | Bayesian Statistics |
-| 6 | 2/24 | Extreme Value Models |
-|   | 2/26 | Non-Stationary Extremes  |
-| | | ***Simulation Methods*** | | | |
-| 7 | 3/3  | Monte Carlo Simulation |
-|   | 3/5  | Uncertainty Propagation and Predictive Uncertainty |
-| 8 | 3/10 | Sampling Distributions and The Bootstrap |
-|   | 3/12 | The Bootstrap, cont'd |
-| | | ***Model Evaluation and Selection*** | | | |
-| 9 | 3/17 | Overfitting and Cross-Validation |
-|   | 3/19 | Model Selection and Averaging |
-| 10 | 3/24 | Modeling Tide Gauge Extremes  |
-|    | 3/26 | Comparing Different Sea-Level Rise Models | 
+| [1](weeks/week01.qmd) | 1/22 | Class Introduction | [{{< fa sharp presentation-screen >}}](slides/lecture01-1-intro.qmd) | | [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) |
+| [2](weeks/week02.qmd) | 1/27 | Null Hypothesis Testing and Statistical Significance | | Lloyd & Oreskes ([2018](https://agupubs-onlinelibrary-wiley-com.proxy.library.cornell.edu/doi/10.1002/2017EF000665)) | |
+|   | 1/29 | Generative Probability Models | | | |
+| 3 | 2/3  |   | | | |
+|   | 2/5  |  | | | |
+| 4 | 2/10 | | | | |
+|   | 2/12 |  | | | |
+| 5 | 2/17 | ***February Break*** | | | |
+|   | 2/19 |  | | | |
+| 6 | 2/24 |  | | | |
+|   | 2/26 |  | | | |
+| 7 | 3/3  | | | | |
+|   | 3/5  |  | | | |
+| 8 | 3/10 |  | | | |
+|   | 3/12 |  | | | |
+| 9 | 3/17 | | | | |
+|   | 3/19 |  | | | |
+| 10 | 3/24 |  | | | |
+|    | 3/26 |  | | | | 
 |    | 3/31 | ***Spring Break*** | 
 |    | 4/2  | ***Spring Break*** |
-| | | ***Missing and Latent Data*** | | | |
-| 11 | 4/7  | Missing Data |
-|    | 4/9 | E-M Algorithm |
+| 11 | 4/7  |  | | | |
+|    | 4/9 | | | | |
 | 12 | 4/14 |  | 
 |    | 4/16 | |
 | 13 | 4/21 | |
 |    | 4/23 | |
-| | | ***Confounds and Experimental Design*** | | | |
-| 14 | 4/28 | Design of Experiments and Value of Information |
-|    | 4/30 | Identifying Hypothesis-Distinguishing Observations |
-| 15 | 5/5  | Project Presentations
+| 14 | 4/28 |  | | | |
+|    | 4/30 |  | | | |
+| 15 | 5/5  | | | | |

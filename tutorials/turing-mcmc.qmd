@@ -3,6 +3,7 @@ title: "Markov Chain Monte Carlo With Turing"
 format:
     html: default
     ipynb: default
+engine: julia
 ---
 
 ```{julia}

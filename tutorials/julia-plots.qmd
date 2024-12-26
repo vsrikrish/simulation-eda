@@ -3,6 +3,7 @@ title: "Tutorial: Making Plots with Julia"
 execute:
     error: true
     warning: true
+engine: julia
 ---
 
 

@@ -3,6 +3,7 @@ title: "Tutorial: Julia Basics"
 execute:
     error: true
     warning: true
+engine: julia
 ---
 
 ## Overview

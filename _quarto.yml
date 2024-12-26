@@ -5,8 +5,8 @@ project:
 
 website:
   page-navigation: true
-  title: "BEE 4850 - Spring 2024"
-  description: "Homepage for BEE 4850/5850, Environmental Data Analysis and Simulation, at Cornell University, Spring 2024."
+  title: "BEE 4850 - Spring 2025"
+  description: "Homepage for BEE 4850/5850, Environmental Data Analysis and Simulation, at Cornell University, Spring 2025."
   site-url: "https://viveks.me/simulation-data-analysis"
 
   repo-url: https://github.com/vsrikrish/simulation-data-analysis
@@ -55,17 +55,23 @@ website:
             text: Syllabus
           - href: schedule.qmd
             text: Class Schedule
-          - href: policies/homework.qmd
-            text: Homework Policies
       - section: "Weeks"
+        contents:
+          - href: weeks/week01.qmd
+            text: "Week 1"
+          - href: weeks/week02.qmd
+            text: "Week 2"
       - section: homework.qmd
         text: "Homework"
         contents:
+          - href: policies/homework.qmd
+            text: "Homework Policies"
           - href: rubrics/standard.qmd
-            text: Standard Rubric
-      - section: exercises.qmd
+            text: "Standard Rubric"
+          - href: hw/hw01/hw01.qmd
+            text: "Homework 01"
       - project.qmd
-      - lit_review.qmd
+      - lit_critique.qmd
       - section: "Julia Tutorials"
         contents:
           - href: tutorials/julia-basics.qmd
