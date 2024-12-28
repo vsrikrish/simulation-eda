@@ -384,7 +384,7 @@
     "href": "slides/lecture02-1-nhst.html#computing-the-test-statistic",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "Computing the Test Statistic",
-    "text": "Computing the Test Statistic\nFor this type of null hypothesis test, our test statistic is the slope of the OLS fit \\[\\hat{a} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{(x_i - \\bar{x})^2}.\\]\n\nAfter some algebra, assuming the null \\(a = 0\\), the sampling distribution of the statistic is \\[\\frac{\\hat{a}}{SE_{\\hat{a}}} \\sim t_{n-2}.\\]"
+    "text": "Computing the Test Statistic\nFor this type of null hypothesis test, our test statistic is the slope of the OLS fit \\[\\hat{a} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{(x_i - \\bar{x})^2}.\\]\n\nAssuming the null, the sampling distribution of the statistic is \\[\\frac{\\hat{a}}{SE_{\\hat{a}}} \\sim t_{n-2}.\\]"
   },
   {
     "objectID": "slides/lecture02-1-nhst.html#statistical-significance",
