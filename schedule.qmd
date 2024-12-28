@@ -14,7 +14,7 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 | Week | Date | Topic | Slides | Reading | Homework | 
 :-----:|:---------|:---------|:---------:|:------:|:--:|:---:|
 | [1](weeks/week01.qmd) | 1/22 | Class Introduction | [{{< fa sharp presentation-screen >}}](slides/lecture01-1-intro.qmd) | | [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) |
-| [2](weeks/week02.qmd) | 1/27 | Null Hypothesis Testing and Statistical Significance | | Lloyd & Oreskes ([2018](https://agupubs-onlinelibrary-wiley-com.proxy.library.cornell.edu/doi/10.1002/2017EF000665)) | |
+| [2](weeks/week02.qmd) | 1/27 | Null Hypothesis Testing and Statistical Significance | [{{< fa sharp presentation-screen >}}](slides/lecture02-1-nhst.qmd) | Lloyd & Oreskes ([2018](https://agupubs-onlinelibrary-wiley-com.proxy.library.cornell.edu/doi/10.1002/2017EF000665)) | |
 |   | 1/29 | Generative Probability Models | | | |
 | 3 | 2/3  |   | | | |
 |   | 2/5  |  | | | |

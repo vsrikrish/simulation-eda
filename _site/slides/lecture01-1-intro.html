@@ -372,16 +372,25 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </div>
 </div></div>
 </section>
-<section id="modes-of-data-analysis" class="slide level2">
-<h2>Modes of Data Analysis</h2>
+<section id="description-and-inference-are-connected" class="slide level2">
+<h2>Description and Inference are Connected</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Except for superficial tasks:</p>
+<ul>
+<li>Knowing what is important to describe requires a model;</li>
+<li>Understanding how the data might differ from the population requires a model.</li>
+</ul>
+</div><div class="column" style="width:50%;">
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/data_settings.png"></p>
-<figcaption>Modes of Data Analysis</figcaption>
+<p><img data-src="memes/spidermen-description-inference.jpg" style="width:100.0%"></p>
+<figcaption>Spidermen Meme</figcaption>
 </figure>
 </div>
 </div>
+</div></div>
 </section>
 <section id="some-problems-with-the-standard-data-analysis-toolkit" class="slide level2">
 <h2>Some Problems With The “Standard” Data Analysis Toolkit</h2>
@@ -389,20 +398,56 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li class="fragment">Statistical assumptions may not be valid;</li>
 <li class="fragment">“Null” vs “Alternative” hypotheses and tests may be chosen for computational convenience, not scientific relevance.</li>
+<li class="fragment">Many different <strong>substantive</strong> models can imply the same <strong>statistical</strong> model.</li>
 </ul>
 </div>
 <div class="fragment fade-in">
 <p><strong>Important</strong>: “Big” data doesn’t solve the problem!</p>
 </div>
 </section>
+<section id="my-philosophical-position" class="slide level2">
+<h2>My Philosophical Position</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Probability theory helps us deduce logical implications of theories <strong>conditional on our assumptions</strong></li>
+<li>Cannot use an “objective” procedure to avoid <strong>subjective responsibility</strong></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="memes/peter_parker_method_assumptions.png" style="width:90.0%"></p>
+<figcaption>Bart Statistics Meme</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
 <section id="model-based-data-analysis" class="slide level2">
 <h2>Model-Based Data Analysis</h2>
-<p>We can:</p>
+<p>We can (<strong>transparently</strong>):</p>
 <ul>
 <li>Examine logical implications of model assumptions (<strong>including interventions/out-of-sample generation</strong>).</li>
 <li>Assess evidence for multiple hypotheses by generating simulated data.</li>
 <li>Identify opportunities to design future experiments or observations to distinguish between competing hypotheses.</li>
 </ul>
+</section>
+<section id="model-based-data-analysis-1" class="slide level2">
+<h2>Model-Based Data Analysis</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Models are how we assess evidence for theories.</p>
+</div><div class="column" style="width:50%;">
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="memes/rock-paper-theory-model.jpg" style="width:100.0%"></p>
+<figcaption>Rock Paper Scissors meme</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
 </section>
 <section id="course-organization" class="slide level2">
 <h2>Course Organization</h2>
@@ -422,10 +467,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
                                     : Bootstrap
       Model Evaluation (Weeks 8-9): Cross-Validation
                       : Model Selection
-      Useful Models (Weeks 10-12): Extreme Values
+      Useful Models (Weeks 10-13): Extreme Values
                                  : Missing Data
-                                 : Latent Variable
-      Experimental Design (Weeks 13-14): Confounds
+                                 : Mixture Models
+                                 : Gaussian Processes
+      Experimental Design (Weeks 14): Confounds
                                        : Controls and Designing Experiments
 
 </pre>
@@ -502,12 +548,22 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <li><strong>Always cite external references</strong></li>
 </ul>
 </section>
+<section id="literature-critique" class="slide level2">
+<h2>Literature Critique</h2>
+<ul>
+<li>Select a paper which involves some type of statistical or data analysis</li>
+<li>Critique choices: do they support the scientific conclusions?</li>
+<li>Submit a 2 page writeup at the end of the semester</li>
+<li>If you’re unsure where to look for a paper, talk to Prof.&nbsp;Srikrishnan and we can find options</li>
+</ul>
+</section>
 <section id="readings" class="slide level2">
 <h2>Readings</h2>
 <ul>
 <li>Several readings assigned for discussion throughout the semester.</li>
 <li>Annotation assignments on Canvas: by end of day on a Monday.</li>
-<li>One student responsible for leading the discussion on that Wednesday.</li>
+<li>One (graduate) student responsible for leading the discussion on that Wednesday.</li>
+<li>If you want to use slides, send them to Prof.&nbsp;Srikrishnan by end of day Tuesday.</li>
 </ul>
 </section>
 <section id="homework-assignments" class="slide level2">
@@ -515,7 +571,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li>More in-depth problems</li>
 <li>Roughly 2 weeks to complete</li>
-<li>Will not drop any by default</li>
+<li>Will drop one by default</li>
 <li>Regrade requests must be made within one week</li>
 <li><strong>5850 Students</strong>: Some extra problems</li>
 </ul>
@@ -646,12 +702,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<p><strong>Wednesday</strong>: Hypothesis testing and data analysis</p>
-<p><strong>Next Week</strong>: Review of uncertainty and probability</p>
+<ul>
+<li>Hypothesis testing and decision-making</li>
+<li>Generative models</li>
+</ul>
 </section>
 <section id="assessments" class="slide level2">
 <h2>Assessments</h2>
-<p><strong>Homework 1</strong> available; due <em>next</em> Friday.</p>
+<p><strong>Homework 1</strong> available; due <em>next</em> Friday (2/7).</p>
 </section></section>
 <section>
 <section id="references" class="title-slide slide level1 center">

@@ -159,33 +159,71 @@ Source: Richard McElreath
 :::
 ::::
 
-## Modes of Data Analysis
+## Description and Inference are Connected
+:::: {.columns}
+::: {.column width=50%}
+Except for superficial tasks: 
 
-::: {.center}
-![Modes of Data Analysis](figures/data_settings.png)
+- Knowing what is important to describe requires a model;
+- Understanding how the data might differ from the population requires a model.
+
 :::
 
+::: {.column width=50%}
+::: {.center}
+![Spidermen Meme](memes/spidermen-description-inference.jpg){width=100%}
+:::
+:::
+::::
 
 ## Some Problems With The "Standard" Data Analysis Toolkit
 
 ::: {.incremental}
 - Statistical assumptions may not be valid;
 - "Null" vs "Alternative" hypotheses and tests may be chosen for computational convenience, not scientific relevance.
+- Many different **substantive** models can imply the same **statistical** model.
 :::
 
 ::: {.fragment .fade-in}
 **Important**: "Big" data doesn't solve the problem!
 :::
 
+## My Philosophical Position
+
+:::: {.columns}
+::: {.column width=50%}
+- Probability theory helps us deduce logical implications of theories **conditional on our assumptions**
+- Cannot use an "objective" procedure to avoid **subjective responsibility**
+:::
+
+::: {.column width=50%}
+::: {.center}
+![Bart Statistics Meme](memes/peter_parker_method_assumptions.png){width=90%}
+:::
+:::
+::::
 
 ## Model-Based Data Analysis
 
-We can:
+We can (**transparently**):
 
 - Examine logical implications of model assumptions (**including interventions/out-of-sample generation**).
 - Assess evidence for multiple hypotheses by generating simulated data.
 - Identify opportunities to design future experiments or observations to distinguish between competing hypotheses.
 
+## Model-Based Data Analysis
+
+:::: {.columns}
+::: {.column width=50%}
+Models are how we assess evidence for theories.
+:::
+
+::: {.column width=50%}
+::: {.center}
+![Rock Paper Scissors meme](memes/rock-paper-theory-model.jpg){width=100%}
+:::
+:::
+::::
 
 ## Course Organization
 
@@ -201,10 +239,11 @@ timeline
                                     : Bootstrap
       Model Evaluation (Weeks 8-9): Cross-Validation
                       : Model Selection
-      Useful Models (Weeks 10-12): Extreme Values
+      Useful Models (Weeks 10-13): Extreme Values
                                  : Missing Data
-                                 : Latent Variable
-      Experimental Design (Weeks 13-14): Confounds
+                                 : Mixture Models
+                                 : Gaussian Processes
+      Experimental Design (Weeks 14): Confounds
                                        : Controls and Designing Experiments
 
 ```
@@ -246,17 +285,25 @@ timeline
 - Standard rubric available on website
 - **Always cite external references**
 
+## Literature Critique
+
+- Select a paper which involves some type of statistical or data analysis
+- Critique choices: do they support the scientific conclusions?
+- Submit a 2 page writeup at the end of the semester
+- If you're unsure where to look for a paper, talk to Prof. Srikrishnan and we can find options
+
 ## Readings
 
 - Several readings assigned for discussion throughout the semester.
 - Annotation assignments on Canvas: by end of day on a Monday.
-- One student responsible for leading the discussion on that Wednesday.
+- One (graduate) student responsible for leading the discussion on that Wednesday.
+- If you want to use slides, send them to Prof. Srikrishnan by end of day Tuesday.
 
 ## Homework Assignments
 
 - More in-depth problems
 - Roughly 2 weeks to complete
-- Will not drop any by default
+- Will drop one by default
 - Regrade requests must be made within one week
 - **5850 Students**: Some extra problems
 
@@ -357,13 +404,12 @@ Better: Use Ed Discussion and reserve email for matters that are particular urge
 
 ## Next Classes
 
-**Wednesday**: Hypothesis testing and data analysis
-
-**Next Week**: Review of uncertainty and probability
+- Hypothesis testing and decision-making
+- Generative models
 
 ## Assessments
 
-**Homework 1** available; due *next* Friday.
+**Homework 1** available; due *next* Friday (2/7).
 
 # References
 

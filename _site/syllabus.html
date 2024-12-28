@@ -283,10 +283,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#technologies" id="toc-technologies" class="nav-link" data-scroll-target="#technologies">Technologies</a></li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
   <li><a href="#literature-critique" id="toc-literature-critique" class="nav-link" data-scroll-target="#literature-critique">Literature Critique</a></li>
   <li><a href="#homework-assignments" id="toc-homework-assignments" class="nav-link" data-scroll-target="#homework-assignments">Homework Assignments</a></li>
+  <li><a href="#literature-critique-1" id="toc-literature-critique-1" class="nav-link" data-scroll-target="#literature-critique-1">Literature Critique</a></li>
   <li><a href="#term-project" id="toc-term-project" class="nav-link" data-scroll-target="#term-project">Term Project</a></li>
   </ul></li>
   </ul>
@@ -327,7 +327,8 @@ ul.task-list li input[type="checkbox"] {
 <li><i class="fa-sharp fa-building" title="Office" aria-label="building"></i> <span class="ms-2">318 Riley-Robb Hall</span></li>
 </ul>
 </section>
-</div><section id="ta" class="level3">
+</div><div class="column" style="width:33%;">
+<section id="ta" class="level3">
 <h3 class="anchored" data-anchor-id="ta">TA</h3>
 <ul>
 <li><i class="fa-sharp fa-user" title="Name" aria-label="user"></i> <span class="ms-1">Gabriela Ackermann Logan</span></li>
@@ -335,15 +336,17 @@ ul.task-list li input[type="checkbox"] {
 <li><i class="fa-sharp fa-building" title="Office" aria-label="building"></i> <span class="ms-2">319 Riley-Robb Hall</span></li>
 </ul>
 </section>
-</div>
-<p>–&gt; ::: {.column width=“33%”} ### Meetings</p>
+</div><div class="column" style="width:33%;">
+<section id="meetings" class="level3">
+<h3 class="anchored" data-anchor-id="meetings">Meetings</h3>
 <ul>
 <li><i class="fa-sharp fa-calendar" title="Class Days" aria-label="calendar"></i> MW</li>
 <li><i class="fa-sharp fa-clock" title="Class Time" aria-label="clock"></i> 11:40-12:55pm</li>
 <li><i class="fa-sharp fa-university" title="Class Location" aria-label="university"></i> 160 Riley-Robb Hall</li>
 </ul>
-<p>:::</p>
-<p>::::</p>
+</section>
+</div>
+</div>
 <section id="course-description" class="level3">
 <h3 class="anchored" data-anchor-id="course-description">Course Description</h3>
 <p>Simulations from numerical and statistical models are a key tool used to quantify and represent our understanding of many different environmental systems, including but not limited to the climate, sea levels, air pollution, and the electric power system. Data analysis of environmental observations and model simulations is an integral part of developing and evaluating models used to 1) test our assumptions about environmental system dynamics; 2) develop new insights into environmental processes; and 3) project future environmental conditions and outcomes. This course will provide an overview of the use of generative probability models to understand data and examine hypotheses about data-generating processes. The goal is to provide students with a framework and an initial toolkit of methods for data analysis and simulation. Students will actively analyze and use real data from a variety of environmental systems. In particular, over the course of the semester, we will:</p>
@@ -634,29 +637,29 @@ What If I Find A Different Type of Mistake?
 <thead>
 <tr class="header">
 <th style="text-align: left;">Assessment</th>
-<th style="text-align: left;">Weight</th>
+<th style="text-align: right;">Weight</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Exercises</td>
-<td style="text-align: left;">10%</td>
+<td style="text-align: left;">Participation</td>
+<td style="text-align: right;">10%</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Readings</td>
-<td style="text-align: left;">10%</td>
+<td style="text-align: right;">10%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Literature Critique</td>
-<td style="text-align: left;">15%</td>
+<td style="text-align: right;">15%</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Homework Assignments</td>
-<td style="text-align: left;">30%</td>
+<td style="text-align: right;">40%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Term Project</td>
-<td style="text-align: left;">35%</td>
+<td style="text-align: right;">25%</td>
 </tr>
 </tbody>
 </table>
@@ -720,10 +723,6 @@ What If I Find A Different Type of Mistake?
 </tbody>
 </table>
 </section>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
-<p>Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming, a minor calculation, and/or visual assessment of data or a figure. Exercises will be provided the previous Monday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. These exercises will be given as quizzes on Gradescope and will be auto-graded. The lowest exercise score will be dropped automatically.</p>
-</section>
 <section id="readings" class="level3">
 <h3 class="anchored" data-anchor-id="readings">Readings</h3>
 <p>Readings will be assigned for discussion throughout the semester. Students are expected to summarize their takeaways and thoughts on the reading and respond to others’ comments on the Ed forum during the week after the reading is assigned (typically Monday – Monday). Collaborative annotation assignments will be set up in Canvas to facilitate reading ahead of the discussion on the Ed forum. For key readings, a student in BEE 5850 will be assigned to lead a 35 minute in-class discussion on the reading.</p>
@@ -742,6 +741,10 @@ What If I Find A Different Type of Mistake?
 <li>Students in 5850 will be asked to complete additional homework problems which go more deeply into the underlying concepts or apply more advanced techniques.</li>
 <li>Regrade requests for specific problems must be made within a week of the grading of that assignment.</li>
 </ul>
+</section>
+<section id="literature-critique-1" class="level3">
+<h3 class="anchored" data-anchor-id="literature-critique-1">Literature Critique</h3>
+<p>Students will be asked to critically evaluate a paper of their choosing, with particular emphasis on the statistical and data choices and whether they support the scientific question and conclusions of the paper.</p>
 </section>
 <section id="term-project" class="level3">
 <h3 class="anchored" data-anchor-id="term-project">Term Project</h3>

@@ -219,352 +219,326 @@
     ]
   },
   {
-    "objectID": "rubrics/standard.html",
-    "href": "rubrics/standard.html",
-    "title": "Standard Rubrics",
+    "objectID": "project/proposal.html",
+    "href": "project/proposal.html",
+    "title": "Project Proposal Instructions",
     "section": "",
-    "text": "These rubrics are intended as a description for students and a guide to the grader for how to assign partial credit.",
-    "crumbs": [
-      "Homework",
-      "Standard Rubric"
-    ]
+    "text": "Your project should involve analyzing a data set of interest using model-based simulation. The proposal is an opportunity to think through and articulate the core science question, hypotheses, and modeling approaches, and get feedback about the plan."
   },
   {
-    "objectID": "rubrics/standard.html#meta-rubric",
-    "href": "rubrics/standard.html#meta-rubric",
-    "title": "Standard Rubrics",
-    "section": "Meta-Rubric",
-    "text": "Meta-Rubric\n\nIndividual problems may vary from these standard rubrics based on the assessed learning outcomes for the problem, but they should provide an overview of what features students ought to be included in a given solution.\nEach bullet point should appear as a separate rubric item in Gradescope. We will use positive grading (points awarded for each component).\nEach standard rubric describes partial credit for a problem with 10 points. Partial credit for (sub)problems worth less than 10 points should be scaled appropriately. Full problems usually combine one of the modeling methods with some interpretation questions, so the rubric will be a combination of the individual components.\nGenerally, rubrics for 10 point “entire problems” can be summarized with the following:\n\n+4 points for an answer with a correct implementation (including model setup).\n+2 points for the correct solution (including details such as labels, units, etc.).\n+4 points for the interpretation. These points may be broken up across subproblems, but the general assignment of points should follow this summary.\n\nNote that the points may not scale with the distribution of work for a given problem. That’s life! It may take more work to derive and implement your model than it does to intrepret your results, but in this class we care a lot about your ability to critically evaluate and interpret modeling results.\nSometimes problems will be broken up into\nThe graders cannot read your mind and will not try to. Submissions that are unclear for any reason, including but not limited to unclear syntax (English or code), uncommented code, lack of reasoning or derivation, too much detail or writing, will not be given credit. The grader has complete discretion here. If something in your solution is ambiguous, the grader has been instructed to interpret it the “wrong” way. Clear responses are a sign of understanding, which is part of what we’re assessing.\nYou will not be doubly penalized for getting the “right” solution to the “wrong” setup (you would have been penalized above), but this requires the grader to be able to easily identify that your implementation is correct given the wrong model. If your implementation is unclear, you are likely to lose points here because we have no way of knowing that your answer is “right” without re-coding your problem.\nYou will not be given credit for your code (this isn’t a programming class); the code is a means to solving the problem, and we’re more interested in how you set up the problem and interpret the solution. This does mean that code that is sloppy but works is perfectly acceptable. However, your code may get you partial credit if the TA can easily find where you made a mistake, so make sure your submitted code is well commented. It’s important to write down the mathematics of what your code is trying to implement, because the TA will only take a cursory look at your code.\nSome rubrics include “deadly sins” which will cause an immediate zero to be given for the problem. Do not do these!\nRegardless of the problem type, the following penalties will be applied per incident:\n\n-1 for missing units.",
-    "crumbs": [
-      "Homework",
-      "Standard Rubric"
-    ]
+    "objectID": "project/proposal.html#what-makes-a-good-project",
+    "href": "project/proposal.html#what-makes-a-good-project",
+    "title": "Project Proposal Instructions",
+    "section": "What Makes A Good Project?",
+    "text": "What Makes A Good Project?\nYour project topic should have the following features:\n\nFocus on a data set which can inform a relevant science question;\nInvolve one or more specific hypotheses which can be translated into a simulation model (either numerical or statistical is fine);\nIf only one hypothesis is considered, a meaningful “null” model should be included for comparison."
   },
   {
-    "objectID": "rubrics/standard.html#standard-rubrics",
-    "href": "rubrics/standard.html#standard-rubrics",
-    "title": "Standard Rubrics",
-    "section": "Standard Rubrics",
-    "text": "Standard Rubrics\n\nSimulation Rubric\n10 points =\n\n+4 for the model derivation.\n\nThis includes any relevant reasoning from mass-balance or other principles.\n\n+4 for discretizing the model correctly.\n\n-1 if no justification is provided for the chosen step-size(s).\n\n+2 points for obtaining the correct solution.\n\n-1 if the error is from a minor bug. I recommend providing an explicit sketch of your code’s procedure, so if that is correct any differences are likely to be the result of a minor bug, such as a misentered number (not ideal, but you understand what you’re doing!). Otherwise you are relying on the TA to interpret your code.\n\n\n\n\nMonte Carlo Rubric\n10 points =\n\n+4 for a clear English explanation of the sampling plan\n\nYou must justify each distribution used, including your choice of mean and standard deviation.\n\n+2 for justification of Monte Carlo sample size.\n\nDeadly Sin: No points will be given for a Monte Carlo solution with an arbitrary sample size.\n\n+2 for an estimate of the Monte Carlo standard error.\n+1 for setting a seed for reproducibility.\n+2 for correct estimate.\n\nDeviations from the posted solution are ok if they’re within the Monte Carlo standard error.\n\n\n\n\nFigure Rubrics\n10 points =\n\n+2 for appropriate choice of axes.\n\nDeadly Sin!: No points will be given for the figure if the axes are not labelled.\n\n+4 for the correct data series.\n+2 for a descriptive legend.\n+2 for a succinct description or caption.\n\n-1 for a description which is too wordy but contains the relevant information.\n\n\n\n\nInterpretation Rubrics\n10 points =\n\n+4 for specific reference to the modeling results;\n\n-2 if the results are not specifically referenced and the reader has to refer to the previous problems to understand the interpretation.\n\n+6 for thoughtfulness of the interpretation;\n\n-4 for not specifically referencing relevant model assumptions;\nDeadly Sin: Do not neglect fundamental engineering principles in any of your interpretations. You will be given a zero if you make a recommendation which e.g. violates an engineering code or standard.\nDeadly Sin: Completely generic interpretations will result in zero points.",
-    "crumbs": [
-      "Homework",
-      "Standard Rubric"
-    ]
+    "objectID": "project/proposal.html#proposal-guidelines",
+    "href": "project/proposal.html#proposal-guidelines",
+    "title": "Project Proposal Instructions",
+    "section": "Proposal Guidelines",
+    "text": "Proposal Guidelines\nThe proposal should have the following components, and be no more than 5 pages (not including references and plots) with 1 inch margins (on all sides) and at least 11 point font.\n\nBackground: What is the scientific context of your project? What question are you trying to address and why does it matter? What are the hypotheses you are focusing on?\nData Overview: Where was the data obtained from? In what context was it collected (e.g. is it observational data, collected in a lab, or reconstructed) and what implications that might have for its use in testing your hypotheses? Include some exploratory analysis and plots. Are there errors included in the data? Will you need any auxiliary data?\nModel Specification: What model(s) are you proposing to use to study the data in the context of your hypotheses? If you’re using a numerical simulation model, what parameters will you treat as uncertain and what is the probability model for the residuals? If you’re using a statistical model, what choices are you making about distributions? Include some initial exploratory analyses to analyze initial goodness-of-fit.\nReferences: Make sure to include any references cited in your proposal."
   },
   {
-    "objectID": "project/report.html",
-    "href": "project/report.html",
-    "title": "Project Report Instructions",
+    "objectID": "project/simulation.html",
+    "href": "project/simulation.html",
+    "title": "Simulation Study Instructions",
     "section": "",
-    "text": "These are the instructions for your final project report. The report should be submitted on Gradescope during finals week, but no later than May 17, 2024."
+    "text": "The goal of the simulation study is to implement your model(s) and evaluate their simulations to assess the differences between them. Your goal is not to “test” relevant hypotheses yet, but to visualize and describe the differences in the model hindcasts and projections."
   },
   {
-    "objectID": "project/report.html#report-guidelines",
-    "href": "project/report.html#report-guidelines",
-    "title": "Project Report Instructions",
-    "section": "Report Guidelines",
-    "text": "Report Guidelines\nThe proposal should have the following components with 1 inch margins (on all sides) and at least 11 point font. Some of this may be repeated from your proposal and/or simulation study; this is fine.\n\nBackground: Provide background on your project topic and the relevant environmental system. Why is this topic interesting or valuable to understand? What are you trying to understand or what do you hyptohesize?\nData and Models: What data are you using? Provide exploratory plots. What model(s) are you using to explore the data and your hypotheses? Include details about the probability or statistical assumptions your model is making and how well-founded you think these are in light of the system and the data.\nResults: What have you learned from your analysis? Were your hypotheses well founded? What visual or quantative evidence are you using to support these conclusions?\nDiscussion: Reflect on the data and models that you used. How well suited were they for the analysis? In retrospect, what might have been better? How might they have biased or influenced your results?\nReferences: Make sure to include any external sources referenced during the course of completing your project.\n\nYou do not need to include any code in your reports, but if you do, please reserve this for an appendix at the end of the report, not mixed in with the above sections. If you generated a figure or fit a model using the code, include the figure along with the relevant text but do not include code. There is no page minimum or maximum on the report, but it should include, clearly, all of the above content."
+    "objectID": "project/simulation.html#simulation-study-guidelines",
+    "href": "project/simulation.html#simulation-study-guidelines",
+    "title": "Simulation Study Instructions",
+    "section": "Simulation Study Guidelines",
+    "text": "Simulation Study Guidelines\nThe proposal should have the following components with 1 inch margins (on all sides) and at least 11 point font.\n\nCalibration: Find and report appropriate parameter values for your model(s). This can be done through finding the maximum likelihood or maximum a posteriori estimates, with relevant uncertainty estimates obtained from the bootstrap or sampling from the posterior distribution using MCMC. Whatever approach you take, make sure to justify it and any associated assumptions (e.g. prior distributions).\nSimulation: Using the calibrated model(s), simulate synthetic datasets and compute useful summaries. Include useful graphical checks (including, if appropriate, hindcasts and projections) as needed.\nComparison: Discuss the differences in the calibrations and simulations and what they mean for your hypotheses(s). Were there any surprises?\nReferences: Make sure to include any references cited in your proposal."
   },
   {
-    "objectID": "project/presentation.html",
-    "href": "project/presentation.html",
-    "title": "Project Presentation Instructions",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Website",
     "section": "",
-    "text": "m These are the instructions for your final project presentation, which will be given in class on May 6, 2024."
+    "text": "This website contains course materials for the Spring 2025 edition of Environmental Data Analysis and Simulation, taught by Vivek Srikrishnan at Cornell University."
   },
   {
-    "objectID": "project/presentation.html#presentation-submission",
-    "href": "project/presentation.html#presentation-submission",
-    "title": "Project Presentation Instructions",
-    "section": "Presentation Submission",
-    "text": "Presentation Submission\nPlease submit your slides in PDF format by email to Prof. Srikrishnan no later than Friday, May 3, 2024."
+    "objectID": "about.html#acknowledgements",
+    "href": "about.html#acknowledgements",
+    "title": "About This Website",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nMuch of the material for this course has evolved from discussions and work with Klaus Keller, Tony Wong, Casey Helgeson, Ben Seiyon Lee and James Doss-Gollin. Many thanks also to Andrew Gelman and Christian Robert, whose work heavily inspired many aspects of this course and which I refer back to regularly. Kieran Healy also wrote an outstanding book on Data Visualization which I learned a great deal from and still reference.\nThe layout for this site was also inspired by and draws from STA 210 at Duke University and Andrew Heiss’s course materials at Georgia State."
   },
   {
-    "objectID": "project/presentation.html#presentation-guidelines",
-    "href": "project/presentation.html#presentation-guidelines",
-    "title": "Project Presentation Instructions",
-    "section": "Presentation Guidelines",
-    "text": "Presentation Guidelines\nYour presentation should be short (10 minutes, which will be timed and strictly enforced in the interest of time). Your presentation should concisely describe your key question, your scientific hypothesis, and your results and conclusions. Note that a 10 minute presentation means that you should aim for no more than 5-6 slides (not including titles, transitions, or wrap-ups/references)."
+    "objectID": "about.html#tools-and-generation-workflow",
+    "href": "about.html#tools-and-generation-workflow",
+    "title": "About This Website",
+    "section": "Tools and Generation Workflow",
+    "text": "Tools and Generation Workflow\nThis website was built with Quarto, which allows me to integrate Julia code and output with the web content, pdfs, and slides in an amazingly clean fashion, while simplifying the process of generation. All materials can be generated through a simple workflow from the [GitHub Repository]."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#about-me",
-    "href": "slides/lecture01-1-intro.html#about-me",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "About Me",
-    "text": "About Me\nInstructor: Prof. Vivek Srikrishnan, viveks at cornell dot edu\nInterests:\n\nBridging Earth science, data science, and decision science to improve climate risk management;\nUnintended consequences which result from neglecting uncertainty or system dynamics."
+    "objectID": "slides/lecture02-1-nhst.html#science-as-decision-making-under-uncertainty",
+    "href": "slides/lecture02-1-nhst.html#science-as-decision-making-under-uncertainty",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Science as Decision-Making Under Uncertainty",
+    "text": "Science as Decision-Making Under Uncertainty\n\n\nGoal is to draw insights:\n\nAbout causes and effects;\nAbout interventions.\n\nBut our models are simplifications and our observations are uncertain!\n\n\n\n\nXKCD 2440\n\n\n\nSource: XKCD 2440\n\n\n\nThese decisions are complicated by model simplifications and observational uncertainties.\nSo we can never actually “know” something is true: we instead assess the consistency of evidence with predictions from theory.\nBut often the predictions are not black-and-white and must be understood probabilistically."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#meet-my-supervisors",
-    "href": "slides/lecture01-1-intro.html#meet-my-supervisors",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Meet My Supervisors",
-    "text": "Meet My Supervisors\n\n\n\n\nMy Supervisors"
+    "objectID": "slides/lecture02-1-nhst.html#data-generation-approximates-reality",
+    "href": "slides/lecture02-1-nhst.html#data-generation-approximates-reality",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Data Generation Approximates Reality",
+    "text": "Data Generation Approximates Reality\n\n\n\n\n\nEstimand Estimator Cake\n\n\n\n\n\n\n\nEstimand Estimator Cake\n\n\n\n\n\n\n\n\nEstimate Cake\n\n\n\n\n\nSource: Richard McElreath\n\n\nGoal is to start with some “true” process, then apply a procedure (experimental/observational + statistical) and recover what is hopefully a good estimate.\nBut lots can go wrong in this process!"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#what-do-you-hope-to-get-out-of-this-course",
-    "href": "slides/lecture01-1-intro.html#what-do-you-hope-to-get-out-of-this-course",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "What Do You Hope To Get Out Of This Course?",
-    "text": "What Do You Hope To Get Out Of This Course?\nTake a moment, write it down, and we’ll share!"
+    "objectID": "slides/lecture02-1-nhst.html#bayesian-risk-based-decision-analysis",
+    "href": "slides/lecture02-1-nhst.html#bayesian-risk-based-decision-analysis",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Bayesian (Risk-Based) Decision Analysis",
+    "text": "Bayesian (Risk-Based) Decision Analysis\nTake some decision \\(d(x)\\) based on \\(x\\).\n\\[\\overbrace{R(d(x))}^{\\text{risk}} = \\int_Y \\overbrace{\\mathcal{L}(d(x), y)}^{\\text{loss function}} \\overbrace{\\pi(y | x)}^{\\substack{\\text{probability} \\\\ \\text{of outcome}}}dy\\]\n\nThen the optimal decision is \\(\\hat{\\alpha} = \\underset{\\alpha}{\\operatorname{argmin}} R(\\alpha)\\)."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#why-does-data-analysis-matter",
-    "href": "slides/lecture01-1-intro.html#why-does-data-analysis-matter",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Why Does Data Analysis Matter?",
-    "text": "Why Does Data Analysis Matter?\n\nScientific insight;\nDecision-making;\nUnderstanding uncertainty"
+    "objectID": "slides/lecture02-1-nhst.html#pascals-wager-as-bda",
+    "href": "slides/lecture02-1-nhst.html#pascals-wager-as-bda",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Pascal’s Wager as BDA",
+    "text": "Pascal’s Wager as BDA\n\n\n\nLoss of mistaken belief: -c\nLoss of mistaken disbelief: \\(-\\infty\\)\nLoss of correct disbelief: +c\nLoss of correct belief: \\(+\\infty\\)\n\nPascal’s conclusion: “Optimal” decision is belief regardless of asserted probability of God’s existence.\n\n\n\n\nBlaise Pascal\n\n\n\nSource: Wikipedia\n\n\n\nBlaise Pascal formulated a decision problem as evidence that rationality could not be used to justify sin/a lack of belief in God. This was done in what we now recognize as Bayesian terms (though it predates Bayes)."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#the-ideal",
-    "href": "slides/lecture01-1-intro.html#the-ideal",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "The Ideal",
-    "text": "The Ideal\n\n\n\n\nXKCD 2400\n\n\n\n\nSource: XKCD 2400"
+    "objectID": "slides/lecture02-1-nhst.html#standard-parameter-estimators",
+    "href": "slides/lecture02-1-nhst.html#standard-parameter-estimators",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Standard Parameter Estimators",
+    "text": "Standard Parameter Estimators\nWhat if we want to estimate a parameter \\(\\hat{\\theta}\\) from data \\(x\\)?\n\n\n\n\n\n\n\n\nLoss Function\n\\(\\mathcal{L}(\\hat{\\theta}, \\theta)\\)\n\\(\\hat{\\alpha}\\)\n\n\n\n\nQuadratic\n\\(\\|\\hat{\\theta} - \\theta\\|^2\\)\n\\(\\text{Mean}(x)\\)\n\n\nLinear\n\\(\\|\\hat{\\theta} - \\theta\\|\\)\n\\(\\text{Median}(x)\\)\n\n\n0-1\n\\(\\begin{cases} 0 & \\hat{\\theta} \\neq \\theta \\\\ 1 & \\hat{\\theta} = \\theta \\end{cases}\\)\n\\(\\text{Mode}(x)\\)"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#but-in-actuality",
-    "href": "slides/lecture01-1-intro.html#but-in-actuality",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "But in Actuality",
-    "text": "But in Actuality\n\nExcept in the most controlled experiments, data are noisy;\nThe causes of the data cannot be extracted from the data alone;\nThe reasons for statistical analyses are not found in the data themselves."
+    "objectID": "slides/lecture02-1-nhst.html#risk-based-analysis-the-original-statistical-decision-making",
+    "href": "slides/lecture02-1-nhst.html#risk-based-analysis-the-original-statistical-decision-making",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Risk-Based Analysis: The Original Statistical Decision-Making",
+    "text": "Risk-Based Analysis: The Original Statistical Decision-Making\n\n\n\n\n\nOrbit of Ceres\n\n\n\nSource: Wikipedia\n\n\n\n\n\nPiazzi’s Measurements\n\n\n\nSource: Wikipedia\n\n\n\nThis type of statistical decision-making prompted the introduction of ordinary least squares by Gauss in the 1800s. The question was to predict the position of Ceres given a few error-prone observations by Giuseppe Piazzi."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#uniquechallenging-features-of-data",
-    "href": "slides/lecture01-1-intro.html#uniquechallenging-features-of-data",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Unique/Challenging Features Of Data",
-    "text": "Unique/Challenging Features Of Data\nThere are many features of environmental (and biological!) data which make data analysis interesting and hard."
+    "objectID": "slides/lecture02-1-nhst.html#origin-of-ordinary-least-squares",
+    "href": "slides/lecture02-1-nhst.html#origin-of-ordinary-least-squares",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Origin of Ordinary Least Squares",
+    "text": "Origin of Ordinary Least Squares\n\n\nGauss (1809): Risk/Bayesian argument for OLS estimator from quadratic loss.\n\n\n\n\nGerman 10 Mark Note with Gauss\n\n\n\nSource: National Curve Bank\n\n\n\n\n\n\nGauss\n\n\n\nSource: Wikipedia"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#extreme-events",
-    "href": "slides/lecture01-1-intro.html#extreme-events",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Extreme Events",
-    "text": "Extreme Events\n\n\n\n\nExtreme Events\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
+    "objectID": "slides/lecture02-1-nhst.html#questions-we-might-like-to-answer",
+    "href": "slides/lecture02-1-nhst.html#questions-we-might-like-to-answer",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Questions We Might Like To Answer",
+    "text": "Questions We Might Like To Answer\n\n\nAre high water levels influenced by environmental change?\nDoes some environmental condition have an effect on water quality/etc?\nDoes a drug or treatment have some effect?"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#extreme-events-1",
-    "href": "slides/lecture01-1-intro.html#extreme-events-1",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Extreme Events",
-    "text": "Extreme Events\n\n\n\n\nXKCD 2107\n\n\n\n\nSource: XKCD 2107"
+    "objectID": "slides/lecture02-1-nhst.html#onus-probandi-incumbit-ei-qui-dicit-non-ei-qui-negat",
+    "href": "slides/lecture02-1-nhst.html#onus-probandi-incumbit-ei-qui-dicit-non-ei-qui-negat",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Onus probandi incumbit ei qui dicit, non ei qui negat",
+    "text": "Onus probandi incumbit ei qui dicit, non ei qui negat\n\n\nCore assumption: Burden of proof is on someone claiming an effect (or a similar hypothesis).\n\n\n\n\nNull Hypothesis Meme\n\n\n\n\nThe title of this slide is a reference to the burden of proof is on the person who affirms, not one who denies. Can think of this as similar to Ockham’s razor or someone mantras: we want to propose hypotheses about scientific phenomena and then see if the evidence supports it."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#correlated-uncertainties",
-    "href": "slides/lecture01-1-intro.html#correlated-uncertainties",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Correlated Uncertainties",
-    "text": "Correlated Uncertainties\n\n\n \n\n\nSource: Errickson et al. (2021)"
+    "objectID": "slides/lecture02-1-nhst.html#null-hypothesis-significance-testing",
+    "href": "slides/lecture02-1-nhst.html#null-hypothesis-significance-testing",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Null Hypothesis Significance Testing",
+    "text": "Null Hypothesis Significance Testing\n\n\n\nCheck if the data is consistent with a “null” model;\nIf the data is unlikely from the null model (to some level of significance), this is evidence for the alternative.\nIf the data is consistent with the null, there is no need for an alternative hypothesis.\n\n\n\n\n\nAlternative Hypothesis Meme\n\n\n\n\nFor scientific hypotheses, this has been encoded in the NHST paradigm:\n\nThink of a “null” hypothesis and look for evidence that it is reasonably consistent with the data.\nIf the data can be explained by the null, then we have no clear evidence for the alternative hypothesis.\nIf the data is highly unlikely under the null hypothesis, then that gives us reason to reject the null and favor the alternative."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#non-stationarity",
-    "href": "slides/lecture01-1-intro.html#non-stationarity",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Non-Stationarity",
-    "text": "Non-Stationarity\n\n\n\n\nNon-Stationary Trends\n\n\n\n\nSource: Fagnant et al. (2020)"
+    "objectID": "slides/lecture02-1-nhst.html#from-null-hypothesis-to-null-model",
+    "href": "slides/lecture02-1-nhst.html#from-null-hypothesis-to-null-model",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "From Null Hypothesis to Null Model",
+    "text": "From Null Hypothesis to Null Model\n\n\n…the null hypothesis must be exact, that is free of vagueness and ambiguity, because it must supply the basis of the ‘problem of distribution,’ of which the test of significance is the solution.\n\n\n— R. A. Fisher, The Design of Experiments, 1935.\n\n\n\nThe trick is to go from a null scientific hypothesis to a null statistical model, hence Fisher’s comment about the need for a null hypothesis to be “exact”."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#forcing-model-uncertainty",
-    "href": "slides/lecture01-1-intro.html#forcing-model-uncertainty",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Forcing & Model Uncertainty",
-    "text": "Forcing & Model Uncertainty\n\n\n\n\nDifferent Uncertainties for SLR\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
+    "objectID": "slides/lecture02-1-nhst.html#example-high-water-nonstationarity",
+    "href": "slides/lecture02-1-nhst.html#example-high-water-nonstationarity",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Example: High Water Nonstationarity",
+    "text": "Example: High Water Nonstationarity\n\n\nCode\n# load SF tide gauge data\n# read in data and get annual maxima\nfunction load_data(fname)\n    date_format = DateFormat(\"yyyy-mm-dd HH:MM:SS\")\n    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data\n    df = @chain fname begin\n        CSV.read(DataFrame; header=false)\n        rename(\"Column1\" =&gt; \"year\", \"Column2\" =&gt; \"month\", \"Column3\" =&gt; \"day\", \"Column4\" =&gt; \"hour\", \"Column5\" =&gt; \"gauge\")\n        # need to reformat the decimal date in the data file\n        @transform :datetime = DateTime.(:year, :month, :day, :hour)\n        # replace -99999 with missing\n        @transform :gauge = ifelse.(abs.(:gauge) .&gt;= 9999, missing, :gauge)\n        select(:datetime, :gauge)\n    end\n    return df\nend\n\ndat = load_data(\"data/surge/h551.csv\")\n\n# detrend the data to remove the effects of sea-level rise and seasonal dynamics\nma_length = 366\nma_offset = Int(floor(ma_length/2))\nmoving_average(series,n) = [mean(@view series[i-n:i+n]) for i in n+1:length(series)-n]\ndat_ma = DataFrame(datetime=dat.datetime[ma_offset+1:end-ma_offset], residual=dat.gauge[ma_offset+1:end-ma_offset] .- moving_average(dat.gauge, ma_offset))\n\n# group data by year and compute the annual maxima\ndat_ma = dropmissing(dat_ma) # drop missing data\ndat_annmax = combine(dat_ma -&gt; dat_ma[argmax(dat_ma.residual), :], groupby(transform(dat_ma, :datetime =&gt; x-&gt;year.(x)), :datetime_function))\ndelete!(dat_annmax, nrow(dat_annmax)) # delete 2023; haven't seen much of that year yet\nrename!(dat_annmax, :datetime_function =&gt; :Year)\nselect!(dat_annmax, [:Year, :residual])\ndat_annmax.residual = dat_annmax.residual / 1000 # convert to m\n\n# make plots\np1 = plot(\n    dat_annmax.Year,\n    dat_annmax.residual;\n    xlabel=\"Year\",\n    ylabel=\"Annual Max Tide Level (m)\",\n    label=false,\n    marker=:circle,\n    markersize=5,\n    tickfontsize=16,\n    guidefontsize=18,\n    left_margin=5mm, \n    bottom_margin=5mm\n)\n\nn = nrow(dat_annmax)\nlinfit = lm(@formula(residual ~ Year), dat_annmax)\npred = coef(linfit)[1] .+ coef(linfit)[2] * dat_annmax.Year\n\nplot!(p1, dat_annmax.Year, pred, linewidth=3, label=\"Linear Trend\")\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Annual maxima surge data from the San Francisco, CA tide gauge.\n\n\n\n\n\nFor example, consider this annual extreme high water dataset from San Francisco from 1897 through 2022. A linear fit gives us an observed trend of 0.4 mm/yr. Is that meaningful?\nNote that we didn’t do anything yet to justify whether linear regression is a non-stupid thing to do (hint: it’s a stupid thing to do): we’ll talk about this more later."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#deep-uncertainty",
-    "href": "slides/lecture01-1-intro.html#deep-uncertainty",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Deep Uncertainty",
-    "text": "Deep Uncertainty\n\n\n\n\nDeep Uncertainty for Future Climate Projections\n\n\n\n\nSource: Srikrishnan et al. (2022)"
+    "objectID": "slides/lecture02-1-nhst.html#the-null-is-the-trend-real",
+    "href": "slides/lecture02-1-nhst.html#the-null-is-the-trend-real",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "The Null: Is The Trend Real?",
+    "text": "The Null: Is The Trend Real?\n\\(\\mathcal{H}_0\\) (Null Hypothesis):\n\nThe “trend” is just due to chance, there is no long-term trend in the data.\n\n\n\nStatistically:\n\n\\[y = \\underbrace{b}_{\\text{constant}} + \\underbrace{\\varepsilon}_{\\text{residuals}}, \\qquad \\varepsilon \\underbrace{\\sim}_{\\substack{\\text{distributed} \\\\ {\\text{according to}}}} \\mathcal{N}(0, \\sigma^2) \\]"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#causation-is-not-association",
-    "href": "slides/lecture01-1-intro.html#causation-is-not-association",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Causation Is Not Association",
-    "text": "Causation Is Not Association\n\n\n\nWe’ve all heard “correlation (association) does not imply causation”\nBut confounds/noise can mean causation does not imply association\n\n\n\n\n\n\nCorrelation not Causation Meme\n\n\n\n\nSource: Richard McElreath"
+    "objectID": "slides/lecture02-1-nhst.html#an-alternative-hypothesis",
+    "href": "slides/lecture02-1-nhst.html#an-alternative-hypothesis",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "An Alternative Hypothesis",
+    "text": "An Alternative Hypothesis\n\\(\\mathcal{H}\\):\n\nThe trend is likely non-zero in time.\n\n\n\nStatistically:\n\n\\[y = a \\times t + b + \\varepsilon, \\qquad \\varepsilon \\sim Normal(0, \\sigma^2) \\]"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#modes-of-data-analysis",
-    "href": "slides/lecture01-1-intro.html#modes-of-data-analysis",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Modes of Data Analysis",
-    "text": "Modes of Data Analysis\n\n\n\n\nModes of Data Analysis"
+    "objectID": "slides/lecture02-1-nhst.html#null-test",
+    "href": "slides/lecture02-1-nhst.html#null-test",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Null Test",
+    "text": "Null Test\nComparing \\(\\mathcal{H}\\) with \\(\\mathcal{H}_0\\):\n\n\\(\\mathcal{H}\\): \\(a \\neq 0\\)\n\\(\\mathcal{H}_0\\): \\(a = 0\\)\n\n\nIn this example, our null is an example of a point-null hypothesis."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#some-problems-with-the-standard-data-analysis-toolkit",
-    "href": "slides/lecture01-1-intro.html#some-problems-with-the-standard-data-analysis-toolkit",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Some Problems With The “Standard” Data Analysis Toolkit",
-    "text": "Some Problems With The “Standard” Data Analysis Toolkit\n\n\nStatistical assumptions may not be valid;\n“Null” vs “Alternative” hypotheses and tests may be chosen for computational convenience, not scientific relevance.\n\n\n\nImportant: “Big” data doesn’t solve the problem!"
+    "objectID": "slides/lecture02-1-nhst.html#computing-the-test-statistic",
+    "href": "slides/lecture02-1-nhst.html#computing-the-test-statistic",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Computing the Test Statistic",
+    "text": "Computing the Test Statistic\nFor this type of null hypothesis test, our test statistic is the slope of the OLS fit \\[\\hatab} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{(x_i - \\bar{x})^2}.\\]\n\nAfter some algebra, assuming the null \\(a = 0\\), the sampling distribution of the statistic is \\[\\frac{\\hat{a}}{SE_{\\hat{a}}} \\sim t_{n-2}.\\]"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#model-based-data-analysis",
-    "href": "slides/lecture01-1-intro.html#model-based-data-analysis",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Model-Based Data Analysis",
-    "text": "Model-Based Data Analysis\nWe can:\n\nExamine logical implications of model assumptions (including interventions/out-of-sample generation).\nAssess evidence for multiple hypotheses by generating simulated data.\nIdentify opportunities to design future experiments or observations to distinguish between competing hypotheses."
+    "objectID": "slides/lecture02-1-nhst.html#statistical-significance",
+    "href": "slides/lecture02-1-nhst.html#statistical-significance",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Statistical Significance",
+    "text": "Statistical Significance\nIs the value of the test statistic consistent with the null hypothesis?\n\n\nMore formally, could the test statistic have been reasonably observed from a random sample given the null hypothesis?"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#course-organization",
-    "href": "slides/lecture01-1-intro.html#course-organization",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Course Organization",
-    "text": "Course Organization\n\n\n\n\n\ntimeline\n      Introduction (Weeks 1-2): Overview\n                  : Modeling Data-Generating Processes\n                  : Hypothesis Testing and Scientific Inference\n      Probability Fundamentals (Weeks 3-5): Prob/Stats \"Review\"\n                              : Model Fitting\n                              : Bayesian Statistics\n      Simulation Methods (Weeks 6-7): Monte Carlo\n                                    : Bootstrap\n      Model Evaluation (Weeks 8-9): Cross-Validation\n                      : Model Selection\n      Useful Models (Weeks 10-12): Extreme Values\n                                 : Missing Data\n                                 : Latent Variable\n      Experimental Design (Weeks 13-14): Confounds\n                                       : Controls and Designing Experiments"
+    "objectID": "slides/lecture02-1-nhst.html#p-values-quantification-of-surprise",
+    "href": "slides/lecture02-1-nhst.html#p-values-quantification-of-surprise",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "p-Values: Quantification of “Surprise”",
+    "text": "p-Values: Quantification of “Surprise”\n\n\nOne-Tailed Test:\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Illustration of a p-value\n\n\n\n\n\nTwo-Tailed Test:\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Illustration of a two-tailed p-value\n\n\n\n\n\n\nIn the tide gauge test, for a two-tailed test, the p-value is 0.02. What does that mean?"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#background-knowledge-computing",
-    "href": "slides/lecture01-1-intro.html#background-knowledge-computing",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Background Knowledge: Computing",
-    "text": "Background Knowledge: Computing\n\nBasics (at the level of CS 111x)\nNo specific language requirement.\nSome extra work/effort may be needed if you haven’t coded in a while.\nMay need some additional familiarity with statistical packages (and “light” optimization)"
+    "objectID": "slides/lecture02-1-nhst.html#error-types",
+    "href": "slides/lecture02-1-nhst.html#error-types",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Error Types",
+    "text": "Error Types\n\n\n\n\n\n\n\nNull Hypothesis Is\n\n\n\n\n\n\n\n\nTrue\n\n\nFalse\n\n\n\n\nDecision About Null Hypothesis\n\n\nDon’t reject\n\n\nTrue negative (probability \\(1-\\alpha\\))\n\n\nType II error (probability \\(\\beta\\))\n\n\n\n\nReject\n\n\nType I Error (probability \\(\\alpha\\))\n\n\nTrue positive (probability \\(1-\\beta\\))\n\n\n\n\nThe general testing framework is built around Type I (false positive) and Type II (false negative) errors."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#background-knowledge-probabilitystatistics",
-    "href": "slides/lecture01-1-intro.html#background-knowledge-probabilitystatistics",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Background Knowledge: Probability/Statistics",
-    "text": "Background Knowledge: Probability/Statistics\n\nENGRD 2700/CEE 3040\nSummary statistics of data\nProbability distributions\nBasic visualizations\nMonte Carlo basics"
+    "objectID": "slides/lecture02-1-nhst.html#navigating-type-i-and-ii-errors",
+    "href": "slides/lecture02-1-nhst.html#navigating-type-i-and-ii-errors",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Navigating Type I and II Errors",
+    "text": "Navigating Type I and II Errors\nThe standard null hypothesis significance framework is based on balancing the chance of making Type I (false positive) and Type II (false negative) errors.\nIdea: Set a significance level \\(\\alpha\\) which is an “acceptable” probability of making a Type I error.\nAside: The probability \\(1-\\beta\\) of correctly rejecting \\(H_0\\) is the power."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#grades",
-    "href": "slides/lecture01-1-intro.html#grades",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Grades",
-    "text": "Grades\n\n\n\nAssessment\n% of Grade\n\n\n\n\nParticipation\n10%\n\n\nReadings\n10%\n\n\nLiterature Critique\n15%\n\n\nHomework Assignments\n40%\n\n\nTerm Project\n25%"
+    "objectID": "slides/lecture02-1-nhst.html#p-value-and-significance",
+    "href": "slides/lecture02-1-nhst.html#p-value-and-significance",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "p-Value and Significance",
+    "text": "p-Value and Significance\nIf the p-value is sufficiently small (below \\(\\alpha\\)), we say that we can reject the null hypothesis with \\(1-\\alpha\\) confidence, or that the alternative hypothesis is statistically significant at the \\(1-\\alpha\\) level.\nThis can mean:\n\n\nThe null hypothesis is not true for that data-generating process;\nThe null hypothesis is true but the data is an outlying sample."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#overall-guidelines",
-    "href": "slides/lecture01-1-intro.html#overall-guidelines",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Overall Guidelines",
-    "text": "Overall Guidelines\n\nCollaboration highly encouraged, but all work must reflect your own understanding\nSubmit PDFs on Gradescope\n50% penalty for late submission (up to 24 hours)\nStandard rubric available on website\nAlways cite external references"
+    "objectID": "slides/lecture02-1-nhst.html#what-p-values-are-not",
+    "href": "slides/lecture02-1-nhst.html#what-p-values-are-not",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "What p-Values Are Not",
+    "text": "What p-Values Are Not\n\n\n\nProbability that the null hypothesis is true (or by “chance”);\nAn indication of the effect size.\n\n\n\\[ \\underbrace{p(S \\geq \\hat{S}) | \\mathcal{H}_0)}_{\\text{p-value}} \\neq \\underbrace{p(\\mathcal{H}_0 | S \\geq \\hat{S})}_{\\substack{\\text{probability of} \\\\ \\text{null}}}!\\]"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#readings",
-    "href": "slides/lecture01-1-intro.html#readings",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Readings",
-    "text": "Readings\n\nSeveral readings assigned for discussion throughout the semester.\nAnnotation assignments on Canvas: by end of day on a Monday.\nOne student responsible for leading the discussion on that Wednesday."
+    "objectID": "slides/lecture02-1-nhst.html#statistical-significance-scientific-significance",
+    "href": "slides/lecture02-1-nhst.html#statistical-significance-scientific-significance",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Statistical Significance ≠ Scientific Significance",
+    "text": "Statistical Significance ≠ Scientific Significance\n\n\nStatistical significance does not mean anything about:\n\nwhether the alternative hypothesis is “true”;\nan accurate reflection of the data-generating process.\n\n\n\n\n\nHypothesis vs. Causal Meme"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#homework-assignments",
-    "href": "slides/lecture01-1-intro.html#homework-assignments",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Homework Assignments",
-    "text": "Homework Assignments\n\nMore in-depth problems\nRoughly 2 weeks to complete\nWill not drop any by default\nRegrade requests must be made within one week\n5850 Students: Some extra problems"
+    "objectID": "slides/lecture02-1-nhst.html#what-is-any-statistical-test-doing",
+    "href": "slides/lecture02-1-nhst.html#what-is-any-statistical-test-doing",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "What is Any Statistical Test Doing?",
+    "text": "What is Any Statistical Test Doing?\n\nAssume the null hypothesis \\(\\mathcal{H}_0\\).\nCompute the test statistic \\(\\hat{S}\\) for the sample.\nObtain the sampling distribution of the test statistic \\(S\\) under \\(H_0\\).\nCalculate \\(\\mathbb{P}(S &gt; \\hat{S})\\) (the p-value)."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#term-project",
-    "href": "slides/lecture01-1-intro.html#term-project",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Term Project",
-    "text": "Term Project\n\nAnalyze a data set of interest using model(s) of your choice\nCan work individually or groups of 2\nSeveral deliverables throughout the semester\nFinal in-class presentation and report"
+    "objectID": "slides/lecture02-1-nhst.html#why-was-mathcalh_0-chosen",
+    "href": "slides/lecture02-1-nhst.html#why-was-mathcalh_0-chosen",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Why Was \\(\\mathcal{H}_0\\) chosen?",
+    "text": "Why Was \\(\\mathcal{H}_0\\) chosen?\n\n\n\nOften out of convenience for the test.\nPoint-null hypotheses are almost always wrong for the social and environmental sciences.\n\n\n\n\n\nPoint-Null Hypothesis Meme"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#attendance",
-    "href": "slides/lecture01-1-intro.html#attendance",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Attendance",
-    "text": "Attendance\nNot required, but students tend to do better when they’re actively engaged in class."
+    "objectID": "slides/lecture02-1-nhst.html#non-uniqueness-of-null-models",
+    "href": "slides/lecture02-1-nhst.html#non-uniqueness-of-null-models",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Non-Uniqueness of “Null” Models",
+    "text": "Non-Uniqueness of “Null” Models\n\n\nIs there a trend in the SF tide gauge trend data?\n\nTrend as regression (\\(p \\approx 0.02\\))\nMann-Kendall test for monotonic trend (\\(p \\approx 0.5\\))\n\n\n\n\n\nNon-Uniqueness of Null Models\n\n\n\nSource: McElreath (2020, fig. 1.2)"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#office-hours",
-    "href": "slides/lecture01-1-intro.html#office-hours",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Office Hours",
-    "text": "Office Hours\n\nMW 1-2 PM, 318 Riley-Robb\nAlmost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed."
+    "objectID": "slides/lecture02-1-nhst.html#statistical-test-zoo",
+    "href": "slides/lecture02-1-nhst.html#statistical-test-zoo",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Statistical Test Zoo",
+    "text": "Statistical Test Zoo\n\n\n\n\n\nZoo of Statistical Tests\n\n\n\nSource: McElreath (2020, fig. 1.1)\n\n\n\n\n\n\nZoo of Statistical Tests"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#accomodations",
-    "href": "slides/lecture01-1-intro.html#accomodations",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Accomodations",
-    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
+    "objectID": "slides/lecture02-1-nhst.html#results-are-flashy-but-meaningless-without-methods",
+    "href": "slides/lecture02-1-nhst.html#results-are-flashy-but-meaningless-without-methods",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Results Are Flashy, But Meaningless Without Methods",
+    "text": "Results Are Flashy, But Meaningless Without Methods\n\nElton John Results Section Meme\nSource: Richard McElreath"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#academic-integrity",
-    "href": "slides/lecture01-1-intro.html#academic-integrity",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nHopefully not a concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find and use helpful resources is a skill we want to develop.\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
+    "objectID": "slides/lecture02-1-nhst.html#interpretability-of-p-values-and-significance",
+    "href": "slides/lecture02-1-nhst.html#interpretability-of-p-values-and-significance",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Interpretability of p-Values and Significance",
+    "text": "Interpretability of p-Values and Significance\n\n\n\np-values are often confused with hypothesis probabilities or Type I error rates\np-values are a continuous measure of “surprise” at seeing a dataset given the null, but “significance” is binary.\n\n\n\n\n\nXKCD #1478\n\n\n\nSource: XKCD"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#academic-integrity-1",
-    "href": "slides/lecture01-1-intro.html#academic-integrity-1",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nObviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok."
+    "objectID": "slides/lecture02-1-nhst.html#what-might-be-more-satisfying",
+    "href": "slides/lecture02-1-nhst.html#what-might-be-more-satisfying",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "What Might Be More Satisfying?",
+    "text": "What Might Be More Satisfying?\n\n\nConsideration of multiple plausible (possibly more nuanced) hypotheses.\nAssessment/quantification of evidence consistent with different hypotheses.\nIdentification of opportunities to design experiments/learn.\nInsight into the effect size."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#chatgpt-the-stochastic-parrot",
-    "href": "slides/lecture01-1-intro.html#chatgpt-the-stochastic-parrot",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "ChatGPT: The Stochastic Parrot",
-    "text": "ChatGPT: The Stochastic Parrot\nThink about ChatGPT as a drunk who tells stories for drinks.\nIt will give you plausible-looking text or code on any topic, but it doesn’t know anything beyond what it “overheard.”\n\n\n\n\n\n\nCaution\n\n\nChatGPT can be useful for certain tasks (e.g. understanding code errors), but may neglect context for why/when certain information or solutions work.\nJust think about it as an unreliable Google search."
+    "objectID": "slides/lecture02-1-nhst.html#note-this-does-not-mean-null-hypothesis-testing-is-useless",
+    "href": "slides/lecture02-1-nhst.html#note-this-does-not-mean-null-hypothesis-testing-is-useless",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Note: This Does Not Mean Null Hypothesis Testing Is Useless!",
+    "text": "Note: This Does Not Mean Null Hypothesis Testing Is Useless!\n\n\nExamining and testing the implications of competing models is important, including “null” models!\n\n\n\n\nNull Hypothesis Selection Good Vs. Bad\n\n\n\n\nDeborah Mayo discusses this interpretation as “severe testing”: apply different levels of scrutiny to a scientific model to see what level of severity breaks the model."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#chatgpt-the-stochastic-parrot-1",
-    "href": "slides/lecture01-1-intro.html#chatgpt-the-stochastic-parrot-1",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "ChatGPT: The Stochastic Parrot",
-    "text": "ChatGPT: The Stochastic Parrot\nMust specifically call out where you used ChatGPT in your work (beyond simple referencing)."
+    "objectID": "slides/lecture02-1-nhst.html#model-assessment-through-simulation",
+    "href": "slides/lecture02-1-nhst.html#model-assessment-through-simulation",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Model Assessment Through Simulation",
+    "text": "Model Assessment Through Simulation\nIf we have a generative model which permits simulation of data:\n\nCalibrate models under different assumptions;\nSimulate realizations from those models;\nCompute the distribution of the relevant statistic \\(S\\) from these realizations;\nAssess which distribution is most consistent with the observed quantity."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#communications",
-    "href": "slides/lecture01-1-intro.html#communications",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Communications",
-    "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed."
+    "objectID": "slides/lecture02-1-nhst.html#advances-of-simulation-for-testing",
+    "href": "slides/lecture02-1-nhst.html#advances-of-simulation-for-testing",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Advances of Simulation for “Testing”",
+    "text": "Advances of Simulation for “Testing”\n\nMore structural freedom (don’t need to write down the sampling distribution of \\(S\\) in closed form);\nDon’t need to set up a dichotomous “null vs alternative” test;\nModels can reflect more nuanced hypotheses about data generating processes."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#email",
-    "href": "slides/lecture01-1-intro.html#email",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Email",
-    "text": "Email\nWhen urgency or privacy is required, email is ok.\n\n\n\n\n\n\nImportant\n\n\nPlease include BEE4850 in your email subject line! This will ensure it doesn’t get lost in the shuffle.\nBetter: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy."
+    "objectID": "slides/lecture02-1-nhst.html#how-do-we-assess-models-for-selection",
+    "href": "slides/lecture02-1-nhst.html#how-do-we-assess-models-for-selection",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "How Do We Assess Models For Selection?",
+    "text": "How Do We Assess Models For Selection?\nGenerally, through predictive performance: how probable is some data (out-of-sample or the calibration dataset)?\nBut there are also metrics of how well you explain the existing data (RMSE, R2)."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#course-website",
-    "href": "slides/lecture01-1-intro.html#course-website",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Course Website",
-    "text": "Course Website\nhttps://viveks.me/simulation-data-analysis\n\nCentral hub for information, schedule, and policies\nWill add link and some information to Canvas (assignment due dates, etc)"
+    "objectID": "slides/lecture02-1-nhst.html#hypothesis-testing-1",
+    "href": "slides/lecture02-1-nhst.html#hypothesis-testing-1",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\n\nNull Hypothesis Significance Testing: Compare a null hypothesis (no effect) to an alternative (effect)\n\\(p\\)-value: probability (under \\(H_0\\)) of more extreme test statistic than observed.\n\\(p\\)-values are often over-interpreted, with negative outcomes!\n“Significant” if \\(p\\)-value is below a significance level reflecting acceptable Type I error rate."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#computing-tools",
-    "href": "slides/lecture01-1-intro.html#computing-tools",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Computing Tools",
-    "text": "Computing Tools\n\nCourse is programming language-agnostic.\nAssignments will have notebooks set up for Julia (environments, etc) on GitHub."
-  },
-  {
-    "objectID": "slides/lecture01-1-intro.html#some-tips-for-success",
-    "href": "slides/lecture01-1-intro.html#some-tips-for-success",
-    "title": "Welcome to BEE 4850/5850!",
-    "section": "Some Tips For Success",
-    "text": "Some Tips For Success\n\nStart the homeworks early; this gives time to sort out conceptual problems and debug.\nAsk questions (in class and online) and try to help each other.\nGive me feedback!"
-  },
-  {
-    "objectID": "slides/lecture01-1-intro.html#next-classes",
-    "href": "slides/lecture01-1-intro.html#next-classes",
-    "title": "Welcome to BEE 4850/5850!",
+    "objectID": "slides/lecture02-1-nhst.html#next-classes",
+    "href": "slides/lecture02-1-nhst.html#next-classes",
+    "title": "Hypothesis Testing and Decision-Making",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Hypothesis testing and data analysis\nNext Week: Review of uncertainty and probability"
+    "text": "Next Classes\nWednesday: What is a generative model?\nNext Week+: Prob/Stats “Review” and Fundamentals"
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#assessments",
-    "href": "slides/lecture01-1-intro.html#assessments",
-    "title": "Welcome to BEE 4850/5850!",
+    "objectID": "slides/lecture02-1-nhst.html#assessments",
+    "href": "slides/lecture02-1-nhst.html#assessments",
+    "title": "Hypothesis Testing and Decision-Making",
     "section": "Assessments",
-    "text": "Assessments\nHomework 1 available; due next Friday."
+    "text": "Assessments\nHomework 1 available; due next Friday (2/7)."
   },
   {
-    "objectID": "slides/lecture01-1-intro.html#references-scroll-for-full-list",
-    "href": "slides/lecture01-1-intro.html#references-scroll-for-full-list",
-    "title": "Welcome to BEE 4850/5850!",
+    "objectID": "slides/lecture02-1-nhst.html#references-scroll-for-full-list",
+    "href": "slides/lecture02-1-nhst.html#references-scroll-for-full-list",
+    "title": "Hypothesis Testing and Decision-Making",
     "section": "References (Scroll for Full List)",
-    "text": "References (Scroll for Full List)\n\n\n\n\nDoss-Gollin, J., & Keller, K. (2023). A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management. Earths Future, 11, e2022EF003044. https://doi.org/10.1029/2022ef003044\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nFagnant, C., Gori, A., Sebastian, A., Bedient, P. B., & Ensor, K. B. (2020). Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas. Nat. Hazards, 104, 1597–1621. https://doi.org/10.1007/s11069-020-04235-x\n\n\nSrikrishnan, V., Guan, Y., Tol, R. S. J., & Keller, K. (2022). Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model. Clim. Change, 170, 37. https://doi.org/10.1007/s10584-021-03279-7"
+    "text": "References (Scroll for Full List)\n\n\n\n\nMcElreath, R. (2020). Statistical rethinking : A bayesian course with examples in R and Stan (Second). Boca Raton, Florida: CRC. Retrieved from https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919"
   },
   {
     "objectID": "index.html",
@@ -794,88 +768,373 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About This Website",
+    "objectID": "slides/lecture01-1-intro.html#about-me",
+    "href": "slides/lecture01-1-intro.html#about-me",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "About Me",
+    "text": "About Me\nInstructor: Prof. Vivek Srikrishnan, viveks at cornell dot edu\nInterests:\n\nBridging Earth science, data science, and decision science to improve climate risk management;\nUnintended consequences which result from neglecting uncertainty or system dynamics."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#meet-my-supervisors",
+    "href": "slides/lecture01-1-intro.html#meet-my-supervisors",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Meet My Supervisors",
+    "text": "Meet My Supervisors\n\n\n\n\nMy Supervisors"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#what-do-you-hope-to-get-out-of-this-course",
+    "href": "slides/lecture01-1-intro.html#what-do-you-hope-to-get-out-of-this-course",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "What Do You Hope To Get Out Of This Course?",
+    "text": "What Do You Hope To Get Out Of This Course?\nTake a moment, write it down, and we’ll share!"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#why-does-data-analysis-matter",
+    "href": "slides/lecture01-1-intro.html#why-does-data-analysis-matter",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Why Does Data Analysis Matter?",
+    "text": "Why Does Data Analysis Matter?\n\nScientific insight;\nDecision-making;\nUnderstanding uncertainty"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#the-ideal",
+    "href": "slides/lecture01-1-intro.html#the-ideal",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "The Ideal",
+    "text": "The Ideal\n\n\n\n\nXKCD 2400\n\n\n\n\nSource: XKCD 2400"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#but-in-actuality",
+    "href": "slides/lecture01-1-intro.html#but-in-actuality",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "But in Actuality",
+    "text": "But in Actuality\n\nExcept in the most controlled experiments, data are noisy;\nThe causes of the data cannot be extracted from the data alone;\nThe reasons for statistical analyses are not found in the data themselves."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#uniquechallenging-features-of-data",
+    "href": "slides/lecture01-1-intro.html#uniquechallenging-features-of-data",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Unique/Challenging Features Of Data",
+    "text": "Unique/Challenging Features Of Data\nThere are many features of environmental (and biological!) data which make data analysis interesting and hard."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#extreme-events",
+    "href": "slides/lecture01-1-intro.html#extreme-events",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Extreme Events",
+    "text": "Extreme Events\n\n\n\n\nExtreme Events\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#extreme-events-1",
+    "href": "slides/lecture01-1-intro.html#extreme-events-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Extreme Events",
+    "text": "Extreme Events\n\n\n\n\nXKCD 2107\n\n\n\n\nSource: XKCD 2107"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#correlated-uncertainties",
+    "href": "slides/lecture01-1-intro.html#correlated-uncertainties",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Correlated Uncertainties",
+    "text": "Correlated Uncertainties\n\n\n \n\n\nSource: Errickson et al. (2021)"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#non-stationarity",
+    "href": "slides/lecture01-1-intro.html#non-stationarity",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Non-Stationarity",
+    "text": "Non-Stationarity\n\n\n\n\nNon-Stationary Trends\n\n\n\n\nSource: Fagnant et al. (2020)"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#forcing-model-uncertainty",
+    "href": "slides/lecture01-1-intro.html#forcing-model-uncertainty",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Forcing & Model Uncertainty",
+    "text": "Forcing & Model Uncertainty\n\n\n\n\nDifferent Uncertainties for SLR\n\n\n\n\nSource: Doss-Gollin & Keller (2023)"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#deep-uncertainty",
+    "href": "slides/lecture01-1-intro.html#deep-uncertainty",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Deep Uncertainty",
+    "text": "Deep Uncertainty\n\n\n\n\nDeep Uncertainty for Future Climate Projections\n\n\n\n\nSource: Srikrishnan et al. (2022)"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#causation-is-not-association",
+    "href": "slides/lecture01-1-intro.html#causation-is-not-association",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Causation Is Not Association",
+    "text": "Causation Is Not Association\n\n\n\nWe’ve all heard “correlation (association) does not imply causation”\nBut confounds/noise can mean causation does not imply association\n\n\n\n\n\n\nCorrelation not Causation Meme\n\n\n\n\nSource: Richard McElreath"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#description-and-inference-are-connected",
+    "href": "slides/lecture01-1-intro.html#description-and-inference-are-connected",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Description and Inference are Connected",
+    "text": "Description and Inference are Connected\n\n\nExcept for superficial tasks:\n\nKnowing what is important to describe requires a model;\nUnderstanding how the data might differ from the population requires a model.\n\n\n\n\n\n\nSpidermen Meme"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#some-problems-with-the-standard-data-analysis-toolkit",
+    "href": "slides/lecture01-1-intro.html#some-problems-with-the-standard-data-analysis-toolkit",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Some Problems With The “Standard” Data Analysis Toolkit",
+    "text": "Some Problems With The “Standard” Data Analysis Toolkit\n\n\nStatistical assumptions may not be valid;\n“Null” vs “Alternative” hypotheses and tests may be chosen for computational convenience, not scientific relevance.\nMany different substantive models can imply the same statistical model.\n\n\n\nImportant: “Big” data doesn’t solve the problem!"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#my-philosophical-position",
+    "href": "slides/lecture01-1-intro.html#my-philosophical-position",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "My Philosophical Position",
+    "text": "My Philosophical Position\n\n\n\nProbability theory helps us deduce logical implications of theories conditional on our assumptions\nCannot use an “objective” procedure to avoid subjective responsibility\n\n\n\n\n\n\nBart Statistics Meme"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#model-based-data-analysis",
+    "href": "slides/lecture01-1-intro.html#model-based-data-analysis",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Model-Based Data Analysis",
+    "text": "Model-Based Data Analysis\nWe can (transparently):\n\nExamine logical implications of model assumptions (including interventions/out-of-sample generation).\nAssess evidence for multiple hypotheses by generating simulated data.\nIdentify opportunities to design future experiments or observations to distinguish between competing hypotheses."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#model-based-data-analysis-1",
+    "href": "slides/lecture01-1-intro.html#model-based-data-analysis-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Model-Based Data Analysis",
+    "text": "Model-Based Data Analysis\n\n\nModels are how we assess evidence for theories.\n\n\n\n\n\nRock Paper Scissors meme"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#course-organization",
+    "href": "slides/lecture01-1-intro.html#course-organization",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Course Organization",
+    "text": "Course Organization\n\n\n\n\n\ntimeline\n      Introduction (Weeks 1-2): Overview\n                  : Modeling Data-Generating Processes\n                  : Hypothesis Testing and Scientific Inference\n      Probability Fundamentals (Weeks 3-5): Prob/Stats \"Review\"\n                              : Model Fitting\n                              : Bayesian Statistics\n      Simulation Methods (Weeks 6-7): Monte Carlo\n                                    : Bootstrap\n      Model Evaluation (Weeks 8-9): Cross-Validation\n                      : Model Selection\n      Useful Models (Weeks 10-13): Extreme Values\n                                 : Missing Data\n                                 : Mixture Models\n                                 : Gaussian Processes\n      Experimental Design (Weeks 14): Confounds\n                                       : Controls and Designing Experiments"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#background-knowledge-computing",
+    "href": "slides/lecture01-1-intro.html#background-knowledge-computing",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Background Knowledge: Computing",
+    "text": "Background Knowledge: Computing\n\nBasics (at the level of CS 111x)\nNo specific language requirement.\nSome extra work/effort may be needed if you haven’t coded in a while.\nMay need some additional familiarity with statistical packages (and “light” optimization)"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#background-knowledge-probabilitystatistics",
+    "href": "slides/lecture01-1-intro.html#background-knowledge-probabilitystatistics",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Background Knowledge: Probability/Statistics",
+    "text": "Background Knowledge: Probability/Statistics\n\nENGRD 2700/CEE 3040\nSummary statistics of data\nProbability distributions\nBasic visualizations\nMonte Carlo basics"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#grades",
+    "href": "slides/lecture01-1-intro.html#grades",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Grades",
+    "text": "Grades\n\n\n\nAssessment\n% of Grade\n\n\n\n\nParticipation\n10%\n\n\nReadings\n10%\n\n\nLiterature Critique\n15%\n\n\nHomework Assignments\n40%\n\n\nTerm Project\n25%"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#overall-guidelines",
+    "href": "slides/lecture01-1-intro.html#overall-guidelines",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Overall Guidelines",
+    "text": "Overall Guidelines\n\nCollaboration highly encouraged, but all work must reflect your own understanding\nSubmit PDFs on Gradescope\n50% penalty for late submission (up to 24 hours)\nStandard rubric available on website\nAlways cite external references"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#literature-critique",
+    "href": "slides/lecture01-1-intro.html#literature-critique",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Literature Critique",
+    "text": "Literature Critique\n\nSelect a paper which involves some type of statistical or data analysis\nCritique choices: do they support the scientific conclusions?\nSubmit a 2 page writeup at the end of the semester\nIf you’re unsure where to look for a paper, talk to Prof. Srikrishnan and we can find options"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#readings",
+    "href": "slides/lecture01-1-intro.html#readings",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Readings",
+    "text": "Readings\n\nSeveral readings assigned for discussion throughout the semester.\nAnnotation assignments on Canvas: by end of day on a Monday.\nOne (graduate) student responsible for leading the discussion on that Wednesday.\nIf you want to use slides, send them to Prof. Srikrishnan by end of day Tuesday."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#homework-assignments",
+    "href": "slides/lecture01-1-intro.html#homework-assignments",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Homework Assignments",
+    "text": "Homework Assignments\n\nMore in-depth problems\nRoughly 2 weeks to complete\nWill drop one by default\nRegrade requests must be made within one week\n5850 Students: Some extra problems"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#term-project",
+    "href": "slides/lecture01-1-intro.html#term-project",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Term Project",
+    "text": "Term Project\n\nAnalyze a data set of interest using model(s) of your choice\nCan work individually or groups of 2\nSeveral deliverables throughout the semester\nFinal in-class presentation and report"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#attendance",
+    "href": "slides/lecture01-1-intro.html#attendance",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Attendance",
+    "text": "Attendance\nNot required, but students tend to do better when they’re actively engaged in class."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#office-hours",
+    "href": "slides/lecture01-1-intro.html#office-hours",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nMW 1-2 PM, 318 Riley-Robb\nAlmost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#accomodations",
+    "href": "slides/lecture01-1-intro.html#accomodations",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Accomodations",
+    "text": "Accomodations\nIf you have any access barriers in this class, please seek out any helpful accomodations.\n\nGet an SDS letter.\nIf you need an accomodation before you have an official letter, please reach out to me ASAP!"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#academic-integrity",
+    "href": "slides/lecture01-1-intro.html#academic-integrity",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nHopefully not a concern…\n\nCollaboration is great and is encouraged!\nKnowing how to find and use helpful resources is a skill we want to develop.\nDon’t just copy…learn from others and give credit.\nSubmit your own original work."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#academic-integrity-1",
+    "href": "slides/lecture01-1-intro.html#academic-integrity-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nObviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#chatgpt-the-stochastic-parrot",
+    "href": "slides/lecture01-1-intro.html#chatgpt-the-stochastic-parrot",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "ChatGPT: The Stochastic Parrot",
+    "text": "ChatGPT: The Stochastic Parrot\nThink about ChatGPT as a drunk who tells stories for drinks.\nIt will give you plausible-looking text or code on any topic, but it doesn’t know anything beyond what it “overheard.”\n\n\n\n\n\n\nCaution\n\n\nChatGPT can be useful for certain tasks (e.g. understanding code errors), but may neglect context for why/when certain information or solutions work.\nJust think about it as an unreliable Google search."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#chatgpt-the-stochastic-parrot-1",
+    "href": "slides/lecture01-1-intro.html#chatgpt-the-stochastic-parrot-1",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "ChatGPT: The Stochastic Parrot",
+    "text": "ChatGPT: The Stochastic Parrot\nMust specifically call out where you used ChatGPT in your work (beyond simple referencing)."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#communications",
+    "href": "slides/lecture01-1-intro.html#communications",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Communications",
+    "text": "Communications\nUse Ed Discussion for questions and discussions about class, homework assignments, etc.\n\nTry to use public posts so others can benefit from questions and can weigh in.\nI will make announcements through Ed."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#email",
+    "href": "slides/lecture01-1-intro.html#email",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Email",
+    "text": "Email\nWhen urgency or privacy is required, email is ok.\n\n\n\n\n\n\nImportant\n\n\nPlease include BEE4850 in your email subject line! This will ensure it doesn’t get lost in the shuffle.\nBetter: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#course-website",
+    "href": "slides/lecture01-1-intro.html#course-website",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Course Website",
+    "text": "Course Website\nhttps://viveks.me/simulation-data-analysis\n\nCentral hub for information, schedule, and policies\nWill add link and some information to Canvas (assignment due dates, etc)"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#computing-tools",
+    "href": "slides/lecture01-1-intro.html#computing-tools",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Computing Tools",
+    "text": "Computing Tools\n\nCourse is programming language-agnostic.\nAssignments will have notebooks set up for Julia (environments, etc) on GitHub."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#some-tips-for-success",
+    "href": "slides/lecture01-1-intro.html#some-tips-for-success",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Some Tips For Success",
+    "text": "Some Tips For Success\n\nStart the homeworks early; this gives time to sort out conceptual problems and debug.\nAsk questions (in class and online) and try to help each other.\nGive me feedback!"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#next-classes",
+    "href": "slides/lecture01-1-intro.html#next-classes",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Next Classes",
+    "text": "Next Classes\n\nHypothesis testing and decision-making\nGenerative models"
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#assessments",
+    "href": "slides/lecture01-1-intro.html#assessments",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "Assessments",
+    "text": "Assessments\nHomework 1 available; due next Friday (2/7)."
+  },
+  {
+    "objectID": "slides/lecture01-1-intro.html#references-scroll-for-full-list",
+    "href": "slides/lecture01-1-intro.html#references-scroll-for-full-list",
+    "title": "Welcome to BEE 4850/5850!",
+    "section": "References (Scroll for Full List)",
+    "text": "References (Scroll for Full List)\n\n\n\n\nDoss-Gollin, J., & Keller, K. (2023). A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management. Earths Future, 11, e2022EF003044. https://doi.org/10.1029/2022ef003044\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nFagnant, C., Gori, A., Sebastian, A., Bedient, P. B., & Ensor, K. B. (2020). Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas. Nat. Hazards, 104, 1597–1621. https://doi.org/10.1007/s11069-020-04235-x\n\n\nSrikrishnan, V., Guan, Y., Tol, R. S. J., & Keller, K. (2022). Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model. Clim. Change, 170, 37. https://doi.org/10.1007/s10584-021-03279-7"
+  },
+  {
+    "objectID": "project/presentation.html",
+    "href": "project/presentation.html",
+    "title": "Project Presentation Instructions",
     "section": "",
-    "text": "This website contains course materials for the Spring 2025 edition of Environmental Data Analysis and Simulation, taught by Vivek Srikrishnan at Cornell University."
+    "text": "m These are the instructions for your final project presentation, which will be given in class on May 6, 2024."
   },
   {
-    "objectID": "about.html#acknowledgements",
-    "href": "about.html#acknowledgements",
-    "title": "About This Website",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nMuch of the material for this course has evolved from discussions and work with Klaus Keller, Tony Wong, Casey Helgeson, Ben Seiyon Lee and James Doss-Gollin. Many thanks also to Andrew Gelman and Christian Robert, whose work heavily inspired many aspects of this course and which I refer back to regularly. Kieran Healy also wrote an outstanding book on Data Visualization which I learned a great deal from and still reference.\nThe layout for this site was also inspired by and draws from STA 210 at Duke University and Andrew Heiss’s course materials at Georgia State."
+    "objectID": "project/presentation.html#presentation-submission",
+    "href": "project/presentation.html#presentation-submission",
+    "title": "Project Presentation Instructions",
+    "section": "Presentation Submission",
+    "text": "Presentation Submission\nPlease submit your slides in PDF format by email to Prof. Srikrishnan no later than Friday, May 3, 2024."
   },
   {
-    "objectID": "about.html#tools-and-generation-workflow",
-    "href": "about.html#tools-and-generation-workflow",
-    "title": "About This Website",
-    "section": "Tools and Generation Workflow",
-    "text": "Tools and Generation Workflow\nThis website was built with Quarto, which allows me to integrate Julia code and output with the web content, pdfs, and slides in an amazingly clean fashion, while simplifying the process of generation. All materials can be generated through a simple workflow from the [GitHub Repository]."
+    "objectID": "project/presentation.html#presentation-guidelines",
+    "href": "project/presentation.html#presentation-guidelines",
+    "title": "Project Presentation Instructions",
+    "section": "Presentation Guidelines",
+    "text": "Presentation Guidelines\nYour presentation should be short (10 minutes, which will be timed and strictly enforced in the interest of time). Your presentation should concisely describe your key question, your scientific hypothesis, and your results and conclusions. Note that a 10 minute presentation means that you should aim for no more than 5-6 slides (not including titles, transitions, or wrap-ups/references)."
   },
   {
-    "objectID": "project/simulation.html",
-    "href": "project/simulation.html",
-    "title": "Simulation Study Instructions",
+    "objectID": "project/report.html",
+    "href": "project/report.html",
+    "title": "Project Report Instructions",
     "section": "",
-    "text": "The goal of the simulation study is to implement your model(s) and evaluate their simulations to assess the differences between them. Your goal is not to “test” relevant hypotheses yet, but to visualize and describe the differences in the model hindcasts and projections."
+    "text": "These are the instructions for your final project report. The report should be submitted on Gradescope during finals week, but no later than May 17, 2024."
   },
   {
-    "objectID": "project/simulation.html#simulation-study-guidelines",
-    "href": "project/simulation.html#simulation-study-guidelines",
-    "title": "Simulation Study Instructions",
-    "section": "Simulation Study Guidelines",
-    "text": "Simulation Study Guidelines\nThe proposal should have the following components with 1 inch margins (on all sides) and at least 11 point font.\n\nCalibration: Find and report appropriate parameter values for your model(s). This can be done through finding the maximum likelihood or maximum a posteriori estimates, with relevant uncertainty estimates obtained from the bootstrap or sampling from the posterior distribution using MCMC. Whatever approach you take, make sure to justify it and any associated assumptions (e.g. prior distributions).\nSimulation: Using the calibrated model(s), simulate synthetic datasets and compute useful summaries. Include useful graphical checks (including, if appropriate, hindcasts and projections) as needed.\nComparison: Discuss the differences in the calibrations and simulations and what they mean for your hypotheses(s). Were there any surprises?\nReferences: Make sure to include any references cited in your proposal."
+    "objectID": "project/report.html#report-guidelines",
+    "href": "project/report.html#report-guidelines",
+    "title": "Project Report Instructions",
+    "section": "Report Guidelines",
+    "text": "Report Guidelines\nThe proposal should have the following components with 1 inch margins (on all sides) and at least 11 point font. Some of this may be repeated from your proposal and/or simulation study; this is fine.\n\nBackground: Provide background on your project topic and the relevant environmental system. Why is this topic interesting or valuable to understand? What are you trying to understand or what do you hyptohesize?\nData and Models: What data are you using? Provide exploratory plots. What model(s) are you using to explore the data and your hypotheses? Include details about the probability or statistical assumptions your model is making and how well-founded you think these are in light of the system and the data.\nResults: What have you learned from your analysis? Were your hypotheses well founded? What visual or quantative evidence are you using to support these conclusions?\nDiscussion: Reflect on the data and models that you used. How well suited were they for the analysis? In retrospect, what might have been better? How might they have biased or influenced your results?\nReferences: Make sure to include any external sources referenced during the course of completing your project.\n\nYou do not need to include any code in your reports, but if you do, please reserve this for an appendix at the end of the report, not mixed in with the above sections. If you generated a figure or fit a model using the code, include the figure along with the relevant text but do not include code. There is no page minimum or maximum on the report, but it should include, clearly, all of the above content."
   },
   {
-    "objectID": "project/proposal.html",
-    "href": "project/proposal.html",
-    "title": "Project Proposal Instructions",
+    "objectID": "rubrics/standard.html",
+    "href": "rubrics/standard.html",
+    "title": "Standard Rubrics",
     "section": "",
-    "text": "Your project should involve analyzing a data set of interest using model-based simulation. The proposal is an opportunity to think through and articulate the core science question, hypotheses, and modeling approaches, and get feedback about the plan."
+    "text": "These rubrics are intended as a description for students and a guide to the grader for how to assign partial credit.",
+    "crumbs": [
+      "Homework",
+      "Standard Rubric"
+    ]
   },
   {
-    "objectID": "project/proposal.html#what-makes-a-good-project",
-    "href": "project/proposal.html#what-makes-a-good-project",
-    "title": "Project Proposal Instructions",
-    "section": "What Makes A Good Project?",
-    "text": "What Makes A Good Project?\nYour project topic should have the following features:\n\nFocus on a data set which can inform a relevant science question;\nInvolve one or more specific hypotheses which can be translated into a simulation model (either numerical or statistical is fine);\nIf only one hypothesis is considered, a meaningful “null” model should be included for comparison."
+    "objectID": "rubrics/standard.html#meta-rubric",
+    "href": "rubrics/standard.html#meta-rubric",
+    "title": "Standard Rubrics",
+    "section": "Meta-Rubric",
+    "text": "Meta-Rubric\n\nIndividual problems may vary from these standard rubrics based on the assessed learning outcomes for the problem, but they should provide an overview of what features students ought to be included in a given solution.\nEach bullet point should appear as a separate rubric item in Gradescope. We will use positive grading (points awarded for each component).\nEach standard rubric describes partial credit for a problem with 10 points. Partial credit for (sub)problems worth less than 10 points should be scaled appropriately. Full problems usually combine one of the modeling methods with some interpretation questions, so the rubric will be a combination of the individual components.\nGenerally, rubrics for 10 point “entire problems” can be summarized with the following:\n\n+4 points for an answer with a correct implementation (including model setup).\n+2 points for the correct solution (including details such as labels, units, etc.).\n+4 points for the interpretation. These points may be broken up across subproblems, but the general assignment of points should follow this summary.\n\nNote that the points may not scale with the distribution of work for a given problem. That’s life! It may take more work to derive and implement your model than it does to intrepret your results, but in this class we care a lot about your ability to critically evaluate and interpret modeling results.\nSometimes problems will be broken up into\nThe graders cannot read your mind and will not try to. Submissions that are unclear for any reason, including but not limited to unclear syntax (English or code), uncommented code, lack of reasoning or derivation, too much detail or writing, will not be given credit. The grader has complete discretion here. If something in your solution is ambiguous, the grader has been instructed to interpret it the “wrong” way. Clear responses are a sign of understanding, which is part of what we’re assessing.\nYou will not be doubly penalized for getting the “right” solution to the “wrong” setup (you would have been penalized above), but this requires the grader to be able to easily identify that your implementation is correct given the wrong model. If your implementation is unclear, you are likely to lose points here because we have no way of knowing that your answer is “right” without re-coding your problem.\nYou will not be given credit for your code (this isn’t a programming class); the code is a means to solving the problem, and we’re more interested in how you set up the problem and interpret the solution. This does mean that code that is sloppy but works is perfectly acceptable. However, your code may get you partial credit if the TA can easily find where you made a mistake, so make sure your submitted code is well commented. It’s important to write down the mathematics of what your code is trying to implement, because the TA will only take a cursory look at your code.\nSome rubrics include “deadly sins” which will cause an immediate zero to be given for the problem. Do not do these!\nRegardless of the problem type, the following penalties will be applied per incident:\n\n-1 for missing units.",
+    "crumbs": [
+      "Homework",
+      "Standard Rubric"
+    ]
   },
   {
-    "objectID": "project/proposal.html#proposal-guidelines",
-    "href": "project/proposal.html#proposal-guidelines",
-    "title": "Project Proposal Instructions",
-    "section": "Proposal Guidelines",
-    "text": "Proposal Guidelines\nThe proposal should have the following components, and be no more than 5 pages (not including references and plots) with 1 inch margins (on all sides) and at least 11 point font.\n\nBackground: What is the scientific context of your project? What question are you trying to address and why does it matter? What are the hypotheses you are focusing on?\nData Overview: Where was the data obtained from? In what context was it collected (e.g. is it observational data, collected in a lab, or reconstructed) and what implications that might have for its use in testing your hypotheses? Include some exploratory analysis and plots. Are there errors included in the data? Will you need any auxiliary data?\nModel Specification: What model(s) are you proposing to use to study the data in the context of your hypotheses? If you’re using a numerical simulation model, what parameters will you treat as uncertain and what is the probability model for the residuals? If you’re using a statistical model, what choices are you making about distributions? Include some initial exploratory analyses to analyze initial goodness-of-fit.\nReferences: Make sure to include any references cited in your proposal."
-  },
-  {
-    "objectID": "exercises.html",
-    "href": "exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester."
-  },
-  {
-    "objectID": "exercises.html#general-information",
-    "href": "exercises.html#general-information",
-    "title": "Exercises",
-    "section": "General Information",
-    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise."
-  },
-  {
-    "objectID": "exercises.html#rubric",
-    "href": "exercises.html#rubric",
-    "title": "Exercises",
-    "section": "Rubric",
-    "text": "Rubric\nThe standard rubric for homework problems is available here."
-  },
-  {
-    "objectID": "exercises.html#schedule",
-    "href": "exercises.html#schedule",
-    "title": "Exercises",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nWeek\nInstructions\nDue Date\n\n\n\n\n\nWeek 1\n\nFeb 02, 2024\n\n\n\nWeek 3\n\nFeb 09, 2024\n\n\n\nWeek 4\n\nFeb 16, 2024\n\n\n\nWeek 5\n\nFeb 23, 2024\n\n\n\nWeek 7\n\nMar 08, 2024\n\n\n\nWeek 8\n\nMar 15, 2024"
+    "objectID": "rubrics/standard.html#standard-rubrics",
+    "href": "rubrics/standard.html#standard-rubrics",
+    "title": "Standard Rubrics",
+    "section": "Standard Rubrics",
+    "text": "Standard Rubrics\n\nSimulation Rubric\n10 points =\n\n+4 for the model derivation.\n\nThis includes any relevant reasoning from mass-balance or other principles.\n\n+4 for discretizing the model correctly.\n\n-1 if no justification is provided for the chosen step-size(s).\n\n+2 points for obtaining the correct solution.\n\n-1 if the error is from a minor bug. I recommend providing an explicit sketch of your code’s procedure, so if that is correct any differences are likely to be the result of a minor bug, such as a misentered number (not ideal, but you understand what you’re doing!). Otherwise you are relying on the TA to interpret your code.\n\n\n\n\nMonte Carlo Rubric\n10 points =\n\n+4 for a clear English explanation of the sampling plan\n\nYou must justify each distribution used, including your choice of mean and standard deviation.\n\n+2 for justification of Monte Carlo sample size.\n\nDeadly Sin: No points will be given for a Monte Carlo solution with an arbitrary sample size.\n\n+2 for an estimate of the Monte Carlo standard error.\n+1 for setting a seed for reproducibility.\n+2 for correct estimate.\n\nDeviations from the posted solution are ok if they’re within the Monte Carlo standard error.\n\n\n\n\nFigure Rubrics\n10 points =\n\n+2 for appropriate choice of axes.\n\nDeadly Sin!: No points will be given for the figure if the axes are not labelled.\n\n+4 for the correct data series.\n+2 for a descriptive legend.\n+2 for a succinct description or caption.\n\n-1 for a description which is too wordy but contains the relevant information.\n\n\n\n\nInterpretation Rubrics\n10 points =\n\n+4 for specific reference to the modeling results;\n\n-2 if the results are not specifically referenced and the reader has to refer to the previous problems to understand the interpretation.\n\n+6 for thoughtfulness of the interpretation;\n\n-4 for not specifically referencing relevant model assumptions;\nDeadly Sin: Do not neglect fundamental engineering principles in any of your interpretations. You will be given a zero if you make a recommendation which e.g. violates an engineering code or standard.\nDeadly Sin: Completely generic interpretations will result in zero points.",
+    "crumbs": [
+      "Homework",
+      "Standard Rubric"
+    ]
   },
   {
     "objectID": "tutorials/turing-mcmc.html",
@@ -937,7 +1196,7 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "This is a 3 credit course offered as an elective.\n\n\n\n\n\n Vivek Srikrishnan\n viveks@cornell.edu\n 318 Riley-Robb Hall\n\n\n\n\n\n Gabriela Ackermann Logan\n ga345@cornell.edu\n 319 Riley-Robb Hall\n\n\n\n–&gt; ::: {.column width=“33%”} ### Meetings\n\n MW\n 11:40-12:55pm\n 160 Riley-Robb Hall\n\n:::\n::::\n\n\nSimulations from numerical and statistical models are a key tool used to quantify and represent our understanding of many different environmental systems, including but not limited to the climate, sea levels, air pollution, and the electric power system. Data analysis of environmental observations and model simulations is an integral part of developing and evaluating models used to 1) test our assumptions about environmental system dynamics; 2) develop new insights into environmental processes; and 3) project future environmental conditions and outcomes. This course will provide an overview of the use of generative probability models to understand data and examine hypotheses about data-generating processes. The goal is to provide students with a framework and an initial toolkit of methods for data analysis and simulation. Students will actively analyze and use real data from a variety of environmental systems. In particular, over the course of the semester, we will:\n\nconduct exploratory analyses of environmental datasets;\ndiscuss best practices for and complexities of data visualization;\ncalibrate statistical and process-based numerical models using environmental data;\nuse simulations from calibrated models to identify key sources of uncertainty and model error;\nassess model fit and adequacy through predictive ability.",
+    "text": "This is a 3 credit course offered as an elective.\n\n\n\n\n\n Vivek Srikrishnan\n viveks@cornell.edu\n 318 Riley-Robb Hall\n\n\n\n\n\n\n Gabriela Ackermann Logan\n ga345@cornell.edu\n 319 Riley-Robb Hall\n\n\n\n\n\n\n MW\n 11:40-12:55pm\n 160 Riley-Robb Hall\n\n\n\n\n\n\nSimulations from numerical and statistical models are a key tool used to quantify and represent our understanding of many different environmental systems, including but not limited to the climate, sea levels, air pollution, and the electric power system. Data analysis of environmental observations and model simulations is an integral part of developing and evaluating models used to 1) test our assumptions about environmental system dynamics; 2) develop new insights into environmental processes; and 3) project future environmental conditions and outcomes. This course will provide an overview of the use of generative probability models to understand data and examine hypotheses about data-generating processes. The goal is to provide students with a framework and an initial toolkit of methods for data analysis and simulation. Students will actively analyze and use real data from a variety of environmental systems. In particular, over the course of the semester, we will:\n\nconduct exploratory analyses of environmental datasets;\ndiscuss best practices for and complexities of data visualization;\ncalibrate statistical and process-based numerical models using environmental data;\nuse simulations from calibrated models to identify key sources of uncertainty and model error;\nassess model fit and adequacy through predictive ability.",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -948,7 +1207,7 @@
     "href": "syllabus.html#course-overview",
     "title": "Syllabus",
     "section": "",
-    "text": "This is a 3 credit course offered as an elective.\n\n\n\n\n\n Vivek Srikrishnan\n viveks@cornell.edu\n 318 Riley-Robb Hall\n\n\n\n\n\n Gabriela Ackermann Logan\n ga345@cornell.edu\n 319 Riley-Robb Hall\n\n\n\n–&gt; ::: {.column width=“33%”} ### Meetings\n\n MW\n 11:40-12:55pm\n 160 Riley-Robb Hall\n\n:::\n::::\n\n\nSimulations from numerical and statistical models are a key tool used to quantify and represent our understanding of many different environmental systems, including but not limited to the climate, sea levels, air pollution, and the electric power system. Data analysis of environmental observations and model simulations is an integral part of developing and evaluating models used to 1) test our assumptions about environmental system dynamics; 2) develop new insights into environmental processes; and 3) project future environmental conditions and outcomes. This course will provide an overview of the use of generative probability models to understand data and examine hypotheses about data-generating processes. The goal is to provide students with a framework and an initial toolkit of methods for data analysis and simulation. Students will actively analyze and use real data from a variety of environmental systems. In particular, over the course of the semester, we will:\n\nconduct exploratory analyses of environmental datasets;\ndiscuss best practices for and complexities of data visualization;\ncalibrate statistical and process-based numerical models using environmental data;\nuse simulations from calibrated models to identify key sources of uncertainty and model error;\nassess model fit and adequacy through predictive ability.",
+    "text": "This is a 3 credit course offered as an elective.\n\n\n\n\n\n Vivek Srikrishnan\n viveks@cornell.edu\n 318 Riley-Robb Hall\n\n\n\n\n\n\n Gabriela Ackermann Logan\n ga345@cornell.edu\n 319 Riley-Robb Hall\n\n\n\n\n\n\n MW\n 11:40-12:55pm\n 160 Riley-Robb Hall\n\n\n\n\n\n\nSimulations from numerical and statistical models are a key tool used to quantify and represent our understanding of many different environmental systems, including but not limited to the climate, sea levels, air pollution, and the electric power system. Data analysis of environmental observations and model simulations is an integral part of developing and evaluating models used to 1) test our assumptions about environmental system dynamics; 2) develop new insights into environmental processes; and 3) project future environmental conditions and outcomes. This course will provide an overview of the use of generative probability models to understand data and examine hypotheses about data-generating processes. The goal is to provide students with a framework and an initial toolkit of methods for data analysis and simulation. Students will actively analyze and use real data from a variety of environmental systems. In particular, over the course of the semester, we will:\n\nconduct exploratory analyses of environmental datasets;\ndiscuss best practices for and complexities of data visualization;\ncalibrate statistical and process-based numerical models using environmental data;\nuse simulations from calibrated models to identify key sources of uncertainty and model error;\nassess model fit and adequacy through predictive ability.",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -1036,7 +1295,7 @@
     "href": "syllabus.html#assessments",
     "title": "Syllabus",
     "section": "Assessments",
-    "text": "Assessments\n\nTechnologies\nWe will use Canvas as a gradebook, and to distribute PDFs of readings (which also be made available through the website, via the Cornell library). Ed Discussion will be used for course communications. Assignments will be submitted and graded in Gradescope.\nStudents can use any programming language they like to solve problems, though we will make notebooks and package environments available for Julia (which may help structure your assignments if you use a different language) via GitHub. If students use a language other than Julia, we may limited in the programming assistance we can provide (though we’re happy to try to help!).\nWe recommend students create a GitHub account and use GitHub to version control and share their code throughout the semester.\n\n\nGrading\nFinal grades will be computed based on the following assessment weights:\n\n\n\nAssessment\nWeight\n\n\n\n\nExercises\n10%\n\n\nReadings\n10%\n\n\nLiterature Critique\n15%\n\n\nHomework Assignments\n30%\n\n\nTerm Project\n35%\n\n\n\nThe following grading scale will be used to convert the numerical weighted average to letter grades:\n\n\n\nGrade\nRange\n\n\n\n\nA\n93–100\n\n\nA-\n90–93\n\n\nB+\n87–90\n\n\nB\n83–87\n\n\nB-\n80–83\n\n\nC+\n77–80\n\n\nC\n73–77\n\n\nC-\n70–73\n\n\nD+\n67–70\n\n\nD\n63–67\n\n\nD-\n60–63\n\n\nF\n&lt; 60\n\n\n\n\n\nExercises\nMost weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming, a minor calculation, and/or visual assessment of data or a figure. Exercises will be provided the previous Monday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. These exercises will be given as quizzes on Gradescope and will be auto-graded. The lowest exercise score will be dropped automatically.\n\n\nReadings\nReadings will be assigned for discussion throughout the semester. Students are expected to summarize their takeaways and thoughts on the reading and respond to others’ comments on the Ed forum during the week after the reading is assigned (typically Monday – Monday). Collaborative annotation assignments will be set up in Canvas to facilitate reading ahead of the discussion on the Ed forum. For key readings, a student in BEE 5850 will be assigned to lead a 35 minute in-class discussion on the reading.\n\n\nLiterature Critique\nStudents will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices.\n\n\nHomework Assignments\nApproximately 6 homework assignments will be assigned throughout the semester (roughly one per course module). You will typically have 2 weeks to work on each assignment, though this depends on the module length. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity.\nSome notes on assignment and grading logistics:\n\nHomeworks are due by 9:00pm Eastern Time on the designed due date. Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions).\nA standard rubric is available.\nStudents in 5850 will be asked to complete additional homework problems which go more deeply into the underlying concepts or apply more advanced techniques.\nRegrade requests for specific problems must be made within a week of the grading of that assignment.\n\n\n\nTerm Project\nThroughout the semester, students will apply the concepts and methods from class to a data set of their choosing. If a student does not have a data set in mind, we will find one which aligns with their interests.\nThe term project can be completed individually or in groups of 2. Students will provide updates throughout the semester corresponding to the various tasks discussed in each module and will submit a final report at the end of the semester. The deliverables are:\n\nA proposal describing the research question and hypotheses, the data set, and the numerical or statistical models the student would like to use to test the hypotheses;\nA simulation study applying simulation methods to the models;\nA final presentation and report.",
+    "text": "Assessments\n\nTechnologies\nWe will use Canvas as a gradebook, and to distribute PDFs of readings (which also be made available through the website, via the Cornell library). Ed Discussion will be used for course communications. Assignments will be submitted and graded in Gradescope.\nStudents can use any programming language they like to solve problems, though we will make notebooks and package environments available for Julia (which may help structure your assignments if you use a different language) via GitHub. If students use a language other than Julia, we may limited in the programming assistance we can provide (though we’re happy to try to help!).\nWe recommend students create a GitHub account and use GitHub to version control and share their code throughout the semester.\n\n\nGrading\nFinal grades will be computed based on the following assessment weights:\n\n\n\nAssessment\nWeight\n\n\n\n\nParticipation\n10%\n\n\nReadings\n10%\n\n\nLiterature Critique\n15%\n\n\nHomework Assignments\n40%\n\n\nTerm Project\n25%\n\n\n\nThe following grading scale will be used to convert the numerical weighted average to letter grades:\n\n\n\nGrade\nRange\n\n\n\n\nA\n93–100\n\n\nA-\n90–93\n\n\nB+\n87–90\n\n\nB\n83–87\n\n\nB-\n80–83\n\n\nC+\n77–80\n\n\nC\n73–77\n\n\nC-\n70–73\n\n\nD+\n67–70\n\n\nD\n63–67\n\n\nD-\n60–63\n\n\nF\n&lt; 60\n\n\n\n\n\nReadings\nReadings will be assigned for discussion throughout the semester. Students are expected to summarize their takeaways and thoughts on the reading and respond to others’ comments on the Ed forum during the week after the reading is assigned (typically Monday – Monday). Collaborative annotation assignments will be set up in Canvas to facilitate reading ahead of the discussion on the Ed forum. For key readings, a student in BEE 5850 will be assigned to lead a 35 minute in-class discussion on the reading.\n\n\nLiterature Critique\nStudents will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices.\n\n\nHomework Assignments\nApproximately 6 homework assignments will be assigned throughout the semester (roughly one per course module). You will typically have 2 weeks to work on each assignment, though this depends on the module length. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but plagiarism is a violation of academic integrity.\nSome notes on assignment and grading logistics:\n\nHomeworks are due by 9:00pm Eastern Time on the designed due date. Your assignment notebook (which include your writeup and codes) should be submitted to Gradescope as a PDF with the answers to each question tagged (a failure to do this will result in deductions).\nA standard rubric is available.\nStudents in 5850 will be asked to complete additional homework problems which go more deeply into the underlying concepts or apply more advanced techniques.\nRegrade requests for specific problems must be made within a week of the grading of that assignment.\n\n\n\nLiterature Critique\nStudents will be asked to critically evaluate a paper of their choosing, with particular emphasis on the statistical and data choices and whether they support the scientific question and conclusions of the paper.\n\n\nTerm Project\nThroughout the semester, students will apply the concepts and methods from class to a data set of their choosing. If a student does not have a data set in mind, we will find one which aligns with their interests.\nThe term project can be completed individually or in groups of 2. Students will provide updates throughout the semester corresponding to the various tasks discussed in each module and will submit a final report at the end of the semester. The deliverables are:\n\nA proposal describing the research question and hypotheses, the data set, and the numerical or statistical models the student would like to use to test the hypotheses;\nA simulation study applying simulation methods to the models;\nA final presentation and report.",
     "crumbs": [
       "Course Information",
       "Syllabus"
