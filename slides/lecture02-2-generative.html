@@ -6,12 +6,15 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ff4371ef257df69894857e99c6ad0d06.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ff4371ef257df69894857e99c6ad0d06.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
+<script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.5">
 
   <meta name="author" content="Vivek Srikrishnan">
-  <meta name="dcterms.date" content="2024-01-22">
-  <title>BEE 4850 - Spring 2025 – Welcome to BEE 4850/5850!</title>
+  <meta name="dcterms.date" content="2024-01-29">
+  <title>BEE 4850 - Spring 2025 – Generative Modeling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,27 +32,7 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
-    }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
+  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-7d4b879e0adbcc007b1e93a23959f198.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -166,12 +149,8 @@
     }
   };
   </script>
-  <meta name="mermaid-theme" content="dark">
-  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<meta property="og:title" content="Welcome to BEE 4850/5850! – BEE 4850 - Spring 2025">
-<meta property="og:description" content="Lecture 01">
+<meta property="og:title" content="Generative Modeling – BEE 4850 - Spring 2025">
+<meta property="og:description" content="Lecture 03">
 <meta property="og:site_name" content="BEE 4850 - Spring 2025">
 </head>
 <body class="quarto-light">
@@ -179,520 +158,97 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-    <h1 class="title">Welcome to BEE 4850/5850!</h1>
+    <h1 class="title">Generative Modeling</h1>
   <hr>
-<p class="subtitle">Lecture 01</p>
-<p class="date">January 22, 2024</p>
+<p class="subtitle">Lecture 03</p>
+<p class="date">January 29, 2024</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Overview</h2>
 <ul>
-<li><a href="#/course-overview" id="/toc-course-overview">Course Overview</a></li>
-<li><a href="#/course-motivation" id="/toc-course-motivation">Course Motivation</a></li>
-<li><a href="#/course-policies" id="/toc-course-policies">Course Policies</a></li>
-<li><a href="#/class-tools" id="/toc-class-tools">Class Tools</a></li>
+<li><a href="#/model-selection-as-hypothesis-testing" id="/toc-model-selection-as-hypothesis-testing">Model Selection as Hypothesis Testing</a></li>
+<li><a href="#/generative-models" id="/toc-generative-models">Generative Models</a></li>
+<li><a href="#/key-points" id="/toc-key-points">Key Points</a></li>
 <li><a href="#/upcoming-schedule" id="/toc-upcoming-schedule">Upcoming Schedule</a></li>
 <li><a href="#/references" id="/toc-references">References</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="course-overview" class="title-slide slide level1 center">
-<h1>Course Overview</h1>
+<section id="model-selection-as-hypothesis-testing" class="title-slide slide level1 center">
+<h1>Model Selection as Hypothesis Testing</h1>
 
 </section>
-<section id="about-me" class="slide level2">
-<h2>About Me</h2>
-<p><strong>Instructor</strong>: Prof.&nbsp;Vivek Srikrishnan, <script type="text/javascript">
-<!--
-h='&#x63;&#x6f;&#114;&#110;&#x65;&#108;&#108;&#46;&#x65;&#100;&#x75;';a='&#64;';n='&#118;&#x69;&#118;&#x65;&#x6b;&#x73;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
-// -->
-</script><noscript>viveks at cornell dot edu</noscript></p>
-<p><strong>Interests</strong>:</p>
+<section id="model-assessment-through-simulation" class="slide level2">
+<h2>Model Assessment Through Simulation</h2>
+<p>Given <strong>generative</strong> models (hypotheses):</p>
+<ol type="1">
+<li>Calibrate models under different assumptions;</li>
+<li>Simulate realizations from those models;</li>
+<li>Compute the distribution of the relevant statistic <span class="math inline">\(S\)</span> from these realizations;</li>
+<li>Assess which distribution is most consistent with the observed quantity.</li>
+</ol>
+<aside class="notes">
+<p>Hopefully last lecture made it clear that NHST actually says nothing about the validity of a given alternative hypothesis, only the probability of seeing the data conditional on the null model. If the null is rejected…not much more can be said about a given alternative.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="advances-of-simulation-for-testing" class="slide level2">
+<h2>Advances of Simulation for “Testing”</h2>
 <ul>
-<li>Bridging Earth science, data science, and decision science to improve climate risk management;</li>
-<li>Unintended consequences which result from neglecting uncertainty or system dynamics.</li>
+<li>More structural freedom (don’t need to write down the sampling distribution of <span class="math inline">\(S\)</span> in closed form);</li>
+<li>Don’t need to set up a dichotomous “null vs alternative” test;</li>
+<li>Models can reflect more nuanced hypotheses about data generating processes.</li>
 </ul>
+<aside class="notes">
+<p>By “generative” model I mean models which facilitate simulation of synthetic or pseudo-datasets. We’ll discuss this more later today.</p>
+<p>The trick is in setting up a generative model; not all statistical models are generative.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="meet-my-supervisors" class="slide level2">
-<h2>Meet My Supervisors</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/cats.png" style="width:30.0%"></p>
-<figcaption>My Supervisors</figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="what-do-you-hope-to-get-out-of-this-course" class="slide level2">
-<h2>What Do You Hope To Get Out Of This Course?</h2>
-<p>Take a moment, write it down, and we’ll share!</p>
+<section id="how-do-we-assess-models-for-selection" class="slide level2">
+<h2>How Do We Assess Models For Selection?</h2>
+<p>Generally, through <strong>predictive performance</strong>: how probable is some data (out-of-sample or the calibration dataset) if we assume the data-generating process associated with the model?</p>
+<p>But there are also other metrics (RMSE, R<sup>2</sup>) which capture different types of performance.</p>
 </section></section>
 <section>
-<section id="course-motivation" class="title-slide slide level1 center">
-<h1>Course Motivation</h1>
+<section id="generative-models" class="title-slide slide level1 center">
+<h1>Generative Models</h1>
 
 </section>
-<section id="why-does-data-analysis-matter" class="slide level2">
-<h2>Why Does Data Analysis Matter?</h2>
-<ul>
-<li>Scientific insight;</li>
-<li>Decision-making;</li>
-<li>Understanding uncertainty</li>
-</ul>
-</section>
-<section id="the-ideal" class="slide level2">
-<h2>The Ideal</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://imgs.xkcd.com/comics/statistics.png" style="width:30.0%"></p>
-<figcaption>XKCD 2400</figcaption>
-</figure>
-</div>
-</div>
-<div class="caption">
-<p>Source: <a href="https://xkcd.com/2400/">XKCD 2400</a></p>
-</div>
-</section>
-<section id="but-in-actuality" class="slide level2">
-<h2>But in Actuality</h2>
-<ul>
-<li>Except in the most controlled experiments, <strong>data are noisy</strong>;</li>
-<li>The <strong>causes</strong> of the data cannot be extracted from the data alone;</li>
-<li>The <strong>reasons</strong> for statistical analyses are not found in the data themselves.</li>
-</ul>
-</section>
-<section id="uniquechallenging-features-of-data" class="slide level2">
-<h2>Unique/Challenging Features Of Data</h2>
-<p>There are many features of environmental (and biological!) data which make data analysis interesting and hard.</p>
-</section>
-<section id="extreme-events" class="slide level2">
-<h2>Extreme Events</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/dossgollin-keller-2023_extreme.jpeg"></p>
-<figcaption>Extreme Events</figcaption>
-</figure>
-</div>
-</div>
-<div class="caption">
-<p>Source: <span class="citation" data-cites="Doss-Gollin2023-kl">Doss-Gollin &amp; Keller (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2023</a>)</span></p>
-</div>
-</section>
-<section id="extreme-events-1" class="slide level2">
-<h2>Extreme Events</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://imgs.xkcd.com/comics/launch_risk.png" style="width:25.0%"></p>
-<figcaption>XKCD 2107</figcaption>
-</figure>
-</div>
-</div>
-<div class="caption">
-<p>Source: <a href="https://xkcd.com/2107/">XKCD 2107</a></p>
-</div>
-</section>
-<section id="correlated-uncertainties" class="slide level2">
-<h2>Correlated Uncertainties</h2>
-<div class="center">
-<div class="{.layout-ncol=2}">
-<p><img data-src="figures/errickson-2021_correlations.png" style="width:30.0%" alt="Correlations"> <img data-src="figures/errickson-2021_projections.png" style="width:60.0%" alt="Projections"></p>
-</div>
-<div class="caption">
-<p>Source: <span class="citation" data-cites="Errickson2021-kr">Errickson et al. (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2021</a>)</span></p>
-</div>
-</div>
-</section>
-<section id="non-stationarity" class="slide level2">
-<h2>Non-Stationarity</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/fagnant-etal-2020_prcip.png" style="width:90.0%"></p>
-<figcaption>Non-Stationary Trends</figcaption>
-</figure>
-</div>
-</div>
-<div class="caption">
-<p>Source: <span class="citation" data-cites="Fagnant2020-xu">Fagnant et al. (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2020</a>)</span></p>
-</div>
-</section>
-<section id="forcing-model-uncertainty" class="slide level2">
-<h2>Forcing &amp; Model Uncertainty</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/dossgollin-keller-2023_slr.jpeg"></p>
-<figcaption>Different Uncertainties for SLR</figcaption>
-</figure>
-</div>
-</div>
-<div class="caption">
-<p>Source: <span class="citation" data-cites="Doss-Gollin2023-kl">Doss-Gollin &amp; Keller (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2023</a>)</span></p>
-</div>
-</section>
-<section id="deep-uncertainty" class="slide level2">
-<h2>Deep Uncertainty</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/srikrishnan-etal-2022_co2.png"></p>
-<figcaption>Deep Uncertainty for Future Climate Projections</figcaption>
-</figure>
-</div>
-</div>
-<div class="caption">
-<p>Source: <span class="citation" data-cites="Srikrishnan2022-yq">Srikrishnan et al. (<a href="#/references-scroll-for-full-list" role="doc-biblioref" onclick="">2022</a>)</span></p>
-</div>
-</section>
-<section id="causation-is-not-association" class="slide level2">
-<h2>Causation Is Not Association</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>We’ve all heard “correlation (<strong>association</strong>) does not imply causation”</li>
-<li>But confounds/noise can mean <strong>causation does not imply association</strong></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="memes/causation_not_correlation.jpg" style="width:60.0%"></p>
-<figcaption>Correlation not Causation Meme</figcaption>
-</figure>
-</div>
-</div>
-<div class="caption">
-<p>Source: Richard McElreath</p>
-</div>
-</div></div>
-</section>
-<section id="description-and-inference-are-connected" class="slide level2">
-<h2>Description and Inference are Connected</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Except for superficial tasks:</p>
-<ul>
-<li>Knowing what is important to describe requires a model;</li>
-<li>Understanding how the data might differ from the population requires a model.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="memes/spidermen-description-inference.jpg" style="width:100.0%"></p>
-<figcaption>Spidermen Meme</figcaption>
-</figure>
-</div>
-</div>
-</div></div>
-</section>
-<section id="some-problems-with-the-standard-data-analysis-toolkit" class="slide level2">
-<h2>Some Problems With The “Standard” Data Analysis Toolkit</h2>
-<div>
-<ul>
-<li class="fragment">Statistical assumptions may not be valid;</li>
-<li class="fragment">“Null” vs “Alternative” hypotheses and tests may be chosen for computational convenience, not scientific relevance.</li>
-<li class="fragment">Many different <strong>substantive</strong> models can imply the same <strong>statistical</strong> model.</li>
-</ul>
-</div>
-<div class="fragment fade-in">
-<p><strong>Important</strong>: “Big” data doesn’t solve the problem!</p>
-</div>
-</section>
-<section id="my-philosophical-position" class="slide level2">
-<h2>My Philosophical Position</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>Probability theory helps us deduce logical implications of theories <strong>conditional on our assumptions</strong></li>
-<li>Cannot use an “objective” procedure to avoid <strong>subjective responsibility</strong></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="memes/peter_parker_method_assumptions.png" style="width:90.0%"></p>
-<figcaption>Bart Statistics Meme</figcaption>
-</figure>
-</div>
-</div>
-</div></div>
-</section>
-<section id="model-based-data-analysis" class="slide level2">
-<h2>Model-Based Data Analysis</h2>
-<p>We can (<strong>transparently</strong>):</p>
-<ul>
-<li>Examine logical implications of model assumptions (<strong>including interventions/out-of-sample generation</strong>).</li>
-<li>Assess evidence for multiple hypotheses by generating simulated data.</li>
-<li>Identify opportunities to design future experiments or observations to distinguish between competing hypotheses.</li>
-</ul>
-</section>
-<section id="model-based-data-analysis-1" class="slide level2">
-<h2>Model-Based Data Analysis</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Models are how we assess evidence for theories.</p>
-</div><div class="column" style="width:50%;">
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="memes/rock-paper-theory-model.jpg" style="width:100.0%"></p>
-<figcaption>Rock Paper Scissors meme</figcaption>
-</figure>
-</div>
-</div>
-</div></div>
-</section>
-<section id="course-organization" class="slide level2">
-<h2>Course Organization</h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">timeline
-      Introduction (Weeks 1-2): Overview
-                  : Modeling Data-Generating Processes
-                  : Hypothesis Testing and Scientific Inference
-      Probability Fundamentals (Weeks 3-5): Prob/Stats "Review"
-                              : Model Fitting
-                              : Bayesian Statistics
-      Simulation Methods (Weeks 6-7): Monte Carlo
-                                    : Bootstrap
-      Model Evaluation (Weeks 8-9): Cross-Validation
-                      : Model Selection
-      Useful Models (Weeks 10-13): Extreme Values
-                                 : Missing Data
-                                 : Mixture Models
-                                 : Gaussian Processes
-      Experimental Design (Weeks 14): Confounds
-                                       : Controls and Designing Experiments
-
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<section id="ge" class="slide level2">
+<h2>Ge</h2>
 </section></section>
 <section>
-<section id="course-policies" class="title-slide slide level1 center">
-<h1>Course Policies</h1>
+<section id="key-points" class="title-slide slide level1 center">
+<h1>Key Points</h1>
 
 </section>
-<section id="background-knowledge-computing" class="slide level2">
-<h2>Background Knowledge: Computing</h2>
+<section id="hypothesis-testing" class="slide level2">
+<h2>Hypothesis Testing</h2>
 <ul>
-<li>Basics (at the level of CS 111x)</li>
-<li>No specific language requirement.</li>
-<li>Some extra work/effort may be needed if you haven’t coded in a while.</li>
-<li>May need some additional familiarity with statistical packages (and “light” optimization)</li>
-</ul>
-</section>
-<section id="background-knowledge-probabilitystatistics" class="slide level2">
-<h2>Background Knowledge: Probability/Statistics</h2>
-<ul>
-<li>ENGRD 2700/CEE 3040</li>
-<li>Summary statistics of data</li>
-<li>Probability distributions</li>
-<li>Basic visualizations</li>
-<li>Monte Carlo basics</li>
-</ul>
-</section>
-<section id="grades" class="slide level2">
-<h2>Grades</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Assessment</th>
-<th style="text-align: right;">% of Grade</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Participation</td>
-<td style="text-align: right;">10%</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Readings</td>
-<td style="text-align: right;">10%</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Literature Critique</td>
-<td style="text-align: right;">15%</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Homework Assignments</td>
-<td style="text-align: right;">40%</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Term Project</td>
-<td style="text-align: right;">25%</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="overall-guidelines" class="slide level2">
-<h2>Overall Guidelines</h2>
-<ul>
-<li>Collaboration <em>highly</em> encouraged, but <strong>all work must reflect your own understanding</strong></li>
-<li>Submit PDFs on Gradescope</li>
-<li>50% penalty for late submission (up to 24 hours)</li>
-<li>Standard rubric available on website</li>
-<li><strong>Always cite external references</strong></li>
-</ul>
-</section>
-<section id="literature-critique" class="slide level2">
-<h2>Literature Critique</h2>
-<ul>
-<li>Select a paper which involves some type of statistical or data analysis</li>
-<li>Critique choices: do they support the scientific conclusions?</li>
-<li>Submit a 2 page writeup at the end of the semester</li>
-<li>If you’re unsure where to look for a paper, talk to Prof.&nbsp;Srikrishnan and we can find options</li>
-</ul>
-</section>
-<section id="readings" class="slide level2">
-<h2>Readings</h2>
-<ul>
-<li>Several readings assigned for discussion throughout the semester.</li>
-<li>Annotation assignments on Canvas: by end of day on a Monday.</li>
-<li>One (graduate) student responsible for leading the discussion on that Wednesday.</li>
-<li>If you want to use slides, send them to Prof.&nbsp;Srikrishnan by end of day Tuesday.</li>
-</ul>
-</section>
-<section id="homework-assignments" class="slide level2">
-<h2>Homework Assignments</h2>
-<ul>
-<li>More in-depth problems</li>
-<li>Roughly 2 weeks to complete</li>
-<li>Will drop one by default</li>
-<li>Regrade requests must be made within one week</li>
-<li><strong>5850 Students</strong>: Some extra problems</li>
-</ul>
-</section>
-<section id="term-project" class="slide level2">
-<h2>Term Project</h2>
-<ul>
-<li>Analyze a data set of interest using model(s) of your choice</li>
-<li>Can work individually or groups of 2</li>
-<li>Several deliverables throughout the semester</li>
-<li>Final in-class presentation and report</li>
-</ul>
-</section>
-<section id="attendance" class="slide level2">
-<h2>Attendance</h2>
-<p>Not required, but students tend to do better when they’re actively engaged in class.</p>
-</section>
-<section id="office-hours" class="slide level2">
-<h2>Office Hours</h2>
-<ul>
-<li>MW 1-2 PM, 318 Riley-Robb</li>
-<li>Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.</li>
-</ul>
-</section>
-<section id="accomodations" class="slide level2">
-<h2>Accomodations</h2>
-<p>If you have any access barriers in this class, <em>please</em> seek out any helpful accomodations.</p>
-<ul>
-<li>Get an SDS letter.</li>
-<li>If you need an accomodation before you have an official letter, please reach out to me ASAP!</li>
-</ul>
-</section>
-<section id="academic-integrity" class="slide level2">
-<h2>Academic Integrity</h2>
-<p>Hopefully not a concern…</p>
-<ul>
-<li>Collaboration is great and is encouraged!</li>
-<li>Knowing how to find and use helpful resources is a skill we want to develop.</li>
-<li>Don’t just copy…learn from others and give credit.</li>
-<li>Submit your own original work.</li>
-</ul>
-</section>
-<section id="academic-integrity-1" class="slide level2">
-<h2>Academic Integrity</h2>
-<p>Obviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.</p>
-</section>
-<section id="chatgpt-the-stochastic-parrot" class="slide level2">
-<h2>ChatGPT: The Stochastic Parrot</h2>
-<p>Think about ChatGPT as a drunk who tells stories for drinks.</p>
-<p>It will give you plausible-looking text or code on any topic, but it doesn’t know anything beyond what it “overheard.”</p>
-<div class="callout callout-caution callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Caution</strong></p>
-</div>
-<div class="callout-content">
-<p>ChatGPT can be useful for certain tasks (<em>e.g.</em> understanding code errors), but may neglect context for why/when certain information or solutions work.</p>
-<p>Just think about it as an unreliable Google search.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="chatgpt-the-stochastic-parrot-1" class="slide level2">
-<h2>ChatGPT: The Stochastic Parrot</h2>
-<p>Must specifically call out where you used ChatGPT in your work (beyond simple referencing).</p>
-</section></section>
-<section>
-<section id="class-tools" class="title-slide slide level1 center">
-<h1>Class Tools</h1>
-
-</section>
-<section id="communications" class="slide level2">
-<h2>Communications</h2>
-<p>Use <a href="https://us.edstem.org">Ed Discussion</a> for questions and discussions about class, homework assignments, etc.</p>
-<ul>
-<li>Try to use public posts so others can benefit from questions and can weigh in.</li>
-<li><strong>I will make announcements through Ed</strong>.</li>
-</ul>
-</section>
-<section id="email" class="slide level2">
-<h2>Email</h2>
-<p>When urgency or privacy is required, email is ok.</p>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>Please include <strong>BEE4850</strong> in your email subject line! This will ensure it doesn’t get lost in the shuffle.</p>
-<p>Better: Use Ed Discussion and reserve email for matters that are particular urgent and/or require privacy.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="course-website" class="slide level2">
-<h2>Course Website</h2>
-<p><a href="https://viveks.me/simulation-data-analysis" class="uri">https://viveks.me/simulation-data-analysis</a></p>
-<ul>
-<li>Central hub for information, schedule, and policies</li>
-<li>Will add link and some information to Canvas (assignment due dates, etc)</li>
-</ul>
-</section>
-<section id="computing-tools" class="slide level2">
-<h2>Computing Tools</h2>
-<ul>
-<li>Course is programming language-agnostic.</li>
-<li>Assignments will have notebooks set up for Julia (environments, etc) on GitHub.</li>
-</ul>
-</section>
-<section id="some-tips-for-success" class="slide level2">
-<h2>Some Tips For Success</h2>
-<ul>
-<li>Start the homeworks early; this gives time to sort out conceptual problems and debug.</li>
-<li>Ask questions (in class and online) and try to help each other.</li>
-<li>Give me feedback!</li>
+<li>Null Hypothesis Significance Testing: Compare a null hypothesis (no effect) to an alternative (effect)</li>
+<li><span class="math inline">\(p\)</span>-value: probability (under <span class="math inline">\(H_0\)</span>) of more extreme test statistic than observed.</li>
+<li><span class="math inline">\(p\)</span>-values are often over-interpreted, with negative outcomes!</li>
+<li>“Significant” if <span class="math inline">\(p\)</span>-value is below a significance level reflecting acceptable Type I error rate.</li>
 </ul>
 </section></section>
 <section>
@@ -702,10 +258,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </section>
 <section id="next-classes" class="slide level2">
 <h2>Next Classes</h2>
-<ul>
-<li>Hypothesis testing and decision-making</li>
-<li>Generative models</li>
-</ul>
+<p><strong>Wednesday</strong>: What is a <strong>generative</strong> model?</p>
+<p><strong>Next Week+</strong>: Prob/Stats “Review” and Fundamentals</p>
 </section>
 <section id="assessments" class="slide level2">
 <h2>Assessments</h2>
@@ -716,24 +270,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h1>References</h1>
 
 </section>
-<section id="references-scroll-for-full-list" class="slide level2 smaller scrollable">
+<section id="references-scroll-for-full-list" class="slide level2">
 <h2>References (Scroll for Full List)</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-Doss-Gollin2023-kl" class="csl-entry" role="listitem">
-Doss-Gollin, J., &amp; Keller, K. (2023). <span class="nocase">A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management</span>. <em>Earths Future</em>, <em>11</em>, e2022EF003044. <a href="https://doi.org/10.1029/2022ef003044">https://doi.org/10.1029/2022ef003044</a>
-</div>
-<div id="ref-Errickson2021-kr" class="csl-entry" role="listitem">
-Errickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., &amp; Anthoff, D. (2021). <span class="nocase">Equity is more important for the social cost of methane than climate uncertainty</span>. <em>Nature</em>, <em>592</em>, 564–570. <a href="https://doi.org/10.1038/s41586-021-03386-6">https://doi.org/10.1038/s41586-021-03386-6</a>
-</div>
-<div id="ref-Fagnant2020-xu" class="csl-entry" role="listitem">
-Fagnant, C., Gori, A., Sebastian, A., Bedient, P. B., &amp; Ensor, K. B. (2020). <span class="nocase">Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas</span>. <em>Nat. Hazards</em>, <em>104</em>, 1597–1621. <a href="https://doi.org/10.1007/s11069-020-04235-x">https://doi.org/10.1007/s11069-020-04235-x</a>
-</div>
-<div id="ref-Srikrishnan2022-yq" class="csl-entry" role="listitem">
-Srikrishnan, V., Guan, Y., Tol, R. S. J., &amp; Keller, K. (2022). <span class="nocase">Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model</span>. <em>Clim. Change</em>, <em>170</em>, 37. <a href="https://doi.org/10.1007/s10584-021-03279-7">https://doi.org/10.1007/s10584-021-03279-7</a>
-</div>
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
