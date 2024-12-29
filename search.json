@@ -468,7 +468,7 @@
     "href": "slides/lecture02-1-nhst.html#multiple-comparisons",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "Multiple Comparisons",
-    "text": "Multiple Comparisons\nIf you conduct multiple statistical tests, you must account for all of these in the p-value computation and assessment of significance.\nThis includes:\n\nFitting multiple candidate models;\nModel selection followed by regression;"
+    "text": "Multiple Comparisons\n\n\nIf you conduct multiple statistical tests, you must account for all of these in the p-value computation and assessment of significance.\nImportant: This includes model selection!\n\n\n\n\nMultiple Comparisons Meme\n\n\n\n\nThe core issue is the standard test statistics have the right Type I/Type II properties for each individual test, but multiple tests distort these frequencies, sometimes quite dramatically.\nThere are a number of corrections (Bonferroni being the most common), but sometimes stepwise tests are subtle, including cases of model selection followed by model fitting."
   },
   {
     "objectID": "slides/lecture02-1-nhst.html#results-are-flashy-but-meaningless-without-methods",
@@ -517,7 +517,14 @@
     "href": "slides/lecture02-1-nhst.html#hypothesis-testing-1",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nNull Hypothesis Significance Testing: Compare a null hypothesis (no effect) to an alternative (effect)\n\\(p\\)-value: probability (under \\(H_0\\)) of more extreme test statistic than observed.\n\\(p\\)-values are often over-interpreted, with negative outcomes!\n“Significant” if \\(p\\)-value is below a significance level reflecting acceptable Type I error rate."
+    "text": "Hypothesis Testing\n\nClassical framework: Compare a null hypothesis (no effect) to an alternative (some effect)\n\\(p\\)-value: probability (under \\(H_0\\)) of more extreme test statistic than observed.\n“Significant” if \\(p\\)-value is below a significance level reflecting acceptable Type I error rate."
+  },
+  {
+    "objectID": "slides/lecture02-1-nhst.html#problems-with-nhst-framework",
+    "href": "slides/lecture02-1-nhst.html#problems-with-nhst-framework",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Problems with NHST framework",
+    "text": "Problems with NHST framework\n\n\\(p\\)-values are often over-interpreted and are often be incorrectly calculated, with negative outcomes!\nImportant: “Big” data can make things worse, as NHST is highly sensitive to small but evidence effects."
   },
   {
     "objectID": "slides/lecture02-1-nhst.html#next-classes",
