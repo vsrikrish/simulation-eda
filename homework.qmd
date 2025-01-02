@@ -24,7 +24,7 @@ The standard rubric for homework problems is available [here](rubrics/standard.q
 |:----------:|:------------:|:------:|:---------|
 | HW1 | [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) | Feb 07, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"}|
 | HW2 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Feb 21, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
-| HW3 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Mar 07, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
-| HW4 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Mar 21, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
-| HW5 | [{{< fa sharp pen-field >}}]({style="color:grey"} | Apr 11, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
-| HW6 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Apr 25, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
+| HW3 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Mar 14, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
+| HW4 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Mar 28, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
+| HW5 | [{{< fa sharp pen-field >}}]{style="color:grey"} | Apr 18, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |
+| HW6 | [{{< fa sharp pen-field >}}]{style="color:grey"} | May 2, 2025 | [{{< fa sharp key-skeleton >}}]{style="color:grey"} |

@@ -31,7 +31,7 @@ This is a 3 credit course offered as an elective.
 
 :::: {.columns .course-details}
 
-::: {.column width="33%"}
+::: {.column width=33%}
 ### Instructor
 
 - {{< fa sharp user title="Name" >}} [[{{< var instructor.name_no_title >}}]({{< var instructor.url >}})]{.ms-1}
@@ -39,14 +39,16 @@ This is a 3 credit course offered as an elective.
 - {{< fa sharp building title="Office" >}} [{{< var instructor.office >}}]{.ms-2}
 :::
 
+::: {.column width=33%}
+
 ### TA
 
 - {{< fa sharp user title="Name" >}} [{{< var TA.name >}}]{.ms-1}
 - {{< fa sharp envelope title="Email" >}} [[{{< var TA.email >}}](mailto:{{< var TA.email >}})]{.ms-1}
 - {{< fa sharp building title="Office" >}} [{{< var TA.office >}}]{.ms-2}
-::::
- -->
-::: {.column width="33%"}
+:::
+
+::: {.column width=33%}
 ### Meetings
 
 - {{< fa sharp calendar title="Class Days" >}} {{< var course.days >}}
@@ -130,6 +132,16 @@ Students can optimize their performance in the course by:
 - actively participating in online and in-class discussions;
 - beginning assignments and other work early;
 - and attending office hours as needed. 
+
+## Textbooks and Course Materials
+
+There is no required text for this class, and all course materials will be made available on the [course website](https://viveks.me/simulation-data-analysis) or through the Cornell library. However, the following books might be useful as a supplement to/expansion on the topics covered in class:
+
+- Gelman, A., Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., & Rubin, D. B. (2013). *Bayesian Data Analysis* (3rd ed.). <http://www.stat.columbia.edu/~gelman/book/BDA3.pdf>
+- McElreath, R. (2020). *Statistical Rethinking: A Bayesian Course with Examples in R and Stan* (2nd ed.). <https://xcelab.net/rm/>
+- D'Agostini, G. (2003). *Bayesian Reasoning in Data Analysis: A Critical Introduction*. 
+- Gelman, A., Hill, J., & Vehtari, A. (2020). *Regression and Other Stories*. <https://avehtari.github.io/ROS-Examples/index.html>
+
 
 ## Community
 
@@ -285,12 +297,12 @@ We recommend students create a GitHub account and use GitHub to version control 
 Final grades will be computed based on the following assessment weights:
 
 | Assessment | Weight |
-|:----------|:----|
-| Exercises | 10% |
+|:-----------|-----------:|
+| Participation | 10% |
 | Readings | 10% |
 | Literature Critique | 15% |
-| Homework Assignments | 30% |
-| Term Project | 35% |
+| Homework Assignments | 40% |
+| Term Project | 25% |
 
 The following grading scale will be used to convert the numerical weighted average to letter grades:
 
@@ -310,9 +322,6 @@ The following grading scale will be used to convert the numerical weighted avera
 | F | < 60 |
 
 
-### Exercises
-
-Most weeks, students will be given a set of exercises (typically involving analyzing a dataset, a model, or a figure) to complete. These will involve a small amount of programming, a minor calculation,  and/or visual assessment of data or a figure. Exercises will be provided the previous Monday and are intended to align with the content for the week, and solutions should be submitted by 9:00pm on the Friday at the end of the given week. These exercises will be given as quizzes on Gradescope and will be auto-graded. The lowest exercise score will be dropped automatically.
 
 ### Readings
 
@@ -332,6 +341,10 @@ Some notes on assignment and grading logistics:
   * A standard rubric is available.
   * Students in 5850 will be asked to complete additional homework problems which go more deeply into the underlying concepts or apply more advanced techniques.
   * Regrade requests for specific problems must be made within a week of the grading of that assignment. 
+
+### Literature Critique
+
+Students will be asked to critically evaluate a paper of their choosing, with particular emphasis on the statistical and data choices and whether they support the scientific question and conclusions of the paper.
 
 ### Term Project
 
@@ -355,8 +368,8 @@ using Dates
 using DataFrames
 using PrettyTables
 
-start_date = Date(2024, 1, 22)
-end_date = Date(2024, 5, 6)
+start_date = Date(2025, 1, 22)
+end_date = Date(2025, 5, 6)
 
 # set vector of class dates (including holidays)
 cdates = filter(d -> Dates.dayname(d) ∈ ["Monday", "Wednesday"], Date(start_date):Day(1):Date(end_date));
@@ -367,37 +380,36 @@ cdays = dayabbr.(cdates)
 
 # set vector of class topics
 topics = [ 
-  "Overview, GitHub Intro",
+  "Course Overview and Introduction",
   "Hypothesis Testing and Data Analysis",
-  "Simulating Data-Generating Processes",
-  "Example Application: Climate Change and Coastal Flooding",
-  "Uncertainty and Probability Review",
-  "Probability Models and Model Residuals",
-  "Probability Models II",
-  "Bayesian Statistics and Decision Analysis",
-  "Hypothesis Testing As Decision-Making",
-  "Data Visualization ",
-  "Graphical Checks and Model Diagnostics",
-  "In-Class Figure Discussion",
-  "Uncertainty Propagation and Monte Carlo Simulation",
-  "Monte Carlo Simulation II ",
-  "Sampling Distributions and The Bootstrap",
+  "Generative Probability Models",
+  "Probability and Statistics Review",
+  "Spatial and Temporal Models",
+  "Model Discrepancy and Measurement Error",
+  "Bayesian Statistics",
+  "Monte Carlo Simulation",
+  "Monte Carlo Simulation II",
+  "The Bootstrap",
   "The Bootstrap II",
-  "Markov Chain Monte Carlo",
-  "MCMC II",
-  "Literature Presentations",
-  "Statistical Model Calibration", 
-  "Model-Data Discrepancy",
+  "Bootstrap and Monte Carlo Lab",
+  "Overfitting and Cross-Validation",
+  "Information Criteria and Model Comparison",
+  "Information Criteria II",
+  "Model Selection Lab",
+  "Extreme Value Theory and Models",
+  "Extreme Value Models II",
+  "Non-Stationary Extreme Values",
+  "Extreme Values Lab",
   "Missing and Censored Data",
-  "Model Assessment and Predictive Accuracy",
-  "Predictive Information Criteria",
-  "Model Assessment and Selection: Examples",
-  "Tradeoffs Between Complexity and Ensemble Size",
-  "Emulating Expensive Models ", 
+  "Latent Variables and Mixture Models",
+  "Gaussian Processes",
+  "Mixture Model Lab", 
+  "Confounds",
+  "Controls and Designing Experiments", 
   "Project Presentations"
 ]
 
-holiday_dates = ["2024-02-26", "2024-04-01", "2024-04-03"];
+holiday_dates = ["2025-02-17", "2025-03-31", "2025-04-02"];
 holidays = DataFrame(Date=Dates.format.(Date.(holiday_dates), "mm-dd"), 
                     Holiday=["February Break", "Spring Break", "Spring Break"]);
 
@@ -414,15 +426,15 @@ class_nums = missings(Int, length(cdates))
 class_nums[cschedule.Date .∉ [holidays.Date]] = collect(range(1, length=length(cdates) - nrow(holidays)))
 
 # set headers
-headers_idx = [1, 6, 12, 17, 27, 31, 35]
+headers_idx = [1, 5, 11, 17, 22, 33, 36]
 headers = DataFrame([
-  "" "" "Introduction and Class Overview";
-  "" "" "Probability and Statistics Background and Review";
-  "" "" "Data Visualization and Graphical Checks";
+  "" "" "Introduction";
+  "" "" "Probability Fundamentals";
   "" "" "Simulation Methods";
-  "" "" "Model Calibration";
-  "" "" "Model Selection";
-  "" "" "Emulation and Surrogate Modeling";
+  "" "" "Model Evaluation and Selection";
+  "" "" "Useful Models";
+  "" "" "Experimental Design";
+  "" "" "Presentations";
 ], ["Date", "Day", "Topic"])
 
 for i = 1:length(headers_idx)
