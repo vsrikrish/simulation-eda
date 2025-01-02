@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nHomework\n\n\n\n\n\n1\n1/22\nClass Introduction\n\n\n\n\n\n\n2\n1/27\nNull Hypothesis Testing and Statistical Significance\n\nLloyd & Oreskes (2018)\n\n\n\n\n\n1/29\nGenerative Probability Models\n\n\n\n\n\n\n3\n2/3\n\n\n\n\n\n\n\n\n2/5\n\n\n\n\n\n\n\n4\n2/10\n\n\n\n\n\n\n\n\n2/12\n\n\n\n\n\n\n\n5\n2/17\nFebruary Break\n\n\n\n\n\n\n\n2/19\n\n\n\n\n\n\n\n6\n2/24\n\n\n\n\n\n\n\n\n2/26\n\n\n\n\n\n\n\n7\n3/3\n\n\n\n\n\n\n\n\n3/5\n\n\n\n\n\n\n\n8\n3/10\n\n\n\n\n\n\n\n\n3/12\n\n\n\n\n\n\n\n9\n3/17\n\n\n\n\n\n\n\n\n3/19\n\n\n\n\n\n\n\n10\n3/24\n\n\n\n\n\n\n\n\n3/26\n\n\n\n\n\n\n\n\n3/31\nSpring Break\n\n\n\n\n\n\n\n4/2\nSpring Break\n\n\n\n\n\n\n11\n4/7\n\n\n\n\n\n\n\n\n4/9\n\n\n\n\n\n\n\n12\n4/14\n\n\n\n\n\n\n\n\n4/16\n\n\n\n\n\n\n\n13\n4/21\n\n\n\n\n\n\n\n\n4/23\n\n\n\n\n\n\n\n14\n4/28\n\n\n\n\n\n\n\n\n4/30\n\n\n\n\n\n\n\n15\n5/5",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nHomework\n\n\n\n\n\n1\n1/22\nClass Introduction\n\n\n\n\n\n\n2\n1/27\nNull Hypothesis Testing and Statistical Significance\n\nLloyd & Oreskes (2018)\n\n\n\n\n\n1/29\nGenerative Probability Modeling Workflow\n\n\n\n\n\n\n3\n2/3\n\n\n\n\n\n\n\n\n2/5\n\n\n\n\n\n\n\n4\n2/10\n\n\n\n\n\n\n\n\n2/12\n\n\n\n\n\n\n\n5\n2/17\nFebruary Break\n\n\n\n\n\n\n\n2/19\n\n\n\n\n\n\n\n6\n2/24\n\n\n\n\n\n\n\n\n2/26\n\n\n\n\n\n\n\n7\n3/3\n\n\n\n\n\n\n\n\n3/5\n\n\n\n\n\n\n\n8\n3/10\n\n\n\n\n\n\n\n\n3/12\n\n\n\n\n\n\n\n9\n3/17\n\n\n\n\n\n\n\n\n3/19\n\n\n\n\n\n\n\n10\n3/24\n\n\n\n\n\n\n\n\n3/26\n\n\n\n\n\n\n\n\n3/31\nSpring Break\n\n\n\n\n\n\n\n4/2\nSpring Break\n\n\n\n\n\n\n11\n4/7\n\n\n\n\n\n\n\n\n4/9\n\n\n\n\n\n\n\n12\n4/14\n\n\n\n\n\n\n\n\n4/16\n\n\n\n\n\n\n\n13\n4/21\n\n\n\n\n\n\n\n\n4/23\n\n\n\n\n\n\n\n14\n4/28\n\n\n\n\n\n\n\n\n4/30\n\n\n\n\n\n\n\n15\n5/5",
     "crumbs": [
       "Course Information",
       "Class Schedule"
@@ -384,7 +384,7 @@
     "href": "slides/lecture02-1-nhst.html#computing-the-test-statistic",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "Computing the Test Statistic",
-    "text": "Computing the Test Statistic\nFor this type of null hypothesis test, our test statistic is the slope of the OLS fit \\[\\hatab} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{(x_i - \\bar{x})^2}.\\]\n\nAfter some algebra, assuming the null \\(a = 0\\), the sampling distribution of the statistic is \\[\\frac{\\hat{a}}{SE_{\\hat{a}}} \\sim t_{n-2}.\\]"
+    "text": "Computing the Test Statistic\nFor this type of null hypothesis test, our test statistic is the slope of the OLS fit \\[\\hat{a} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{(x_i - \\bar{x})^2}.\\]\n\nAssuming the null, the sampling distribution of the statistic is \\[\\frac{\\hat{a}}{SE_{\\hat{a}}} \\sim t_{n-2}.\\]"
   },
   {
     "objectID": "slides/lecture02-1-nhst.html#statistical-significance",
@@ -412,21 +412,21 @@
     "href": "slides/lecture02-1-nhst.html#navigating-type-i-and-ii-errors",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "Navigating Type I and II Errors",
-    "text": "Navigating Type I and II Errors\nThe standard null hypothesis significance framework is based on balancing the chance of making Type I (false positive) and Type II (false negative) errors.\nIdea: Set a significance level \\(\\alpha\\) which is an “acceptable” probability of making a Type I error.\nAside: The probability \\(1-\\beta\\) of correctly rejecting \\(H_0\\) is the power."
+    "text": "Navigating Type I and II Errors\nThe standard null hypothesis significance framework is based on balancing the chance of making Type I (false positive) and Type II (false negative) errors.\nIdea: Set a significance level \\(\\alpha\\) which is an “acceptable” probability of making a Type I error.\nAside: The probability \\(1-\\beta\\) of correctly rejecting \\(H_0\\) is the power.\n\nNote that these are frequentist concepts, not applicable to a single dataset (which give rise to p-values, which are random values).\nIf we only run a single experiment all we can claim is that if we had run a long series of experiments we would have had 100α% false positives had H0 been true and 100β% false negatives had H1 been true provided we got the power calculations right. Note the conditionals."
   },
   {
     "objectID": "slides/lecture02-1-nhst.html#p-value-and-significance",
     "href": "slides/lecture02-1-nhst.html#p-value-and-significance",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "p-Value and Significance",
-    "text": "p-Value and Significance\nIf the p-value is sufficiently small (below \\(\\alpha\\)), we say that we can reject the null hypothesis with \\(1-\\alpha\\) confidence, or that the alternative hypothesis is statistically significant at the \\(1-\\alpha\\) level.\nThis can mean:\n\n\nThe null hypothesis is not true for that data-generating process;\nThe null hypothesis is true but the data is an outlying sample."
+    "text": "p-Value and Significance\nCommon practice: If the p-value is sufficiently small (below \\(\\alpha\\)), reject the null hypothesis with \\(1-\\alpha\\) confidence, or declare that the alternative hypothesis is statistically significant at the \\(1-\\alpha\\) level.\nThis can mean:\n\n\nThe null hypothesis is not true for that data-generating process;\nThe null hypothesis is true but the data is an outlying sample.\n\n\n\nThis is a strange hybrid of two schools of frequentist statistics, that of Fisher and of Neyman-Pearson. Fisher viewed p-values as weak evidence which was part of an inductive process (even when assuming unbiased sampling and accurate measurement), while the Neyman-Pearson significance framework was based on quantitative specifications of alternative hypotheses with explicitly calculated power."
   },
   {
     "objectID": "slides/lecture02-1-nhst.html#what-p-values-are-not",
     "href": "slides/lecture02-1-nhst.html#what-p-values-are-not",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "What p-Values Are Not",
-    "text": "What p-Values Are Not\n\n\n\nProbability that the null hypothesis is true (or by “chance”);\nAn indication of the effect size.\n\n\n\\[ \\underbrace{p(S \\geq \\hat{S}) | \\mathcal{H}_0)}_{\\text{p-value}} \\neq \\underbrace{p(\\mathcal{H}_0 | S \\geq \\hat{S})}_{\\substack{\\text{probability of} \\\\ \\text{null}}}!\\]"
+    "text": "What p-Values Are Not\n\n\n\nProbability that the null hypothesis is true (this is never computed);\nAn indication of the effect size (or the stakes of that effect).\n\n\n\\[ \\underbrace{p(S \\geq \\hat{S}) | \\mathcal{H}_0)}_{\\text{p-value}} \\neq \\underbrace{p(\\mathcal{H}_0 | S \\geq \\hat{S})}_{\\substack{\\text{probability of} \\\\ \\text{null}}}!\\]\n\n\nA p-value is a random variable which depends on the data. It’s evidence which can be collected from a single experiment but can not establish .\nOver repeated experiments, reasoning about validity of the null should have the right properties assuming the experiments are conducted faithfully."
   },
   {
     "objectID": "slides/lecture02-1-nhst.html#statistical-significance-scientific-significance",
@@ -464,6 +464,13 @@
     "text": "Statistical Test Zoo\n\n\n\n\n\nZoo of Statistical Tests\n\n\n\nSource: McElreath (2020, fig. 1.1)\n\n\n\n\n\n\nZoo of Statistical Tests"
   },
   {
+    "objectID": "slides/lecture02-1-nhst.html#multiple-comparisons",
+    "href": "slides/lecture02-1-nhst.html#multiple-comparisons",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Multiple Comparisons",
+    "text": "Multiple Comparisons\n\n\nIf you conduct multiple statistical tests, you must account for all of these in the p-value computation and assessment of significance.\nImportant: This includes model selection!\n\n\n\n\nMultiple Comparisons Meme\n\n\n\n\nThe core issue is the standard test statistics have the right Type I/Type II properties for each individual test, but multiple tests distort these frequencies, sometimes quite dramatically.\nFor example, suppose each individual test has a 5% Type I error rate. If you test 100 different models, and the errors are independent, you would expect 5 false positives, one of which would be selected by minimizing the p-value. The probability of at least one type I error is &gt;99%.\nThere are a number of corrections (Bonferroni being the most common), but sometimes stepwise tests are subtle, including cases of model selection followed by model fitting. You can also use simulation to estimate the false-positive rate for the procedure under a null data-generating process, which ties into the broader methods we’ll discuss."
+  },
+  {
     "objectID": "slides/lecture02-1-nhst.html#results-are-flashy-but-meaningless-without-methods",
     "href": "slides/lecture02-1-nhst.html#results-are-flashy-but-meaningless-without-methods",
     "title": "Hypothesis Testing and Decision-Making",
@@ -478,6 +485,20 @@
     "text": "Interpretability of p-Values and Significance\n\n\n\np-values are often confused with hypothesis probabilities or Type I error rates\np-values are a continuous measure of “surprise” at seeing a dataset given the null, but “significance” is binary.\n\n\n\n\n\nXKCD #1478\n\n\n\nSource: XKCD"
   },
   {
+    "objectID": "slides/lecture02-1-nhst.html#practical-results-of-nhst",
+    "href": "slides/lecture02-1-nhst.html#practical-results-of-nhst",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Practical Results of NHST",
+    "text": "Practical Results of NHST\n\n\nPerhaps most damningly:\nThe null hypothesis approach, as described here and typically practiced has empirically failed to maintain rigor and credibility in the scientific literature (Ioannidis, 2005; Szucs & Ioannidis, 2017).\n\n\n\n\nHow Could Stats Do This Meme\n\n\n\nSource: Richard McElreath"
+  },
+  {
+    "objectID": "slides/lecture02-1-nhst.html#practical-results-of-nhst-1",
+    "href": "slides/lecture02-1-nhst.html#practical-results-of-nhst-1",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Practical Results of NHST",
+    "text": "Practical Results of NHST\n\n\n\nOverconfident confidence intervals;\nStrawman null hypotheses;\nBiased sampling;\nLack of replications;\np-hacking.\n\n\n\n\n\nHow Could Stats Do This Meme\n\n\n\nSource: Richard McElreath"
+  },
+  {
     "objectID": "slides/lecture02-1-nhst.html#what-might-be-more-satisfying",
     "href": "slides/lecture02-1-nhst.html#what-might-be-more-satisfying",
     "title": "Hypothesis Testing and Decision-Making",
@@ -489,35 +510,21 @@
     "href": "slides/lecture02-1-nhst.html#note-this-does-not-mean-null-hypothesis-testing-is-useless",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "Note: This Does Not Mean Null Hypothesis Testing Is Useless!",
-    "text": "Note: This Does Not Mean Null Hypothesis Testing Is Useless!\n\n\nExamining and testing the implications of competing models is important, including “null” models!\n\n\n\n\nNull Hypothesis Selection Good Vs. Bad\n\n\n\n\nDeborah Mayo discusses this interpretation as “severe testing”: apply different levels of scrutiny to a scientific model to see what level of severity breaks the model."
-  },
-  {
-    "objectID": "slides/lecture02-1-nhst.html#model-assessment-through-simulation",
-    "href": "slides/lecture02-1-nhst.html#model-assessment-through-simulation",
-    "title": "Hypothesis Testing and Decision-Making",
-    "section": "Model Assessment Through Simulation",
-    "text": "Model Assessment Through Simulation\nIf we have a generative model which permits simulation of data:\n\nCalibrate models under different assumptions;\nSimulate realizations from those models;\nCompute the distribution of the relevant statistic \\(S\\) from these realizations;\nAssess which distribution is most consistent with the observed quantity."
-  },
-  {
-    "objectID": "slides/lecture02-1-nhst.html#advances-of-simulation-for-testing",
-    "href": "slides/lecture02-1-nhst.html#advances-of-simulation-for-testing",
-    "title": "Hypothesis Testing and Decision-Making",
-    "section": "Advances of Simulation for “Testing”",
-    "text": "Advances of Simulation for “Testing”\n\nMore structural freedom (don’t need to write down the sampling distribution of \\(S\\) in closed form);\nDon’t need to set up a dichotomous “null vs alternative” test;\nModels can reflect more nuanced hypotheses about data generating processes."
-  },
-  {
-    "objectID": "slides/lecture02-1-nhst.html#how-do-we-assess-models-for-selection",
-    "href": "slides/lecture02-1-nhst.html#how-do-we-assess-models-for-selection",
-    "title": "Hypothesis Testing and Decision-Making",
-    "section": "How Do We Assess Models For Selection?",
-    "text": "How Do We Assess Models For Selection?\nGenerally, through predictive performance: how probable is some data (out-of-sample or the calibration dataset)?\nBut there are also metrics of how well you explain the existing data (RMSE, R2)."
+    "text": "Note: This Does Not Mean Null Hypothesis Testing Is Useless!\n\n\nExamining and testing the implications of competing models is important, including “null” models!\n\n\n\n\nNull Hypothesis Selection Good Vs. Bad\n\n\n\n\nDeborah Mayo discusses this interpretation as “severe testing”: apply different levels of scrutiny to a scientific model to see what level of severity breaks the model.\nThe idea of a p-value (not necessarily “significance”) being a piece of inductive evidence rather than a threshold for validity (especially for an individual experiment) reflects the original views of Fisher."
   },
   {
     "objectID": "slides/lecture02-1-nhst.html#hypothesis-testing-1",
     "href": "slides/lecture02-1-nhst.html#hypothesis-testing-1",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nNull Hypothesis Significance Testing: Compare a null hypothesis (no effect) to an alternative (effect)\n\\(p\\)-value: probability (under \\(H_0\\)) of more extreme test statistic than observed.\n\\(p\\)-values are often over-interpreted, with negative outcomes!\n“Significant” if \\(p\\)-value is below a significance level reflecting acceptable Type I error rate."
+    "text": "Hypothesis Testing\n\nClassical framework: Compare a null hypothesis (no effect) to an alternative (some effect)\n\\(p\\)-value: probability (under \\(H_0\\)) of more extreme test statistic than observed.\n“Significant” if \\(p\\)-value is below a significance level reflecting acceptable Type I error rate."
+  },
+  {
+    "objectID": "slides/lecture02-1-nhst.html#problems-with-nhst-framework",
+    "href": "slides/lecture02-1-nhst.html#problems-with-nhst-framework",
+    "title": "Hypothesis Testing and Decision-Making",
+    "section": "Problems with NHST framework",
+    "text": "Problems with NHST framework\n\n\\(p\\)-values are often over-interpreted and are often be incorrectly calculated, with negative outcomes!\nImportant: “Big” data can make things worse, as NHST is highly sensitive to small but evidence effects."
   },
   {
     "objectID": "slides/lecture02-1-nhst.html#next-classes",
@@ -538,116 +545,79 @@
     "href": "slides/lecture02-1-nhst.html#references-scroll-for-full-list",
     "title": "Hypothesis Testing and Decision-Making",
     "section": "References (Scroll for Full List)",
-    "text": "References (Scroll for Full List)\n\n\n\n\nMcElreath, R. (2020). Statistical rethinking : A bayesian course with examples in R and Stan (Second). Boca Raton, Florida: CRC. Retrieved from https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919"
+    "text": "References (Scroll for Full List)\n\n\n\n\nIoannidis, J. P. A. (2005). Why most published research findings are false. PLoS Med., 2, e124. https://doi.org/10.1371/journal.pmed.0020124\n\n\nMcElreath, R. (2020). Statistical rethinking : A bayesian course with examples in R and Stan (Second). Boca Raton, Florida: CRC. Retrieved from https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919\n\n\nSzucs, D., & Ioannidis, J. P. A. (2017). When null hypothesis significance testing is unsuitable for research: A reassessment. Front. Hum. Neurosci., 11, 390. https://doi.org/10.3389/fnhum.2017.00390"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "objectID": "policies/homework.html",
+    "href": "policies/homework.html",
+    "title": "Homework Policies",
     "section": "",
-    "text": "This is the course website for the Spring 2025 edition of BEE 4850/5850, Environmental Data Analysis and Simulation, taught at Cornell University by Vivek Srikrishnan.",
+    "text": "This page includes some information on the homework assignments for BEE 4850/5850, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.\nThis document is long, but please do read the whole thing. Hopefully most of this is obvious, but some of it may not be.",
     "crumbs": [
-      "Course Information",
-      "Overview"
+      "Homework",
+      "Homework Policies"
     ]
   },
   {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Course Description",
-    "text": "Course Description\nThis class teaches data analysis with an emphasis on conceptual models for scientific insights. In particular, we will:\n\nlearn how to construct generative probability models for common environmental datasets;\ndevelop a toolkit for model calibration, uncertainty quantification, and simulation;\nuse cross-validation and predictive information criteria to evaluate over-fitting and test hypotheses;\nidentify potential confounds and explore implications for data gathering and experimental design.",
+    "objectID": "policies/homework.html#homework-logistics",
+    "href": "policies/homework.html#homework-logistics",
+    "title": "Homework Policies",
+    "section": "Homework Logistics",
+    "text": "Homework Logistics\nHomework assignments will be assigned on Monday and are generally due two Fridays hence (so you have two “school weeks” to work on the assignment). Solutions should be submitted as PDFs to Gradescope by 9pm on the due date. You do not need to include code unless you want to, but you should always include some description of the logic of the modeling or problem-solving process that your code implements.",
     "crumbs": [
-      "Course Information",
-      "Overview"
+      "Homework",
+      "Homework Policies"
     ]
   },
   {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Course Information",
-    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.",
+    "objectID": "policies/homework.html#how-to-write-assignments",
+    "href": "policies/homework.html#how-to-write-assignments",
+    "title": "Homework Policies",
+    "section": "How To Write Assignments",
+    "text": "How To Write Assignments\nHere are some tips for how to make the grader (the TA or Prof. Srikrishnan) understand what you mean in the time they’re looking at your problem: as noted in the rubrics, if your solution isn’t clear enough for us to follow, you will not receive the points even if your answer is technically correct, because part of demonstrating understanding is the ability to organize and communicate.\n\nBe Honest\n\nWrite everything in your own words. It’s perfectly ok to work with others; in fact, we encourage it! But you should write up and implement everything yourself; it’s very easy to convince yourself that you understand something when you’re mimicking someone else’s solution, and often we realize we don’t actually understand something when we try to write it ourselves.\nCite every outside source you use. You are allowed, in fact encouraged, to use any outside source1 Getting an idea from an outside source is not a problem, and will not lower your grade; if you’re critically evaluating the idea and implementing and writing your solution yourself (see above), then you’re demonstrating understanding even if the idea originated with someone else. But you must give appropriate credit to that source. Taking credit for someone else’s ideas and failing to properly cite an outside source, including your classmates, is plagiarism, and will be treated accordingly.\nThe only sources you do not have to cite are official class materials. If you use the lectures, lecture notes, website materials, homework solutions, etc, you do not have to cite these.\nList everyone that you worked with. Give your classmates proper credit for their assistance. If you get an idea from Ed Discussion, credit the poster. If you’re not sure if you should list someone as a collaborator, err on the side of including them. For discussions in class or in office hours, you don’t have to list everyone who participated in the discussion (though you should if you worked one on one with them), but mention that the class discussion or the office hour was useful.\n\n1 Yes, including ChatGPT, though you should ask and describe how you used it.\n\nBe Clear\n\nWrite legibly. This doesn’t refer to handwriting (since you’ll be submitting PDFs of Jupyter notebooks), but the text itself should be clearly written and well organized, so that it’s easy for the grader to follow your reasoning or explanation. Structuring your solution, and not writing in a stream of consciousness, helps you think more clearly. To reiterate: You will be given no points if the grader cannot easily follow your answer, and the graders have complete discretion to determine this.\nWrite clearly. Use proper spelling, grammar, logic, etc. We will try not to penalize people for not having complete mastery of English, but again, we need to be able to follow your reasoning.\nWrite carefully and completely. We can only grade what you write; nobody can read your mind, and we will not try. The solution that you submit must stand on its own. If your answer is ambiguous, the TA has been instructed to interpret it the wrong way. Regrade requests also cannot be used to add more information to a solution.\nDon’t submit your first draft. For most people, first drafts are terrible. They are often poorly organized, unclear, and contain gaps or jumps in reasoning. You will likely need to revise, possibly several times, for your answer to be clear, careful, and complete. This is another reason to start the assignment early — if you start late, you may be stuck with your first draft, and your grade is likely to suffer for it.\nState your assumptions. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).\nDon’t rely on your code. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end — it works or it doesn’t). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can’t do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.\n\n\n\nBe Concise\n\nKeep solutions short. Organized answers should not be long. There’s a fine balance between conciseness and completeness: find it!\nDon’t regurgitate. You can reference concepts, models, etc from class without repeating them. Just make it clear what you’re modifying and how you’re using those concepts for that particular problem.\nDon’t bullshit. You will get no points for word salad, even if you accidentally hit on the right answer.",
     "crumbs": [
-      "Course Information",
-      "Overview"
+      "Homework",
+      "Homework Policies"
     ]
   },
   {
-    "objectID": "index.html#regular-weekly-schedule",
-    "href": "index.html#regular-weekly-schedule",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Regular Weekly Schedule",
-    "text": "Regular Weekly Schedule\n\n\n\n\n\n\n\nLectures\nMW 11:40-12:55pm, 160 Riley-Robb Hall\n\n\nOffice Hours\nMW 1:00-2:00pm, 318 Riley-Robb Hall\n\n\nAssignments\nDue Fridays at 9pm on Gradescope.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "weeks/week02.html",
-    "href": "weeks/week02.html",
-    "title": "Week 2 Information",
+    "objectID": "homework.html",
+    "href": "homework.html",
+    "title": "Homework Assignments",
     "section": "",
-    "text": "Homework 1 due 2/7/25 by 9PM.",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
     "crumbs": [
-      "Weeks",
-      "Week 2"
+      "Homework"
     ]
   },
   {
-    "objectID": "weeks/week02.html#homework",
-    "href": "weeks/week02.html#homework",
-    "title": "Week 2 Information",
-    "section": "",
-    "text": "Homework 1 due 2/7/25 by 9PM.",
+    "objectID": "homework.html#general-information",
+    "href": "homework.html#general-information",
+    "title": "Homework Assignments",
+    "section": "General Information",
+    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
     "crumbs": [
-      "Weeks",
-      "Week 2"
+      "Homework"
     ]
   },
   {
-    "objectID": "weeks/week02.html#readings",
-    "href": "weeks/week02.html#readings",
-    "title": "Week 2 Information",
-    "section": "Readings",
-    "text": "Readings\n\nLloyd, E. A., & Oreskes, N. (2018). Climate change attribution: When is it appropriate to accept new methods? Earth’s Future, 6(3), 311–325. https://doi.org/10.1002/2017ef000665\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. One graduate student will be assigned to lead the discussion in the 02/05 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nHow does the framing of climate change attribution relate to the Type I/Type II error framework we discussed in class?\nWhat are the implications of the storyline approach for statements about climate attribution of extreme events?\nWhat are your thoughts on the storyline vs. FAR approach for scientific insights and communication of climate impacts?",
+    "objectID": "homework.html#rubric",
+    "href": "homework.html#rubric",
+    "title": "Homework Assignments",
+    "section": "Rubric",
+    "text": "Rubric\nThe standard rubric for homework problems is available here.",
     "crumbs": [
-      "Weeks",
-      "Week 2"
+      "Homework"
     ]
   },
   {
-    "objectID": "weeks/week01.html",
-    "href": "weeks/week01.html",
-    "title": "Week 1 Information",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
+    "objectID": "homework.html#schedule",
+    "href": "homework.html#schedule",
+    "title": "Homework Assignments",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\nSolutions\n\n\n\n\nHW1\n\nFeb 07, 2025\n\n\n\nHW2\n\nFeb 21, 2025\n\n\n\nHW3\n\nMar 14, 2025\n\n\n\nHW4\n\nMar 28, 2025\n\n\n\nHW5\n\nApr 18, 2025\n\n\n\nHW6\n\nMay 2, 2025",
     "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#announcements",
-    "href": "weeks/week01.html#announcements",
-    "title": "Week 1 Information",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#homework",
-    "href": "weeks/week01.html#homework",
-    "title": "Week 1 Information",
-    "section": "Homework",
-    "text": "Homework\n\nIf you don’t have a GitHub account, make sure you set one up.\nHomework 1 assigned, due 2/7/25. Check Ed Discussion for the link to create your repository. You will be prompted to link your GitHub account to the class roster, which will not be required once you do it once.",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
+      "Homework"
     ]
   },
   {
@@ -695,77 +665,275 @@
     ]
   },
   {
-    "objectID": "homework.html",
-    "href": "homework.html",
-    "title": "Homework Assignments",
+    "objectID": "weeks/week01.html",
+    "href": "weeks/week01.html",
+    "title": "Week 1 Information",
     "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
     "crumbs": [
-      "Homework"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "homework.html#general-information",
-    "href": "homework.html#general-information",
-    "title": "Homework Assignments",
-    "section": "General Information",
-    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "homework.html#rubric",
-    "href": "homework.html#rubric",
-    "title": "Homework Assignments",
-    "section": "Rubric",
-    "text": "Rubric\nThe standard rubric for homework problems is available here.",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "homework.html#schedule",
-    "href": "homework.html#schedule",
-    "title": "Homework Assignments",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\nSolutions\n\n\n\n\nHW1\n\nFeb 07, 2025\n\n\n\nHW2\n\nFeb 21, 2025\n\n\n\nHW3\n\nMar 07, 2025\n\n\n\nHW4\n\nMar 21, 2025\n\n\n\nHW5\n[]({style=“color:grey”}\nApr 11, 2025\n\n\n\nHW6\n\nApr 25, 2025",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "policies/homework.html",
-    "href": "policies/homework.html",
-    "title": "Homework Policies",
+    "objectID": "weeks/week01.html#announcements",
+    "href": "weeks/week01.html#announcements",
+    "title": "Week 1 Information",
     "section": "",
-    "text": "This page includes some information on the homework assignments for BEE 4850/5850, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.\nThis document is long, but please do read the whole thing. Hopefully most of this is obvious, but some of it may not be.",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
     "crumbs": [
-      "Homework",
-      "Homework Policies"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "policies/homework.html#homework-logistics",
-    "href": "policies/homework.html#homework-logistics",
-    "title": "Homework Policies",
-    "section": "Homework Logistics",
-    "text": "Homework Logistics\nHomework assignments will be assigned on Monday and are generally due two Fridays hence (so you have two “school weeks” to work on the assignment). Solutions should be submitted as PDFs to Gradescope by 9pm on the due date. You do not need to include code unless you want to, but you should always include some description of the logic of the modeling or problem-solving process that your code implements.",
+    "objectID": "weeks/week01.html#homework",
+    "href": "weeks/week01.html#homework",
+    "title": "Week 1 Information",
+    "section": "Homework",
+    "text": "Homework\n\nIf you don’t have a GitHub account, make sure you set one up.\nHomework 1 assigned, due 2/7/25. Check Ed Discussion for the link to create your repository. You will be prompted to link your GitHub account to the class roster, which will not be required once you do it once.",
     "crumbs": [
-      "Homework",
-      "Homework Policies"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "policies/homework.html#how-to-write-assignments",
-    "href": "policies/homework.html#how-to-write-assignments",
-    "title": "Homework Policies",
-    "section": "How To Write Assignments",
-    "text": "How To Write Assignments\nHere are some tips for how to make the grader (the TA or Prof. Srikrishnan) understand what you mean in the time they’re looking at your problem: as noted in the rubrics, if your solution isn’t clear enough for us to follow, you will not receive the points even if your answer is technically correct, because part of demonstrating understanding is the ability to organize and communicate.\n\nBe Honest\n\nWrite everything in your own words. It’s perfectly ok to work with others; in fact, we encourage it! But you should write up and implement everything yourself; it’s very easy to convince yourself that you understand something when you’re mimicking someone else’s solution, and often we realize we don’t actually understand something when we try to write it ourselves.\nCite every outside source you use. You are allowed, in fact encouraged, to use any outside source1 Getting an idea from an outside source is not a problem, and will not lower your grade; if you’re critically evaluating the idea and implementing and writing your solution yourself (see above), then you’re demonstrating understanding even if the idea originated with someone else. But you must give appropriate credit to that source. Taking credit for someone else’s ideas and failing to properly cite an outside source, including your classmates, is plagiarism, and will be treated accordingly.\nThe only sources you do not have to cite are official class materials. If you use the lectures, lecture notes, website materials, homework solutions, etc, you do not have to cite these.\nList everyone that you worked with. Give your classmates proper credit for their assistance. If you get an idea from Ed Discussion, credit the poster. If you’re not sure if you should list someone as a collaborator, err on the side of including them. For discussions in class or in office hours, you don’t have to list everyone who participated in the discussion (though you should if you worked one on one with them), but mention that the class discussion or the office hour was useful.\n\n1 Yes, including ChatGPT, though you should ask and describe how you used it.\n\nBe Clear\n\nWrite legibly. This doesn’t refer to handwriting (since you’ll be submitting PDFs of Jupyter notebooks), but the text itself should be clearly written and well organized, so that it’s easy for the grader to follow your reasoning or explanation. Structuring your solution, and not writing in a stream of consciousness, helps you think more clearly. To reiterate: You will be given no points if the grader cannot easily follow your answer, and the graders have complete discretion to determine this.\nWrite clearly. Use proper spelling, grammar, logic, etc. We will try not to penalize people for not having complete mastery of English, but again, we need to be able to follow your reasoning.\nWrite carefully and completely. We can only grade what you write; nobody can read your mind, and we will not try. The solution that you submit must stand on its own. If your answer is ambiguous, the TA has been instructed to interpret it the wrong way. Regrade requests also cannot be used to add more information to a solution.\nDon’t submit your first draft. For most people, first drafts are terrible. They are often poorly organized, unclear, and contain gaps or jumps in reasoning. You will likely need to revise, possibly several times, for your answer to be clear, careful, and complete. This is another reason to start the assignment early — if you start late, you may be stuck with your first draft, and your grade is likely to suffer for it.\nState your assumptions. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).\nDon’t rely on your code. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end — it works or it doesn’t). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can’t do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.\n\n\n\nBe Concise\n\nKeep solutions short. Organized answers should not be long. There’s a fine balance between conciseness and completeness: find it!\nDon’t regurgitate. You can reference concepts, models, etc from class without repeating them. Just make it clear what you’re modifying and how you’re using those concepts for that particular problem.\nDon’t bullshit. You will get no points for word salad, even if you accidentally hit on the right answer.",
+    "objectID": "weeks/week02.html",
+    "href": "weeks/week02.html",
+    "title": "Week 2 Information",
+    "section": "",
+    "text": "Homework 1 due 2/7/25 by 9PM.",
     "crumbs": [
-      "Homework",
-      "Homework Policies"
+      "Weeks",
+      "Week 2"
     ]
+  },
+  {
+    "objectID": "weeks/week02.html#homework",
+    "href": "weeks/week02.html#homework",
+    "title": "Week 2 Information",
+    "section": "",
+    "text": "Homework 1 due 2/7/25 by 9PM.",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week02.html#readings",
+    "href": "weeks/week02.html#readings",
+    "title": "Week 2 Information",
+    "section": "Readings",
+    "text": "Readings\n\nLloyd, E. A., & Oreskes, N. (2018). Climate change attribution: When is it appropriate to accept new methods? Earth’s Future, 6(3), 311–325. https://doi.org/10.1002/2017ef000665\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. One graduate student will be assigned to lead the discussion in the 02/05 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nHow does the framing of climate change attribution relate to the Type I/Type II error framework we discussed in class?\nWhat are the implications of the storyline approach for statements about climate attribution of extreme events?\nWhat are your thoughts on the storyline vs. FAR approach for scientific insights and communication of climate impacts?",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "",
+    "text": "This is the course website for the Spring 2025 edition of BEE 4850/5850, Environmental Data Analysis and Simulation, taught at Cornell University by Vivek Srikrishnan.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Course Description",
+    "text": "Course Description\nThis class teaches data analysis with an emphasis on conceptual models for scientific insights. In particular, we will:\n\nlearn how to construct generative probability models for common environmental datasets;\ndevelop a toolkit for model calibration, uncertainty quantification, and simulation;\nuse cross-validation and predictive information criteria to evaluate over-fitting and test hypotheses;\nidentify potential confounds and explore implications for data gathering and experimental design.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Course Information",
+    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#regular-weekly-schedule",
+    "href": "index.html#regular-weekly-schedule",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Regular Weekly Schedule",
+    "text": "Regular Weekly Schedule\n\n\n\n\n\n\n\nLectures\nMW 11:40-12:55pm, 160 Riley-Robb Hall\n\n\nOffice Hours\nMW 1:00-2:00pm, 318 Riley-Robb Hall\n\n\nAssignments\nDue Fridays at 9pm on Gradescope.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#garden-of-forking-data",
+    "href": "slides/lecture02-2-generative.html#garden-of-forking-data",
+    "title": "Generative Modeling",
+    "section": "Garden of Forking Data",
+    "text": "Garden of Forking Data\n\n\nNote several uncertainties relevant to data:\n\nUnderlying causal model;\nTranslation into the statistical model;\nModel parameter(s);\nStochasticity (what other data could have been observed?)\n\n\n\n\n\nGarden of Forking Paths by Borges\n\n\n\nSource: AbeBooks via Wikipedia\n\n\n\nUltimately, we want to understand the relationship between our modeled process causes and the estimand. But our models are always approximations and data is typically sparse. There are many different data-generating processes which are consistent to varying degrees with the data.\nThe other important point: do not overfit to the existing data. We want to learn from data, but the data is just one realization of the underlying stochastic process."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#model-assessment-through-simulation",
+    "href": "slides/lecture02-2-generative.html#model-assessment-through-simulation",
+    "title": "Generative Modeling",
+    "section": "Model Assessment Through Simulation",
+    "text": "Model Assessment Through Simulation\nGiven generative models (hypotheses):\n\nCalibrate models under different assumptions;\nSimulate realizations from those models;\nCompute the distribution of the relevant statistic \\(S\\) from these realizations;\nAssess which distribution is most consistent with the observed quantity.\n\n\nHopefully last lecture made it clear that NHST actually says nothing about the validity of a given alternative hypothesis, only the probability of seeing the data conditional on the null model. If the null is rejected…not much more can be said about a given alternative."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#advantages-of-simulation-for-testing",
+    "href": "slides/lecture02-2-generative.html#advantages-of-simulation-for-testing",
+    "title": "Generative Modeling",
+    "section": "Advantages of Simulation for “Testing”",
+    "text": "Advantages of Simulation for “Testing”\n\nMore structural freedom (don’t need to write down the sampling distribution of \\(S\\) in closed form);\nDon’t need to set up a dichotomous “null vs alternative” test;\nModels can reflect more nuanced hypotheses about data generating processes.\n\n\nBy “generative” model I mean models which facilitate simulation of synthetic or pseudo-datasets. We’ll discuss this more later today.\nThe trick is in setting up a generative model; not all statistical models are generative."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#how-do-we-assess-models-for-selection",
+    "href": "slides/lecture02-2-generative.html#how-do-we-assess-models-for-selection",
+    "title": "Generative Modeling",
+    "section": "How Do We Assess Models For Selection?",
+    "text": "How Do We Assess Models For Selection?\nGenerally, through predictive performance: how probable is some data (out-of-sample or the calibration dataset) if we assume the data-generating process associated with the model?\nBut there are also other metrics (RMSE, R2) which capture different types of performance."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#data-generating-processes",
+    "href": "slides/lecture02-2-generative.html#data-generating-processes",
+    "title": "Generative Modeling",
+    "section": "Data-Generating Processes",
+    "text": "Data-Generating Processes\nGenerative models produce stochastic, counterfactual simulations of data (pseudo-data, synthetic data, etc).\nThis includes:\n\nModeled process;\n“Error”\n\nModel-data discrepancy\nMeasurement uncertainties.\n\n\n\nThere are many different ways you can define generative modeling: I’m going to use the term to refer to a model which is capable of replicating a data-generating process, so there should be some way to simulate the hypothesized/modeled trend as well as an error process which accounts for the model-data discrepancy (more on this later)."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#constructing-generative-models",
+    "href": "slides/lecture02-2-generative.html#constructing-generative-models",
+    "title": "Generative Modeling",
+    "section": "Constructing Generative Models",
+    "text": "Constructing Generative Models\n\nIdentify estimand of interest;\nDevelop process/mechanistic (causal) model or framework;\nBuild statistical model based on 1 & 2;\nSimulate from 3 to validate based on 2 and/or to analyze real data."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#generative-models-for-tide-gauge-data",
+    "href": "slides/lecture02-2-generative.html#generative-models-for-tide-gauge-data",
+    "title": "Generative Modeling",
+    "section": "Generative Models for Tide Gauge Data",
+    "text": "Generative Models for Tide Gauge Data\n\n\n\n\nWhat are we interesting in estimating?\nWhat are candidate process models?\nHow do we translate these to statistical models?\nHow do we calibrate and simulate from these models?\n\n\n\n\n\nCode\n# load SF tide gauge data\n# read in data and get annual maxima\nfunction load_data(fname)\n    date_format = DateFormat(\"yyyy-mm-dd HH:MM:SS\")\n    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data\n    df = @chain fname begin\n        CSV.read(DataFrame; header=false)\n        rename(\"Column1\" =&gt; \"year\", \"Column2\" =&gt; \"month\", \"Column3\" =&gt; \"day\", \"Column4\" =&gt; \"hour\", \"Column5\" =&gt; \"gauge\")\n        # need to reformat the decimal date in the data file\n        @transform :datetime = DateTime.(:year, :month, :day, :hour)\n        # replace -99999 with missing\n        @transform :gauge = ifelse.(abs.(:gauge) .&gt;= 9999, missing, :gauge)\n        select(:datetime, :gauge)\n    end\n    return df\nend\n\nfunction load_pdo(fname)\n    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data\n    df = CSV.read(fname, DataFrame, delim=\" \", ignorerepeated=true, header=2)\n    # take yearly average\n    @transform!(df, :PDO = mean(AsTable(names(df)[2:13])))\n    @select!(df, $[:Year, :PDO])\n    @rsubset!(df, :Year != 2023)\n    return df\nend\n\ndat = load_data(\"data/surge/h551.csv\")\n\n# detrend the data to remove the effects of sea-level rise and seasonal dynamics\nma_length = 366\nma_offset = Int(floor(ma_length/2))\nmoving_average(series,n) = [mean(@view series[i-n:i+n]) for i in n+1:length(series)-n]\ndat_ma = DataFrame(datetime=dat.datetime[ma_offset+1:end-ma_offset], residual=dat.gauge[ma_offset+1:end-ma_offset] .- moving_average(dat.gauge, ma_offset))\n\n# group data by year and compute the annual maxima\ndat_ma = dropmissing(dat_ma) # drop missing data\ndat_annmax = combine(dat_ma -&gt; dat_ma[argmax(dat_ma.residual), :], groupby(transform(dat_ma, :datetime =&gt; x-&gt;year.(x)), :datetime_function))\ndelete!(dat_annmax, nrow(dat_annmax)) # delete 2023; haven't seen much of that year yet\nrename!(dat_annmax, :datetime_function =&gt; :Year)\nselect!(dat_annmax, [:Year, :residual])\ndat_annmax.residual = dat_annmax.residual / 1000 # convert to m\n\n# make plots\np1 = scatter(\n    dat_annmax.Year,\n    dat_annmax.residual;\n    xlabel=\"Year\",\n    ylabel=\"Ann. Max. Residual (m)\",\n    label=false,\n    marker=:circle,\n    markersize=5,\n    color=:black,\n    legend=:outerbottom)\n\nn = nrow(dat_annmax)\n\nplot!(p1, size=(600, 600))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Annual maxima surge data from the San Francisco, CA tide gauge."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#you-can-always-fit-models",
+    "href": "slides/lecture02-2-generative.html#you-can-always-fit-models",
+    "title": "Generative Modeling",
+    "section": "You Can Always Fit Models…",
+    "text": "You Can Always Fit Models…\n\n\nEspecially linear models with OLS!\nBut not all models are theoretically justifiablee.\n\n\n\n\nIan Malcolm meme"
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#how-do-we-select-candidate-processes",
+    "href": "slides/lecture02-2-generative.html#how-do-we-select-candidate-processes",
+    "title": "Generative Modeling",
+    "section": "How Do We Select Candidate Processes?",
+    "text": "How Do We Select Candidate Processes?\n\nXKCD 2620\nSource: XKCD 2620"
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#conceptual-process-models",
+    "href": "slides/lecture02-2-generative.html#conceptual-process-models",
+    "title": "Generative Modeling",
+    "section": "Conceptual Process Model(s)",
+    "text": "Conceptual Process Model(s)\n\n\n\n\n\n\n\n\n\n\nD\n\n\n\nPDO\n\nPDO\n\n\n\nSST\n\nSST\n\n\n\nPDO-&gt;SST\n\n\n\n\n\nGMT\n\nGMT\n\n\n\nGMT-&gt;SST\n\n\n\n\n\nTC\n\nTC\n\n\n\nGMT-&gt;TC\n\n\n\n\n\nSST-&gt;TC\n\n\n\n\n\nEWL\n\nEWL\n\n\n\nSST-&gt;EWL\n\n\n\n\n\nTC-&gt;EWL\n\n\n\n\n\n\n\n\nFigure 2: DAG for EWL\n\n\n\n\n\n\n\nCandidate statistical relationships:\n\nNull w/ Trend (Time → EWL)\nNull (stationary EWL)\nPDO → EWL\nGMT → EWL\nPDO + GMT → EWL"
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#simulating-from-statistical-model",
+    "href": "slides/lecture02-2-generative.html#simulating-from-statistical-model",
+    "title": "Generative Modeling",
+    "section": "Simulating from Statistical Model",
+    "text": "Simulating from Statistical Model\nSample \\[\\text{EWL}^\\text{rep}_i \\sim p(\\text{EWL} | \\text{Covariates}).\\]\nThen we can calculate a distribution of our estimand(s) of interest from these samples."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#is-the-best-fit-sufficient",
+    "href": "slides/lecture02-2-generative.html#is-the-best-fit-sufficient",
+    "title": "Generative Modeling",
+    "section": "Is The Best Fit Sufficient?",
+    "text": "Is The Best Fit Sufficient?\n\n\nWhat information can we get from this:\nModel \\[EWL \\sim GEV(\\mu(t), \\sigma, \\xi),\\]\nwhere \\(\\mu(t) = a \\times x(t) + b\\) and the “best fit” is the median of the fitted GEV distribution.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Best (Median) fit for the EWLs.\n\n\n\n\n\n\nThese models are effectively indistinguishable from just the best fit without any consideration of uncertainty.\nOne problem: the observations are just a single realization of a complex stochastic process; some observations may be extremely unlikely, or there might be enough uncertainty that all of them are relatively probable. We can’t tell!\nThe other problem: this model was fitted on the same data used to calculate the RMSE; those estimates are biased as a result."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#from-process-to-statistical-model",
+    "href": "slides/lecture02-2-generative.html#from-process-to-statistical-model",
+    "title": "Generative Modeling",
+    "section": "From Process to Statistical Model",
+    "text": "From Process to Statistical Model\nTo specify the statistical models for any of these models, need a probability model for \\[p(\\text{EWL} | \\text{Covariates})\\]\nThis probability model will account for the sensitivity of EWL to the chosen covariates as well as a residual model:\n\\[p(\\text{EWL} | \\text{Covariates}) = f(\\text{Covariates}) + \\omega(t).\\]"
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#generative-model",
+    "href": "slides/lecture02-2-generative.html#generative-model",
+    "title": "Generative Modeling",
+    "section": "Generative Model",
+    "text": "Generative Model\nThe combination of a probability model plus a joint parameter distribution over all relevant parameters gives us a generative model.\nWe can estimate:\n\nModel-based forecasts;\nCausal effects;\nCounterfactuals.\n\n\nProbability theory lets us deduce logical implications of assumptions about stochastic data-generating processes. Given a fully specificed probability model, there is a lot we can do to check the model/understand future outcomes or impacts of interventions."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#generative-model-for-ewl",
+    "href": "slides/lecture02-2-generative.html#generative-model-for-ewl",
+    "title": "Generative Modeling",
+    "section": "Generative Model for EWL",
+    "text": "Generative Model for EWL\nIn this case:\n\\[\\begin{align*}\nEWL &\\sim GEV(\\mu(t), \\sigma, \\xi) \\\\\n\\mu(t) &= a \\times x(t) + b.\n\\end{align*}\n\\]\n\nNeed to specify distributions for \\(a, b, \\sigma, \\xi\\): many options for this (will discuss in a few weeks).\nIdeally want to specify joint distributions to account for correlations."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#predictive-distributions",
+    "href": "slides/lecture02-2-generative.html#predictive-distributions",
+    "title": "Generative Modeling",
+    "section": "Predictive Distributions",
+    "text": "Predictive Distributions\n\n\nThe goal of a generative model is to predict \\(p(f(\\tilde{y})\\) given a joint probability distribution over relevant parameters and covariates.\n\\[p(f(\\tilde{y}) | \\mathbf{y}) = \\int p(\\tilde{y} | \\theta) p(\\theta | \\tilde{y}) d\\theta.\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Prediction Interval for extreme water levels"
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#benefits-of-using-whole-distribution",
+    "href": "slides/lecture02-2-generative.html#benefits-of-using-whole-distribution",
+    "title": "Generative Modeling",
+    "section": "Benefits of Using Whole Distribution",
+    "text": "Benefits of Using Whole Distribution\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Comparison of 90% and 99% prediction intervals\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 5"
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#general-statistical-workflow",
+    "href": "slides/lecture02-2-generative.html#general-statistical-workflow",
+    "title": "Generative Modeling",
+    "section": "General Statistical Workflow",
+    "text": "General Statistical Workflow\n\n\n\nFit/calibrate statistical model to data;\nCheck plausibility of 2;\nSimulate replications from 1;\nAnalyze 3 and/or compare to data.\n\n\n\n\n\nTests vs. Generative Meme\n\n\n\n\nNote that there is a connection here to NHST: we can compare the probability of seeing as extreme of a test statistic under an appropriate null model.\nWe just aren’t bound to test statistics chosen for computational convenience.\nWe can also discuss how much better the alternative(s) are: they might all do poorly! In this case, all of these models have very similar probabilities of seeing data at least as extreme."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#model-specification-and-uncertainty",
+    "href": "slides/lecture02-2-generative.html#model-specification-and-uncertainty",
+    "title": "Generative Modeling",
+    "section": "Model Specification and Uncertainty",
+    "text": "Model Specification and Uncertainty\n\nMany different sources of uncertainty relevant to estimation\nCan fit an almost infinite numbers of models: but should we?\nValuable to think causally when formulating null and alternative data-generating processes.\nSimulation from models as an approach to estimating “significance” (better: evidence)."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#generative-models-1",
+    "href": "slides/lecture02-2-generative.html#generative-models-1",
+    "title": "Generative Modeling",
+    "section": "Generative Models",
+    "text": "Generative Models\n\nAllows us to apply probability theory to deduce logical implications of hypotheses.\nNeed a joint probability distribution over the model parameters\nThis includes parameters for the model residuals.\nThese models can be complex: simulation can be more straightforward than “clever” statistical procedures.\n\n\nCleverness is overrated: it’s not transparent and not often extensible.\nSimulation from a fully specificed probability model is not clever but is completely transparent.\nRemember: typically better to let a computer do brute force work than spend a ton of time of human brainpower to get to the same place."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#next-classes",
+    "href": "slides/lecture02-2-generative.html#next-classes",
+    "title": "Generative Modeling",
+    "section": "Next Classes",
+    "text": "Next Classes\nNext Week+: Prob/Stats “Review” and Fundamentals"
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#assessments",
+    "href": "slides/lecture02-2-generative.html#assessments",
+    "title": "Generative Modeling",
+    "section": "Assessments",
+    "text": "Assessments\nHomework 1 available; due next Friday (2/7)."
+  },
+  {
+    "objectID": "slides/lecture02-2-generative.html#references-scroll-for-full-list",
+    "href": "slides/lecture02-2-generative.html#references-scroll-for-full-list",
+    "title": "Generative Modeling",
+    "section": "References (Scroll for Full List)",
+    "text": "References (Scroll for Full List)"
   },
   {
     "objectID": "slides/lecture01-1-intro.html#about-me",
@@ -1263,6 +1431,17 @@
     "title": "Syllabus",
     "section": "Course Philosophy and Expectations",
     "text": "Course Philosophy and Expectations\nThe goal of our course is to help you gain competancy and knowledge in the area of data analysis. This involves a dual responsibility on the part of the instructor and the student. As the instructor, my responsibility is to provide you with a structure and opportunity to learn. To this end, I will commit to:\n\nprovide organized and focused lectures, in-class activities, and assignments;\nencourage students to regularly evaluate and provide feedback on the course;\nmanage the classroom atmosphere to promote learning;\nschedule sufficient out-of-class contact opportunities, such as office hours;\nallow adequate time for assignment completion;\nmake lecture materials, class policies, activities, and assignments accessible to students.\n\nI encourage you to discuss any concerns with me during office hours or through a course communications channel! Please let me know if you do not feel that I am holding up my end of the bargain.\nStudents can optimize their performance in the course by:\n\nattending all lectures;\ndoing any required preparatory work before class;\nactively participating in online and in-class discussions;\nbeginning assignments and other work early;\nand attending office hours as needed.",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#textbooks-and-course-materials",
+    "href": "syllabus.html#textbooks-and-course-materials",
+    "title": "Syllabus",
+    "section": "Textbooks and Course Materials",
+    "text": "Textbooks and Course Materials\nThere is no required text for this class, and all course materials will be made available on the course website or through the Cornell library. However, the following books might be useful as a supplement to/expansion on the topics covered in class:\n\nGelman, A., Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., & Rubin, D. B. (2013). Bayesian Data Analysis (3rd ed.). http://www.stat.columbia.edu/~gelman/book/BDA3.pdf\nMcElreath, R. (2020). Statistical Rethinking: A Bayesian Course with Examples in R and Stan (2nd ed.). https://xcelab.net/rm/\nD’Agostini, G. (2003). Bayesian Reasoning in Data Analysis: A Critical Introduction.\nGelman, A., Hill, J., & Vehtari, A. (2020). Regression and Other Stories. https://avehtari.github.io/ROS-Examples/index.html",
     "crumbs": [
       "Course Information",
       "Syllabus"
