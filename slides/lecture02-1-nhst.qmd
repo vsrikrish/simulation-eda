@@ -412,10 +412,10 @@ In this example, our null is an example of a *point-null* hypothesis.
 
 ## Computing the Test Statistic
 
-For this type of null hypothesis test, our **test statistic** is the slope of the OLS fit $$\hatab} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{(x_i - \bar{x})^2}.$$
+For this type of null hypothesis test, our **test statistic** is the slope of the OLS fit $$\hat{a} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{(x_i - \bar{x})^2}.$$
 
 ::: {.fragment .fade-in}
-After some algebra, **assuming the null** $a = 0$, the **sampling distribution** of the statistic is $$\frac{\hat{a}}{SE_{\hat{a}}} \sim t_{n-2}.$$
+**Assuming the null**, the **sampling distribution** of the statistic is $$\frac{\hat{a}}{SE_{\hat{a}}} \sim t_{n-2}.$$
 :::
 
 ## Statistical Significance
@@ -526,9 +526,15 @@ The standard null hypothesis significance framework is based on balancing the ch
 
 **Aside**: The probability $1-\beta$ of correctly rejecting $H_0$ is the *power*.
 
+::: {.notes}
+Note that these are frequentist concepts, not applicable to a single dataset (which give rise to p-values, which are random values).
+
+If we only run a single experiment all we can claim is that if we had run a long series of experiments we would have had 100α% false positives had H0 been true and 100β% false negatives had H1 been true provided we got the power calculations right. Note the conditionals.
+:::
+
 ## p-Value and Significance
 
-If the p-value is sufficiently small (below $\alpha$), we say that we can **reject the null hypothesis** with $1-\alpha$ confidence, or that **the alternative hypothesis is statistically significant** at the $1-\alpha$ level.
+**Common practice**: If the p-value is sufficiently small (below $\alpha$), **reject the null hypothesis** with $1-\alpha$ confidence, or declare that **the alternative hypothesis is statistically significant** at the $1-\alpha$ level.
 
 This can mean:
 
@@ -537,18 +543,27 @@ This can mean:
 2. The null hypothesis *is* true but the data is an outlying sample.
 :::
 
+::: {.notes}
+This is a strange hybrid of two schools of frequentist statistics, that of Fisher and of Neyman-Pearson. Fisher viewed p-values as weak evidence which was part of an inductive process (even when assuming unbiased sampling and accurate measurement), while the Neyman-Pearson significance framework was based on quantitative specifications of alternative hypotheses with explicitly calculated power.
+:::
+
 ## What p-Values Are Not
 
 :::: {.columns}
 ::: {.column width=50%}
-1. Probability that the null hypothesis is true (or by "chance");
-2. An indication of the effect size.
+1. Probability that the null hypothesis is true (this is **never computed**);
+2. An indication of the effect size (or the stakes of that effect).
 :::
 ::: {.column width=50%}
 $$ \underbrace{p(S \geq \hat{S}) | \mathcal{H}_0)}_{\text{p-value}} \neq \underbrace{p(\mathcal{H}_0 | S \geq \hat{S})}_{\substack{\text{probability of} \\ \text{null}}}!$$
 :::
 ::::
 
+::: {.notes}
+A p-value is a random variable which depends on the data. It's evidence which can be collected from a single experiment but can not establish . 
+
+Over repeated experiments, reasoning about validity of the null should have the right properties assuming the experiments are conducted faithfully.
+:::
 
 # Problems with Null Hypothesis Testing
 
@@ -625,6 +640,28 @@ Source: @mcelreath2020statistical [Fig. 1.1]
 
 ::::
 
+## Multiple Comparisons
+
+:::: {.columns}
+::: {.column width=50%}
+If you conduct multiple statistical tests, you **must** account for all of these in the p-value computation and assessment of significance.
+
+**Important**: This includes model selection!
+:::
+
+::: {.column width=50%}
+![Multiple Comparisons Meme](memes/multiple_comparisons.png)
+:::
+::::
+
+::: {.notes}
+The core issue is the standard test statistics have the right Type I/Type II properties for each individual test, but multiple tests distort these frequencies, sometimes quite dramatically.
+
+For example, suppose each individual test has a 5% Type I error rate. If you test 100 different models, and the errors are independent, you would expect 5 false positives, one of which would be selected by minimizing the p-value. The probability of at least one type I error is >99%.
+
+There are a number of corrections (Bonferroni being the most common), but sometimes stepwise tests are subtle, including cases of model selection followed by model fitting. You can also use simulation to estimate the false-positive rate for the procedure under a null data-generating process, which ties into the broader methods we'll discuss.
+:::
+
 ## Results Are Flashy, But Meaningless Without Methods
 
 ![Elton John Results Section Meme](memes/elton_john_results.jpg)
@@ -651,6 +688,48 @@ Source: Richard McElreath
 
 ::::
 
+## Practical Results of NHST
+
+:::: {.columns}
+::: {.column width=50%}
+
+Perhaps most damningly:
+
+The null hypothesis approach, **as described here and typically practiced** has empirically failed to maintain rigor and credibility in the scientific literature [@Ioannidis2005-zb; @Szucs2017-of].
+
+  
+:::
+::: {.column width=50%}
+![How Could Stats Do This Meme](memes/how_could_stats_do_this.png){width=75%}
+
+::: {.caption}
+Source: Richard McElreath
+:::
+:::
+::::
+
+## Practical Results of NHST
+
+:::: {.columns}
+::: {.column width=50%}
+
+- Overconfident confidence intervals;
+- Strawman null hypotheses;
+- Biased sampling;
+- Lack of replications;
+- p-hacking.
+  
+:::
+::: {.column width=50%}
+![How Could Stats Do This Meme](memes/how_could_stats_do_this.png){width=75%}
+
+::: {.caption}
+Source: Richard McElreath
+:::
+:::
+::::
+
+
 ## What Might Be More Satisfying?
 
 ::: {.incremental}
@@ -674,39 +753,22 @@ Examining and testing the implications of competing models is important, includi
 
 ::: {.notes}
 Deborah Mayo discusses this interpretation as "severe testing": apply different levels of scrutiny to a scientific model to see what level of severity breaks the model.
+
+The idea of a p-value (not necessarily "significance") being a piece of inductive evidence rather than a threshold for validity (especially for an individual experiment) reflects the original views of Fisher.
 :::
-
-# Model Selection as Hypothesis Testing
-
-## Model Assessment Through Simulation
-
-If we have a **generative** model which permits simulation of data:
-
-1. Calibrate models under different assumptions;
-2. Simulate realizations from those models;
-3. Compute the distribution of the relevant statistic $S$ from these realizations;
-4. Assess which distribution is most consistent with the observed quantity.
-
-## Advances of Simulation for "Testing"
-
-- More structural freedom (don't need to write down the sampling distribution of $S$ in closed form);
-- Don't need to set up a dichotomous "null vs alternative" test;
-- Models can reflect more nuanced hypotheses about data generating processes.
-
-## How Do We Assess Models For Selection?
-
-Generally, through **predictive performance**: how probable is some data (out-of-sample or the calibration dataset)?
-
-But there are also metrics of how well you explain the existing data (RMSE, R^2^).
 
 # Key Points
 
 ## Hypothesis Testing
 
-- Null Hypothesis Significance Testing: Compare a null hypothesis (no effect) to an alternative (effect)
+- Classical framework: Compare a null hypothesis (no effect) to an alternative (some effect)
 - $p$-value: probability (under $H_0$) of more extreme test statistic than observed.
-- $p$-values are often over-interpreted, with negative outcomes!
 - "Significant" if $p$-value is below a significance level reflecting acceptable Type I error rate.
+
+## Problems with NHST framework
+
+- $p$-values are often over-interpreted and are often be incorrectly calculated, with negative outcomes!
+- **Important**: "Big" data can make things worse, as NHST is highly sensitive to small but evidence effects.
 
 
 # Upcoming Schedule
