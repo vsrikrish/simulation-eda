@@ -16,10 +16,10 @@ Readings can be accessed using the link (when needed, through the Cornell librar
 | [1](weeks/week01.qmd) | 1/22 | Class Introduction | [{{< fa sharp presentation-screen >}}](slides/lecture01-1-intro.qmd) | | [{{< fa sharp pen-field >}}](hw/hw01/hw01.qmd) |
 | [2](weeks/week02.qmd) | 1/27 | Null Hypothesis Testing and Statistical Significance | [{{< fa sharp presentation-screen >}}](slides/lecture02-1-nhst.qmd) | Lloyd & Oreskes ([2018](https://agupubs-onlinelibrary-wiley-com.proxy.library.cornell.edu/doi/10.1002/2017EF000665)) | |
 |   | 1/29 | Generative Probability Modeling Workflow | [{{< fa sharp presentation-screen >}}](slides/lecture02-2-generative.qmd) | | |
-| 3 | 2/3  |   | | | |
-|   | 2/5  |  | | | |
-| 4 | 2/10 | | | | |
-|   | 2/12 |  | | | |
+| 3 | 2/3  | Probability Fundamentals  | [{{< fa sharp presentation-screen >}}](slides/lecture03-1-probreview.qmd) | | |
+|   | 2/5  | Bayesian Statistics | | | |
+| 4 | 2/10 | Spatial and Temporal Models | | | |
+|   | 2/12 | Model Discrepancy and Measurement Error | | | |
 | 5 | 2/17 | ***February Break*** | | | |
 |   | 2/19 |  | | | |
 | 6 | 2/24 |  | | | |
