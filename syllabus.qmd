@@ -302,8 +302,9 @@ Final grades will be computed based on the following assessment weights:
 |:-----------|-----------:|
 | Participation | 5% |
 | Readings | 10% |
+| Quizzes | 10% |
 | Literature Critique | 15% |
-| Homework Assignments | 40% |
+| Homework Assignments | 30% |
 | Term Project | 30% |
 
 The following grading scale will be used to convert the numerical weighted average to letter grades:
@@ -332,13 +333,17 @@ Students will be assessed based on their participation across class activities, 
 
 Readings will be assigned for discussion throughout the semester. We will discuss the readings in class the subsequent week after they are assigned. One student will be asked to briefly summarize the reading before the broader discussion. Collaborative annotation assignments will be set up in Canvas to facilitate reading ahead of the discussion. Students in BEE 5850 should also submit a (maximum) one-page summary of the reading, highlighting its key point(s) and their assessment of the effectiveness of the argument, to Gradescope before the Monday after the reading is assigned. Students will be evaluated on both the extent to which their annotations and summaries reflect engagement with the reading and their participation in the class discussion.
 
+### Quizzes
+
+Quizzes will be assigned in Gradescope most weeks based on recently discussed content. These will be relatively short and are intended to consolidate material recently discussed in class. The quizzes will be released after Wednesday's class and will be due prior to next Monday's. Quizzes can be retaken as many times as are desired prior to the submission deadline. They may consist of multiple choice questions or questions involving small mathematical, computational, or open-ended problems.
+
 ### Literature Critique
 
 Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices. Students should feel free to select their own paper or can work with Prof. Srikrishnan to identify one of interest, but in all cases should discuss with Prof. Srikrishnan to ensure that the article is appropriate. The discussion paper will be due towards at the end of the semester.
 
 ### Homework Assignments
 
-Approximately 6 homework assignments will be assigned throughout the semester (roughly one per course module). You will typically have 2 weeks to work on each assignment, though this depends on the module length. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but  plagiarism is a violation of academic integrity.
+Approximately 6 homework assignments will be assigned throughout the semester (roughly one per course module). Homework problems will generally involve more substantial mathematical or computational work than the quiz problems. You will typically have 2 weeks to work on each assignment, though this depends on the module length. Students are encouraged to collaborate and learn from each other on homework assignments, but each student must submit their own solutions reflecting their understanding of the material. Consulting and referencing external resources and your peers is encouraged (engineering is a collaborative discipline!), but  plagiarism is a violation of academic integrity.
 
 Some notes on assignment and grading logistics:
 
