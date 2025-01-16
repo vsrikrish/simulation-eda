@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
       <img src="./_assets/logos/cornell_logo_simple_b31b1b.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">BEE 4850/5850</a> 
+      <a href="./">Environmental Data Analysis and Simulation</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/vsrikrish/simulation-data-analysis" title="Github Repository" class="quarto-navigation-tool px-1" aria-label="Github Repository"><i class="bi bi-github"></i></a>
     <a href="https://canvas.cornell.edu" title="Canvas" class="quarto-navigation-tool px-1" aria-label="Canvas"><i class="bi bi-journal-check"></i></a>
@@ -183,12 +183,6 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./policies/homework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Homework Policies</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./rubrics/standard.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Standard Rubric</span></a>
   </div>
@@ -242,6 +236,35 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources/homework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework Policies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources/data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources/ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Generative AI and LLMs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -276,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#mask-policies" id="toc-mask-policies" class="nav-link" data-scroll-target="#mask-policies">Mask Policies</a></li>
   <li><a href="#academic-integrity" id="toc-academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic Integrity</a></li>
   <li><a href="#external-resources" id="toc-external-resources" class="nav-link" data-scroll-target="#external-resources">External Resources</a></li>
-  <li><a href="#aiml-resource-policy" id="toc-aiml-resource-policy" class="nav-link" data-scroll-target="#aiml-resource-policy">AI/ML Resource Policy</a></li>
+  <li><a href="#generative-aiml-policy" id="toc-generative-aiml-policy" class="nav-link" data-scroll-target="#generative-aiml-policy">Generative AI/ML Policy</a></li>
   <li><a href="#late-work-policy" id="toc-late-work-policy" class="nav-link" data-scroll-target="#late-work-policy">Late Work Policy</a></li>
   <li><a href="#regrade-requests" id="toc-regrade-requests" class="nav-link" data-scroll-target="#regrade-requests">Regrade Requests</a></li>
   </ul></li>
@@ -284,10 +307,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#technologies" id="toc-technologies" class="nav-link" data-scroll-target="#technologies">Technologies</a></li>
   <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#participation" id="toc-participation" class="nav-link" data-scroll-target="#participation">Participation</a></li>
   <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
   <li><a href="#literature-critique" id="toc-literature-critique" class="nav-link" data-scroll-target="#literature-critique">Literature Critique</a></li>
   <li><a href="#homework-assignments" id="toc-homework-assignments" class="nav-link" data-scroll-target="#homework-assignments">Homework Assignments</a></li>
-  <li><a href="#literature-critique-1" id="toc-literature-critique-1" class="nav-link" data-scroll-target="#literature-critique-1">Literature Critique</a></li>
   <li><a href="#term-project" id="toc-term-project" class="nav-link" data-scroll-target="#term-project">Term Project</a></li>
   </ul></li>
   </ul>
@@ -570,15 +593,16 @@ What If I’m Sick?
 <h3 class="anchored" data-anchor-id="external-resources">External Resources</h3>
 <p>The collaborative environment in this class <strong>should not be viewed as an invitation for plagiarism</strong>. Plagiarism occurs when a writer intentionally misrepresents another’s words or ideas (including code!) as their own without acknowledging the source. <strong>All</strong> external resources which are consulted while working on an assignment should be referenced, including other students and faculty with whom the assignment is discussed. You will never be penalized for consulting an external source for help and referencing it, but plagiarism will result in a zero for that assignment as well as the potential for your case to be passed on for additional disciplinary action.</p>
 </section>
-<section id="aiml-resource-policy" class="level3">
-<h3 class="anchored" data-anchor-id="aiml-resource-policy">AI/ML Resource Policy</h3>
-<p>As noted, all work submitted for a grade in this course must reflect your own understanding. The use and consulation of AI/ML tools, such as ChatGPT or similar, must be pre-approved and clearly referenced. If approved, you must:</p>
+<section id="generative-aiml-policy" class="level3">
+<h3 class="anchored" data-anchor-id="generative-aiml-policy">Generative AI/ML Policy</h3>
+<p>As noted, all work submitted for a grade in this course must reflect your own understanding. The goal of this course is to build critical data-analytic and statistical skills, including evaluations of the output of statistical models. While generative AI/ML models, such as ChatGPT, NotebookLM, or similar, can be used to summarize text and enhance coding efficiency, appropriate usage of these tools requires similar levels of scrutiny, which cannot be obtained without a general understanding of the underlying material. Relying on these tools as a primary means of engaging with the course content and material without independent effort is therefore discouraged. Further, blind reliance on generative AI can result in the submission of so-called “hallucinations” due to the predictive nature of the AI output.</p>
+<p>However, the appropriate and thoughtful use of these tools is a legitimate professional skill and reflects an understanding of the content in this course. As a result, the use and consulation of AI/ML tools, such as ChatGPT or similar, is not prohibited, but must be clearly referenced. In addition to citing the use of the tool, you must:</p>
 <ul>
 <li>reference the URL of the service you are using, including the specific date you accessed it;</li>
-<li>provide the exact query or queries used to interact with the tool; and</li>
-<li>report the exact response received.</li>
+<li>provide the exact prompt(s) used to interact with the tool; and</li>
+<li>describe how you (directly or indirectly) integrated the response into your submission.</li>
 </ul>
-<p><strong>Failure to attain prior approval or fully reference the interaction, as described above, will be treated as plagiarism and referred to the University accordingly.</strong></p>
+<p><strong>Failure to fully reference the interaction, as described above, will be treated as plagiarism and referred to the University accordingly.</strong></p>
 </section>
 <section id="late-work-policy" class="level3">
 <h3 class="anchored" data-anchor-id="late-work-policy">Late Work Policy</h3>
@@ -654,7 +678,7 @@ What If I Find A Different Type of Mistake?
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Participation</td>
-<td style="text-align: right;">10%</td>
+<td style="text-align: right;">5%</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Readings</td>
@@ -670,7 +694,7 @@ What If I Find A Different Type of Mistake?
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Term Project</td>
-<td style="text-align: right;">25%</td>
+<td style="text-align: right;">30%</td>
 </tr>
 </tbody>
 </table>
@@ -734,13 +758,17 @@ What If I Find A Different Type of Mistake?
 </tbody>
 </table>
 </section>
+<section id="participation" class="level3">
+<h3 class="anchored" data-anchor-id="participation">Participation</h3>
+<p>Students will be assessed based on their participation across class activities, including lectures and discussions (in-person and online). Routine lack of attendance or engagement will result in the loss of participation points.</p>
+</section>
 <section id="readings" class="level3">
 <h3 class="anchored" data-anchor-id="readings">Readings</h3>
-<p>Readings will be assigned for discussion throughout the semester. Students are expected to summarize their takeaways and thoughts on the reading and respond to others’ comments on the Ed forum during the week after the reading is assigned (typically Monday – Monday). Collaborative annotation assignments will be set up in Canvas to facilitate reading ahead of the discussion on the Ed forum. For key readings, a student in BEE 5850 will be assigned to lead a 35 minute in-class discussion on the reading.</p>
+<p>Readings will be assigned for discussion throughout the semester. We will discuss the readings in class the subsequent week after they are assigned. One student will be asked to briefly summarize the reading before the broader discussion. Collaborative annotation assignments will be set up in Canvas to facilitate reading ahead of the discussion. Students in BEE 5850 should also submit a (maximum) one-page summary of the reading, highlighting its key point(s) and their assessment of the effectiveness of the argument, to Gradescope before the Monday after the reading is assigned. Students will be evaluated on both the extent to which their annotations and summaries reflect engagement with the reading and their participation in the class discussion.</p>
 </section>
 <section id="literature-critique" class="level3">
 <h3 class="anchored" data-anchor-id="literature-critique">Literature Critique</h3>
-<p>Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices.</p>
+<p>Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices. Students should feel free to select their own paper or can work with Prof.&nbsp;Srikrishnan to identify one of interest, but in all cases should discuss with Prof.&nbsp;Srikrishnan to ensure that the article is appropriate. The discussion paper will be due towards at the end of the semester.</p>
 </section>
 <section id="homework-assignments" class="level3">
 <h3 class="anchored" data-anchor-id="homework-assignments">Homework Assignments</h3>
@@ -753,18 +781,13 @@ What If I Find A Different Type of Mistake?
 <li>Regrade requests for specific problems must be made within a week of the grading of that assignment.</li>
 </ul>
 </section>
-<section id="literature-critique-1" class="level3">
-<h3 class="anchored" data-anchor-id="literature-critique-1">Literature Critique</h3>
-<p>Students will be asked to critically evaluate a paper of their choosing, with particular emphasis on the statistical and data choices and whether they support the scientific question and conclusions of the paper.</p>
-</section>
 <section id="term-project" class="level3">
 <h3 class="anchored" data-anchor-id="term-project">Term Project</h3>
 <p>Throughout the semester, students will apply the concepts and methods from class to a data set of their choosing. If a student does not have a data set in mind, we will find one which aligns with their interests.</p>
-<p>The term project can be completed individually or in groups of 2. Students will provide updates throughout the semester corresponding to the various tasks discussed in each module and will submit a final report at the end of the semester. The deliverables are:</p>
+<p>The term project can be completed individually or in groups of 2. The deliverables are:</p>
 <ul>
 <li>A proposal describing the research question and hypotheses, the data set, and the numerical or statistical models the student would like to use to test the hypotheses;</li>
-<li>A simulation study applying simulation methods to the models;</li>
-<li>A final presentation and report.</li>
+<li>A final presentation and report. The report should be no more than 5 pages (11 point font, 1 inch margins), not including references and figures. The presentation should be no more than 10 minutes and will be delivered in-class; presentations may be spread across multiple class periods if the number of projects requires it. More details and rubrics will be provided later in the semester.</li>
 </ul>
 
 
