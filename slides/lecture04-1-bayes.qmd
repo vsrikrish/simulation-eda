@@ -1,0 +1,816 @@
+---
+title: "Bayesian Statistics"
+subtitle: "Lecture 05"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "February 05, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        mermaid: 
+            theme: dark
+engine: julia
+filters:
+  - code-fullscreen
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using DataFrames
+using DataFramesMeta
+using CSV
+using Dates
+using Distributions
+using ColorSchemes
+using Plots
+using StatsPlots
+using StatsBase
+using Optim
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+
+plot_font = "Computer Modern"
+default(
+    fontfamily=plot_font,
+    linewidth=3, 
+    framestyle=:box, 
+    label=nothing, 
+    grid=false,
+    guidefontsize=18,
+    legendfontsize=16,
+    tickfontsize=16,
+    titlefontsize=20,
+    bottom_margin=10mm,
+    left_margin=5mm
+)
+```
+
+# Review
+
+
+## Types of Uncertainty
+
+::: {.fragment .fade-in}
+:::: {.columns}
+::: {.column width=60%}
+
+| Uncertainty Type | Source | Example(s) |
+|:----------------:|:-------|:-----------|
+| ***Aleatory uncertainty*** | Randomness | Dice rolls, Instrument imprecision |
+| ***Epistemic uncertainty*** | Lack of knowledge | Climate sensitivity, Premier League champion|
+
+:::
+::: {.column width=40%}
+
+![Which Uncertainty Type Meme](memes/uncertainty_types.png){width=75%}
+
+:::
+::::
+:::
+
+::: {.notes}
+Note that the distinction between aleatory and epistemic uncertainty is somewhat arbitrary (aside from maybe some quantum effects). For example, we often think of coin tosses as aleatory, but if we had perfect information about the toss, we might be able to predict the outcome with less uncertainty. There's a famous paper by Persi Diaconis where he collaborated with engineers to build a device which could arbitrary bias a "fair" coin toss.
+
+But in practice, this doesn't really matter: the key thing is whether for a given model we're treating the uncertainty as entirely random (e.g. white noise) versus being interested in the impacts of that uncertainty on the outcome of interest. And there's a representation theorem by the Bayesian actuary Bruno de Finetti which shows that, under a condition called *exchangeability*, we can think of any random sequence as arising from an independent and identically distributed process, so the practical difference can collapse further.
+:::
+
+
+## Frequentist vs Bayesian Probability
+
+:::: {.columns}
+::: {.column width=50%}
+**Frequentist**:
+
+- Probability as frequency over repeated observations.
+- Data are random, but parameters are not.
+- How consistent are estimates for different data?
+:::
+
+::: {.column width=50%}
+::: {.fragment .fade-in}
+**Bayesian**:
+
+- Probability as degree of belief/betting odds.
+- Data and parameters are random variables;
+- Emphasis on **conditional probability**.
+
+:::
+:::
+::::
+
+
+## But What, Like, **Is** Probability?
+
+::: {.fragment .fade-in}
+:::: {.columns}
+::: {.column width=50%}
+Frequentist vs. Bayesian: different interpretations with some different methods and formalisms.
+
+We will freely borrow from each school depending on the purpose and goal of an analysis.
+:::
+
+::: {.column width=50%}
+![Definitions of Probability Meme](memes/probability_definitions.png)
+
+:::
+::::
+:::
+
+# Bayesian Statistics
+
+## Bayes' Rule
+
+:::: {.columns}
+::: {.column width=50%}
+### Original version 
+
+@Bayes1763-at:
+
+$$
+\begin{gather*}
+P(A | B) = \frac{P(B | A) \times P(A)}{P(B)} \\[0.5em]
+\text{if} \quad P(B) \neq 0.
+\end{gather*}
+$$
+:::
+::: {.column width=50%}
+
+### "Modern" version 
+
+@Laplace1774-nf:
+
+$$\underbrace{{p(\theta | y)}}_{\text{posterior}} = \frac{\overbrace{p(y | \theta)}^{\text{likelihood}}}{\underbrace{p(y)}_\text{normalization}} \overbrace{p(\theta)}^\text{prior}$$
+:::
+::::
+
+## Logic of Conditional Probability
+
+**Bayes' Rule is the logic of conditional probability**:
+
+What can we say about consistency of uncertainties with an observed sample $y$?
+
+- Model configurations ($p(\mathcal{M} | y)$ or $p(\mathcal{x} | y, \mathcal{M})$)
+- Hypotheses ($p(\mathcal{H} | y)$)
+
+## On The Normalizing Constant
+
+The normalizing constant (also called the **marginal likelihood**) is the integral
+$$p(y) = \int_\Theta p(y | \theta) p(\theta) d\theta.$$
+
+Since this *generally* doesn't depend on $\theta$, it can often be ignored, as the relative probabilities don't change. 
+
+## Bayes' Rule (Ignoring Normalizing Constants)
+
+The version of Bayes' rule which matters the most for 95% (approximate) of Bayesian statistics:
+
+$$p(\theta | y) \propto p(y | \theta) \times p(\theta)$$
+
+> "The posterior is the prior times the likelihood..."
+
+## Example: Is a Coin Fair?
+
+:::: {.columns}
+::: {.column width=60%}
+```{julia}
+#| echo: false
+#| output: false
+
+n = 10
+flips = sample(Random.seed!(20), ["H", "T"], pweights([0.5, 0.5]), n; replace=true)
+```
+
+In `{julia} n` flips, we've observed `{julia} sum(flips .== "H")` H and `{julia} sum(flips .== "T")` T.
+
+**What can we say about the probability of heads given this information?**
+
+
+:::
+::: {.column width=40%}
+![Fry Coin Uncertainty meme](memes/coin_flip_uncertainty.png)
+:::
+::::
+
+## Coin Flipping Likelihood
+
+:::: {.columns}
+::: {.column width=50%}
+We can represent the outcome of a coin flip with a heads-probability of $p$ as a sample from a Bernoulli distribution,
+
+$$y_i \sim \text{Bernoulli}(p).$$
+:::
+::: {.column width=50%}
+```{julia}
+#| echo: false
+
+flip_ll(p) = sum(logpdf.(Bernoulli(p), flips .== "H"))
+
+l = @layout [a b; c d; e f]
+p1 = histogram(rand(Binomial(10, 0.1), 1_000), title="p = 0.1", label=false, xticks=0:2:10, xlims=(0, 10), bottom_margin=-50mm)
+vline!([sum(flips .=== "H")], color=:red, label=false)
+p2 = histogram(rand(Binomial(10, 0.3), 1_000), title="p = 0.3", label=false, xticks=0:2:10, xlims=(0, 10))
+vline!([sum(flips .=== "H")], color=:red, label=false)
+p3 = histogram(rand(Binomial(10, 0.5), 1_000), title="p = 0.5", label=false, xticks=0:2:10, xlims=(0, 10))
+vline!([sum(flips .=== "H")], color=:red, label=false)
+p4 = histogram(rand(Binomial(10, 0.7), 1_000), title="p = 0.7", label=false, xticks=0:2:10, xlims=(0, 10))
+vline!([sum(flips .=== "H")], color=:red, label=false)
+p5 = histogram(rand(Binomial(10, 0.9), 1_000), title="p = 0.9", label=false, xticks=0:2:10, xlims=(0, 10))
+vline!([sum(flips .=== "H")], color=:red, label=false)
+plot!(p1, p2, p3, p4, p5, layout=l, size=(600, 600))
+```
+:::
+::::
+
+## Correlated Parameters and Bayesian Inference
+
+:::: {.columns}
+::: {.column width=40%}
+![Correlated Climate Parameters](figures/errickson-2021_correlations.png){width=75%}
+
+:::
+::: {.column width=60%}
+![Correlated Climate Parameters](figures/errickson-2021_projections.png)
+:::
+::::
+::: {.caption}
+Source: @Errickson2021-kr
+:::
+
+## Why Choose A Particular Prior?
+
+$$p(\theta | y) \propto p(y | \theta) \times {\color{purple}p(\theta)}$$
+
+Priors can serve several purposes (more shortly...)
+
+- **One perspective**: Priors should reflect "actual knowledge" independent of the analysis [@Jaynes2003-lx]
+- **Another**: Priors are part of the probability model, and can be specified/changed accordingly based on predictive skill [@Gelman2017-zp; @Gelman2013-dw]
+
+## Why Choose A Particular Prior?
+
+:::: {.columns}
+::: {.column width=50%}
+- There are no "correct" priors, but more or less justified.
+- Don't assign zero probability to possible values.
+- Priors matter less for simple models with lots of data, matter more in other cases.
+- Base on information external to the data.
+:::
+::: {.column width=50%}
+![Cow Prior Meme](memes/prior_data_cow.jpg)
+
+::: {.caption}
+Source: Richard McElreath
+:::
+:::
+::::
+
+## Coin-Flipping Prior
+
+:::: {.columns}
+::: {.column width=50%}
+Suppose that we spoke to a friend who knows something about coins, and she tells us that it is extremely difficult to make a passable weighted coin which comes up heads or tails more than 75% of the time.
+
+:::
+::: {.column width=50%}
+We might try $p \sim \text{Beta}(7, 7)$.
+
+```{julia}
+#| echo: false
+#| label: fig-beta-prior
+#| fig-cap: Beta prior for coin flipping example
+#| fig-align: center
+
+prior_dist = Beta(7, 7)
+plot(prior_dist; label=false, xlabel=L"$p$", ylabel="Density", linewidth=3, tickfontsize=16, guidefontsize=18)
+vline!([0.25, 0.75], color=:red, linestyle=:dash)
+plot!(size=(500, 500))
+```
+:::
+::::
+
+## Prior Predictive Simulation
+
+:::: {.columns}
+::: {.column width=50%}
+Simulate from prior to understand implications for estimands/observables.
+
+This produces the **prior predictive distribution**:
+
+:::
+::: {.column width=50%}
+
+```{julia}
+#| echo: false
+#| label: fig-beta-pred
+#| fig-cap: Coin flipping prior predictive distribution
+#| fig-align: center
+
+prior_samps = rand(Beta(5, 5), 10_000)
+prior_pred = rand.(Binomial.(10, prior_samps))
+histogram(prior_pred, label=false, xlabel="Number of Heads in 10 Trials", ylabel="Probability", normalize=:pdf)
+plot!(size=(600, 600))
+```
+:::
+::::
+
+## Coin-Flipping Probability Model
+
+:::: {.columns}
+::: {.column width=50%}
+$$
+\begin{align*}
+y_i &\sim Bernoulli(p) \\
+p &\sim Beta(7, 7)
+\end{align*}
+$$
+
+We can use a **grid approximation** to analyze the posterior.
+
+::: {.fragment .fade-in}
+Notice how the prior **regularizes** the inference.
+:::
+:::
+::: {.column width=50%}
+```{julia}
+#| echo: true
+#| code-fold: true
+#| label: fig-grid-post
+#| fig-cap: Grid approximation to the coin-flipping posterior
+#| fig-align: center
+
+p_grid = 0:0.005:1
+loglikelihood(p) = sum(logpdf.(Bernoulli(p), flips .== "H"))
+logprior(p) = logpdf(Beta(7, 7), p)
+logposterior(p) = logprior(p) + loglikelihood(p)
+
+lik = loglikelihood.(p_grid)
+pri = logprior.(p_grid)
+post = logposterior.(p_grid)
+
+plot(
+    p_grid,
+    exp.(lik) ./ sum(exp.(lik));
+    xlabel=L"$p$",
+    ylabel="Density",
+    label="Likelihood",
+    legend=:outerbottom,
+    linewidth=2,
+)
+plot!(p_grid, exp.(pri) ./ sum(exp.(pri)); label="Prior", linewidth=2)
+plot!(p_grid, exp.(post) ./ sum(exp.(post)); label="Posterior", linewidth=4)
+plot!(size=(600, 600))
+```
+:::
+::::
+
+## Posterior Approximation
+
+For more complex models, grid approximations are too high-dimensional and/or computationally complex.
+
+For now, we can optimize the posterior to find the **maximum *a posteriori* estimate** (MAP), which is analogous to the MLE.
+
+For probabilistic inference, **need more efficient sampling methods**: will discuss briefly in roughly another week.
+
+# Linear Model Example
+
+## How Does TDS Affect River Flow? 
+
+:::: {.columns}
+::: {.column width=50%}
+**Question**: Does river flow affect the concentration of total dissolved solids?
+
+**Data**: Cuyahoga River (1969 -- 1973), from @Helsel2020-nq [Chapter 9].
+
+:::
+
+::: {.column width=50%}
+```{julia}
+#| label: fig-streamflow-obs
+#| fig-cap: "Observations from the Cuyahoga River."
+tds = let
+	fname = "data/tds/cuyaTDS.csv" # CHANGE THIS!
+	tds = DataFrame(CSV.File(fname))
+	tds[!, [:date, :discharge_cms, :tds_mgL]]
+end
+
+p = scatter(
+	tds.discharge_cms,
+	tds.tds_mgL,
+	xlabel=L"Discharge (m$^3$/s)",
+	ylabel="Total dissolved solids (mg/L)",
+    markersize=5,
+	label="Observations"
+)
+plot!(p, size=(600, 600))
+```
+:::
+::::
+
+## How Does TDS Affect River Flow?
+
+:::: {.columns}
+::: {.column width=50%}
+**Question**: Does river flow affect the concentration of total dissolved solids?
+
+
+**Model**: 
+
+$$D \rightarrow S \ {\color{purple}\leftarrow U}$$
+
+$$S = f(D, U)$$
+:::
+
+::: {.column width=50%}
+```{julia}
+p
+```
+:::
+::::
+
+## Prior Selection
+
+- Do we have prior scientific information we can express?
+- Consider the units of the covariates (rescale if needed!).
+- What are the general behaviors we should expect to see?
+
+## The Prior Is Part of the Model
+
+The impact of a prior is not independent of the data-generating model (likelihood) [@Gelman2017-zp].
+
+**Key point**: Need to understand implications of prior selection for resulting data generation.
+
+## Prior Distributions
+
+:::: {.columns}
+::: {.column width=50%}
+Let's try:
+
+$$
+\begin{align*}
+S &= \beta_0 + \beta_1 \log(D) + U\\
+U &\sim \mathcal{N}(0, \sigma^2)\\
+H &\sim \text{Uniform}(0, 100) \\
+\beta_0 &\sim \mathcal{TN}(500, 100; 0, \infty) \\
+\beta_1 &\sim \mathcal{TN}(0, 50; -\infty, 0) \\
+\sigma &\sim \mathcal{TN}(0, 25; 0, \infty)
+\end{align*}
+$$
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-priors
+#| fig-cap: "Priors for model parameters."
+
+l = @layout([a b; c _])
+p1 = plot(truncated(Normal(500, 100); lower=0), xlabel="Parameter", ylabel="Density", title=L"$\beta_0$", linewidth=3, xrotation=-45)
+p2 = plot(truncated(Normal(0, 50); upper=0), xlabel="Parameter", ylabel="Density", title=L"$\beta_1$", linewidth=3, xrotation=-45)
+p3 = plot(truncated(Normal(0, 25); lower=0), xlabel="Parameter", ylabel="Density", title=L"$\sigma$", linewidth=3, xrotation=-45)
+plot(p1, p2, p3, layout=l, size=(600, 600))
+```
+:::
+::::
+
+## Prior Predictive Distribution
+
+:::: {.columns}
+::: {.column width=50%}
+Let's try:
+
+$$
+\begin{align*}
+S &= \beta_0 + \beta_1 \log(D) + U\\
+U &\sim \mathcal{N}(0, \sigma^2)\\
+H &\sim \text{Uniform}(0, 100) \\
+\beta_0 &\sim \mathcal{TN}(500, 100; 0, \infty) \\
+\beta_1 &\sim \mathcal{TN}(0, 50; -\infty, 0) \\
+\sigma &\sim \mathcal{TN}(0, 25; 0, \infty)
+\end{align*}
+$$
+:::
+::: {.column width=50%}
+::: {.fragment .fade-in}
+```{julia}
+#| echo: true
+#| code-fold: true
+#| output: true
+#| label: fig-prior-predictive
+#| fig-cap: "Samples from the prior predictive distribution."
+
+function predictive_dist(p_samples, x)
+    ŷ = zeros(size(p_samples)[1], length(x))
+    for (i, row) in pairs(eachslice(p_samples; dims=1))
+        β₀, β₁, σ = row
+        ŷ[i, :] = β₀ .+ β₁ * log.(x) + rand(Normal(0, σ), length(x))
+    end
+    return ŷ
+end
+
+# sample from prior distributions
+n = 1_000
+p_samples = zeros(n, 3)
+p_samples[:, 1] = rand(truncated(Normal(500, 100); lower=0), n)
+p_samples[:, 2] = rand(truncated(Normal(0, 50); upper=0), n)
+p_samples[:, 3] = rand(truncated(Normal(0, 25); lower=0), n)
+
+xpred = 1:1:60
+ypred = predictive_dist(p_samples, xpred)
+qpred = mapslices(row -> quantile(row, [0.0, 0.025, 0.05, 0.5, 0.95, 0.975, 1.0]), ypred; dims=1)
+p_prior = plot(; xlabel=L"Discharge (m$^3$/s)", ylabel="Total dissolved solids (mg/L)")
+for idx in 1:n
+    label = idx == 1 ? "Prior Simulation" : false
+    plot!(p_prior, xpred, ypred[idx, :], color=:black, alpha=0.1, label=label)
+end
+plot!(p_prior, size=(600, 500))
+```
+:::
+:::
+::::
+
+## Maximize Posterior
+
+```{julia}
+#| output: false
+#| echo: false
+
+# function for the log-likelihood
+# θ is a vector of parameters: intercept, slope, standard deviation
+# y is the observations (TDS)
+# x is the predictors (Discharge)
+function tds_likelihood(θ, y, x)
+    β₀, β₁, σ = θ
+    μ = β₀ .+ β₁ * log.(x) # compute expected values
+    ll = logpdf.(Normal.(μ, σ), y) # compute log-likelihood for each observation
+    return sum(ll) # return the sum log-likelihood
+end
+
+function tds_prior(θ)
+    β₀, β₁, σ = θ
+    lp = 0 # initialize log-prior value
+    lp += logpdf(truncated(Normal(500, 100); lower=0), β₀)
+    lp += logpdf(truncated(Normal(0, 50); upper=0), β₁)
+    lp += logpdf(truncated(Normal(0, 25); lower=0), σ)
+    return lp
+end
+
+function tds_posterior(θ, y, x)
+    lp = tds_prior(θ)
+    ll = tds_likelihood(θ, y, x)
+    return ll + lp
+end
+lower = [0.0, -1000.0, 1.0]
+upper = [1000.0, 1000.0, 100.0]
+θ_init = [500.0, -100.0, 50.0]
+neg_lp(θ) = -tds_posterior(θ, tds.tds_mgL, tds.discharge_cms)
+optim_out = Optim.optimize(neg_lp, lower, upper, θ_init)
+θ̂_map = optim_out.minimizer
+```
+
+:::: {.columns}
+::: {.column width=50%}
+$\hat{\beta_0}$: `{julia} Int64(round(θ̂_map[1]; digits=0))` 
+
+$\hat{\beta_1}$: `{julia} Int64(round(θ̂_map[2]; digits=0))` 
+
+$\hat{\sigma}^2$: `{julia} Int64(round(θ̂_map[3]; digits=0))`$^2$
+
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-map
+#| fig-cap: "MAP predictive interval."
+xpred = 0:1:60
+y_map = θ̂_map[1] .+ θ̂_map[2] * log.(collect(xpred))
+q_map = quantile(Normal(0, θ̂_map[3]), [0.05, 0.95])
+plot!(p, xpred, y_map, ribbon=repeat(q_map, outer=[1, length(xpred)])', label="MAP", fillalpha=0.2)
+```
+:::
+::::
+
+## Comparison of MLE and MAP
+
+```{julia}
+#| echo: false
+#| output: false
+
+neg_ll(θ) = -tds_likelihood(θ, tds.tds_mgL, tds.discharge_cms)
+optim_out = Optim.optimize(neg_ll, lower, upper, θ_init)
+θ̂_mle = optim_out.minimizer
+```
+
+:::: {.columns}
+::: {.column width=50%}
+
+| Parameter | MLE | MAP |
+|:---------|:-----|:----|
+| $\beta_0$ | `{julia} Int64(round(θ̂_mle[1]; digits=0))` | `{julia} Int64(round(θ̂_map[1]; digits=0))` |
+| $\beta_1$ | `{julia} Int64(round(θ̂_mle[2]; digits=0))` | `{julia} Int64(round(θ̂_map[2]; digits=0))` |
+| $\sigma^2$ | `{julia} Int64(round(θ̂_mle[3]; digits=0))`$^2$ | `{julia} Int64(round(θ̂_map[3]; digits=0))`$^2$ |
+
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-map-mle
+#| fig-cap: Comparison of the MAP and MLE projections.
+
+y_mle = θ̂_mle[1] .+ θ̂_mle[2] * log.(collect(xpred))
+q_mle = quantile(Normal(0, θ̂_mle[3]), [0.05, 0.95])
+plot!(p, xpred, y_mle, ribbon=repeat(q_mle, outer=[1, length(xpred)])', label="MLE", fillalpha=0.2)
+```
+:::
+::::
+
+
+## Posterior Predictive Distribution
+
+Bayes' Theorem gives us probabilities of different parameter combinations.
+
+Once we have the ability to sample from the posterior, we can integrate over it to obtain the **posterior predictive distribution**:
+
+$$p(\tilde{y} | \mathbf{y}) = \int_{\Theta} p(\tilde{y} | \theta) p(\theta | \mathbf{y}) d\theta$$
+
+## Hierarchical Models
+
+Bayesian frameworks also lend themselves well to hierarchical models, with uncertain prior distributions:
+
+$$\begin{align}
+y_j | \theta_j, \phi &\sim P(y_j | \theta_j, \phi) \nonumber \\
+\theta_j | \phi &\sim P(\theta_j | \phi) \nonumber \\
+\phi &\sim P(\phi) \nonumber
+\end{align}$$
+
+# Credible Intervals
+
+## Recall: Confidence Intervals
+
+:::: {.columns}
+::: {.column width=50%}
+Frequentist confidence intervals reflect **consistency of estimation over repeated experiments**.
+
+$\alpha$% of intervals produced should contain the "true" value.
+::: 
+
+::: {.column width=50%}
+
+```{julia}
+#| label: fig-cis
+#| code-fold: true
+#| code-overflow: wrap
+#| echo: true
+#| layout-ncol: 2
+#| fig-cap: "Display of 95% confidence intervals"
+#| fig-subcap: 
+#|  - "Sample Size 100"
+#|  - "Sample Size 1,000"
+
+# set up distribution
+mean_true = 0.4
+n_cis = 100 # number of CIs to compute
+dist = Normal(mean_true, 2)
+
+# use sample size of 100
+samples = rand(dist, (100, n_cis))
+# mapslices broadcasts over a matrix dimension, could also use a loop
+sample_means = mapslices(mean, samples; dims=1)
+sample_sd = mapslices(std, samples; dims=1) 
+mc_sd = 1.96 * sample_sd / sqrt(100)
+mc_ci = zeros(n_cis, 2) # preallocate
+for i = 1:n_cis
+    mc_ci[i, 1] = sample_means[i] - mc_sd[i]
+    mc_ci[i, 2] = sample_means[i] + mc_sd[i]
+end
+# find which CIs contain the true value
+ci_true = (mc_ci[:, 1] .< mean_true) .&& (mc_ci[:, 2] .> mean_true)
+# compute percentage of CIs which contain the true value
+ci_frac1 = 100 * sum(ci_true) ./ n_cis
+
+# plot CIs
+p1 = plot([mc_ci[1, :]], [1, 1], linewidth=3, color=:deepskyblue, label="95% Confidence Interval", yticks=:false, legend=:false)
+for i = 2:n_cis
+    if ci_true[i]
+        plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:deepskyblue, label=:false)
+    else
+        plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:red, label=:false)
+    end
+end
+vline!(p1, [mean_true], color=:black, linewidth=2, linestyle=:dash, label="True Value") # plot true value as a vertical line
+xaxis!(p1, "Estimate")
+plot!(p1, size=(500, 500)) # resize to fit slide
+
+```
+:::
+::::
+
+## Credible Intervals
+
+:::: {.columns}
+::: {.column width=50%}
+**Bayesian equivalent**: credible intervals
+
+$\alpha$% credible interval contains $\alpha$% of the posterior probability.
+
+**Key**: These are not unique, so be clear what kind of interval you're using.
+
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-credible-interval
+#| fig-cap: Two different 95% credible intervals.
+
+plot(Gamma(7.5), linewidth=3, xlabel="Data/Parameter", label=:false, legend=:outerbottom)
+q1 = quantile(Gamma(7.5), [0.05, 0.95])
+q2 = quantile(Gamma(7.5), [0.01, 0.91])
+q3 = quantile(Gamma(7.5), [0.09, 0.99])
+gamma_pdf(x) = pdf(Gamma(7.5), x)
+plot!(q1[1]:0.01:q1[2], gamma_pdf(q1[1]:0.01:q1[2]), fillrange=zero(q1[1]:0.01:q1[2]), alpha=0.2, label="90% Interval 1")
+plot!(q2[1]:0.01:q2[2], gamma_pdf(q2[1]:0.01:q2[2]), fillrange=zero(q2[1]:0.01:q2[2]), alpha=0.2, label="90% Interval 2")
+plot!(q3[1]:0.01:q3[2], gamma_pdf(q3[1]:0.01:q3[2]), fillrange=zero(q3[1]:0.01:q3[2]), alpha=0.2, label="90% Interval 3")
+plot!(size=(600, 650))
+```
+:::
+::::
+
+## Credible vs. Prediction Intervals
+
+:::: {.columns}
+::: {.column width=50%}
+Bayesians view both parameters and data as stochastic variables.
+
+We'll use **prediction intervals** for future data, **credible intervals** for missing data/parameters.
+:::
+::: {.column width=50%}
+![Parameters vs Data Bayes Meme](memes/parameters_data_bayes.png)
+:::
+::::
+
+
+# Key Points
+
+## Bayesian Statistics
+
+- Probability as degree of belief
+- Bayes' Rule as the fundamental theorem of conditional probability
+- Both data and parameters are random variables
+- Can describe probability of any random variable conditional on observations
+- Bayesian updating as an information filter
+
+## Bayesian Workflow
+
+- Prior selection important: softly express scientific knowledge and regularization.
+- Prior predictive simulation to understand implications of prior selections.
+- **Don't look at the data when assessing priors**.
+- But be open to revisiting model specification (**including priors**) based on quality of fit.
+
+## Communicating Uncertainty
+
+- A single confidence interval tells you nothing about the "true" value of a parameter without understanding of sampling/measurement.
+- Credible intervals do communicate probability of "true" values.
+- Prediction intervals fit into either paradigm: what is the probability (understood in whatever sense) that you see a given value in the future?
+ 
+# Upcoming Schedule
+
+## Next Classes
+
+**Wednesday**: Bayesian Statistics
+
+**Next Week**: Temporal and Spatial Models and Errors
+
+## Assessments
+
+**Homework 1** due Friday (2/7).
+
+# References
+
+## References (Scroll for Full List)

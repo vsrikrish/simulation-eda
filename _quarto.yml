@@ -30,7 +30,7 @@ website:
     align: center
     border: true
     logo: _assets/logos/cornell_logo_simple_b31b1b.svg
-    title: "{{< var course.number >}}"
+    title: "{{< var course.title >}}"
     search: true
     tools: 
       - icon: github
@@ -64,8 +64,6 @@ website:
       - section: homework.qmd
         text: "Homework"
         contents:
-          - href: policies/homework.qmd
-            text: "Homework Policies"
           - href: rubrics/standard.qmd
             text: "Standard Rubric"
           - href: hw/hw01/hw01.qmd
@@ -80,6 +78,14 @@ website:
             text: Making Plots
           - href: tutorials/turing-mcmc.qmd
             text: MCMC with Turing
+      - section: "Resources"
+        contents:
+          - href: resources/homework.qmd
+            text: Homework Policies
+          - href: resources/data.qmd
+            text: Data Sources
+          - href: resources/ai.qmd
+            text: Generative AI and LLMs
 format:
   html:
     grid:

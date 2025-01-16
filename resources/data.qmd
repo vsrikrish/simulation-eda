@@ -1,0 +1,14 @@
+---
+title: "Data"
+---
+
+There are a number of places you can look to find interesting datasets.
+
+- [Data is Plural](https://www.data-is-plural.com/): A weekly newsletter from [J&egrave;remy Singer-Vine](https://www.jsvine.com/). Not just (or typically) environmental data, but interesting nevertheless.
+- [Google Dataset Search](https://datasetsearch.research.google.com/)
+- [Climate Trace](https://climatetrace.org/): Emissions tracking data.
+- [OECD Environmental Data](https://web-archive.oecd.org/temp/2020-02-04/62081-data-and-indicators.htm)
+- [Our World in Data](https://ourworldindata.org/)
+- [Resource Watch](https://resourcewatch.org/)
+- [EPA Data Catalog](https://www.epa.gov/data/enterprise-data-catalog)
+- [U.S. Government Open Data Portal](https://data.gov/)

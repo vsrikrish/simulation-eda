@@ -233,15 +233,17 @@ This class is designed to encourage collaboration, and students are encouraged t
 
 The collaborative environment in this class **should not be viewed as an invitation for plagiarism**. Plagiarism occurs when a writer intentionally misrepresents another's words or ideas (including code!) as their own without acknowledging the source.  **All** external resources which are consulted while working on an assignment should be referenced, including other students and faculty with whom the assignment is discussed. You will never be penalized for consulting an external source for help and referencing it, but plagiarism will result in a zero for that assignment as well as the potential for your case to be passed on for additional disciplinary action.
 
-### AI/ML Resource Policy
+### Generative AI/ML Policy
 
-As noted, all work submitted for a grade in this course must reflect your own understanding. The use and consulation of AI/ML tools, such as ChatGPT or similar, must be pre-approved and clearly referenced. If approved, you must:
+As noted, all work submitted for a grade in this course must reflect your own understanding. The goal of this course is to build critical data-analytic and statistical skills, including evaluations of the output of statistical models. While generative AI/ML models, such as ChatGPT, NotebookLM, or similar, can be used to summarize text and enhance coding efficiency, appropriate usage of these tools requires similar levels of scrutiny, which cannot be obtained without a general understanding of the underlying material. Relying on these tools as a primary means of engaging with the course content and material without independent effort is therefore discouraged. Further, blind reliance on generative AI can result in the submission of so-called "hallucinations" due to the predictive nature of the AI output.
+
+However, the appropriate and thoughtful use of these tools is a legitimate professional skill and reflects an understanding of the content in this course. As a result, the use and consulation of AI/ML tools, such as ChatGPT or similar, is not prohibited, but must be clearly referenced. In addition to citing the use of the tool, you must:
 
 - reference the URL of the service you are using, including the specific date you accessed it;
-- provide the exact query or queries used to interact with the tool; and
-- report the exact response received.
+- provide the exact prompt(s) used to interact with the tool; and
+- describe how you (directly or indirectly) integrated the response into your submission.
 
-**Failure to attain prior approval or fully reference the interaction, as described above, will be treated as plagiarism and referred to the University accordingly.**
+**Failure to fully reference the interaction, as described above, will be treated as plagiarism and referred to the University accordingly.**
 
 ### Late Work Policy
 
@@ -298,11 +300,11 @@ Final grades will be computed based on the following assessment weights:
 
 | Assessment | Weight |
 |:-----------|-----------:|
-| Participation | 10% |
+| Participation | 5% |
 | Readings | 10% |
 | Literature Critique | 15% |
 | Homework Assignments | 40% |
-| Term Project | 25% |
+| Term Project | 30% |
 
 The following grading scale will be used to convert the numerical weighted average to letter grades:
 
@@ -322,14 +324,17 @@ The following grading scale will be used to convert the numerical weighted avera
 | F | < 60 |
 
 
+### Participation
+
+Students will be assessed based on their participation across class activities, including lectures and discussions (in-person and online). Routine lack of attendance or engagement will result in the loss of participation points.
 
 ### Readings
 
-Readings will be assigned for discussion throughout the semester. Students are expected to summarize their takeaways and thoughts on the reading and respond to others' comments on the Ed forum during the week after the reading is assigned (typically Monday -- Monday). Collaborative annotation assignments will be set up in Canvas to facilitate reading ahead of the discussion on the Ed forum. For key readings, a student in BEE 5850 will be assigned to lead a 35 minute in-class discussion on the reading. 
+Readings will be assigned for discussion throughout the semester. We will discuss the readings in class the subsequent week after they are assigned. One student will be asked to briefly summarize the reading before the broader discussion. Collaborative annotation assignments will be set up in Canvas to facilitate reading ahead of the discussion. Students in BEE 5850 should also submit a (maximum) one-page summary of the reading, highlighting its key point(s) and their assessment of the effectiveness of the argument, to Gradescope before the Monday after the reading is assigned. Students will be evaluated on both the extent to which their annotations and summaries reflect engagement with the reading and their participation in the class discussion.
 
 ### Literature Critique
 
-Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices. 
+Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices. Students should feel free to select their own paper or can work with Prof. Srikrishnan to identify one of interest, but in all cases should discuss with Prof. Srikrishnan to ensure that the article is appropriate. The discussion paper will be due towards at the end of the semester.
 
 ### Homework Assignments
 
@@ -342,19 +347,15 @@ Some notes on assignment and grading logistics:
   * Students in 5850 will be asked to complete additional homework problems which go more deeply into the underlying concepts or apply more advanced techniques.
   * Regrade requests for specific problems must be made within a week of the grading of that assignment. 
 
-### Literature Critique
-
-Students will be asked to critically evaluate a paper of their choosing, with particular emphasis on the statistical and data choices and whether they support the scientific question and conclusions of the paper.
 
 ### Term Project
 
 Throughout the semester, students will apply the concepts and methods from class to a data set of their choosing. If a student does not have a data set in mind, we will find one which aligns with their interests.
 
-The term project can be completed individually or in groups of 2. Students will provide updates throughout the semester corresponding to the various tasks discussed in each module and will submit a final report at the end of the semester. The deliverables are:
+The term project can be completed individually or in groups of 2. The deliverables are:
 
   * A proposal describing the research question and hypotheses, the data set, and the numerical or statistical models the student would like to use to test the hypotheses;
-  * A simulation study applying simulation methods to the models;
-  * A final presentation and report.
+  * A final presentation and report. The report should be no more than 5 pages (11 point font, 1 inch margins), not including references and figures. The presentation should be no more than 10 minutes and will be delivered in-class; presentations may be spread across multiple class periods if the number of projects requires it. More details and rubrics will be provided later in the semester.
 
 
 ::: {.content-visible unless-format="html"}
@@ -383,15 +384,15 @@ topics = [
   "Course Overview and Introduction",
   "Hypothesis Testing and Data Analysis",
   "Generative Probability Models",
-  "Probability and Statistics Review",
+  "Probability Fundamentals",
+  "Fitting Models to Data",
   "Bayesian Statistics",
-  "Spatial and Temporal Models",
-  "Model Discrepancy and Measurement Error",
+  "Autocorrelation and Time Series",
   "Monte Carlo Simulation",
   "Monte Carlo Simulation II",
   "The Bootstrap",
   "The Bootstrap II",
-  "Bootstrap and Monte Carlo Lab",
+  "Markov Chain Monte Carlo",
   "Calibration and Sharpness",
   "Overfitting and Cross-Validation",
   "Information Criteria and Model Comparison",
@@ -399,11 +400,11 @@ topics = [
   "Extreme Value Theory and Models",
   "Extreme Value Models II",
   "Non-Stationary Extreme Values",
-  "Extreme Values Lab",
   "Missing and Censored Data",
-  "Latent Variables and Mixture Models",
+  "Mixture Models and Clustering",
   "Gaussian Processes",
-  "Mixture Model Lab", 
+  "Gaussian Processes II", 
+  "Causal Modeling",
   "Confounds",
   "Controls and Designing Experiments", 
   "Project Presentations"
