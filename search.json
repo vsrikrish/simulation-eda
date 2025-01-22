@@ -307,7 +307,7 @@
     "href": "slides/lecture01-1-intro.html#the-ideal",
     "title": "Welcome to BEE 4850/5850!",
     "section": "The Ideal",
-    "text": "The Ideal\n\n\n\n\nXKCD 2400\n\n\n\n\nSource: XKCD 2400"
+    "text": "The Ideal\n\n\nGoal: Obtain data that is so self-evident that you don’t need to do statistics!\n\n\n\n\nXKCD 2400\n\n\n\nSource: XKCD 2400"
   },
   {
     "objectID": "slides/lecture01-1-intro.html#but-in-actuality",
@@ -412,7 +412,7 @@
     "href": "slides/lecture01-1-intro.html#course-organization",
     "title": "Welcome to BEE 4850/5850!",
     "section": "Course Organization",
-    "text": "Course Organization\n\n\n\n\n\ntimeline\n      Introduction (Weeks 1-2): Overview\n                  : Modeling Data-Generating Processes\n                  : Hypothesis Testing and Scientific Inference\n      Probability Fundamentals (Weeks 3-5): Prob/Stats \"Review\"\n                              : Model Fitting\n                              : Bayesian Statistics\n      Simulation Methods (Weeks 6-7): Monte Carlo\n                                    : Bootstrap\n      Model Evaluation (Weeks 8-9): Cross-Validation\n                      : Model Selection\n      Useful Models (Weeks 10-13): Extreme Values\n                                 : Missing Data\n                                 : Mixture Models\n                                 : Gaussian Processes\n      Experimental Design (Weeks 14): Confounds\n                                       : Controls and Designing Experiments"
+    "text": "Course Organization\n\n\n\n\n\ntimeline\n      Introduction (Weeks 1-2): Overview\n                  : Hypothesis Testing and Scientific Inference\n      Probability Fundamentals (Weeks 2-5): Prob/Stats \"Review\"\n                                          : Modeling Data-Generating Processes\n                                          : Bayesian Statistics\n                                          : Time Series\n                                          : Model Fitting\n      Simulation Methods (Weeks 6-7): Monte Carlo\n                                    : Bootstrap\n      Model Evaluation (Weeks 8-9): Cross-Validation\n                      : Model Selection\n      Useful Models (Weeks 10-13): Extreme Values\n                                 : Missing Data\n                                 : Mixture Models\n                                 : Gaussian Processes\n      Experimental Design (Weeks 14): Confounds\n                                       : Controls and Designing Experiments"
   },
   {
     "objectID": "slides/lecture01-1-intro.html#background-knowledge-computing",
