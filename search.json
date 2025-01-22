@@ -1033,69 +1033,43 @@
     ]
   },
   {
-    "objectID": "weeks/week02.html",
-    "href": "weeks/week02.html",
-    "title": "Week 2 Information",
+    "objectID": "homework.html",
+    "href": "homework.html",
+    "title": "Homework Assignments",
     "section": "",
-    "text": "Homework 1 due 2/7/25 by 9PM.",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
     "crumbs": [
-      "Weeks",
-      "Week 2"
+      "Homework"
     ]
   },
   {
-    "objectID": "weeks/week02.html#homework",
-    "href": "weeks/week02.html#homework",
-    "title": "Week 2 Information",
-    "section": "",
-    "text": "Homework 1 due 2/7/25 by 9PM.",
+    "objectID": "homework.html#general-information",
+    "href": "homework.html#general-information",
+    "title": "Homework Assignments",
+    "section": "General Information",
+    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
     "crumbs": [
-      "Weeks",
-      "Week 2"
+      "Homework"
     ]
   },
   {
-    "objectID": "weeks/week02.html#readings",
-    "href": "weeks/week02.html#readings",
-    "title": "Week 2 Information",
-    "section": "Readings",
-    "text": "Readings\n\nLloyd, E. A., & Oreskes, N. (2018). Climate change attribution: When is it appropriate to accept new methods? Earth’s Future, 6(3), 311–325. https://doi.org/10.1002/2017ef000665\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. One graduate student will be assigned to lead the discussion in the 02/05 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nHow does the framing of climate change attribution relate to the Type I/Type II error framework we discussed in class?\nWhat are the implications of the storyline approach for statements about climate attribution of extreme events?\nWhat are your thoughts on the storyline vs. FAR approach for scientific insights and communication of climate impacts?",
+    "objectID": "homework.html#rubric",
+    "href": "homework.html#rubric",
+    "title": "Homework Assignments",
+    "section": "Rubric",
+    "text": "Rubric\nThe standard rubric for homework problems is available here.",
     "crumbs": [
-      "Weeks",
-      "Week 2"
+      "Homework"
     ]
   },
   {
-    "objectID": "weeks/week01.html",
-    "href": "weeks/week01.html",
-    "title": "Week 1 Information",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
+    "objectID": "homework.html#schedule",
+    "href": "homework.html#schedule",
+    "title": "Homework Assignments",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\nSolutions\n\n\n\n\nHW1\n\nFeb 07, 2025\n\n\n\nHW2\n\nFeb 21, 2025\n\n\n\nHW3\n\nMar 14, 2025\n\n\n\nHW4\n\nMar 28, 2025\n\n\n\nHW5\n\nApr 18, 2025\n\n\n\nHW6\n\nMay 2, 2025",
     "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#announcements",
-    "href": "weeks/week01.html#announcements",
-    "title": "Week 1 Information",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#homework",
-    "href": "weeks/week01.html#homework",
-    "title": "Week 1 Information",
-    "section": "Homework",
-    "text": "Homework\n\nIf you don’t have a GitHub account, make sure you set one up.\nHomework 1 assigned, due 2/7/25. Check Ed Discussion for the link to create your repository. You will be prompted to link your GitHub account to the class roster, which will not be required once you do it once.",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
+      "Homework"
     ]
   },
   {
@@ -1143,43 +1117,80 @@
     ]
   },
   {
-    "objectID": "homework.html",
-    "href": "homework.html",
-    "title": "Homework Assignments",
+    "objectID": "weeks/week01.html",
+    "href": "weeks/week01.html",
+    "title": "Week 1 Information",
     "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
     "crumbs": [
-      "Homework"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "homework.html#general-information",
-    "href": "homework.html#general-information",
-    "title": "Homework Assignments",
-    "section": "General Information",
-    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
+    "objectID": "weeks/week01.html#announcements",
+    "href": "weeks/week01.html#announcements",
+    "title": "Week 1 Information",
+    "section": "",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
     "crumbs": [
-      "Homework"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "homework.html#rubric",
-    "href": "homework.html#rubric",
-    "title": "Homework Assignments",
-    "section": "Rubric",
-    "text": "Rubric\nThe standard rubric for homework problems is available here.",
+    "objectID": "weeks/week01.html#homework",
+    "href": "weeks/week01.html#homework",
+    "title": "Week 1 Information",
+    "section": "Homework",
+    "text": "Homework\n\nIf you don’t have a GitHub account, make sure you set one up.\nHomework 1 assigned, due 2/7/25. Check Ed Discussion for the link to create your repository. You will be prompted to link your GitHub account to the class roster, which will not be required once you do it once.",
     "crumbs": [
-      "Homework"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "homework.html#schedule",
-    "href": "homework.html#schedule",
-    "title": "Homework Assignments",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\nSolutions\n\n\n\n\nHW1\n\nFeb 07, 2025\n\n\n\nHW2\n\nFeb 21, 2025\n\n\n\nHW3\n\nMar 14, 2025\n\n\n\nHW4\n\nMar 28, 2025\n\n\n\nHW5\n\nApr 18, 2025\n\n\n\nHW6\n\nMay 2, 2025",
+    "objectID": "weeks/week02.html",
+    "href": "weeks/week02.html",
+    "title": "Week 2 Information",
+    "section": "",
+    "text": "Homework 1 due 2/7/25 by 9PM.",
     "crumbs": [
-      "Homework"
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week02.html#homework",
+    "href": "weeks/week02.html#homework",
+    "title": "Week 2 Information",
+    "section": "",
+    "text": "Homework 1 due 2/7/25 by 9PM.",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week02.html#readings",
+    "href": "weeks/week02.html#readings",
+    "title": "Week 2 Information",
+    "section": "Readings",
+    "text": "Readings\n\nLloyd, E. A., & Oreskes, N. (2018). Climate change attribution: When is it appropriate to accept new methods? Earth’s Future, 6(3), 311–325. https://doi.org/10.1002/2017ef000665\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. One graduate student will be assigned to lead the discussion in the 02/05 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nHow does the framing of climate change attribution relate to the Type I/Type II error framework we discussed in class?\nWhat are the implications of the storyline approach for statements about climate attribution of extreme events?\nWhat are your thoughts on the storyline vs. FAR approach for scientific insights and communication of climate impacts?",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "resources/github.html",
+    "href": "resources/github.html",
+    "title": "git and GitHub",
+    "section": "",
+    "text": "You’ll need to create a https://github.com account for this course, if you don’t already have one. While the use of GitHub is not required (you can work on the homework assignments without touching the GitHub Classroom links), knowing the version control workflow is a useful skill to have, and we’ll ask for a link to a GitHub repository over sharing files directly if you have a question about code on e.g. a homework assignment.\nThe following basic commands are all the git you will need: * git clone &lt;github-repository-url&gt;: This is needed to “clone” your assignment repository (initialize your local repository). * git commit -m &lt;message&gt;: This is used to “lock in” changes that you’ve made to your files. You should make commits frequently as you make changes so you can revert to prior versions if something goes wrong (and make your messages meaningful so you know what changes you’ve made!) * git push: This syncs any committed changes to the remote GitHub repository. You must do this prior to using your repository to ask for help.\nFor some additional resources about git and GitHub:\n\nGit Basics from The Odin Project.\nLearn Git Branching: An interactive, visual tutorial to how git works.\nVersion Control from MIT’s “CS: Your Missing Semester” course.\nGit and GitHub for Poets: YouTube playlist covering the basics of git and GitHub.",
+    "crumbs": [
+      "Resources",
+      "git and GitHub"
     ]
   },
   {
