@@ -86,6 +86,8 @@ website:
             text: Data Sources
           - href: resources/ai.qmd
             text: Generative AI and LLMs
+          - href: resources/github.qmd
+            text: git and GitHub
 format:
   html:
     grid:
