@@ -245,17 +245,20 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </section>
 <section id="the-ideal" class="slide level2">
 <h2>The Ideal</h2>
-<div class="center">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Goal</strong>: Obtain data that is so self-evident that you don’t need to do statistics!</p>
+</div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://imgs.xkcd.com/comics/statistics.png" style="width:30.0%"></p>
+<p><img data-src="https://imgs.xkcd.com/comics/statistics.png" style="width:60.0%"></p>
 <figcaption>XKCD 2400</figcaption>
 </figure>
-</div>
 </div>
 <div class="caption">
 <p>Source: <a href="https://xkcd.com/2400/">XKCD 2400</a></p>
 </div>
+</div></div>
 </section>
 <section id="but-in-actuality" class="slide level2">
 <h2>But in Actuality</h2>
@@ -458,11 +461,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <div>
 <pre class="mermaid mermaid-js">timeline
       Introduction (Weeks 1-2): Overview
-                  : Modeling Data-Generating Processes
                   : Hypothesis Testing and Scientific Inference
-      Probability Fundamentals (Weeks 3-5): Prob/Stats "Review"
-                              : Model Fitting
-                              : Bayesian Statistics
+      Probability Fundamentals (Weeks 2-5): Prob/Stats "Review"
+                                          : Modeling Data-Generating Processes
+                                          : Bayesian Statistics
+                                          : Time Series
+                                          : Model Fitting
       Simulation Methods (Weeks 6-7): Monte Carlo
                                     : Bootstrap
       Model Evaluation (Weeks 8-9): Cross-Validation
@@ -511,29 +515,33 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <thead>
 <tr class="header">
 <th style="text-align: left;">Assessment</th>
-<th style="text-align: right;">% of Grade</th>
+<th style="text-align: right;">Weight</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Participation</td>
-<td style="text-align: right;">10%</td>
+<td style="text-align: right;">5%</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Readings</td>
 <td style="text-align: right;">10%</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Quizzes</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Literature Critique</td>
 <td style="text-align: right;">15%</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Homework Assignments</td>
-<td style="text-align: right;">40%</td>
-</tr>
 <tr class="odd">
+<td style="text-align: left;">Homework Assignments</td>
+<td style="text-align: right;">30%</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Term Project</td>
-<td style="text-align: right;">25%</td>
+<td style="text-align: right;">30%</td>
 </tr>
 </tbody>
 </table>
@@ -553,17 +561,25 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li>Select a paper which involves some type of statistical or data analysis</li>
 <li>Critique choices: do they support the scientific conclusions?</li>
-<li>Submit a 2 page writeup at the end of the semester</li>
-<li>If you’re unsure where to look for a paper, talk to Prof.&nbsp;Srikrishnan and we can find options</li>
+<li>Submit a 2-3 page writeup at the end of the semester</li>
+<li>If you’re unsure where to look for a paper, talk to Prof.&nbsp;Srikrishnan</li>
 </ul>
 </section>
 <section id="readings" class="slide level2">
 <h2>Readings</h2>
 <ul>
 <li>Several readings assigned for discussion throughout the semester.</li>
-<li>Annotation assignments on Canvas: by end of day on a Monday.</li>
-<li>One (graduate) student responsible for leading the discussion on that Wednesday.</li>
-<li>If you want to use slides, send them to Prof.&nbsp;Srikrishnan by end of day Tuesday.</li>
+<li>Annotation assignments on Canvas: by end of the week.</li>
+<li>Will discuss paper at start of class next Monday.</li>
+<li><strong>5850 students</strong>: Write a one-page summary.</li>
+</ul>
+</section>
+<section id="quizzes" class="slide level2">
+<h2>Quizzes</h2>
+<ul>
+<li>Assigned on Gradescope (almost) weekly.</li>
+<li>Short (2-3 problems), focused on material from that week.</li>
+<li>Due before class next Monday.</li>
 </ul>
 </section>
 <section id="homework-assignments" class="slide level2">
@@ -571,7 +587,6 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li>More in-depth problems</li>
 <li>Roughly 2 weeks to complete</li>
-<li>Will drop one by default</li>
 <li>Regrade requests must be made within one week</li>
 <li><strong>5850 Students</strong>: Some extra problems</li>
 </ul>
@@ -592,7 +607,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <section id="office-hours" class="slide level2">
 <h2>Office Hours</h2>
 <ul>
-<li>MW 1-2 PM, 318 Riley-Robb</li>
+<li><strong>Instructor</strong>: MW 1-2 PM, 318 Riley-Robb</li>
+<li><strong>TA</strong>: MTh 10:30-11:30 AM, 319 Riley-Robb</li>
 <li>Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.</li>
 </ul>
 </section>
@@ -618,28 +634,15 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h2>Academic Integrity</h2>
 <p>Obviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.</p>
 </section>
-<section id="chatgpt-the-stochastic-parrot" class="slide level2">
-<h2>ChatGPT: The Stochastic Parrot</h2>
+<section id="llms-bullshit-generators" class="slide level2">
+<h2>LLMs: Bullshit Generators</h2>
 <p>Think about ChatGPT as a drunk who tells stories for drinks.</p>
 <p>It will give you plausible-looking text or code on any topic, but it doesn’t know anything beyond what it “overheard.”</p>
-<div class="callout callout-caution callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Caution</strong></p>
-</div>
-<div class="callout-content">
 <p>ChatGPT can be useful for certain tasks (<em>e.g.</em> understanding code errors), but may neglect context for why/when certain information or solutions work.</p>
-<p>Just think about it as an unreliable Google search.</p>
-</div>
-</div>
-</div>
 </section>
-<section id="chatgpt-the-stochastic-parrot-1" class="slide level2">
+<section id="chatgpt-the-stochastic-parrot" class="slide level2">
 <h2>ChatGPT: The Stochastic Parrot</h2>
-<p>Must specifically call out where you used ChatGPT in your work (beyond simple referencing).</p>
+<p>Must specifically call out where you used ChatGPT in your work (beyond simple referencing; see syllabus for details).</p>
 </section></section>
 <section>
 <section id="class-tools" class="title-slide slide level1 center">
