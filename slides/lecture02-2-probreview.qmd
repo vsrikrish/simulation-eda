@@ -1,5 +1,5 @@
 ---
-title: "Probability Models for Data"
+title: "Probability Fundamentals"
 subtitle: "Lecture 04"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
@@ -83,9 +83,12 @@ default(
 
 # Review
 
-## Probability Fundamentals
+## Null Hypothesis Significance Testing
 
-
+- Binary "significant"/"non-significant" decision framework;
+- Accept or reject null hypothesis $H_0$ based on p-value of test statistic;
+- "Typical" statistical models for $H_0$ often chosen out of computational convenience
+- **There be dragons**: Multiple comparisons, lack of statistical power, reading rejection of $H_0$ as acceptance of alternative $H$
 
 ## Generative Modeling
 
@@ -132,7 +135,9 @@ Note that the distinction between aleatory and epistemic uncertainty is somewhat
 But in practice, this doesn't really matter: the key thing is whether for a given model we're treating the uncertainty as entirely random (e.g. white noise) versus being interested in the impacts of that uncertainty on the outcome of interest. And there's a representation theorem by the Bayesian actuary Bruno de Finetti which shows that, under a condition called *exchangeability*, we can think of any random sequence as arising from an independent and identically distributed process, so the practical difference can collapse further.
 :::
 
-## Kolmogorov Axioms
+## Probability
+
+Probability is a language for expressing uncertainty.
 
 The **axioms of probability** are straightforward:
 
@@ -187,6 +192,8 @@ We will freely borrow from each school depending on the purpose and goal of an a
 
 ## Probability Distributions
 
+Distributions are mathematical representations of probabilities over a range of possible outcomes.
+
 $$x \to \mathbb{P}_{\color{green}\nu}[x] = p_{\color{green}\nu}\left(x | {\color{purple}\theta}\right)$$
 
 - ${\color{green}\nu}$: probability distribution (often implicit);
@@ -198,7 +205,7 @@ To write $x$ is sampled from $p(x|\theta)$:
 $$x \sim f(\theta)$$
 
 For example, for a normal distribution:
-$$x \overset{\sim}{\text{i.i.d.}} \mathcal{N}(\mu, \sigma)$$
+$$x \overset{\text{i.i.d.}}{\sim} \mathcal{N}(\mu, \sigma)$$
 
 ::: {.notes}
 "i.i.d." means "identically and independently distributed.""
@@ -211,9 +218,7 @@ A continuous distribution $\mathcal{D}$ has a probability density function (PDF)
 The probability of $x$ occurring in an interval $(a, b)$ is
 $$\mathbb{P}[a \leq x \leq b] = \int_a^b f_\mathcal{D}(x)dx.$$
 
-::: {.callout-important}
-The probability that $x$ has a specific value $x^*$, $\mathbb{P}(x = x^*)$, is zero!
-:::
+**Important**: $\mathbb{P}(x = x^*)$, is zero!
 
 ## Probability Mass Functions
 
@@ -226,72 +231,92 @@ Unlike continuous distributions, we can talk about the probability of individual
 
 ## Cumulative Density Functions
 
+:::: {.columns}
+::: {.column width=50%}
 If $\mathcal{D}$ is a distribution with PDF $f_\mathcal{D}(x)$, the **cumulative density function** (CDF) of $\mathcal{D}$ $F_\mathcal{D}(x)$:
 
 $$F_\mathcal{D}(x) = \int_{-\infty}^x f_\mathcal{D}(u)du.$$
 
-If $f_\mathcal{D}$ is continuous at $x$:
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-cdf-pdf
+#| fig-cap: Relationship of CDF and PDF
+#| layout-nrow: 2
+dist = TDist(4)
+x = -5:0.01:5
+q = 0.25
+p1 = plot(x, x -> cdf(dist, x), ylabel="Cumulative Density", xlabel=L"$x$", linewidth=3, label=false)
+plot!([-5, quantile(dist, q)], [q, q], color=:gray, linestyle=:dash, linewidth=2, label=false)
+plot!([quantile(dist, q), quantile(dist, q)], [0, q], color=:gray, linestyle=:dash, linewidth=2, label=false, size=(500, 300))
+
+p2 = plot(x, x -> pdf(dist, x), linewidth=3, ylabel="Density", xlabel=L"$x$", label=false)
+xpdf = -5:0.01:quantile(dist, q)
+plot!(xpdf, zeros(length(xpdf)), fillrange=pdf.(dist, xpdf), fillalpha=0.5, color=:gray, label=false, size=(500, 300))
+
+display(p1)
+display(p2)
+```
+:::
+::::
+
+## Relationship Between PDFs and CDFs
+
+Since $$F_\mathcal{D}(x) = \int_{-\infty}^x f_\mathcal{D}(u)du,$$
+
+if $f_\mathcal{D}$ is continuous at $x$, the Fundamental Theorem of Calculus gives:
 $$f_\mathcal{D}(x) = \frac{d}{dx}F_\mathcal{D}(x).$$
 
 ::: {.notes}
 The value of the CDF is the amount of probability "below" the value. So e.g. for a one-sided statistical test, the p-value is the complement of the CDF at the value of the test statistic.
 :::
 
-# Linear Model Example
-
-## How Does TDS Affect River Flow?
+## Quantiles
 
 :::: {.columns}
 ::: {.column width=50%}
-**Question**: Does river flow affect the concentration of total dissolved solids?
+The quantile function is the **inverse of the CDF**:
 
-**Data**: Cuyahoga River (1969 -- 1973), from @Helsel2020-nq [Chapter 9].
+$$q(\alpha) = F^{-1}_\mathcal{D}(\alpha)$$
+
+So $$x_0 = q(\alpha) \iff \mathbb{P}_\mathcal{D}(X < x_0) = \alpha.$$
 
 :::
-
 ::: {.column width=50%}
 ```{julia}
-tds = let
-	fname = "data/tds/cuyaTDS.csv" # CHANGE THIS!
-	tds = DataFrame(CSV.File(fname))
-	tds[!, [:date, :discharge_cms, :tds_mgL]]
-end
+#| label: fig-cdf-pdf-2
+#| fig-cap: Relationship of CDF and PDF
+#| layout-nrow: 2
+dist = TDist(4)
+x = -5:0.01:5
+q = 0.25
+p1 = plot(x, x -> cdf(dist, x), ylabel="Cumulative Density", xlabel=L"$x$", linewidth=3, label=false)
+plot!([-5, quantile(dist, q)], [q, q], color=:gray, linestyle=:dash, linewidth=2, label=false)
+plot!([quantile(dist, q), quantile(dist, q)], [0, q], color=:gray, linestyle=:dash, linewidth=2, label=false, size=(500, 300))
 
-p = scatter(
-	tds.discharge_cms,
-	tds.tds_mgL,
-	xlabel=L"Discharge (m$^3$/s)",
-	ylabel="Total dissolved solids (mg/L)",
-    markersize=5,
-	label="Observations"
-)
-plot!(p, size=(600, 600))
+p2 = plot(x, x -> pdf(dist, x), linewidth=3, ylabel="Density", xlabel=L"$x$", label=false)
+xpdf = -5:0.01:quantile(dist, q)
+plot!(xpdf, zeros(length(xpdf)), fillrange=pdf.(dist, xpdf), fillalpha=0.5, color=:gray, label=false, size=(500, 300))
+
+display(p1)
+display(p2)
 ```
 :::
 ::::
 
-## How Does TDS Affect River Flow?
+# Selecting a Distribution
 
-:::: {.columns}
-::: {.column width=50%}
-**Question**: Does river flow affect the concentration of total dissolved solids?
+## Distributions Are Assumptions
 
+**Specifying a distribution is making an assumption about observations and any applicable constraints.**
 
-**Model**: 
+Examples: If your observations are...
 
-$$D \rightarrow S \ {\color{purple}\leftarrow U}$$
+- Continuous and fat-tailed? **Cauchy distribution**
+- Continuous and bounded? **Beta distribution**
+- Sums of positive random variables? **Gamma or Normal distribution**.
 
-$$S = f(D, U)$$
-:::
-
-::: {.column width=50%}
-```{julia}
-p
-```
-:::
-::::
-
-## Why Use a Linear Model?
+## Why Use a Normal Distribution?
 
 :::: {.columns}
 ::: {.column width=60%}
@@ -314,193 +339,33 @@ Source: r/GymMemes
 One key thing: normal distributions are the "least informative" distribution given constraints on mean and variance. So all else being equal, this is a useful machine if all we're interested in are those two moments.
 :::
 
-## Log-Linear Relationships
+## Central Limit Theorem: Sampling Distributions
 
-:::: {.columns}
-::: {.column width=50%}
-While the original relationship didn't look linear, we can use a log transform on the x-axis.
+**The sum or mean of a random sample is itself a random variable**:
 
-The model is then:
+$$\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i \sim \mathcal{D}_n$$
 
-$$
-\begin{align*}
-S &= \beta_0 + \beta_1 \log(D) + U\\
-U &\sim \mathcal{N}(0, \sigma^2)\\
-H &\sim \text{Uniform}(0, 100)
-\end{align*}
-$$
+::: {.fragment .fade-in}
+$\mathcal{D}_n$: The ***sampling distribution*** of the mean (or sum, or other estimate of interest).
 :::
 
-::: {.column width=50%}
-```{julia}
-xx = [2, 5, 10, 20, 50, 100]
-p1 = plot(p, xaxis=:log, xticks=(xx, string.(xx)))
-```
-:::
-::::
+## Central Limit Theorem 
 
-## Likelihood
+If 
 
-How do we find $\beta_i$ and $\sigma$?
+- $\mathbb{E}[X_i] = \mu$ 
+- and $\text{Var}(X_i) = \sigma^2 < \infty$, 
 
-**Likelihood** of data to have come from distribution $f(\mathbf{x} | \theta)$:
+$$\begin{align*}
+&\bbox[yellow, 10px, border:5px solid red]
+{\lim_{n \to \infty} \sqrt{n}(\bar{X}_n - \mu ) = \mathcal{N}(0, \sigma^2)} \\
+\Rightarrow &\bbox[yellow, 10px, border:5px solid red] {\bar{X}_n \overset{\text{approx}}{\sim} \mathcal{N}(\mu, \sigma^2/n)}
+\end{align*}$$
 
-$$\mathcal{L}(\theta | \mathbf{x}) = \underbrace{f(\mathbf{x} | \theta)}_{\text{PDF}}$$
+## Central Limit Theorem (More Intuitive)
 
-Here the randomness comes from $U$:
+For **a large enough set of samples**, the sampling distribution of a sum or mean of random variables is approximately a normal distribution, even if the random variables themselves are not.
 
-$$S \sim \mathcal{N}(\beta_0 + \beta_1 \log(D), \sigma^2)$$
-
-::: {.notes}
-The likelihood gives us a measure of how probable a dataset is from a given distribution. It's the PDF of the distribution at the data.
-
-But the perspective is flipped: instead of fixing a distribution and calculating the probability of some data, we fix the data and look at how the probability of observing that data changes as the distribution changes. 
-:::
-
-
-## Normal Distribution PDF
-
-$$f_\mathcal{D}(x) = p(x | \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}^2\right)\right)$$
-
-::: {.center}
-```{julia}
-#| label: fig-normal
-#| fig-align: center
-
-plot(Normal(0, sqrt(3)), linewidth=3, color=:blue, label=L"$\mu=0$, $\sigma=\sqrt{3}$", guidefontsize=20, legendfontsize=20, tickfontsize=14)
-plot!(Normal(2, 1), linewidth=3, color=:orange, label=L"$\mu=2$, $\sigma=1$")
-plot!(Normal(0, 1), linewidth=3, color=:red, label=L"$\mu=0$, $\sigma=1$")
-plot!(size=(1200, 400), left_margin=10mm, bottom_margin=10mm)
-xlabel!(L"$x$")
-ylabel!("Probability Density")
-xlims!((-5, 5))
-```
-:::
-
-## Back to the Problem...
-
-:::: {.columns}
-::: {.column width=50%}
-We can fit models by maximizing the likelihood (OLS for this linear model).
-
-```{julia}
-#| output: false
-
-m = lm(@formula(tds_mgL ~ log(discharge_cms)), tds)
-β = Int.(round.(coef(m), digits=0))
-```
-
-$\hat{\beta_0}$: `{julia} β[1]` 
-
-$\hat{\beta_1}$: `{julia} β[2]` 
-
-$\hat{\sigma}^2$: `{julia} Int(round(dispersion(m.model), digits=0))`$^2$
-
-:::
-
-::: {.column width=50%}
-
-```{julia}
-Ŝ = sort(predict(m, tds, interval=:prediction), rev=true)
-plot!(p1, 
-    sort(tds.discharge_cms),
-    Ŝ.prediction, 
-    ribbon=(Ŝ.prediction - Ŝ.lower, Ŝ.upper - Ŝ.prediction), 
-    linewidth=3, 
-    fillalpha=0.2, 
-    label="Best Fit")
-```
-
-:::
-::::
-
-## Maximizing Likelihood
-
-:::: {.columns}
-::: {.column width=50%}
-More generally, can use optimization algorithms to maximize $\theta \to f(\theta | x).$
-
-**Dragons**: Probability calculations tend to under- and overflow due to floating point precision.
-:::
-::: {.column width=50%}
-![Floating Point Logarithms meme](memes/floating_point_logs.png){width=75%}
-:::
-::::
-
-## Maximizing Likelihood: Julia Example
-
-:::: {.columns}
-::: {.column width=70%}
-```{julia}
-#| echo: true
-#| code-fold: false
-#| output: false
-
-# function for the log-likelihood
-# θ is a vector of parameters: intercept, slope, standard deviation
-# y is the observations (TDS)
-# x is the predictors (Discharge)
-function tds_log_likelihood(θ, y, x)
-    μ = θ[1] .+ θ[2] * log.(x) # compute expected values
-    ll = logpdf.(Normal.(μ, θ[3]), y) # compute log-likelihood for each observation
-    return sum(ll) # return the sum log-likelihood
-end
-# Optim.optimize can use bounded optimization or unbounded
-# It also minimizes the function so we want to minimize the negative log-likelihood
-lower = [0.0, -1000.0, 1.0]
-upper = [1000.0, 1000.0, 100.0]
-θ_init = [500.0, 0.0, 50.0]
-neg_ll(θ) = -tds_log_likelihood(θ, tds.tds_mgL, tds.discharge_cms)
-optim_out = Optim.optimize(neg_ll, lower, upper, θ_init)
-θ̂ = optim_out.minimizer
-```
-:::
-::: {.column width=30%}
-```{julia}
-#| echo: false
-#| output: true
-θ̂ = Int.(round.(θ̂; digits=0))
-@show θ̂;
-```
-:::
-::::
-
-::: {.notes}
-Of course, this will only get you a point estimate: getting the sampling distribution or similar uncertainties for non-normal models is more involved and requires additional methods. More on this later this semester!
-:::
-
-## Whither Parameter Uncertainty?
-
-So far we have neglected uncertainty in the parameter estimates. This is the last piece we will need to infer a fully generative model.
-
-For frequentist statistics, this is reflected in the **sampling distribution**, which reflects how uncertainty in the data propagates to uncertainty in the parameter estimates.
-
-For Bayesian statistics, this will pop out of the inference process naturally.
-
-## The "Linear" Part of a Linear Model
-
-The regression in a linear model can be a polynomial, or any other functional form, *e.g.*
-
-$$
-\begin{align*}
-Y_i &= a + bX_i + cX_i^2 + \varepsilon_i \\
-\varepsilon_i &\sim \text{Normal}(0, \sigma^2)
-\end{align*}
-$$
-
-Now need to use numerical methods to maximize likelihood.
-
-# Other Distributions and Generalized Linear Models
-
-## Distributions Are Assumptions
-
-**Specifying a distribution is making an assumption about observations and any applicable constraints.**
-
-Examples: If your observations are...
-
-- Continuous and fat-tailed? **Cauchy distribution**
-- Continuous and bounded? **Beta distribution**
-- Sums of positive random variables? **Gamma or Normal distribution**.
 
 ## "What Distribution Should I Use?"
 
@@ -515,83 +380,6 @@ For example, suppose our data are counts of events:
 
 - If you know something about **rates**, you can use a Poisson distribution
 - If you know something about **probabilities**, you can use a Binomial distribution. 
-
-## Generalized Linear Models
-
-:::: {.columns}
-::: {.column width=50%}
-
-### Linear Models
-
-Expected value: regression on predictors
-
-$$
-\begin{align*}
-Y_i &\sim \text{Normal}(\mu_i, \sigma^2) \\
-\mu_i &= \beta_0 + \beta_X X_i + \beta_Z Z_i
-\end{align*}
-$$
-:::
-
-::: {.column width=50%}
-::: {.fragment .fade-in}
-### GLMs
-
-Expected value: **some function** of a regression
-
-$$
-\begin{align*}
-Y_i &\sim \text{Bernoulli}(p_i) \\
-f(p_i) &= \beta_0 + \beta_X X_i + \beta_Z Z_i
-\end{align*}
-$$
-:::
-:::
-::::
-
-## Links and Inverse Links
-
-$$
-\begin{align*}
-Y_i &\sim \text{Bernoulli}(p_i) \\
-{\color{purple}f(p_i)} &= \beta_0 + \beta_X X_i + \beta_Z Z_i
-\end{align*}
-$$
-
-The function $f$ is called a **link function**.
-
-$f^{-1}$ is the **inverse link**: 
-
-$$p_i = f^{-1}(\beta_0 + \beta_X X_i + \beta_Z Z_i).$$
-
-Links are effectively determined by your choice of distribution.
-
-## Example: Logit link
-
-For example, Bernoulli distributions often use the **logit** link to map probabilities to linear values.
-
-:::: {.columns}
-::: {.column width=50%}
-
-$$\text{logit}(p_i) = \log \frac{p_i}{1-p_i}$$
-
-$$\text{logit}^{-1}(q_i) = \frac{\exp(q_i)}{1 + \exp(q_i)}$$
-
-:::
-::: {.column width=50%}
-```{julia}
-f(p) = log(p / (1 - p))
-prob = 0:0.01:1
-plot(prob, 
-    f.(prob), 
-    linewidth=3,
-    xlabel="Probability",
-    ylabel="Logit Response"
-)
-plot!(size=(600, 400))
-```
-:::
-::::
 
 ## Q-Q Plots
 
@@ -619,35 +407,160 @@ plot!(size=(500, 450))
 
 ```{julia}
 #| label: fig-cauchy-qq
-#| code-fold: true
-#| code-overflow: wrap
-#| echo: true
-#| layout-ncol: 2
+#| echo: false
+#| layout-nrow: 2
 #| fig-cap: "Q-Q Plot for Cauchy Data and Normal Distribution"
 #| fig-subcap: 
 #|  - "Normal vs Cauchy Distribution"
 #|  - "Q-Q Plot"
 
 ## generate fat-tailed residuals
-cauchy_samps = rand(Cauchy(0, 1), 100)
+cauchy_samps = rand(Cauchy(0, 0.05), 50)
 
 # make plots
 # scatterplot of observations
-p1 = plot(Normal(0, 2), linewidth=3, color=:green, label="Normal Distribution", yaxis=false, legend=:outerbottom)
-plot!(p1, Cauchy(0, 1), linewidth=3, color=:orange, linestyle=:dash, label="Cauchy Distribution")
-xlims!(p1, (-10, 10))
+p1 = plot(fit(Normal, cauchy_samps), linewidth=3, color=:green, label="Normal Distribution", yaxis=false, legend=:outerright)
+plot!(p1, fit(Cauchy, cauchy_samps), linewidth=3, color=:orange, linestyle=:dash, label="Cauchy Distribution")
+scatter!(p1, cauchy_samps, zeros(length(cauchy_samps)), markersize=3, color=:black, label="Data")
+xlims!(p1, (-2, 2))
 xlabel!("Value")
-plot!(p1, size=(600, 550))
+plot!(p1, size=(1000, 250))
 
 # densities of residual distributions
-p2 = qqplot(Normal, cauchy_samps, tickfontsize=16, guidefontsize=18, linewidth=3, markersize=6)
-xlabel!(p2, "Theoretical Quantiles")
-ylabel!(p2, "Empirical Quantiles")
-plot!(p2, size=(500, 450))
+p2 = qqplot(Normal, cauchy_samps, tickfontsize=16, guidefontsize=18, linewidth=3, markersize=6, title="Normal Q-Q Plot")
+xlabel!(p2, "Theoretical Values")
+ylabel!(p2, "Empirical Values")
+p3 = qqplot(Cauchy, cauchy_samps, tickfontsize=16, guidefontsize=18, linewidth=3, markersize=6, title="Cauchy Q-Q Plot")
+xlabel!(p3, "Theoretical Values")
+ylabel!(p3, "Empirical Values")
+p = plot(p2, p3, layout=(1, 2), size=(900, 350))
 
 display(p1)
-display(p2)
+display(p)
 ```
+
+
+## Likelihood
+
+How do we "fit" distributions to a dataset?
+
+**Likelihood** of data to have come from distribution $f(\mathbf{x} | \theta)$:
+
+$$\mathcal{L}(\theta | \mathbf{x}) = \underbrace{f(\mathbf{x} | \theta)}_{\text{PDF}}$$
+
+::: {.notes}
+The likelihood gives us a measure of how probable a dataset is from a given distribution. It's the PDF of the distribution at the data.
+
+But the perspective is flipped: instead of fixing a distribution and calculating the probability of some data, we fix the data and look at how the probability of observing that data changes as the distribution changes. 
+:::
+
+
+## Normal Distribution PDF
+
+$$f_\mathcal{D}(x) = p(x | \mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}^2\right)\right)$$
+
+::: {.center}
+```{julia}
+#| label: fig-normal
+#| fig-align: center
+
+plot(Normal(0, sqrt(3)), linewidth=3, color=:blue, label=L"$\mu=0$, $\sigma=\sqrt{3}$", guidefontsize=20, legendfontsize=20, tickfontsize=14)
+plot!(Normal(2, 1), linewidth=3, color=:orange, label=L"$\mu=2$, $\sigma=1$")
+plot!(Normal(0, 1), linewidth=3, color=:red, label=L"$\mu=0$, $\sigma=1$")
+plot!(size=(1200, 400), left_margin=10mm, bottom_margin=10mm)
+vline!([0.5], color=:black, linestyle=:dash)
+xlabel!(L"$x$")
+ylabel!("Likelihood")
+xlims!((-5, 5))
+```
+:::
+
+## Likelihood of Multiple Samples
+
+For multiple (independent) samples $\mathbf{x} = \{x_1, \ldots, x_n\}$:
+
+$$\mathcal{L}(\theta | \mathbf{x}) = \prod_{i=1}^n \mathcal{L}(\theta | x_i).$$
+
+## Likelihood Example
+
+:::: {.columns}
+::: {.column width=50%}
+```{julia}
+
+dist = Normal(-0.5, 2)
+x = rand(dist, 10)
+plot(Normal(0, 1), linewidth=3, ylabel="Density", xlabel=L"$x$", legend=false, color=:blue, size=(600, 400))
+vline!(x, color=:red)
+xlims!((-9, 6))
+```
+:::
+::: {.column width=50%}
+| Distribution | Likelihood |
+|:------------:|:-----------|
+| $N(0, 1)$ | `{julia} round(prod(pdf.(Normal(0, 1), x)); sigdigits=2)` |
+:::
+::::
+
+## Likelihood Example
+
+:::: {.columns}
+::: {.column width=50%}
+```{julia}
+
+plot(Normal(0, 1), linewidth=3, ylabel="Density", xlabel=L"$x$", alpha=0.2, legend=false, color=:blue, size=(600, 400))
+plot!(Normal(-1, 2), linewidth=3, color=:blue)
+vline!(x, color=:red)
+xlims!((-9, 6))
+```
+:::
+::: {.column width=50%}
+| Distribution | Likelihood |
+|:------------:|:-----------|
+| $N(0, 1)$ | `{julia} round(prod(pdf.(Normal(0, 1), x)); sigdigits=2)` |
+| $N(-1, 2)$ | `{julia} round(prod(pdf.(Normal(-1, 2), x)); sigdigits=2)` |
+:::
+::::
+
+## Likelihood Example
+
+:::: {.columns}
+::: {.column width=50%}
+```{julia}
+
+plot(Normal(0, 1), linewidth=3, ylabel="Density", xlabel=L"$x$", alpha=0.2, legend=false, color=:blue, size=(600, 400))
+plot!(Normal(-1, 2), linewidth=3, color=:blue, alpha=0.2)
+plot!(Normal(-1, 1), linewidth=3, color=:blue)
+vline!(x, color=:red)
+xlims!((-9, 6))
+```
+:::
+::: {.column width=50%}
+| Distribution | Likelihood |
+|:------------:|:-----------|
+| $N(0, 1)$ | `{julia} round(prod(pdf.(Normal(0, 1), x)); sigdigits=2)` |
+| $N(-1, 2)$ | `{julia} round(prod(pdf.(Normal(-1, 2), x)); sigdigits=2)` |
+| $N(-1, 1)$ | `{julia} round(prod(pdf.(Normal(-1, 1), x)); sigdigits=2)` |
+:::
+::::
+
+## Maximizing Likelihood
+
+To find the parameters $\hat{\theta}$ which best fit the data:
+
+$\hat{\theta} = \max_\theta \mathcal{L}(\theta | \mathbf{x})$
+
+## Generally Maximizing Likelihood
+
+:::: {.columns}
+::: {.column width=50%}
+Can use optimization algorithms to maximize $\theta \to \mathcal{L}(\theta | x).$
+
+**Dragons**: Probability calculations tend to under- and overflow due to floating point precision.
+:::
+::: {.column width=50%}
+![Floating Point Logarithms meme](memes/floating_point_logs.png){width=85%}
+:::
+::::
 
 # Describing Uncertainty
 
@@ -759,11 +672,11 @@ display(p2)
 
 `{julia} Int64(round(ci_frac1))`% of the CIs contain the true value (left) vs. `{julia} Int64(round(ci_frac2))`% (right)
 
-## Projection Intervals
+## Predictive Intervals
 
 :::: {.columns}
 ::: {.column width=50%}
-**Projection intervals** capture uncertainty in an estimand.
+**Predictive intervals** capture uncertainty in an estimand.
 
 **With what probability would I see a particular outcome in the future?**
 

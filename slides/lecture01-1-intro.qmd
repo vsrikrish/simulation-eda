@@ -66,12 +66,18 @@ Take a moment, write it down, and we'll share!
 
 ## The Ideal
 
-::: {.center}
-![XKCD 2400](https://imgs.xkcd.com/comics/statistics.png){width=30%}
+:::: {.columns}
+::: {.column width=50%}
+**Goal**: Obtain data that is so self-evident that you don't need to do statistics!
 :::
+::: {.column width=50%}
+![XKCD 2400](https://imgs.xkcd.com/comics/statistics.png){width=60%}
+
 ::: {.caption}
 Source: [XKCD 2400](https://xkcd.com/2400/)
 :::
+:::
+::::
 
 ## But in Actuality
 
@@ -230,11 +236,12 @@ Models are how we assess evidence for theories.
 ```{mermaid}
 timeline
       Introduction (Weeks 1-2): Overview
-                  : Modeling Data-Generating Processes
                   : Hypothesis Testing and Scientific Inference
-      Probability Fundamentals (Weeks 3-5): Prob/Stats "Review"
-                              : Model Fitting
-                              : Bayesian Statistics
+      Probability Fundamentals (Weeks 2-5): Prob/Stats "Review"
+                                          : Modeling Data-Generating Processes
+                                          : Bayesian Statistics
+                                          : Time Series
+                                          : Model Fitting
       Simulation Methods (Weeks 6-7): Monte Carlo
                                     : Bootstrap
       Model Evaluation (Weeks 8-9): Cross-Validation
@@ -268,13 +275,14 @@ timeline
 
 ## Grades
 
-| Assessment | % of Grade |
+| Assessment | Weight |
 |:-----------|-----------:|
-| Participation | 10% |
+| Participation | 5% |
 | Readings | 10% |
+| Quizzes | 10% |
 | Literature Critique | 15% |
-| Homework Assignments | 40% |
-| Term Project | 25% |
+| Homework Assignments | 30% |
+| Term Project | 30% |
 
 
 ## Overall Guidelines
@@ -289,21 +297,26 @@ timeline
 
 - Select a paper which involves some type of statistical or data analysis
 - Critique choices: do they support the scientific conclusions?
-- Submit a 2 page writeup at the end of the semester
-- If you're unsure where to look for a paper, talk to Prof. Srikrishnan and we can find options
+- Submit a 2-3 page writeup at the end of the semester
+- If you're unsure where to look for a paper, talk to Prof. Srikrishnan
 
 ## Readings
 
 - Several readings assigned for discussion throughout the semester.
-- Annotation assignments on Canvas: by end of day on a Monday.
-- One (graduate) student responsible for leading the discussion on that Wednesday.
-- If you want to use slides, send them to Prof. Srikrishnan by end of day Tuesday.
+- Annotation assignments on Canvas: by end of the week.
+- Will discuss paper at start of class next Monday.
+- **5850 students**: Write a one-page summary.
+
+## Quizzes
+
+- Assigned on Gradescope (almost) weekly.
+- Short (2-3 problems), focused on material from that week.
+- Due before class next Monday.
 
 ## Homework Assignments
 
 - More in-depth problems
 - Roughly 2 weeks to complete
-- Will drop one by default
 - Regrade requests must be made within one week
 - **5850 Students**: Some extra problems
 
@@ -321,7 +334,8 @@ Not required, but students tend to do better when they're actively engaged in cl
 
 ## Office Hours
 
-- MW 1-2 PM, 318 Riley-Robb
+- **Instructor**: MW 1-2 PM, 318 Riley-Robb
+- **TA**: MTh 10:30-11:30 AM, 319 Riley-Robb
 - Almost impossible to find a time that works for all (or even most); please feel free to make appointments as/if needed.
 
 ## Accomodations
@@ -347,21 +361,17 @@ Hopefully not a concern...
 Obviously, just copying down answers from Chegg or ChatGPT and passing them off as your own is not ok.
 
 
-## ChatGPT: The Stochastic Parrot
+## LLMs: Bullshit Generators
 
 Think about ChatGPT as a drunk who tells stories for drinks.
 
 It will give you plausible-looking text or code on any topic, but it doesn't know anything beyond what it "overheard."
 
-::: {.callout-caution}
 ChatGPT can be useful for certain tasks (*e.g.* understanding code errors), but may neglect context for why/when certain information or solutions work.
-
-Just think about it as an unreliable Google search.
-:::
 
 ## ChatGPT: The Stochastic Parrot
 
-Must specifically call out where you used ChatGPT in your work (beyond simple referencing).
+Must specifically call out where you used ChatGPT in your work (beyond simple referencing; see syllabus for details).
 
 # Class Tools
 

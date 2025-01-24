@@ -1,0 +1,308 @@
+---
+title: "Probability Models for Data"
+subtitle: "Lecture 04"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "February 03, 2024"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        mermaid: 
+            theme: dark
+engine: julia
+filters:
+  - code-fullscreen
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using DataFrames
+using DataFramesMeta
+using CSV
+using Dates
+using Distributions
+using ColorSchemes
+using Plots
+using StatsPlots
+using StatsBase
+using Optim
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+
+plot_font = "Computer Modern"
+default(
+    fontfamily=plot_font,
+    linewidth=3, 
+    framestyle=:box, 
+    label=nothing, 
+    grid=false,
+    guidefontsize=18,
+    legendfontsize=16,
+    tickfontsize=16,
+    titlefontsize=20,
+    bottom_margin=10mm,
+    left_margin=5mm
+)
+```
+
+# Review
+
+## Probability Fundamentals
+
+- Bayesian vs. Frequentist Interpretations
+- Distributions reflect assumptions on probability of data.
+- Normal distributions: "least informative" distribution for a given mean/variance.
+- Fit distributions by maximizing likelihood.
+- Communicating uncertainty: confidence vs. credible vs. predictive intervals.
+
+# Model Calibration
+
+## Fitting Models to Data
+
+**Calibration**: Finding model parameters which "explain" or "fit" the data.
+
+In other words, given:
+
+- model $f(\mathbf{x}; \theta)$
+- data $\mathbf{y}$
+  
+want to find model parameters $\hat{\theta}$ to approximate $y$.
+
+## What Do You Think Of When You Think of "Fitting" Models?
+
+::: {.fragment .fade-in}
+Often this refers to minimizing some error metric, like the mean squared error (MSE):
+
+$$\frac{1}{n} \sum_{i=1}^n (\hat{y}_i - y_i)^2$$
+:::
+
+## Model Residuals
+
+**Model Residuals** are the "error" between the model simulations and the data.
+
+$$\underbrace{\mathbf{r}}_{\text{residuals}} = \overbrace{F(\mathbf{x}; \theta)}^{model} - \underbrace{\mathbf{y}}_{\text{data}}$$
+
+
+## Relationship of MSE to Normally-Distributed Residuals
+
+Suppose we assume independent normal residuals:
+
+
+
+
+# Formulating Models
+
+## How Do Global Sea Levels Respond to Warming?
+
+
+```{julia}
+#| label: fig-sealevel-data
+#| fig-cap: "Sea level data from CSIRO and temperature data from HadCRUT5."
+#| layout-ncol: 2
+#| echo: true
+#| code-fold: true
+
+# load sea-level data into a DataFrame
+sl_dat = DataFrame(CSV.File(joinpath(@__DIR__, "data", "sealevel", "CSIRO_Recons_gmsl_yr_2015.csv")))
+rename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with
+sl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year 
+sl_dat[!, :GMSLR] .-= mean(filter(row -> row.Year ∈ 1880:1900, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly
+
+# load temperature data
+temp_dat = DataFrame(CSV.File(joinpath(@__DIR__, "data", "climate", "HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv")))
+rename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with
+filter!(row -> row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for
+temp_normalize = mean(filter(row -> row.Year ∈ 1880:1900, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean
+temp_dat[!, :Temp] .-= temp_normalize
+temp_dat[!, :Lower] .-= temp_normalize
+temp_dat[!, :Upper] .-=  temp_normalize
+
+sl_plot = plot(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label="Observations", ylabel="(mm)", xlabel="Year", title="Sea Level Anomaly")
+plot!(sl_plot, size=(600, 450))
+
+temp_plot = plot(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label="Observations", ylabel="(°C)", xlabel="Year", title="Temperature")
+plot!(temp_plot, size=(600, 450))
+
+display(sl_plot)
+display(temp_plot)
+```
+
+## You Can Always Fit Models...
+
+:::: {.columns}
+::: {.column width=50%}
+Especially linear models with OLS!
+
+But not all models **are theoretically justifiablee**.
+:::
+::: {.column width=50%}
+![Ian Malcolm meme](memes/ian_malcolm_should_model.png)
+:::
+::::
+
+## How Do We Choose What To Model?
+
+![XKCD 2620](https://imgs.xkcd.com/comics/health_data.png)
+
+::: {.caption}
+Source: [XKCD 2620](https://xkcd.com/2620/)
+:::
+
+## Does Regressing SLR on Temperature Make Sense?
+
+Why might temperature exert an influence on sea levels?
+
+## Linear Regression Specification
+
+Standard assumption of independent normal residuals:
+
+:::: {.columns}
+::: {.column width=50%}
+$$
+\begin{align*}
+\text{SLR}_t &\sim \beta_0 + \beta_1 \text{x}_t + \varepsilon \\
+\varepsilon & \sim N(0, \sigma^2)
+\end{align*}
+$$
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-slr-temp-scatter
+#| fig-label: Scatterplot of temperature vs. GMSLR anomaly
+
+scatter(temp_dat[!, :Temp], sl_dat[!, :GMSLR], xlabel="Temperature Anomaly (°C)", ylabel="SLR Anomaly (mm)")
+plot!(size=(500, 500))
+```
+:::
+::::
+
+## OLS Estimate
+
+:::: {.columns}
+::: {.column width=50%}
+$$
+\begin{align*}
+\hat{\beta_1} &= \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2} \\
+&= 176 \text{mm}/^\circ \text{C} \\
+\hat{\beta_0} &= \bar{y} - \hat{\beta_1}\bar{x} = 27 \text{mm} \\
+\hat{\sigma} &= \sqrt{\frac{SSE}{n-1}} = 27 \text{mm}
+\end{align*}
+$$
+:::
+
+::: {.column width=50%}
+```{julia}
+#| label: fig-slr-ols-pred
+#| fig: OLS prediction (in red) of SLR vs. temperature
+
+x̄ = mean(temp_dat[!, :Temp])
+ȳ = mean(sl_dat[!, :GMSLR]) 
+β₁ = sum((temp_dat[!, :Temp] .- x̄) .* (sl_dat[!, :GMSLR] .- ȳ)) / sum((temp_dat[!, :Temp] .- x̄).^2)
+β₀ = ȳ - β₁ * x̄
+OLS_pred = β₀ .+ β₁ * temp_dat[!, :Temp]
+OLS_var = sum((sl_dat[!, :GMSLR] .- OLS_pred).^2) / (nrow(sl_dat) - 1)
+
+sl_plot_ols = scatter(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label="Observations", ylabel="(mm)", xlabel="Year", title="Sea Level Anomaly")
+plot!(sl_plot_ols, sl_dat[!, :Year], OLS_pred, color=:red)
+plot!(sl_plot_ols, size=(600, 450))
+
+```
+:::
+::::
+
+
+## Observations are Noisy
+
+- Imprecise measurements
+- Biased samples
+- Missing (unmodeled) mechanisms.
+
+## Think Generatively
+
+:::: {.columns}
+::: {.column width=50%}
+**Regressions** model expectations ("regression to the mean"), not the data.
+
+Adding an error model to the regression makes it **generative**.
+
+$$
+\begin{align*}
+y &\sim \beta_0 + \sum_i \beta_i x_i + \varepsilon \\
+\varepsilon &\sim N(0, \sigma^2)
+\end{align*}
+$$
+
+:::
+::: {.column width=50%}
+![Brain on Regression](memes/brain_on_regression.jpg){width=55%}
+
+::: {.caption}
+Source: Richard McElreath
+:::
+:::
+::::
+
+## Probability Models
+
+Generative models allow us to write down a probability model for the data, *e.g.*
+
+$$
+\begin{align*}
+y &\sim \beta_0 + \sum_i \beta_i x_i + \varepsilon \\
+\varepsilon &\sim N(0, \sigma^2) \\
+\Rightarrow &\bbox[yellow, 10px, border:5px solid red] {y \sim \N(\beta_0 + \sum_i \beta_i x_i, \sigma^2)}
+\end{align*}
+$$
+
+
+
+# Upcoming Schedule
+
+## Next Classes
+
+**Wednesday**: Bayesian Statistics
+
+**Next Week**: Temporal and Spatial Models and Errors
+
+## Assessments
+
+**Homework 1** due Friday (2/7).
+
+# References
+
+## References (Scroll for Full List)

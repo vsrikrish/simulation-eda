@@ -267,56 +267,6 @@ But not all models **are theoretically justifiablee**.
 :::
 ::::
 
-## How Do We Select Candidate Processes?
-
-![XKCD 2620](https://imgs.xkcd.com/comics/health_data.png)
-
-::: {.caption}
-Source: [XKCD 2620](https://xkcd.com/2620/)
-:::
-
-## Conceptual Process Model(s)
-
-:::: {.columns}
-
-::: {.column width=50%}
-```{dot}
-//| label: fig-causal-dag
-//| fig-cap: DAG for EWL
-//| fig-align: center
-//| fig-width: 4
-
-digraph D {
-    PDO [shape=diamond, color=gray, fontcolor=gray]
-    GMT [shape=diamond]
-    SST [shape=box, style=dashed, color=red, fontcolor=red]
-    TC [shape=box, style=dashed, color=red, fontcolor=red]
-    EWL [shape=circle]
-
-    PDO -> SST [color=gray]
-    GMT -> SST 
-    GMT -> TC
-    SST -> TC [color=red]
-    TC -> EWL
-    SST -> EWL
-}
-```
-:::
-
-::: {.column width=50%}
-::: {.fragment .fade-in}
-Candidate statistical relationships:
-
-- Null w/ Trend (Time &rightarrow; EWL)
-- Null (stationary EWL)
-- PDO &rightarrow; EWL
-- GMT &rightarrow; EWL
-- PDO + GMT &rightarrow; EWL
-
-:::
-:::
-
-::::
 
 
 ## Simulating from Statistical Model
@@ -387,27 +337,6 @@ One problem: the observations are just a single realization of a complex stochas
 The other problem: this model was fitted on the same data used to calculate the RMSE; those estimates are biased as a result.
 :::
 
-## From Process to Statistical Model
-
-To specify the **statistical models** for any of these models, need a **probability model** for $$p(\text{EWL} | \text{Covariates})$$
-
-This probability model will account for the sensitivity of EWL to the chosen covariates **as well as a residual model**:
-
-$$p(\text{EWL} | \text{Covariates}) = f(\text{Covariates}) + \omega(t).$$
-
-## Generative Model
-
-The combination of a probability model plus a joint parameter distribution over all relevant parameters gives us a **generative model**.
-
-We can estimate:
-
-- Model-based forecasts;
-- Causal effects;
-- Counterfactuals.
-
-::: {.notes}
-Probability theory lets us deduce logical implications of assumptions about stochastic data-generating processes. Given a fully specificed probability model, there is a lot we can do to check the model/understand future outcomes or impacts of interventions.
-:::
 
 ## Generative Model for EWL
 
