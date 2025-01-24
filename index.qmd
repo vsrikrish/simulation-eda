@@ -23,5 +23,5 @@ This class teaches data analysis with an emphasis on conceptual models for scien
 |                  |                                                                              |
 |------:|:-----------------------------------|
 |     **Lectures** | {{< var course.days >}} {{< var course.time >}}, {{< var course.location >}} |
-| **Office Hours** | {{< var course.office_hours >}}, {{< var instructor.office >}}               |
+| **Office Hours** | Instructor: {{< var course.office_hours >}}, {{< var instructor.office >}}, TA: {{< var course.ta_office_hours >}}, {{< var TA.office >}}               |
 |  **Assignments** | Due Fridays at 9pm on Gradescope.                                            |
