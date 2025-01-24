@@ -339,7 +339,7 @@ Quizzes will be assigned in Gradescope most weeks based on recently discussed co
 
 ### Literature Critique
 
-Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper analyzing the hypotheses and statistical choices. Students should feel free to select their own paper or can work with Prof. Srikrishnan to identify one of interest, but in all cases should discuss with Prof. Srikrishnan to ensure that the article is appropriate. The discussion paper will be due towards at the end of the semester.
+Students will select a peer-reviewed journal article related to an application of data analysis and will write a short discussion paper (2-3 pages) analyzing the hypotheses and statistical choices. Students should feel free to select their own paper or can work with Prof. Srikrishnan to identify one of interest, but in all cases should discuss with Prof. Srikrishnan to ensure that the article is appropriate. The discussion paper will be due towards at the end of the semester.
 
 ### Homework Assignments
 
@@ -369,6 +369,10 @@ The term project can be completed individually or in groups of 2. The deliverabl
 ```{julia}
 #| echo: false
 #| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
 
 using Dates
 using DataFrames
