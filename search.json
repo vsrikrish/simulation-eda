@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nHomework\n\n\n\n\n\n1\n1/22\nClass Introduction\n\n\n\n\n\n\n2\n1/27\nNull Hypothesis Testing and Statistical Significance\n\nLloyd & Oreskes (2018)\n\n\n\n\n\n1/29\nGenerative Probability Modeling Workflow\n\n\n\n\n\n\n3\n2/3\nProbability Fundamentals\n\n\n\n\n\n\n\n2/5\nBayesian Statistics\n\n\n\n\n\n\n4\n2/10\nSpatial and Temporal Models\n\n\n\n\n\n\n\n2/12\nModel Discrepancy and Measurement Error\n\n\n\n\n\n\n5\n2/17\nFebruary Break\n\n\n\n\n\n\n\n2/19\n\n\n\n\n\n\n\n6\n2/24\n\n\n\n\n\n\n\n\n2/26\n\n\n\n\n\n\n\n7\n3/3\n\n\n\n\n\n\n\n\n3/5\n\n\n\n\n\n\n\n8\n3/10\n\n\n\n\n\n\n\n\n3/12\n\n\n\n\n\n\n\n9\n3/17\n\n\n\n\n\n\n\n\n3/19\n\n\n\n\n\n\n\n10\n3/24\n\n\n\n\n\n\n\n\n3/26\n\n\n\n\n\n\n\n\n3/31\nSpring Break\n\n\n\n\n\n\n\n4/2\nSpring Break\n\n\n\n\n\n\n11\n4/7\n\n\n\n\n\n\n\n\n4/9\n\n\n\n\n\n\n\n12\n4/14\n\n\n\n\n\n\n\n\n4/16\n\n\n\n\n\n\n\n13\n4/21\n\n\n\n\n\n\n\n\n4/23\n\n\n\n\n\n\n\n14\n4/28\n\n\n\n\n\n\n\n\n4/30\n\n\n\n\n\n\n\n15\n5/5",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nHomework\n\n\n\n\n\n1\n1/22\nClass Introduction\n\n\n\n\n\n\n2\n1/27\nNull Hypothesis Testing and Statistical Significance\n\nLloyd & Oreskes (2018)\n\n\n\n\n\n1/29\nProbability Fundamentals\n\n\n\n\n\n\n3\n2/3\nProbability Models for Data\n\n\n\n\n\n\n\n2/5\nAutocorrelation and Time Series\n\n\n\n\n\n\n4\n2/10\nBayesian Statistics\n\n\n\n\n\n\n\n2/12\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n5\n2/17\nFebruary Break\n\n\n\n\n\n\n\n2/19\n\n\n\n\n\n\n\n6\n2/24\n\n\n\n\n\n\n\n\n2/26\n\n\n\n\n\n\n\n7\n3/3\n\n\n\n\n\n\n\n\n3/5\n\n\n\n\n\n\n\n8\n3/10\n\n\n\n\n\n\n\n\n3/12\n\n\n\n\n\n\n\n9\n3/17\n\n\n\n\n\n\n\n\n3/19\n\n\n\n\n\n\n\n10\n3/24\n\n\n\n\n\n\n\n\n3/26\n\n\n\n\n\n\n\n\n3/31\nSpring Break\n\n\n\n\n\n\n\n4/2\nSpring Break\n\n\n\n\n\n\n11\n4/7\n\n\n\n\n\n\n\n\n4/9\n\n\n\n\n\n\n\n12\n4/14\n\n\n\n\n\n\n\n\n4/16\n\n\n\n\n\n\n\n13\n4/21\n\n\n\n\n\n\n\n\n4/23\n\n\n\n\n\n\n\n14\n4/28\n\n\n\n\n\n\n\n\n4/30\n\n\n\n\n\n\n\n15\n5/5",
     "crumbs": [
       "Course Information",
       "Class Schedule"
@@ -639,20 +639,6 @@
     "text": "You Can Always Fit Models…\n\n\nEspecially linear models with OLS!\nBut not all models are theoretically justifiablee.\n\n\n\n\nIan Malcolm meme"
   },
   {
-    "objectID": "slides/lecture03-2-generative.html#how-do-we-select-candidate-processes",
-    "href": "slides/lecture03-2-generative.html#how-do-we-select-candidate-processes",
-    "title": "Generative Modeling",
-    "section": "How Do We Select Candidate Processes?",
-    "text": "How Do We Select Candidate Processes?\n\nXKCD 2620\nSource: XKCD 2620"
-  },
-  {
-    "objectID": "slides/lecture03-2-generative.html#conceptual-process-models",
-    "href": "slides/lecture03-2-generative.html#conceptual-process-models",
-    "title": "Generative Modeling",
-    "section": "Conceptual Process Model(s)",
-    "text": "Conceptual Process Model(s)\n\n\n\n\n\n\n\n\n\n\nD\n\n\n\nPDO\n\nPDO\n\n\n\nSST\n\nSST\n\n\n\nPDO-&gt;SST\n\n\n\n\n\nGMT\n\nGMT\n\n\n\nGMT-&gt;SST\n\n\n\n\n\nTC\n\nTC\n\n\n\nGMT-&gt;TC\n\n\n\n\n\nSST-&gt;TC\n\n\n\n\n\nEWL\n\nEWL\n\n\n\nSST-&gt;EWL\n\n\n\n\n\nTC-&gt;EWL\n\n\n\n\n\n\n\n\nFigure 2: DAG for EWL\n\n\n\n\n\n\n\nCandidate statistical relationships:\n\nNull w/ Trend (Time → EWL)\nNull (stationary EWL)\nPDO → EWL\nGMT → EWL\nPDO + GMT → EWL"
-  },
-  {
     "objectID": "slides/lecture03-2-generative.html#simulating-from-statistical-model",
     "href": "slides/lecture03-2-generative.html#simulating-from-statistical-model",
     "title": "Generative Modeling",
@@ -664,21 +650,7 @@
     "href": "slides/lecture03-2-generative.html#is-the-best-fit-sufficient",
     "title": "Generative Modeling",
     "section": "Is The Best Fit Sufficient?",
-    "text": "Is The Best Fit Sufficient?\n\n\nWhat information can we get from this:\nModel \\[EWL \\sim GEV(\\mu(t), \\sigma, \\xi),\\]\nwhere \\(\\mu(t) = a \\times x(t) + b\\) and the “best fit” is the median of the fitted GEV distribution.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Best (Median) fit for the EWLs.\n\n\n\n\n\n\nThese models are effectively indistinguishable from just the best fit without any consideration of uncertainty.\nOne problem: the observations are just a single realization of a complex stochastic process; some observations may be extremely unlikely, or there might be enough uncertainty that all of them are relatively probable. We can’t tell!\nThe other problem: this model was fitted on the same data used to calculate the RMSE; those estimates are biased as a result."
-  },
-  {
-    "objectID": "slides/lecture03-2-generative.html#from-process-to-statistical-model",
-    "href": "slides/lecture03-2-generative.html#from-process-to-statistical-model",
-    "title": "Generative Modeling",
-    "section": "From Process to Statistical Model",
-    "text": "From Process to Statistical Model\nTo specify the statistical models for any of these models, need a probability model for \\[p(\\text{EWL} | \\text{Covariates})\\]\nThis probability model will account for the sensitivity of EWL to the chosen covariates as well as a residual model:\n\\[p(\\text{EWL} | \\text{Covariates}) = f(\\text{Covariates}) + \\omega(t).\\]"
-  },
-  {
-    "objectID": "slides/lecture03-2-generative.html#generative-model",
-    "href": "slides/lecture03-2-generative.html#generative-model",
-    "title": "Generative Modeling",
-    "section": "Generative Model",
-    "text": "Generative Model\nThe combination of a probability model plus a joint parameter distribution over all relevant parameters gives us a generative model.\nWe can estimate:\n\nModel-based forecasts;\nCausal effects;\nCounterfactuals.\n\n\nProbability theory lets us deduce logical implications of assumptions about stochastic data-generating processes. Given a fully specificed probability model, there is a lot we can do to check the model/understand future outcomes or impacts of interventions."
+    "text": "Is The Best Fit Sufficient?\n\n\nWhat information can we get from this:\nModel \\[EWL \\sim GEV(\\mu(t), \\sigma, \\xi),\\]\nwhere \\(\\mu(t) = a \\times x(t) + b\\) and the “best fit” is the median of the fitted GEV distribution.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Best (Median) fit for the EWLs.\n\n\n\n\n\n\nThese models are effectively indistinguishable from just the best fit without any consideration of uncertainty.\nOne problem: the observations are just a single realization of a complex stochastic process; some observations may be extremely unlikely, or there might be enough uncertainty that all of them are relatively probable. We can’t tell!\nThe other problem: this model was fitted on the same data used to calculate the RMSE; those estimates are biased as a result."
   },
   {
     "objectID": "slides/lecture03-2-generative.html#generative-model-for-ewl",
@@ -692,14 +664,14 @@
     "href": "slides/lecture03-2-generative.html#predictive-distributions",
     "title": "Generative Modeling",
     "section": "Predictive Distributions",
-    "text": "Predictive Distributions\n\n\nThe goal of a generative model is to predict \\(p(f(\\tilde{y})\\) given a joint probability distribution over relevant parameters and covariates.\n\\[p(f(\\tilde{y}) | \\mathbf{y}) = \\int p(\\tilde{y} | \\theta) p(\\theta | \\tilde{y}) d\\theta.\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Prediction Interval for extreme water levels"
+    "text": "Predictive Distributions\n\n\nThe goal of a generative model is to predict \\(p(f(\\tilde{y})\\) given a joint probability distribution over relevant parameters and covariates.\n\\[p(f(\\tilde{y}) | \\mathbf{y}) = \\int p(\\tilde{y} | \\theta) p(\\theta | \\tilde{y}) d\\theta.\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Prediction Interval for extreme water levels"
   },
   {
     "objectID": "slides/lecture03-2-generative.html#benefits-of-using-whole-distribution",
     "href": "slides/lecture03-2-generative.html#benefits-of-using-whole-distribution",
     "title": "Generative Modeling",
     "section": "Benefits of Using Whole Distribution",
-    "text": "Benefits of Using Whole Distribution\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Comparison of 90% and 99% prediction intervals\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 5"
+    "text": "Benefits of Using Whole Distribution\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Comparison of 90% and 99% prediction intervals\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 4"
   },
   {
     "objectID": "slides/lecture03-2-generative.html#general-statistical-workflow",
@@ -1154,7 +1126,18 @@
     "href": "weeks/week02.html",
     "title": "Week 2 Information",
     "section": "",
-    "text": "Homework 1 due 2/7/25 by 9PM.",
+    "text": "Null Hypothesis Testing and Statistical Significance\nProbability Fundamentals",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week02.html#lectures",
+    "href": "weeks/week02.html#lectures",
+    "title": "Week 2 Information",
+    "section": "",
+    "text": "Null Hypothesis Testing and Statistical Significance\nProbability Fundamentals",
     "crumbs": [
       "Weeks",
       "Week 2"
@@ -1164,8 +1147,8 @@
     "objectID": "weeks/week02.html#homework",
     "href": "weeks/week02.html#homework",
     "title": "Week 2 Information",
-    "section": "",
-    "text": "Homework 1 due 2/7/25 by 9PM.",
+    "section": "Homework",
+    "text": "Homework\n\nHomework 1 due 2/7/25 by 9PM.",
     "crumbs": [
       "Weeks",
       "Week 2"
@@ -1289,11 +1272,39 @@
     "text": "Probability Fundamentals\n\nBayesian vs. Frequentist Interpretations\nDistributions reflect assumptions on probability of data.\nNormal distributions: “least informative” distribution for a given mean/variance.\nFit distributions by maximizing likelihood.\nCommunicating uncertainty: confidence vs. credible vs. predictive intervals."
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#conceptual-process-models",
-    "href": "slides/lecture03-1-probmodels.html#conceptual-process-models",
+    "objectID": "slides/lecture03-1-probmodels.html#fitting-models-to-data",
+    "href": "slides/lecture03-1-probmodels.html#fitting-models-to-data",
     "title": "Probability Models for Data",
-    "section": "Conceptual Process Model(s)",
-    "text": "Conceptual Process Model(s)\n\n\n\n\n\n\n\n\n\n\nD\n\n\n\nPDO\n\nPDO\n\n\n\nSST\n\nSST\n\n\n\nPDO-&gt;SST\n\n\n\n\n\nGMT\n\nGMT\n\n\n\nGMT-&gt;SST\n\n\n\n\n\nTC\n\nTC\n\n\n\nGMT-&gt;TC\n\n\n\n\n\nSST-&gt;TC\n\n\n\n\n\nEWL\n\nEWL\n\n\n\nSST-&gt;EWL\n\n\n\n\n\nTC-&gt;EWL\n\n\n\n\n\n\n\n\nFigure 1: DAG for EWL\n\n\n\n\n\n\n\nCandidate statistical relationships:\n\nNull w/ Trend (Time → EWL)\nNull (stationary EWL)\nPDO → EWL\nGMT → EWL\nPDO + GMT → EWL"
+    "section": "Fitting Models to Data",
+    "text": "Fitting Models to Data\nCalibration: Finding model parameters which “explain” or “fit” the data.\nIn other words, given:\n\nmodel \\(f(\\mathbf{x}; \\theta)\\)\ndata \\(\\mathbf{y}\\)\n\nwant to find model parameters \\(\\hat{\\theta}\\) to approximate \\(y\\)."
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#what-do-you-think-of-when-you-think-of-fitting-models",
+    "href": "slides/lecture03-1-probmodels.html#what-do-you-think-of-when-you-think-of-fitting-models",
+    "title": "Probability Models for Data",
+    "section": "What Do You Think Of When You Think of “Fitting” Models?",
+    "text": "What Do You Think Of When You Think of “Fitting” Models?\n\nOften this refers to minimizing some error metric, like the mean squared error (MSE):\n\\[\\frac{1}{n} \\sum_{i=1}^n (\\hat{y}_i - y_i)^2\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#model-residuals",
+    "href": "slides/lecture03-1-probmodels.html#model-residuals",
+    "title": "Probability Models for Data",
+    "section": "Model Residuals",
+    "text": "Model Residuals\nModel Residuals are the “error” between the model simulations and the data.\n\\[\\underbrace{\\mathbf{r}}_{\\text{residuals}} = \\overbrace{F(\\mathbf{x}; \\theta)}^{model} - \\underbrace{\\mathbf{y}}_{\\text{data}}\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#relationship-of-mse-to-normally-distributed-residuals",
+    "href": "slides/lecture03-1-probmodels.html#relationship-of-mse-to-normally-distributed-residuals",
+    "title": "Probability Models for Data",
+    "section": "Relationship of MSE to Normally-Distributed Residuals",
+    "text": "Relationship of MSE to Normally-Distributed Residuals\nSuppose we assume independent normal residuals:"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#how-do-global-sea-levels-respond-to-warming",
+    "href": "slides/lecture03-1-probmodels.html#how-do-global-sea-levels-respond-to-warming",
+    "title": "Probability Models for Data",
+    "section": "How Do Global Sea Levels Respond to Warming?",
+    "text": "How Do Global Sea Levels Respond to Warming?\n\nCode\n# load sea-level data into a DataFrame\nsl_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"sealevel\", \"CSIRO_Recons_gmsl_yr_2015.csv\")))\nrename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with\nsl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year \nsl_dat[!, :GMSLR] .-= mean(filter(row -&gt; row.Year ∈ 1880:1900, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly\n\n# load temperature data\ntemp_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"climate\", \"HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv\")))\nrename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with\nfilter!(row -&gt; row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for\ntemp_normalize = mean(filter(row -&gt; row.Year ∈ 1880:1900, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean\ntemp_dat[!, :Temp] .-= temp_normalize\ntemp_dat[!, :Lower] .-= temp_normalize\ntemp_dat[!, :Upper] .-=  temp_normalize\n\nsl_plot = plot(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\nplot!(sl_plot, size=(600, 450))\n\ntemp_plot = plot(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label=\"Observations\", ylabel=\"(°C)\", xlabel=\"Year\", title=\"Temperature\")\nplot!(temp_plot, size=(600, 450))\n\ndisplay(sl_plot)\ndisplay(temp_plot)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Sea level data from CSIRO and temperature data from HadCRUT5.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 1"
   },
   {
     "objectID": "slides/lecture03-1-probmodels.html#you-can-always-fit-models",
@@ -1303,18 +1314,32 @@
     "text": "You Can Always Fit Models…\n\n\nEspecially linear models with OLS!\nBut not all models are theoretically justifiablee.\n\n\n\n\nIan Malcolm meme"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#how-do-we-select-candidate-processes",
-    "href": "slides/lecture03-1-probmodels.html#how-do-we-select-candidate-processes",
+    "objectID": "slides/lecture03-1-probmodels.html#how-do-we-choose-what-to-model",
+    "href": "slides/lecture03-1-probmodels.html#how-do-we-choose-what-to-model",
     "title": "Probability Models for Data",
-    "section": "How Do We Select Candidate Processes?",
-    "text": "How Do We Select Candidate Processes?\n\nXKCD 2620\nSource: XKCD 2620"
+    "section": "How Do We Choose What To Model?",
+    "text": "How Do We Choose What To Model?\n\nXKCD 2620\nSource: XKCD 2620"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#generative-model",
-    "href": "slides/lecture03-1-probmodels.html#generative-model",
+    "objectID": "slides/lecture03-1-probmodels.html#does-regressing-slr-on-temperature-make-sense",
+    "href": "slides/lecture03-1-probmodels.html#does-regressing-slr-on-temperature-make-sense",
     "title": "Probability Models for Data",
-    "section": "Generative Model",
-    "text": "Generative Model\nThe combination of a probability model plus a joint parameter distribution over all relevant parameters gives us a generative model.\nWe can estimate:\n\nModel-based forecasts;\nCausal effects;\nCounterfactuals.\n\n\nProbability theory lets us deduce logical implications of assumptions about stochastic data-generating processes. Given a fully specificed probability model, there is a lot we can do to check the model/understand future outcomes or impacts of interventions."
+    "section": "Does Regressing SLR on Temperature Make Sense?",
+    "text": "Does Regressing SLR on Temperature Make Sense?\nWhy might temperature exert an influence on sea levels?"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#linear-regression-specification",
+    "href": "slides/lecture03-1-probmodels.html#linear-regression-specification",
+    "title": "Probability Models for Data",
+    "section": "Linear Regression Specification",
+    "text": "Linear Regression Specification\nStandard assumption of independent normal residuals:\n\n\n\\[\n\\begin{align*}\n\\text{SLR}_t &\\sim \\beta_0 + \\beta_1 \\text{x}_t + \\varepsilon \\\\\n\\varepsilon & \\sim N(0, \\sigma^2)\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#ols-estimate",
+    "href": "slides/lecture03-1-probmodels.html#ols-estimate",
+    "title": "Probability Models for Data",
+    "section": "OLS Estimate",
+    "text": "OLS Estimate\n\n\n\\[\n\\begin{align*}\n\\hat{\\beta_1} &= \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2} \\\\\n&= 176 \\text{mm}/^\\circ \\text{C} \\\\\n\\hat{\\beta_0} &= \\bar{y} - \\hat{\\beta_1}\\bar{x} = 27 \\text{mm} \\\\\n\\hat{\\sigma} &= \\sqrt{\\frac{SSE}{n-1}} = 27 \\text{mm}\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3"
   },
   {
     "objectID": "slides/lecture03-1-probmodels.html#observations-are-noisy",
@@ -1336,13 +1361,6 @@
     "title": "Probability Models for Data",
     "section": "Probability Models",
     "text": "Probability Models\nGenerative models allow us to write down a probability model for the data, e.g.\n\\[\n\\begin{align*}\ny &\\sim \\beta_0 + \\sum_i \\beta_i x_i + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2) \\\\\n\\Rightarrow &\\bbox[yellow, 10px, border:5px solid red] {y \\sim \\N(\\beta_0 + \\sum_i \\beta_i x_i, \\sigma^2)}\n\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#model-residuals",
-    "href": "slides/lecture03-1-probmodels.html#model-residuals",
-    "title": "Probability Models for Data",
-    "section": "Model Residuals",
-    "text": "Model Residuals\nModel Residuals are the “error” between the model simulations and the data.\n\\[\\underbrace{\\mathbf{r}}_{\\text{residuals}} = \\overbrace{F(\\mathbf{x}; \\theta)}^{model} - \\underbrace{\\mathbf{y}}_{\\text{data}}\\]"
   },
   {
     "objectID": "slides/lecture03-1-probmodels.html#next-classes",
