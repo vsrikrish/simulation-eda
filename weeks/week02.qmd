@@ -2,6 +2,11 @@
 title: "Week 2 Information"
 ---
 
+## Lectures
+
+- [Null Hypothesis Testing and Statistical Significance](slides/lecture02-1-nhst.qmd)
+- [Probability Fundamentals](slides/lecture02-2-probreview.qmd)
+
 ## Homework
 
 - [Homework 1](../hw/hw01/hw01.qmd) due 2/7/25 by 9PM.
