@@ -90,42 +90,7 @@ default(
 - Fit distributions by maximizing likelihood.
 - Communicating uncertainty: confidence vs. credible vs. predictive intervals.
 
-# Model Calibration
-
-## Fitting Models to Data
-
-**Calibration**: Finding model parameters which "explain" or "fit" the data.
-
-In other words, given:
-
-- model $f(\mathbf{x}; \theta)$
-- data $\mathbf{y}$
-  
-want to find model parameters $\hat{\theta}$ to approximate $y$.
-
-## What Do You Think Of When You Think of "Fitting" Models?
-
-::: {.fragment .fade-in}
-Often this refers to minimizing some error metric, like the mean squared error (MSE):
-
-$$\frac{1}{n} \sum_{i=1}^n (\hat{y}_i - y_i)^2$$
-:::
-
-## Model Residuals
-
-**Model Residuals** are the "error" between the model simulations and the data.
-
-$$\underbrace{\mathbf{r}}_{\text{residuals}} = \overbrace{F(\mathbf{x}; \theta)}^{model} - \underbrace{\mathbf{y}}_{\text{data}}$$
-
-
-## Relationship of MSE to Normally-Distributed Residuals
-
-Suppose we assume independent normal residuals:
-
-
-
-
-# Formulating Models
+# Modeling Sea Level Rise
 
 ## How Do Global Sea Levels Respond to Warming?
 
@@ -162,30 +127,25 @@ display(sl_plot)
 display(temp_plot)
 ```
 
-## You Can Always Fit Models...
-
-:::: {.columns}
-::: {.column width=50%}
-Especially linear models with OLS!
-
-But not all models **are theoretically justifiablee**.
-:::
-::: {.column width=50%}
-![Ian Malcolm meme](memes/ian_malcolm_should_model.png)
-:::
-::::
-
-## How Do We Choose What To Model?
-
-![XKCD 2620](https://imgs.xkcd.com/comics/health_data.png)
-
-::: {.caption}
-Source: [XKCD 2620](https://xkcd.com/2620/)
-:::
-
 ## Does Regressing SLR on Temperature Make Sense?
 
 Why might temperature exert an influence on sea levels?
+
+## Processes Contributing to SLR
+
+![Sea Level Processes](figures/sea-processes.png)
+
+::: {.caption}
+Source: @Milne2009-um
+:::
+
+## Why Model "Total" SLR?
+
+![Sea Level Budget](figures/slr-budget.png)
+
+::: {.caption}
+Source: @Fox-Kemper2021-ni
+:::
 
 ## Linear Regression Specification
 
@@ -245,20 +205,36 @@ plot!(sl_plot_ols, size=(600, 450))
 :::
 ::::
 
+## You Can Always Fit Models...
 
-## Observations are Noisy
+:::: {.columns}
+::: {.column width=50%}
+Especially linear models with OLS!
 
-- Imprecise measurements
-- Biased samples
-- Missing (unmodeled) mechanisms.
+But not all models **are theoretically justifiablee**.
+:::
+::: {.column width=50%}
+![Ian Malcolm meme](memes/ian_malcolm_should_model.png)
+:::
+::::
+
+## How Do We Choose What To Model?
+
+![XKCD 2620](https://imgs.xkcd.com/comics/health_data.png)
+
+::: {.caption}
+Source: [XKCD 2620](https://xkcd.com/2620/)
+:::
+
+# A "Semi-Empirical" Model
 
 ## Think Generatively
 
 :::: {.columns}
 ::: {.column width=50%}
-**Regressions** model expectations ("regression to the mean"), not the data.
+**Regressions model expectations** ("regression to the mean"), not the data.
 
-Adding an error model to the regression makes it **generative**.
+But can we think more carefully about the *nature* of the relationship between temperature and SLR?
 
 $$
 \begin{align*}
@@ -276,6 +252,55 @@ Source: Richard McElreath
 :::
 :::
 ::::
+
+# Model Calibration
+
+## Fitting Models to Data
+
+**Calibration**: Finding model parameters which "explain" or "fit" the data.
+
+In other words, given:
+
+- model $f(\mathbf{x}; \theta)$
+- data $\mathbf{y}$
+  
+want to find model parameters $\hat{\theta}$ to approximate $y$.
+
+## What Do You Think Of When You Think of "Fitting" Models?
+
+::: {.fragment .fade-in}
+Often this refers to minimizing some error metric, like the mean squared error (MSE):
+
+$$\frac{1}{n} \sum_{i=1}^n (\hat{y}_i - y_i)^2$$
+:::
+
+## Model Residuals
+
+**Model Residuals** are the "error" between the model simulations and the data.
+
+$$\underbrace{\mathbf{r}}_{\text{residuals}} = \overbrace{F(\mathbf{x}; \theta)}^{model} - \underbrace{\mathbf{y}}_{\text{data}}$$
+
+
+## Relationship of MSE to Normally-Distributed Residuals
+
+Suppose we assume independent normal residuals:
+
+
+
+
+
+
+
+
+
+
+## Observations are Noisy
+
+- Imprecise measurements
+- Biased samples
+- Missing (unmodeled) mechanisms.
+
+
 
 ## Probability Models
 
