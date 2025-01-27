@@ -253,6 +253,16 @@ Source: Richard McElreath
 :::
 ::::
 
+## Revisiting SLR Processes
+
+![Sea Level Processes](figures/sea-processes.png)
+
+::: {.caption}
+Source: @Milne2009-um
+:::
+
+## 
+
 # Model Calibration
 
 ## Fitting Models to Data
@@ -283,24 +293,56 @@ $$\underbrace{\mathbf{r}}_{\text{residuals}} = \overbrace{F(\mathbf{x}; \theta)}
 
 ## Relationship of MSE to Normally-Distributed Residuals
 
-Suppose we assume independent normal residuals:
+**Claim**: Minimizing the (R)MSE is the same as maximizing likelihood assuming *independent and identically-normally-distributed* residuals (with known variance).
+
+$$
+\begin{gather*}
+\mathbf{y} = F(\mathbf{x}) - \mathbf{r} \\
+r_i \overset{\text{i.i.d.}}{\sim} \mathcal{N}(0, \sigma)
+\end{gather*}
+$$
 
 
+## Likelihood of Normal Residuals
 
+Data Probability Model: 
 
+$$y_i \sim \mathcal{N}(F(x_i), \sigma)$$
 
+::: {.fragment .fade-in}
+$$\mathcal{L}(\theta | \mathbf{y}; F) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi}} \exp(-\frac{y_i - F(x_i)^2}{2\sigma^2})$$
+:::
 
+::: {.fragment .fade-in}
 
+$$\log \mathcal{L}(\theta | \mathbf{y}; F) = \sum_{i=1}^n \left[\log \frac{1}{\sqrt{2\pi}} - \frac{1}{2\sigma^2}(y_i - F(x_i))^2 \right]$$
 
+:::
 
+## {#simplifying-log-likelihood data-menu-title="Simplifying the Log Likelihood"}
 
-## Observations are Noisy
+$$
+\begin{align}
+\log \mathcal{L}(\theta | \mathbf{y}, F) &= \sum_{i=1}^n \left[\log \frac{1}{\sqrt{2\pi}} - \frac{1}{2\sigma^2}(y_i - F(x_i))  ^2 \right] \\
+&= n \log \frac{1}{\sqrt{2\pi}} - \frac{1}{2\sigma^2} \sum_{i=1}^n (y_i - F(x_i))^2
+\end{align}
+$$
 
-- Imprecise measurements
-- Biased samples
-- Missing (unmodeled) mechanisms.
+## {#simplifying-constants-ignore data-menu-title="Simplifying by Ignoring Constants"}
 
+Ignoring constants (including $\sigma$):
 
+$$\log \mathcal{L}(\theta | \mathbf{y}, F) \propto -\sum_{i=1}^n (y_i - F(x_i))^2.$$
+
+::: {.fragment .fade-in}
+Maximizing $f(x)$ is equivalent to minimizing $-f(x)$:
+
+$$
+- \log \mathcal{L}(\theta | \mathbf{y}, F) \propto \sum_{i=1}^n (y_i - F(x_i))^2 = \text{MSE}
+$$
+:::
+
+# Probability Models for Data
 
 ## Probability Models
 
@@ -313,6 +355,7 @@ y &\sim \beta_0 + \sum_i \beta_i x_i + \varepsilon \\
 \Rightarrow &\bbox[yellow, 10px, border:5px solid red] {y \sim \N(\beta_0 + \sum_i \beta_i x_i, \sigma^2)}
 \end{align*}
 $$
+
 
 
 
