@@ -1,10 +1,10 @@
 ---
-title: "Generative Modeling"
-subtitle: "Lecture 03"
+title: "Time Series"
+subtitle: "Lecture 05"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
 institution: "Cornell University"
-date: "January 29, 2024"
+date: "February 05, 2025"
 format:
     revealjs:
         slide-number: c/t
@@ -82,411 +82,43 @@ default(
 ```
 
 
-# Model Selection as Hypothesis Testing
+# Time Series
 
-## Garden of Forking Data
-
-:::: {.columns}
-::: {.column width=70%}
-Note several uncertainties relevant to data:
-
-1. Underlying causal model;
-2. Translation into the statistical model;
-3. Model parameter(s);
-4. Stochasticity (what other data could have been observed?)
-
-:::
-
-::: {.column width=30%}
-![Garden of Forking Paths by Borges](https://upload.wikimedia.org/wikipedia/en/c/c9/ElJard%C3%ADnDeSenderosQueSeBifurcan.jpg)
-
-::: {.caption}
-Source: [AbeBooks](http://pictures.abebooks.com/HUNERSDORFF/764795878.jpg) via [Wikipedia](https://en.wikipedia.org/w/index.php?curid=31747935)
-:::
-:::
-::::
-
-::: {.notes}
-Ultimately, we want to understand the relationship between our modeled process causes and the estimand. But our models are always approximations and data is typically sparse. There are many different data-generating processes which are consistent to varying degrees with the data.
-
-The other important point: **do not overfit to the existing data**. We want to learn from data, but the data is just one realization of the underlying stochastic process.
-:::
-
-
-## Model Assessment Through Simulation
-
-Given **generative** models (hypotheses):
-
-1. Calibrate models under different assumptions;
-2. Simulate realizations from those models;
-3. Compute the distribution of the relevant statistic $S$ from these realizations;
-4. Assess which distribution is most consistent with the observed quantity.
-
-::: {.notes}
-Hopefully last lecture made it clear that NHST actually says nothing about the validity of a given alternative hypothesis, only the probability of seeing the data conditional on the null model. If the null is rejected...not much more can be said about a given alternative.
-
-:::
-
-## Advantages of Simulation for "Testing"
-
-- More structural freedom (don't need to write down the sampling distribution of $S$ in closed form);
-- Don't need to set up a dichotomous "null vs alternative" test;
-- Models can reflect more nuanced hypotheses about data generating processes.
-
-::: {.notes}
-By "generative" model I mean models which facilitate simulation of synthetic or pseudo-datasets. We'll discuss this more later today.
-
-The trick is in setting up a generative model; not all statistical models are generative.
-:::
-
-## How Do We Assess Models For Selection?
-
-Generally, through **predictive performance**: how probable is some data (out-of-sample or the calibration dataset) if we assume the data-generating process associated with the model?
-
-But there are also other metrics (RMSE, R^2^) which capture different types of performance.
-
-# Generative Models
-
-## Data-Generating Processes
-
-Generative models produce stochastic, counterfactual simulations of data (**pseudo-data**, **synthetic data**, etc).
-
-This includes:
-
-- Modeled process;
-- "Error"
-  - Model-data discrepancy
-  - Measurement uncertainties.
-
-::: {.notes}
-There are many different ways you can define generative modeling: I'm going to use the term to refer to a model which is capable of replicating a data-generating process, so there should be some way to simulate the hypothesized/modeled trend as well as an error process which accounts for the model-data discrepancy (more on this later).
-:::
-
-## Constructing Generative Models
-
-1. Identify estimand of interest;
-2. Develop process/mechanistic (causal) model or framework;
-3. Build statistical model based on 1 & 2;
-4. Simulate from 3 to validate based on 2 and/or to analyze real data.
-
-## Generative Models for Tide Gauge Data
+## Time Series and Environmental Data
 
 :::: {.columns}
 ::: {.column width=50%}
+Many environmental datasets involve **time series**: repeated observations over time:
 
-::: {.incremental}
-1. What are we interesting in estimating?
-2. What are candidate process models?
-3. How do we translate these to statistical models?
-4. How do we calibrate and simulate from these models?
-:::
+$$X = \{X_t, X_{t+h}, X_{t+2h}, \ldots, X_{t+nh}}$$ 
+
+More often: ignore sampling time in notation, 
+
+$$X = \{X_1, X_2, X_3, \ldots, X_n}$$ 
 
 :::
 ::: {.column width=50%}
 ```{julia}
-#| output: true
-#| echo: true
-#| code-fold: true
-#| code-overflow: wrap
-#| fig-align: center
-#| label: fig-surge-data
-#| fig-cap: Annual maxima surge data from the San Francisco, CA tide gauge.
+#| label: fig-lynx-ts
+#| fig-cap: Example of time series: trapped lynx populations in Canada.
 
-# load SF tide gauge data
-# read in data and get annual maxima
-function load_data(fname)
-    date_format = DateFormat("yyyy-mm-dd HH:MM:SS")
-    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data
-    df = @chain fname begin
-        CSV.read(DataFrame; header=false)
-        rename("Column1" => "year", "Column2" => "month", "Column3" => "day", "Column4" => "hour", "Column5" => "gauge")
-        # need to reformat the decimal date in the data file
-        @transform :datetime = DateTime.(:year, :month, :day, :hour)
-        # replace -99999 with missing
-        @transform :gauge = ifelse.(abs.(:gauge) .>= 9999, missing, :gauge)
-        select(:datetime, :gauge)
-    end
-    return df
-end
-
-function load_pdo(fname)
-    # This uses the DataFramesMeta.jl package, which makes it easy to string together commands to load and process data
-    df = CSV.read(fname, DataFrame, delim=" ", ignorerepeated=true, header=2)
-    # take yearly average
-    @transform!(df, :PDO = mean(AsTable(names(df)[2:13])))
-    @select!(df, $[:Year, :PDO])
-    @rsubset!(df, :Year != 2023)
-    return df
-end
-
-dat = load_data("data/surge/h551.csv")
-
-# detrend the data to remove the effects of sea-level rise and seasonal dynamics
-ma_length = 366
-ma_offset = Int(floor(ma_length/2))
-moving_average(series,n) = [mean(@view series[i-n:i+n]) for i in n+1:length(series)-n]
-dat_ma = DataFrame(datetime=dat.datetime[ma_offset+1:end-ma_offset], residual=dat.gauge[ma_offset+1:end-ma_offset] .- moving_average(dat.gauge, ma_offset))
-
-# group data by year and compute the annual maxima
-dat_ma = dropmissing(dat_ma) # drop missing data
-dat_annmax = combine(dat_ma -> dat_ma[argmax(dat_ma.residual), :], groupby(transform(dat_ma, :datetime => x->year.(x)), :datetime_function))
-delete!(dat_annmax, nrow(dat_annmax)) # delete 2023; haven't seen much of that year yet
-rename!(dat_annmax, :datetime_function => :Year)
-select!(dat_annmax, [:Year, :residual])
-dat_annmax.residual = dat_annmax.residual / 1000 # convert to m
-
-# make plots
-p1 = scatter(
-    dat_annmax.Year,
-    dat_annmax.residual;
-    xlabel="Year",
-    ylabel="Ann. Max. Residual (m)",
-    label=false,
-    marker=:circle,
-    markersize=5,
-    color=:black,
-    legend=:outerbottom)
-
-n = nrow(dat_annmax)
-
-plot!(p1, size=(600, 600))
+lh_obs = DataFrame(CSV.File("data/predatorprey/Lynx_Hare.csv"))
+plot(lh_obs[!, :Year], lh_obs[!, :Lynx], xlabel="Year", ylabel="Lynx Pelts", markersize=5, markershape=:circle, markercolor=:black, color=:grey, linewidth=3, legend=false)
+plot!(size=(500, 500))
 ```
 :::
 ::::
 
-## You Can Always Fit Models...
+## When Do We Care About Time Series?
 
-:::: {.columns}
-::: {.column width=50%}
-Especially linear models with OLS!
+**History or sequencing of the data matters**
 
-But not all models **are theoretically justifiablee**.
-:::
-::: {.column width=50%}
-![Ian Malcolm meme](memes/ian_malcolm_should_model.png)
-:::
-::::
+$p(y_t) = f(y_1, \ldots, y_{t-1})$
 
 
+## Stationarity
 
-## Simulating from Statistical Model
-
-Sample $$\text{EWL}^\text{rep}_i \sim p(\text{EWL} | \text{Covariates}).$$
-
-Then we can calculate a distribution of our estimand(s) of interest from these samples.
-
-## Is The Best Fit Sufficient?
-
-:::: {.columns}
-::: {.column width=50%}
-
-What information can we get from this:
-
-Model $$EWL \sim GEV(\mu(t), \sigma, \xi),$$
-
-where $\mu(t) = a \times x(t) + b$ and the "best fit" is the median of the fitted GEV distribution.
-:::
-
-::: {.column width=50%}
-
-```{julia}
-#| label: fig-best-fit
-#| fig-cap: Best (Median) fit for the EWLs.
-
-# load PDO data
-pdo = load_pdo("data/surge/ersst.v5.pdo.dat")
-# subset for years that match the tide gauge data
-years = dat_annmax[!, :Year]
-dat_annmax.pdo = @rsubset(pdo, :Year in years).PDO
-
-# load GMT data
-temps = CSV.read("data/surge/HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv", DataFrame, delim=",")
-dat_annmax.gmt = @rsubset(temps, :Time in years)[!, 2]
-
-# set colors for each model
-colors = [colorant"rgb(221, 170, 51)", colorant"rgb(187, 85, 102)", colorant"rgb(0, 68, 136)"]
-
-# plot time regression best fit
-model_null = gevfit(dat_annmax, :residual, locationcovid=[:Year])
-μ = model_null.θ̂[1] .+ model_null.θ̂[2] * dat_annmax[!, :Year]
-pred_null = quantile.(GeneralizedExtremeValue.(μ, exp(model_null.θ̂[3]), model_null.θ̂[4]), [0.5])
-plot!(p1, dat_annmax.Year, pred_null, linewidth=3, label="Best Fit (Null w/ Trend)", color=colors[1])
-
-# plot PDO regression best fit
-model_pdo = gevfit(dat_annmax, :residual, locationcovid=[:pdo])
-μ = model_pdo.θ̂[1] .+ model_pdo.θ̂[2] * dat_annmax[!, :pdo]
-pred_pdo = quantile.(GeneralizedExtremeValue.(μ, exp(model_pdo.θ̂[3]), model_pdo.θ̂[4]), [0.5])
-plot!(p1, dat_annmax.Year, pred_pdo, linewidth=3, label="Best Fit (PDO)", color=colors[2])
-
-# plot GMT regression best fit
-model_gmt = gevfit(dat_annmax, :residual, locationcovid=[:gmt])
-μ = model_gmt.θ̂[1] .+ model_gmt.θ̂[2] * dat_annmax[!, :gmt]
-pred_gmt = quantile.(GeneralizedExtremeValue.(μ, exp(model_gmt.θ̂[3]), model_gmt.θ̂[4]), [0.5])
-plot!(p1, dat_annmax.Year, pred_gmt, linewidth=3, label="Best Fit (GMT)", color=colors[3])
-
-plot!(size=(600, 700))
-```
-:::
-::::
-
-::: {.notes}
-These models are effectively indistinguishable from just the best fit without any consideration of uncertainty.
-
-One problem: the observations are just a single realization of a complex stochastic process; some observations may be extremely unlikely, or there might be enough uncertainty that all of them are relatively probable. We can't tell!
-
-The other problem: this model was fitted on the same data used to calculate the RMSE; those estimates are biased as a result.
-:::
-
-
-## Generative Model for EWL
-
-In this case:
-
-$$\begin{align*}
-EWL &\sim GEV(\mu(t), \sigma, \xi) \\
-\mu(t) &= a \times x(t) + b.
-\end{align*}
-$$
-
-- Need to specify distributions for $a, b, \sigma, \xi$: many options for this (will discuss in a few weeks).
-- Ideally want to specify **joint** distributions to account for correlations.
-
-
-## Predictive Distributions
-
-:::: {.columns}
-::: {.column width=50%}
-The goal of a generative model is to predict $p(f(\tilde{y})$ given a joint probability distribution over relevant parameters and covariates.
-
-$$p(f(\tilde{y}) | \mathbf{y}) = \int p(\tilde{y} | \theta) p(\theta | \tilde{y}) d\theta.$$
-:::
-
-::: {.column width=50%}
-```{julia}
-#| echo: false
-#| code-fold: true
-#| label: fig-prediction-interval
-#| fig-cap: Prediction Interval for extreme water levels
-
-# bootstrap and re-fit model, then generate simulated replicates 
-function bootstrap_replicates(dat, auxid, nboot)
-    # cosntruct a bootstrap replicate, fit model, and simulate
-    boot_sim = zeros(nboot, nrow(dat))
-    # fit model to data
-    model_out = gevfit(dat, :residual, locationcovid=[auxid])
-    for i = 1:nboot
-        # re-sample residuals, fit to model prediction, and refit
-        μ = model_out.θ̂[1] .+ model_out.θ̂[2] * dat[!, auxid]
-        boot_resid = rand.(GeneralizedExtremeValue.(μ, exp(model_out.θ̂[3]), model_out.θ̂[4]))
-        model_boot = gevfit(DataFrame(residual=boot_resid, aux=dat[!, auxid]), :residual, locationcovid=[:aux])
-        boot_sim[i, :] = rand.(GeneralizedExtremeValue.(model_boot.θ̂[1] .+ model_boot.θ̂[2] * dat[!, auxid], exp(model_boot.θ̂[3]), model_boot.θ̂[4]))
-    end
-    return boot_sim
-end
-
-# get bootstrap replicates for each model
-boot_null = bootstrap_replicates(dat_annmax, :Year, 10_000)
-boot_pdo = bootstrap_replicates(dat_annmax, :pdo, 10_000)
-boot_gmt = bootstrap_replicates(dat_annmax, :gmt, 10_000)
-q_null = mapslices(col -> quantile(col, [0.005, 0.05, 0.5, 0.95, 0.995]), boot_null; dims=1)
-q_pdo = mapslices(col -> quantile(col, [0.005, 0.05, 0.5, 0.95, 0.995]), boot_pdo; dims=1)
-q_gmt = mapslices(col -> quantile(col, [0.005, 0.05, 0.5, 0.95, 0.995]), boot_gmt; dims=1)
-
-# plot dat and predictive distributions
-p1 = scatter(
-    dat_annmax.Year,
-    dat_annmax.residual;
-    xlabel="Year",
-    ylabel="Ann. Max. Residual (m)",
-    label=false,
-    marker=:circle,
-    markersize=5,
-    color=:black,
-    legend=:outerbottom)
-
-plot!(dat_annmax.Year, q_null[3, :], ribbon=(q_null[3, :] - q_null[2, :], q_null[4, :] - q_null[3, :]), color=colors[1], linewidth=3, fillalpha=0.2, label="Null w/ Trend")
-plot!(dat_annmax.Year, q_pdo[3, :], ribbon=(q_pdo[3, :] - q_pdo[2, :], q_pdo[4, :] - q_pdo[3, :]), color=colors[2], linewidth=3, fillalpha=0.2, label="PDO")
-plot!(dat_annmax.Year, q_gmt[3, :], ribbon=(q_gmt[3, :] - q_gmt[2, :], q_gmt[4, :] - q_gmt[3, :]), color=colors[3], linewidth=3, fillalpha=0.2, label="GMT")
-plot!(size=(600, 700))
-```
-:::
-::::
-
-## Benefits of Using Whole Distribution
-
-```{julia}
-#| label: fig-compare-ci
-#| fig-cap: Comparison of 90% and 99% prediction intervals
-#| layout-ncol: 2
-
-title!(p1, "95% Prediction Intervals")
-display(p1)
-p2 = scatter(
-    dat_annmax.Year,
-    dat_annmax.residual;
-    xlabel="Year",
-    ylabel="Ann. Max. Residual (m)",
-    label=false,
-    marker=:circle,
-    markersize=5,
-    color=:black,
-    legend=:outerbottom)
-
-plot!(dat_annmax.Year, q_null[3, :], ribbon=(q_null[3, :] - q_null[1, :], q_null[5, :] - q_null[3, :]), color=colors[1], linewidth=3, fillalpha=0.2, label="Null w/ Trend")
-plot!(dat_annmax.Year, q_pdo[3, :], ribbon=(q_pdo[3, :] - q_pdo[1, :], q_pdo[5, :] - q_pdo[3, :]), color=colors[2], linewidth=3, fillalpha=0.2, label="PDO")
-plot!(dat_annmax.Year, q_gmt[3, :], ribbon=(q_gmt[3, :] - q_gmt[1, :], q_gmt[5, :] - q_gmt[3, :]), color=colors[3], linewidth=3, fillalpha=0.2, label="GMT")
-plot!(size=(600, 700))
-title!(p2, "99% Prediction Intervals")
-display(p2)
-```
-
-## General Statistical Workflow
-
-:::: {.columns}
-::: {.column width=50%}
-1. Fit/calibrate statistical model to data;
-2. Check plausibility of 2;
-3. Simulate replications from 1;
-4. Analyze 3 and/or compare to data.
-
-:::
-::: {.column width=50%}
-![Tests vs. Generative Meme](memes/generative_vs_tests.png)
-:::
-::::
-
-::: {.notes}
-Note that there is a connection here to NHST: we can compare the probability of seeing as extreme of a test statistic under an appropriate null model.
-
-We just aren't bound to test statistics chosen for computational convenience.
-
-We can also discuss how much better the alternative(s) are: they might all do poorly! In this case, all of these models have very similar probabilities of seeing data at least as extreme.
-:::
-
-# Key Points
-
-## Model Specification and Uncertainty
-
-- Many different sources of uncertainty relevant to estimation
-- Can fit an almost infinite numbers of models: **but should we?**
-- Valuable to think causally when formulating null and alternative data-generating processes.
-- Simulation from models as an approach to estimating "significance" (**better: evidence**).
-
-## Generative Models
-
-- Allows us to apply probability theory to deduce logical implications of hypotheses.
-- Need a **joint probability distribution** over the model parameters
-- This includes parameters for the model residuals.
-- These models can be complex: simulation can be more straightforward than "clever" statistical procedures.
-
-::: {.notes}
-Cleverness is overrated: it's not transparent and not often extensible.
-
-Simulation from a fully specificed probability model is not clever but is completely transparent.
-
-Remember: typically better to let a computer do brute force work than spend a ton of time of human brainpower to get to the same place.
-:::
-
+For independent data $y = \{y_i\}$, 
 
 # Upcoming Schedule
 
