@@ -234,7 +234,10 @@ Source: [XKCD 2620](https://xkcd.com/2620/)
 ::: {.column width=50%}
 **Regressions model expectations** ("regression to the mean"), not the data.
 
-But can we think more carefully about the *nature* of the relationship between temperature and SLR?
+Want to split probability model into two parts:
+
+* Influences/expectations (**generative**);
+* Modeling errors/stochastic components (**residual**).
 
 $$
 \begin{align*}
@@ -252,6 +255,8 @@ Source: Richard McElreath
 :::
 :::
 ::::
+
+
 
 ## Revisiting SLR Processes
 

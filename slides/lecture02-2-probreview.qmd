@@ -86,14 +86,16 @@ default(
 ## Null Hypothesis Significance Testing
 
 - Binary "significant"/"non-significant" decision framework;
-- Accept or reject null hypothesis $H_0$ based on p-value of test statistic;
-- "Typical" statistical models for $H_0$ often chosen out of computational convenience
-- **There be dragons**: Multiple comparisons, lack of statistical power, reading rejection of $H_0$ as acceptance of alternative $H$
+- Accept or reject null hypothesis $\mathcal{H}_0$ based on p-value of test statistic (relative to significance level $\alpha$);
+- "Typical" statistical models for $\mathcal{H}_0$ often chosen out of computational convenience
+- **There be dragons**: Multiple comparisons, lack of statistical power, reading rejection of $\mathcal{H}_0$ as acceptance of alternative $\mathcal{H}$
 
-## Generative Modeling
+## What NHST Means (and Doesn't)
 
-- **Generative model**: Fully specify data generating process with joint probability distribution over parameters
-- Simulation lets us construct predictive distributions for further analysis.
+- **Rejection of $\mathcal{H}_0$ does not mean $\mathcal{H}$ is true**
+- Not rejecting $\mathcal{H}_0$ does not mean $\mathcal{H}$ is false.
+- Says nothing about $p(\mathcal{H}_0 | y)$
+- "Simply" a measure of surprise at seeing data under null model.
 
 # Probability "Review"
 
@@ -175,7 +177,6 @@ The third is a generalization of the definition of independent events to sets of
 
 ## But What, Like, **Is** Probability?
 
-::: {.fragment .fade-in}
 :::: {.columns}
 ::: {.column width=50%}
 Frequentist vs. Bayesian: different interpretations with some different methods and formalisms.
@@ -188,21 +189,20 @@ We will freely borrow from each school depending on the purpose and goal of an a
 
 :::
 ::::
-:::
 
 ## Probability Distributions
 
 Distributions are mathematical representations of probabilities over a range of possible outcomes.
 
-$$x \to \mathbb{P}_{\color{green}\nu}[x] = p_{\color{green}\nu}\left(x | {\color{purple}\theta}\right)$$
+$$x \to \mathbb{P}_{\color{green}\mathcal{D}}[x] = p_{\color{green}\mathcal{D}}\left(x | {\color{purple}\theta}\right)$$
 
-- ${\color{green}\nu}$: probability distribution (often implicit);
+- ${\color{green}\mathcal{D}}$: probability distribution (often implicit);
 - ${\color{purple}\theta}$: distribution parameters
 
 ## Sampling Notation
 
-To write $x$ is sampled from $p(x|\theta)$:
-$$x \sim f(\theta)$$
+To write $x$ is sampled from $\mathcal{D}(\theta) = p(x|\theta)$:
+$$x \sim \mathcal{D}(\theta)$$
 
 For example, for a normal distribution:
 $$x \overset{\text{i.i.d.}}{\sim} \mathcal{N}(\mu, \sigma)$$
@@ -218,7 +218,7 @@ A continuous distribution $\mathcal{D}$ has a probability density function (PDF)
 The probability of $x$ occurring in an interval $(a, b)$ is
 $$\mathbb{P}[a \leq x \leq b] = \int_a^b f_\mathcal{D}(x)dx.$$
 
-**Important**: $\mathbb{P}(x = x^*)$, is zero!
+**Important**: $\mathbb{P}(x = x^*)$ is zero!
 
 ## Probability Mass Functions
 
@@ -233,7 +233,7 @@ Unlike continuous distributions, we can talk about the probability of individual
 
 :::: {.columns}
 ::: {.column width=50%}
-If $\mathcal{D}$ is a distribution with PDF $f_\mathcal{D}(x)$, the **cumulative density function** (CDF) of $\mathcal{D}$ $F_\mathcal{D}(x)$:
+If $\mathcal{D}$ is a distribution with PDF $f_\mathcal{D}(x)$, the **cumulative density function** (CDF) of $\mathcal{D}$ is $F_\mathcal{D}(x)$:
 
 $$F_\mathcal{D}(x) = \int_{-\infty}^x f_\mathcal{D}(u)du.$$
 
@@ -339,7 +339,7 @@ Source: r/GymMemes
 One key thing: normal distributions are the "least informative" distribution given constraints on mean and variance. So all else being equal, this is a useful machine if all we're interested in are those two moments.
 :::
 
-## Central Limit Theorem: Sampling Distributions
+## Statistics of Random Variables are Random Variables
 
 **The sum or mean of a random sample is itself a random variable**:
 
@@ -348,6 +348,10 @@ $$\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i \sim \mathcal{D}_n$$
 ::: {.fragment .fade-in}
 $\mathcal{D}_n$: The ***sampling distribution*** of the mean (or sum, or other estimate of interest).
 :::
+
+## Sampling Distributions
+
+![Illustration of the Sampling Distribution](figures/true-sampling.png)
 
 ## Central Limit Theorem 
 
@@ -364,8 +368,18 @@ $$\begin{align*}
 
 ## Central Limit Theorem (More Intuitive)
 
+:::: {.columns}
+::: {.column width=50%}
 For **a large enough set of samples**, the sampling distribution of a sum or mean of random variables is approximately a normal distribution, even if the random variables themselves are not.
+:::
+::: {.column width=50%}
+![Small n Meme](memes/sampling_distribution_small_n.jpg)
 
+::: {.caption}
+Source: Unknown
+:::
+:::
+::::
 
 ## "What Distribution Should I Use?"
 
@@ -439,6 +453,7 @@ display(p1)
 display(p)
 ```
 
+# Maximum Likelihood
 
 ## Likelihood
 
@@ -590,6 +605,7 @@ Confidence intervals only capture uncertainty in **parameter inferences** due to
 
 :::
 
+
 ## Example: 95% CIs for N(0.4, 2)
 
 ```{julia}
@@ -709,13 +725,15 @@ Due to this non-uniqueness, the typical convention is to use the "equal tailed" 
 
 ## Next Classes
 
-**Wednesday**: Bayesian Statistics
-
-**Next Week**: Temporal and Spatial Models and Errors
+**Next Week**: Probability Models for Data
 
 ## Assessments
 
 **Homework 1** due Friday (2/7).
+
+**Quiz**: Due before next class.
+
+**Reading**: Annotate/submit writing before next class, will reserve time for discussion.
 
 # References
 

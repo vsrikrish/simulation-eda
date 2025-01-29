@@ -100,7 +100,7 @@ $$X = \{X_1, X_2, X_3, \ldots, X_n}$$
 ::: {.column width=50%}
 ```{julia}
 #| label: fig-lynx-ts
-#| fig-cap: Example of time series: trapped lynx populations in Canada.
+#| fig-cap: Example of time series; trapped lynx populations in Canada.
 
 lh_obs = DataFrame(CSV.File("data/predatorprey/Lynx_Hare.csv"))
 plot(lh_obs[!, :Year], lh_obs[!, :Lynx], xlabel="Year", ylabel="Lynx Pelts", markersize=5, markershape=:circle, markercolor=:black, color=:grey, linewidth=3, legend=false)
