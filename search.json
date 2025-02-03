@@ -1547,15 +1547,15 @@
     "text": "Probability Fundamentals\n\nBayesian vs. Frequentist Interpretations\nDistributions reflect assumptions on probability of data.\nNormal distributions: “least informative” distribution for a given mean/variance.\nFit distributions by maximizing likelihood.\nCommunicating uncertainty: confidence vs. predictive intervals."
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow",
-    "href": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow",
+    "objectID": "slides/lecture03-1-probmodels.html#how-does-river-flow-affect-tds",
+    "href": "slides/lecture03-1-probmodels.html#how-does-river-flow-affect-tds",
     "title": "Probability Models",
-    "section": "How Does TDS Affect River Flow?",
-    "text": "How Does TDS Affect River Flow?\n\n\nQuestion: Does river flow affect the concentration of total dissolved solids?\nData: Cuyahoga River (1969 – 1973), from Helsel et al. (2020, Chapter 9)."
+    "section": "How Does River Flow Affect TDS?",
+    "text": "How Does River Flow Affect TDS?\n\n\nQuestion: Does river flow affect the concentration of total dissolved solids?\nData: Cuyahoga River (1969 – 1973), from Helsel et al. (2020, Chapter 9)."
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow-1",
-    "href": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow-1",
+    "objectID": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow",
+    "href": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow",
     "title": "Probability Models",
     "section": "How Does TDS Affect River Flow?",
     "text": "How Does TDS Affect River Flow?\n\n\nQuestion: Does river flow affect the concentration of total dissolved solids?\nModel: \\[D \\rightarrow S \\ {\\color{purple}\\leftarrow U}\\] \\[S = f(D, U)\\]"
