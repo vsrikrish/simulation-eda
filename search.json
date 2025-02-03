@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nHomework\n\n\n\n\n\n1\n1/22\nClass Introduction\n\n\n\n\n\n\n2\n1/27\nNull Hypothesis Testing and Statistical Significance\n\nLloyd & Oreskes (2018)\n\n\n\n\n\n1/29\nProbability Fundamentals\n\n\n\n\n\n\n3\n2/3\nProbability Models for Data\n\n\n\n\n\n\n\n2/5\nAutocorrelation and Time Series\n\n\n\n\n\n\n4\n2/10\nBayesian Statistics\n\n\n\n\n\n\n\n2/12\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n5\n2/17\nFebruary Break\n\n\n\n\n\n\n\n2/19\n\n\n\n\n\n\n\n6\n2/24\n\n\n\n\n\n\n\n\n2/26\n\n\n\n\n\n\n\n7\n3/3\n\n\n\n\n\n\n\n\n3/5\n\n\n\n\n\n\n\n8\n3/10\n\n\n\n\n\n\n\n\n3/12\n\n\n\n\n\n\n\n9\n3/17\n\n\n\n\n\n\n\n\n3/19\n\n\n\n\n\n\n\n10\n3/24\n\n\n\n\n\n\n\n\n3/26\n\n\n\n\n\n\n\n\n3/31\nSpring Break\n\n\n\n\n\n\n\n4/2\nSpring Break\n\n\n\n\n\n\n11\n4/7\n\n\n\n\n\n\n\n\n4/9\n\n\n\n\n\n\n\n12\n4/14\n\n\n\n\n\n\n\n\n4/16\n\n\n\n\n\n\n\n13\n4/21\n\n\n\n\n\n\n\n\n4/23\n\n\n\n\n\n\n\n14\n4/28\n\n\n\n\n\n\n\n\n4/30\n\n\n\n\n\n\n\n15\n5/5",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nHomework\n\n\n\n\n\n1\n1/22\nClass Introduction\n\n\n\n\n\n\n2\n1/27\nNull Hypothesis Testing and Statistical Significance\n\nLloyd & Oreskes (2018)\n\n\n\n\n\n1/29\nProbability Fundamentals\n\n\n\n\n\n\n3\n2/3\nProbability Models for Data\n\nShmueli (2010)\n\n\n\n\n\n2/5\nTime Series\n\n\n\n\n\n\n4\n2/10\nBayesian Statistics\n\n\n\n\n\n\n\n2/12\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n5\n2/17\nFebruary Break\n\n\n\n\n\n\n\n2/19\n\n\n\n\n\n\n\n6\n2/24\n\n\n\n\n\n\n\n\n2/26\n\n\n\n\n\n\n\n7\n3/3\n\n\n\n\n\n\n\n\n3/5\n\n\n\n\n\n\n\n8\n3/10\n\n\n\n\n\n\n\n\n3/12\n\n\n\n\n\n\n\n9\n3/17\n\n\n\n\n\n\n\n\n3/19\n\n\n\n\n\n\n\n10\n3/24\n\n\n\n\n\n\n\n\n3/26\n\n\n\n\n\n\n\n\n3/31\nSpring Break\n\n\n\n\n\n\n\n4/2\nSpring Break\n\n\n\n\n\n\n11\n4/7\n\n\n\n\n\n\n\n\n4/9\n\n\n\n\n\n\n\n12\n4/14\n\n\n\n\n\n\n\n\n4/16\n\n\n\n\n\n\n\n13\n4/21\n\n\n\n\n\n\n\n\n4/23\n\n\n\n\n\n\n\n14\n4/28\n\n\n\n\n\n\n\n\n4/30\n\n\n\n\n\n\n\n15\n5/5",
     "crumbs": [
       "Course Information",
       "Class Schedule"
@@ -531,7 +531,7 @@
     "href": "slides/lecture02-2-probreview.html#assessments",
     "title": "Probability Fundamentals",
     "section": "Assessments",
-    "text": "Assessments\nHomework 1 due Friday (2/7).\nQuiz: Due before next class.\nReading: Annotate/submit writing before next class, will reserve time for discussion."
+    "text": "Assessments\nHomework 1 due next Friday (2/7).\nQuiz: Due before next class.\nReading: Annotate/submit writing before next class, will reserve time for discussion."
   },
   {
     "objectID": "slides/lecture02-2-probreview.html#references-scroll-for-full-list",
@@ -814,156 +814,121 @@
     "text": "References (Scroll for Full List)\n\n\n\n\nIoannidis, J. P. A. (2005). Why most published research findings are false. PLoS Med., 2, e124. https://doi.org/10.1371/journal.pmed.0020124\n\n\nMcElreath, R. (2020). Statistical rethinking : A bayesian course with examples in R and Stan (Second). Boca Raton, Florida: CRC. Retrieved from https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919\n\n\nSzucs, D., & Ioannidis, J. P. A. (2017). When null hypothesis significance testing is unsuitable for research: A reassessment. Front. Hum. Neurosci., 11, 390. https://doi.org/10.3389/fnhum.2017.00390"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#probability-fundamentals",
-    "href": "slides/lecture03-1-probmodels.html#probability-fundamentals",
-    "title": "Probability Models for Data",
-    "section": "Probability Fundamentals",
-    "text": "Probability Fundamentals\n\nBayesian vs. Frequentist Interpretations\nDistributions reflect assumptions on probability of data.\nNormal distributions: “least informative” distribution for a given mean/variance.\nFit distributions by maximizing likelihood.\nCommunicating uncertainty: confidence vs. credible vs. predictive intervals."
+    "objectID": "slides/lecture03-2-timeseries.html#time-series-and-environmental-data",
+    "href": "slides/lecture03-2-timeseries.html#time-series-and-environmental-data",
+    "title": "Time Series",
+    "section": "Time Series and Environmental Data",
+    "text": "Time Series and Environmental Data\n\n\nMany environmental datasets involve time series: repeated observations over time:\n\\[X = \\{X_t, X_{t+h}, X_{t+2h}, \\ldots, X_{t+nh}}\\]\nMore often: ignore sampling time in notation,\n\\[X = \\{X_1, X_2, X_3, \\ldots, X_n}\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Example of time series; trapped lynx populations in Canada."
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#how-do-global-sea-levels-respond-to-warming",
-    "href": "slides/lecture03-1-probmodels.html#how-do-global-sea-levels-respond-to-warming",
-    "title": "Probability Models for Data",
+    "objectID": "slides/lecture03-2-timeseries.html#when-do-we-care-about-time-series",
+    "href": "slides/lecture03-2-timeseries.html#when-do-we-care-about-time-series",
+    "title": "Time Series",
+    "section": "When Do We Care About Time Series?",
+    "text": "When Do We Care About Time Series?\nDependence: History or sequencing of the data matters\n\\(p(y_t) = f(y_1, \\ldots, y_{t-1})\\)\nThis is most commonly expressed through autocorrelation:\n\\(\\rho(y_t, y_{t-i}) \\neq 0\\)"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#stationarity",
+    "href": "slides/lecture03-2-timeseries.html#stationarity",
+    "title": "Time Series",
+    "section": "Stationarity",
+    "text": "Stationarity\nI.I.D. Data: All data drawn from the same distribution, \\(y_i \\sim \\mathcal{D}\\).\nEquivalent for time series \\(\\mathbf{y} = \\{y_t\\}\\) is stationarity.\n\nStrict stationarity: \\(\\{y_t, \\ldots, y_{t+k-1}\\} \\sim \\mathcal{D}\\) for all \\(t\\).\nWeak stationarity: \\(\\mathbb{E}[X_1] = \\mathbb{E}[X_t]\\) and \\(\\text{Cov}(X_1, X_k) = \\text{Cov}(X_t, X_{t+k-1})\\) for all \\(t\\)."
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#stationary-vs.-non-stationary-series",
+    "href": "slides/lecture03-2-timeseries.html#stationary-vs.-non-stationary-series",
+    "title": "Time Series",
+    "section": "Stationary vs. Non-Stationary Series",
+    "text": "Stationary vs. Non-Stationary Series"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#autoregressive-ar-models",
+    "href": "slides/lecture03-2-timeseries.html#autoregressive-ar-models",
+    "title": "Time Series",
+    "section": "Autoregressive (AR) Models",
+    "text": "Autoregressive (AR) Models\nAR(p): (autoregressive of order \\(p\\)):\n\\[\n\\begin{align*}\ny_t &= \\sum_{i=1}^p \\rho_{i} y_{t-i} + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2)\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#uses-of-ar-models",
+    "href": "slides/lecture03-2-timeseries.html#uses-of-ar-models",
+    "title": "Time Series",
+    "section": "Uses of AR Models",
+    "text": "Uses of AR Models\nAR models are commonly used for prediction: bond yields, prices, electricity demand.\nBut may have little explanatory power: what causes the autocorrelation?"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#ar1-models",
+    "href": "slides/lecture03-2-timeseries.html#ar1-models",
+    "title": "Time Series",
+    "section": "AR(1) Models",
+    "text": "AR(1) Models\n\n\n\\[\ny_t &= {\\color{blue}\\rho} y_{t-1} + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2)\n\\]\n\n\n\n\n\n\n\n\n\n\n0.3\n\n\nFigure 2: AR(1) model"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#how-do-global-sea-levels-respond-to-warming",
+    "href": "slides/lecture03-2-timeseries.html#how-do-global-sea-levels-respond-to-warming",
+    "title": "Time Series",
     "section": "How Do Global Sea Levels Respond to Warming?",
-    "text": "How Do Global Sea Levels Respond to Warming?\n\nCode\n# load sea-level data into a DataFrame\nsl_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"sealevel\", \"CSIRO_Recons_gmsl_yr_2015.csv\")))\nrename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with\nsl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year \nsl_dat[!, :GMSLR] .-= mean(filter(row -&gt; row.Year ∈ 1880:1900, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly\n\n# load temperature data\ntemp_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"climate\", \"HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv\")))\nrename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with\nfilter!(row -&gt; row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for\ntemp_normalize = mean(filter(row -&gt; row.Year ∈ 1880:1900, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean\ntemp_dat[!, :Temp] .-= temp_normalize\ntemp_dat[!, :Lower] .-= temp_normalize\ntemp_dat[!, :Upper] .-=  temp_normalize\n\nsl_plot = plot(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\nplot!(sl_plot, size=(600, 450))\n\ntemp_plot = plot(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label=\"Observations\", ylabel=\"(°C)\", xlabel=\"Year\", title=\"Temperature\")\nplot!(temp_plot, size=(600, 450))\n\ndisplay(sl_plot)\ndisplay(temp_plot)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Sea level data from CSIRO and temperature data from HadCRUT5.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 1"
+    "text": "How Do Global Sea Levels Respond to Warming?\n\nCode\n# load sea-level data into a DataFrame\nsl_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"sealevel\", \"CSIRO_Recons_gmsl_yr_2015.csv\")))\nrename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with\nsl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year \nsl_dat[!, :GMSLR] .-= mean(filter(row -&gt; row.Year ∈ 1880:1900, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly\n\n# load temperature data\ntemp_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"climate\", \"HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv\")))\nrename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with\nfilter!(row -&gt; row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for\ntemp_normalize = mean(filter(row -&gt; row.Year ∈ 1880:1900, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean\ntemp_dat[!, :Temp] .-= temp_normalize\ntemp_dat[!, :Lower] .-= temp_normalize\ntemp_dat[!, :Upper] .-=  temp_normalize\n\nsl_plot = plot(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\nplot!(sl_plot, size=(600, 450))\n\ntemp_plot = plot(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label=\"Observations\", ylabel=\"(°C)\", xlabel=\"Year\", title=\"Temperature\")\nplot!(temp_plot, size=(600, 450))\n\ndisplay(sl_plot)\ndisplay(temp_plot)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Sea level data from CSIRO and temperature data from HadCRUT5.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#does-regressing-slr-on-temperature-make-sense",
-    "href": "slides/lecture03-1-probmodels.html#does-regressing-slr-on-temperature-make-sense",
-    "title": "Probability Models for Data",
+    "objectID": "slides/lecture03-2-timeseries.html#does-regressing-slr-on-temperature-make-sense",
+    "href": "slides/lecture03-2-timeseries.html#does-regressing-slr-on-temperature-make-sense",
+    "title": "Time Series",
     "section": "Does Regressing SLR on Temperature Make Sense?",
     "text": "Does Regressing SLR on Temperature Make Sense?\nWhy might temperature exert an influence on sea levels?"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#processes-contributing-to-slr",
-    "href": "slides/lecture03-1-probmodels.html#processes-contributing-to-slr",
-    "title": "Probability Models for Data",
+    "objectID": "slides/lecture03-2-timeseries.html#processes-contributing-to-slr",
+    "href": "slides/lecture03-2-timeseries.html#processes-contributing-to-slr",
+    "title": "Time Series",
     "section": "Processes Contributing to SLR",
     "text": "Processes Contributing to SLR\n\nSea Level Processes\nSource: Milne et al. (2009)"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#why-model-total-slr",
-    "href": "slides/lecture03-1-probmodels.html#why-model-total-slr",
-    "title": "Probability Models for Data",
+    "objectID": "slides/lecture03-2-timeseries.html#why-model-total-slr",
+    "href": "slides/lecture03-2-timeseries.html#why-model-total-slr",
+    "title": "Time Series",
     "section": "Why Model “Total” SLR?",
     "text": "Why Model “Total” SLR?\n\nSea Level Budget\nSource: Fox-Kemper et al. (2021)"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#linear-regression-specification",
-    "href": "slides/lecture03-1-probmodels.html#linear-regression-specification",
-    "title": "Probability Models for Data",
+    "objectID": "slides/lecture03-2-timeseries.html#linear-regression-specification",
+    "href": "slides/lecture03-2-timeseries.html#linear-regression-specification",
+    "title": "Time Series",
     "section": "Linear Regression Specification",
-    "text": "Linear Regression Specification\nStandard assumption of independent normal residuals:\n\n\n\\[\n\\begin{align*}\n\\text{SLR}_t &\\sim \\beta_0 + \\beta_1 \\text{x}_t + \\varepsilon \\\\\n\\varepsilon & \\sim N(0, \\sigma^2)\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2"
+    "text": "Linear Regression Specification\nStandard assumption of independent normal residuals:\n\n\n\\[\n\\begin{align*}\n\\text{SLR}_t &\\sim \\beta_0 + \\beta_1 \\text{x}_t + \\varepsilon \\\\\n\\varepsilon & \\sim N(0, \\sigma^2)\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#ols-estimate",
-    "href": "slides/lecture03-1-probmodels.html#ols-estimate",
-    "title": "Probability Models for Data",
+    "objectID": "slides/lecture03-2-timeseries.html#ols-estimate",
+    "href": "slides/lecture03-2-timeseries.html#ols-estimate",
+    "title": "Time Series",
     "section": "OLS Estimate",
-    "text": "OLS Estimate\n\n\n\\[\n\\begin{align*}\n\\hat{\\beta_1} &= \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2} \\\\\n&= 176 \\text{mm}/^\\circ \\text{C} \\\\\n\\hat{\\beta_0} &= \\bar{y} - \\hat{\\beta_1}\\bar{x} = 27 \\text{mm} \\\\\n\\hat{\\sigma} &= \\sqrt{\\frac{SSE}{n-1}} = 27 \\text{mm}\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3"
+    "text": "OLS Estimate\n\n\n\\[\n\\begin{align*}\n\\hat{\\beta_1} &= \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2} \\\\\n&= 176 \\text{mm}/^\\circ \\text{C} \\\\\n\\hat{\\beta_0} &= \\bar{y} - \\hat{\\beta_1}\\bar{x} = 27 \\text{mm} \\\\\n\\hat{\\sigma} &= \\sqrt{\\frac{SSE}{n-1}} = 27 \\text{mm}\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#you-can-always-fit-models",
-    "href": "slides/lecture03-1-probmodels.html#you-can-always-fit-models",
-    "title": "Probability Models for Data",
-    "section": "You Can Always Fit Models…",
-    "text": "You Can Always Fit Models…\n\n\nEspecially linear models with OLS!\nBut not all models are theoretically justifiablee.\n\n\n\n\nIan Malcolm meme"
+    "objectID": "slides/lecture03-2-timeseries.html#stationarity-1",
+    "href": "slides/lecture03-2-timeseries.html#stationarity-1",
+    "title": "Time Series",
+    "section": "Stationarity",
+    "text": "Stationarity\nFor independent data \\(y = \\{y_i\\}\\),"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#how-do-we-choose-what-to-model",
-    "href": "slides/lecture03-1-probmodels.html#how-do-we-choose-what-to-model",
-    "title": "Probability Models for Data",
-    "section": "How Do We Choose What To Model?",
-    "text": "How Do We Choose What To Model?\n\nXKCD 2620\nSource: XKCD 2620"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#think-generatively",
-    "href": "slides/lecture03-1-probmodels.html#think-generatively",
-    "title": "Probability Models for Data",
-    "section": "Think Generatively",
-    "text": "Think Generatively\n\n\nRegressions model expectations (“regression to the mean”), not the data.\nWant to split probability model into two parts:\n\nInfluences/expectations (generative);\nModeling errors/stochastic components (residual).\n\n\\[\n\\begin{align*}\ny &\\sim \\beta_0 + \\sum_i \\beta_i x_i + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2)\n\\end{align*}\n\\]\n\n\n\n\nBrain on Regression\n\n\n\nSource: Richard McElreath"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#revisiting-slr-processes",
-    "href": "slides/lecture03-1-probmodels.html#revisiting-slr-processes",
-    "title": "Probability Models for Data",
-    "section": "Revisiting SLR Processes",
-    "text": "Revisiting SLR Processes\n\nSea Level Processes\nSource: Milne et al. (2009)"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#fitting-models-to-data",
-    "href": "slides/lecture03-1-probmodels.html#fitting-models-to-data",
-    "title": "Probability Models for Data",
-    "section": "Fitting Models to Data",
-    "text": "Fitting Models to Data\nCalibration: Finding model parameters which “explain” or “fit” the data.\nIn other words, given:\n\nmodel \\(f(\\mathbf{x}; \\theta)\\)\ndata \\(\\mathbf{y}\\)\n\nwant to find model parameters \\(\\hat{\\theta}\\) to approximate \\(y\\)."
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#what-do-you-think-of-when-you-think-of-fitting-models",
-    "href": "slides/lecture03-1-probmodels.html#what-do-you-think-of-when-you-think-of-fitting-models",
-    "title": "Probability Models for Data",
-    "section": "What Do You Think Of When You Think of “Fitting” Models?",
-    "text": "What Do You Think Of When You Think of “Fitting” Models?\n\nOften this refers to minimizing some error metric, like the mean squared error (MSE):\n\\[\\frac{1}{n} \\sum_{i=1}^n (\\hat{y}_i - y_i)^2\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#model-residuals",
-    "href": "slides/lecture03-1-probmodels.html#model-residuals",
-    "title": "Probability Models for Data",
-    "section": "Model Residuals",
-    "text": "Model Residuals\nModel Residuals are the “error” between the model simulations and the data.\n\\[\\underbrace{\\mathbf{r}}_{\\text{residuals}} = \\overbrace{F(\\mathbf{x}; \\theta)}^{model} - \\underbrace{\\mathbf{y}}_{\\text{data}}\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#relationship-of-mse-to-normally-distributed-residuals",
-    "href": "slides/lecture03-1-probmodels.html#relationship-of-mse-to-normally-distributed-residuals",
-    "title": "Probability Models for Data",
-    "section": "Relationship of MSE to Normally-Distributed Residuals",
-    "text": "Relationship of MSE to Normally-Distributed Residuals\nClaim: Minimizing the (R)MSE is the same as maximizing likelihood assuming independent and identically-normally-distributed residuals (with known variance).\n\\[\n\\begin{gather*}\n\\mathbf{y} = F(\\mathbf{x}) - \\mathbf{r} \\\\\nr_i \\overset{\\text{i.i.d.}}{\\sim} \\mathcal{N}(0, \\sigma)\n\\end{gather*}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#likelihood-of-normal-residuals",
-    "href": "slides/lecture03-1-probmodels.html#likelihood-of-normal-residuals",
-    "title": "Probability Models for Data",
-    "section": "Likelihood of Normal Residuals",
-    "text": "Likelihood of Normal Residuals\nData Probability Model:\n\\[y_i \\sim \\mathcal{N}(F(x_i), \\sigma)\\]\n\n\\[\\mathcal{L}(\\theta | \\mathbf{y}; F) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}} \\exp(-\\frac{y_i - F(x_i)^2}{2\\sigma^2})\\]\n\n\n\\[\\log \\mathcal{L}(\\theta | \\mathbf{y}; F) = \\sum_{i=1}^n \\left[\\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2}(y_i - F(x_i))^2 \\right]\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#simplifying-log-likelihood",
-    "href": "slides/lecture03-1-probmodels.html#simplifying-log-likelihood",
-    "title": "Probability Models for Data",
-    "section": "",
-    "text": "\\[\n\\begin{align}\n\\log \\mathcal{L}(\\theta | \\mathbf{y}, F) &= \\sum_{i=1}^n \\left[\\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2}(y_i - F(x_i))  ^2 \\right] \\\\\n&= n \\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2} \\sum_{i=1}^n (y_i - F(x_i))^2\n\\end{align}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#simplifying-constants-ignore",
-    "href": "slides/lecture03-1-probmodels.html#simplifying-constants-ignore",
-    "title": "Probability Models for Data",
-    "section": "",
-    "text": "Ignoring constants (including \\(\\sigma\\)):\n\\[\\log \\mathcal{L}(\\theta | \\mathbf{y}, F) \\propto -\\sum_{i=1}^n (y_i - F(x_i))^2.\\]\n\nMaximizing \\(f(x)\\) is equivalent to minimizing \\(-f(x)\\):\n\\[\n- \\log \\mathcal{L}(\\theta | \\mathbf{y}, F) \\propto \\sum_{i=1}^n (y_i - F(x_i))^2 = \\text{MSE}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#probability-models",
-    "href": "slides/lecture03-1-probmodels.html#probability-models",
-    "title": "Probability Models for Data",
-    "section": "Probability Models",
-    "text": "Probability Models\nGenerative models allow us to write down a probability model for the data, e.g.\n\\[\n\\begin{align*}\ny &\\sim \\beta_0 + \\sum_i \\beta_i x_i + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2) \\\\\n\\Rightarrow &\\bbox[yellow, 10px, border:5px solid red] {y \\sim \\N(\\beta_0 + \\sum_i \\beta_i x_i, \\sigma^2)}\n\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture03-1-probmodels.html#next-classes",
-    "href": "slides/lecture03-1-probmodels.html#next-classes",
-    "title": "Probability Models for Data",
+    "objectID": "slides/lecture03-2-timeseries.html#next-classes",
+    "href": "slides/lecture03-2-timeseries.html#next-classes",
+    "title": "Time Series",
     "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Bayesian Statistics\nNext Week: Temporal and Spatial Models and Errors"
+    "text": "Next Classes\nNext Week+: Prob/Stats “Review” and Fundamentals"
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#assessments",
-    "href": "slides/lecture03-1-probmodels.html#assessments",
-    "title": "Probability Models for Data",
+    "objectID": "slides/lecture03-2-timeseries.html#assessments",
+    "href": "slides/lecture03-2-timeseries.html#assessments",
+    "title": "Time Series",
     "section": "Assessments",
-    "text": "Assessments\nHomework 1 due Friday (2/7)."
+    "text": "Assessments\nHomework 1 available; due next Friday (2/7)."
   },
   {
-    "objectID": "slides/lecture03-1-probmodels.html#references-scroll-for-full-list",
-    "href": "slides/lecture03-1-probmodels.html#references-scroll-for-full-list",
-    "title": "Probability Models for Data",
+    "objectID": "slides/lecture03-2-timeseries.html#references-scroll-for-full-list",
+    "href": "slides/lecture03-2-timeseries.html#references-scroll-for-full-list",
+    "title": "Time Series",
     "section": "References (Scroll for Full List)",
     "text": "References (Scroll for Full List)\n\n\n\n\nFox-Kemper, B., Hewitt, H. T., Xiao, C., Aðalgeirsdóttir, G., Drijfhout, S. S., Edwards, T. L., et al. (2021). Ocean, Cryosphere and Sea Level Change. In A. Pirani, S. L. Connors, C. Péan, S. Berger, N. Caud, Y. Chen, et al. (Eds.), Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change (pp. 1211–1362). Cambridge, United Kingdom; New York, NY, USA: Cambridge University Press. https://doi.org/10.1017/9781009157896.011\n\n\nMilne, G. A., Gehrels, W. R., Hughes, C. W., & Tamisiea, M. E. (2009). Identifying the causes of sea-level change. Nat. Geosci., 2, 471–478. https://doi.org/10.1038/ngeo544"
   },
@@ -1104,7 +1069,7 @@
     "href": "weeks/week02.html#readings",
     "title": "Week 2 Information",
     "section": "Readings",
-    "text": "Readings\n\nLloyd, E. A., & Oreskes, N. (2018). Climate change attribution: When is it appropriate to accept new methods? Earth’s Future, 6(3), 311–325. https://doi.org/10.1002/2017ef000665\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. One graduate student will be assigned to lead the discussion in the 02/05 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nHow does the framing of climate change attribution relate to the Type I/Type II error framework we discussed in class?\nWhat are the implications of the storyline approach for statements about climate attribution of extreme events?\nWhat are your thoughts on the storyline vs. FAR approach for scientific insights and communication of climate impacts?",
+    "text": "Readings\n\nLloyd, E. A., & Oreskes, N. (2018). Climate change attribution: When is it appropriate to accept new methods? Earth’s Future, 6(3), 311–325. https://doi.org/10.1002/2017ef000665\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. We will discuss the paper in the 02/03 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nHow does the framing of climate change attribution relate to the Type I/Type II error framework we discussed in class?\nWhat are the implications of the storyline approach for statements about climate attribution of extreme events?\nWhat are your thoughts on the storyline vs. FAR approach for scientific insights and communication of climate impacts?",
     "crumbs": [
       "Weeks",
       "Week 2"
@@ -1141,6 +1106,50 @@
     "crumbs": [
       "Weeks",
       "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week03.html",
+    "href": "weeks/week03.html",
+    "title": "Week 3 Information",
+    "section": "",
+    "text": "Probability Models for Data\nTime Series",
+    "crumbs": [
+      "Weeks",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week03.html#lectures",
+    "href": "weeks/week03.html#lectures",
+    "title": "Week 3 Information",
+    "section": "",
+    "text": "Probability Models for Data\nTime Series",
+    "crumbs": [
+      "Weeks",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week03.html#homework",
+    "href": "weeks/week03.html#homework",
+    "title": "Week 3 Information",
+    "section": "Homework",
+    "text": "Homework\n\nHomework 1 due 2/7/25 by 9PM.",
+    "crumbs": [
+      "Weeks",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week03.html#readings",
+    "href": "weeks/week03.html#readings",
+    "title": "Week 3 Information",
+    "section": "Readings",
+    "text": "Readings\n\nShmueli, G. (2010). To explain or to predict? Statistical Science: A Review Journal of the Institute of Mathematical Statistics, 25(3), 289–310. https://doi.org/10.1214/10-STS330\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. We will discuss the paper in the 02/10 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nWhat differentiates the explanation vs. predictive modeling paradigms? How does this relate to the choices we’ve discussed that are involved in statistical modeling?\nWhat are the dangers in conflating explanation and prediction?\nIs it possible to fully separate explanation and prediction? Why or why not?\n\nThis paper is quite broad, and includes discussion of topics that we will not cover until later in the semester (such as model validation and selection). It’s ok to gloss over these, particularly if the terminology is unknown to you, but keep them in mind as we move forward!",
+    "crumbs": [
+      "Weeks",
+      "Week 3"
     ]
   },
   {
@@ -1517,46 +1526,193 @@
     "text": "References (Scroll for Full List)\n\n\n\n\nBayes, T. (1763). An Essay towards Solving a Problem in the Doctrine of Chance. Philosophical Transactions of the Royal Society of London, 53, 370–418.\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nGelman, A., & Shalizi, C. R. (2013). Philosophy and the practice of Bayesian statistics. Br. J. Math. Stat. Psychol., 66, 8–38. https://doi.org/10.1111/j.2044-8317.2011.02037.x\n\n\nGelman, A., Simpson, D., & Betancourt, M. (2017). The prior can often only be understood in the context of the likelihood. Entropy, 19, 555. https://doi.org/10.3390/e19100555\n\n\nHelsel, D. R., Hirsch, R. M., Ryberg, K. R., Archfield, S. A., & Gilroy, E. J. (2020). Statistical methods in water resources (research report No. 4-A3) (p. 484). Reston, VA: U.S. Geological Survey. Retrieved from http://pubs.er.usgs.gov/publication/tm4A3\n\n\nJaynes, E. T. (2003). Probability theory: the Logic of Science. (G. L. Bretthorst, Ed.). Cambridge, UK ; New York, NY: Cambridge University Press. Retrieved from https://market.android.com/details?id=book-tTN4HuUNXjgC\n\n\nLaplace, P. S. (1774). Mémoire sur la Probabilité des Causes par les évènemens. In Mémoires de Mathematique et de Physique, Presentés à l’Académie Royale des Sciences, Par Divers Savans & Lus Dans ses Assemblées (pp. 621–656)."
   },
   {
-    "objectID": "slides/lecture03-2-generative.html#time-series-and-environmental-data",
-    "href": "slides/lecture03-2-generative.html#time-series-and-environmental-data",
-    "title": "Time Series",
-    "section": "Time Series and Environmental Data",
-    "text": "Time Series and Environmental Data\n\n\nMany environmental datasets involve time series: repeated observations over time:\n\\[X = \\{X_t, X_{t+h}, X_{t+2h}, \\ldots, X_{t+nh}}\\]\nMore often: ignore sampling time in notation,\n\\[X = \\{X_1, X_2, X_3, \\ldots, X_n}\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Example of time series; trapped lynx populations in Canada."
+    "objectID": "slides/lecture03-1-probmodels.html#probability-fundamentals",
+    "href": "slides/lecture03-1-probmodels.html#probability-fundamentals",
+    "title": "Linear Regression",
+    "section": "Probability Fundamentals",
+    "text": "Probability Fundamentals\n\nBayesian vs. Frequentist Interpretations\nDistributions reflect assumptions on probability of data.\nNormal distributions: “least informative” distribution for a given mean/variance.\nFit distributions by maximizing likelihood.\nCommunicating uncertainty: confidence vs. predictive intervals."
   },
   {
-    "objectID": "slides/lecture03-2-generative.html#when-do-we-care-about-time-series",
-    "href": "slides/lecture03-2-generative.html#when-do-we-care-about-time-series",
-    "title": "Time Series",
-    "section": "When Do We Care About Time Series?",
-    "text": "When Do We Care About Time Series?\nHistory or sequencing of the data matters\n\\(p(y_t) = f(y_1, \\ldots, y_{t-1})\\)"
+    "objectID": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow",
+    "href": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow",
+    "title": "Linear Regression",
+    "section": "How Does TDS Affect River Flow?",
+    "text": "How Does TDS Affect River Flow?\n\n\nQuestion: Does river flow affect the concentration of total dissolved solids?\nData: Cuyahoga River (1969 – 1973), from Helsel et al. (2020, Chapter 9)."
   },
   {
-    "objectID": "slides/lecture03-2-generative.html#stationarity",
-    "href": "slides/lecture03-2-generative.html#stationarity",
-    "title": "Time Series",
-    "section": "Stationarity",
-    "text": "Stationarity\nFor independent data \\(y = \\{y_i\\}\\),"
+    "objectID": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow-1",
+    "href": "slides/lecture03-1-probmodels.html#how-does-tds-affect-river-flow-1",
+    "title": "Linear Regression",
+    "section": "How Does TDS Affect River Flow?",
+    "text": "How Does TDS Affect River Flow?\n\n\nQuestion: Does river flow affect the concentration of total dissolved solids?\nModel: \\[D \\rightarrow S \\ {\\color{purple}\\leftarrow U}\\] \\[S = f(D, U)\\]"
   },
   {
-    "objectID": "slides/lecture03-2-generative.html#next-classes",
-    "href": "slides/lecture03-2-generative.html#next-classes",
-    "title": "Time Series",
+    "objectID": "slides/lecture03-1-probmodels.html#log-linear-relationships",
+    "href": "slides/lecture03-1-probmodels.html#log-linear-relationships",
+    "title": "Linear Regression",
+    "section": "Log-Linear Relationships",
+    "text": "Log-Linear Relationships\n\n\n\\[\n\\begin{align*}\nS &= \\beta_0 + \\beta_1 \\log(D) + U\\\\\nU &\\sim \\mathcal{N}(0, \\sigma^2)\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#likelihood",
+    "href": "slides/lecture03-1-probmodels.html#likelihood",
+    "title": "Linear Regression",
+    "section": "Likelihood",
+    "text": "Likelihood\nHow do we find \\(\\beta_i\\) and \\(\\sigma\\)?\nLikelihood of data to have come from distribution \\(f(\\mathbf{x} | \\theta)\\): \\[\\mathcal{L}(\\theta | \\mathbf{x}) = \\underbrace{f(\\mathbf{x} | \\theta)}_{\\text{PDF}}\\]\nHere the randomness comes from \\(U\\): \\[S \\sim \\mathcal{N}(\\beta_0 + \\beta_1 \\log(D), \\sigma^2)\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#maximizing-gaussian-likelihood-least-squares",
+    "href": "slides/lecture03-1-probmodels.html#maximizing-gaussian-likelihood-least-squares",
+    "title": "Linear Regression",
+    "section": "Maximizing Gaussian Likelihood ⇔ Least Squares",
+    "text": "Maximizing Gaussian Likelihood ⇔ Least Squares\n\\[y_i \\sim \\mathcal{N}(F(x_i), \\sigma)\\]\n\n\\[\\mathcal{L}(\\theta | \\mathbf{y}; F) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}} \\exp(-\\frac{y_i - F(x_i)^2}{2\\sigma^2})\\]\n\n\n\\[\\log \\mathcal{L}(\\theta | \\mathbf{y}; F) = \\sum_{i=1}^n \\left[\\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2}(y_i - F(x_i))^2 \\right]\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#simplifying-log-likelihood",
+    "href": "slides/lecture03-1-probmodels.html#simplifying-log-likelihood",
+    "title": "Linear Regression",
+    "section": "",
+    "text": "\\[\n\\begin{align}\n\\log \\mathcal{L}(\\theta | \\mathbf{y}, F) &= \\sum_{i=1}^n \\left[\\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2}(y_i - F(x_i))  ^2 \\right] \\\\\n&= n \\log \\frac{1}{\\sqrt{2\\pi}} - \\frac{1}{2\\sigma^2} \\sum_{i=1}^n (y_i - F(x_i))^2\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#simplifying-constants-ignore",
+    "href": "slides/lecture03-1-probmodels.html#simplifying-constants-ignore",
+    "title": "Linear Regression",
+    "section": "",
+    "text": "Ignoring constants (including \\(\\sigma\\)):\n\\[\\log \\mathcal{L}(\\theta | \\mathbf{y}, F) \\propto -\\sum_{i=1}^n (y_i - F(x_i))^2.\\]\n\nMaximizing \\(f(x)\\) is equivalent to minimizing \\(-f(x)\\):\n\\[\n-\\log \\mathcal{L}(\\theta | \\mathbf{y}, F) \\propto \\sum_{i=1}^n (y_i - F(x_i))^2 = \\text{MSE}\n\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#back-to-the-problem",
+    "href": "slides/lecture03-1-probmodels.html#back-to-the-problem",
+    "title": "Linear Regression",
+    "section": "Back to the Problem…",
+    "text": "Back to the Problem…\n\n\n\n\nCode\n# tds_riverflow_loglik: function to compute the log-likelihood for the tds model\n# θ: vector of model parameters (coefficients β₀ and β₁ and stdev σ)\n# tds, flow: vectors of data\nfunction tds_riverflow_loglik(θ, tds, flow)\n    β₀, β₁, σ = θ # unpack parameter vector\n    μ = β₀ .+ β₁ * log.(flow) # find mean\n    ll = sum(logpdf.(Normal.(μ, σ), tds)) # compute log-likelihood\n    return ll\nend\n\nlb = [0.0, -1000.0, 1.0]\nub = [1000.0, 1000.0, 100.0]\nθ₀ = [500.0, 0.0, 50.0]\noptim_out = Optim.optimize(θ -&gt; -tds_riverflow_loglik(θ, tds.tds_mgL, tds.discharge_cms), lb, ub, θ₀)\nθ_mle = round.(optim_out.minimizer; digits=0)\n@show θ_mle;\n\n\nθ_mle = [610.0, -112.0, 72.0]\n\n\n\n\n\nCode\n# simulate 10,000 predictions\nx = 1:0.1:60\nμ = θ_mle[1] .+ θ_mle[2] * log.(x)\n\ny_pred = zeros(length(x), 10_000)\nfor i = 1:length(x)\n    y_pred[i, :] = rand(Normal(μ[i], θ_mle[3]), 10_000)\nend\n# take quantiles to find prediction intervals\ny_q = mapslices(v -&gt; quantile(v, [0.05, 0.5, 0.95]), y_pred; dims=2)\n\nplot(p1, \n    x,\n    y_q[:, 2],\n    ribbon = (y_q[:, 2] - y_q[:, 1], y_q[:, 3] - y_q[:, 2]),\n    linewidth=3, \n    fillalpha=0.2, \n    label=\"Best Fit\",\n    size=(600, 550))"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#residual-analysis",
+    "href": "slides/lecture03-1-probmodels.html#residual-analysis",
+    "title": "Linear Regression",
+    "section": "Residual Analysis",
+    "text": "Residual Analysis\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Residuals for the TDS-Riverflow model.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 1"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#structure-of-a-probability-model",
+    "href": "slides/lecture03-1-probmodels.html#structure-of-a-probability-model",
+    "title": "Linear Regression",
+    "section": "Structure of a Probability Model",
+    "text": "Structure of a Probability Model\nUnpacking linear regression:\n\\[\\begin{align*}\ny_i &\\sim N(\\mu_i, \\sigma^2) \\\\\n\\mu_i &= \\sum_j \\beta_j x^j_i\n\\end{align*}\n\\]\n\nNote: Can handle heteroskedastic errors with a regression \\[\\sigma_i^2 = \\sum_j \\alpha_j z^j_i\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#think-generatively",
+    "href": "slides/lecture03-1-probmodels.html#think-generatively",
+    "title": "Linear Regression",
+    "section": "Think Generatively",
+    "text": "Think Generatively\n\n\nComponents of probability model for observations:\n\nModel for “system state” (LR: \\(\\sum_j \\beta_j x^j_i\\))\nChoice of “error” distribution (LR: \\(N(0, \\sigma^2)\\))\n\n\n\n\n\nBrain on Regression Meme\n\n\n\nSource: Richard McElreath"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#you-can-always-fit-models",
+    "href": "slides/lecture03-1-probmodels.html#you-can-always-fit-models",
+    "title": "Linear Regression",
+    "section": "You Can Always Fit Models…",
+    "text": "You Can Always Fit Models…\n\n\nBut not all models are theoretically justifiable.\n\n\n\n\nIan Malcolm meme"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#how-do-we-choose-what-to-model",
+    "href": "slides/lecture03-1-probmodels.html#how-do-we-choose-what-to-model",
+    "title": "Linear Regression",
+    "section": "How Do We Choose What To Model?",
+    "text": "How Do We Choose What To Model?\n\nXKCD 2620\nSource: XKCD 2620"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#example-modeling-counts",
+    "href": "slides/lecture03-1-probmodels.html#example-modeling-counts",
+    "title": "Linear Regression",
+    "section": "Example: Modeling Counts",
+    "text": "Example: Modeling Counts\n\n\nCode\nfish = CSV.File(\"data/ecology/Fish.csv\") |&gt; DataFrame\nfish[1:3, :]\n\n\n3×6 DataFrame\n\n\n\nRow\nfish_caught\nlivebait\ncamper\npersons\nchild\nhours\n\n\n\nInt64\nInt64\nInt64\nInt64\nInt64\nFloat64\n\n\n\n\n1\n0\n0\n0\n1\n0\n21.124\n\n\n2\n0\n1\n1\n1\n0\n5.732\n\n\n3\n0\n1\n0\n1\n0\n1.323"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#what-distribution",
+    "href": "slides/lecture03-1-probmodels.html#what-distribution",
+    "title": "Linear Regression",
+    "section": "What Distribution?",
+    "text": "What Distribution?\n\nCount data can be modeled using a Poisson or negative binomial distribution.\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Poisson\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Negative Binomial"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#exploring-the-data",
+    "href": "slides/lecture03-1-probmodels.html#exploring-the-data",
+    "title": "Linear Regression",
+    "section": "Exploring the Data",
+    "text": "Exploring the Data\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Fishing Data\n\n\n\n\n\nMean: 3.3\nVariance: 135.4"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#model-specification",
+    "href": "slides/lecture03-1-probmodels.html#model-specification",
+    "title": "Linear Regression",
+    "section": "Model Specification",
+    "text": "Model Specification\nWe might hypothesize that more people fishing for more hours results in a greater chance of catching fish.\n\\[\\begin{align*}\ny_i &\\sim Poisson(\\lambda_i) \\\\\nf(\\lambda_i) &= \\beta_0 + \\beta_1 P_i + \\beta_2 H_i\n\\end{align*}\n\\]\n\n\\(\\lambda_i\\): positive “rate”\n\\(f(\\cdot)\\): maps positive reals (rate scale) to all reals (linear model scale)"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#link-functions",
+    "href": "slides/lecture03-1-probmodels.html#link-functions",
+    "title": "Linear Regression",
+    "section": "Link Functions",
+    "text": "Link Functions\n\n\n\\(\\color{brown}f\\) is the link function.\n\\(\\color{royalblue}f^{-1}\\) is the inverse link.\n\n\\[\\begin{align*}\ny_i &\\sim Poisson(\\lambda_i) \\\\\n{\\color{brown}f}(\\lambda_i) &= \\beta_0 + \\beta_1 P_i + \\beta_2 H_i\n\\end{align*}\n\\]\n\\[\n\\lambda_i = {\\color{royalblue}f^{-1}}\\left(\\beta_0 + \\beta_1 P_i + \\beta_2 H_i\\right)\n\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#choosing-a-link-function",
+    "href": "slides/lecture03-1-probmodels.html#choosing-a-link-function",
+    "title": "Linear Regression",
+    "section": "Choosing a Link Function",
+    "text": "Choosing a Link Function\nLink functions are typically linked to distributions.\n\nPoisson models usually use the log link (positives → reals).\nBinomial/Bernoulli models use the logit link (\\([0, 1]\\) → reals) \\[\\text{logit}(p) = \\log\\left(\\frac{p}{1-p}\\right)\\]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#fitting-the-model",
+    "href": "slides/lecture03-1-probmodels.html#fitting-the-model",
+    "title": "Linear Regression",
+    "section": "Fitting the Model",
+    "text": "Fitting the Model\n\nfunction fish_model(params, persons, hours, fish_caught)\n    β₀, β₁, β₂ = params\n    λ = exp.(β₀ .+ β₁ * persons + β₂ * hours)\n    loglik = sum(logpdf.(Poisson.(λ), fish_caught))\nend\n\nlb = [-100.0, -100.0, -100.0]\nub = [100.0, 100.0, 100.0]\ninit = [0.0, 0.0, 0.0]\n\noptim_out = optimize(θ -&gt; -fish_model(θ, fish.persons, fish.hours, fish.fish_caught), lb, ub, init)\nθ_mle = optim_out.minimizer\n@show round.(θ_mle; digits=1);\n\nround.(θ_mle; digits = 1) = [-1.5, 0.8, 0.0]"
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#evaluating-model-fit",
+    "href": "slides/lecture03-1-probmodels.html#evaluating-model-fit",
+    "title": "Linear Regression",
+    "section": "Evaluating Model Fit",
+    "text": "Evaluating Model Fit\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Predictive distribution for fitted fish model."
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#what-was-the-problem",
+    "href": "slides/lecture03-1-probmodels.html#what-was-the-problem",
+    "title": "Linear Regression",
+    "section": "What Was The Problem?",
+    "text": "What Was The Problem?\n\nModel neglected other plausible contributors, e.g. live bait.\nData is over-dispersed: higher variance than mean.\nMight be better described by a zero-inflated Poisson model:\n\nVisitors who spent little time are likely to catch no fish.\nVisitors who spent more time are likely to catch positive fish."
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#probability-models",
+    "href": "slides/lecture03-1-probmodels.html#probability-models",
+    "title": "Linear Regression",
+    "section": "Probability Models",
+    "text": "Probability Models\n\nThink of regression as modeling system state (or expectation).\nFull probability model includes distribution of “errors” from expected state.\n\nError models can be complex! More on this later…\n\nGeneralized linear models may require a link to map regression to parameters.\nFit models by maximizing likelihood: no problem using optimization routines."
+  },
+  {
+    "objectID": "slides/lecture03-1-probmodels.html#next-classes",
+    "href": "slides/lecture03-1-probmodels.html#next-classes",
+    "title": "Linear Regression",
     "section": "Next Classes",
-    "text": "Next Classes\nNext Week+: Prob/Stats “Review” and Fundamentals"
+    "text": "Next Classes\nWednesday: Modeling Time Series\nNext Week: Bayesian Statistics and Inference"
   },
   {
-    "objectID": "slides/lecture03-2-generative.html#assessments",
-    "href": "slides/lecture03-2-generative.html#assessments",
-    "title": "Time Series",
+    "objectID": "slides/lecture03-1-probmodels.html#assessments",
+    "href": "slides/lecture03-1-probmodels.html#assessments",
+    "title": "Linear Regression",
     "section": "Assessments",
-    "text": "Assessments\nHomework 1 available; due next Friday (2/7)."
+    "text": "Assessments\nHomework 1 Due Friday (2/7)."
   },
   {
-    "objectID": "slides/lecture03-2-generative.html#references-scroll-for-full-list",
-    "href": "slides/lecture03-2-generative.html#references-scroll-for-full-list",
-    "title": "Time Series",
+    "objectID": "slides/lecture03-1-probmodels.html#references-scroll-for-full-list",
+    "href": "slides/lecture03-1-probmodels.html#references-scroll-for-full-list",
+    "title": "Linear Regression",
     "section": "References (Scroll for Full List)",
-    "text": "References (Scroll for Full List)"
+    "text": "References (Scroll for Full List)\n\n\n\n\nHelsel, D. R., Hirsch, R. M., Ryberg, K. R., Archfield, S. A., & Gilroy, E. J. (2020). Statistical methods in water resources (research report No. 4-A3) (p. 484). Reston, VA: U.S. Geological Survey. Retrieved from http://pubs.er.usgs.gov/publication/tm4A3"
   },
   {
     "objectID": "slides/lecture01-1-intro.html#about-me",
@@ -1871,42 +2027,42 @@
     "href": "slides/notebooks/rahmstorf.html",
     "title": "Calibration of the Rahmstorf (2007) SLR Model",
     "section": "",
-    "text": "Pkg.activate(dirname(@__DIR__))\nPkg.instantiate()\n\n  Activating project at `~/Teaching/BEE4850/website/slides`\n┌ Warning: The project dependencies or compat requirements have changed since the manifest was last resolved.\n│ It is recommended to `Pkg.resolve()` or consider `Pkg.update()` if necessary.\n└ @ Pkg.API /Users/vs498/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/API.jl:1807\n\n\nPkg.Types.PkgError: `XLSX` is a direct dependency, but does not appear in the manifest. If you intend `XLSX` to be a direct dependency, run `Pkg.resolve()` to populate the manifest. Otherwise, remove `XLSX` with `Pkg.rm(\"XLSX\")`. Finally, run `Pkg.instantiate()` again.\n`XLSX` is a direct dependency, but does not appear in the manifest. If you intend `XLSX` to be a direct dependency, run `Pkg.resolve()` to populate the manifest. Otherwise, remove `XLSX` with `Pkg.rm(\"XLSX\")`. Finally, run `Pkg.instantiate()` again.\n\n\n\nStacktrace:\n\n [1] pkgerror(::String, ::Vararg{String})\n\n   @ Pkg.Types ~/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70\n\n [2] instantiate(ctx::Pkg.Types.Context; manifest::Nothing, update_registry::Bool, verbose::Bool, platform::Base.BinaryPlatforms.Platform, allow_build::Bool, allow_autoprecomp::Bool, kwargs::@Kwargs{})\n\n   @ Pkg.API ~/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/API.jl:1814\n\n [3] instantiate\n\n   @ ~/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/API.jl:1773 [inlined]\n\n [4] instantiate(; kwargs::@Kwargs{})\n\n   @ Pkg.API ~/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/API.jl:1772\n\n [5] top-level scope\n\n   @ ~/Teaching/BEE4850/website/slides/notebooks/jl_notebook_cell_df34fa98e69747e1a8f8a730347b8e2f_X32sZmlsZQ==.jl:2\n\n\n\nusing Distributions\nusing StatsBase\nusing CSV\nusing DataFrames\nusing Optim\nusing Turing\nusing Plots\nusing StatsPlots\nusing XLSX\n\nArgumentError: ArgumentError: Package XLSX [fdbf4ff8-1666-58a4-91e7-1b58723a45e0] is required but does not seem to be installed:\n - Run `Pkg.instantiate()` to install all recorded dependencies.\n\nArgumentError: Package XLSX [fdbf4ff8-1666-58a4-91e7-1b58723a45e0] is required but does not seem to be installed:\n\n - Run `Pkg.instantiate()` to install all recorded dependencies.\n\n\n\n\n\nStacktrace:\n\n  [1] _require(pkg::Base.PkgId, env::String)\n\n    @ Base ./loading.jl:1926\n\n  [2] __require_prelocked(uuidkey::Base.PkgId, env::String)\n\n    @ Base ./loading.jl:1812\n\n  [3] #invoke_in_world#3\n\n    @ ./essentials.jl:926 [inlined]\n\n  [4] invoke_in_world\n\n    @ ./essentials.jl:923 [inlined]\n\n  [5] _require_prelocked(uuidkey::Base.PkgId, env::String)\n\n    @ Base ./loading.jl:1803\n\n  [6] macro expansion\n\n    @ ./loading.jl:1790 [inlined]\n\n  [7] macro expansion\n\n    @ ./lock.jl:267 [inlined]\n\n  [8] __require(into::Module, mod::Symbol)\n\n    @ Base ./loading.jl:1753\n\n  [9] #invoke_in_world#3\n\n    @ ./essentials.jl:926 [inlined]\n\n [10] invoke_in_world\n\n    @ ./essentials.jl:923 [inlined]\n\n [11] require(into::Module, mod::Symbol)\n\n    @ Base ./loading.jl:1746\n\n [12] eval\n\n    @ ./boot.jl:385 [inlined]\n\n [13] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)\n\n    @ Base ./loading.jl:2076\n\n [14] #invokelatest#2\n\n    @ ./essentials.jl:892 [inlined]\n\n [15] invokelatest\n\n    @ ./essentials.jl:889 [inlined]\n\n [16] (::VSCodeServer.var\"#217#218\"{VSCodeServer.NotebookRunCellArguments, String})()\n\n    @ VSCodeServer ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/VSCodeServer/src/serve_notebook.jl:24\n\n [17] withpath(f::VSCodeServer.var\"#217#218\"{VSCodeServer.NotebookRunCellArguments, String}, path::String)\n\n    @ VSCodeServer ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/VSCodeServer/src/repl.jl:276\n\n [18] notebook_runcell_request(conn::VSCodeServer.JSONRPC.JSONRPCEndpoint{Base.PipeEndpoint, Base.PipeEndpoint}, params::VSCodeServer.NotebookRunCellArguments)\n\n    @ VSCodeServer ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/VSCodeServer/src/serve_notebook.jl:13\n\n [19] dispatch_msg(x::VSCodeServer.JSONRPC.JSONRPCEndpoint{Base.PipeEndpoint, Base.PipeEndpoint}, dispatcher::VSCodeServer.JSONRPC.MsgDispatcher, msg::Dict{String, Any})\n\n    @ VSCodeServer.JSONRPC ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/JSONRPC/src/typed.jl:67\n\n [20] serve_notebook(pipename::String, debugger_pipename::String, outputchannel_logger::Base.CoreLogging.SimpleLogger; error_handler::var\"#5#10\"{String})\n\n    @ VSCodeServer ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/VSCodeServer/src/serve_notebook.jl:147\n\n [21] top-level scope\n\n    @ ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/notebook/notebook.jl:35"
+    "text": "import Pkg\nPkg.activate(dirname(@__DIR__))\nPkg.instantiate()\n\n  Activating project at `~/Teaching/BEE4850/website/slides`\n\n\n\nusing Distributions\nusing StatsBase\nusing CSV\nusing DataFrames\nusing Optim\nusing Turing\nusing Plots\nusing StatsPlots\nusing XLSX\nusing Interpolations"
   },
   {
     "objectID": "slides/notebooks/rahmstorf.html#load-environment",
     "href": "slides/notebooks/rahmstorf.html#load-environment",
     "title": "Calibration of the Rahmstorf (2007) SLR Model",
     "section": "",
-    "text": "Pkg.activate(dirname(@__DIR__))\nPkg.instantiate()\n\n  Activating project at `~/Teaching/BEE4850/website/slides`\n┌ Warning: The project dependencies or compat requirements have changed since the manifest was last resolved.\n│ It is recommended to `Pkg.resolve()` or consider `Pkg.update()` if necessary.\n└ @ Pkg.API /Users/vs498/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/API.jl:1807\n\n\nPkg.Types.PkgError: `XLSX` is a direct dependency, but does not appear in the manifest. If you intend `XLSX` to be a direct dependency, run `Pkg.resolve()` to populate the manifest. Otherwise, remove `XLSX` with `Pkg.rm(\"XLSX\")`. Finally, run `Pkg.instantiate()` again.\n`XLSX` is a direct dependency, but does not appear in the manifest. If you intend `XLSX` to be a direct dependency, run `Pkg.resolve()` to populate the manifest. Otherwise, remove `XLSX` with `Pkg.rm(\"XLSX\")`. Finally, run `Pkg.instantiate()` again.\n\n\n\nStacktrace:\n\n [1] pkgerror(::String, ::Vararg{String})\n\n   @ Pkg.Types ~/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/Types.jl:70\n\n [2] instantiate(ctx::Pkg.Types.Context; manifest::Nothing, update_registry::Bool, verbose::Bool, platform::Base.BinaryPlatforms.Platform, allow_build::Bool, allow_autoprecomp::Bool, kwargs::@Kwargs{})\n\n   @ Pkg.API ~/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/API.jl:1814\n\n [3] instantiate\n\n   @ ~/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/API.jl:1773 [inlined]\n\n [4] instantiate(; kwargs::@Kwargs{})\n\n   @ Pkg.API ~/.julia/juliaup/julia-1.10.4+0.aarch64.apple.darwin14/share/julia/stdlib/v1.10/Pkg/src/API.jl:1772\n\n [5] top-level scope\n\n   @ ~/Teaching/BEE4850/website/slides/notebooks/jl_notebook_cell_df34fa98e69747e1a8f8a730347b8e2f_X32sZmlsZQ==.jl:2\n\n\n\nusing Distributions\nusing StatsBase\nusing CSV\nusing DataFrames\nusing Optim\nusing Turing\nusing Plots\nusing StatsPlots\nusing XLSX\n\nArgumentError: ArgumentError: Package XLSX [fdbf4ff8-1666-58a4-91e7-1b58723a45e0] is required but does not seem to be installed:\n - Run `Pkg.instantiate()` to install all recorded dependencies.\n\nArgumentError: Package XLSX [fdbf4ff8-1666-58a4-91e7-1b58723a45e0] is required but does not seem to be installed:\n\n - Run `Pkg.instantiate()` to install all recorded dependencies.\n\n\n\n\n\nStacktrace:\n\n  [1] _require(pkg::Base.PkgId, env::String)\n\n    @ Base ./loading.jl:1926\n\n  [2] __require_prelocked(uuidkey::Base.PkgId, env::String)\n\n    @ Base ./loading.jl:1812\n\n  [3] #invoke_in_world#3\n\n    @ ./essentials.jl:926 [inlined]\n\n  [4] invoke_in_world\n\n    @ ./essentials.jl:923 [inlined]\n\n  [5] _require_prelocked(uuidkey::Base.PkgId, env::String)\n\n    @ Base ./loading.jl:1803\n\n  [6] macro expansion\n\n    @ ./loading.jl:1790 [inlined]\n\n  [7] macro expansion\n\n    @ ./lock.jl:267 [inlined]\n\n  [8] __require(into::Module, mod::Symbol)\n\n    @ Base ./loading.jl:1753\n\n  [9] #invoke_in_world#3\n\n    @ ./essentials.jl:926 [inlined]\n\n [10] invoke_in_world\n\n    @ ./essentials.jl:923 [inlined]\n\n [11] require(into::Module, mod::Symbol)\n\n    @ Base ./loading.jl:1746\n\n [12] eval\n\n    @ ./boot.jl:385 [inlined]\n\n [13] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)\n\n    @ Base ./loading.jl:2076\n\n [14] #invokelatest#2\n\n    @ ./essentials.jl:892 [inlined]\n\n [15] invokelatest\n\n    @ ./essentials.jl:889 [inlined]\n\n [16] (::VSCodeServer.var\"#217#218\"{VSCodeServer.NotebookRunCellArguments, String})()\n\n    @ VSCodeServer ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/VSCodeServer/src/serve_notebook.jl:24\n\n [17] withpath(f::VSCodeServer.var\"#217#218\"{VSCodeServer.NotebookRunCellArguments, String}, path::String)\n\n    @ VSCodeServer ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/VSCodeServer/src/repl.jl:276\n\n [18] notebook_runcell_request(conn::VSCodeServer.JSONRPC.JSONRPCEndpoint{Base.PipeEndpoint, Base.PipeEndpoint}, params::VSCodeServer.NotebookRunCellArguments)\n\n    @ VSCodeServer ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/VSCodeServer/src/serve_notebook.jl:13\n\n [19] dispatch_msg(x::VSCodeServer.JSONRPC.JSONRPCEndpoint{Base.PipeEndpoint, Base.PipeEndpoint}, dispatcher::VSCodeServer.JSONRPC.MsgDispatcher, msg::Dict{String, Any})\n\n    @ VSCodeServer.JSONRPC ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/JSONRPC/src/typed.jl:67\n\n [20] serve_notebook(pipename::String, debugger_pipename::String, outputchannel_logger::Base.CoreLogging.SimpleLogger; error_handler::var\"#5#10\"{String})\n\n    @ VSCodeServer ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/packages/VSCodeServer/src/serve_notebook.jl:147\n\n [21] top-level scope\n\n    @ ~/.vscode/extensions/julialang.language-julia-1.127.2/scripts/notebook/notebook.jl:35"
+    "text": "import Pkg\nPkg.activate(dirname(@__DIR__))\nPkg.instantiate()\n\n  Activating project at `~/Teaching/BEE4850/website/slides`\n\n\n\nusing Distributions\nusing StatsBase\nusing CSV\nusing DataFrames\nusing Optim\nusing Turing\nusing Plots\nusing StatsPlots\nusing XLSX\nusing Interpolations"
   },
   {
     "objectID": "slides/notebooks/rahmstorf.html#load-data",
     "href": "slides/notebooks/rahmstorf.html#load-data",
     "title": "Calibration of the Rahmstorf (2007) SLR Model",
     "section": "Load Data",
-    "text": "Load Data\n\ndata_path = joinpath(dirname(@__DIR__), \"data\")\nnorm_yrs = 1951:1980\n\nsl_dat = DataFrame(CSV.File(joinpath(data_path, \"sealevel\", \"CSIRO_Recons_gmsl_yr_2015.csv\")))\n\nrename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with\nsl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year \nsl_dat[!, :GMSLR] .-= mean(filter(row -&gt; row.Year ∈ norm_yrs, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly\n\n# load temperature data\ntemp_dat = DataFrame(CSV.File(joinpath(data_path, \"climate\", \"HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv\")))\nrename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with\nfilter!(row -&gt; row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for\ntemp_normalize = mean(filter(row -&gt; row.Year ∈ norm_yrs, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean\ntemp_dat[!, :Temp] .-= temp_normalize\ntemp_dat[!, :Lower] .-= temp_normalize\ntemp_dat[!, :Upper] .-=  temp_normalize\n\nsl_plot = scatter(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\n\ntemp_plot = scatter(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label=\"Observations\", ylabel=\"(°C)\", xlabel=\"Year\", title=\"Temperature\")\n\nplot(sl_plot, temp_plot, layout=(2, 1))"
+    "text": "Load Data\n\ndata_path = joinpath(dirname(@__DIR__), \"data\")\nnorm_yrs = 1951:1980\n\nsl_dat = DataFrame(CSV.File(joinpath(data_path, \"sealevel\", \"CSIRO_Recons_gmsl_yr_2015.csv\")))\n\nrename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with\nsl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year \nsl_dat[!, :GMSLR] .-= mean(filter(row -&gt; row.Year ∈ norm_yrs, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly\nsl_dat\n\n134×3 DataFrame109 rows omitted\n\n\n\nRow\nYear\nGMSLR\nSD\n\n\n\nFloat64\nFloat64\nFloat64\n\n\n\n\n1\n1880.0\n-118.157\n24.2\n\n\n2\n1881.0\n-112.557\n24.2\n\n\n3\n1882.0\n-129.357\n23.0\n\n\n4\n1883.0\n-124.057\n22.8\n\n\n5\n1884.0\n-103.157\n22.2\n\n\n6\n1885.0\n-104.657\n21.9\n\n\n7\n1886.0\n-107.057\n20.8\n\n\n8\n1887.0\n-112.657\n20.8\n\n\n9\n1888.0\n-110.557\n20.8\n\n\n10\n1889.0\n-108.957\n20.8\n\n\n11\n1890.0\n-106.957\n20.7\n\n\n12\n1891.0\n-108.657\n20.7\n\n\n13\n1892.0\n-105.457\n20.7\n\n\n⋮\n⋮\n⋮\n⋮\n\n\n123\n2002.0\n68.9433\n6.8\n\n\n124\n2003.0\n78.1433\n6.9\n\n\n125\n2004.0\n77.7433\n6.9\n\n\n126\n2005.0\n77.8433\n6.8\n\n\n127\n2006.0\n82.1433\n6.8\n\n\n128\n2007.0\n84.0433\n7.1\n\n\n129\n2008.0\n92.7433\n6.8\n\n\n130\n2009.0\n98.5433\n6.9\n\n\n131\n2010.0\n106.243\n7.1\n\n\n132\n2011.0\n107.843\n7.5\n\n\n133\n2012.0\n116.643\n8.3\n\n\n134\n2013.0\n108.243\n8.9\n\n\n\n\n\n\n\n\n# load temperature data\ntemp_dat = DataFrame(CSV.File(joinpath(data_path, \"climate\", \"HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv\")))\nrename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with\nfilter!(row -&gt; row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for\ntemp_normalize = mean(filter(row -&gt; row.Year ∈ norm_yrs, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean\ntemp_dat[!, :Temp] .-= temp_normalize\ntemp_dat[!, :Lower] .-= temp_normalize\ntemp_dat[!, :Upper] .-=  temp_normalize\n\nsl_plot = scatter(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\n\ntemp_plot = scatter(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label=\"Observations\", ylabel=\"(°C)\", xlabel=\"Year\", title=\"Temperature\")\n\nplot(sl_plot, temp_plot, layout=(2, 1))"
   },
   {
     "objectID": "slides/notebooks/rahmstorf.html#model-specification",
     "href": "slides/notebooks/rahmstorf.html#model-specification",
     "title": "Calibration of the Rahmstorf (2007) SLR Model",
     "section": "Model Specification",
-    "text": "Model Specification\nThe Rahmstorf (2007) model is:\n\\[\\frac{dH}{dt} = \\alpha (T - T_0)\\]\nDiscretizing:\n\\[H(t+1) = H(t) + \\Delta t \\alpha (T - T_0)\\]\nWe’ll set \\(\\Delta t = 1 \\text{yr}\\). This means we need the following parameters:\n\n\\(\\alpha\\): SLR sensitivity to temperature anomalies \\((mm/(yr \\cdot ^\\circ C))\\),\n\\(T\\_0\\): Null temperature anomaly (no SLR at this temperature) \\((^\\circ C)\\).\n\\(H_0 = H(0)\\): Initial SL anomaly \\((mm)\\).\n\nThis is the generative model.\nSimplest way to add residuals/measurement errors:\n\\[y_t \\sim N(H(t), \\sigma^2)\\]\n\nfunction rahmstorf_slr(params, temps; Δt=1)\n    α, b, T₀, H₀ = params\n    temp_diff = temps .- T₀\n    ΔT = [0; diff(temps)]\n    H = zeros(length(temps) + 1) # initialize storage\n    H[1] = H₀\n    for i = 2:length(H)\n        H[i] = H[i-1] + α * Δt * temp_diff[i-1] + b * ΔT[i-1]\n    end\n    return H[2:end]\nend\n\nrahmstorf_slr (generic function with 2 methods)\n\n\n\nslr_ex = rahmstorf_slr((3.0, 8.0, -0.6, -120.0), temp_dat.Temp)\nsl_plot = scatter(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\nplot!(sl_plot, sl_dat[!, :Year], slr_ex, color=:red, linewidth=3, label=\"Baseline Values\")"
+    "text": "Model Specification\nThe Rahmstorf (2007) model is:\n\\[\\frac{dH}{dt} = \\alpha (T - T_0)\\]\nDiscretizing:\n\\[H(t+1) = H(t) + \\Delta t \\alpha (T - T_0)\\]\nWe’ll set \\(\\Delta t = 1 \\text{yr}\\). This means we need the following parameters:\n\n\\(\\alpha\\): SLR sensitivity to temperature anomalies \\((mm/(yr \\cdot ^\\circ C))\\),\n\\(T\\_0\\): Null temperature anomaly (no SLR at this temperature) \\((^\\circ C)\\).\n\\(H_0 = H(0)\\): Initial SL anomaly \\((mm)\\).\n\nThis is the generative model.\nSimplest way to add residuals/measurement errors:\n\\[y_t \\sim N(H(t), \\sigma^2)\\]\n\nfunction rahmstorf_slr(params, temps; Δt=1)\n    α, b, T₀, H₀ = params\n    temp_diff = temps .- T₀\n    ΔT = [0; diff(temps)]\n    H = zeros(length(temps) + 1) # initialize storage\n    H[1] = H₀\n    for i = 2:length(H)\n        H[i] = H[i-1] + α * Δt * temp_diff[i-1] + b * ΔT[i-1]\n    end\n    return H[2:end]\nend\n\nrahmstorf_slr (generic function with 1 method)\n\n\n\nslr_ex = rahmstorf_slr((3.0, 8.0, -0.6, -120.0), temp_dat.Temp)\nsl_plot = scatter(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\nplot!(sl_plot, sl_dat[!, :Year], slr_ex, color=:red, linewidth=2, label=\"Baseline Values\")"
   },
   {
     "objectID": "slides/notebooks/rahmstorf.html#model-calibration-1-gaussian-iid-errors",
     "href": "slides/notebooks/rahmstorf.html#model-calibration-1-gaussian-iid-errors",
     "title": "Calibration of the Rahmstorf (2007) SLR Model",
     "section": "Model Calibration 1: Gaussian iid Errors",
-    "text": "Model Calibration 1: Gaussian iid Errors\n\n# now the params include the standard deviation of the error model as well\nfunction gaussian_iid_homosked(params, temp_dat, slr_dat, Δt=1.0)\n    α, b, T₀, H₀, σ = params \n    slr_sim = rahmstorf_slr((α, b, T₀, H₀), temp_dat; Δt = Δt)\n    ll = sum(logpdf.(Normal.(slr_sim, σ), slr_dat))\n    return ll\nend\n\ngaussian_iid_homosked((4.6, 50.0, -0.5, -100.0, 5.0), temp_dat.Temp, sl_dat.GMSLR)\n\n-8874.472323023905\n\n\n\nlow_bds = [0.0, -100.0, -5.0, -200.0, 0.0]\nup_bds = [10.0, 100.0, 0.0, 0.0, 50.0]\np₀ = [3.4, 20.0, -0.5, -100.0, 10.0]\n\nmle_optim = optimize(p -&gt; -gaussian_iid_homosked(p, temp_dat.Temp, sl_dat.GMSLR), low_bds, up_bds, p₀)\np_mle = mle_optim.minimizer\n\n5-element Vector{Float64}:\n    1.9954491265469922\n   -7.5317201796796605\n   -0.8657256421723124\n -117.60853103602687\n    5.8375424743684\n\n\n\nrahmstorf_homogauss_mle = rahmstorf_slr(p_mle, temp_dat.Temp)\n\n134-element Vector{Float64}:\n -116.35838317812792\n -115.57099317278791\n -113.80369210910764\n -112.230991078904\n -110.23454730600139\n -109.45392169229179\n -108.79168143326548\n -107.32002185084644\n -107.09601755182823\n -106.68952893218083\n    ⋮\n   81.02621423615516\n   84.30750091694954\n   87.22436356824912\n   90.98330316578442\n   93.0668769176982\n   95.67532357714659\n   99.70322536024302\n  102.43559944210854\n  105.21406676270963\n\n\n\nplot!(sl_plot, sl_dat[!, :Year], rahmstorf_homogauss_mle, color=:blue, linewidth=3, label=\"Homoskedastic Gaussian Fit\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfunction gaussian_iid_ar(params, temp_dat, slr_dat, slr_err, Δt=1.0)\n    α, b, T₀, H₀, ρ, σ = params \n    slr_sim = rahmstorf_slr((α, b, T₀, H₀), temp_dat; Δt = Δt)\n    # whiten residuals\n    ll = 0\n    residuals = zeros(length(slr_dat))\n    for t in eachindex(slr_dat)\n        residuals[t] = slr_dat[t] - slr_sim[t]\n        if t == 1\n            ll += logpdf(Normal(0, sqrt(σ^2 / (1 - ρ^2))), residuals[t])\n        else\n            ll += logpdf(Normal(ρ * residuals[t-1], σ), residuals[t])\n        end\n    end\n    return ll\nend\n\ngaussian_iid_ar (generic function with 2 methods)\n\n\n\nlow_bds = [0.0, -100.0, -5.0, -200.0, -1.0, 0.0]\nup_bds = [10.0, 100.0, 0.0, 0.0, 1.0, 50.0]\np₀ = [3.4, 20.0, -0.5, -100.0, 0.0, 10.0]\n\nmle_optim = optimize(p -&gt; -gaussian_iid_ar(p, temp_dat.Temp, sl_dat.GMSLR, sl_dat.SD), low_bds, up_bds, p₀)\np_mle2 = mle_optim.minimizer\n@show p_mle;\n@show p_mle2;\n\np_mle = [1.9954491265469922, -7.5317201796796605, -0.8657256421723124, -117.60853103602687, 5.8375424743684]\np_mle2 = [1.9302376511820256, -3.143145055240983, -0.8779630536816122, -117.15572156303162, 0.5274575062040584, 4.969822166300397]\n\n\n\nrahmstorf_ar_mle = rahmstorf_slr(p_mle2, temp_dat.Temp)\nplot!(sl_plot, sl_dat[!, :Year], rahmstorf_ar_mle, color=:green, linewidth=3, label=\"Autoregressive Fit\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nscatter(rahmstorf_ar_mle - rahmstorf_homogauss_mle)\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nresids_homogauss = sl_dat.GMSLR - rahmstorf_homogauss_mle\nqqnorm(resids_homogauss)\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nresids_ar = sl_dat.GMSLR - rahmstorf_ar_mle\nqqnorm(resids_ar)\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npacf_homogauss = pacf(resids_homogauss, 1:5)\n\n5-element Vector{Float64}:\n  0.5192505198498225\n  0.08329400513333905\n  0.01867936456698277\n  0.04266165780753862\n -0.08903475090917588\n\n\n\npacf_ar = pacf(resids_ar, 1:5)\n\n5-element Vector{Float64}:\n  0.5308290425376294\n  0.0917898388200087\n  0.03511550852430468\n  0.047473969055681735\n -0.07752525981548981"
+    "text": "Model Calibration 1: Gaussian iid Errors\n\n# now the params include the standard deviation of the error model as well\nfunction gaussian_iid_homosked(params, temp_dat, slr_dat, Δt=1.0)\n    α, b, T₀, H₀, σ = params \n    slr_sim = rahmstorf_slr((α, b, T₀, H₀), temp_dat; Δt = Δt)\n    ll = sum(logpdf.(Normal.(slr_sim, σ), slr_dat))\n    return ll\nend\n\ngaussian_iid_homosked((4.6, 50.0, -0.5, -100.0, 5.0), temp_dat.Temp, sl_dat.GMSLR)\n\n-8874.472323023909\n\n\n\nlow_bds = [0.0, -100.0, -5.0, -200.0, 0.0]\nup_bds = [10.0, 100.0, 0.0, 0.0, 50.0]\np₀ = [3.4, 20.0, -0.5, -100.0, 10.0]\n\nmle_optim = optimize(p -&gt; -gaussian_iid_homosked(p, temp_dat.Temp, sl_dat.GMSLR), low_bds, up_bds, p₀)\np_mle = mle_optim.minimizer\n\n5-element Vector{Float64}:\n    1.9954491263556067\n   -7.531720172168937\n   -0.8657256422225121\n -117.60853103544478\n    5.837542474551414\n\n\n\nrahmstorf_homogauss_mle = rahmstorf_slr(p_mle, temp_dat.Temp)\n\n134-element Vector{Float64}:\n -116.35838317756556\n -115.57099317163348\n -113.80369210845214\n -112.23099107864499\n -110.23454730682374\n -109.45392169294495\n -108.79168143354109\n -107.32002185169173\n -107.09601755178424\n -106.6895289311967\n    ⋮\n   81.02621423657114\n   84.30750091691806\n   87.22436356816803\n   90.98330316458731\n   93.0668769172916\n   95.67532357715741\n   99.70322535899919\n  102.43559944097373\n  105.21406676172056\n\n\n\nplot!(sl_plot, sl_dat[!, :Year], rahmstorf_homogauss_mle, color=:blue, linewidth=2, label=\"Homoskedastic Gaussian Fit\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfunction gaussian_iid_ar(params, temp_dat, slr_dat, slr_err, Δt=1.0)\n    α, b, T₀, H₀, ρ, σ = params \n    slr_sim = rahmstorf_slr((α, b, T₀, H₀), temp_dat; Δt = Δt)\n\n    function ar_covariance_mat(σ, ρ, y_err)\n        H = abs.((1:length(y_err)) .- (1:(length(y_err)))') # compute the outer product to get the correlation lags\n        ζ_var = σ^2 / (1-ρ^2)\n        Σ = ρ.^H * ζ_var\n        for i in 1:length(y_err)\n            Σ[i, i] += y_err[i]^2\n        end\n        return Σ\n    end\n\n    # whiten residuals\n    Σ = ar_covariance_mat(σ, ρ, slr_err)\n    residuals = slr_dat - slr_sim\n    ll = logpdf(MvNormal(zeros(length(slr_dat)), Σ), residuals)\n    return ll\nend\n\ngaussian_iid_ar (generic function with 2 methods)\n\n\n\nlow_bds = [0.0, -100.0, -5.0, -200.0, -1.0, 0.0]\nup_bds = [10.0, 100.0, 0.0, 0.0, 1.0, 50.0]\np₀ = [3.4, 20.0, -0.5, -100.0, 0.0, 10.0]\n\nmle_optim = optimize(p -&gt; -gaussian_iid_ar(p, temp_dat.Temp, sl_dat.GMSLR, sl_dat.SD), low_bds, up_bds, p₀)\np_mle2 = mle_optim.minimizer\n@show p_mle;\n@show p_mle2;\n\np_mle = [1.9954491263556067, -7.531720172168937, -0.8657256422225121, -117.60853103544478, 5.837542474551414]\np_mle2 = [2.0016286168212845, -0.2098840209850033, -0.8304798210051328, -114.40746139053981, 0.855235460804076, 1.3967479590276937]\n\n\n\nrahmstorf_ar_mle = rahmstorf_slr(p_mle2, temp_dat.Temp)\nplot!(sl_plot, sl_dat[!, :Year], rahmstorf_ar_mle, color=:green, linewidth=2, label=\"Autoregressive Fit\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nscatter(rahmstorf_ar_mle - rahmstorf_homogauss_mle)\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nresids_homogauss = sl_dat.GMSLR - rahmstorf_homogauss_mle\nqqnorm(resids_homogauss)\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nresids_ar = sl_dat.GMSLR - rahmstorf_ar_mle\nqqnorm(resids_ar)\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npacf_homogauss = pacf(resids_homogauss, 1:5)\n\n5-element Vector{Float64}:\n  0.5192505198690146\n  0.08329400514537694\n  0.01867936459019353\n  0.04266165780968207\n -0.08903475089498139\n\n\n\npacf_ar = pacf(resids_ar, 1:5)\n\n5-element Vector{Float64}:\n  0.5449757003914797\n  0.10324950203859268\n  0.04874197808999718\n  0.05282629618990788\n -0.06474394579715283"
   },
   {
     "objectID": "slides/notebooks/rahmstorf.html#projections",
     "href": "slides/notebooks/rahmstorf.html#projections",
     "title": "Calibration of the Rahmstorf (2007) SLR Model",
     "section": "Projections",
-    "text": "Projections\n\ncwd()\n\nUndefVarError: UndefVarError: `cwd` not defined\nUndefVarError: `cwd` not defined\n\n\n\nStacktrace:\n\n [1] top-level scope\n\n   @ ~/Teaching/BEE4850/website/slides/notebooks/jl_notebook_cell_df34fa98e69747e1a8f8a730347b8e2f_X61sZmlsZQ==.jl:1\n\n\n\n\nPkg.update()\nrcp26 = XLSX.readtable(joinpath(data_path, \"climate\", \"cmip6_temps.xlsx\")) |&gt; DataFrame"
+    "text": "Projections\n\n\nrcpdf = XLSX.readtable(joinpath(data_path, \"climate\", \"cmip6_temps.xlsx\"), \"data\") |&gt; DataFrame\n\n# select only rows and columns with scenario names and data   \nselect!(rcpdf, Not([:Model, :Region, :Variable, :Unit, :Notes]))\nrcpdf = rcpdf[1:5, :]\n\n5×12 DataFrame\n\n\n\nRow\nScenario\n2005.0\n2010.0\n2020.0\n2030.0\n2040.0\n2050.0\n2060.0\n2070.0\n2080.0\n2090.0\n2100.0\n\n\n\nAny\nAny\nAny\nAny\nAny\nAny\nAny\nAny\nAny\nAny\nAny\nAny\n\n\n\n\n1\nSSP3-Baseline\n0.913386\n0.988055\n1.22575\n1.52381\n1.86419\n2.20251\n2.55093\n2.91152\n3.28435\n3.67242\n4.0711\n\n\n2\nSSP4-Baseline\n0.913386\n0.988562\n1.23721\n1.53287\n1.87389\n2.21631\n2.54615\n2.87451\n3.20099\n3.49421\n3.75829\n\n\n3\nSSP1-Baseline\n0.913386\n0.988441\n1.22283\n1.50579\n1.77074\n2.02206\n2.24641\n2.46035\n2.66872\n2.85621\n3.01774\n\n\n4\nSSP2-Baseline\n0.913386\n0.988977\n1.24141\n1.48262\n1.7615\n2.05281\n2.35626\n2.68133\n3.02315\n3.38796\n3.76329\n\n\n5\nSSP5-Baseline\n0.913386\n0.989124\n1.2658\n1.60296\n2.01275\n2.48049\n2.9755\n3.50379\n4.0499\n4.5757\n5.05197\n\n\n\n\n\n\n\n# reformat scenario names to SSPn-x.x\nrcpdf[!, :Scenario] = first.(rcpdf[!, :Scenario], 4)\n# sort by scenarios\nsort!(rcpdf, :Scenario)\n\n5×12 DataFrame\n\n\n\nRow\nScenario\n2005.0\n2010.0\n2020.0\n2030.0\n2040.0\n2050.0\n2060.0\n2070.0\n2080.0\n2090.0\n2100.0\n\n\n\nString\nAny\nAny\nAny\nAny\nAny\nAny\nAny\nAny\nAny\nAny\nAny\n\n\n\n\n1\nSSP1\n0.913386\n0.988441\n1.22283\n1.50579\n1.77074\n2.02206\n2.24641\n2.46035\n2.66872\n2.85621\n3.01774\n\n\n2\nSSP2\n0.913386\n0.988977\n1.24141\n1.48262\n1.7615\n2.05281\n2.35626\n2.68133\n3.02315\n3.38796\n3.76329\n\n\n3\nSSP3\n0.913386\n0.988055\n1.22575\n1.52381\n1.86419\n2.20251\n2.55093\n2.91152\n3.28435\n3.67242\n4.0711\n\n\n4\nSSP4\n0.913386\n0.988562\n1.23721\n1.53287\n1.87389\n2.21631\n2.54615\n2.87451\n3.20099\n3.49421\n3.75829\n\n\n5\nSSP5\n0.913386\n0.989124\n1.2658\n1.60296\n2.01275\n2.48049\n2.9755\n3.50379\n4.0499\n4.5757\n5.05197\n\n\n\n\n\n\n\nrcp_dat = zeros(nrow(rcpdf), 2100 - 1880 + 1)\nsplit_idx = 2013 - 1880 + 1\n\n134\n\n\n\nrcp_dat[:, 1:split_idx] .= temp_dat.Temp'\nrcp_dat\n\n5×221 Matrix{Float64}:\n -0.239226  -0.15564  -0.218924  …  0.0  0.0  0.0  0.0  0.0  0.0  0.0\n -0.239226  -0.15564  -0.218924     0.0  0.0  0.0  0.0  0.0  0.0  0.0\n -0.239226  -0.15564  -0.218924     0.0  0.0  0.0  0.0  0.0  0.0  0.0\n -0.239226  -0.15564  -0.218924     0.0  0.0  0.0  0.0  0.0  0.0  0.0\n -0.239226  -0.15564  -0.218924     0.0  0.0  0.0  0.0  0.0  0.0  0.0\n\n\n\n\nfor (i, row) in enumerate(eachrow(rcpdf))\n    yrs = collect(2013:2100)\n    xs = collect(2010:10:2100)\n    interp = LinearInterpolation(xs, collect(rcpdf[i, 3:end]))\n    rcp_dat[i, split_idx:end] = interp.(yrs)\nend\nrcp_dat = DataFrame(rcp_dat, string.(collect(1880:2100)))\nrcp_dat.Scenario = rcpdf.Scenario\nrcp_dat\n\n5×222 DataFrame122 columns omitted\n\n\n\nRow\n1880\n1881\n1882\n1883\n1884\n1885\n1886\n1887\n1888\n1889\n1890\n1891\n1892\n1893\n1894\n1895\n1896\n1897\n1898\n1899\n1900\n1901\n1902\n1903\n1904\n1905\n1906\n1907\n1908\n1909\n1910\n1911\n1912\n1913\n1914\n1915\n1916\n1917\n1918\n1919\n1920\n1921\n1922\n1923\n1924\n1925\n1926\n1927\n1928\n1929\n1930\n1931\n1932\n1933\n1934\n1935\n1936\n1937\n1938\n1939\n1940\n1941\n1942\n1943\n1944\n1945\n1946\n1947\n1948\n1949\n1950\n1951\n1952\n1953\n1954\n1955\n1956\n1957\n1958\n1959\n1960\n1961\n1962\n1963\n1964\n1965\n1966\n1967\n1968\n1969\n1970\n1971\n1972\n1973\n1974\n1975\n1976\n1977\n1978\n1979\n⋯\n\n\n\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\nFloat64\n⋯\n\n\n\n\n1\n-0.239226\n-0.15564\n-0.218924\n-0.269868\n-0.415714\n-0.394518\n-0.344298\n-0.42218\n-0.302773\n-0.17329\n-0.430252\n-0.324709\n-0.430953\n-0.418013\n-0.407158\n-0.372146\n-0.207401\n-0.183194\n-0.409186\n-0.278828\n-0.157873\n-0.216823\n-0.362378\n-0.45672\n-0.520955\n-0.331145\n-0.242533\n-0.427552\n-0.437265\n-0.459159\n-0.454418\n-0.462599\n-0.399067\n-0.390547\n-0.185986\n-0.115238\n-0.343604\n-0.466414\n-0.347978\n-0.248912\n-0.221975\n-0.164071\n-0.262622\n-0.241325\n-0.235456\n-0.205819\n-0.0462295\n-0.152799\n-0.130156\n-0.316151\n-0.100199\n-0.0267918\n-0.0688557\n-0.245738\n-0.0977309\n-0.129453\n-0.092915\n0.057407\n0.0644052\n0.0358088\n0.152542\n0.114735\n0.078012\n0.08302\n0.220711\n0.119694\n-0.0422069\n-0.0145996\n-0.0480553\n-0.0671963\n-0.150016\n0.015452\n0.0919605\n0.154237\n-0.0401443\n-0.120704\n-0.18656\n0.041271\n0.0589734\n0.0286011\n-0.0388811\n0.0566085\n0.0125515\n0.0398\n-0.229261\n-0.127782\n-0.0722787\n-0.0409104\n-0.0920264\n0.0452392\n-0.00850064\n-0.129327\n-0.0172212\n0.126539\n-0.0959314\n-0.0341483\n-0.139256\n0.179694\n0.0818617\n0.167464\n⋯\n\n\n2\n-0.239226\n-0.15564\n-0.218924\n-0.269868\n-0.415714\n-0.394518\n-0.344298\n-0.42218\n-0.302773\n-0.17329\n-0.430252\n-0.324709\n-0.430953\n-0.418013\n-0.407158\n-0.372146\n-0.207401\n-0.183194\n-0.409186\n-0.278828\n-0.157873\n-0.216823\n-0.362378\n-0.45672\n-0.520955\n-0.331145\n-0.242533\n-0.427552\n-0.437265\n-0.459159\n-0.454418\n-0.462599\n-0.399067\n-0.390547\n-0.185986\n-0.115238\n-0.343604\n-0.466414\n-0.347978\n-0.248912\n-0.221975\n-0.164071\n-0.262622\n-0.241325\n-0.235456\n-0.205819\n-0.0462295\n-0.152799\n-0.130156\n-0.316151\n-0.100199\n-0.0267918\n-0.0688557\n-0.245738\n-0.0977309\n-0.129453\n-0.092915\n0.057407\n0.0644052\n0.0358088\n0.152542\n0.114735\n0.078012\n0.08302\n0.220711\n0.119694\n-0.0422069\n-0.0145996\n-0.0480553\n-0.0671963\n-0.150016\n0.015452\n0.0919605\n0.154237\n-0.0401443\n-0.120704\n-0.18656\n0.041271\n0.0589734\n0.0286011\n-0.0388811\n0.0566085\n0.0125515\n0.0398\n-0.229261\n-0.127782\n-0.0722787\n-0.0409104\n-0.0920264\n0.0452392\n-0.00850064\n-0.129327\n-0.0172212\n0.126539\n-0.0959314\n-0.0341483\n-0.139256\n0.179694\n0.0818617\n0.167464\n⋯\n\n\n3\n-0.239226\n-0.15564\n-0.218924\n-0.269868\n-0.415714\n-0.394518\n-0.344298\n-0.42218\n-0.302773\n-0.17329\n-0.430252\n-0.324709\n-0.430953\n-0.418013\n-0.407158\n-0.372146\n-0.207401\n-0.183194\n-0.409186\n-0.278828\n-0.157873\n-0.216823\n-0.362378\n-0.45672\n-0.520955\n-0.331145\n-0.242533\n-0.427552\n-0.437265\n-0.459159\n-0.454418\n-0.462599\n-0.399067\n-0.390547\n-0.185986\n-0.115238\n-0.343604\n-0.466414\n-0.347978\n-0.248912\n-0.221975\n-0.164071\n-0.262622\n-0.241325\n-0.235456\n-0.205819\n-0.0462295\n-0.152799\n-0.130156\n-0.316151\n-0.100199\n-0.0267918\n-0.0688557\n-0.245738\n-0.0977309\n-0.129453\n-0.092915\n0.057407\n0.0644052\n0.0358088\n0.152542\n0.114735\n0.078012\n0.08302\n0.220711\n0.119694\n-0.0422069\n-0.0145996\n-0.0480553\n-0.0671963\n-0.150016\n0.015452\n0.0919605\n0.154237\n-0.0401443\n-0.120704\n-0.18656\n0.041271\n0.0589734\n0.0286011\n-0.0388811\n0.0566085\n0.0125515\n0.0398\n-0.229261\n-0.127782\n-0.0722787\n-0.0409104\n-0.0920264\n0.0452392\n-0.00850064\n-0.129327\n-0.0172212\n0.126539\n-0.0959314\n-0.0341483\n-0.139256\n0.179694\n0.0818617\n0.167464\n⋯\n\n\n4\n-0.239226\n-0.15564\n-0.218924\n-0.269868\n-0.415714\n-0.394518\n-0.344298\n-0.42218\n-0.302773\n-0.17329\n-0.430252\n-0.324709\n-0.430953\n-0.418013\n-0.407158\n-0.372146\n-0.207401\n-0.183194\n-0.409186\n-0.278828\n-0.157873\n-0.216823\n-0.362378\n-0.45672\n-0.520955\n-0.331145\n-0.242533\n-0.427552\n-0.437265\n-0.459159\n-0.454418\n-0.462599\n-0.399067\n-0.390547\n-0.185986\n-0.115238\n-0.343604\n-0.466414\n-0.347978\n-0.248912\n-0.221975\n-0.164071\n-0.262622\n-0.241325\n-0.235456\n-0.205819\n-0.0462295\n-0.152799\n-0.130156\n-0.316151\n-0.100199\n-0.0267918\n-0.0688557\n-0.245738\n-0.0977309\n-0.129453\n-0.092915\n0.057407\n0.0644052\n0.0358088\n0.152542\n0.114735\n0.078012\n0.08302\n0.220711\n0.119694\n-0.0422069\n-0.0145996\n-0.0480553\n-0.0671963\n-0.150016\n0.015452\n0.0919605\n0.154237\n-0.0401443\n-0.120704\n-0.18656\n0.041271\n0.0589734\n0.0286011\n-0.0388811\n0.0566085\n0.0125515\n0.0398\n-0.229261\n-0.127782\n-0.0722787\n-0.0409104\n-0.0920264\n0.0452392\n-0.00850064\n-0.129327\n-0.0172212\n0.126539\n-0.0959314\n-0.0341483\n-0.139256\n0.179694\n0.0818617\n0.167464\n⋯\n\n\n5\n-0.239226\n-0.15564\n-0.218924\n-0.269868\n-0.415714\n-0.394518\n-0.344298\n-0.42218\n-0.302773\n-0.17329\n-0.430252\n-0.324709\n-0.430953\n-0.418013\n-0.407158\n-0.372146\n-0.207401\n-0.183194\n-0.409186\n-0.278828\n-0.157873\n-0.216823\n-0.362378\n-0.45672\n-0.520955\n-0.331145\n-0.242533\n-0.427552\n-0.437265\n-0.459159\n-0.454418\n-0.462599\n-0.399067\n-0.390547\n-0.185986\n-0.115238\n-0.343604\n-0.466414\n-0.347978\n-0.248912\n-0.221975\n-0.164071\n-0.262622\n-0.241325\n-0.235456\n-0.205819\n-0.0462295\n-0.152799\n-0.130156\n-0.316151\n-0.100199\n-0.0267918\n-0.0688557\n-0.245738\n-0.0977309\n-0.129453\n-0.092915\n0.057407\n0.0644052\n0.0358088\n0.152542\n0.114735\n0.078012\n0.08302\n0.220711\n0.119694\n-0.0422069\n-0.0145996\n-0.0480553\n-0.0671963\n-0.150016\n0.015452\n0.0919605\n0.154237\n-0.0401443\n-0.120704\n-0.18656\n0.041271\n0.0589734\n0.0286011\n-0.0388811\n0.0566085\n0.0125515\n0.0398\n-0.229261\n-0.127782\n-0.0722787\n-0.0409104\n-0.0920264\n0.0452392\n-0.00850064\n-0.129327\n-0.0172212\n0.126539\n-0.0959314\n-0.0341483\n-0.139256\n0.179694\n0.0818617\n0.167464\n⋯\n\n\n\n\n\n\n\n@show p_mle2;\n@show p_mle;\n\np_mle2 = [2.0016286168212845, -0.2098840209850033, -0.8304798210051328, -114.40746139053981, 0.855235460804076, 1.3967479590276937]\np_mle = [1.9954491263556067, -7.531720172168937, -0.8657256422225121, -117.60853103544478, 5.837542474551414]\n\n\n\nrahmstorf_iid_proj_ssp5 = rahmstorf_slr(p_mle, collect(rcp_dat[5, 1:end-1]))\nrahmstorf_ar_proj_ssp5 = rahmstorf_slr(p_mle2, collect(rcp_dat[5, 1:end-1]))\nplot(1880:2100, rahmstorf_iid_proj_ssp5)\nplot!(1880:2100, rahmstorf_ar_proj_ssp5)\nxlims!((2050, 2100))\nylims!(200, 800)"
   },
   {
     "objectID": "project/presentation.html",
