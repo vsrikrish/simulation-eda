@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Class Schedule",
     "section": "",
-    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nHomework\n\n\n\n\n\n1\n1/22\nClass Introduction\n\n\n\n\n\n\n2\n1/27\nNull Hypothesis Testing and Statistical Significance\n\nLloyd & Oreskes (2018)\n\n\n\n\n\n1/29\nProbability Fundamentals\n\n\n\n\n\n\n3\n2/3\nProbability Models for Data\n\nShmueli (2010)\n\n\n\n\n\n2/5\nTime Series\n\n\n\n\n\n\n4\n2/10\nBayesian Statistics\n\n\n\n\n\n\n\n2/12\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n5\n2/17\nFebruary Break\n\n\n\n\n\n\n\n2/19\n\n\n\n\n\n\n\n6\n2/24\n\n\n\n\n\n\n\n\n2/26\n\n\n\n\n\n\n\n7\n3/3\n\n\n\n\n\n\n\n\n3/5\n\n\n\n\n\n\n\n8\n3/10\n\n\n\n\n\n\n\n\n3/12\n\n\n\n\n\n\n\n9\n3/17\n\n\n\n\n\n\n\n\n3/19\n\n\n\n\n\n\n\n10\n3/24\n\n\n\n\n\n\n\n\n3/26\n\n\n\n\n\n\n\n\n3/31\nSpring Break\n\n\n\n\n\n\n\n4/2\nSpring Break\n\n\n\n\n\n\n11\n4/7\n\n\n\n\n\n\n\n\n4/9\n\n\n\n\n\n\n\n12\n4/14\n\n\n\n\n\n\n\n\n4/16\n\n\n\n\n\n\n\n13\n4/21\n\n\n\n\n\n\n\n\n4/23\n\n\n\n\n\n\n\n14\n4/28\n\n\n\n\n\n\n\n\n4/30\n\n\n\n\n\n\n\n15\n5/5",
+    "text": "This page contains a schedule of the topics, content, and assignments for the semester. Note that this schedule will be updated as necessary the semester progresses, with all changes documented here.\nInstructions to save the slides as PDFs can be found here. The key is to hit E when the slides are open in your browser (ideally Chrome, but it may work in others) to toggle into PDF print mode.\nReadings can be accessed using the link (when needed, through the Cornell library with a Cornell login) or on Canvas.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nSlides\nReading\nHomework\n\n\n\n\n\n1\n1/22\nClass Introduction\n\n\n\n\n\n\n2\n1/27\nNull Hypothesis Testing and Statistical Significance\n\nLloyd & Oreskes (2018)\n\n\n\n\n\n1/29\nProbability Fundamentals\n\n\n\n\n\n\n3\n2/3\nProbability Models for Data\n\nShmueli (2010)\n\n\n\n\n\n2/5\nTime Series\n\n\n\n\n\n\n4\n2/10\nModeling Dynamical Systems\n\n\n\n\n\n\n\n2/12\nBayesian Statistics\n\n\n\n\n\n\n5\n2/17\nFebruary Break\n\n\n\n\n\n\n\n2/19\nMarkov Chain Monte Carlo\n\n\n\n\n\n\n6\n2/24\n\n\n\n\n\n\n\n\n2/26\n\n\n\n\n\n\n\n7\n3/3\n\n\n\n\n\n\n\n\n3/5\n\n\n\n\n\n\n\n8\n3/10\n\n\n\n\n\n\n\n\n3/12\n\n\n\n\n\n\n\n9\n3/17\n\n\n\n\n\n\n\n\n3/19\n\n\n\n\n\n\n\n10\n3/24\n\n\n\n\n\n\n\n\n3/26\n\n\n\n\n\n\n\n\n3/31\nSpring Break\n\n\n\n\n\n\n\n4/2\nSpring Break\n\n\n\n\n\n\n11\n4/7\n\n\n\n\n\n\n\n\n4/9\n\n\n\n\n\n\n\n12\n4/14\n\n\n\n\n\n\n\n\n4/16\n\n\n\n\n\n\n\n13\n4/21\n\n\n\n\n\n\n\n\n4/23\n\n\n\n\n\n\n\n14\n4/28\n\n\n\n\n\n\n\n\n4/30\n\n\n\n\n\n\n\n15\n5/5",
     "crumbs": [
       "Course Information",
       "Class Schedule"
@@ -273,6 +273,76 @@
     "title": "About This Website",
     "section": "Tools and Generation Workflow",
     "text": "Tools and Generation Workflow\nThis website was built with Quarto, which allows me to integrate Julia code and output with the web content, pdfs, and slides in an amazingly clean fashion, while simplifying the process of generation. All materials can be generated through a simple workflow from the [GitHub Repository]."
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#how-do-global-sea-levels-respond-to-warming",
+    "href": "slides/lecture04-1-diffeqmodels.html#how-do-global-sea-levels-respond-to-warming",
+    "title": "Modeling Dynamical Systems",
+    "section": "How Do Global Sea Levels Respond to Warming?",
+    "text": "How Do Global Sea Levels Respond to Warming?\n\nCode\n# load sea-level data into a DataFrame\nsl_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"sealevel\", \"CSIRO_Recons_gmsl_yr_2015.csv\")))\nrename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with\nsl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year \nsl_dat[!, :GMSLR] .-= mean(filter(row -&gt; row.Year ∈ 1880:1900, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly\n\n# load temperature data\ntemp_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"climate\", \"HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv\")))\nrename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with\nfilter!(row -&gt; row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for\ntemp_normalize = mean(filter(row -&gt; row.Year ∈ 1880:1900, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean\ntemp_dat[!, :Temp] .-= temp_normalize\ntemp_dat[!, :Lower] .-= temp_normalize\ntemp_dat[!, :Upper] .-=  temp_normalize\n\nsl_plot = plot(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\nplot!(sl_plot, size=(600, 450))\n\ntemp_plot = plot(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label=\"Observations\", ylabel=\"(°C)\", xlabel=\"Year\", title=\"Temperature\")\nplot!(temp_plot, size=(600, 450))\n\ndisplay(sl_plot)\ndisplay(temp_plot)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Sea level data from CSIRO and temperature data from HadCRUT5.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 1"
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#does-regressing-slr-on-temperature-make-sense",
+    "href": "slides/lecture04-1-diffeqmodels.html#does-regressing-slr-on-temperature-make-sense",
+    "title": "Modeling Dynamical Systems",
+    "section": "Does Regressing SLR on Temperature Make Sense?",
+    "text": "Does Regressing SLR on Temperature Make Sense?\nWhy might temperature exert an influence on sea levels?"
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#processes-contributing-to-slr",
+    "href": "slides/lecture04-1-diffeqmodels.html#processes-contributing-to-slr",
+    "title": "Modeling Dynamical Systems",
+    "section": "Processes Contributing to SLR",
+    "text": "Processes Contributing to SLR\n\nSea Level Processes\nSource: Milne et al. (2009)"
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#why-model-total-slr",
+    "href": "slides/lecture04-1-diffeqmodels.html#why-model-total-slr",
+    "title": "Modeling Dynamical Systems",
+    "section": "Why Model “Total” SLR?",
+    "text": "Why Model “Total” SLR?\n\nSea Level Budget\nSource: Fox-Kemper et al. (2021)"
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#linear-regression-specification",
+    "href": "slides/lecture04-1-diffeqmodels.html#linear-regression-specification",
+    "title": "Modeling Dynamical Systems",
+    "section": "Linear Regression Specification",
+    "text": "Linear Regression Specification\nStandard assumption of independent normal residuals:\n\n\n\\[\n\\begin{align*}\n\\text{SLR}_t &\\sim \\beta_0 + \\beta_1 \\text{x}_t + \\varepsilon \\\\\n\\varepsilon & \\sim N(0, \\sigma^2)\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2"
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#ols-estimate",
+    "href": "slides/lecture04-1-diffeqmodels.html#ols-estimate",
+    "title": "Modeling Dynamical Systems",
+    "section": "OLS Estimate",
+    "text": "OLS Estimate\n\n\n\\[\n\\begin{align*}\n\\hat{\\beta_1} &= \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2} \\\\\n&= 176 \\text{mm}/^\\circ \\text{C} \\\\\n\\hat{\\beta_0} &= \\bar{y} - \\hat{\\beta_1}\\bar{x} = 27 \\text{mm} \\\\\n\\hat{\\sigma} &= \\sqrt{\\frac{SSE}{n-1}} = 27 \\text{mm}\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3"
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#stationarity",
+    "href": "slides/lecture04-1-diffeqmodels.html#stationarity",
+    "title": "Modeling Dynamical Systems",
+    "section": "Stationarity",
+    "text": "Stationarity\nFor independent data \\(y = \\{y_i\\}\\),"
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#next-classes",
+    "href": "slides/lecture04-1-diffeqmodels.html#next-classes",
+    "title": "Modeling Dynamical Systems",
+    "section": "Next Classes",
+    "text": "Next Classes\nNext Week+: Prob/Stats “Review” and Fundamentals"
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#assessments",
+    "href": "slides/lecture04-1-diffeqmodels.html#assessments",
+    "title": "Modeling Dynamical Systems",
+    "section": "Assessments",
+    "text": "Assessments\nHomework 1 available; due next Friday (2/7)."
+  },
+  {
+    "objectID": "slides/lecture04-1-diffeqmodels.html#references-scroll-for-full-list",
+    "href": "slides/lecture04-1-diffeqmodels.html#references-scroll-for-full-list",
+    "title": "Modeling Dynamical Systems",
+    "section": "References (Scroll for Full List)",
+    "text": "References (Scroll for Full List)\n\n\n\n\nFox-Kemper, B., Hewitt, H. T., Xiao, C., Aðalgeirsdóttir, G., Drijfhout, S. S., Edwards, T. L., et al. (2021). Ocean, Cryosphere and Sea Level Change. In A. Pirani, S. L. Connors, C. Péan, S. Berger, N. Caud, Y. Chen, et al. (Eds.), Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change (pp. 1211–1362). Cambridge, United Kingdom; New York, NY, USA: Cambridge University Press. https://doi.org/10.1017/9781009157896.011\n\n\nMilne, G. A., Gehrels, W. R., Hughes, C. W., & Tamisiea, M. E. (2009). Identifying the causes of sea-level change. Nat. Geosci., 2, 471–478. https://doi.org/10.1038/ngeo544"
   },
   {
     "objectID": "slides/lecture02-2-probreview.html#null-hypothesis-significance-testing",
@@ -825,7 +895,7 @@
     "href": "slides/lecture03-2-timeseries.html#when-do-we-care-about-time-series",
     "title": "Time Series",
     "section": "When Do We Care About Time Series?",
-    "text": "When Do We Care About Time Series?\nDependence: History or sequencing of the data matters\n\\[p(y_t) = f(y_1, \\ldots, y_{t-1})\\]\nThis is most commonly expressed through autocorrelation:\n\\[\\rho(y_t, y_{t-i}) \\neq 0\\]"
+    "text": "When Do We Care About Time Series?\n\n\nDependence: History or sequencing of the data matters\n\\[p(y_t) = f(y_1, \\ldots, y_{t-1})\\]\nSerial dependence captured by autocorrelation:\n\\[\\varsigma(i) = \\rho(y_t, y_{t-i}) = \\frac{\\text{Cov}[y_t, y_{t+i}]}{\\mathbb{V}[y_t]} \\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Autocorrelation for the Lynx data."
   },
   {
     "objectID": "slides/lecture03-2-timeseries.html#stationarity",
@@ -839,331 +909,230 @@
     "href": "slides/lecture03-2-timeseries.html#stationary-vs.-non-stationary-series",
     "title": "Time Series",
     "section": "Stationary vs. Non-Stationary Series",
-    "text": "Stationary vs. Non-Stationary Series\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Stationary vs. Non-stationary time series\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 2"
+    "text": "Stationary vs. Non-Stationary Series\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Stationary vs. Non-stationary time series\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 3"
   },
   {
     "objectID": "slides/lecture03-2-timeseries.html#autocorrelation",
     "href": "slides/lecture03-2-timeseries.html#autocorrelation",
     "title": "Time Series",
     "section": "Autocorrelation",
-    "text": "Autocorrelation\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Lag-1 autocorrelation for an AR model and Gaussian noise.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c)\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(d)\n\n\n\n\n\n\n\nFigure 3"
-  },
-  {
-    "objectID": "slides/lecture03-2-timeseries.html#diagnosing-autocorrelation",
-    "href": "slides/lecture03-2-timeseries.html#diagnosing-autocorrelation",
-    "title": "Time Series",
-    "section": "Diagnosing Autocorrelation",
-    "text": "Diagnosing Autocorrelation\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Autocorrelation Function\n\n\n\n\n\nAutoregressive (AR) Models\nAR(p): (autoregressive of order \\(p\\)):\n\\[\n\\begin{align*}\ny_t &= \\sum_{i=1}^p \\rho_{i} y_{t-i} + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2)\n\\end{align*}\n\\]\n\nUses of AR Models\nAR models are commonly used for prediction: bond yields, prices, electricity demand.\nBut may have little explanatory power: what causes the autocorrelation?\n\nAR(1) Models\n\n\n\\[\ny_t &= {\\color{blue}\\rho} y_{t-1} + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2)\n\\]\n\n\n\n\n\n\n\n\n\n\n0.3\n\n\nFigure 5: AR(1) model\n\n\n\n\n\n\n\n\nModeling Sea Level Rise\n\n\n\nHow Do Global Sea Levels Respond to Warming?\n\nCode\n# load sea-level data into a DataFrame\nsl_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"sealevel\", \"CSIRO_Recons_gmsl_yr_2015.csv\")))\nrename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with\nsl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year \nsl_dat[!, :GMSLR] .-= mean(filter(row -&gt; row.Year ∈ 1880:1900, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly\n\n# load temperature data\ntemp_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"climate\", \"HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv\")))\nrename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with\nfilter!(row -&gt; row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for\ntemp_normalize = mean(filter(row -&gt; row.Year ∈ 1880:1900, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean\ntemp_dat[!, :Temp] .-= temp_normalize\ntemp_dat[!, :Lower] .-= temp_normalize\ntemp_dat[!, :Upper] .-=  temp_normalize\n\nsl_plot = plot(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\nplot!(sl_plot, size=(600, 450))\n\ntemp_plot = plot(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label=\"Observations\", ylabel=\"(°C)\", xlabel=\"Year\", title=\"Temperature\")\nplot!(temp_plot, size=(600, 450))\n\ndisplay(sl_plot)\ndisplay(temp_plot)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Sea level data from CSIRO and temperature data from HadCRUT5.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 6\n\n\n\n\n\nDoes Regressing SLR on Temperature Make Sense?\nWhy might temperature exert an influence on sea levels?\n\n\nProcesses Contributing to SLR\n\nSea Level Processes\nSource: Milne et al. (2009)\n\n\n\nWhy Model “Total” SLR?\n\nSea Level Budget\nSource: Fox-Kemper et al. (2021)\n\n\n\nLinear Regression Specification\nStandard assumption of independent normal residuals:\n\n\n\\[\n\\begin{align*}\n\\text{SLR}_t &\\sim \\beta_0 + \\beta_1 \\text{x}_t + \\varepsilon \\\\\n\\varepsilon & \\sim N(0, \\sigma^2)\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7\n\n\n\n\n\n\n\nOLS Estimate\n\n\n\\[\n\\begin{align*}\n\\hat{\\beta_1} &= \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2} \\\\\n&= 176 \\text{mm}/^\\circ \\text{C} \\\\\n\\hat{\\beta_0} &= \\bar{y} - \\hat{\\beta_1}\\bar{x} = 27 \\text{mm} \\\\\n\\hat{\\sigma} &= \\sqrt{\\frac{SSE}{n-1}} = 27 \\text{mm}\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8\n\n\n\n\n\n\n\nStationarity\nFor independent data \\(y = \\{y_i\\}\\),\n\n\nUpcoming Schedule\n\n\n\nNext Classes\nNext Week+: Prob/Stats “Review” and Fundamentals\n\n\nAssessments\nHomework 1 available; due next Friday (2/7).\n\n\nReferences\n\n\n\nReferences (Scroll for Full List)\n\n\n\n\n\n\n\nFox-Kemper, B., Hewitt, H. T., Xiao, C., Aðalgeirsdóttir, G., Drijfhout, S. S., Edwards, T. L., et al. (2021). Ocean, Cryosphere and Sea Level Change. In A. Pirani, S. L. Connors, C. Péan, S. Berger, N. Caud, Y. Chen, et al. (Eds.), Climate Change 2021: The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change (pp. 1211–1362). Cambridge, United Kingdom; New York, NY, USA: Cambridge University Press. https://doi.org/10.1017/9781009157896.011\n\n\nMilne, G. A., Gehrels, W. R., Hughes, C. W., & Tamisiea, M. E. (2009). Identifying the causes of sea-level change. Nat. Geosci., 2, 471–478. https://doi.org/10.1038/ngeo544"
+    "text": "Autocorrelation\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Lag-1 autocorrelation for an AR model and Gaussian noise.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c)\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(d)\n\n\n\n\n\n\n\nFigure 4"
   },
   {
     "objectID": "slides/lecture03-2-timeseries.html#autoregressive-ar-models",
     "href": "slides/lecture03-2-timeseries.html#autoregressive-ar-models",
     "title": "Time Series",
     "section": "Autoregressive (AR) Models",
-    "text": "Autoregressive (AR) Models\nAR(p): (autoregressive of order \\(p\\)):\n\\[\n\\begin{align*}\ny_t &= \\sum_{i=1}^p \\rho_{i} y_{t-i} + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2)\n\\end{align*}\n\\]"
+    "text": "Autoregressive (AR) Models\nAR(p): (autoregressive of order \\(p\\)):\n\\[\n\\begin{align*}\ny_t &= \\sum_{i=1}^p \\rho_{i} y_{t-i} + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2)\n\\end{align*}\n\\]\ne.g. AR(1):\n\\[\n\\begin{align*}\ny_t &= \\rho y_{t-1} + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2)\n\\end{align*}\n\\]"
   },
   {
     "objectID": "slides/lecture03-2-timeseries.html#uses-of-ar-models",
     "href": "slides/lecture03-2-timeseries.html#uses-of-ar-models",
     "title": "Time Series",
     "section": "Uses of AR Models",
-    "text": "Uses of AR Models\nAR models are commonly used for prediction: bond yields, prices, electricity demand.\nBut may have little explanatory power: what causes the autocorrelation?"
+    "text": "Uses of AR Models\nAR models are commonly used for prediction: bond yields, prices, electricity demand, short-run weather.\nBut may have little explanatory power: what causes the autocorrelation?"
   },
   {
     "objectID": "slides/lecture03-2-timeseries.html#ar1-models",
     "href": "slides/lecture03-2-timeseries.html#ar1-models",
     "title": "Time Series",
     "section": "AR(1) Models",
-    "text": "AR(1) Models\n\n\n\\[\ny_t &= {\\color{blue}\\rho} y_{t-1} + \\varepsilon \\\\\n\\varepsilon &\\sim N(0, \\sigma^2)\n\\]\n\n\n\n\n\n\n\n\n\n\n0.3\n\n\nFigure 5: AR(1) model"
+    "text": "AR(1) Models\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) AR(1) model\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 5"
   },
   {
-    "objectID": "slides/lecture03-2-timeseries.html#how-do-global-sea-levels-respond-to-warming",
-    "href": "slides/lecture03-2-timeseries.html#how-do-global-sea-levels-respond-to-warming",
+    "objectID": "slides/lecture03-2-timeseries.html#diagnosing-autocorrelation",
+    "href": "slides/lecture03-2-timeseries.html#diagnosing-autocorrelation",
     "title": "Time Series",
-    "section": "How Do Global Sea Levels Respond to Warming?",
-    "text": "How Do Global Sea Levels Respond to Warming?\n\nCode\n# load sea-level data into a DataFrame\nsl_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"sealevel\", \"CSIRO_Recons_gmsl_yr_2015.csv\")))\nrename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with\nsl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year \nsl_dat[!, :GMSLR] .-= mean(filter(row -&gt; row.Year ∈ 1880:1900, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly\n\n# load temperature data\ntemp_dat = DataFrame(CSV.File(joinpath(@__DIR__, \"data\", \"climate\", \"HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv\")))\nrename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with\nfilter!(row -&gt; row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for\ntemp_normalize = mean(filter(row -&gt; row.Year ∈ 1880:1900, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean\ntemp_dat[!, :Temp] .-= temp_normalize\ntemp_dat[!, :Lower] .-= temp_normalize\ntemp_dat[!, :Upper] .-=  temp_normalize\n\nsl_plot = plot(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label=\"Observations\", ylabel=\"(mm)\", xlabel=\"Year\", title=\"Sea Level Anomaly\")\nplot!(sl_plot, size=(600, 450))\n\ntemp_plot = plot(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label=\"Observations\", ylabel=\"(°C)\", xlabel=\"Year\", title=\"Temperature\")\nplot!(temp_plot, size=(600, 450))\n\ndisplay(sl_plot)\ndisplay(temp_plot)\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) Sea level data from CSIRO and temperature data from HadCRUT5.\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\n\nFigure 6"
+    "section": "Diagnosing Autocorrelation",
+    "text": "Diagnosing Autocorrelation\n\n\nPlot \\(\\varsigma(i)\\) over a series of lags.\nData generated by an AR(1) with \\(\\rho = 0.7\\).\nNote: Even without an explicit dependence between \\(y_{t-2}\\) and \\(y_t\\), \\(\\varsigma(2) \\neq 0\\).\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Autocorrelation Function"
   },
   {
-    "objectID": "slides/lecture03-2-timeseries.html#does-regressing-slr-on-temperature-make-sense",
-    "href": "slides/lecture03-2-timeseries.html#does-regressing-slr-on-temperature-make-sense",
+    "objectID": "slides/lecture03-2-timeseries.html#partial-autocorrelation",
+    "href": "slides/lecture03-2-timeseries.html#partial-autocorrelation",
     "title": "Time Series",
-    "section": "Does Regressing SLR on Temperature Make Sense?",
-    "text": "Does Regressing SLR on Temperature Make Sense?\nWhy might temperature exert an influence on sea levels?"
+    "section": "Partial Autocorrelation",
+    "text": "Partial Autocorrelation\n\n\nInstead, can isolate \\(\\varsigma(i)\\) independent of \\(\\varsigma(i-k)\\) through partial autocorrelation.\nTypically estimated through regression.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Partial autocorrelation Function"
   },
   {
-    "objectID": "slides/lecture03-2-timeseries.html#processes-contributing-to-slr",
-    "href": "slides/lecture03-2-timeseries.html#processes-contributing-to-slr",
+    "objectID": "slides/lecture03-2-timeseries.html#ar1-and-stationarity",
+    "href": "slides/lecture03-2-timeseries.html#ar1-and-stationarity",
     "title": "Time Series",
-    "section": "Processes Contributing to SLR",
-    "text": "Processes Contributing to SLR\n\nSea Level Processes\nSource: Milne et al. (2009)"
+    "section": "AR(1) and Stationarity",
+    "text": "AR(1) and Stationarity\n\\[\\begin{align*}\ny_{t+1} &= \\rho y_t + \\varepsilon_t \\\\\ny_{t+2} &= \\rho^2 y_t + \\rho \\varepsilon_t + \\varepsilon_{t+1} \\\\\ny_{t+3} &= \\rho^3 y_t + \\rho^2 \\varepsilon_t + \\rho \\varepsilon_{t+1} + \\varepsilon_{t+2} \\\\\n&\\vdots\n\\end{align*}\n\\]\nUnder what condition will \\(\\mathbf{y}\\) be stationary?\n\nStationarity requires \\(| \\rho | &lt; 1\\)."
   },
   {
-    "objectID": "slides/lecture03-2-timeseries.html#why-model-total-slr",
-    "href": "slides/lecture03-2-timeseries.html#why-model-total-slr",
+    "objectID": "slides/lecture03-2-timeseries.html#ar1-variance",
+    "href": "slides/lecture03-2-timeseries.html#ar1-variance",
     "title": "Time Series",
-    "section": "Why Model “Total” SLR?",
-    "text": "Why Model “Total” SLR?\n\nSea Level Budget\nSource: Fox-Kemper et al. (2021)"
+    "section": "AR(1) Variance",
+    "text": "AR(1) Variance\nThe conditional variance \\(\\mathbb{V}[y_t | y_{t-1}] = \\sigma^2\\).\nUnconditional variance for stationary \\(\\mathbb{V}[y_t]\\):\n\\[\n\\begin{align*}\n\\mathbb{V}[y_t] &= \\rho^2 \\mathbb{V}[y_{t-1}] + \\mathbb{V}[\\varepsilon] \\\\\n&= \\rho^2 \\mathbb{V}[y_t] + \\sigma^2 \\\\\n&= \\frac{\\sigma^2}{1 - \\rho^2}.\n\\end{align*}\n\\]"
   },
   {
-    "objectID": "slides/lecture03-2-timeseries.html#linear-regression-specification",
-    "href": "slides/lecture03-2-timeseries.html#linear-regression-specification",
+    "objectID": "slides/lecture03-2-timeseries.html#ar1-joint-distribution",
+    "href": "slides/lecture03-2-timeseries.html#ar1-joint-distribution",
     "title": "Time Series",
-    "section": "Linear Regression Specification",
-    "text": "Linear Regression Specification\nStandard assumption of independent normal residuals:\n\n\n\\[\n\\begin{align*}\n\\text{SLR}_t &\\sim \\beta_0 + \\beta_1 \\text{x}_t + \\varepsilon \\\\\n\\varepsilon & \\sim N(0, \\sigma^2)\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7"
+    "section": "AR(1) Joint Distribution",
+    "text": "AR(1) Joint Distribution\nAssume stationarity and zero-mean process.\nNeed to know \\(\\text{Cov}[y_t, y_{t+h}]\\) for arbitrary \\(h\\).\n\\[\n\\begin{align*}\n\\text{Cov}[y_t, y_{t-h}] &= \\text{Cov}[\\rho^h y_{t-h}, y_{t-h}] \\\\\n&= \\rho^h \\text{Cov}[y_{t-h}, y_{t-h}] \\\\\n&= \\rho^h \\frac{\\sigma^2}{1-\\rho^2}\n\\end{align*}\n\\]"
   },
   {
-    "objectID": "slides/lecture03-2-timeseries.html#ols-estimate",
-    "href": "slides/lecture03-2-timeseries.html#ols-estimate",
+    "objectID": "slides/lecture03-2-timeseries.html#ar1-joint-distribution-1",
+    "href": "slides/lecture03-2-timeseries.html#ar1-joint-distribution-1",
     "title": "Time Series",
-    "section": "OLS Estimate",
-    "text": "OLS Estimate\n\n\n\\[\n\\begin{align*}\n\\hat{\\beta_1} &= \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum_{i=1}^n (x_i - \\bar{x})^2} \\\\\n&= 176 \\text{mm}/^\\circ \\text{C} \\\\\n\\hat{\\beta_0} &= \\bar{y} - \\hat{\\beta_1}\\bar{x} = 27 \\text{mm} \\\\\n\\hat{\\sigma} &= \\sqrt{\\frac{SSE}{n-1}} = 27 \\text{mm}\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8"
+    "section": "AR(1) Joint Distribution",
+    "text": "AR(1) Joint Distribution\n\\[\n\\begin{align*}\n\\mathbf{y} &\\sim \\mathcal{N}(\\mathbf{0}, \\Sigma) \\\\\n\\Sigma &= \\frac{\\sigma^2}{1 - \\rho^2} \\begin{pmatrix}1 & \\rho & \\ldots & \\rho^{T-1}  \\\\ \\rho & 1 & \\ldots & \\rho^{T-2} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ \\rho^{T-1} & \\rho^{T-2} & \\ldots & 1\\end{pmatrix}\n\\end{align*}\n\\]"
   },
   {
-    "objectID": "slides/lecture03-2-timeseries.html#stationarity-1",
-    "href": "slides/lecture03-2-timeseries.html#stationarity-1",
+    "objectID": "slides/lecture03-2-timeseries.html#alternatively..",
+    "href": "slides/lecture03-2-timeseries.html#alternatively..",
     "title": "Time Series",
-    "section": "Stationarity",
-    "text": "Stationarity\nFor independent data \\(y = \\{y_i\\}\\),"
+    "section": "Alternatively..",
+    "text": "Alternatively..\nAn often “easier approach” (often more numerically stable) is to whiten the series sample/compute likelihoods in sequence:\n\\[\n\\begin{align*}\ny_1 & \\sim N\\left(0, \\frac{\\sigma^2}{1 - \\rho^2}\\right) \\\\\ny_t &\\sim N(\\rho y_{t-1} , \\sigma^2)\n\\end{align*}\n\\]"
   },
   {
-    "objectID": "slides/lecture03-2-timeseries.html#next-classes",
-    "href": "slides/lecture03-2-timeseries.html#next-classes",
+    "objectID": "slides/lecture03-2-timeseries.html#dealing-with-trends",
+    "href": "slides/lecture03-2-timeseries.html#dealing-with-trends",
     "title": "Time Series",
-    "section": "Next Classes",
-    "text": "Next Classes\nNext Week+: Prob/Stats “Review” and Fundamentals"
+    "section": "Dealing with Trends",
+    "text": "Dealing with Trends\n\\[y_t = \\underbrace{x_t}_{\\text{fluctuations}} + \\underbrace{z_t}_{\\text{trend}}\\]\n\nModel trend with regression: \\[y_t - a - bt \\sim N(\\rho (y_{t-1} - a - bt), \\sigma^2)\\]\nModel the spectrum (frequency domain).\nDifference values: \\(\\hat{y}_t = y_t - y_{t-1}\\)"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#be-cautious-with-detrending",
+    "href": "slides/lecture03-2-timeseries.html#be-cautious-with-detrending",
+    "title": "Time Series",
+    "section": "Be Cautious with Detrending!",
+    "text": "Be Cautious with Detrending!\n\n\nDragons: Extrapolating trends identified using “curve-fitting” is highly fraught, complicating projections.\nBetter to have an explanatory model (next week!)…\n\n\n\n\nDog Growth Extrapolation Cartoon\n\n\n\nSource: Reddit (original source unclear…)"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#code-for-ar1-model",
+    "href": "slides/lecture03-2-timeseries.html#code-for-ar1-model",
+    "title": "Time Series",
+    "section": "Code for AR(1) model",
+    "text": "Code for AR(1) model\n\nfunction ar1_loglik_whitened(θ, dat)\n    # might need to include mean or trend parameters as well\n    # subtract trend from data to make this mean-zero in this case\n    ρ, σ = θ\n    T = length(dat)\n    ll = 0 # initialize log-likelihood counter\n    for i = 1:T\n        if i == 1\n            ll += logpdf(Normal(0, sqrt(σ^2 / (1 - ρ^2))), dat[i])\n        else\n            ll += logpdf(Normal(ρ * dat[i-1], σ), dat[i])\n        end\n    end\n    return ll\nend\n\nfunction ar1_loglik_joint(θ, dat)\n    # might need to include mean or trend parameters as well\n    # subtract trend from data to make this mean-zero in this case\n    ρ, σ = θ\n    T = length(dat)\n    # compute all of the pairwise lags\n    # this is an \"outer product\"; syntax will differ wildly by language\n    H = abs.((1:T) .- (1:T)')\n    P = ρ.^H # exponentiate ρ by each lag\n    Σ = σ^2 / (1 - ρ^2) * P\n    ll = logpdf(MvNormal(zeros(T), Σ), dat)\n    return ll\nend\n\n\n\nar1_loglik_joint (generic function with 1 method)"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#ar1-example",
+    "href": "slides/lecture03-2-timeseries.html#ar1-example",
+    "title": "Time Series",
+    "section": "AR(1) Example",
+    "text": "AR(1) Example\n\n\n\n\nCode\nρ = 0.6\nσ = 0.25\nT = 25\nts_sim = zeros(T)\n# simulate synthetic AR(1) series\nfor t = 1:T\n    if t == 1\n        ts_sim[t] = rand(Normal(0, sqrt(σ^2 / (1 - ρ^2))))\n    else\n        ts_sim[t] = rand(Normal(ρ * ts_sim[t-1], σ))\n    end\nend\n\nplot(1:T, ts_sim, linewidth=3, xlabel=\"Time\", ylabel=\"Value\", title=L\"$ρ = 0.6, σ = 0.25$\")\nplot!(size=(600, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Simulated AR(1) data\n\n\n\n\n\n\n\nCode\nlb = [-0.99, 0.01]\nub = [0.99, 5]\ninit = [0.6, 0.3]\n\noptim_whitened = Optim.optimize(θ -&gt; -ar1_loglik_whitened(θ, ts_sim), lb, ub, init)\nθ_wn_mle = round.(optim_whitened.minimizer; digits=2)\n@show θ_wn_mle;\n\noptim_joint = Optim.optimize(θ -&gt; -ar1_loglik_joint(θ, ts_sim), lb, ub, init)\nθ_joint_mle = round.(optim_joint.minimizer; digits=2)\n@show θ_joint_mle;\n\n\nθ_wn_mle = [0.4, 0.2]\nθ_joint_mle = [0.4, 0.2]"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#key-points-1",
+    "href": "slides/lecture03-2-timeseries.html#key-points-1",
+    "title": "Time Series",
+    "section": "Key Points",
+    "text": "Key Points\n\nTime series exhibit serial dependence (autocorrelation\nAR(1) probability models: joint vs. whitened likelihoods\nIn general, AR models useful for forecasting/when we don’t care about explanation, pretty useless for explanation.\nSimilar concepts in spatial data: spatial correlation (distance/adjacency vs. time), lots of different models."
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#for-more-on-time-series",
+    "href": "slides/lecture03-2-timeseries.html#for-more-on-time-series",
+    "title": "Time Series",
+    "section": "For More On Time Series",
+    "text": "For More On Time Series\n\n\n\n\n\n\nCourses\n\nSTSCI 4550/5550 (Applied Time Series Analysis),\nCEE 6790 (heavy focus on spectral analysis and signal processing)\n\n\n\nBooks\n\nShumway & Stoffer (2025)\nHyndman & Athanasopoulos (2021)\nDurbin & Koopman (2012)\nBanerjee et al. (2011)\nCressie & Wikle (2011)"
+  },
+  {
+    "objectID": "slides/lecture03-2-timeseries.html#questions-to-seed-discussion",
+    "href": "slides/lecture03-2-timeseries.html#questions-to-seed-discussion",
+    "title": "Time Series",
+    "section": "Questions to Seed Discussion",
+    "text": "Questions to Seed Discussion\n\nWhat was your key takeaway?\nWhat do you think the pros/cons are of the risk and storyline approaches?\nHow well do you think the authors argued their case?"
   },
   {
     "objectID": "slides/lecture03-2-timeseries.html#assessments",
     "href": "slides/lecture03-2-timeseries.html#assessments",
     "title": "Time Series",
     "section": "Assessments",
-    "text": "Assessments\nHomework 1 available; due next Friday (2/7)."
+    "text": "Assessments\nHW1: Due Friday at 9pm.\nQuiz: Available after class."
   },
   {
     "objectID": "slides/lecture03-2-timeseries.html#references-scroll-for-full-list",
     "href": "slides/lecture03-2-timeseries.html#references-scroll-for-full-list",
     "title": "Time Series",
-    "section": "References (Scroll for Full List)",
-    "text": "References (Scroll for Full List)"
+    "section": "References (Scroll For Full List)",
+    "text": "References (Scroll For Full List)\n\n\n\n\nBanerjee, S., Carlin, B. P., & Gelfand, A. E. (2011). Hierarchical modeling and analysis for spatial data, second edition (2nd ed.). Philadelphia, PA: Chapman & Hall/CRC. https://doi.org/10.1201/b17115\n\n\nCressie, N., & Wikle, C. K. (2011). Statistics for Spatio-Temporal Data. Hoboken, NJ: Wiley.\n\n\nDurbin, J., & Koopman, S. J. (2012). Time series analysis by state space methods (2nd ed.). London, England: Oxford University Press. https://doi.org/10.1093/acprof:oso/9780199641178.001.0001\n\n\nHyndman, R. J., & Athanasopoulos, G. (2021). Forecasting: Principles and Practice (3rd ed). Melbourne, Australia: OTexts. Retrieved from https://otexts.com/fpp3/\n\n\nShumway, R. H., & Stoffer, D. S. (2025). Time series analysis and its applications. Springer."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "objectID": "resources/data.html",
+    "href": "resources/data.html",
+    "title": "Data",
     "section": "",
-    "text": "This is the course website for the Spring 2025 edition of BEE 4850/5850, Environmental Data Analysis and Simulation, taught at Cornell University by Vivek Srikrishnan.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Course Description",
-    "text": "Course Description\nThis class teaches data analysis with an emphasis on conceptual models for scientific insights. In particular, we will:\n\nlearn how to construct generative probability models for common environmental datasets;\ndevelop a toolkit for model calibration, uncertainty quantification, and simulation;\nuse cross-validation and predictive information criteria to evaluate over-fitting and test hypotheses;\nidentify potential confounds and explore implications for data gathering and experimental design.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Course Information",
-    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#regular-weekly-schedule",
-    "href": "index.html#regular-weekly-schedule",
-    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
-    "section": "Regular Weekly Schedule",
-    "text": "Regular Weekly Schedule\n\n\n\n\n\n\n\nLectures\nMW 11:40-12:55pm, 160 Riley-Robb Hall\n\n\nOffice Hours\nInstructor: MW 1:00-2:00pm, 318 Riley-Robb Hall, TA: MTh 10:30-11:30, 319 Riley-Robb Hall\n\n\nAssignments\nDue Fridays at 9pm on Gradescope.",
-    "crumbs": [
-      "Course Information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "resources/ai.html",
-    "href": "resources/ai.html",
-    "title": "Generative AI and LLMs",
-    "section": "",
-    "text": "TL; DR: My recommendation is that you do not use ChatGPT, NotebookLLM, or similar large language model (LLM) tools in this class for substantive tasks (annotating/summarizing readings, writing solutions), though they can be useful for programming tasks. If you do use these tools, please do so after independent effort, and clearly document how you’ve used them.\nI am not opposed to the thoughtful use of LLMs. Contrary to the endless hype and marketing served by their creators and the media, these tools have strong limitations and over-reliance on them can greatly impede the discovery and learning processes. However, once you understand these limitations and have enough domain knowledge to look for red flags, they can be useful for certain (albeit limited) tasks, and learning how to engage with them responsibly is a legitimate professional skill.\nThe framing and policies on this page are heavily influenced by Andrew Heiss.",
+    "text": "There are a number of places you can look to find interesting datasets.\n\nData is Plural: A weekly newsletter from Jèremy Singer-Vine. Not just (or typically) environmental data, but interesting nevertheless.\nGoogle Dataset Search\nClimate Trace: Emissions tracking data.\nOECD Environmental Data\nOur World in Data\nResource Watch\nEPA Data Catalog\nU.S. Government Open Data Portal",
     "crumbs": [
       "Resources",
-      "Generative AI and LLMs"
+      "Data Sources"
     ]
   },
   {
-    "objectID": "resources/ai.html#bullshit",
-    "href": "resources/ai.html#bullshit",
-    "title": "Generative AI and LLMs",
-    "section": "Bullshit",
-    "text": "Bullshit\nThe fundamental problem with LLMs is that they are bullshit generators (Hannigan et al., 2024; Hicks et al., 2024). Bullshit, in the philosophical sense, is text produced without care for the truth (Frankfurt, 2005). It is not a lie, which specifically exists in opposition of truth, or a mistake, which is subject to correction when exposed to divergence from the truth, but it is agnostic to the truth; it simply exists to make the author sound like an authority. Truth simply does not matter to a bullshitter.\n\nHannigan, T. R., McCarthy, I. P., & Spicer, A. (2024). Beware of botshit: How to manage the epistemic risks of generative chatbots. Bus. Horiz., 67, 471–486. https://doi.org/10.1016/j.bushor.2024.03.001\n\nHicks, M. T., Humphries, J., & Slater, J. (2024). ChatGPT is bullshit. Ethics Inf. Technol., 26, 1–10. https://doi.org/10.1007/s10676-024-09775-5\n\nFrankfurt, H. G. (2005). On bullshit. Princeton, NJ: Princeton University Press.\nLLMs literally exist only to produce bullshit. They use a predictive statistical model to guess what next word is likely; there is no reference to whether the underlying idea produced by this sequence of words is truthful or even coherent. This means that, once an LLM goes off track, they are subject to wild hallucinations where they may invent concepts or artifacts (books, articles, etc) that do not exist, merely because they seem plausible as a string of text. Given that LLMs are trained on publicly available text, an increasing amount of which is now generated by LLMs (so-called “AI slop”), the uncritical use of these results can just perpetuate the bullshit cycle.\nAs we are environmental scientists and engineers, there’s another problem, which is the impact on the environment of the computers needed to train and run LLMs. The more judicious we can be with these tools, the better we can manage their energy and water needs for when they’re actually useful.",
+    "objectID": "resources/homework.html",
+    "href": "resources/homework.html",
+    "title": "Homework Policies",
+    "section": "",
+    "text": "This page includes some information on the homework assignments for BEE 4850/5850, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.\nThis document is long, but please do read the whole thing. Hopefully most of this is obvious, but some of it may not be.",
     "crumbs": [
       "Resources",
-      "Generative AI and LLMs"
+      "Homework Policies"
     ]
   },
   {
-    "objectID": "resources/ai.html#writing-and-reading",
-    "href": "resources/ai.html#writing-and-reading",
-    "title": "Generative AI and LLMs",
-    "section": "Writing And Reading",
-    "text": "Writing And Reading\nSince LLMs only produce bullshit, they cannot help you with the process of writing or engaging with readings. Writing, whether prose or technical solutions, forces you to clarify your ideas and confront where they are vague or half-baked. This is a critical part of the educational experience! Producing plausible-looking but substantively-empty text cannot achieve this goal.\nIf you have written your own initial text but would like to clean it up (grammar, concision, etc), LLMs may be helpful since the substance is already present in your text. Just make sure to carefully edit it to ensure that your ideas are still present and clear. This type of engagement with LLM output can be useful and reflects a similar need to engage with the statistical models and methods we are working with in class.\nIf you do use an LLM at some part in your writing process, you should cite it and make clear how you engaged with the output. This includes:\n\nWhat prompt(s) did you use?\nHow did the LLM output influence your writing or framing?\n\nThis not only makes it clear to me whether you used the LLM responsibly (otherwise, this borders on plagiarism), but it actually helps you in case there is some bullshit that made it into your answer that is not actually a reflection of your understanding. I will not bother trying to guess if your writing is AI-generated1. Your work will be graded on its own merits, and since we’re looking for thoughtfulness and engagement in your written work, LLM-generated materials are likely to be penalized2\n1 While there are tools that purport to do this, they do not reliably work.2 And if you did not disclose the role of LLMs in generating the work, this will not be a convincing reason for why you should not lose points.",
+    "objectID": "resources/homework.html#homework-logistics",
+    "href": "resources/homework.html#homework-logistics",
+    "title": "Homework Policies",
+    "section": "Homework Logistics",
+    "text": "Homework Logistics\nHomework assignments will be assigned on Monday and are generally due two Fridays hence (so you have two “school weeks” to work on the assignment). Solutions should be submitted as PDFs to Gradescope by 9pm on the due date. You do not need to include code unless you want to, but you should always include some description of the logic of the modeling or problem-solving process that your code implements.",
     "crumbs": [
       "Resources",
-      "Generative AI and LLMs"
+      "Homework Policies"
     ]
   },
   {
-    "objectID": "resources/ai.html#coding",
-    "href": "resources/ai.html#coding",
-    "title": "Generative AI and LLMs",
-    "section": "Coding",
-    "text": "Coding\nUsing LLMs for programming is a little different. There are many programming tasks (autocompletion of syntax, interpreting error messages) that are greatly facilitated by the use of LLM tools such as ChatGPT or GitHub CoPilot. Even people who already know what they’re doing tend to solve syntax and debugging problems by Googling or going to forums like Stack Overflow. LLMs are a shorcut for this approach.\nHowever, if you’re trying to learn how to program (or program in a new language or using a new toolkit), the use of LLMs, even for debugging, can be greatly detrimental to this process. As they training data for LLMs are often didactic examples, the output code is often wildly inefficient3. There are also likely to be errors due to the generation mechanism: all the LLM can do is guess what the next line of code is, not reason about whether the overall logic of the code makes sense or if it will run. It’s hard to track down these errors if you played no role in the development of the code. This is particularly true if you’re dependent on an LLM to think through debugging, since you won’t know how to find where the LLM.\n3 This is not going to be a problem in our class, but might be in your future.My suggestion for how to use LLMs for coding are:\n\nTry to write your own code first. At the very least, think through the logic of what a solution would look like and write down any relevant equations. Then try to write down a version of that in code form. It’s okay to use syntax-checking and autocomplete tools here, but try to think about what the command is and look at some documentation (or ask on Ed Discussion) if it’s not clear to you.\nIf you run into errors, first see if they’re obvious. In Julia, for example, many errors are the result of not using broadcasting. Being able to spot these common error messages is useful and fast.\nIf you run into further errors, or cannot tell why a particular piece of code is not working, then feel free to use an LLM4. Just make sure you don’t just copy and paste output, but, if the code works, try to understand how it differed from your own so you can not make the same mistakes next time.\n\n\n\n4 Appropriately documented, of course.",
+    "objectID": "resources/homework.html#how-to-write-assignments",
+    "href": "resources/homework.html#how-to-write-assignments",
+    "title": "Homework Policies",
+    "section": "How To Write Assignments",
+    "text": "How To Write Assignments\nHere are some tips for how to make the grader (the TA or Prof. Srikrishnan) understand what you mean in the time they’re looking at your problem: as noted in the rubrics, if your solution isn’t clear enough for us to follow, you will not receive the points even if your answer is technically correct, because part of demonstrating understanding is the ability to organize and communicate.\n\nBe Honest\n\nWrite everything in your own words. It’s perfectly ok to work with others; in fact, we encourage it! But you should write up and implement everything yourself; it’s very easy to convince yourself that you understand something when you’re mimicking someone else’s solution, and often we realize we don’t actually understand something when we try to write it ourselves.\nCite every outside source you use. You are allowed, in fact encouraged, to use any outside source1 Getting an idea from an outside source is not a problem, and will not lower your grade; if you’re critically evaluating the idea and implementing and writing your solution yourself (see above), then you’re demonstrating understanding even if the idea originated with someone else. But you must give appropriate credit to that source. Taking credit for someone else’s ideas and failing to properly cite an outside source, including your classmates, is plagiarism, and will be treated accordingly.\nThe only sources you do not have to cite are official class materials. If you use the lectures, lecture notes, website materials, homework solutions, etc, you do not have to cite these.\nList everyone that you worked with. Give your classmates proper credit for their assistance. If you get an idea from Ed Discussion, credit the poster. If you’re not sure if you should list someone as a collaborator, err on the side of including them. For discussions in class or in office hours, you don’t have to list everyone who participated in the discussion (though you should if you worked one on one with them), but mention that the class discussion or the office hour was useful.\n\n1 Yes, including ChatGPT, though you should ask and describe how you used it.\n\nBe Clear\n\nWrite legibly. This doesn’t refer to handwriting (since you’ll be submitting PDFs of Jupyter notebooks), but the text itself should be clearly written and well organized, so that it’s easy for the grader to follow your reasoning or explanation. Structuring your solution, and not writing in a stream of consciousness, helps you think more clearly. To reiterate: You will be given no points if the grader cannot easily follow your answer, and the graders have complete discretion to determine this.\nWrite clearly. Use proper spelling, grammar, logic, etc. We will try not to penalize people for not having complete mastery of English, but again, we need to be able to follow your reasoning.\nWrite carefully and completely. We can only grade what you write; nobody can read your mind, and we will not try. The solution that you submit must stand on its own. If your answer is ambiguous, the TA has been instructed to interpret it the wrong way. Regrade requests also cannot be used to add more information to a solution.\nDon’t submit your first draft. For most people, first drafts are terrible. They are often poorly organized, unclear, and contain gaps or jumps in reasoning. You will likely need to revise, possibly several times, for your answer to be clear, careful, and complete. This is another reason to start the assignment early — if you start late, you may be stuck with your first draft, and your grade is likely to suffer for it.\nState your assumptions. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).\nDon’t rely on your code. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end — it works or it doesn’t). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can’t do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.\n\n\n\nBe Concise\n\nKeep solutions short. Organized answers should not be long. There’s a fine balance between conciseness and completeness: find it!\nDon’t regurgitate. You can reference concepts, models, etc from class without repeating them. Just make it clear what you’re modifying and how you’re using those concepts for that particular problem.\nDon’t bullshit. You will get no points for word salad, even if you accidentally hit on the right answer.",
     "crumbs": [
       "Resources",
-      "Generative AI and LLMs"
+      "Homework Policies"
     ]
   },
   {
-    "objectID": "resources/github.html",
-    "href": "resources/github.html",
-    "title": "git and GitHub",
+    "objectID": "homework.html",
+    "href": "homework.html",
+    "title": "Homework Assignments",
     "section": "",
-    "text": "You’ll need to create a https://github.com account for this course, if you don’t already have one. While the use of GitHub is not required (you can work on the homework assignments without touching the GitHub Classroom links), knowing the version control workflow is a useful skill to have, and we’ll ask for a link to a GitHub repository over sharing files directly if you have a question about code on e.g. a homework assignment.\nThe following basic commands are all the git you will need: * git clone &lt;github-repository-url&gt;: This is needed to “clone” your assignment repository (initialize your local repository). * git commit -m &lt;message&gt;: This is used to “lock in” changes that you’ve made to your files. You should make commits frequently as you make changes so you can revert to prior versions if something goes wrong (and make your messages meaningful so you know what changes you’ve made!) * git push: This syncs any committed changes to the remote GitHub repository. You must do this prior to using your repository to ask for help.\nFor some additional resources about git and GitHub:\n\nGit Basics from The Odin Project.\nLearn Git Branching: An interactive, visual tutorial to how git works.\nVersion Control from MIT’s “CS: Your Missing Semester” course.\nGit and GitHub for Poets: YouTube playlist covering the basics of git and GitHub.",
+    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
     "crumbs": [
-      "Resources",
-      "git and GitHub"
+      "Homework"
     ]
   },
   {
-    "objectID": "weeks/week02.html",
-    "href": "weeks/week02.html",
-    "title": "Week 2 Information",
-    "section": "",
-    "text": "Null Hypothesis Testing and Statistical Significance\nProbability Fundamentals",
+    "objectID": "homework.html#general-information",
+    "href": "homework.html#general-information",
+    "title": "Homework Assignments",
+    "section": "General Information",
+    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
     "crumbs": [
-      "Weeks",
-      "Week 2"
+      "Homework"
     ]
   },
   {
-    "objectID": "weeks/week02.html#lectures",
-    "href": "weeks/week02.html#lectures",
-    "title": "Week 2 Information",
-    "section": "",
-    "text": "Null Hypothesis Testing and Statistical Significance\nProbability Fundamentals",
+    "objectID": "homework.html#rubric",
+    "href": "homework.html#rubric",
+    "title": "Homework Assignments",
+    "section": "Rubric",
+    "text": "Rubric\nThe standard rubric for homework problems is available here.",
     "crumbs": [
-      "Weeks",
-      "Week 2"
+      "Homework"
     ]
   },
   {
-    "objectID": "weeks/week02.html#homework",
-    "href": "weeks/week02.html#homework",
-    "title": "Week 2 Information",
-    "section": "Homework",
-    "text": "Homework\n\nHomework 1 due 2/7/25 by 9PM.",
+    "objectID": "homework.html#schedule",
+    "href": "homework.html#schedule",
+    "title": "Homework Assignments",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\nSolutions\n\n\n\n\nHW1\n\nFeb 07, 2025\n\n\n\nHW2\n\nFeb 21, 2025\n\n\n\nHW3\n\nMar 14, 2025\n\n\n\nHW4\n\nMar 28, 2025\n\n\n\nHW5\n\nApr 18, 2025\n\n\n\nHW6\n\nMay 2, 2025",
     "crumbs": [
-      "Weeks",
-      "Week 2"
-    ]
-  },
-  {
-    "objectID": "weeks/week02.html#readings",
-    "href": "weeks/week02.html#readings",
-    "title": "Week 2 Information",
-    "section": "Readings",
-    "text": "Readings\n\nLloyd, E. A., & Oreskes, N. (2018). Climate change attribution: When is it appropriate to accept new methods? Earth’s Future, 6(3), 311–325. https://doi.org/10.1002/2017ef000665\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. We will discuss the paper in the 02/03 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nHow does the framing of climate change attribution relate to the Type I/Type II error framework we discussed in class?\nWhat are the implications of the storyline approach for statements about climate attribution of extreme events?\nWhat are your thoughts on the storyline vs. FAR approach for scientific insights and communication of climate impacts?",
-    "crumbs": [
-      "Weeks",
-      "Week 2"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html",
-    "href": "weeks/week01.html",
-    "title": "Week 1 Information",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#announcements",
-    "href": "weeks/week01.html#announcements",
-    "title": "Week 1 Information",
-    "section": "",
-    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week01.html#homework",
-    "href": "weeks/week01.html#homework",
-    "title": "Week 1 Information",
-    "section": "Homework",
-    "text": "Homework\n\nIf you don’t have a GitHub account, make sure you set one up.\nHomework 1 assigned, due 2/7/25. Check Ed Discussion for the link to create your repository. You will be prompted to link your GitHub account to the class roster, which will not be required once you do it once.",
-    "crumbs": [
-      "Weeks",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week03.html",
-    "href": "weeks/week03.html",
-    "title": "Week 3 Information",
-    "section": "",
-    "text": "Probability Models for Data\nTime Series",
-    "crumbs": [
-      "Weeks",
-      "Week 3"
-    ]
-  },
-  {
-    "objectID": "weeks/week03.html#lectures",
-    "href": "weeks/week03.html#lectures",
-    "title": "Week 3 Information",
-    "section": "",
-    "text": "Probability Models for Data\nTime Series",
-    "crumbs": [
-      "Weeks",
-      "Week 3"
-    ]
-  },
-  {
-    "objectID": "weeks/week03.html#homework",
-    "href": "weeks/week03.html#homework",
-    "title": "Week 3 Information",
-    "section": "Homework",
-    "text": "Homework\n\nHomework 1 due 2/7/25 by 9PM.",
-    "crumbs": [
-      "Weeks",
-      "Week 3"
-    ]
-  },
-  {
-    "objectID": "weeks/week03.html#readings",
-    "href": "weeks/week03.html#readings",
-    "title": "Week 3 Information",
-    "section": "Readings",
-    "text": "Readings\n\nShmueli, G. (2010). To explain or to predict? Statistical Science: A Review Journal of the Institute of Mathematical Statistics, 25(3), 289–310. https://doi.org/10.1214/10-STS330\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. We will discuss the paper in the 02/10 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nWhat differentiates the explanation vs. predictive modeling paradigms? How does this relate to the choices we’ve discussed that are involved in statistical modeling?\nWhat are the dangers in conflating explanation and prediction?\nIs it possible to fully separate explanation and prediction? Why or why not?\n\nThis paper is quite broad, and includes discussion of topics that we will not cover until later in the semester (such as model validation and selection). It’s ok to gloss over these, particularly if the terminology is unknown to you, but keep them in mind as we move forward!",
-    "crumbs": [
-      "Weeks",
-      "Week 3"
+      "Homework"
     ]
   },
   {
@@ -1211,333 +1180,224 @@
     ]
   },
   {
-    "objectID": "homework.html",
-    "href": "homework.html",
-    "title": "Homework Assignments",
+    "objectID": "weeks/week03.html",
+    "href": "weeks/week03.html",
+    "title": "Week 3 Information",
     "section": "",
-    "text": "This page contains information about and a schedule of the homework assignments for the semester.",
+    "text": "Probability Models for Data\nTime Series",
     "crumbs": [
-      "Homework"
+      "Weeks",
+      "Week 3"
     ]
   },
   {
-    "objectID": "homework.html#general-information",
-    "href": "homework.html#general-information",
-    "title": "Homework Assignments",
-    "section": "General Information",
-    "text": "General Information\n\nWhile the instructions for each assignment are available through the linked pages for quick and public access, if you are in the class you must use the link provided in Ed Discussion to accept the assignment. This will ensure that:\n\nYou have compatible versions of all relevant packages provided in the environment;\nYou have a GitHub repository that you can use to share your code.\n\nSubmit assignments by 9:00pm Eastern Time on the due date on Gradescope.\nSubmissions must be PDFs. Make sure that you tag the pages corresponding to each question; points will be deducted otherwise.",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "homework.html#rubric",
-    "href": "homework.html#rubric",
-    "title": "Homework Assignments",
-    "section": "Rubric",
-    "text": "Rubric\nThe standard rubric for homework problems is available here.",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "homework.html#schedule",
-    "href": "homework.html#schedule",
-    "title": "Homework Assignments",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\nAssignment\nInstructions\nDue Date\nSolutions\n\n\n\n\nHW1\n\nFeb 07, 2025\n\n\n\nHW2\n\nFeb 21, 2025\n\n\n\nHW3\n\nMar 14, 2025\n\n\n\nHW4\n\nMar 28, 2025\n\n\n\nHW5\n\nApr 18, 2025\n\n\n\nHW6\n\nMay 2, 2025",
-    "crumbs": [
-      "Homework"
-    ]
-  },
-  {
-    "objectID": "resources/homework.html",
-    "href": "resources/homework.html",
-    "title": "Homework Policies",
+    "objectID": "weeks/week03.html#lectures",
+    "href": "weeks/week03.html#lectures",
+    "title": "Week 3 Information",
     "section": "",
-    "text": "This page includes some information on the homework assignments for BEE 4850/5850, including policies and logistics. The goal is to help you get as many points on your homework as possible and to return them as soon as possible.\nThis document is long, but please do read the whole thing. Hopefully most of this is obvious, but some of it may not be.",
+    "text": "Probability Models for Data\nTime Series",
     "crumbs": [
-      "Resources",
-      "Homework Policies"
+      "Weeks",
+      "Week 3"
     ]
   },
   {
-    "objectID": "resources/homework.html#homework-logistics",
-    "href": "resources/homework.html#homework-logistics",
-    "title": "Homework Policies",
-    "section": "Homework Logistics",
-    "text": "Homework Logistics\nHomework assignments will be assigned on Monday and are generally due two Fridays hence (so you have two “school weeks” to work on the assignment). Solutions should be submitted as PDFs to Gradescope by 9pm on the due date. You do not need to include code unless you want to, but you should always include some description of the logic of the modeling or problem-solving process that your code implements.",
+    "objectID": "weeks/week03.html#homework",
+    "href": "weeks/week03.html#homework",
+    "title": "Week 3 Information",
+    "section": "Homework",
+    "text": "Homework\n\nHomework 1 due 2/7/25 by 9PM.",
     "crumbs": [
-      "Resources",
-      "Homework Policies"
+      "Weeks",
+      "Week 3"
     ]
   },
   {
-    "objectID": "resources/homework.html#how-to-write-assignments",
-    "href": "resources/homework.html#how-to-write-assignments",
-    "title": "Homework Policies",
-    "section": "How To Write Assignments",
-    "text": "How To Write Assignments\nHere are some tips for how to make the grader (the TA or Prof. Srikrishnan) understand what you mean in the time they’re looking at your problem: as noted in the rubrics, if your solution isn’t clear enough for us to follow, you will not receive the points even if your answer is technically correct, because part of demonstrating understanding is the ability to organize and communicate.\n\nBe Honest\n\nWrite everything in your own words. It’s perfectly ok to work with others; in fact, we encourage it! But you should write up and implement everything yourself; it’s very easy to convince yourself that you understand something when you’re mimicking someone else’s solution, and often we realize we don’t actually understand something when we try to write it ourselves.\nCite every outside source you use. You are allowed, in fact encouraged, to use any outside source1 Getting an idea from an outside source is not a problem, and will not lower your grade; if you’re critically evaluating the idea and implementing and writing your solution yourself (see above), then you’re demonstrating understanding even if the idea originated with someone else. But you must give appropriate credit to that source. Taking credit for someone else’s ideas and failing to properly cite an outside source, including your classmates, is plagiarism, and will be treated accordingly.\nThe only sources you do not have to cite are official class materials. If you use the lectures, lecture notes, website materials, homework solutions, etc, you do not have to cite these.\nList everyone that you worked with. Give your classmates proper credit for their assistance. If you get an idea from Ed Discussion, credit the poster. If you’re not sure if you should list someone as a collaborator, err on the side of including them. For discussions in class or in office hours, you don’t have to list everyone who participated in the discussion (though you should if you worked one on one with them), but mention that the class discussion or the office hour was useful.\n\n1 Yes, including ChatGPT, though you should ask and describe how you used it.\n\nBe Clear\n\nWrite legibly. This doesn’t refer to handwriting (since you’ll be submitting PDFs of Jupyter notebooks), but the text itself should be clearly written and well organized, so that it’s easy for the grader to follow your reasoning or explanation. Structuring your solution, and not writing in a stream of consciousness, helps you think more clearly. To reiterate: You will be given no points if the grader cannot easily follow your answer, and the graders have complete discretion to determine this.\nWrite clearly. Use proper spelling, grammar, logic, etc. We will try not to penalize people for not having complete mastery of English, but again, we need to be able to follow your reasoning.\nWrite carefully and completely. We can only grade what you write; nobody can read your mind, and we will not try. The solution that you submit must stand on its own. If your answer is ambiguous, the TA has been instructed to interpret it the wrong way. Regrade requests also cannot be used to add more information to a solution.\nDon’t submit your first draft. For most people, first drafts are terrible. They are often poorly organized, unclear, and contain gaps or jumps in reasoning. You will likely need to revise, possibly several times, for your answer to be clear, careful, and complete. This is another reason to start the assignment early — if you start late, you may be stuck with your first draft, and your grade is likely to suffer for it.\nState your assumptions. If you think a problem statement is ambiguous and your solution depends on a particular interpretation, or you need to make some assumptions to solve the problem, make it explicit (though do also ask for clarification in class or on Ed Discussion).\nDon’t rely on your code. The TA will not try to scrutinize your code, which is a waste of time (again, the code is a means to an end — it works or it doesn’t). If you make it clear what your code is supposed to do, then the TA can tell if this logic is correct and any mistake must be something minor in the code. If you just provide code (even if commented), the TA can’t do this without running your code and debugging, which is not a valuable use of time. We want to focus on your ideas.\n\n\n\nBe Concise\n\nKeep solutions short. Organized answers should not be long. There’s a fine balance between conciseness and completeness: find it!\nDon’t regurgitate. You can reference concepts, models, etc from class without repeating them. Just make it clear what you’re modifying and how you’re using those concepts for that particular problem.\nDon’t bullshit. You will get no points for word salad, even if you accidentally hit on the right answer.",
+    "objectID": "weeks/week03.html#readings",
+    "href": "weeks/week03.html#readings",
+    "title": "Week 3 Information",
+    "section": "Readings",
+    "text": "Readings\n\nShmueli, G. (2010). To explain or to predict? Statistical Science: A Review Journal of the Institute of Mathematical Statistics, 25(3), 289–310. https://doi.org/10.1214/10-STS330\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. We will discuss the paper in the 02/10 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nWhat differentiates the explanation vs. predictive modeling paradigms? How does this relate to the choices we’ve discussed that are involved in statistical modeling?\nWhat are the dangers in conflating explanation and prediction?\nIs it possible to fully separate explanation and prediction? Why or why not?\n\nThis paper is quite broad, and includes discussion of topics that we will not cover until later in the semester (such as model validation and selection). It’s ok to gloss over these, particularly if the terminology is unknown to you, but keep them in mind as we move forward!",
     "crumbs": [
-      "Resources",
-      "Homework Policies"
+      "Weeks",
+      "Week 3"
     ]
   },
   {
-    "objectID": "resources/data.html",
-    "href": "resources/data.html",
-    "title": "Data",
+    "objectID": "weeks/week01.html",
+    "href": "weeks/week01.html",
+    "title": "Week 1 Information",
     "section": "",
-    "text": "There are a number of places you can look to find interesting datasets.\n\nData is Plural: A weekly newsletter from Jèremy Singer-Vine. Not just (or typically) environmental data, but interesting nevertheless.\nGoogle Dataset Search\nClimate Trace: Emissions tracking data.\nOECD Environmental Data\nOur World in Data\nResource Watch\nEPA Data Catalog\nU.S. Government Open Data Portal",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
     "crumbs": [
-      "Resources",
-      "Data Sources"
+      "Weeks",
+      "Week 1"
     ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#types-of-uncertainty",
-    "href": "slides/lecture04-1-bayes.html#types-of-uncertainty",
-    "title": "Bayesian Statistics",
-    "section": "Types of Uncertainty",
-    "text": "Types of Uncertainty\n\n\n\n\n\n\n\n\n\n\n\nUncertainty Type\nSource\nExample(s)\n\n\n\n\nAleatory uncertainty\nRandomness\nDice rolls, Instrument imprecision\n\n\nEpistemic uncertainty\nLack of knowledge\nClimate sensitivity, Premier League champion\n\n\n\n\n\n\n\nWhich Uncertainty Type Meme\n\n\n\n\n\nNote that the distinction between aleatory and epistemic uncertainty is somewhat arbitrary (aside from maybe some quantum effects). For example, we often think of coin tosses as aleatory, but if we had perfect information about the toss, we might be able to predict the outcome with less uncertainty. There’s a famous paper by Persi Diaconis where he collaborated with engineers to build a device which could arbitrary bias a “fair” coin toss.\nBut in practice, this doesn’t really matter: the key thing is whether for a given model we’re treating the uncertainty as entirely random (e.g. white noise) versus being interested in the impacts of that uncertainty on the outcome of interest. And there’s a representation theorem by the Bayesian actuary Bruno de Finetti which shows that, under a condition called exchangeability, we can think of any random sequence as arising from an independent and identically distributed process, so the practical difference can collapse further."
+    "objectID": "weeks/week01.html#announcements",
+    "href": "weeks/week01.html#announcements",
+    "title": "Week 1 Information",
+    "section": "",
+    "text": "Welcome to BEE 4850/5850! Make sure to read the syllabus and make sure you’re enrolled in Gradescope and Ed Discussion (particularly if you added the class after 1/20).",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#frequentist-vs-bayesian-probability",
-    "href": "slides/lecture04-1-bayes.html#frequentist-vs-bayesian-probability",
-    "title": "Bayesian Statistics",
-    "section": "Frequentist vs Bayesian Probability",
-    "text": "Frequentist vs Bayesian Probability\n\n\nFrequentist:\n\nProbability as frequency over repeated observations.\nData are random, but parameters are not.\nHow consistent are estimates for different data?\n\n\n\nBayesian:\n\nProbability as degree of belief/betting odds.\nData and parameters are random variables;\nEmphasis on conditional probability."
+    "objectID": "weeks/week01.html#homework",
+    "href": "weeks/week01.html#homework",
+    "title": "Week 1 Information",
+    "section": "Homework",
+    "text": "Homework\n\nIf you don’t have a GitHub account, make sure you set one up.\nHomework 1 assigned, due 2/7/25. Check Ed Discussion for the link to create your repository. You will be prompted to link your GitHub account to the class roster, which will not be required once you do it once.",
+    "crumbs": [
+      "Weeks",
+      "Week 1"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#but-what-like-is-probability",
-    "href": "slides/lecture04-1-bayes.html#but-what-like-is-probability",
-    "title": "Bayesian Statistics",
-    "section": "But What, Like, Is Probability?",
-    "text": "But What, Like, Is Probability?\n\n\n\nFrequentist vs. Bayesian: different interpretations with some different methods and formalisms.\nWe will freely borrow from each school depending on the purpose and goal of an analysis.\n\n\n\n\nDefinitions of Probability Meme"
+    "objectID": "weeks/week02.html",
+    "href": "weeks/week02.html",
+    "title": "Week 2 Information",
+    "section": "",
+    "text": "Null Hypothesis Testing and Statistical Significance\nProbability Fundamentals",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#bayes-rule",
-    "href": "slides/lecture04-1-bayes.html#bayes-rule",
-    "title": "Bayesian Statistics",
-    "section": "Bayes’ Rule",
-    "text": "Bayes’ Rule\n\n\nOriginal version\nBayes (1763):\n\\[\n\\begin{gather*}\nP(A | B) = \\frac{P(B | A) \\times P(A)}{P(B)} \\\\[0.5em]\n\\text{if} \\quad P(B) \\neq 0.\n\\end{gather*}\n\\]\n\n“Modern” version\nLaplace (1774):\n\\[\\underbrace{{p(\\theta | y)}}_{\\text{posterior}} = \\frac{\\overbrace{p(y | \\theta)}^{\\text{likelihood}}}{\\underbrace{p(y)}_\\text{normalization}} \\overbrace{p(\\theta)}^\\text{prior}\\]"
+    "objectID": "weeks/week02.html#lectures",
+    "href": "weeks/week02.html#lectures",
+    "title": "Week 2 Information",
+    "section": "",
+    "text": "Null Hypothesis Testing and Statistical Significance\nProbability Fundamentals",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#logic-of-conditional-probability",
-    "href": "slides/lecture04-1-bayes.html#logic-of-conditional-probability",
-    "title": "Bayesian Statistics",
-    "section": "Logic of Conditional Probability",
-    "text": "Logic of Conditional Probability\nBayes’ Rule is the logic of conditional probability:\nWhat can we say about consistency of uncertainties with an observed sample \\(y\\)?\n\nModel configurations (\\(p(\\mathcal{M} | y)\\) or \\(p(\\mathcal{x} | y, \\mathcal{M})\\))\nHypotheses (\\(p(\\mathcal{H} | y)\\))"
+    "objectID": "weeks/week02.html#homework",
+    "href": "weeks/week02.html#homework",
+    "title": "Week 2 Information",
+    "section": "Homework",
+    "text": "Homework\n\nHomework 1 due 2/7/25 by 9PM.",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#on-the-normalizing-constant",
-    "href": "slides/lecture04-1-bayes.html#on-the-normalizing-constant",
-    "title": "Bayesian Statistics",
-    "section": "On The Normalizing Constant",
-    "text": "On The Normalizing Constant\nThe normalizing constant (also called the marginal likelihood) is the integral \\[p(y) = \\int_\\Theta p(y | \\theta) p(\\theta) d\\theta.\\]\nSince this generally doesn’t depend on \\(\\theta\\), it can often be ignored, as the relative probabilities don’t change."
+    "objectID": "weeks/week02.html#readings",
+    "href": "weeks/week02.html#readings",
+    "title": "Week 2 Information",
+    "section": "Readings",
+    "text": "Readings\n\nLloyd, E. A., & Oreskes, N. (2018). Climate change attribution: When is it appropriate to accept new methods? Earth’s Future, 6(3), 311–325. https://doi.org/10.1002/2017ef000665\nAs you’re reading, please use the collaborative annotation in Canvas to make notes and read and respond to others’ thoughts and questions. We will discuss the paper in the 02/03 class period. You will be graded based on annotation and participation in the discussion.\nIn particular, please focus on:\n\nHow does the framing of climate change attribution relate to the Type I/Type II error framework we discussed in class?\nWhat are the implications of the storyline approach for statements about climate attribution of extreme events?\nWhat are your thoughts on the storyline vs. FAR approach for scientific insights and communication of climate impacts?",
+    "crumbs": [
+      "Weeks",
+      "Week 2"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#bayes-rule-ignoring-normalizing-constants",
-    "href": "slides/lecture04-1-bayes.html#bayes-rule-ignoring-normalizing-constants",
-    "title": "Bayesian Statistics",
-    "section": "Bayes’ Rule (Ignoring Normalizing Constants)",
-    "text": "Bayes’ Rule (Ignoring Normalizing Constants)\nThe version of Bayes’ rule which matters the most for 95% (approximate) of Bayesian statistics:\n\\[p(\\theta | y) \\propto p(y | \\theta) \\times p(\\theta)\\]\n\n“The posterior is the prior times the likelihood…”"
+    "objectID": "resources/github.html",
+    "href": "resources/github.html",
+    "title": "git and GitHub",
+    "section": "",
+    "text": "You’ll need to create a https://github.com account for this course, if you don’t already have one. While the use of GitHub is not required (you can work on the homework assignments without touching the GitHub Classroom links), knowing the version control workflow is a useful skill to have, and we’ll ask for a link to a GitHub repository over sharing files directly if you have a question about code on e.g. a homework assignment.\nThe following basic commands are all the git you will need: * git clone &lt;github-repository-url&gt;: This is needed to “clone” your assignment repository (initialize your local repository). * git commit -m &lt;message&gt;: This is used to “lock in” changes that you’ve made to your files. You should make commits frequently as you make changes so you can revert to prior versions if something goes wrong (and make your messages meaningful so you know what changes you’ve made!) * git push: This syncs any committed changes to the remote GitHub repository. You must do this prior to using your repository to ask for help.\nFor some additional resources about git and GitHub:\n\nGit Basics from The Odin Project.\nLearn Git Branching: An interactive, visual tutorial to how git works.\nVersion Control from MIT’s “CS: Your Missing Semester” course.\nGit and GitHub for Poets: YouTube playlist covering the basics of git and GitHub.",
+    "crumbs": [
+      "Resources",
+      "git and GitHub"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#example-is-a-coin-fair",
-    "href": "slides/lecture04-1-bayes.html#example-is-a-coin-fair",
-    "title": "Bayesian Statistics",
-    "section": "Example: Is a Coin Fair?",
-    "text": "Example: Is a Coin Fair?\n\n\nIn 10 flips, we’ve observed 3 H and 7 T.\nWhat can we say about the probability of heads given this information?\n\n\n\n\nFry Coin Uncertainty meme"
+    "objectID": "resources/ai.html",
+    "href": "resources/ai.html",
+    "title": "Generative AI and LLMs",
+    "section": "",
+    "text": "TL; DR: My recommendation is that you do not use ChatGPT, NotebookLLM, or similar large language model (LLM) tools in this class for substantive tasks (annotating/summarizing readings, writing solutions), though they can be useful for programming tasks. If you do use these tools, please do so after independent effort, and clearly document how you’ve used them.\nI am not opposed to the thoughtful use of LLMs. Contrary to the endless hype and marketing served by their creators and the media, these tools have strong limitations and over-reliance on them can greatly impede the discovery and learning processes. However, once you understand these limitations and have enough domain knowledge to look for red flags, they can be useful for certain (albeit limited) tasks, and learning how to engage with them responsibly is a legitimate professional skill.\nThe framing and policies on this page are heavily influenced by Andrew Heiss.",
+    "crumbs": [
+      "Resources",
+      "Generative AI and LLMs"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#coin-flipping-likelihood",
-    "href": "slides/lecture04-1-bayes.html#coin-flipping-likelihood",
-    "title": "Bayesian Statistics",
-    "section": "Coin Flipping Likelihood",
-    "text": "Coin Flipping Likelihood\n\n\nWe can represent the outcome of a coin flip with a heads-probability of \\(p\\) as a sample from a Bernoulli distribution,\n\\[y_i \\sim \\text{Bernoulli}(p).\\]"
+    "objectID": "resources/ai.html#bullshit",
+    "href": "resources/ai.html#bullshit",
+    "title": "Generative AI and LLMs",
+    "section": "Bullshit",
+    "text": "Bullshit\nThe fundamental problem with LLMs is that they are bullshit generators (Hannigan et al., 2024; Hicks et al., 2024). Bullshit, in the philosophical sense, is text produced without care for the truth (Frankfurt, 2005). It is not a lie, which specifically exists in opposition of truth, or a mistake, which is subject to correction when exposed to divergence from the truth, but it is agnostic to the truth; it simply exists to make the author sound like an authority. Truth simply does not matter to a bullshitter.\n\nHannigan, T. R., McCarthy, I. P., & Spicer, A. (2024). Beware of botshit: How to manage the epistemic risks of generative chatbots. Bus. Horiz., 67, 471–486. https://doi.org/10.1016/j.bushor.2024.03.001\n\nHicks, M. T., Humphries, J., & Slater, J. (2024). ChatGPT is bullshit. Ethics Inf. Technol., 26, 1–10. https://doi.org/10.1007/s10676-024-09775-5\n\nFrankfurt, H. G. (2005). On bullshit. Princeton, NJ: Princeton University Press.\nLLMs literally exist only to produce bullshit. They use a predictive statistical model to guess what next word is likely; there is no reference to whether the underlying idea produced by this sequence of words is truthful or even coherent. This means that, once an LLM goes off track, they are subject to wild hallucinations where they may invent concepts or artifacts (books, articles, etc) that do not exist, merely because they seem plausible as a string of text. Given that LLMs are trained on publicly available text, an increasing amount of which is now generated by LLMs (so-called “AI slop”), the uncritical use of these results can just perpetuate the bullshit cycle.\nAs we are environmental scientists and engineers, there’s another problem, which is the impact on the environment of the computers needed to train and run LLMs. The more judicious we can be with these tools, the better we can manage their energy and water needs for when they’re actually useful.",
+    "crumbs": [
+      "Resources",
+      "Generative AI and LLMs"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#correlated-parameters-and-bayesian-inference",
-    "href": "slides/lecture04-1-bayes.html#correlated-parameters-and-bayesian-inference",
-    "title": "Bayesian Statistics",
-    "section": "Correlated Parameters and Bayesian Inference",
-    "text": "Correlated Parameters and Bayesian Inference\n\n\n\n\n\nCorrelated Climate Parameters\n\n\n\n\n\n\nCorrelated Climate Parameters\n\n\n\n\nSource: Errickson et al. (2021)"
+    "objectID": "resources/ai.html#writing-and-reading",
+    "href": "resources/ai.html#writing-and-reading",
+    "title": "Generative AI and LLMs",
+    "section": "Writing And Reading",
+    "text": "Writing And Reading\nSince LLMs only produce bullshit, they cannot help you with the process of writing or engaging with readings. Writing, whether prose or technical solutions, forces you to clarify your ideas and confront where they are vague or half-baked. This is a critical part of the educational experience! Producing plausible-looking but substantively-empty text cannot achieve this goal.\nIf you have written your own initial text but would like to clean it up (grammar, concision, etc), LLMs may be helpful since the substance is already present in your text. Just make sure to carefully edit it to ensure that your ideas are still present and clear. This type of engagement with LLM output can be useful and reflects a similar need to engage with the statistical models and methods we are working with in class.\nIf you do use an LLM at some part in your writing process, you should cite it and make clear how you engaged with the output. This includes:\n\nWhat prompt(s) did you use?\nHow did the LLM output influence your writing or framing?\n\nThis not only makes it clear to me whether you used the LLM responsibly (otherwise, this borders on plagiarism), but it actually helps you in case there is some bullshit that made it into your answer that is not actually a reflection of your understanding. I will not bother trying to guess if your writing is AI-generated1. Your work will be graded on its own merits, and since we’re looking for thoughtfulness and engagement in your written work, LLM-generated materials are likely to be penalized2\n1 While there are tools that purport to do this, they do not reliably work.2 And if you did not disclose the role of LLMs in generating the work, this will not be a convincing reason for why you should not lose points.",
+    "crumbs": [
+      "Resources",
+      "Generative AI and LLMs"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#why-choose-a-particular-prior",
-    "href": "slides/lecture04-1-bayes.html#why-choose-a-particular-prior",
-    "title": "Bayesian Statistics",
-    "section": "Why Choose A Particular Prior?",
-    "text": "Why Choose A Particular Prior?\n\\[p(\\theta | y) \\propto p(y | \\theta) \\times {\\color{purple}p(\\theta)}\\]\nPriors can serve several purposes (more shortly…)\n\nOne perspective: Priors should reflect “actual knowledge” independent of the analysis (Jaynes, 2003)\nAnother: Priors are part of the probability model, and can be specified/changed accordingly based on predictive skill (Gelman et al., 2017; Gelman & Shalizi, 2013)"
+    "objectID": "resources/ai.html#coding",
+    "href": "resources/ai.html#coding",
+    "title": "Generative AI and LLMs",
+    "section": "Coding",
+    "text": "Coding\nUsing LLMs for programming is a little different. There are many programming tasks (autocompletion of syntax, interpreting error messages) that are greatly facilitated by the use of LLM tools such as ChatGPT or GitHub CoPilot. Even people who already know what they’re doing tend to solve syntax and debugging problems by Googling or going to forums like Stack Overflow. LLMs are a shorcut for this approach.\nHowever, if you’re trying to learn how to program (or program in a new language or using a new toolkit), the use of LLMs, even for debugging, can be greatly detrimental to this process. As they training data for LLMs are often didactic examples, the output code is often wildly inefficient3. There are also likely to be errors due to the generation mechanism: all the LLM can do is guess what the next line of code is, not reason about whether the overall logic of the code makes sense or if it will run. It’s hard to track down these errors if you played no role in the development of the code. This is particularly true if you’re dependent on an LLM to think through debugging, since you won’t know how to find where the LLM.\n3 This is not going to be a problem in our class, but might be in your future.My suggestion for how to use LLMs for coding are:\n\nTry to write your own code first. At the very least, think through the logic of what a solution would look like and write down any relevant equations. Then try to write down a version of that in code form. It’s okay to use syntax-checking and autocomplete tools here, but try to think about what the command is and look at some documentation (or ask on Ed Discussion) if it’s not clear to you.\nIf you run into errors, first see if they’re obvious. In Julia, for example, many errors are the result of not using broadcasting. Being able to spot these common error messages is useful and fast.\nIf you run into further errors, or cannot tell why a particular piece of code is not working, then feel free to use an LLM4. Just make sure you don’t just copy and paste output, but, if the code works, try to understand how it differed from your own so you can not make the same mistakes next time.\n\n\n\n4 Appropriately documented, of course.",
+    "crumbs": [
+      "Resources",
+      "Generative AI and LLMs"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#why-choose-a-particular-prior-1",
-    "href": "slides/lecture04-1-bayes.html#why-choose-a-particular-prior-1",
-    "title": "Bayesian Statistics",
-    "section": "Why Choose A Particular Prior?",
-    "text": "Why Choose A Particular Prior?\n\n\n\nThere are no “correct” priors, but more or less justified.\nDon’t assign zero probability to possible values.\nPriors matter less for simple models with lots of data, matter more in other cases.\nBase on information external to the data.\n\n\n\n\n\nCow Prior Meme\n\n\n\nSource: Richard McElreath"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "",
+    "text": "This is the course website for the Spring 2025 edition of BEE 4850/5850, Environmental Data Analysis and Simulation, taught at Cornell University by Vivek Srikrishnan.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#coin-flipping-prior",
-    "href": "slides/lecture04-1-bayes.html#coin-flipping-prior",
-    "title": "Bayesian Statistics",
-    "section": "Coin-Flipping Prior",
-    "text": "Coin-Flipping Prior\n\n\nSuppose that we spoke to a friend who knows something about coins, and she tells us that it is extremely difficult to make a passable weighted coin which comes up heads or tails more than 75% of the time.\n\nWe might try \\(p \\sim \\text{Beta}(7, 7)\\).\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Beta prior for coin flipping example"
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Course Description",
+    "text": "Course Description\nThis class teaches data analysis with an emphasis on conceptual models for scientific insights. In particular, we will:\n\nlearn how to construct generative probability models for common environmental datasets;\ndevelop a toolkit for model calibration, uncertainty quantification, and simulation;\nuse cross-validation and predictive information criteria to evaluate over-fitting and test hypotheses;\nidentify potential confounds and explore implications for data gathering and experimental design.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#prior-predictive-simulation",
-    "href": "slides/lecture04-1-bayes.html#prior-predictive-simulation",
-    "title": "Bayesian Statistics",
-    "section": "Prior Predictive Simulation",
-    "text": "Prior Predictive Simulation\n\n\nSimulate from prior to understand implications for estimands/observables.\nThis produces the prior predictive distribution:\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Coin flipping prior predictive distribution"
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Course Information",
+    "text": "Course Information\n\nDetails on the class and course policies are provided in the syllabus.\nTopics and weekly materials can be found in the schedule.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
   },
   {
-    "objectID": "slides/lecture04-1-bayes.html#coin-flipping-probability-model",
-    "href": "slides/lecture04-1-bayes.html#coin-flipping-probability-model",
-    "title": "Bayesian Statistics",
-    "section": "Coin-Flipping Probability Model",
-    "text": "Coin-Flipping Probability Model\n\n\n\\[\n\\begin{align*}\ny_i &\\sim Bernoulli(p) \\\\\np &\\sim Beta(7, 7)\n\\end{align*}\n\\]\nWe can use a grid approximation to analyze the posterior.\n\nNotice how the prior regularizes the inference.\n\n\n\n\nCode\np_grid = 0:0.005:1\nloglikelihood(p) = sum(logpdf.(Bernoulli(p), flips .== \"H\"))\nlogprior(p) = logpdf(Beta(7, 7), p)\nlogposterior(p) = logprior(p) + loglikelihood(p)\n\nlik = loglikelihood.(p_grid)\npri = logprior.(p_grid)\npost = logposterior.(p_grid)\n\nplot(\n    p_grid,\n    exp.(lik) ./ sum(exp.(lik));\n    xlabel=L\"$p$\",\n    ylabel=\"Density\",\n    label=\"Likelihood\",\n    legend=:outerbottom,\n    linewidth=2,\n)\nplot!(p_grid, exp.(pri) ./ sum(exp.(pri)); label=\"Prior\", linewidth=2)\nplot!(p_grid, exp.(post) ./ sum(exp.(post)); label=\"Posterior\", linewidth=4)\nplot!(size=(600, 600))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Grid approximation to the coin-flipping posterior"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#posterior-approximation",
-    "href": "slides/lecture04-1-bayes.html#posterior-approximation",
-    "title": "Bayesian Statistics",
-    "section": "Posterior Approximation",
-    "text": "Posterior Approximation\nFor more complex models, grid approximations are too high-dimensional and/or computationally complex.\nFor now, we can optimize the posterior to find the maximum a posteriori estimate (MAP), which is analogous to the MLE.\nFor probabilistic inference, need more efficient sampling methods: will discuss briefly in roughly another week."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#how-does-tds-affect-river-flow",
-    "href": "slides/lecture04-1-bayes.html#how-does-tds-affect-river-flow",
-    "title": "Bayesian Statistics",
-    "section": "How Does TDS Affect River Flow?",
-    "text": "How Does TDS Affect River Flow?\n\n\nQuestion: Does river flow affect the concentration of total dissolved solids?\nData: Cuyahoga River (1969 – 1973), from Helsel et al. (2020, Chapter 9).\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Observations from the Cuyahoga River."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#how-does-tds-affect-river-flow-1",
-    "href": "slides/lecture04-1-bayes.html#how-does-tds-affect-river-flow-1",
-    "title": "Bayesian Statistics",
-    "section": "How Does TDS Affect River Flow?",
-    "text": "How Does TDS Affect River Flow?\n\n\nQuestion: Does river flow affect the concentration of total dissolved solids?\nModel:\n\\[D \\rightarrow S \\ {\\color{purple}\\leftarrow U}\\]\n\\[S = f(D, U)\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#prior-selection",
-    "href": "slides/lecture04-1-bayes.html#prior-selection",
-    "title": "Bayesian Statistics",
-    "section": "Prior Selection",
-    "text": "Prior Selection\n\nDo we have prior scientific information we can express?\nConsider the units of the covariates (rescale if needed!).\nWhat are the general behaviors we should expect to see?"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#the-prior-is-part-of-the-model",
-    "href": "slides/lecture04-1-bayes.html#the-prior-is-part-of-the-model",
-    "title": "Bayesian Statistics",
-    "section": "The Prior Is Part of the Model",
-    "text": "The Prior Is Part of the Model\nThe impact of a prior is not independent of the data-generating model (likelihood) (Gelman et al., 2017).\nKey point: Need to understand implications of prior selection for resulting data generation."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#prior-distributions",
-    "href": "slides/lecture04-1-bayes.html#prior-distributions",
-    "title": "Bayesian Statistics",
-    "section": "Prior Distributions",
-    "text": "Prior Distributions\n\n\nLet’s try:\n\\[\n\\begin{align*}\nS &= \\beta_0 + \\beta_1 \\log(D) + U\\\\\nU &\\sim \\mathcal{N}(0, \\sigma^2)\\\\\nH &\\sim \\text{Uniform}(0, 100) \\\\\n\\beta_0 &\\sim \\mathcal{TN}(500, 100; 0, \\infty) \\\\\n\\beta_1 &\\sim \\mathcal{TN}(0, 50; -\\infty, 0) \\\\\n\\sigma &\\sim \\mathcal{TN}(0, 25; 0, \\infty)\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Priors for model parameters."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#prior-predictive-distribution",
-    "href": "slides/lecture04-1-bayes.html#prior-predictive-distribution",
-    "title": "Bayesian Statistics",
-    "section": "Prior Predictive Distribution",
-    "text": "Prior Predictive Distribution\n\n\nLet’s try:\n\\[\n\\begin{align*}\nS &= \\beta_0 + \\beta_1 \\log(D) + U\\\\\nU &\\sim \\mathcal{N}(0, \\sigma^2)\\\\\nH &\\sim \\text{Uniform}(0, 100) \\\\\n\\beta_0 &\\sim \\mathcal{TN}(500, 100; 0, \\infty) \\\\\n\\beta_1 &\\sim \\mathcal{TN}(0, 50; -\\infty, 0) \\\\\n\\sigma &\\sim \\mathcal{TN}(0, 25; 0, \\infty)\n\\end{align*}\n\\]\n\n\n\n\nCode\nfunction predictive_dist(p_samples, x)\n    ŷ = zeros(size(p_samples)[1], length(x))\n    for (i, row) in pairs(eachslice(p_samples; dims=1))\n        β₀, β₁, σ = row\n        ŷ[i, :] = β₀ .+ β₁ * log.(x) + rand(Normal(0, σ), length(x))\n    end\n    return ŷ\nend\n\n# sample from prior distributions\nn = 1_000\np_samples = zeros(n, 3)\np_samples[:, 1] = rand(truncated(Normal(500, 100); lower=0), n)\np_samples[:, 2] = rand(truncated(Normal(0, 50); upper=0), n)\np_samples[:, 3] = rand(truncated(Normal(0, 25); lower=0), n)\n\nxpred = 1:1:60\nypred = predictive_dist(p_samples, xpred)\nqpred = mapslices(row -&gt; quantile(row, [0.0, 0.025, 0.05, 0.5, 0.95, 0.975, 1.0]), ypred; dims=1)\np_prior = plot(; xlabel=L\"Discharge (m$^3$/s)\", ylabel=\"Total dissolved solids (mg/L)\")\nfor idx in 1:n\n    label = idx == 1 ? \"Prior Simulation\" : false\n    plot!(p_prior, xpred, ypred[idx, :], color=:black, alpha=0.1, label=label)\nend\nplot!(p_prior, size=(600, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Samples from the prior predictive distribution."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#maximize-posterior",
-    "href": "slides/lecture04-1-bayes.html#maximize-posterior",
-    "title": "Bayesian Statistics",
-    "section": "Maximize Posterior",
-    "text": "Maximize Posterior\n\n\n\\(\\hat{\\beta_0}\\): 598\n\\(\\hat{\\beta_1}\\): -107\n\\(\\hat{\\sigma}^2\\): 68\\(^2\\)\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: MAP predictive interval."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#comparison-of-mle-and-map",
-    "href": "slides/lecture04-1-bayes.html#comparison-of-mle-and-map",
-    "title": "Bayesian Statistics",
-    "section": "Comparison of MLE and MAP",
-    "text": "Comparison of MLE and MAP\n\n\n\n\n\nParameter\nMLE\nMAP\n\n\n\n\n\\(\\beta_0\\)\n610\n598\n\n\n\\(\\beta_1\\)\n-112\n-107\n\n\n\\(\\sigma^2\\)\n72\\(^2\\)\n68\\(^2\\)\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Comparison of the MAP and MLE projections."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#posterior-predictive-distribution",
-    "href": "slides/lecture04-1-bayes.html#posterior-predictive-distribution",
-    "title": "Bayesian Statistics",
-    "section": "Posterior Predictive Distribution",
-    "text": "Posterior Predictive Distribution\nBayes’ Theorem gives us probabilities of different parameter combinations.\nOnce we have the ability to sample from the posterior, we can integrate over it to obtain the posterior predictive distribution:\n\\[p(\\tilde{y} | \\mathbf{y}) = \\int_{\\Theta} p(\\tilde{y} | \\theta) p(\\theta | \\mathbf{y}) d\\theta\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#hierarchical-models",
-    "href": "slides/lecture04-1-bayes.html#hierarchical-models",
-    "title": "Bayesian Statistics",
-    "section": "Hierarchical Models",
-    "text": "Hierarchical Models\nBayesian frameworks also lend themselves well to hierarchical models, with uncertain prior distributions:\n\\[\\begin{align}\ny_j | \\theta_j, \\phi &\\sim P(y_j | \\theta_j, \\phi) \\nonumber \\\\\n\\theta_j | \\phi &\\sim P(\\theta_j | \\phi) \\nonumber \\\\\n\\phi &\\sim P(\\phi) \\nonumber\n\\end{align}\\]"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#recall-confidence-intervals",
-    "href": "slides/lecture04-1-bayes.html#recall-confidence-intervals",
-    "title": "Bayesian Statistics",
-    "section": "Recall: Confidence Intervals",
-    "text": "Recall: Confidence Intervals\n\n\nFrequentist confidence intervals reflect consistency of estimation over repeated experiments.\n\\(\\alpha\\)% of intervals produced should contain the “true” value.\n\n\nCode\n# set up distribution\nmean_true = 0.4\nn_cis = 100 # number of CIs to compute\ndist = Normal(mean_true, 2)\n\n# use sample size of 100\nsamples = rand(dist, (100, n_cis))\n# mapslices broadcasts over a matrix dimension, could also use a loop\nsample_means = mapslices(mean, samples; dims=1)\nsample_sd = mapslices(std, samples; dims=1) \nmc_sd = 1.96 * sample_sd / sqrt(100)\nmc_ci = zeros(n_cis, 2) # preallocate\nfor i = 1:n_cis\n    mc_ci[i, 1] = sample_means[i] - mc_sd[i]\n    mc_ci[i, 2] = sample_means[i] + mc_sd[i]\nend\n# find which CIs contain the true value\nci_true = (mc_ci[:, 1] .&lt; mean_true) .&& (mc_ci[:, 2] .&gt; mean_true)\n# compute percentage of CIs which contain the true value\nci_frac1 = 100 * sum(ci_true) ./ n_cis\n\n# plot CIs\np1 = plot([mc_ci[1, :]], [1, 1], linewidth=3, color=:deepskyblue, label=\"95% Confidence Interval\", yticks=:false, legend=:false)\nfor i = 2:n_cis\n    if ci_true[i]\n        plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:deepskyblue, label=:false)\n    else\n        plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:red, label=:false)\n    end\nend\nvline!(p1, [mean_true], color=:black, linewidth=2, linestyle=:dash, label=\"True Value\") # plot true value as a vertical line\nxaxis!(p1, \"Estimate\")\nplot!(p1, size=(500, 500)) # resize to fit slide\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 9: Sample Size 100\n\n\n\n\n\nDisplay of 95% confidence intervals"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#credible-intervals-1",
-    "href": "slides/lecture04-1-bayes.html#credible-intervals-1",
-    "title": "Bayesian Statistics",
-    "section": "Credible Intervals",
-    "text": "Credible Intervals\n\n\nBayesian equivalent: credible intervals\n\\(\\alpha\\)% credible interval contains \\(\\alpha\\)% of the posterior probability.\nKey: These are not unique, so be clear what kind of interval you’re using.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 10: Two different 95% credible intervals."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#credible-vs.-prediction-intervals",
-    "href": "slides/lecture04-1-bayes.html#credible-vs.-prediction-intervals",
-    "title": "Bayesian Statistics",
-    "section": "Credible vs. Prediction Intervals",
-    "text": "Credible vs. Prediction Intervals\n\n\nBayesians view both parameters and data as stochastic variables.\nWe’ll use prediction intervals for future data, credible intervals for missing data/parameters.\n\n\n\n\nParameters vs Data Bayes Meme"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#bayesian-statistics-1",
-    "href": "slides/lecture04-1-bayes.html#bayesian-statistics-1",
-    "title": "Bayesian Statistics",
-    "section": "Bayesian Statistics",
-    "text": "Bayesian Statistics\n\nProbability as degree of belief\nBayes’ Rule as the fundamental theorem of conditional probability\nBoth data and parameters are random variables\nCan describe probability of any random variable conditional on observations\nBayesian updating as an information filter"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#bayesian-workflow",
-    "href": "slides/lecture04-1-bayes.html#bayesian-workflow",
-    "title": "Bayesian Statistics",
-    "section": "Bayesian Workflow",
-    "text": "Bayesian Workflow\n\nPrior selection important: softly express scientific knowledge and regularization.\nPrior predictive simulation to understand implications of prior selections.\nDon’t look at the data when assessing priors.\nBut be open to revisiting model specification (including priors) based on quality of fit."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#communicating-uncertainty",
-    "href": "slides/lecture04-1-bayes.html#communicating-uncertainty",
-    "title": "Bayesian Statistics",
-    "section": "Communicating Uncertainty",
-    "text": "Communicating Uncertainty\n\nA single confidence interval tells you nothing about the “true” value of a parameter without understanding of sampling/measurement.\nCredible intervals do communicate probability of “true” values.\nPrediction intervals fit into either paradigm: what is the probability (understood in whatever sense) that you see a given value in the future?"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#next-classes",
-    "href": "slides/lecture04-1-bayes.html#next-classes",
-    "title": "Bayesian Statistics",
-    "section": "Next Classes",
-    "text": "Next Classes\nWednesday: Bayesian Statistics\nNext Week: Temporal and Spatial Models and Errors"
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#assessments",
-    "href": "slides/lecture04-1-bayes.html#assessments",
-    "title": "Bayesian Statistics",
-    "section": "Assessments",
-    "text": "Assessments\nHomework 1 due Friday (2/7)."
-  },
-  {
-    "objectID": "slides/lecture04-1-bayes.html#references-scroll-for-full-list",
-    "href": "slides/lecture04-1-bayes.html#references-scroll-for-full-list",
-    "title": "Bayesian Statistics",
-    "section": "References (Scroll for Full List)",
-    "text": "References (Scroll for Full List)\n\n\n\n\nBayes, T. (1763). An Essay towards Solving a Problem in the Doctrine of Chance. Philosophical Transactions of the Royal Society of London, 53, 370–418.\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nGelman, A., & Shalizi, C. R. (2013). Philosophy and the practice of Bayesian statistics. Br. J. Math. Stat. Psychol., 66, 8–38. https://doi.org/10.1111/j.2044-8317.2011.02037.x\n\n\nGelman, A., Simpson, D., & Betancourt, M. (2017). The prior can often only be understood in the context of the likelihood. Entropy, 19, 555. https://doi.org/10.3390/e19100555\n\n\nHelsel, D. R., Hirsch, R. M., Ryberg, K. R., Archfield, S. A., & Gilroy, E. J. (2020). Statistical methods in water resources (research report No. 4-A3) (p. 484). Reston, VA: U.S. Geological Survey. Retrieved from http://pubs.er.usgs.gov/publication/tm4A3\n\n\nJaynes, E. T. (2003). Probability theory: the Logic of Science. (G. L. Bretthorst, Ed.). Cambridge, UK ; New York, NY: Cambridge University Press. Retrieved from https://market.android.com/details?id=book-tTN4HuUNXjgC\n\n\nLaplace, P. S. (1774). Mémoire sur la Probabilité des Causes par les évènemens. In Mémoires de Mathematique et de Physique, Presentés à l’Académie Royale des Sciences, Par Divers Savans & Lus Dans ses Assemblées (pp. 621–656)."
+    "objectID": "index.html#regular-weekly-schedule",
+    "href": "index.html#regular-weekly-schedule",
+    "title": "BEE 4850/5850: Environmental Data Analysis and Simulation",
+    "section": "Regular Weekly Schedule",
+    "text": "Regular Weekly Schedule\n\n\n\n\n\n\n\nLectures\nMW 11:40-12:55pm, 160 Riley-Robb Hall\n\n\nOffice Hours\nInstructor: MW 1:00-2:00pm, 318 Riley-Robb Hall, TA: MTh 10:30-11:30, 319 Riley-Robb Hall\n\n\nAssignments\nDue Fridays at 9pm on Gradescope.",
+    "crumbs": [
+      "Course Information",
+      "Overview"
+    ]
   },
   {
     "objectID": "slides/lecture03-1-probmodels.html#probability-fundamentals",
@@ -2042,6 +1902,251 @@
     "title": "Welcome to BEE 4850/5850!",
     "section": "References (Scroll for Full List)",
     "text": "References (Scroll for Full List)\n\n\n\n\nDoss-Gollin, J., & Keller, K. (2023). A subjective Bayesian framework for synthesizing deep uncertainties in climate risk management. Earths Future, 11, e2022EF003044. https://doi.org/10.1029/2022ef003044\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nFagnant, C., Gori, A., Sebastian, A., Bedient, P. B., & Ensor, K. B. (2020). Characterizing spatiotemporal trends in extreme precipitation in Southeast Texas. Nat. Hazards, 104, 1597–1621. https://doi.org/10.1007/s11069-020-04235-x\n\n\nSrikrishnan, V., Guan, Y., Tol, R. S. J., & Keller, K. (2022). Probabilistic projections of baseline twenty-first century CO2 emissions using a simple calibrated integrated assessment model. Clim. Change, 170, 37. https://doi.org/10.1007/s10584-021-03279-7"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#types-of-uncertainty",
+    "href": "slides/lecture04-2-bayes.html#types-of-uncertainty",
+    "title": "Bayesian Statistics",
+    "section": "Types of Uncertainty",
+    "text": "Types of Uncertainty\n\n\n\n\n\n\n\n\n\n\n\nUncertainty Type\nSource\nExample(s)\n\n\n\n\nAleatory uncertainty\nRandomness\nDice rolls, Instrument imprecision\n\n\nEpistemic uncertainty\nLack of knowledge\nClimate sensitivity, Premier League champion\n\n\n\n\n\n\n\nWhich Uncertainty Type Meme\n\n\n\n\n\nNote that the distinction between aleatory and epistemic uncertainty is somewhat arbitrary (aside from maybe some quantum effects). For example, we often think of coin tosses as aleatory, but if we had perfect information about the toss, we might be able to predict the outcome with less uncertainty. There’s a famous paper by Persi Diaconis where he collaborated with engineers to build a device which could arbitrary bias a “fair” coin toss.\nBut in practice, this doesn’t really matter: the key thing is whether for a given model we’re treating the uncertainty as entirely random (e.g. white noise) versus being interested in the impacts of that uncertainty on the outcome of interest. And there’s a representation theorem by the Bayesian actuary Bruno de Finetti which shows that, under a condition called exchangeability, we can think of any random sequence as arising from an independent and identically distributed process, so the practical difference can collapse further."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#frequentist-vs-bayesian-probability",
+    "href": "slides/lecture04-2-bayes.html#frequentist-vs-bayesian-probability",
+    "title": "Bayesian Statistics",
+    "section": "Frequentist vs Bayesian Probability",
+    "text": "Frequentist vs Bayesian Probability\n\n\nFrequentist:\n\nProbability as frequency over repeated observations.\nData are random, but parameters are not.\nHow consistent are estimates for different data?\n\n\n\nBayesian:\n\nProbability as degree of belief/betting odds.\nData and parameters are random variables;\nEmphasis on conditional probability."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#but-what-like-is-probability",
+    "href": "slides/lecture04-2-bayes.html#but-what-like-is-probability",
+    "title": "Bayesian Statistics",
+    "section": "But What, Like, Is Probability?",
+    "text": "But What, Like, Is Probability?\n\n\n\nFrequentist vs. Bayesian: different interpretations with some different methods and formalisms.\nWe will freely borrow from each school depending on the purpose and goal of an analysis.\n\n\n\n\nDefinitions of Probability Meme"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#bayes-rule",
+    "href": "slides/lecture04-2-bayes.html#bayes-rule",
+    "title": "Bayesian Statistics",
+    "section": "Bayes’ Rule",
+    "text": "Bayes’ Rule\n\n\nOriginal version\nBayes (1763):\n\\[\n\\begin{gather*}\nP(A | B) = \\frac{P(B | A) \\times P(A)}{P(B)} \\\\[0.5em]\n\\text{if} \\quad P(B) \\neq 0.\n\\end{gather*}\n\\]\n\n“Modern” version\nLaplace (1774):\n\\[\\underbrace{{p(\\theta | y)}}_{\\text{posterior}} = \\frac{\\overbrace{p(y | \\theta)}^{\\text{likelihood}}}{\\underbrace{p(y)}_\\text{normalization}} \\overbrace{p(\\theta)}^\\text{prior}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#logic-of-conditional-probability",
+    "href": "slides/lecture04-2-bayes.html#logic-of-conditional-probability",
+    "title": "Bayesian Statistics",
+    "section": "Logic of Conditional Probability",
+    "text": "Logic of Conditional Probability\nBayes’ Rule is the logic of conditional probability:\nWhat can we say about consistency of uncertainties with an observed sample \\(y\\)?\n\nModel configurations (\\(p(\\mathcal{M} | y)\\) or \\(p(\\mathcal{x} | y, \\mathcal{M})\\))\nHypotheses (\\(p(\\mathcal{H} | y)\\))"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#on-the-normalizing-constant",
+    "href": "slides/lecture04-2-bayes.html#on-the-normalizing-constant",
+    "title": "Bayesian Statistics",
+    "section": "On The Normalizing Constant",
+    "text": "On The Normalizing Constant\nThe normalizing constant (also called the marginal likelihood) is the integral \\[p(y) = \\int_\\Theta p(y | \\theta) p(\\theta) d\\theta.\\]\nSince this generally doesn’t depend on \\(\\theta\\), it can often be ignored, as the relative probabilities don’t change."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#bayes-rule-ignoring-normalizing-constants",
+    "href": "slides/lecture04-2-bayes.html#bayes-rule-ignoring-normalizing-constants",
+    "title": "Bayesian Statistics",
+    "section": "Bayes’ Rule (Ignoring Normalizing Constants)",
+    "text": "Bayes’ Rule (Ignoring Normalizing Constants)\nThe version of Bayes’ rule which matters the most for 95% (approximate) of Bayesian statistics:\n\\[p(\\theta | y) \\propto p(y | \\theta) \\times p(\\theta)\\]\n\n“The posterior is the prior times the likelihood…”"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#example-is-a-coin-fair",
+    "href": "slides/lecture04-2-bayes.html#example-is-a-coin-fair",
+    "title": "Bayesian Statistics",
+    "section": "Example: Is a Coin Fair?",
+    "text": "Example: Is a Coin Fair?\n\n\nIn 10 flips, we’ve observed 3 H and 7 T.\nWhat can we say about the probability of heads given this information?\n\n\n\n\nFry Coin Uncertainty meme"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#coin-flipping-likelihood",
+    "href": "slides/lecture04-2-bayes.html#coin-flipping-likelihood",
+    "title": "Bayesian Statistics",
+    "section": "Coin Flipping Likelihood",
+    "text": "Coin Flipping Likelihood\n\n\nWe can represent the outcome of a coin flip with a heads-probability of \\(p\\) as a sample from a Bernoulli distribution,\n\\[y_i \\sim \\text{Bernoulli}(p).\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#correlated-parameters-and-bayesian-inference",
+    "href": "slides/lecture04-2-bayes.html#correlated-parameters-and-bayesian-inference",
+    "title": "Bayesian Statistics",
+    "section": "Correlated Parameters and Bayesian Inference",
+    "text": "Correlated Parameters and Bayesian Inference\n\n\n\n\n\nCorrelated Climate Parameters\n\n\n\n\n\n\nCorrelated Climate Parameters\n\n\n\n\nSource: Errickson et al. (2021)"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#why-choose-a-particular-prior",
+    "href": "slides/lecture04-2-bayes.html#why-choose-a-particular-prior",
+    "title": "Bayesian Statistics",
+    "section": "Why Choose A Particular Prior?",
+    "text": "Why Choose A Particular Prior?\n\\[p(\\theta | y) \\propto p(y | \\theta) \\times {\\color{purple}p(\\theta)}\\]\nPriors can serve several purposes (more shortly…)\n\nOne perspective: Priors should reflect “actual knowledge” independent of the analysis (Jaynes, 2003)\nAnother: Priors are part of the probability model, and can be specified/changed accordingly based on predictive skill (Gelman et al., 2017; Gelman & Shalizi, 2013)"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#why-choose-a-particular-prior-1",
+    "href": "slides/lecture04-2-bayes.html#why-choose-a-particular-prior-1",
+    "title": "Bayesian Statistics",
+    "section": "Why Choose A Particular Prior?",
+    "text": "Why Choose A Particular Prior?\n\n\n\nThere are no “correct” priors, but more or less justified.\nDon’t assign zero probability to possible values.\nPriors matter less for simple models with lots of data, matter more in other cases.\nBase on information external to the data.\n\n\n\n\n\nCow Prior Meme\n\n\n\nSource: Richard McElreath"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#coin-flipping-prior",
+    "href": "slides/lecture04-2-bayes.html#coin-flipping-prior",
+    "title": "Bayesian Statistics",
+    "section": "Coin-Flipping Prior",
+    "text": "Coin-Flipping Prior\n\n\nSuppose that we spoke to a friend who knows something about coins, and she tells us that it is extremely difficult to make a passable weighted coin which comes up heads or tails more than 75% of the time.\n\nWe might try \\(p \\sim \\text{Beta}(7, 7)\\).\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Beta prior for coin flipping example"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#prior-predictive-simulation",
+    "href": "slides/lecture04-2-bayes.html#prior-predictive-simulation",
+    "title": "Bayesian Statistics",
+    "section": "Prior Predictive Simulation",
+    "text": "Prior Predictive Simulation\n\n\nSimulate from prior to understand implications for estimands/observables.\nThis produces the prior predictive distribution:\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Coin flipping prior predictive distribution"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#coin-flipping-probability-model",
+    "href": "slides/lecture04-2-bayes.html#coin-flipping-probability-model",
+    "title": "Bayesian Statistics",
+    "section": "Coin-Flipping Probability Model",
+    "text": "Coin-Flipping Probability Model\n\n\n\\[\n\\begin{align*}\ny_i &\\sim Bernoulli(p) \\\\\np &\\sim Beta(7, 7)\n\\end{align*}\n\\]\nWe can use a grid approximation to analyze the posterior.\n\nNotice how the prior regularizes the inference.\n\n\n\n\nCode\np_grid = 0:0.005:1\nloglikelihood(p) = sum(logpdf.(Bernoulli(p), flips .== \"H\"))\nlogprior(p) = logpdf(Beta(7, 7), p)\nlogposterior(p) = logprior(p) + loglikelihood(p)\n\nlik = loglikelihood.(p_grid)\npri = logprior.(p_grid)\npost = logposterior.(p_grid)\n\nplot(\n    p_grid,\n    exp.(lik) ./ sum(exp.(lik));\n    xlabel=L\"$p$\",\n    ylabel=\"Density\",\n    label=\"Likelihood\",\n    legend=:outerbottom,\n    linewidth=2,\n)\nplot!(p_grid, exp.(pri) ./ sum(exp.(pri)); label=\"Prior\", linewidth=2)\nplot!(p_grid, exp.(post) ./ sum(exp.(post)); label=\"Posterior\", linewidth=4)\nplot!(size=(600, 600))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Grid approximation to the coin-flipping posterior"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#posterior-approximation",
+    "href": "slides/lecture04-2-bayes.html#posterior-approximation",
+    "title": "Bayesian Statistics",
+    "section": "Posterior Approximation",
+    "text": "Posterior Approximation\nFor more complex models, grid approximations are too high-dimensional and/or computationally complex.\nFor now, we can optimize the posterior to find the maximum a posteriori estimate (MAP), which is analogous to the MLE.\nFor probabilistic inference, need more efficient sampling methods: will discuss briefly in roughly another week."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#how-does-tds-affect-river-flow",
+    "href": "slides/lecture04-2-bayes.html#how-does-tds-affect-river-flow",
+    "title": "Bayesian Statistics",
+    "section": "How Does TDS Affect River Flow?",
+    "text": "How Does TDS Affect River Flow?\n\n\nQuestion: Does river flow affect the concentration of total dissolved solids?\nData: Cuyahoga River (1969 – 1973), from Helsel et al. (2020, Chapter 9).\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Observations from the Cuyahoga River."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#how-does-tds-affect-river-flow-1",
+    "href": "slides/lecture04-2-bayes.html#how-does-tds-affect-river-flow-1",
+    "title": "Bayesian Statistics",
+    "section": "How Does TDS Affect River Flow?",
+    "text": "How Does TDS Affect River Flow?\n\n\nQuestion: Does river flow affect the concentration of total dissolved solids?\nModel:\n\\[D \\rightarrow S \\ {\\color{purple}\\leftarrow U}\\]\n\\[S = f(D, U)\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#prior-selection",
+    "href": "slides/lecture04-2-bayes.html#prior-selection",
+    "title": "Bayesian Statistics",
+    "section": "Prior Selection",
+    "text": "Prior Selection\n\nDo we have prior scientific information we can express?\nConsider the units of the covariates (rescale if needed!).\nWhat are the general behaviors we should expect to see?"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#the-prior-is-part-of-the-model",
+    "href": "slides/lecture04-2-bayes.html#the-prior-is-part-of-the-model",
+    "title": "Bayesian Statistics",
+    "section": "The Prior Is Part of the Model",
+    "text": "The Prior Is Part of the Model\nThe impact of a prior is not independent of the data-generating model (likelihood) (Gelman et al., 2017).\nKey point: Need to understand implications of prior selection for resulting data generation."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#prior-distributions",
+    "href": "slides/lecture04-2-bayes.html#prior-distributions",
+    "title": "Bayesian Statistics",
+    "section": "Prior Distributions",
+    "text": "Prior Distributions\n\n\nLet’s try:\n\\[\n\\begin{align*}\nS &= \\beta_0 + \\beta_1 \\log(D) + U\\\\\nU &\\sim \\mathcal{N}(0, \\sigma^2)\\\\\nH &\\sim \\text{Uniform}(0, 100) \\\\\n\\beta_0 &\\sim \\mathcal{TN}(500, 100; 0, \\infty) \\\\\n\\beta_1 &\\sim \\mathcal{TN}(0, 50; -\\infty, 0) \\\\\n\\sigma &\\sim \\mathcal{TN}(0, 25; 0, \\infty)\n\\end{align*}\n\\]\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: Priors for model parameters."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#prior-predictive-distribution",
+    "href": "slides/lecture04-2-bayes.html#prior-predictive-distribution",
+    "title": "Bayesian Statistics",
+    "section": "Prior Predictive Distribution",
+    "text": "Prior Predictive Distribution\n\n\nLet’s try:\n\\[\n\\begin{align*}\nS &= \\beta_0 + \\beta_1 \\log(D) + U\\\\\nU &\\sim \\mathcal{N}(0, \\sigma^2)\\\\\nH &\\sim \\text{Uniform}(0, 100) \\\\\n\\beta_0 &\\sim \\mathcal{TN}(500, 100; 0, \\infty) \\\\\n\\beta_1 &\\sim \\mathcal{TN}(0, 50; -\\infty, 0) \\\\\n\\sigma &\\sim \\mathcal{TN}(0, 25; 0, \\infty)\n\\end{align*}\n\\]\n\n\n\n\nCode\nfunction predictive_dist(p_samples, x)\n    ŷ = zeros(size(p_samples)[1], length(x))\n    for (i, row) in pairs(eachslice(p_samples; dims=1))\n        β₀, β₁, σ = row\n        ŷ[i, :] = β₀ .+ β₁ * log.(x) + rand(Normal(0, σ), length(x))\n    end\n    return ŷ\nend\n\n# sample from prior distributions\nn = 1_000\np_samples = zeros(n, 3)\np_samples[:, 1] = rand(truncated(Normal(500, 100); lower=0), n)\np_samples[:, 2] = rand(truncated(Normal(0, 50); upper=0), n)\np_samples[:, 3] = rand(truncated(Normal(0, 25); lower=0), n)\n\nxpred = 1:1:60\nypred = predictive_dist(p_samples, xpred)\nqpred = mapslices(row -&gt; quantile(row, [0.0, 0.025, 0.05, 0.5, 0.95, 0.975, 1.0]), ypred; dims=1)\np_prior = plot(; xlabel=L\"Discharge (m$^3$/s)\", ylabel=\"Total dissolved solids (mg/L)\")\nfor idx in 1:n\n    label = idx == 1 ? \"Prior Simulation\" : false\n    plot!(p_prior, xpred, ypred[idx, :], color=:black, alpha=0.1, label=label)\nend\nplot!(p_prior, size=(600, 500))\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Samples from the prior predictive distribution."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#maximize-posterior",
+    "href": "slides/lecture04-2-bayes.html#maximize-posterior",
+    "title": "Bayesian Statistics",
+    "section": "Maximize Posterior",
+    "text": "Maximize Posterior\n\n\n\\(\\hat{\\beta_0}\\): 598\n\\(\\hat{\\beta_1}\\): -107\n\\(\\hat{\\sigma}^2\\): 68\\(^2\\)\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: MAP predictive interval."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#comparison-of-mle-and-map",
+    "href": "slides/lecture04-2-bayes.html#comparison-of-mle-and-map",
+    "title": "Bayesian Statistics",
+    "section": "Comparison of MLE and MAP",
+    "text": "Comparison of MLE and MAP\n\n\n\n\n\nParameter\nMLE\nMAP\n\n\n\n\n\\(\\beta_0\\)\n610\n598\n\n\n\\(\\beta_1\\)\n-112\n-107\n\n\n\\(\\sigma^2\\)\n72\\(^2\\)\n68\\(^2\\)\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: Comparison of the MAP and MLE projections."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#posterior-predictive-distribution",
+    "href": "slides/lecture04-2-bayes.html#posterior-predictive-distribution",
+    "title": "Bayesian Statistics",
+    "section": "Posterior Predictive Distribution",
+    "text": "Posterior Predictive Distribution\nBayes’ Theorem gives us probabilities of different parameter combinations.\nOnce we have the ability to sample from the posterior, we can integrate over it to obtain the posterior predictive distribution:\n\\[p(\\tilde{y} | \\mathbf{y}) = \\int_{\\Theta} p(\\tilde{y} | \\theta) p(\\theta | \\mathbf{y}) d\\theta\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#hierarchical-models",
+    "href": "slides/lecture04-2-bayes.html#hierarchical-models",
+    "title": "Bayesian Statistics",
+    "section": "Hierarchical Models",
+    "text": "Hierarchical Models\nBayesian frameworks also lend themselves well to hierarchical models, with uncertain prior distributions:\n\\[\\begin{align}\ny_j | \\theta_j, \\phi &\\sim P(y_j | \\theta_j, \\phi) \\nonumber \\\\\n\\theta_j | \\phi &\\sim P(\\theta_j | \\phi) \\nonumber \\\\\n\\phi &\\sim P(\\phi) \\nonumber\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#recall-confidence-intervals",
+    "href": "slides/lecture04-2-bayes.html#recall-confidence-intervals",
+    "title": "Bayesian Statistics",
+    "section": "Recall: Confidence Intervals",
+    "text": "Recall: Confidence Intervals\n\n\nFrequentist confidence intervals reflect consistency of estimation over repeated experiments.\n\\(\\alpha\\)% of intervals produced should contain the “true” value.\n\n\nCode\n# set up distribution\nmean_true = 0.4\nn_cis = 100 # number of CIs to compute\ndist = Normal(mean_true, 2)\n\n# use sample size of 100\nsamples = rand(dist, (100, n_cis))\n# mapslices broadcasts over a matrix dimension, could also use a loop\nsample_means = mapslices(mean, samples; dims=1)\nsample_sd = mapslices(std, samples; dims=1) \nmc_sd = 1.96 * sample_sd / sqrt(100)\nmc_ci = zeros(n_cis, 2) # preallocate\nfor i = 1:n_cis\n    mc_ci[i, 1] = sample_means[i] - mc_sd[i]\n    mc_ci[i, 2] = sample_means[i] + mc_sd[i]\nend\n# find which CIs contain the true value\nci_true = (mc_ci[:, 1] .&lt; mean_true) .&& (mc_ci[:, 2] .&gt; mean_true)\n# compute percentage of CIs which contain the true value\nci_frac1 = 100 * sum(ci_true) ./ n_cis\n\n# plot CIs\np1 = plot([mc_ci[1, :]], [1, 1], linewidth=3, color=:deepskyblue, label=\"95% Confidence Interval\", yticks=:false, legend=:false)\nfor i = 2:n_cis\n    if ci_true[i]\n        plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:deepskyblue, label=:false)\n    else\n        plot!(p1, [mc_ci[i, :]], [i, i], linewidth=2, color=:red, label=:false)\n    end\nend\nvline!(p1, [mean_true], color=:black, linewidth=2, linestyle=:dash, label=\"True Value\") # plot true value as a vertical line\nxaxis!(p1, \"Estimate\")\nplot!(p1, size=(500, 500)) # resize to fit slide\n\n\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 9: Sample Size 100\n\n\n\n\n\nDisplay of 95% confidence intervals"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#credible-intervals-1",
+    "href": "slides/lecture04-2-bayes.html#credible-intervals-1",
+    "title": "Bayesian Statistics",
+    "section": "Credible Intervals",
+    "text": "Credible Intervals\n\n\nBayesian equivalent: credible intervals\n\\(\\alpha\\)% credible interval contains \\(\\alpha\\)% of the posterior probability.\nKey: These are not unique, so be clear what kind of interval you’re using.\n\n\n\n\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 10: Two different 95% credible intervals."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#credible-vs.-prediction-intervals",
+    "href": "slides/lecture04-2-bayes.html#credible-vs.-prediction-intervals",
+    "title": "Bayesian Statistics",
+    "section": "Credible vs. Prediction Intervals",
+    "text": "Credible vs. Prediction Intervals\n\n\nBayesians view both parameters and data as stochastic variables.\nWe’ll use prediction intervals for future data, credible intervals for missing data/parameters.\n\n\n\n\nParameters vs Data Bayes Meme"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#bayesian-statistics-1",
+    "href": "slides/lecture04-2-bayes.html#bayesian-statistics-1",
+    "title": "Bayesian Statistics",
+    "section": "Bayesian Statistics",
+    "text": "Bayesian Statistics\n\nProbability as degree of belief\nBayes’ Rule as the fundamental theorem of conditional probability\nBoth data and parameters are random variables\nCan describe probability of any random variable conditional on observations\nBayesian updating as an information filter"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#bayesian-workflow",
+    "href": "slides/lecture04-2-bayes.html#bayesian-workflow",
+    "title": "Bayesian Statistics",
+    "section": "Bayesian Workflow",
+    "text": "Bayesian Workflow\n\nPrior selection important: softly express scientific knowledge and regularization.\nPrior predictive simulation to understand implications of prior selections.\nDon’t look at the data when assessing priors.\nBut be open to revisiting model specification (including priors) based on quality of fit."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#communicating-uncertainty",
+    "href": "slides/lecture04-2-bayes.html#communicating-uncertainty",
+    "title": "Bayesian Statistics",
+    "section": "Communicating Uncertainty",
+    "text": "Communicating Uncertainty\n\nA single confidence interval tells you nothing about the “true” value of a parameter without understanding of sampling/measurement.\nCredible intervals do communicate probability of “true” values.\nPrediction intervals fit into either paradigm: what is the probability (understood in whatever sense) that you see a given value in the future?"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#next-classes",
+    "href": "slides/lecture04-2-bayes.html#next-classes",
+    "title": "Bayesian Statistics",
+    "section": "Next Classes",
+    "text": "Next Classes\nWednesday: Bayesian Statistics\nNext Week: Temporal and Spatial Models and Errors"
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#assessments",
+    "href": "slides/lecture04-2-bayes.html#assessments",
+    "title": "Bayesian Statistics",
+    "section": "Assessments",
+    "text": "Assessments\nHomework 1 due Friday (2/7)."
+  },
+  {
+    "objectID": "slides/lecture04-2-bayes.html#references-scroll-for-full-list",
+    "href": "slides/lecture04-2-bayes.html#references-scroll-for-full-list",
+    "title": "Bayesian Statistics",
+    "section": "References (Scroll for Full List)",
+    "text": "References (Scroll for Full List)\n\n\n\n\nBayes, T. (1763). An Essay towards Solving a Problem in the Doctrine of Chance. Philosophical Transactions of the Royal Society of London, 53, 370–418.\n\n\nErrickson, F. C., Keller, K., Collins, W. D., Srikrishnan, V., & Anthoff, D. (2021). Equity is more important for the social cost of methane than climate uncertainty. Nature, 592, 564–570. https://doi.org/10.1038/s41586-021-03386-6\n\n\nGelman, A., & Shalizi, C. R. (2013). Philosophy and the practice of Bayesian statistics. Br. J. Math. Stat. Psychol., 66, 8–38. https://doi.org/10.1111/j.2044-8317.2011.02037.x\n\n\nGelman, A., Simpson, D., & Betancourt, M. (2017). The prior can often only be understood in the context of the likelihood. Entropy, 19, 555. https://doi.org/10.3390/e19100555\n\n\nHelsel, D. R., Hirsch, R. M., Ryberg, K. R., Archfield, S. A., & Gilroy, E. J. (2020). Statistical methods in water resources (research report No. 4-A3) (p. 484). Reston, VA: U.S. Geological Survey. Retrieved from http://pubs.er.usgs.gov/publication/tm4A3\n\n\nJaynes, E. T. (2003). Probability theory: the Logic of Science. (G. L. Bretthorst, Ed.). Cambridge, UK ; New York, NY: Cambridge University Press. Retrieved from https://market.android.com/details?id=book-tTN4HuUNXjgC\n\n\nLaplace, P. S. (1774). Mémoire sur la Probabilité des Causes par les évènemens. In Mémoires de Mathematique et de Physique, Presentés à l’Académie Royale des Sciences, Par Divers Savans & Lus Dans ses Assemblées (pp. 621–656)."
   },
   {
     "objectID": "slides/notebooks/rahmstorf.html",
