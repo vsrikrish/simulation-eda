@@ -1,0 +1,525 @@
+---
+title: "Time Series"
+subtitle: "Lecture 05"
+author: "Vivek Srikrishnan"
+course: "BEE 4850"
+institution: "Cornell University"
+date: "February 05, 2025"
+format:
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        center-title-slide: true
+        width: 1280
+        height: 720
+        transition: none
+        toc: true
+        toc-depth: 1
+        toc-title: "Overview"
+        history: false
+        link-external-newwindow: true
+        theme: ../sass/slides.scss
+        template-partials:
+            - title-slide.html
+        menu:
+            numbers: true
+        html-math-method: mathjax
+        include-in-header: mathjax-config.html
+        date-format: long
+        email-obfuscation: javascript
+        chalkboard:
+            theme: whiteboard
+            buttons: true
+        mermaid: 
+            theme: dark
+engine: julia
+filters:
+  - code-fullscreen
+---
+
+```{julia}
+#| output: false
+
+import Pkg
+Pkg.activate(@__DIR__)
+Pkg.instantiate()
+```
+
+```{julia}
+#| output: false
+
+using Random
+using DataFrames
+using DataFramesMeta
+using CSV
+using Dates
+using Distributions
+using ColorSchemes
+using Plots
+using StatsPlots
+using StatsBase
+using GLM
+using Optim
+using LaTeXStrings
+using Measures
+
+Random.seed!(1)
+
+plot_font = "Computer Modern"
+default(
+    fontfamily=plot_font,
+    linewidth=3, 
+    framestyle=:box, 
+    label=nothing, 
+    grid=false,
+    guidefontsize=18,
+    legendfontsize=16,
+    tickfontsize=16,
+    titlefontsize=20,
+    bottom_margin=10mm,
+    left_margin=5mm
+)
+```
+
+
+# Time Series
+
+## Time Series and Environmental Data
+
+:::: {.columns}
+::: {.column width=50%}
+Many environmental datasets involve **time series**: repeated observations over time:
+
+$$X = \{X_t, X_{t+h}, X_{t+2h}, \ldots, X_{t+nh}\}$$ 
+
+More often: ignore sampling time in notation, 
+
+$$X = \{X_1, X_2, X_3, \ldots, X_n\}$$ 
+
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-lynx-ts
+#| fig-cap: Example of time series; trapped lynx populations in Canada.
+
+lh_obs = DataFrame(CSV.File("data/ecology/Lynx_Hare.csv"))
+plot(lh_obs[!, :Year], lh_obs[!, :Lynx], xlabel="Year", ylabel="Lynx Pelts", markersize=5, markershape=:circle, markercolor=:black, color=:grey, linewidth=3, legend=false)
+plot!(size=(500, 500))
+```
+:::
+::::
+
+## When Do We Care About Time Series?
+
+:::: {.columns}
+::: {.column width=55%}
+**Dependence**: History or sequencing of the data matters
+
+$$p(y_t) = f(y_1, \ldots, y_{t-1})$$
+
+Serial dependence captured by **autocorrelation**:
+
+$$\varsigma(i) = \rho(y_t, y_{t-i}) = \frac{\text{Cov}[y_t, y_{t+i}]}{\mathbb{V}[y_t]} $$
+
+:::
+::: {.column width=45%}
+```{julia}
+#| label: fig-lynx-acf
+#| fig-cap: Autocorrelation for the Lynx data.
+
+p1 = plot(0:5, autocor(lh_obs.Lynx, 0:5), marker=:circle, line=:stem, linewidth=3, markersize=8, tickfontsize=16, guidefontsize=18, legend=false, ylabel="Autocorrelation", xlabel="Time Lag", size=(550, 600))
+hline!(p1, [0], color=:black, linestyle=:dash)
+```
+:::
+::::
+
+## Stationarity
+
+**I.I.D. Data**: All data drawn from the same distribution, $y_i \sim \mathcal{D}$.
+
+Equivalent for time series $\mathbf{y} = \{y_t\}$ is **stationarity**.
+
+- **Strict stationarity**: $\{y_t, \ldots, y_{t+k-1}\} \sim \mathcal{D}$ for all $t$.
+- **Weak stationarity**: $\mathbb{E}[X_1] = \mathbb{E}[X_t]$ and $\text{Cov}(X_1, X_k) = \text{Cov}(X_t, X_{t+k-1})$ for all $t$.
+
+## Stationary vs. Non-Stationary Series
+
+```{julia}
+#| code-fold: true
+#| label: fig-ts-stationary
+#| fig-cap: Stationary vs. Non-stationary time series
+#| layout-ncol: 2
+
+μ = 0.01
+ρ = 0.7
+σ = 0.5
+ar_var = sqrt(σ^2 / (1 - ρ^2))
+T = 100
+ts_stat = zeros(T)
+ts_nonstat = zeros(T)
+for i = 1:T
+    if i == 1
+        ts_stat[i] = rand(Normal(0, ar_var))
+        ts_nonstat[i] = rand(Normal(0, ar_var))
+    else
+        ts_stat[i] = ρ * ts_stat[i-1] + rand(Normal(0, σ))
+        ts_nonstat[i] = μ * (i-1) + ρ * ts_nonstat[i-1] + rand(Normal(0, σ))
+    end
+end
+
+p1 = plot(1:T, ts_stat, title="Stationary", xlabel="Time", linewidth=3, size=(500, 500))
+p2 = plot(1:T, ts_nonstat, title="Nonstationary", xlabel="Time", linewidth=3, size=(500, 500))
+display(p1)
+display(p2)
+```
+
+## Autocorrelation
+
+```{julia}
+#| code-fold: true
+#| label: fig-ac-regression
+#| fig-cap: Lag-1 autocorrelation for an AR model and Gaussian noise.
+#| layout: [[1, 1], [1, 1]]
+
+wn = rand(Normal(0, ar_var), T)
+wnlr = lm([ones(T-1) wn[1:end-1]], wn[2:end])
+wnpred = predict(wnlr, [ones(T-1) wn[1:end-1]])
+arlr = lm([ones(T-1) ts_stat[1:end-1]], ts_stat[2:end])
+arpred = predict(arlr, [ones(T-1) ts_stat[1:end-1]])
+
+p1wn = plot(1:T, wn, title="No Autocorrelation", xlabel="Time", ylabel="Value", size=(500, 300))
+p2wn = scatter(wn[1:end-1], wn[2:end], xlabel=L"$y_t$", ylabel=L"$y_{t+1}$", size=(500, 300))
+plot!(p2wn, wn[1:end-1], wnpred, color=:red, linewidth=3)
+
+p1ar = plot(1:T, ts_stat, title="Autocorrelation", xlabel="Time", ylabel="Value", size=(500, 300))
+p2ar = scatter(ts_stat[1:end-1], ts_stat[2:end], xlabel=L"$y_t$", ylabel=L"$y_{t+1}$", size=(500, 300))
+plot!(p2ar, ts_stat[1:end-1], arpred, color=:red, linewidth=3)
+
+display(p1wn)
+display(p1ar)
+display(p2wn)
+display(p2ar)
+```
+
+## Autoregressive (AR) Models
+
+AR(p): (autoregressive of order $p$):
+
+$$
+\begin{align*}
+y_t &= \sum_{i=1}^p \rho_{i} y_{t-i} + \varepsilon \\
+\varepsilon &\sim N(0, \sigma^2)
+\end{align*}
+$$ 
+
+e.g. AR(1):
+
+$$
+\begin{align*}
+y_t &= \rho y_{t-1} + \varepsilon \\
+\varepsilon &\sim N(0, \sigma^2)
+\end{align*}
+$$
+
+
+## Uses of AR Models
+
+AR models are commonly used for **prediction**: bond yields, prices, electricity demand, short-run weather.
+
+But may have little explanatory power: what **causes** the autocorrelation?
+
+
+## AR(1) Models
+
+```{julia}
+#| label: fig-ar1-ar
+#| fig-cap: AR(1) model
+#| layout-ncol: 2
+#| code-fold: true
+
+x₀ = 0
+T = 100
+ts_strong = zeros(T)
+ts_weak = zeros(T)
+for i = 1:T
+    if i == 1
+        ts_strong[i] = rand(Normal(0, σ / sqrt(1-0.7^2)))
+        ts_weak[i] = rand(Normal(0, σ / sqrt(1-0.2^2)))
+    else
+        ts_strong[i] = 0.7 * ts_strong[i-1] + rand(Normal(0, σ))
+        ts_weak[i] = 0.3 * ts_weak[i-1] + rand(Normal(0, σ))
+    end
+end
+
+p1 = plot(1:T, ts_strong, linewidth=3, title=L"$\rho = 0.7$", legend=false, xlabel="Time", ylabel="Value", size=(600, 500))
+p2 = plot(1:T, ts_weak, linewidth=3, title=L"$\rho = 0.2$", legend=false, xlabel="Time", ylabel="Value", size=(600, 500))
+display(p1)
+display(p2)
+```
+
+
+## Diagnosing Autocorrelation
+
+:::: {.columns}
+::: {.column width=50%}
+Plot $\varsigma(i)$ over a series of lags.
+
+Data generated by an AR(1) with $\rho = 0.7$.
+
+**Note**: Even without an explicit dependence between $y_{t-2}$ and $y_t$, $\varsigma(2) \neq 0$.
+
+
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-acf
+#| fig-cap: Autocorrelation Function
+
+p1 = plot(0:5, autocor(ts_stat, 0:5), marker=:circle, line=:stem, linewidth=3, markersize=8, tickfontsize=16, guidefontsize=18, legend=false, ylabel="Autocorrelation", xlabel="Time Lag", size=(600, 600))
+hline!(p1, [0], color=:black, linestyle=:dash)
+```
+:::
+::::
+
+## Partial Autocorrelation
+
+:::: {.columns}
+::: {.column width=50%}
+Instead, can isolate $\varsigma(i)$ independent of $\varsigma(i-k)$ through *partial autocorrelation*.
+
+Typically estimated through regression.
+:::
+::: {.column width=50%}
+```{julia}
+#| label: fig-pacf
+#| fig-cap: Partial autocorrelation Function
+
+p1 = plot(0:5, pacf(ts_stat, 0:5), marker=:circle, line=:stem, linewidth=3, markersize=8, tickfontsize=16, guidefontsize=18, legend=false, ylabel="Partial Autocorrelation", xlabel="Time Lag", size=(600, 600))
+hline!(p1, [0], color=:black, linestyle=:dash)
+```
+:::
+::::
+
+## AR(1) and Stationarity
+
+$$\begin{align*}
+y_{t+1} &= \rho y_t + \varepsilon_t \\
+y_{t+2} &= \rho^2 y_t + \rho \varepsilon_t + \varepsilon_{t+1} \\
+y_{t+3} &= \rho^3 y_t + \rho^2 \varepsilon_t + \rho \varepsilon_{t+1} + \varepsilon_{t+2} \\
+&\vdots
+\end{align*}
+$$
+
+Under what condition will $\mathbf{y}$ be stationary?
+
+::: {.fragment .fade-in}
+Stationarity requires $| \rho | < 1$.
+:::
+
+## AR(1) Variance
+
+The **conditional variance** $\mathbb{V}[y_t | y_{t-1}] = \sigma^2$.
+
+**Unconditional variance** for stationary $\mathbb{V}[y_t]$:
+
+$$
+\begin{align*}
+\mathbb{V}[y_t] &= \rho^2 \mathbb{V}[y_{t-1}] + \mathbb{V}[\varepsilon] \\
+&= \rho^2 \mathbb{V}[y_t] + \sigma^2 \\
+&= \frac{\sigma^2}{1 - \rho^2}.
+\end{align*}
+$$
+
+
+## AR(1) Joint Distribution
+
+Assume stationarity and zero-mean process. 
+
+Need to know $\text{Cov}[y_t, y_{t+h}]$ for arbitrary $h$.
+
+$$
+\begin{align*}
+\text{Cov}[y_t, y_{t-h}] &= \text{Cov}[\rho^h y_{t-h}, y_{t-h}] \\
+&= \rho^h \text{Cov}[y_{t-h}, y_{t-h}] \\
+&= \rho^h \frac{\sigma^2}{1-\rho^2}
+\end{align*}
+$$
+
+## AR(1) Joint Distribution
+
+$$
+\begin{align*}
+\mathbf{y} &\sim \mathcal{N}(\mathbf{0}, \Sigma) \\
+\Sigma &= \frac{\sigma^2}{1 - \rho^2} \begin{pmatrix}1 & \rho & \ldots & \rho^{T-1}  \\ \rho & 1 & \ldots & \rho^{T-2} \\ \vdots & \vdots & \ddots & \vdots \\ \rho^{T-1} & \rho^{T-2} & \ldots & 1\end{pmatrix}
+\end{align*}
+$$
+
+## Alternatively..
+
+An often "easier approach" (often more numerically stable) is to **whiten** the series sample/compute likelihoods in sequence:
+
+$$
+\begin{align*}
+y_1 & \sim N\left(0, \frac{\sigma^2}{1 - \rho^2}\right) \\
+y_t &\sim N(\rho y_{t-1} , \sigma^2) 
+\end{align*}
+$$
+
+## Dealing with Trends
+
+$$y_t = \underbrace{x_t}_{\text{fluctuations}} + \underbrace{z_t}_{\text{trend}}$$
+
+- Model trend with regression: $$y_t - a - bt \sim N(\rho (y_{t-1} - a - bt), \sigma^2)$$
+- Model the **spectrum** (frequency domain).
+- Difference values: $\hat{y}_t = y_t - y_{t-1}$
+
+## Be Cautious with Detrending!
+
+:::: {.columns}
+::: {.column width=50%}
+**Dragons**: Extrapolating trends identified using "curve-fitting" is highly fraught, complicating projections. 
+
+Better to have an explanatory model (next week!)...
+:::
+::: {.column width=50%}
+![Dog Growth Extrapolation Cartoon](memes/dog_puppy_trend.jpg){width=55%}
+
+::: {.caption}
+Source: Reddit (original source unclear...)
+:::
+
+:::
+::::
+
+## Code for AR(1) model
+
+```{julia}
+#| output-location: fragment
+#| echo: true
+#| code-line-numbers: "|1-15|17-29"
+
+function ar1_loglik_whitened(θ, dat)
+    # might need to include mean or trend parameters as well
+    # subtract trend from data to make this mean-zero in this case
+    ρ, σ = θ
+    T = length(dat)
+    ll = 0 # initialize log-likelihood counter
+    for i = 1:T
+        if i == 1
+            ll += logpdf(Normal(0, sqrt(σ^2 / (1 - ρ^2))), dat[i])
+        else
+            ll += logpdf(Normal(ρ * dat[i-1], σ), dat[i])
+        end
+    end
+    return ll
+end
+
+function ar1_loglik_joint(θ, dat)
+    # might need to include mean or trend parameters as well
+    # subtract trend from data to make this mean-zero in this case
+    ρ, σ = θ
+    T = length(dat)
+    # compute all of the pairwise lags
+    # this is an "outer product"; syntax will differ wildly by language
+    H = abs.((1:T) .- (1:T)')
+    P = ρ.^H # exponentiate ρ by each lag
+    Σ = σ^2 / (1 - ρ^2) * P
+    ll = logpdf(MvNormal(zeros(T), Σ), dat)
+    return ll
+end
+```
+
+## AR(1) Example
+
+:::: {.columns}
+::: {.column width=50%}
+```{julia}
+#| label: fig-ar1-test
+#| fig-cap: Simulated AR(1) data
+#| code-fold: true
+#| echo: true
+
+ρ = 0.6
+σ = 0.25
+T = 25
+ts_sim = zeros(T)
+# simulate synthetic AR(1) series
+for t = 1:T
+    if t == 1
+        ts_sim[t] = rand(Normal(0, sqrt(σ^2 / (1 - ρ^2))))
+    else
+        ts_sim[t] = rand(Normal(ρ * ts_sim[t-1], σ))
+    end
+end
+
+plot(1:T, ts_sim, linewidth=3, xlabel="Time", ylabel="Value", title=L"$ρ = 0.6, σ = 0.25$")
+plot!(size=(600, 500))
+```
+:::
+::: {.column width=50%}
+```{julia}
+#| code-fold: true
+#| echo: true
+
+lb = [-0.99, 0.01]
+ub = [0.99, 5]
+init = [0.6, 0.3]
+
+optim_whitened = Optim.optimize(θ -> -ar1_loglik_whitened(θ, ts_sim), lb, ub, init)
+θ_wn_mle = round.(optim_whitened.minimizer; digits=2)
+@show θ_wn_mle;
+
+optim_joint = Optim.optimize(θ -> -ar1_loglik_joint(θ, ts_sim), lb, ub, init)
+θ_joint_mle = round.(optim_joint.minimizer; digits=2)
+@show θ_joint_mle;
+```
+:::
+::::
+
+# Key Points
+
+## Key Points
+
+- Time series exhibit serial dependence (autocorrelation
+- AR(1) probability models: joint vs. whitened likelihoods
+- In general, AR models useful for forecasting/when we don't care about explanation, pretty useless for explanation.
+- **Similar concepts in spatial data**: spatial correlation (distance/adjacency vs. time), lots of different models.
+
+## For More On Time Series
+
+::: {layout-ncol=2}
+### Courses
+
+- STSCI 4550/5550 (Applied Time Series Analysis), 
+- CEE 6790 (heavy focus on spectral analysis and signal processing)
+
+### Books
+
+- @shumstof2025
+- @Hyndman2021-mw
+- @Durbin2012-pn
+- @Banerjee2011-dg
+- @Cressie2011-pj
+
+:::
+
+# Discussion of Lloyd & Oreskes (2018)
+
+## Questions to Seed Discussion
+
+- What was your key takeaway?
+- What do you think the pros/cons are of the risk and storyline approaches?
+- How well do you think the authors argued their case?
+
+# Upcoming Schedule
+
+## Assessments
+
+**HW1**: Due Friday at 9pm.
+
+**Quiz**: Available after class.
+
+# References
+
+## References (Scroll For Full List)
+

@@ -1,0 +1,17 @@
+---
+title: "Week 4 Information"
+---
+
+## Lectures
+
+- [Calibration Simualtion Models](../slides/lecture04-1-diffeqmodels.qmd)
+- Time Series
+
+## Homework
+
+- [Homework 2](../hw/hw02/hw02.qmd) due 2/21/25 by 9PM.
+- [Homework 1 solutions](../solutions/hw/hw01/hw01.qmd) released.
+
+## Readings
+
+- No reading this week!

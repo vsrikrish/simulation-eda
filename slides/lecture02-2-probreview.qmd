@@ -1,10 +1,10 @@
 ---
 title: "Probability Fundamentals"
-subtitle: "Lecture 04"
+subtitle: "Lecture 03"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
 institution: "Cornell University"
-date: "February 03, 2025"
+date: "January 29, 2025"
 format:
     revealjs:
         slide-number: c/t
@@ -729,7 +729,7 @@ Due to this non-uniqueness, the typical convention is to use the "equal tailed" 
 
 ## Assessments
 
-**Homework 1** due Friday (2/7).
+**Homework 1** due next Friday (2/7).
 
 **Quiz**: Due before next class.
 

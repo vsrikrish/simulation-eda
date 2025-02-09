@@ -1,5 +1,5 @@
 ---
-title: "Probability Models for Data"
+title: "Probability Models"
 subtitle: "Lecture 04"
 author: "Vivek Srikrishnan"
 course: "BEE 4850"
@@ -88,231 +88,93 @@ default(
 - Distributions reflect assumptions on probability of data.
 - Normal distributions: "least informative" distribution for a given mean/variance.
 - Fit distributions by maximizing likelihood.
-- Communicating uncertainty: confidence vs. credible vs. predictive intervals.
+- Communicating uncertainty: confidence vs. predictive intervals.
 
-# Modeling Sea Level Rise
+# Linear Regression
 
-## How Do Global Sea Levels Respond to Warming?
+## How Does River Flow Affect TDS?
 
+:::: {.columns}
+::: {.column width=50%}
 
+**Question**: Does river flow affect the concentration of total dissolved solids?
+
+**Data**: Cuyahoga River (1969 -- 1973), from @Helsel2020-nq [Chapter 9].
+
+:::
+::: {.column width=50%}
 ```{julia}
-#| label: fig-sealevel-data
-#| fig-cap: "Sea level data from CSIRO and temperature data from HadCRUT5."
-#| layout-ncol: 2
-#| echo: true
-#| code-fold: true
-
-# load sea-level data into a DataFrame
-sl_dat = DataFrame(CSV.File(joinpath(@__DIR__, "data", "sealevel", "CSIRO_Recons_gmsl_yr_2015.csv")))
-rename!(sl_dat, [:Year, :GMSLR, :SD]) # rename to make columns easier to work with
-sl_dat[!, :Year] .-= 0.5 # shift year to line up with years instead of being half-year 
-sl_dat[!, :GMSLR] .-= mean(filter(row -> row.Year ∈ 1880:1900, sl_dat)[!, :GMSLR]) # rescale to be relative to 1880-1900 mean for consistency with temperature anomaly
-
-# load temperature data
-temp_dat = DataFrame(CSV.File(joinpath(@__DIR__, "data", "climate", "HadCRUT.5.0.1.0.analysis.summary_series.global.annual.csv")))
-rename!(temp_dat, [:Year, :Temp, :Lower, :Upper]) # rename to make columns easier to work with
-filter!(row -> row.Year ∈ sl_dat[!, :Year], temp_dat) # reduce to the same years that we have SL data for
-temp_normalize = mean(filter(row -> row.Year ∈ 1880:1900, temp_dat)[!, :Temp]) # get renormalization to rescale temperature to 1880-1900 mean
-temp_dat[!, :Temp] .-= temp_normalize
-temp_dat[!, :Lower] .-= temp_normalize
-temp_dat[!, :Upper] .-=  temp_normalize
-
-sl_plot = plot(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label="Observations", ylabel="(mm)", xlabel="Year", title="Sea Level Anomaly")
-plot!(sl_plot, size=(600, 450))
-
-temp_plot = plot(temp_dat[!, :Year], temp_dat[!, :Temp], yerr=(temp_dat[!, :Temp] - temp_dat[!, :Lower], temp_dat[!, :Upper] - temp_dat[!, :Temp]), color=:black, label="Observations", ylabel="(°C)", xlabel="Year", title="Temperature")
-plot!(temp_plot, size=(600, 450))
-
-display(sl_plot)
-display(temp_plot)
+tds = let
+	fname = "data/tds/cuyaTDS.csv" # CHANGE THIS!
+	tds = DataFrame(CSV.File(fname))
+	tds[!, [:date, :discharge_cms, :tds_mgL]]
+end
+p = scatter(
+	tds.discharge_cms,
+	tds.tds_mgL,
+	xlabel=L"Discharge (m$^3$/s)",
+	ylabel="Total dissolved solids (mg/L)",
+    markersize=5,
+	label="Observations"
+)
+plot!(p, size=(600, 600))
 ```
-
-## Does Regressing SLR on Temperature Make Sense?
-
-Why might temperature exert an influence on sea levels?
-
-## Processes Contributing to SLR
-
-![Sea Level Processes](figures/sea-processes.png)
-
-::: {.caption}
-Source: @Milne2009-um
 :::
+::::
 
-## Why Model "Total" SLR?
+## How Does TDS Affect River Flow?
 
-![Sea Level Budget](figures/slr-budget.png)
+:::: {.columns}
 
-::: {.caption}
-Source: @Fox-Kemper2021-ni
+::: {.column width=50%}
+**Question**: Does river flow affect the concentration of total dissolved solids?
+
+**Model**: 
+$$D \rightarrow S \ {\color{purple}\leftarrow U}$$
+$$S = f(D, U)$$
 :::
+::: {.column width=50%}
+```{julia}
+p
+```
+:::
+::::
 
-## Linear Regression Specification
 
-Standard assumption of independent normal residuals:
+## Log-Linear Relationships
 
 :::: {.columns}
 ::: {.column width=50%}
 $$
 \begin{align*}
-\text{SLR}_t &\sim \beta_0 + \beta_1 \text{x}_t + \varepsilon \\
-\varepsilon & \sim N(0, \sigma^2)
+S &= \beta_0 + \beta_1 \log(D) + U\\
+U &\sim \mathcal{N}(0, \sigma^2)
 \end{align*}
 $$
+
 :::
 ::: {.column width=50%}
 ```{julia}
-#| label: fig-slr-temp-scatter
-#| fig-label: Scatterplot of temperature vs. GMSLR anomaly
-
-scatter(temp_dat[!, :Temp], sl_dat[!, :GMSLR], xlabel="Temperature Anomaly (°C)", ylabel="SLR Anomaly (mm)")
-plot!(size=(500, 500))
+xx = [2, 5, 10, 20, 50, 100]
+p1 = plot(p, xaxis=:log, xticks=(xx, string.(xx)))
 ```
 :::
 ::::
 
-## OLS Estimate
+## Likelihood
 
-:::: {.columns}
-::: {.column width=50%}
-$$
-\begin{align*}
-\hat{\beta_1} &= \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2} \\
-&= 176 \text{mm}/^\circ \text{C} \\
-\hat{\beta_0} &= \bar{y} - \hat{\beta_1}\bar{x} = 27 \text{mm} \\
-\hat{\sigma} &= \sqrt{\frac{SSE}{n-1}} = 27 \text{mm}
-\end{align*}
-$$
-:::
+How do we find $\beta_i$ and $\sigma$?
 
-::: {.column width=50%}
-```{julia}
-#| label: fig-slr-ols-pred
-#| fig: OLS prediction (in red) of SLR vs. temperature
+**Likelihood** of data to have come from distribution $f(\mathbf{x} | \theta)$:
+$$\mathcal{L}(\theta | \mathbf{x}) = \underbrace{f(\mathbf{x} | \theta)}_{\text{PDF}}$$
 
-x̄ = mean(temp_dat[!, :Temp])
-ȳ = mean(sl_dat[!, :GMSLR]) 
-β₁ = sum((temp_dat[!, :Temp] .- x̄) .* (sl_dat[!, :GMSLR] .- ȳ)) / sum((temp_dat[!, :Temp] .- x̄).^2)
-β₀ = ȳ - β₁ * x̄
-OLS_pred = β₀ .+ β₁ * temp_dat[!, :Temp]
-OLS_var = sum((sl_dat[!, :GMSLR] .- OLS_pred).^2) / (nrow(sl_dat) - 1)
-
-sl_plot_ols = scatter(sl_dat[!, :Year], sl_dat[!, :GMSLR], yerr=sl_dat[!, :SD], color=:black, label="Observations", ylabel="(mm)", xlabel="Year", title="Sea Level Anomaly")
-plot!(sl_plot_ols, sl_dat[!, :Year], OLS_pred, color=:red)
-plot!(sl_plot_ols, size=(600, 450))
-
-```
-:::
-::::
-
-## You Can Always Fit Models...
-
-:::: {.columns}
-::: {.column width=50%}
-Especially linear models with OLS!
-
-But not all models **are theoretically justifiablee**.
-:::
-::: {.column width=50%}
-![Ian Malcolm meme](memes/ian_malcolm_should_model.png)
-:::
-::::
-
-## How Do We Choose What To Model?
-
-![XKCD 2620](https://imgs.xkcd.com/comics/health_data.png)
-
-::: {.caption}
-Source: [XKCD 2620](https://xkcd.com/2620/)
-:::
-
-# A "Semi-Empirical" Model
-
-## Think Generatively
-
-:::: {.columns}
-::: {.column width=50%}
-**Regressions model expectations** ("regression to the mean"), not the data.
-
-Want to split probability model into two parts:
-
-* Influences/expectations (**generative**);
-* Modeling errors/stochastic components (**residual**).
-
-$$
-\begin{align*}
-y &\sim \beta_0 + \sum_i \beta_i x_i + \varepsilon \\
-\varepsilon &\sim N(0, \sigma^2)
-\end{align*}
-$$
-
-:::
-::: {.column width=50%}
-![Brain on Regression](memes/brain_on_regression.jpg){width=55%}
-
-::: {.caption}
-Source: Richard McElreath
-:::
-:::
-::::
+Here the randomness comes from $U$:
+$$S \sim \mathcal{N}(\beta_0 + \beta_1 \log(D), \sigma^2)$$
 
 
+## Maximizing Gaussian Likelihood &hArr; Least Squares
 
-## Revisiting SLR Processes
-
-![Sea Level Processes](figures/sea-processes.png)
-
-::: {.caption}
-Source: @Milne2009-um
-:::
-
-## 
-
-# Model Calibration
-
-## Fitting Models to Data
-
-**Calibration**: Finding model parameters which "explain" or "fit" the data.
-
-In other words, given:
-
-- model $f(\mathbf{x}; \theta)$
-- data $\mathbf{y}$
-  
-want to find model parameters $\hat{\theta}$ to approximate $y$.
-
-## What Do You Think Of When You Think of "Fitting" Models?
-
-::: {.fragment .fade-in}
-Often this refers to minimizing some error metric, like the mean squared error (MSE):
-
-$$\frac{1}{n} \sum_{i=1}^n (\hat{y}_i - y_i)^2$$
-:::
-
-## Model Residuals
-
-**Model Residuals** are the "error" between the model simulations and the data.
-
-$$\underbrace{\mathbf{r}}_{\text{residuals}} = \overbrace{F(\mathbf{x}; \theta)}^{model} - \underbrace{\mathbf{y}}_{\text{data}}$$
-
-
-## Relationship of MSE to Normally-Distributed Residuals
-
-**Claim**: Minimizing the (R)MSE is the same as maximizing likelihood assuming *independent and identically-normally-distributed* residuals (with known variance).
-
-$$
-\begin{gather*}
-\mathbf{y} = F(\mathbf{x}) - \mathbf{r} \\
-r_i \overset{\text{i.i.d.}}{\sim} \mathcal{N}(0, \sigma)
-\end{gather*}
-$$
-
-
-## Likelihood of Normal Residuals
-
-Data Probability Model: 
-
-$$y_i \sim \mathcal{N}(F(x_i), \sigma)$$
+$$y_i \sim \mathcal{N}(F(x_i), \sigma^2)$$
 
 ::: {.fragment .fade-in}
 $$\mathcal{L}(\theta | \mathbf{y}; F) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi}} \exp(-\frac{y_i - F(x_i)^2}{2\sigma^2})$$
@@ -343,38 +205,296 @@ $$\log \mathcal{L}(\theta | \mathbf{y}, F) \propto -\sum_{i=1}^n (y_i - F(x_i))^
 Maximizing $f(x)$ is equivalent to minimizing $-f(x)$:
 
 $$
-- \log \mathcal{L}(\theta | \mathbf{y}, F) \propto \sum_{i=1}^n (y_i - F(x_i))^2 = \text{MSE}
+-\log \mathcal{L}(\theta | \mathbf{y}, F) \propto \sum_{i=1}^n (y_i - F(x_i))^2 = \text{MSE}
 $$
+
+**But note**: Don't get an estimate of $\sigma^2$ directly through least squares.
 :::
 
-# Probability Models for Data
+## Back to the Problem...
 
-## Probability Models
+```{julia}
+#| echo: true
+#| code-line-numbers: "|4-9|11-14"
+#| output-location: fragment
 
-Generative models allow us to write down a probability model for the data, *e.g.*
+# tds_riverflow_loglik: function to compute the log-likelihood for the tds model
+# θ: vector of model parameters (coefficients β₀ and β₁ and stdev σ)
+# tds, flow: vectors of data
+function tds_riverflow_loglik(θ, tds, flow)
+    β₀, β₁, σ = θ # unpack parameter vector
+    μ = β₀ .+ β₁ * log.(flow) # find mean
+    ll = sum(logpdf.(Normal.(μ, σ), tds)) # compute log-likelihood
+    return ll
+end
 
-$$
-\begin{align*}
-y &\sim \beta_0 + \sum_i \beta_i x_i + \varepsilon \\
-\varepsilon &\sim N(0, \sigma^2) \\
-\Rightarrow &\bbox[yellow, 10px, border:5px solid red] {y \sim \N(\beta_0 + \sum_i \beta_i x_i, \sigma^2)}
+lb = [0.0, -1000.0, 1.0]
+ub = [1000.0, 1000.0, 100.0]
+θ₀ = [500.0, 0.0, 50.0]
+optim_out = Optim.optimize(θ -> -tds_riverflow_loglik(θ, tds.tds_mgL, tds.discharge_cms), lb, ub, θ₀)
+θ_mle = round.(optim_out.minimizer; digits=0)
+@show θ_mle;
+```
+
+## Maximum Likelihood Results
+
+```{julia}
+#| echo: true
+#| output-location: column
+#| code-line-numbers: "|2-8|10"
+
+# simulate 10,000 predictions
+x = 1:0.1:60
+μ = θ_mle[1] .+ θ_mle[2] * log.(x)
+
+y_pred = zeros(length(x), 10_000)
+for i = 1:length(x)
+    y_pred[i, :] = rand(Normal(μ[i], θ_mle[3]), 10_000)
+end
+# take quantiles to find prediction intervals
+y_q = mapslices(v -> quantile(v, [0.05, 0.5, 0.95]), y_pred; dims=2)
+
+plot(p1, 
+    x,
+    y_q[:, 2],
+    ribbon = (y_q[:, 2] - y_q[:, 1], y_q[:, 3] - y_q[:, 2]),
+    linewidth=3, 
+    fillalpha=0.2, 
+    label="Best Fit",
+    size=(600, 550))
+```
+
+## Residual Analysis
+
+```{julia}
+#| layout-ncol: 2
+#| label: fig-residuals
+#| fig-cap: Residuals for the TDS-Riverflow model.
+
+pred = θ_mle[1] .+ θ_mle[2] * log.(tds.discharge_cms)
+resids = pred - tds.tds_mgL
+p1 = histogram(resids, xlabel="Model Residuals (mg/L)", ylabel="Count", title="Residual Histogram", size=(600, 500))
+p2 = qqnorm(resids, xlabel="Theoretical Values", ylabel="Empirical Values", title="Residual Q-Q- Plot", size=(600, 500))
+display(p1)
+display(p2)
+```
+
+# More General Models
+
+## Structure of a Probability Model
+
+Unpacking linear regression:
+
+$$\begin{align*}
+y_i &\sim N(\mu_i, \sigma^2) \\
+\mu_i &= \sum_j \beta_j x^j_i
 \end{align*}
 $$
 
+::: {.fragment .fade-in}
+**Note**: Can handle heteroskedastic errors with a regression $$\sigma_i^2 = \sum_j \alpha_j z^j_i$$
+:::
 
 
+## Think Generatively
+
+:::: {.columns}
+::: {.column width=50%}
+Components of probability model for observations:
+
+1. Model for "system state" (LR: $\sum_j \beta_j x^j_i$)
+2. Choice of "error" distribution (LR: $N(0, \sigma^2)$)
+
+:::
+
+::: {.column width=50%}
+![Brain on Regression Meme](memes/brain_on_regression.jpg){width=50%}
+
+::: {.caption}
+Source: Richard McElreath
+:::
+:::
+::::
+
+## You Can Always Fit Models...
+
+:::: {.columns}
+::: {.column width=50%}
+But not all models **are theoretically justifiable**.
+:::
+::: {.column width=50%}
+![Ian Malcolm meme](memes/ian_malcolm_should_model.png)
+:::
+::::
+
+## How Do We Choose What To Model?
+
+![XKCD 2620](https://imgs.xkcd.com/comics/health_data.png)
+
+::: {.caption}
+Source: [XKCD 2620](https://xkcd.com/2620/)
+:::
+
+## Example: Modeling Counts
+
+
+
+```{julia}
+#| echo: true
+#| code-fold: true
+#| output: true
+
+fish = CSV.File("data/ecology/Fish.csv") |> DataFrame
+fish[1:3, :]
+```
+
+## What Distribution?
+
+::: {.fragment .fade-in}
+Count data can be modeled using a Poisson or negative binomial distribution.
+
+```{julia}
+#| label: fig-count-dists
+#| fig-cap: 
+#|  - "Poisson"
+#|  - "Negative Binomial"
+#| layout-ncol: 2
+
+p1 = plot(Poisson(2), size=(500, 450), title="Poisson(2)", xlabel="Value")
+p2 = plot(NegativeBinomial(2, 0.5), size=(500, 450), title="Negative Binomial(2, 0.5)", xlabel="Value")
+display(p1)
+display(p2)
+```
+:::
+
+## Exploring the Data
+
+```{julia}
+#| label: fig-fishing-data
+#| fig-cap: Fishing Data
+
+histogram(fish.fish_caught, xlabel="Caught Fish", ylabel="Count", size=(1000, 400))
+```
+
+- Mean: `{julia} round(mean(fish.fish_caught); digits=1)`
+- Variance: `{julia} round(var(fish.fish_caught); digits=1)`
+
+## Model Specification
+
+We might hypothesize that more people fishing for more hours results in a greater chance of catching fish.
+
+$$\begin{align*}
+y_i &\sim Poisson(\lambda_i) \\
+f(\lambda_i) &= \beta_0 + \beta_1 P_i + \beta_2 H_i
+\end{align*}
+$$
+
+::: {.fragment .fade-in}
+$\lambda_i$: positive "rate"
+
+$f(\cdot)$: maps positive reals (rate scale) to all reals (linear model scale)
+:::
+
+## Link Functions
+
+:::: {.columns}
+::: {.column width=50%}
+$\color{brown}f$ is the **link function**.
+
+$\color{royalblue}f^{-1}$ is the **inverse link**.
+:::
+::: {.column width=50%}
+$$\begin{align*}
+y_i &\sim Poisson(\lambda_i) \\
+{\color{brown}f}(\lambda_i) &= \beta_0 + \beta_1 P_i + \beta_2 H_i
+\end{align*}
+$$
+
+$$
+\lambda_i = {\color{royalblue}f^{-1}}\left(\beta_0 + \beta_1 P_i + \beta_2 H_i\right)
+$$
+:::
+::::
+
+## Choosing a Link Function
+
+Link functions are typically linked to distributions.
+
+- Poisson models usually use the **log link** (positives &rarr; reals).
+- Binomial/Bernoulli models use the **logit** link ($[0, 1]$ &rarr; reals) $$\text{logit}(p) = \log\left(\frac{p}{1-p}\right)$$
+
+## Fitting the Model
+
+```{julia}
+#| echo: true
+#| code-line-numbers: "|1-5|7-11"
+
+function fish_model(params, persons, hours, fish_caught)
+    β₀, β₁, β₂ = params
+    λ = exp.(β₀ .+ β₁ * persons + β₂ * hours)
+    loglik = sum(logpdf.(Poisson.(λ), fish_caught))
+end
+
+lb = [-100.0, -100.0, -100.0]
+ub = [100.0, 100.0, 100.0]
+init = [0.0, 0.0, 0.0]
+
+optim_out = optimize(θ -> -fish_model(θ, fish.persons, fish.hours, fish.fish_caught), lb, ub, init)
+θ_mle = optim_out.minimizer
+@show round.(θ_mle; digits=1);
+```
+
+## Evaluating Model Fit
+
+```{julia}
+#| label: fig-fish-skill
+#| fig-cap: Predictive distribution for fitted fish model.
+#| output-location: column
+#| code-line-numbers: "|1-3|5-8"
+
+P = 1:4 # number of persons
+# simulate samples for each P
+λ = exp.(θ_mle[1] .+ θ_mle[2] * P)
+# draw 10,000 samples for each
+fish_sim = zeros(10_000, length(P)) # initialize matrix to store simulations
+for i = 1:length(P)
+    fish_sim[:, i] = rand(Poisson(λ[i]), 10_000)
+end
+
+# plot predictive interval against return periods
+boxplot(fish_sim, fillalpha=0.3, size=(900, 600), label=:none, color=:blue, ylabel="Fish Caught", xlabel="Persons")
+scatter!(fish.persons .+ 0.5, fish.fish_caught, label="Observations", color=:black)
+```
+
+## What Was The Problem?
+
+- Model neglected other plausible contributors, *e.g.* live bait.
+- Data is **over-dispersed**: higher variance than mean.
+- Might be better described by a zero-inflated Poisson model: 
+  - Visitors who spent little time are likely to catch no fish.
+  - Visitors who spent more time are likely to catch positive fish.
+
+# Key Points
+
+## Probability Models
+
+- Think of regression as modeling system state (or expectation).
+- Full probability model includes distribution of "errors" from expected state.
+  - Error models can be complex! More on this later...
+- Generalized linear models may require a link to map regression to parameters.
+- Fit models by maximizing likelihood: no problem using optimization routines.
 
 # Upcoming Schedule
 
 ## Next Classes
 
-**Wednesday**: Bayesian Statistics
+**Wednesday**: Modeling Time Series
 
-**Next Week**: Temporal and Spatial Models and Errors
+**Next Week**: Bayesian Statistics and Inference
 
 ## Assessments
 
-**Homework 1** due Friday (2/7).
+**Homework 1** Due Friday (2/7).
 
 # References
 
