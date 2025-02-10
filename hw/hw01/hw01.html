@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Homework 1: Thinking About Data – BEE 4850 - Spring 2025</title>
+<title>Homework 1: Simulation-Based Data Analysis – BEE 4850 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../project.html" rel="next">
+<link href="../../hw/hw02/hw02.html" rel="next">
 <link href="../../rubrics/standard.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -135,13 +135,15 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Homework 1: Thinking About Data – BEE 4850 - Spring 2025">
-<meta property="og:description" content="BEE 4850/5850">
-<meta property="og:image" content="https://viveks.me/simulation-data-analysis/hw/hw01/figures/normalized-TC-damages.jpg">
+<meta property="og:title" content="Homework 1: Simulation-Based Data Analysis – BEE 4850 - Spring 2025">
+<meta property="og:description" content="BEE 4850/5850, Fall 2024">
+<meta property="og:image" content="https://viveks.me/simulation-data-analysis/hw/hw01/figures/galton_board.png">
 <meta property="og:site_name" content="BEE 4850 - Spring 2025">
+<meta property="og:image:height" content="400">
+<meta property="og:image:width" content="600">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -240,6 +242,12 @@ window.Quarto = {
  <span class="menu-text">Week 3</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4 Information</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -261,6 +269,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../../hw/hw01/hw01.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Homework 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../hw/hw02/hw02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 02</span></a>
   </div>
 </li>
       </ul>
@@ -358,24 +372,21 @@ window.Quarto = {
   </ul></li>
   <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a>
   <ul class="collapse">
-  <li><a href="#scoring" id="toc-scoring" class="nav-link" data-scroll-target="#scoring">Scoring</a></li>
   <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
   <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
-  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-3-10-points" id="toc-problem-3-10-points" class="nav-link" data-scroll-target="#problem-3-10-points">Problem 3 (10 points)</a></li>
   <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
-  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
   </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="hw01.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../homework.html">Homework</a></li><li class="breadcrumb-item"><a href="../../hw/hw01/hw01.html">Homework 01</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Homework 1: Thinking About Data</h1>
-<p class="subtitle lead">BEE 4850/5850</p>
+<h1 class="title">Homework 1: Simulation-Based Data Analysis</h1>
+<p class="subtitle lead">BEE 4850/5850, Fall 2024</p>
 </div>
 
 
@@ -402,7 +413,7 @@ Due Date
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Friday, 2/7/25, 9:00pm</p>
+<p>Friday, 2/2/24, 9:00pm</p>
 </div>
 </div>
 <div class="callout callout-style-simple callout-tip">
@@ -411,7 +422,7 @@ Due Date
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>You can find a Jupyter notebook, data, and a Julia 1.10.x environment in <a href="https://github.com/BEE4850/hw01">the homework’s Github repository</a>. You should feel free to clone the repository and switch the notebook to another language, or to download the relevant data file(s) and solve the problems creating your own notebook or without using a notebook at all. In either of these cases, if you using a different environment, you will be responsible for setting up an appropriate package environment.</p>
+<p>You can find a Jupyter notebook, data, and a Julia 1.9.x environment in <a href="https://github.com/BEE4850/hw01">the homework’s Github repository</a>. You should feel free to clone the repository and switch the notebook to another language, or to download the relevant data file(s) and solve the problems without using a notebook. In either of these cases, if you using a different environment, you will be responsible for setting up an appropriate package environment.</p>
 <p>Regardless of your solution method, make sure to include your name and NetID on your solution PDF for submission to Gradescope.</p>
 </div>
 </div>
@@ -422,11 +433,10 @@ Due Date
 <h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
 <p>The goal of this homework assignment is to introduce you to simulation-based data analysis.</p>
 <ul>
-<li>Problem 1 asks you to find an example of a spurious correlation.</li>
-<li>Problem 2 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from <a href="https://www.youtube.com/watch?v=5Dnw46eC-0o">Statistics Without The Agonizing Pain</a> by John Rauser (which is a neat watch!).</li>
-<li>Problem 3 asks you to explore the impacts of selection biases on statistical relationships.</li>
-<li>Problem 4 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from <a href="https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/">Bayesian Methods for Hackers</a>.</li>
-<li>Problem 5 (only required for students in BEE 5850) asks you to propose several causal models for the same observational phenomenon.</li>
+<li>Problem 1 asks you to explore whether a difference between data collected from two groups might be statistically meaningful or the result of noise. This problem repeats the analysis from <a href="https://www.youtube.com/watch?v=5Dnw46eC-0o">Statistics Without The Agonizing Pain</a> by John Rauser (which is a neat watch!).</li>
+<li>Problem 2 asks you to evaluate an interview method for finding the level of cheating on a test to determine whether cheating was relatively high or low. This problem was adapted from <a href="https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/">Bayesian Methods for Hackers</a>.</li>
+<li>Problem 3 asks you to assess the quality of fit of a normal distribution to realizations from a Galton Board simulation.</li>
+<li>Problem 4 (<strong>graded only for graduate students</strong>) asks you to simulate outcomes from the <em>Price Is Right</em> Showcase game to identify a bidding strategy.</li>
 </ul>
 </section>
 <section id="load-environment" class="level3 cell markdown">
@@ -451,23 +461,11 @@ Due Date
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StatsPlots</span> <span class="co"># some additional statistical plotting tools</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="problems" class="level2">
+<section id="problems" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="problems">Problems</h2>
-<section id="scoring" class="level3">
-<h3 class="anchored" data-anchor-id="scoring">Scoring</h3>
-<p>Each problem is worth 5 points.</p>
-</section>
+<p>Each problem in this assignment is worth 10 points.</p>
 <section id="problem-1" class="level3 cell markdown">
 <h3 class="anchored" data-anchor-id="problem-1">Problem 1</h3>
-<p>Find an example of a spurious correlation (don’t just pull from <a href="https://www.tylervigen.com/spurious-correlations">Spurious Correlations!</a>!).</p>
-<p><strong>In this problem</strong>:</p>
-<ul>
-<li>Describe and illustrate the correlation;</li>
-<li>Explain why you think the correlation is spurious.</li>
-</ul>
-</section>
-<section id="problem-2" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
 <p>The underlying question we would like to address is: what is the influence of drinking beer on the likelihood of being bitten by mosquitoes? There is a mechanistic reason why this might occur: mosquitoes are attracted by changes in body temperature and released CO<sub>2</sub>, and it might be that drinking beer induces these changes. We’ll analyze this question using (synthetic) data which separates an experimental population into two groups, one which drank beer and the other which drank only water.</p>
 <p>First, we’ll load data for the number of bites reported by the participants who drank beer. This is in a comma-delimited file, <code>data/bites.csv</code> (which is grossly overkill for this assignment). Each row contains two columns: the group (<code>beer</code> and <code>water</code>) the person belonged to and the number of times that person was bitten.</p>
 <p>In Julia, we can do this using <a href="https://github.com/queryverse/CSVFiles.jl"><code>CSVFiles.jl</code></a>, which will read in the <code>.csv</code> file into a <a href="https://dataframes.juliadata.org/stable/"><code>DataFrame</code></a>, which is a typical data structure for tabular data (and equivalent to a Pandas <code>DataFrame</code> in Python or a <code>dataframe</code> in R).</p>
@@ -525,7 +523,7 @@ Why Do We Call This A Simulation-Based Approach?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is a simulation-based approach because the “shuffling” is a non-parametric way of generating new samples from the underlying distribution (more on this later!).</p>
+<p>This is a simulation-based approach because the “shuffling” is a non-parametric way of generating new samples from the underlying distribution (more on this later in the semester).</p>
 <p>The alternative to this approach is to use a statistical test, such as a <a href="https://en.wikipedia.org/wiki/Student%27s_t-test">t-test</a>, which <a href="https://en.wikipedia.org/wiki/Student%27s_t-test#Assumptions">may have other assumptions</a> which may not be appropriate for this setting, particularly given the seemingly small sample sizes.</p>
 </div>
 </div>
@@ -537,34 +535,9 @@ Why Do We Call This A Simulation-Based Approach?
 <li>Draw conclusions about the plausibility of the skeptic’s hypothesis that there is no difference between groups. Feel free to use any quantitative or qualitative assessments of your simulations and the observed difference.</li>
 </ul>
 </div>
-<section id="problem-3" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
-<p>A scientific funding agency receives 200 proposals in response to a call. The panel is asked to evaluate each proposal on two criteria: scientific rigor and potential impact (or “newsworthiness”). After standardizing each of these scores to independently follow a standard normal distribution (<span class="math inline">\(\text{Normal}(0, 1)\)</span>), the two standardized scores are summed to get the total score for the proposal. Based on these total scores, the top 10% of the proposals are selected for funding.</p>
-<p>A researcher who is studying the relationship between rigor and impact has used data on the funded proposals to claim high-impact proposals are necessarily less rigorous, and indeed found a statistically significant negative correlation between the rigor and impact scores for the funded proposals. You are more skeptical and believe this effect is an artifact from the selection process, which would make the claim a bit ironic.</p>
-<p><strong>In this problem</strong>:</p>
-<ul>
-<li>Create a generative model for the grant-selection procedure under the null assumption of no correlation between rigor and impact. You can sample rigor and impact scores directly from <span class="math inline">\(\text{Normal}(0, 1)\)</span>.</li>
-<li>Using 1,000 simulations, compare the distribution of correlations between rigor and impact for the funded proposals to the general proposal population.</li>
-<li>Explain why, when conditioning on selection for funding, there might be a negative correlation between rigor and impact even when none generally exists.</li>
-</ul>
-</section>
-<div class="callout callout-style-simple callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Selection-Distortion Effects
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>These <strong>selection-distortion effects</strong> are pretty common in observational data, going back to <a href="https://www.science.org/doi/abs/10.1126/science.187.4178.721">work by Dawes in the 1970s on the lack of predictive ability of admission variables on student success</a> and including <a href="https://www.nature.com/articles/s41598-021-89020-x">studies claiming to identify a causal fingerprint of genes on outcomes</a>.</p>
-<p>This is, of course, just one example of how not thinking carefully about data-generating processes can fundamentally contaminate statistical analyses, emphasizing that <strong>data do not have meaning absent a model for how they were generated</strong>.</p>
-</div>
-</div>
-<section id="problem-4" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-4">Problem 4</h3>
-<p>You are trying to detect how prevalent cheating was on an exam. You are skeptical of the efficacy of just asking the students if they cheated. You are also concerned about privacy — your goal is not to punish individual students, but to see if there are systemic problems that need to be addressed. Someone proposes the following interview procedure, which the class agrees to participate in:</p>
+<section id="problem-2" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
+<p>You are trying to detect if how prevalent cheating was on an exam. You are skeptical of the efficacy of just asking the students if they cheated. You are also concerned about privacy — your goal is not to punish individual students, but to see if there are systemic problems that need to be addressed. Someone proposes the following interview procedure, which the class agrees to participate in:</p>
 <blockquote class="blockquote">
 <p>Each student flips a fair coin, with the results hidden from the interviewer. The student answers honestly if the coin comes up heads. Otherwise, if the coin comes up tails, the student flips the coin again, and answers “I did cheat” if heads, and “I did not cheat”, if tails.</p>
 </blockquote>
@@ -572,39 +545,65 @@ Selection-Distortion Effects
 <p><strong>In this problem</strong>:</p>
 <ul>
 <li>Derive and code a simulation model for the above interview procedure given the “true” probability of cheating <span class="math inline">\(p\)</span>.</li>
-<li>Simulate your model (for a class of 100 students) 50,000 times under a null hypothesis of no cheating, your hypothesis of 5% cheating, the TA’s hypothesis of 30% cheating, and plot the resulting datasets.</li>
-<li>If you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude?</li>
-<li>How useful do you think the interview procedure is to identify systemic cheating? What changes to the design might you make?</li>
+<li>Simulate your model (for a class of 100 students) 50,000 times under the your hypothesis and the TA’s hypothesis, and plot the two resulting datasets.</li>
+<li>If you received 31 “Yes, I cheated” responses while interviewing your class, what could you conclude? Feel free to use any qualitative or quantiative assessments to justify your conclusions.</li>
+<li>How useful do you think the interview procedure is to identify systemic teaching? What changes to the design might you make?</li>
 </ul>
 </section>
-<section id="problem-5" class="level3 cell markdown">
-<h3 class="anchored" data-anchor-id="problem-5">Problem 5</h3>
-<p><strong>This problem is only required for students in BEE 5850</strong>.</p>
-<p>Adjusting for inflation, there has been an increase in tropical cyclone damages on the U.S. Atlantic coast between 1900 and 2022 (see <a href="#fig-tc" class="quarto-xref">Figure&nbsp;1</a>).</p>
-</section>
-<div id="fig-tc" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<section id="problem-3-10-points" class="level3 cell markdown page-columns page-full">
+<h3 class="anchored" data-anchor-id="problem-3-10-points">Problem 3 (10 points)</h3>
+<p>Suppose that we ask a class of students to walk individually from one end of a field to the other and count the number of steps that they take in order to cover the distance. More than likely, each student will get a somewhat different answer. After each student has paced off the field, we then make a histogram of the number of steps taken by the individual students. For a sufficiently large number of students, this histogram would resemble a normal distribution, due to the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central Limit Theorem</a>.</p>
+<p>A <strong>Galton board</strong> (named after <a href="https://en.wikipedia.org/wiki/Francis_Galton">Sir Francis Galton</a>, a pioneering statistician<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, shown below, is a physical device that demonstrates the Central Limit Theorem. A Galton board has rows of pins arranged in a triangular shape, with each row of pins offset horizontally relative to the rows above and below it. As illustrated in <a href="#fig-galton" class="quarto-xref">Figure&nbsp;1</a>, the top row has one pin, the second row has two pins, and so forth. If you’ve watched <em>The Price is Right</em>, you’ve seen this as <a href="https://priceisright.fandom.com/wiki/Plinko">“Plinko”</a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;And, notably, a leading eugenicist, which is unfortunately a recurring theme with leading early statisticians…)</p></div></div></section>
+<div id="fig-galton" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/normalized-TC-damages.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:5in">
+<div aria-describedby="fig-galton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/galton_board.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Change in tropical cyclone damages in U.S. Atlantic coastal counties from 1900–2022, aggregated by pentad and normalized to 2018 U.S. dollars. The red line shows an exponential trend of 1.06%/yr growth in damages. Reproduced from <a href="https://doi.org/10.1175/JAMC-D-24-0047.1">Willoughby, Hernandez, &amp; Pinnock (2024)</a>.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-galton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Galton Board simulation. The top shows a schematic of how the Galton board works and the bottom shows a histogram of the landing positions after 200 simulations.
 </figcaption>
 </figure>
 </div>
 <div class="cell markdown">
+<p>If a ball is dropped into the Galton board, it falls either to the right or the left when it bounces off the top pin. The ball then falls all the way to the bottom of the board, moving slightly to the right or left as it passes through each row of pins. Bins at the bottom of the board capture the ball and record its final position. If this experiment is repeated with many balls, the number of balls in each bin resembles a normal distribution, which is expected due to the Central Limit Theorem.</p>
+<p>Your goal in this exercise is to explore how well a normal distribution fits the outcomes of repeated Galton Board trials as the number increases using quantile-quantile plots. Assessing the appropriateness of a probability model for a data set is a key part of exploratory analysis; we will return to this theme repeatedly. Or, to put it another way, it’s time for you to play Plinko!</p>
 <p><strong>In this problem</strong>:</p>
 <ul>
-<li>Describe two different mechanisms by which tropical cyclone damages in coastal counties might have increased over this period.</li>
-<li>How might you propose to examine the relative strengths of these mechanisms? You don’t need to actually do this (this is indeed a somewhat thorny debate in the literature), but think about potential modeling and data approaches.</li>
+<li>Write a function <code>galton_sim</code> which simulates <code>n</code> Galton board trials (assume the board has 8 board rows, as in the image above) and returns a vector with the number of balls which fall into each bin. You can assume (for now) that the board is fair, <em>e.g.</em> that the probability of a left or right bounce is 0.5; you may want to make this probability a function parameter so you can change it later.</li>
+<li>Run your simulation for a sample of 50 balls. Create a histogram of the results, with each bar corresponding to one bin. Make sure you use a random seed for reproducibility, and label your axes!</li>
+<li>Each Galton board trial can be represented as a realization from a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">binomial distribution</a>. But as we noted above, by the Central Limit Theorem, the distribution of a large enough number of trials should be approximately normal. Use a <a href="https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot">quantile-quantile (Q-Q) plot</a> to compare a fitted normal distribution with your simulation results. How well does a normal distribution fit the data?</li>
+<li>Repeat your simulation experiment with 250 trials and compare to a normal distribution. Does it describe the empirical distribution better?</li>
+<li>If the probability of a left bounce is 70%, what does this do to the fit of a normal distribution? What other distribution might you use if not a normal and why?</li>
 </ul>
 </div>
+<section id="problem-4" class="level3 cell markdown">
+<h3 class="anchored" data-anchor-id="problem-4">Problem 4</h3>
+<p><span style="color:red;">GRADED FOR 5850 STUDENTS ONLY</span></p>
+<p>Your mastery of the Central Limit Theorem has led you to win your game of Plinko, and it’s time for the <a href="https://priceisright.fandom.com/wiki/Showcases">Showcases</a>. This is the final round of an episode of The Price is Right, matching the two big winners from the episode. Each contestant is shown a “showcase” of prizes, which are usually some combination of a trip, a motor vehicle, some furniture, and maybe some other stuff. They then each have to make a bid on the retail price of the showcase. The rules are:</p>
+<ul>
+<li>an overbid is an automatic loss;</li>
+<li>the contest who gets closest to the retail price wins their showcase;</li>
+<li>if a contestant gets within <span class="math inline">\(\$250\)</span> of the retail price and is closer than their opponent, they win both showcases.</li>
+</ul>
+<p>Thanks to <a href="http://tpirstats.com/Season51/Stats.htm">exhaustive statistics kept by game show fans</a>, in Season 51 of <em>The Price is Right</em> showcase values had the following properties:</p>
+<ul>
+<li>median: $33,0481;</li>
+<li>lowest-value: $20,432</li>
+<li>highest-value: $72,409</li>
+</ul>
+<p><strong>In this problem</strong>:</p>
+<ul>
+<li>Write down a model which encodes the Showcase rules as a function of the showcase value and your bid. You can assume that your wagering is independent of your opponent.</li>
+<li>Select and fit a distribution to the above statistics (you have some freedom to pick a distribution, but make sure you justify it).</li>
+<li>Using 1,000 samples from your price distribution in your model, plot the expected winnings for bids from $20,000 through $72,000.</li>
+<li>Find the bid which maximizes your expected winnings. If you were playing <em>The Price Is Right</em>, is this the strategy you would adopt, or are there other considerations you would take into account which were not included in this model?</li>
+</ul>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1072,8 +1071,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../project.html" class="pagination-link" aria-label="Term Project">
-        <span class="nav-page-text">Term Project</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../hw/hw02/hw02.html" class="pagination-link" aria-label="Homework 02">
+        <span class="nav-page-text">Homework 02</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
