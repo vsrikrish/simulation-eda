@@ -4,8 +4,8 @@ title: "Week 4 Information"
 
 ## Lectures
 
-- [Calibration Simualtion Models](../slides/lecture04-1-diffeqmodels.qmd)
-- Time Series
+- [Calibrating Simulation Models](../slides/lecture04-1-diffeqmodels.qmd)
+- [Correlated Residuals](../slides/lecture04-2-correlatedresiduals.qmd)
 
 ## Homework
 
@@ -15,3 +15,7 @@ title: "Week 4 Information"
 ## Readings
 
 - No reading this week!
+
+## Quiz
+
+- No quiz this week!
