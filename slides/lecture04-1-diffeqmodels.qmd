@@ -340,11 +340,10 @@ where $\omega$ is the standard error of the data.
 
 ## MLE for Gaussian Discrepancy
 
-:::: {.columns} 
-::: {.column width=50%}
 ```{julia}
-#| echo: false
-#| output: asis
+#| output: false
+#| code-overflow: wrap
+#| echo: true
 
 function gaussian_iid_homosked(params, temp_dat, temp_err, m)
     S, γ, α, d, D, T₀, σ = params 
@@ -359,6 +358,16 @@ p0 = [3.0, 1.0, 1.0, 100.0, 800.0,temp_obs[1], 5.0]
 
 result = Optim.optimize(params -> -gaussian_iid_homosked(params, temp_obs, temp_sd, ebm_wrap), lower, upper, p0)
 θ_iid = result.minimizer
+```
+
+## MLE for Gaussian Discrepancy
+
+:::: {.columns}
+::: {.column width=50%}
+```{julia}
+#| output: asis
+#| echo: false
+
 θ_iid_rd = round.(θ_iid; digits=1)
 parnames = ["S", "γ", "α", "d", "D", "T₀", "σ"]
 pretty_table(DataFrame(Parameters=parnames, MLE=θ_iid_rd); backend=Val(:markdown), show_subheader=false, show_row_number=false)
@@ -398,7 +407,6 @@ plot!(size=(600, 500))
 #| echo: true
 #| code-fold: true
 #| layout-ncol: 2
-#| output: true
 
 resids_homogauss = temp_obs - temp_iid
 p1 = plot(time_obs, resids_homogauss, linewidth=3, label=false, size=(600, 500), xlabel="Year", ylabel="Residual (°C)")
@@ -419,7 +427,6 @@ display(p2)
 #| echo: true
 #| code-fold: true
 #| layout-ncol: 2
-#| output: true
 
 p1 = qqnorm(resids_homogauss, xlabel="Theoretical Values", ylabel="Empirical Values", title="Normal Q-Q Plot", size=(600, 500))
 pacf_homogauss = pacf(resids_homogauss, 1:5)
