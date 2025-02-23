@@ -550,16 +550,17 @@ window.Quarto = {
 <div id="26" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="st">"5"</span> <span class="op">+</span> <span class="fl">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>MethodError: MethodError(+, ("5", 5), 0x0000000000007af3)
+<pre><code>MethodError: MethodError(+, ("5", 5), 0x0000000000006864)
 MethodError: no method matching +(::String, ::Int64)
+The function `+` exists, but no method is defined for this combination of argument types.
 
 Closest candidates are:
   +(::Any, ::Any, !Matched::Any, !Matched::Any...)
-   @ Base operators.jl:587
+   @ Base operators.jl:596
   +(!Matched::Missing, ::Number)
    @ Base missing.jl:123
-  +(!Matched::BigInt, ::Union{Int16, Int32, Int64, Int8})
-   @ Base gmp.jl:555
+  +(!Matched::Complex{Bool}, ::Real)
+   @ Base complex.jl:323
   ...
 
 Stacktrace:
@@ -709,8 +710,9 @@ Stacktrace:
 <div id="64" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>test_tuple[<span class="fl">1</span>] <span class="op">=</span> <span class="fl">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>MethodError: MethodError(setindex!, ((4, 5, 6), 5, 1), 0x0000000000007af3)
+<pre><code>MethodError: MethodError(setindex!, ((4, 5, 6), 5, 1), 0x0000000000006864)
 MethodError: no method matching setindex!(::Tuple{Int64, Int64, Int64}, ::Int64, ::Int64)
+The function `setindex!` exists, but no method is defined for this combination of argument types.
 Stacktrace:
  [1] top-level scope
    @ ~/Teaching/BEE4850/website/tutorials/julia-basics.qmd:222</code></pre>
@@ -908,8 +910,9 @@ typeof(test_tuple_3)</code></pre>
 <div id="102" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb101"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">h₂</span>(<span class="fl">2</span>, <span class="fl">3</span>) <span class="co"># this gives an error, as h₂ expects a single tuple, not two different numeric values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>MethodError: MethodError(Main.Notebook.h₂, (2, 3), 0x0000000000007afd)
+<pre><code>MethodError: MethodError(h₂, (2, 3), 0x000000000000686e)
 MethodError: no method matching h₂(::Int64, ::Int64)
+The function `h₂` exists, but no method is defined for this combination of argument types.
 
 Closest candidates are:
   h₂(::Any)
