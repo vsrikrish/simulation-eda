@@ -20,6 +20,6 @@ The term project gives you an opportunity to use and extend the methods we have 
 
 | Milestone |  Due Date |
 |:---------:|:-----------|
-| Proposal |  Fri, Mar 14 |
+| [Proposal](project/proposal.qmd) |  Fri, Mar 21 |
 | Presentations |  Mon, May 05 |
 | Final Report |  Fri, May 16 | 
